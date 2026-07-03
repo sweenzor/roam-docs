@@ -550,7 +550,6 @@ ${graphs
   )
   .join('\n')}
 </ul>
-<p><a href="${REPO_URL}">Contributions welcome</a></p>
 ${graphs
   .map(
     (g) => `<details>
