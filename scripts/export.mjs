@@ -139,5 +139,6 @@ const out = {
   shortcuts: result.shortcuts,
   pages: result.pages,
 };
-fs.writeFileSync(path.join(OUT_DIR, 'graph.json'), JSON.stringify(out, null, 1));
-console.log(`Wrote graph.json (${out.pages.length} pages) via ${out.transport}.`);
+const outFile = `graph-${GRAPH}.json`;
+fs.writeFileSync(path.join(OUT_DIR, outFile), JSON.stringify(out, null, 1));
+console.log(`Wrote ${outFile} (${out.pages.length} pages) via ${out.transport}.`);

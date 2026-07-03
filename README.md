@@ -1,17 +1,24 @@
 # roam-docs
 
 A machine-friendly mirror of Roam Research's official
-[developer-documentation graph](https://roamresearch.com/#/app/developer-documentation),
+[developer-documentation](https://roamresearch.com/#/app/developer-documentation) and
+[help](https://roamresearch.com/#/app/help) graphs,
 built for AI coding tools (Claude, ChatGPT, Cursor, …) that can't read docs that live
-inside a Roam Research graph. Served as a static site on Cloudflare Pages.
+inside a Roam Research graph. Served at [roamdocs.fyi](https://roamdocs.fyi) via
+Cloudflare Pages.
+
+**Contributions welcome** — better type signatures, more examples, rendering fixes:
+open an issue or PR.
 
 ## What's published (everything under `public/`)
 
 | Path | What it is |
 | --- | --- |
-| `/llms.txt` | [llms.txt](https://llmstxt.org) index of the docs |
-| `/llms-full.txt` | Full markdown export: every docs page + release notes + a live-introspected inventory of all `window.roamAlphaAPI` functions |
-| `/docs/<page>.md` | One markdown file per docs page |
+| `/llms.txt` | [llms.txt](https://llmstxt.org) index of everything on the site |
+| `/llms-full.txt` | Full developer-docs export: every page + release notes + a live-introspected inventory of all `window.roamAlphaAPI` functions |
+| `/docs/<page>.md` | One markdown file per developer docs page |
+| `/help/llms-full.txt` | Full export of the help graph (user documentation) |
+| `/help/<page>.md` | One markdown file per help page |
 | `/types/roam-alpha-api.d.ts` | TypeScript definitions for `window.roamAlphaAPI` — coverage verified against live introspection, including functions missing from the official docs (e.g. `depot.getInstalledExtensions`) |
 | `/examples/*` | Short copy-pasteable examples (queries, writes, extension skeleton, Backend API) |
 
@@ -49,7 +56,7 @@ docker run --rm -v "$PWD":/work -w /work/scripts mcr.microsoft.com/playwright:v1
 
 ## Notes
 
-- The graph is pulled via datalog (`q`/recursive `pull`), not DOM scraping; the browser
+- The graphs are pulled via datalog (`q`/recursive `pull`), not DOM scraping; the browser
   is only the runtime that hosts the API. With a read-only `roam-graph-token` for the
   graph (only Roam Research can mint one — ask in #developers on their Slack), `export.mjs`
   switches to the official REST API automatically via the `ROAM_API_TOKEN` secret.

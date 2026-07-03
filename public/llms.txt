@@ -1,48 +1,172 @@
-# Roam Research Developer Documentation
+# Roam Research Documentation (developer + user docs)
 
-> Markdown mirror of the official Roam Research developer docs graph, refreshed automatically,
-> plus live-introspected TypeScript definitions for window.roamAlphaAPI (v1.1.2)
-> and copy-pasteable examples. Sources of truth: the public developer-documentation
-> graph and a running Roam Research session; regenerated on a schedule.
+> Markdown mirror of Roam Research's official developer-documentation and help graphs,
+> refreshed automatically, plus live-introspected TypeScript definitions for
+> window.roamAlphaAPI (v1.1.2) and copy-pasteable examples. Sources of truth: the
+> public graphs and a running Roam Research session; regenerated on a schedule.
+> Source & contributions: https://github.com/sweenzor/roam-docs
 
 Last export: 2026-07-03T15:59:08.478Z
 
-## Docs
+## Developer documentation
 
-- [Developer Hub](https://roam-docs.pages.dev/docs/developer-hub.md): Entry point / map of all Roam Research developer documentation
-- [Roam Alpha API](https://roam-docs.pages.dev/docs/roam-alpha-api.md): The frontend JS API (window.roamAlphaAPI): datalog q/pull, block & page CRUD, UI control, file storage
-- [Roam Depot/Extension API](https://roam-docs.pages.dev/docs/roam-depot-extension-api.md): Extension API passed to Depot extensions (settings panels, commands, lifecycle)
-- [Roam Depot/Extensions](https://roam-docs.pages.dev/docs/roam-depot-extensions.md): How to build, test and publish Roam Depot extensions
-- [roam/css](https://roam-docs.pages.dev/docs/roam-css.md): Theming Roam Research with custom CSS via the roam/css page
-- [roam/js](https://roam-docs.pages.dev/docs/roam-js.md): Running custom JavaScript in a graph via roam/js blocks
-- [roam/cljs](https://roam-docs.pages.dev/docs/roam-cljs.md): Running ClojureScript in a graph
-- [roam/render](https://roam-docs.pages.dev/docs/roam-render.md): Custom components rendered inside blocks (ClojureScript/Reagent)
-- [Roam Backend API (Beta)](https://roam-docs.pages.dev/docs/roam-backend-api-beta.md): Official REST API: datalog q / pull / pull-many + write actions over HTTP with roam-graph-tokens
-- [Roam Append API](https://roam-docs.pages.dev/docs/roam-append-api.md): Append-only HTTP API for capture (works with encrypted graphs)
-- [Yet-to-release updates](https://roam-docs.pages.dev/docs/yet-to-release-updates.md): API changes announced but not yet released
-- [Available Libraries](https://roam-docs.pages.dev/docs/available-libraries.md): Official SDKs and community libraries
-- [Contact Us](https://roam-docs.pages.dev/docs/contact-us.md): How to reach the Roam Research developer team
-- [Local API](https://roam-docs.pages.dev/docs/local-api.md): Local HTTP API exposed by the Roam Research desktop app
+- [Developer Hub](https://roamdocs.fyi/docs/developer-hub.md): Entry point / map of all Roam Research developer documentation
+- [Roam Alpha API](https://roamdocs.fyi/docs/roam-alpha-api.md): The frontend JS API (window.roamAlphaAPI): datalog q/pull, block & page CRUD, UI control, file storage
+- [Roam Depot/Extension API](https://roamdocs.fyi/docs/roam-depot-extension-api.md): Extension API passed to Depot extensions (settings panels, commands, lifecycle)
+- [Roam Depot/Extensions](https://roamdocs.fyi/docs/roam-depot-extensions.md): How to build, test and publish Roam Depot extensions
+- [roam/css](https://roamdocs.fyi/docs/roam-css.md): Theming Roam Research with custom CSS via the roam/css page
+- [roam/js](https://roamdocs.fyi/docs/roam-js.md): Running custom JavaScript in a graph via roam/js blocks
+- [roam/cljs](https://roamdocs.fyi/docs/roam-cljs.md): Running ClojureScript in a graph
+- [roam/render](https://roamdocs.fyi/docs/roam-render.md): Custom components rendered inside blocks (ClojureScript/Reagent)
+- [Roam Backend API (Beta)](https://roamdocs.fyi/docs/roam-backend-api-beta.md): Official REST API: datalog q / pull / pull-many + write actions over HTTP with roam-graph-tokens
+- [Roam Append API](https://roamdocs.fyi/docs/roam-append-api.md): Append-only HTTP API for capture (works with encrypted graphs)
+- [Yet-to-release updates](https://roamdocs.fyi/docs/yet-to-release-updates.md): API changes announced but not yet released
+- [Available Libraries](https://roamdocs.fyi/docs/available-libraries.md): Official SDKs and community libraries
+- [Contact Us](https://roamdocs.fyi/docs/contact-us.md): How to reach the Roam Research developer team
+- [Local API](https://roamdocs.fyi/docs/local-api.md): Local HTTP API exposed by the Roam Research desktop app
 
 ## API reference
 
-- [roam-alpha-api.d.ts](https://roam-docs.pages.dev/types/roam-alpha-api.d.ts): TypeScript definitions for window.roamAlphaAPI — all 129 live-introspected functions
-- [llms-full.txt](https://roam-docs.pages.dev/llms-full.txt): Everything in one file: all docs pages + release notes + full API inventory
+- [roam-alpha-api.d.ts](https://roamdocs.fyi/types/roam-alpha-api.d.ts): TypeScript definitions for window.roamAlphaAPI — all 129 live-introspected functions
+- [llms-full.txt](https://roamdocs.fyi/llms-full.txt): All developer docs in one file: every page + release notes + full API inventory
 
 ## Examples
 
-- [01-queries.js](https://roam-docs.pages.dev/examples/01-queries.js)
-- [02-writing-blocks.js](https://roam-docs.pages.dev/examples/02-writing-blocks.js)
-- [03-extension-skeleton.js](https://roam-docs.pages.dev/examples/03-extension-skeleton.js)
-- [04-backend-api.sh](https://roam-docs.pages.dev/examples/04-backend-api.sh)
-- [05-backend-api.js](https://roam-docs.pages.dev/examples/05-backend-api.js)
-- [06-render-components.js](https://roam-docs.pages.dev/examples/06-render-components.js)
+- [01-queries.js](https://roamdocs.fyi/examples/01-queries.js)
+- [02-writing-blocks.js](https://roamdocs.fyi/examples/02-writing-blocks.js)
+- [03-extension-skeleton.js](https://roamdocs.fyi/examples/03-extension-skeleton.js)
+- [04-backend-api.sh](https://roamdocs.fyi/examples/04-backend-api.sh)
+- [05-backend-api.js](https://roamdocs.fyi/examples/05-backend-api.js)
+- [06-render-components.js](https://roamdocs.fyi/examples/06-render-components.js)
+
+## Help & user documentation
+
+- [Welcome to Roam](https://roamdocs.fyi/help/welcome-to-roam.md): Getting started ℹ️ (hint... shift-click the links in blue below 😉) .box
+- [Change Log](https://roamdocs.fyi/help/change-log.md): Updating Roam
+- [FAQ](https://roamdocs.fyi/help/faq.md): Account
+- [White Paper](https://roamdocs.fyi/help/white-paper.md): Abstract. Roam is an online workspace for organizing and evaluating knowledge. The system is built on a directed graph, which frees it from 
+- [Privacy Policy](https://roamdocs.fyi/help/privacy-policy.md): TLDR: Roam does not own your data, nor do we sell it to others or use it for advertising. We will never read or access your private notes wi
+- [Terms and Conditions](https://roamdocs.fyi/help/terms-and-conditions.md): TLDR: Roam does not own your data, nor do we sell it to others or use it for advertising. We will never read or access your private notes wi
+- [help/llms-full.txt](https://roamdocs.fyi/help/llms-full.txt): All user documentation in one file
 
 ## Optional
 
-- [Roam Clojurescript API](https://roam-docs.pages.dev/docs/roam-clojurescript-api.md): Clojure Core Namespaces
-- [Datomic Alpha API](https://roam-docs.pages.dev/docs/datomic-alpha-api.md): Important Note: This is the documentation for the Depreciated (& inactive) Datomic API. We have a new API! see it here, Roam Backend API (Be
-- [iFrame Components](https://roam-docs.pages.dev/docs/iframe-components.md): Important Note: This is Depreciated, it still most likely works but we will not be continuing it's development
-- [Attributes Data Model](https://roam-docs.pages.dev/docs/attributes-data-model.md): Introduction: it's a hypergraph
-- [datalog-block-query](https://roam-docs.pages.dev/docs/datalog-block-query.md): Older Loom videos
-- [Release notes](https://roam-docs.pages.dev/docs/release-notes.md): Dated updates from the developer graph (newest first)
+- [Roam Clojurescript API](https://roamdocs.fyi/docs/roam-clojurescript-api.md): Clojure Core Namespaces
+- [Datomic Alpha API](https://roamdocs.fyi/docs/datomic-alpha-api.md): Important Note: This is the documentation for the Depreciated (& inactive) Datomic API. We have a new API! see it here, Roam Backend API (Be
+- [iFrame Components](https://roamdocs.fyi/docs/iframe-components.md): Important Note: This is Depreciated, it still most likely works but we will not be continuing it's development
+- [Attributes Data Model](https://roamdocs.fyi/docs/attributes-data-model.md): Introduction: it's a hypergraph
+- [datalog-block-query](https://roamdocs.fyi/docs/datalog-block-query.md): Older Loom videos
+- [Developer release notes](https://roamdocs.fyi/docs/release-notes.md): Dated updates from the developer graph (newest first)
+- [Commentarii Roamani](https://roamdocs.fyi/help/commentarii-roamani.md): Hello Again, Roamans -- April 5th, 2025
+- [roam/templates](https://roamdocs.fyi/help/roam-templates.md): Dev docs .h
+- [Diagram](https://roamdocs.fyi/help/diagram.md): Diagrams are an extra dimension of the blocks in your graph. You can lay your thoughts out in a 2D infinite canvas, group and connect ideas.
+- [Roam-specific :q additions](https://roamdocs.fyi/help/roam-specific-q-additions.md): If you're a dev (or even if not!), you can use our very flexible query features to do the kinds of specialized queries you want
+- [Themes](https://roamdocs.fyi/help/themes.md): .--
+- [What You Can't Say](https://roamdocs.fyi/help/what-you-can-t-say.md): Essay Paul Graham
+- [Block References](https://roamdocs.fyi/help/block-references.md): One of Roam's most powerful, flagship features
+- [Formatting](https://roamdocs.fyi/help/formatting.md): Bold
+- [Navigation](https://roamdocs.fyi/help/navigation.md): If you're used to clicking hyperlinks when browsing the web, you already know how to navigate in Roam! Click on any page reference or extern
+- [Beating the Averages](https://roamdocs.fyi/help/beating-the-averages.md): Paul Graham Essay
+- [Kanban](https://roamdocs.fyi/help/kanban.md): .--
+- [Coaching](https://roamdocs.fyi/help/coaching.md): Get specialized 1:1 help to master Roam from one of our vetted coaches
+- [JSON Schema](https://roamdocs.fyi/help/json-schema.md): Description
+- [Examples of :q query blocks](https://roamdocs.fyi/help/examples-of-q-query-blocks.md): :q queries can be used to display the results of datomic/datascript queries in your Roam graph
+- [Apple Shortcuts/Speak to Roam](https://roamdocs.fyi/help/apple-shortcuts-speak-to-roam.md): An Official Capture Apple Shortcut, built by the Roam team!
+- [Block Context Menu](https://roamdocs.fyi/help/block-context-menu.md): The Block Context Menu is the menu that gets pulled up when you right click the circle bullets on any block, it brings up a list of common f
+- [Features](https://roamdocs.fyi/help/features.md): Fundamentals
+- [Pipedream Workflows](https://roamdocs.fyi/help/pipedream-workflows.md): Pipedream is a no-code / low-code platform where one can build powerful workflows that connect your applications, services, APIs, and more
+- [TODO/DONE](https://roamdocs.fyi/help/todo-done.md): TODOs are the core of task management. We have been using them in our bullet journals, task apps, and now... Roam.
+- [Blocks](https://roamdocs.fyi/help/blocks.md): Each bullet you see is a __block__, and we write them inside pages like this one.
+- [Graphs and Settings](https://roamdocs.fyi/help/graphs-and-settings.md): Team GIFs::
+- [Search](https://roamdocs.fyi/help/search.md): Find or create page
+- [Why you can't say](https://roamdocs.fyi/help/why-you-can-t-say.md): Full Text
+- [Callouts](https://roamdocs.fyi/help/callouts.md): Callouts are styled Blockquotes with a type-specific icon and color.
+- [Zapier Integration](https://roamdocs.fyi/help/zapier-integration.md): Zapier lets you connect Roam Research to 6,000+ other web services. Automated connections called Zaps, set up in minutes with no coding, can
+- [Encrypted Graphs](https://roamdocs.fyi/help/encrypted-graphs.md): Limitations of encrypted graphs
+- [Mermaid Diagrams](https://roamdocs.fyi/help/mermaid-diagrams.md): An embedded version of MermaidJS, create mermaid diagrams inside of Roam!
+- [Right Sidebar](https://roamdocs.fyi/help/right-sidebar.md): Roam Team Videos::
+- [/ Commands](https://roamdocs.fyi/help/commands.md): The / Commands give you access to a variety of functions in Roam
+- [Security](https://roamdocs.fyi/help/security.md): Security Policy
+- [Query](https://roamdocs.fyi/help/query.md): .--
+- [Courses](https://roamdocs.fyi/help/courses.md): Request to be featured
+- [Updating Roam](https://roamdocs.fyi/help/updating-roam.md): How do I update Roam?
+- [Create API Tokens](https://roamdocs.fyi/help/create-api-tokens.md): (how to create Roam API tokens for a graph)
+- [Articles](https://roamdocs.fyi/help/articles.md): Request to be featured
+- [Developer Documentation](https://roamdocs.fyi/help/developer-documentation.md): If you're a developer who'd like to build extensions for Roam or connect stuff to Roam, please checkout our developer-documentation graph: h
+- [Tag Styles](https://roamdocs.fyi/help/tag-styles.md): Links and tags whose name begins with a . add a css class to the roam block that they are on
+- [Task Management](https://roamdocs.fyi/help/task-management.md): Community Videos::
+- [roam/render](https://roamdocs.fyi/help/roam-render.md)
+- [Filter](https://roamdocs.fyi/help/filter.md): .--
+- [Welcome to Roam v2](https://roamdocs.fyi/help/welcome-to-roam-v2.md): Quick Start
+- [Pages](https://roamdocs.fyi/help/pages.md): Team GIFs::
+- [Zettelkasten](https://roamdocs.fyi/help/zettelkasten.md): Roam Team Videos::
+- [All Pages](https://roamdocs.fyi/help/all-pages.md): Delete pages
+- [Graph Overview](https://roamdocs.fyi/help/graph-overview.md): .--
+- [Pomodoro timer](https://roamdocs.fyi/help/pomodoro-timer.md): Creating a Pomodoro timer is incredibly easy! Here's how:
+- [Hosted Graph](https://roamdocs.fyi/help/hosted-graph.md): What does it mean?
+- [Daily Notes](https://roamdocs.fyi/help/daily-notes.md): .--
+- [Community](https://roamdocs.fyi/help/community.md): Roam Slack
+- [Extensions](https://roamdocs.fyi/help/extensions.md): CSS
+- [Beginner's Guide](https://roamdocs.fyi/help/beginner-s-guide.md): A short but comprehensive guide
+- [Precise Links](https://roamdocs.fyi/help/precise-links.md): Example
+- [Templates](https://roamdocs.fyi/help/templates.md): Team GIFS::
+- [Audio Player](https://roamdocs.fyi/help/audio-player.md): You can upload and embed audio into Roam! Check out this interactive demo on Conor White-Sullivan describing Roam as Excel
+- [Roam Help](https://roamdocs.fyi/help/roam-help.md): Welcome to Roam
+- [roam/css](https://roamdocs.fyi/help/roam-css.md): .rm-g
+- [Notable Graphs](https://roamdocs.fyi/help/notable-graphs.md): Directory
+- [Miscellaneous](https://roamdocs.fyi/help/miscellaneous.md): Wiki
+- [Calculator](https://roamdocs.fyi/help/calculator.md): Calculates basic arithmetic.
+- [Personal CRM](https://roamdocs.fyi/help/personal-crm.md): Community Videos::
+- [News and Press](https://roamdocs.fyi/help/news-and-press.md)
+- [Table](https://roamdocs.fyi/help/table.md): .--
+- [Project Management](https://roamdocs.fyi/help/project-management.md): Community Videos::
+- [Video Embed](https://roamdocs.fyi/help/video-embed.md): You can embed videos in Roam directly, without going to a separate page to access them
+- [Upload Files](https://roamdocs.fyi/help/upload-files.md): You can upload and embed files in Roam, including audio, PDFs, and images, so you can access files right on the spot
+- [Workflows](https://roamdocs.fyi/help/workflows.md): Journaling
+- [Install Roam](https://roamdocs.fyi/help/install-roam.md): Does Roam have a mobile app? Can I install it on my machine?
+- [Longform writing](https://roamdocs.fyi/help/longform-writing.md): Community Videos::
+- [Mentions](https://roamdocs.fyi/help/mentions.md): Mentions help you pull information (i.e., References) right on any Blocks, without you having to open extra windows or sidebars to access th
+- [Images](https://roamdocs.fyi/help/images.md): You can include images on Roam in these two ways
+- [Journaling](https://roamdocs.fyi/help/journaling.md): Articles::
+- [Research](https://roamdocs.fyi/help/research.md): Roam Team Videos::
+- [Export](https://roamdocs.fyi/help/export.md): Markdown Export
+- [Long Videos](https://roamdocs.fyi/help/long-videos.md): Implementing a Digital Zettelkasten using Block References in Roam Research with Beau Haan by Robert Haisfield
+- [Date picker](https://roamdocs.fyi/help/date-picker.md): Date picker helps you pick a date's page by showing you a calendar
+- [Attributes](https://roamdocs.fyi/help/attributes.md): Community Videos::
+- [Bidirectional linking](https://roamdocs.fyi/help/bidirectional-linking.md): It doesn't matter what page you've written a note on, if you mention an idea, every place where you mentioned that idea will get collected u
+- [Studying](https://roamdocs.fyi/help/studying.md): Community Videos::
+- [Meeting notes](https://roamdocs.fyi/help/meeting-notes.md): Community Videos::
+- [Code Block](https://roamdocs.fyi/help/code-block.md): You can include code in different programming languages in Roam, for example
+- [Page References](https://roamdocs.fyi/help/page-references.md): Page references are links to Pages in your graph
+- [Scripture Study](https://roamdocs.fyi/help/scripture-study.md): Community Videos::
+- [Sharing](https://roamdocs.fyi/help/sharing.md): Sharing graph as read-only
+- [Word count](https://roamdocs.fyi/help/word-count.md): Word count counts the number of words in a block, for example
+- [Cancelling your membership during your free trial](https://roamdocs.fyi/help/cancelling-your-membership-during-your-free-trial.md): Sign In to your Roam account, with the email address you used at sign up:
+- [Spanish](https://roamdocs.fyi/help/spanish.md): ✏️Cómo TOMAR NOTAS con ROAM RESEARCH & ZETTELKASTEN | Tutorial en español by Emowe Aprendizaje
+- [Console Logs](https://roamdocs.fyi/help/console-logs.md): To capture console logs
+- [Block Search](https://roamdocs.fyi/help/block-search.md): Key Things to Know
+- [Roam Depot](https://roamdocs.fyi/help/roam-depot.md): Official Plugins
+- [Character count](https://roamdocs.fyi/help/character-count.md): Character count counts the number of characters in a block, for example
+- [Why Roam?](https://roamdocs.fyi/help/why-roam.md): This thread of threads on Twitter answers the question of "Why Roam?" pretty well, if not succinctly 😉
+- [Chinese](https://roamdocs.fyi/help/chinese.md): Community Videos::
+- [Current time](https://roamdocs.fyi/help/current-time.md): Current time displays the current time in your time zone, it's great for tracking time while writing daily logs
+- [Adding soft line breaks in a block](https://roamdocs.fyi/help/adding-soft-line-breaks-in-a-block.md): Each individual bullet point in a page in Roam is referred to as a block. When you press enter Roam creates a new block on the next line in 
+- [Import](https://roamdocs.fyi/help/import.md): Importing JSON
+- [Version Control](https://roamdocs.fyi/help/version-control.md): Version control helps you create different versions of of the same block, often used when you want to make multiple drafts of something
+- [Kids](https://roamdocs.fyi/help/kids.md): Community Videos::
+- [Left Sidebar](https://roamdocs.fyi/help/left-sidebar.md): Star/unstar pages
+- [Wiki](https://roamdocs.fyi/help/wiki.md): Community Videos::
+- [Today](https://roamdocs.fyi/help/today.md): The "today" function auto generates today's daily notes page, it will either give you a static result, or a variable result ("today" will al
+- [Slider](https://roamdocs.fyi/help/slider.md): Sliders are good for representing data on a scale, and are especially useful for polls on Multiplayer graphs!
+- [Russian](https://roamdocs.fyi/help/russian.md): Community Videos::
+- [Numbered List Extension](https://roamdocs.fyi/help/numbered-list-extension.md): Thank you for installing the Numbered List extension for Roam Research. This page has been automatically generated to allow creation of a Sm
+- [Encrypted Block](https://roamdocs.fyi/help/encrypted-block.md): Encrypted block creates encrypted text that can only be unlocked with a secret password
+- [Tomorrow](https://roamdocs.fyi/help/tomorrow.md): The "tomorrow" function auto generates tomorrow's daily notes page, it will either give you a static result, or a variable result ("tomorrow
+- [Tags](https://roamdocs.fyi/help/tags.md): Tags are just Page References that are styled a bit differently (light grey font color) so that the tag is not as prominent
+- [Alexander Rink](https://roamdocs.fyi/help/alexander-rink.md): Roam Depot Extensions
+- [Korean](https://roamdocs.fyi/help/korean.md)
+- [Latex](https://roamdocs.fyi/help/latex.md): Description::
+- [Key Commands](https://roamdocs.fyi/help/key-commands.md): Turn key commands instruction on with custom components like this
+- [Roam Slack](https://roamdocs.fyi/help/roam-slack.md): We have a thriving community on Slack!
+- [Linked References](https://roamdocs.fyi/help/linked-references.md): Description::
+- [Help release notes](https://roamdocs.fyi/help/release-notes.md): Dated updates from the help graph (newest first)

@@ -1,4 +1,4 @@
-# Release notes (daily-note updates from the developer graph)
+# Release notes (daily-note updates from the developer-documentation graph)
 
 ## February 26th, 2026
 

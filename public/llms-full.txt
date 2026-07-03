@@ -4,6 +4,7 @@
 > (https://roamresearch.com/#/app/developer-documentation), plus a live-introspected
 > inventory of window.roamAlphaAPI v1.1.2.
 > Exported 2026-07-03T15:59:08.478Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
+> Help / user documentation is exported separately: https://roamdocs.fyi/help/llms-full.txt
 
 ## Table of contents
 
@@ -7327,7 +7328,7 @@
 
 ---
 
-# Release notes (daily-note updates from the developer graph)
+# Release notes (daily-note updates from the developer-documentation graph)
 
 ## February 26th, 2026
 
@@ -7793,7 +7794,7 @@
 # Appendix: window.roamAlphaAPI function inventory (live-introspected)
 
 Every callable on `window.roamAlphaAPI`, captured from a running Roam Research session.
-Full TypeScript signatures: /types/roam-alpha-api.d.ts
+Full TypeScript signatures: https://roamdocs.fyi/types/roam-alpha-api.d.ts
 
 - window.roamAlphaAPI.createBlock(…) — 1 arg(s)
 - window.roamAlphaAPI.createPage(…) — 1 arg(s)

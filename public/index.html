@@ -3,25 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roam Research Developer Docs — llms.txt mirror</title>
+<meta name="description" content="Machine-friendly mirror of Roam Research's official developer and help documentation: llms.txt, full markdown exports, and TypeScript definitions for window.roamAlphaAPI.">
+<title>Roam Research Docs — llms.txt mirror (developer + help)</title>
 <style>
   body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
   @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
   code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
   li { margin: .3em 0; }
+  .contrib { border: 1px solid rgba(127,127,127,.35); border-radius: 8px; padding: .8rem 1rem; margin: 1.2rem 0; }
 </style>
 </head>
 <body>
-<h1>Roam Research Developer Docs</h1>
+<h1>Roam Research Docs</h1>
 <p>A machine-friendly mirror of Roam Research's official
-<a href="https://roamresearch.com/#/app/developer-documentation">developer-documentation graph</a>,
+<a href="https://roamresearch.com/#/app/developer-documentation">developer-documentation</a> and
+<a href="https://roamresearch.com/#/app/help">help</a> graphs,
 regenerated on a schedule. Point your AI coding tool here.</p>
 <ul>
-  <li><a href="/llms.txt"><code>llms.txt</code></a> — index of the docs</li>
-  <li><a href="/llms-full.txt"><code>llms-full.txt</code></a> — everything in one file</li>
+  <li><a href="/llms.txt"><code>llms.txt</code></a> — index of everything on this site</li>
+  <li><a href="/llms-full.txt"><code>llms-full.txt</code></a> — all developer docs in one file</li>
+  <li><a href="/help/llms-full.txt"><code>help/llms-full.txt</code></a> — all user documentation in one file</li>
   <li><a href="/types/roam-alpha-api.d.ts"><code>roam-alpha-api.d.ts</code></a> — TypeScript definitions for <code>window.roamAlphaAPI</code> (129 functions, live-introspected)</li>
 </ul>
-<h2>Docs pages</h2>
+<div class="contrib">
+  <strong><a href="https://github.com/sweenzor/roam-docs">Open source on GitHub</a></strong> — contributions welcome!
+  Better type signatures, more examples, rendering fixes, new doc sources: issues and PRs
+  are appreciated at <a href="https://github.com/sweenzor/roam-docs">sweenzor/roam-docs</a>.
+</div>
+<h2>Developer documentation</h2>
 <ul>
   <li><a href="/docs/developer-hub.md">Developer Hub</a></li>
   <li><a href="/docs/roam-alpha-api.md">Roam Alpha API</a></li>
@@ -44,6 +53,128 @@ regenerated on a schedule. Point your AI coding tool here.</p>
   <li><a href="/docs/datalog-block-query.md">datalog-block-query</a></li>
   <li><a href="/docs/release-notes.md">Release notes</a></li>
 </ul>
-<p>Last export: 2026-07-03T15:59:08.478Z · <a href="https://github.com/sweenzor/roam-docs">source</a></p>
+<h2>Help &amp; user documentation</h2>
+<ul>
+  <li><a href="/help/welcome-to-roam.md">Welcome to Roam</a></li>
+  <li><a href="/help/change-log.md">Change Log</a></li>
+  <li><a href="/help/faq.md">FAQ</a></li>
+  <li><a href="/help/white-paper.md">White Paper</a></li>
+  <li><a href="/help/privacy-policy.md">Privacy Policy</a></li>
+  <li><a href="/help/terms-and-conditions.md">Terms and Conditions</a></li>
+  <li><a href="/help/commentarii-roamani.md">Commentarii Roamani</a></li>
+  <li><a href="/help/roam-templates.md">roam/templates</a></li>
+  <li><a href="/help/diagram.md">Diagram</a></li>
+  <li><a href="/help/roam-specific-q-additions.md">Roam-specific :q additions</a></li>
+  <li><a href="/help/themes.md">Themes</a></li>
+  <li><a href="/help/what-you-can-t-say.md">What You Can't Say</a></li>
+  <li><a href="/help/block-references.md">Block References</a></li>
+  <li><a href="/help/formatting.md">Formatting</a></li>
+  <li><a href="/help/navigation.md">Navigation</a></li>
+  <li><a href="/help/beating-the-averages.md">Beating the Averages</a></li>
+  <li><a href="/help/kanban.md">Kanban</a></li>
+  <li><a href="/help/coaching.md">Coaching</a></li>
+  <li><a href="/help/json-schema.md">JSON Schema</a></li>
+  <li><a href="/help/examples-of-q-query-blocks.md">Examples of :q query blocks</a></li>
+  <li><a href="/help/apple-shortcuts-speak-to-roam.md">Apple Shortcuts/Speak to Roam</a></li>
+  <li><a href="/help/block-context-menu.md">Block Context Menu</a></li>
+  <li><a href="/help/features.md">Features</a></li>
+  <li><a href="/help/pipedream-workflows.md">Pipedream Workflows</a></li>
+  <li><a href="/help/todo-done.md">TODO/DONE</a></li>
+  <li><a href="/help/blocks.md">Blocks</a></li>
+  <li><a href="/help/graphs-and-settings.md">Graphs and Settings</a></li>
+  <li><a href="/help/search.md">Search</a></li>
+  <li><a href="/help/why-you-can-t-say.md">Why you can't say</a></li>
+  <li><a href="/help/callouts.md">Callouts</a></li>
+  <li><a href="/help/zapier-integration.md">Zapier Integration</a></li>
+  <li><a href="/help/encrypted-graphs.md">Encrypted Graphs</a></li>
+  <li><a href="/help/mermaid-diagrams.md">Mermaid Diagrams</a></li>
+  <li><a href="/help/right-sidebar.md">Right Sidebar</a></li>
+  <li><a href="/help/commands.md">/ Commands</a></li>
+  <li><a href="/help/security.md">Security</a></li>
+  <li><a href="/help/query.md">Query</a></li>
+  <li><a href="/help/courses.md">Courses</a></li>
+  <li><a href="/help/updating-roam.md">Updating Roam</a></li>
+  <li><a href="/help/create-api-tokens.md">Create API Tokens</a></li>
+  <li><a href="/help/articles.md">Articles</a></li>
+  <li><a href="/help/developer-documentation.md">Developer Documentation</a></li>
+  <li><a href="/help/tag-styles.md">Tag Styles</a></li>
+  <li><a href="/help/task-management.md">Task Management</a></li>
+  <li><a href="/help/roam-render.md">roam/render</a></li>
+  <li><a href="/help/filter.md">Filter</a></li>
+  <li><a href="/help/welcome-to-roam-v2.md">Welcome to Roam v2</a></li>
+  <li><a href="/help/pages.md">Pages</a></li>
+  <li><a href="/help/zettelkasten.md">Zettelkasten</a></li>
+  <li><a href="/help/all-pages.md">All Pages</a></li>
+  <li><a href="/help/graph-overview.md">Graph Overview</a></li>
+  <li><a href="/help/pomodoro-timer.md">Pomodoro timer</a></li>
+  <li><a href="/help/hosted-graph.md">Hosted Graph</a></li>
+  <li><a href="/help/daily-notes.md">Daily Notes</a></li>
+  <li><a href="/help/community.md">Community</a></li>
+  <li><a href="/help/extensions.md">Extensions</a></li>
+  <li><a href="/help/beginner-s-guide.md">Beginner's Guide</a></li>
+  <li><a href="/help/precise-links.md">Precise Links</a></li>
+  <li><a href="/help/templates.md">Templates</a></li>
+  <li><a href="/help/audio-player.md">Audio Player</a></li>
+  <li><a href="/help/roam-help.md">Roam Help</a></li>
+  <li><a href="/help/roam-css.md">roam/css</a></li>
+  <li><a href="/help/notable-graphs.md">Notable Graphs</a></li>
+  <li><a href="/help/miscellaneous.md">Miscellaneous</a></li>
+  <li><a href="/help/calculator.md">Calculator</a></li>
+  <li><a href="/help/personal-crm.md">Personal CRM</a></li>
+  <li><a href="/help/news-and-press.md">News and Press</a></li>
+  <li><a href="/help/table.md">Table</a></li>
+  <li><a href="/help/project-management.md">Project Management</a></li>
+  <li><a href="/help/video-embed.md">Video Embed</a></li>
+  <li><a href="/help/upload-files.md">Upload Files</a></li>
+  <li><a href="/help/workflows.md">Workflows</a></li>
+  <li><a href="/help/install-roam.md">Install Roam</a></li>
+  <li><a href="/help/longform-writing.md">Longform writing</a></li>
+  <li><a href="/help/mentions.md">Mentions</a></li>
+  <li><a href="/help/images.md">Images</a></li>
+  <li><a href="/help/journaling.md">Journaling</a></li>
+  <li><a href="/help/research.md">Research</a></li>
+  <li><a href="/help/export.md">Export</a></li>
+  <li><a href="/help/long-videos.md">Long Videos</a></li>
+  <li><a href="/help/date-picker.md">Date picker</a></li>
+  <li><a href="/help/attributes.md">Attributes</a></li>
+  <li><a href="/help/bidirectional-linking.md">Bidirectional linking</a></li>
+  <li><a href="/help/studying.md">Studying</a></li>
+  <li><a href="/help/meeting-notes.md">Meeting notes</a></li>
+  <li><a href="/help/code-block.md">Code Block</a></li>
+  <li><a href="/help/page-references.md">Page References</a></li>
+  <li><a href="/help/scripture-study.md">Scripture Study</a></li>
+  <li><a href="/help/sharing.md">Sharing</a></li>
+  <li><a href="/help/word-count.md">Word count</a></li>
+  <li><a href="/help/cancelling-your-membership-during-your-free-trial.md">Cancelling your membership during your free trial</a></li>
+  <li><a href="/help/spanish.md">Spanish</a></li>
+  <li><a href="/help/console-logs.md">Console Logs</a></li>
+  <li><a href="/help/block-search.md">Block Search</a></li>
+  <li><a href="/help/roam-depot.md">Roam Depot</a></li>
+  <li><a href="/help/character-count.md">Character count</a></li>
+  <li><a href="/help/why-roam.md">Why Roam?</a></li>
+  <li><a href="/help/chinese.md">Chinese</a></li>
+  <li><a href="/help/current-time.md">Current time</a></li>
+  <li><a href="/help/adding-soft-line-breaks-in-a-block.md">Adding soft line breaks in a block</a></li>
+  <li><a href="/help/import.md">Import</a></li>
+  <li><a href="/help/version-control.md">Version Control</a></li>
+  <li><a href="/help/kids.md">Kids</a></li>
+  <li><a href="/help/left-sidebar.md">Left Sidebar</a></li>
+  <li><a href="/help/wiki.md">Wiki</a></li>
+  <li><a href="/help/today.md">Today</a></li>
+  <li><a href="/help/slider.md">Slider</a></li>
+  <li><a href="/help/russian.md">Russian</a></li>
+  <li><a href="/help/numbered-list-extension.md">Numbered List Extension</a></li>
+  <li><a href="/help/encrypted-block.md">Encrypted Block</a></li>
+  <li><a href="/help/tomorrow.md">Tomorrow</a></li>
+  <li><a href="/help/tags.md">Tags</a></li>
+  <li><a href="/help/alexander-rink.md">Alexander Rink</a></li>
+  <li><a href="/help/korean.md">Korean</a></li>
+  <li><a href="/help/latex.md">Latex</a></li>
+  <li><a href="/help/key-commands.md">Key Commands</a></li>
+  <li><a href="/help/roam-slack.md">Roam Slack</a></li>
+  <li><a href="/help/linked-references.md">Linked References</a></li>
+  <li><a href="/help/release-notes.md">Release notes</a></li>
+</ul>
+<p>Last export: 2026-07-03T15:59:08.478Z · <a href="https://github.com/sweenzor/roam-docs">source on GitHub</a></p>
 </body>
 </html>

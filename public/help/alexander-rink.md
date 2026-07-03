@@ -1,0 +1,6 @@
+# Alexander Rink
+
+- [[Roam Depot Extensions]]
+  - [Roam Studio](https://github.com/rcvd/RoamStudio)
+    - Discover a wide range of themes for Roam Research that are beautiful and highly customizable, with various options and modules to choose from.
+  - [Magic Tags](https://github.com/rcvd/magic-tags)

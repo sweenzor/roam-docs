@@ -1,0 +1,4959 @@
+# Change Log
+
+### [Updating Roam]([[Updating Roam]])
+
+### **New Changes**
+
+- [[July 2nd, 2026]]
+  - [[Quality of Life Improvements]]
+    - Added copy blocks and delete blocks to the single block multi select menu
+    - Added saving code block folds
+  - [[Bug Fixes]]
+    - Fixed export page to respect filters
+    - Fixed copy to respect filters
+- [[June 30th, 2026]]
+  - [[Roam Depot Extensions]]
+    - **Roam Alias Finder**
+      - Find the places you __meant__ to link but never did. Alias Finder scans your graph for plain‑text mentions of a page's existing aliases and lets you turn each one into a proper link with a single click. No alias list to maintain, no setup.
+      - ![Alias Finder grouping unlinked alias mentions below a page's references, each with a one-click Link button](https://raw.githubusercontent.com/wireframe/roam-alias-finder/main/screenshots/screenshot.png)[🔗](https://raw.githubusercontent.com/wireframe/roam-alias-finder/main/screenshots/screenshot.png)
+      - **Why**
+        - Roam aliases let you write `[slip-box]([[Zettelkasten]])` so natural prose still links to the right page. But once you've used an alias a few times, older notes are full of the same words sitting as plain text, invisible to backlinks. Finding and fixing them by hand is tedious.
+        - Alias Finder learns the aliases you already use for a page and surfaces every unlinked mention across the graph, so you can wire them up in seconds.
+      - **What it does**
+        - A Find unlinked aliases button appears at the bottom of every real page, right below Roam's Unlinked References section. It only shows on real pages — never on daily notes.
+        - Click it and Alias Finder:
+          - Reads the page's existing aliases — every `[text]([[ThisPage]])` already in your graph — and uses that text as the search terms. Nothing to configure.
+          - Scans the whole graph for unlinked, plain‑text occurrences of those terms.
+          - Groups the results by alias under collapsible, alphabetically‑sorted headers with a match count, and highlights the matched text in each block.
+          - Lets you link any match with one click — it wraps the text as `[text]([[ThisPage]])`, preserving your original casing, and removes the row.
+        - **Match rules**
+          - Matching is deliberately careful, because it writes to your graph:
+            - Whole words only — `OKRS` never matches inside `weorks`.
+            - Case‑insensitive — `Zettel` and `zettel` both match the alias `zettel`; your original casing is kept when linking.
+            - Skips text that's already linked — occurrences inside `[[page links]]`, `((block refs))`, `#tags`, and existing `[alias]([[page]])` links are ignored.
+            - Skips URLs — matches inside `http(s)://…` and `www.…` are ignored.
+            - Skips noise — single‑character aliases (`*`) and footnote‑style numbers (`1`, `2`, …) are never used as search terms.
+- [[June 13th, 2026]]
+  - [[Roam Depot Extensions]]
+    - **🎧 Audio Feedback — Roam Research Extension**
+      - Adds subtle, synthesized audio cues to your Roam workflow. Every block action — checking a TODO, collapsing a branch, navigating to a new page — gets a sound that confirms the action without interrupting your flow.
+      - > 🚀 Zero Dependencies: Built entirely on the native browser Web Audio API. No external libraries, no bloated bundles. Sounds are generated mathematically on the fly.
+      - **Demo**
+      - **Themes**
+        - Select your theme in Settings → Extensions → Audio Feedback → Sound Theme.
+        - {{[[table]]}}
+          - Theme
+            - Character
+          - 🌿 Zen
+            - Soft sine tones that dissolve as quickly as they appear. Designed to confirm without interrupting.
+          - 👾 Retro
+            - Square-wave pulses with Game Boy-era frequencies. Every action lands with a satisfying, deliberate click.
+          - 💫 Halo
+            - Layered FM bells with a floating upper harmonic.
+          - 🎛 Custom
+            - Your sounds, your rules. Upload any audio file to your Roam graph and paste the Firebase URL to replace any event sound.
+      - **Events**
+        - {{[[table]]}}
+          - Event
+            - Trigger
+          - TODO Done
+            - Checking a TODO checkbox → DONE
+          - Collapse
+            - Collapsing a block that has children
+          - Expand
+            - Expanding a block that has children
+          - Indent
+            - Indenting a block (Tab)
+          - Outdent
+            - Outdenting a block (Shift+Tab)
+          - Navigate
+            - Zooming into a block or changing page
+          - Sidebar Open
+            - Opening a new item in the right sidebar
+      - **Settings Reference**
+        - {{[[table]]}}
+          - Setting
+            - Description
+              - Default
+          - Enable Audio Feedback
+            - Master on/off switch
+              - On
+          - Master Volume
+            - 0.0 to 1.0
+              - 0.4
+          - Sound Theme
+            - Zen · Retro · Halo · Custom
+              - Zen
+          - TODO Sounds
+            - Toggle checkbox event sounds
+              - On
+          - Navigation Sounds
+            - Toggle zoom and sidebar sounds
+              - On
+          - Hierarchy Sounds
+            - Toggle collapse, expand, indent, outdent sounds
+              - On
+      - **Command Palette**
+        - Three commands are available via `Cmd+P` (or `Ctrl+P`):
+          - Audio Feedback: Toggle On/Off — master switch without opening settings
+          - Audio Feedback: Volume Up — increases master volume by 0.1
+          - Audio Feedback: Volume Down — decreases master volume by 0.1
+          - Audio Feedback: Next Theme — cycles Zen → Retro → Halo → Zen (Custom is excluded from cycling; select it manually in settings)
+      - **Custom Sounds**
+        - Custom theme lets you replace any event sound with your own audio file.
+        - **How to upload a sound to your Roam graph**
+          - Open any page in Roam
+          - Type `/Upload file` and select your `.wav` or `.mp3`
+          - Once uploaded, right-click the file attachment → Copy link
+          - The URL will look like: `https://firebasestorage.googleapis.com/...`
+          - Paste that full URL into the corresponding field in Settings → Audio Feedback → CUSTOM SOUND URLs
+          - Switch theme to Custom
+        - **Notes on Custom playback**
+          - First play has a brief load delay — the extension fetches and decodes the audio file on first use. Every subsequent play of the same URL is instantaneous (the buffer is cached for the session).
+          - Blank URL = silence — if a URL field is empty, that event produces no sound. This is intentional. You can mix custom sounds for some events and silence for others.
+          - URL must include the `?alt=media&token=...` suffix — without it, Firebase returns a redirect rather than the raw audio file and playback will fail silently.
+          - Test URL (courtesy of Adam Krivka): `https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2FMyelin%2F-J1q4HZsEl.wav?alt=media&token=34ab3de0-1b43-4361-8c7e-141c1925011b`
+      - **Physics Bridge**
+        - All three synthesized themes (Zen, Retro, Halo) are aware of your block's position in the hierarchy. Sounds shift subtly based on:
+          - Depth — how many levels deep the block is nested. Deeper blocks produce slightly higher pitched, shorter sounds.
+          - Mass — how many children the block has. Heavier blocks produce slightly lower pitched, longer sounds.
+        - This means the same action sounds meaningfully different depending on where it occurs in your outline — without ever being distracting.
+- [[June 11th, 2026]]
+  - [[Bug Fixes]]
+    - Fixed a bug where desktop links for offline and hosted graphs with the same name would not open a new window if the other was open, as in `roam://#/app/graph` and `roam://#/offline/graph`
+  - Added a new section to our privacy policy to be in compliance for our soon to be released remote MCP
+- [[June 10th, 2026]]
+  - [[Bug Fixes]]
+    - Fixed search result highlighting to prioritize matching full phrases and to handle accented characters 
+- [[June 9th, 2026]]
+  - [[Bug Fixes]]
+    - Fixed large pastes and deletes causing thousands of unsynced changes
+      - Pasting tons attributes can still cause this but that will be fixed soon as well
+- [[June 2nd, 2026]]
+  - [[Roam Depot Extensions]]
+    - **Oura Ring to Roam**
+      - Roam Depot extension that syncs Oura Ring data into a Roam graph as editable, queryable blocks with compact visual summaries.
+      - **What It Does**
+        - Syncs Sleep, Readiness, Activity, Vitals, My Health, Workouts, and Tags from the Oura API.
+        - Stores canonical history under a configurable `[[Oura Ring]]` page, one Roam day root per Oura day.
+        - Adds existing Daily Notes embeds for each day's `Daily summary` block without creating missing Daily Notes.
+        - Renders disposable visual components over Roam source blocks: daily sleep-first cards, hypnograms, contributor bars, HR/HRV trends, activity load, temperature, oxygen, stress, and weekly review.
+        - Keeps headline metrics queryable as Roam attributes such as `Sleep Score::`, `In bed at::`, `Out of bed at::`, `Readiness Score::`, `Activity Score::`, `HRV::`, `Resting HR::`, and `Steps::`.
+      - **Setup**
+        - Generate an Oura Personal Access Token at https://cloud.ouraring.com/personal-access-tokens.
+        - In Roam, open Roam Depot -> Extension Settings -> Oura Ring.
+        - Paste the token and choose your sync/backfill settings.
+        - Run Oura: Sync now from the command palette.
+        - The token is stored in Roam's extension settings for this graph. It is sent only to Oura through Roam's native CORS proxy when syncing.
+      - **Commands**
+        - Oura: Sync now fetches the configured window and reconciles the Oura page.
+        - Oura: Open Oura page opens the canonical store page.
+        - Slash commands: `/oura today`, `/oura yesterday`, `/oura sleep`, and `/oura callout`.
+- [[June 1st, 2026]]
+  - [[Bug Fixes]] #PDF
+    - Fixed merging PDF pages into other non PDF pages
+    - Fixed displaying annotations on rotated PDFs
+    - Fixed double clicking to select a word, or triple clicking to select an entire line for most PDFs, although some may still have trouble
+- [[May 28th, 2026]]
+  - Add back the nav bar find or create, with some of the UI improvements from the modal redesign
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FxCeKIxA4sd.png?alt=media&token=e1fa5076-a8c9-440a-9bff-717bb080b783)
+    - The modal can still be triggered via the button to open advanced search on the right, or `ctrl-o` to open the preview
+      - Or you can set a custom hotkey for "Open advanced search" and override the default cmd-u which focuses the navbar search.
+- [[May 21st, 2026]]
+  - [[Quality of Life Improvements]]
+    - Redesigned the find or create [[Search]] (`cmd/ctrl-u`)
+      - Page results now show reference counts
+      - Block results now include paths, improved truncation, and clearer match highlighting
+      - Added a preview window that can be toggled with `ctrl-o`
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FcDSpdGkLLo.gif?alt=media&token=a86d177f-341c-4f81-8dfb-cd43e3cd979c)
+- [[May 15th, 2026]]
+  - [[Quality of Life Improvements]]
+    - Inline page search `[[]]` now sorts the exact match to the top
+      - Makes a difference when you have two pages with the same case
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FNYA0VeVtyF.png?alt=media&token=27f0fb60-99cd-4898-a625-4fababcf2b7f)
+    - Inline block search `(())` can now search for UIDs if it's an exact match `((yPgg9DUbF))`
+  - [[Bug Fixes]]
+    - Fix paste from chatGPT adding extra newlines in bulleted lists
+- [[May 5th, 2026]]
+  - [[Quality of Life Improvements]]
+    - Added a sort option for `{{table}}`
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FYS5YpnZLN1.png?alt=media&token=e573ac8b-1b54-4a39-9f2f-1f9bd4469d60)
+    - Improved drag-and-drop behavior: when dragging an item near the edge of a scrollable container, Roam now automatically scrolls the container so you can continue moving the item without interruption.
+  - [[Roam Depot Extensions]]
+    - **History of Today**
+      - A lightweight Roam Research extension that adds "On this day" buttons at the bottom of the calendar popover. Click a year button to instantly jump to that year's daily notes page.
+      - ![Screenshot of the extension in action](https://raw.githubusercontent.com/laixintao/roam-research-history-of-today/main/pics/history-of-today.png)[🔗](https://raw.githubusercontent.com/laixintao/roam-research-history-of-today/main/pics/history-of-today.png)
+      - **Features**
+        - Shows up to 5 previous years at the bottom of the calendar
+        - Only displays years that already have a daily notes page — no clutter from empty years
+        - Buttons show the 2-digit year (e.g. `'25`, `'24`) with a full date tooltip on hover
+        - Automatically re-injects when the calendar popover is opened
+- [[May 4th, 2026]]
+  - [[Roam Depot Extensions]]
+    - **Roam Meta Type**
+      - Typed pages for Roam Research. Add a `Type::` attribute to a page and a chip appears next to the title; click it to open a sidebar panel with the fields you care about for that type.
+      - **Encouraging Structure for Your Second Brain**
+        - Roam's freedom as an outline is the whole point. But the people, projects, books, and articles I keep coming back to all have __some__ structure: an email, a status, a due date, an author. Today that structure is invisible — you have to read the page to learn what kind of thing it is, and scan the outline to find the fields that matter.
+        - `roam-meta-type` keeps the outline. It just makes the structure visible.
+      - **What it does**
+        - Unobtrusive pill-shaped chip page identification based on supported `Type::` attribute. Multi-typed pages (`Type:: #Project #Blog`) get one chip per type.
+        - Click a chip → a panel mounts at the top of Roam's right sidebar with that type's pinned fields, rendered as label/value rows. ![Sidebar panel for a Project](https://github.com/wireframe/roam-meta-type/raw/main/screenshots/panel-project.png)[🔗](https://github.com/wireframe/roam-meta-type/blob/main/screenshots/panel-project.png)
+        - Sidepanel is an integrated inline-editor. Click any row → it flips to inline edit mode using Roam's own block editor (autocomplete, page-refs, formatting — all of it). Click any value to flip the row into Roam's block editor. Empty rows render as `—`. Click and the plugin creates the missing block (e.g. `Status:: `) before flipping into edit mode. ![Inline editing a row](https://github.com/wireframe/roam-meta-type/raw/main/screenshots/inline-edit.png)[🔗](https://github.com/wireframe/roam-meta-type/blob/main/screenshots/inline-edit.png)
+        - Sidepanel reactively refreshes to updates live: edit `Priority::` directly in the page body, the panel updates without a re-render.
+        - Configurable types, fields, and accent colors via the Roam settings panel (no source edits required).
+      - **Configuring types**
+        - The extension ships with no default types. Open Settings → Meta Type to add your first one.
+        - The settings tab shows a vertical stack of cards, one per configured type. Each card has:
+          - Name — the type name. Must match the page-ref in `Type::` blocks (e.g., `Project`).
+          - Hue and Saturation — HSL components for the chip's accent color (hue 0–360, saturation 0–100; lightness is computed). A small swatch preview updates as you type.
+          - Fields — comma-separated list of field names (e.g., `Status, Priority, Due, Topics`). Each becomes a row in the sidebar panel.
+          - A trash button on the right to remove the card.
+        - Below the cards are Add type (appends a blank card) and Save. Click Save to persist; the extension closes any open panels and re-renders chips with the new config.
+        - Two settings are not exposed in the UI and remain at their defaults:
+          - `typePrefix` — the block prefix used to detect typed pages (default `Type::`).
+          - `flashColor` — the RGB highlight color for the click-flash animation (default `{ r: 16, g: 107, b: 163 }`).
+        - These are stored in the same JSON value as the types and preserved on every save. Power users who need to change them can edit the underlying setting key directly via Roam's developer tools (key: `types-config` under this extension's settings).
+        - If the stored JSON is missing or malformed (e.g., from a manual edit gone wrong), the extension falls back to the empty defaults and logs a warning to the browser console.
+      - **How a page gets typed**
+        - Add a `Type::` attribute as a top-level block on the page, with one or more `#TypeName` references:
+        - ```plain text
+          - Type:: #Project
+          - Status:: Doing
+          - Priority:: P1
+          - Due:: [[April 30th, 2026]]
+          - Topics:: [[Roam]] [[Productivity]]```
+        - The plugin reads `Type::`, looks each reference up in the configured types, and renders one chip per known type. Unknown types are silently skipped — no chip, no error.
+- [[May 1st, 2026]]
+  - New version of the **Roam [[Raycast]] extension** is out!
+    -  {{[[video]]: https://www.loom.com/share/998c8bce7ebd4827b3c9e8aec1278621}}
+    - Do watch the video to understand, but main improvements:
+      - Better Quick Capture
+        - you can have templates for capture now and also have a very quick way of capture that I’m calling “instant capture”
+        - Uses the Append API so you can have “capture groups” inside of pages and can also capture to encrypted graphs
+        - Better UI IMO where you enter the capture text first and only then select where you want to send it
+      - Windows support (raycast now supports windows)
+      - Better text and error messages across the extension
+    - Since this version is the first one that adds windows support, would particularly appreciate if Windows users put it through the paces and let us know of any bugs or issues
+- [[April 27th, 2026]]
+  - [[Roam Depot Extensions]]
+    - **Roam Toolkit Vim Mode**
+      - Standalone Vim-like navigation and editing for Roam Research, extracted from the original Roam Toolkit browser extension.
+      - ![Roam Toolkit Vim Mode demo](https://raw.githubusercontent.com/Stvad/roam-vim-navigation/master/media/vim_demo.gif)[🔗](https://raw.githubusercontent.com/Stvad/roam-vim-navigation/master/media/vim_demo.gif)
+      - This README summarizes the current functionality, but the authoritative up-to-date shortcut list is in Roam under `Settings -> Extensions -> Roam Toolkit Vim Mode`, where every binding is editable.
+      - **Current Functionality**
+        - Normal, insert, and visual-mode style workflows for Roam blocks
+        - Vim-like navigation within the current panel and across sidebars
+        - Selection, clipboard, block movement, history, hinting, and Roam-specific editing helpers
+        - Normal-mode `Tab` / `Shift+Tab` shortcuts for Roam-style indenting and outdenting
+      - **Default Keybindings**
+        - Default layout preset is `qwerty`. The Roam settings panel remains the authoritative live list, because every shortcut can be remapped there.
+        - If you switch `Keyboard Layout` to `colemak`, these defaults change:
+        - {{[[table]]}}
+          - Action
+            - QWERTY
+              - Colemak
+          - Select Block Up
+            - `k`
+              - `h`
+          - Select Block Down
+            - `j`
+              - `k`
+          - Select Panel Left
+            - `h`
+              - `j`
+          - Move Block Up
+            - `Cmd+Shift+K`
+              - `Cmd+Shift+H`
+          - Move Block Down
+            - `Cmd+Shift+J`
+              - `Cmd+Shift+K`
+          - Increment Date (layout up key)
+            - `Ctrl+Alt+K`
+              - `Ctrl+Alt+H`
+          - Decrement Date (layout down key)
+            - `Ctrl+Alt+J`
+              - `Ctrl+Alt+K`
+          - Increment Date by a week (layout up key)
+            - `Ctrl+Shift+K`
+              - `Ctrl+Shift+H`
+          - Decrement Date by a week (layout down key)
+            - `Ctrl+Shift+J`
+              - `Ctrl+Shift+K`
+        - Page-hint labels also switch to a Colemak-friendly alphabet when that layout preset is selected.
+        - **Navigation and Panels**
+          - {{[[table]]}}
+            - Mode
+              - Keys
+                - Action
+            - Normal + Visual
+              - `k`
+                - Select block up
+            - Normal + Visual
+              - `j`
+                - Select block down
+            - Normal
+              - `Shift+H`
+                - Select first visible block
+            - Normal
+              - `Shift+L`
+                - Select last visible block
+            - Normal
+              - `g g`
+                - Select first block
+            - Normal
+              - `Shift+G`
+                - Select last block
+            - Normal
+              - `Ctrl+U`
+                - Jump up by several blocks
+            - Normal
+              - `Ctrl+D`
+                - Jump down by several blocks
+            - Normal + Visual
+              - `Ctrl+Y`
+                - Scroll up while keeping selection visible
+            - Normal + Visual
+              - `Ctrl+E`
+                - Scroll down while keeping selection visible
+            - Normal + Insert
+              - `Alt+Z`
+                - Expand last reference breadcrumb
+            - Normal
+              - `Shift+Z`
+                - Collapse the current page view inside references or query results
+            - Normal
+              - `1`
+                - Open parent page
+            - Normal
+              - `Shift+1`
+                - Open parent page in sidebar
+            - Normal
+              - `2`
+                - Open mentions
+            - Normal
+              - `Shift+2`
+                - Open mentions in sidebar
+            - Normal
+              - `z`
+                - Toggle fold block
+            - Normal
+              - `Ctrl+Shift+Z`
+                - Collapse into parent block
+            - Normal
+              - `h`
+                - Select panel left
+            - Normal
+              - `l`
+                - Select panel right
+            - All
+              - `Ctrl+W`
+                - Close current sidebar page
+        - **Editing, Selection, and Clipboard**
+          - {{[[table]]}}
+            - Mode
+              - Keys
+                - Action
+            - All
+              - `Escape`
+                - Return to normal mode
+            - Normal
+              - `i`
+                - Edit selected block at start of line
+            - Normal
+              - `a`
+                - Edit selected block at end of line
+            - Normal
+              - `Shift+A`
+                - Edit selected block at end of line
+            - Normal
+              - `Shift+O`
+                - Insert block before current block
+            - Normal
+              - `o`
+                - Insert block after current block
+            - Normal
+              - `Tab`
+                - Indent current block under the previous sibling
+            - Normal
+              - `Shift+Tab`
+                - Outdent current block to the parent level
+            - Normal
+              - `v`
+                - Enter visual mode
+            - Normal + Visual
+              - `Shift+K`
+                - Grow selection upward
+            - Normal + Visual
+              - `Shift+J`
+                - Grow selection downward
+            - Normal
+              - `p`
+                - Paste below current block
+            - Normal
+              - `Shift+P`
+                - Paste before current block
+            - Normal + Visual
+              - `y`
+                - Copy selected block or selection
+            - Normal + Visual
+              - `Alt+Y`
+                - Copy block reference
+            - Normal + Visual
+              - `Shift+Y`
+                - Copy block embed
+            - Normal + Visual
+              - `d`
+                - Enter visual mode, or cut current visual selection
+            - Normal + Insert
+              - `Cmd+Shift+K`
+                - Move current block up
+            - Normal + Insert
+              - `Cmd+Shift+J`
+                - Move current block down
+            - Normal
+              - `u`
+                - Undo
+            - Normal
+              - `Ctrl+R`
+                - Redo
+        - **Hints**
+          - {{[[table]]}}
+            - Mode
+              - Keys
+                - Action
+            - Normal
+              - `q`, `w`, `e`, `r`, `t`, `f`, `b`
+                - Click inline hint targets `0` through `6` inside the selected block
+            - Normal
+              - `Shift+q`, `Shift+w`, `Shift+e`, `Shift+r`, `Shift+t`, `Shift+f`, `Shift+b`
+                - Shift-click inline hint targets `0` through `6`
+            - Normal
+              - `Ctrl+Shift+q`, `Ctrl+Shift+w`, `Ctrl+Shift+e`, `Ctrl+Shift+r`, `Ctrl+Shift+t`, `Ctrl+Shift+f`, `Ctrl+Shift+b`
+                - Modifier-click inline hint targets `0` through `6`
+            - Normal
+              - `s`
+                - Start page-wide hint mode for visible blocks only
+            - Normal
+              - `Shift+S`
+                - Start page-wide hint mode for visible blocks and links
+            - Normal
+              - `g l`
+                - Start page-wide hint mode for visible links only
+            - Normal
+              - `Shift+I`
+                - Start page-wide hint mode for visible blocks and enter insert mode
+        - **Roam-Specific Helpers**
+          - {{[[table]]}}
+            - Mode
+              - Keys
+                - Action
+            - Normal
+              - `Cmd+Enter`
+                - Toggle `TODO` / `DONE`
+            - Normal
+              - `Ctrl+Shift+1`
+                - Reschedule current SRS note as `AGAIN`
+            - Normal
+              - `Ctrl+Shift+2`
+                - Reschedule current SRS note as `HARD`
+            - Normal
+              - `Ctrl+Shift+3`
+                - Reschedule current SRS note as `GOOD`
+            - Normal
+              - `Ctrl+Shift+4`
+                - Reschedule current SRS note as `EASY`
+            - Normal
+              - `Ctrl+Alt+Up`
+                - Increment the only date reference in the block by one day
+            - Normal
+              - `Ctrl+Alt+Down`
+                - Decrement the only date reference in the block by one day
+            - Normal
+              - `Ctrl+Alt+K`
+                - Increment the only date reference in the block by one day using the layout up key
+            - Normal
+              - `Ctrl+Alt+J`
+                - Decrement the only date reference in the block by one day using the layout down key
+            - Normal
+              - `Ctrl+Shift+Up`
+                - Increment the only date reference in the block by one week
+            - Normal
+              - `Ctrl+Shift+Down`
+                - Decrement the only date reference in the block by one week
+            - Normal
+              - `Ctrl+Shift+K`
+                - Increment the only date reference in the block by one week using the layout up key
+            - Normal
+              - `Ctrl+Shift+J`
+                - Decrement the only date reference in the block by one week using the layout down key
+      - **Settings Model**
+        - `Keyboard Layout` switches layout-sensitive defaults between `qwerty` and `colemak`
+        - layout-sensitive bindings update from that preset, and page-hint labels follow the selected alphabet
+        - if the browser exposes keyboard layout change events, the plugin re-registers hotkeys automatically when the system layout changes
+        - shortcuts are grouped by mode in the Roam settings panel, and each binding can be customized there
+        - `Reset Shortcuts` restores the default keymap for the selected layout
+      - **Attribution**
+        - Most of the original Vim functionality in Roam Toolkit was developed by Dave Lu (@tntmarket on GitHub).
+- [[April 17th, 2026]]
+  - [[mobile]]
+    - Added font size control
+    - Native view now follows settings from the web app for page brackets and namespaces
+    - Fix native view search keyboard not enabling swipe with Gboard
+    - Tables show heading cols/rows and respect column sizing from `/table` Improvements
+- [[April 15th, 2026]]
+  - [[Quality of Life Improvements]]
+    - `/table` Improvements
+      - [[table]] is now interactive!
+      - You can click into cells, edit content, copy and paste, and move blocks around inside a table.
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FW2QvreU_jY.gif?alt=media&token=165ca591-a825-4762-b95f-65abb8532c12)
+- [[April 14th, 2026]]
+  - [[Roam Depot Extensions]]
+    - **꩜ Nautilus Enhanced**
+      - [English](https://github.com/hopeserena/nautilus-enhanced/tree/main#english) | [中文](https://github.com/hopeserena/nautilus-enhanced/tree/main#%E4%B8%AD%E6%96%87)
+      - **English**
+        - Nautilus Enhanced is an optimized, high-performance daily planner extension for Roam Research, inspired by the original Nautilus created by Tomas Barys.
+        - **Acknowledgements**
+          - This project is an enhanced fork of the original [roam-depot-nautilus](https://github.com/tombarys/roam-depot-nautilus) repository. A huge thank you to the original author, Tomas Barys, for his brilliant concept of using a spiral timeline to visualize energy and tasks throughout the day! This __Enhanced__ version introduces deep performance optimizations (eliminating memory leaks), fully localized bilingual Settings, Bezier curve typography connectors, and visual UI/UX spacing fixes.
+        - **Quick Start Guide**
+          - One-time Setup:
+            - Install Nautilus Enhanced.
+            - (Optional but Recommended) Install [Todo Trigger](https://github.com/dvargas92495/roamjs-todo-trigger) from Roam Depot to automatically append timestamps to completed tasks.
+            - Configure your preferences (workday start time, colors, lengths) in the Settings panel.
+          - Daily Routine:
+            - Type `;;` and select `Nautilus Enhanced` to insert the spiral component into today's Daily Note.
+            - Indent your tasks and meetings strictly underneath the component block.
+            - Events (Fixed time): Add a time range anywhere in the text (e.g., `12:30-14:00 Lunch`).
+            - Tasks (Flexible): Write your regular to-dos (e.g., `Read a book 30m`). If no time is set, they fall into the default setup.
+            - Watch the red pointer act as your dynamic clock, pushing unfinished, un-timed tasks forward into the future as the day goes on!
+      - **中文 (Chinese)**
+        - Nautilus Enhanced（鹦鹉螺行程图增强版） 是为 Roam Research 专门优化的每日行程与精力可视化插件。
+        - **致谢与鸣谢**
+          - 本项目基于 Tomas Barys 开发的原生开源项目 [roam-depot-nautilus](https://github.com/tombarys/roam-depot-nautilus) 进行了深度重构与增强。非常感谢原作者卓越的设计理念（使用螺旋形状映射人在一天中不断衰减的精力曲线）。本“增强版”解决了原版的由于计时器导致的严重内存泄露问题，重新设计了具备原生中英双语的设置面板，优化了连接线的贝塞尔曲线动画以及汉字的精准排版，让它真正成为了一个高可用、高颜值的生产力工具。
+        - **极简使用教程**
+          - 首次配置（只需做一次）：
+            - 安装本插件。
+            - （建议配合使用）在 Roam 商店中安装 [Todo Trigger](https://github.com/dvargas92495/roamjs-todo-trigger) 插件，以实现当你勾选 TODO 为 DONE 时，系统能自动在句尾打上完成时间戳。
+            - 在插件设置页中，按你的习惯配置“工作开始时间”、“高亮触发词”、“默认时长”等内容。
+          - 日常使用工作流：
+            - 每天在你的 Daily Note（每日笔记） 页面通过输入 `;;` 唤出模板菜单，选择 `Nautilus Enhanced` 组件。
+            - 在渲染出的组件下方缩进一级作为子块（Children Block），把你今天想做的事情全部列出来。
+            - 固定日程：在你记录的事项文字任何一处输入时间段（如：`12:30-14:00 午餐会议`），它就会被固定分配在表盘特定时段上。
+            - 弹性待办：直接记录没有写绝对时间的待办事项（如：`回复邮件 30m`，默认占据时长在设置里可调）。
+            - 动态推移：随着现实时间流逝，图表上的红色实时指针会无情地前进；所有没打勾的弹性待办事项，总是会被红针自动“推”到未来的空白时间段中。
+          - 享受免焦虑时间管理的乐趣吧！
+- [[April 10th, 2026]]
+  - Add quarter-aware **Custom symbols** for use with `:q` 
+    - Examples are `dnp/this-quarter-start`, `ms/this-quarter-start`, `ms/+1Q-start`, `ms/+1Q-end`, `ms/this-quarter-end`, `ms/last-quarter-start`
+  - [Datalog block query](https://roamresearch.com/#/app/developer-documentation/page/CDPYVl-PE) now supports [our custom symbols and rules]([[Roam-specific :q additions]]) too
+  - fix small bugs re blocks selection in linked refs
+- [[March 31st, 2026]]
+  - [[Quality of Life Improvements]] ✨ for `:q`
+    - Context
+      - `:q` feature has existed since very early Roam, but we revamped it last year
+        - Teaser into the revamped `:q`
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FCDgZUSitGM.gif?alt=media&token=a36140c6-3719-460d-ace1-13d2f06e9aee)
+    - The new stuff:
+      - `current/main-window-*` constants — 5 new symbols to reference the page/block focused in the main window
+        - New constants available for use in :q 
+          - `current/main-window-page-title` **NEW ✨**
+          - `current/main-window-page-uid` **NEW ✨**
+          - `current/main-window-page-id` **NEW ✨**
+          - `current/main-window-block-uid` **NEW ✨**
+          - `current/main-window-block-id` **NEW ✨**
+        - Example 
+          - One random old reference of the currently open page
+            - I manually clicked on ... then 
+              set sorting to be random
+              set rows per column to a 1
+            - To test it out, open the query below on the sidebar (shift click) and then go to a page with a lot of references like [[video]]
+            - :q "One random old reference to open page" 
+              [:find ?uid ?t 
+              :where 
+              (refs-page current/main-window-page-title ?b) 
+              [?b :create/time ?t]
+              [?b :block/uid ?uid]
+              [(< ?t ms/-365D-start)]]
+        - :q "Page UID" [:find ?uid . :where [?page :node/title current/main-window-page-title] [?page :block/uid ?uid]]
+      - Add `in-dnp-between`, `refs-dnp-between`, `in-or-refs-dnp-between` rules to `:q`
+        - Rules we supported before:
+          - Some new useful inbuilt `rules` to ease writing queries
+        - **New rules we added now:**
+          - `(in-dnp-between ?start-dnp ?end-dnp ?b)` **NEW ✨**
+          - `(refs-dnp-between ?start-dnp ?end-dnp ?b)` **NEW ✨**
+          - `(in-or-refs-dnp-between ?start-dnp ?end-dnp ?b)` **NEW ✨**
+          - also adds convenience rules for single DNP variants
+            - `(in-dnp ?dnp ?b)` **NEW ✨**
+            - `(refs-dnp ?dnp ?b)` **NEW ✨**
+            - `(in-or-refs-dnp ?dnp ?b)` **NEW ✨**
+            - you could already do this, this just makes it simpler/more discoverable
+          - The `?start-dnp` `?end-dnp` and `?dnp` params accept dnp page titles or `dnp/*` style symbols (since they resolve to DNP page titles)
+            - Reference for these symbols:
+              - `dnp`
+                - **Usage notes:** These resolve to page title (i.e. `:node/title`) for the relevant daily note page
+                - `dnp/today`
+                - `dnp/yesterday`
+                - `dnp/tomorrow`
+                - `dnp/-1D`
+                - `dnp/+1D`
+                - `dnp/this-week-start`
+                - `dnp/this-week-end`
+                - `dnp/this-month-start`
+                - `dnp/this-quarter-start`
+                - `dnp/this-year-end`
+                - `dnp/=2025-01-01`
+                  - resolves to "January 1st, 2025"
+        - Examples of queries our new `in-dnp-between`, `refs-dnp-between`, `in-or-refs-dnp-between` enable [[Examples of :q query blocks]]
+          - (this roam graph does not have much content in daily note pages, so below queries will probably be empty, please copy and test in your own graphs)
+          - DNP blocks this month with create time
+            - `(in-dnp-between dnp/this-month-start dnp/this-month-end ?b)`
+              - :q "DNP blocks this month with create time"
+                [:find ?b ?t
+                 :where
+                 (in-dnp-between dnp/this-month-start dnp/this-month-end ?b)
+                 [?b :create/time ?t]]
+          - TODOs from last week's daily notes or reffing those DNPs
+            - `(in-or-refs-dnp-between dnp/last-week-start dnp/last-week-end ?b)`
+              - :q "TODOs from last week's daily notes or reffing those DNPs"
+                [:find ?b
+                 :where
+                 (in-or-refs-dnp-between dnp/last-week-start dnp/last-week-end ?b)
+                 (refs-page "TODO" ?b)]
+          - Blocks referencing this week, written by particular user "Baibhav Bista"
+            - `(refs-dnp-between dnp/this-week-start dnp/this-week-end ?b)`
+              - :q "Blocks referencing this week, written by Baibhav"
+                [:find ?b
+                 :where
+                 (refs-dnp-between dnp/this-week-start dnp/this-week-end ?b)
+                 (created-by "Baibhav Bista" ?b)
+                 [?b :create/time ?t]]
+          - Blocks referencing this week, written by particular user "Baibhav Bista" (also filter out blocks already in those DNPs)
+            - `(refs-dnp-between dnp/this-week-start dnp/this-week-end ?b)
+              (not (in-dnp-between dnp/this-week-start dnp/this-week-end ?b))`
+              - :q "Blocks referencing this week, written by Baibhav"
+                [:find ?b
+                 :where
+                 (refs-dnp-between dnp/this-week-start dnp/this-week-end ?b)
+                 (not (in-dnp-between dnp/this-week-start dnp/this-week-end ?b))
+                 (created-by "Baibhav Bista" ?b)
+                 [?b :create/time ?t]]
+      - Expose the custom :q symbols and rules to [roamAlphaAPI.data.q](https://roamresearch.com/#/app/developer-documentation/page/SI3FNt3EQ)
+        - so now extension developers can just use custom symbols like `ms/next-week-start`  or rules like `(in-or-refs-dnp-between ?start-dnp ?end-dnp ?b)`, as well as everything else in [[Roam-specific :q additions]]
+      - Change to how  `ms/*` and `dnp/*` symbols are resolved when in daily note pages
+        - Now it works similarly to how `{between: [[today]] [[tomorrow]]}` in `{{query: ....}}` works
+        - that is, when the `:q` query is on a daily note page, `ms/today-start` (for example) resolves to the start of day for the day corresponding to that daily note page.
+          - wheras, for `:q` queries in any other (non-DNP) page, `ms/today-start` corresponds to the actual today
+        - this change is for all the relative ms/* and dnp/* special symbols
+        - When this happens, one can see an info button with details
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FTUAT9AXtNY.png?alt=media&token=b461f6d5-1c81-4beb-baed-3990a1abf410)
+    - In video form:
+      - {{[[video]]: https://www.loom.com/share/f62d4893563143ae84cdae3640af6eb8}}
+    - New and Revamped resources to learn about `:q`
+      - [[Roam-specific :q additions]]
+      - [[Examples of :q query blocks]]
+- [[March 30th, 2026]]
+  - [[Bug Fixes]]
+    - Fixed export page failing on blocks that only contain a newline
+    - Fixed [[All Pages]] delete page skips user pages instead of failing
+- [[March 24th, 2026]]
+  - [[Quality of Life Improvements]]
+    - Inline autocomplete [[Search]]
+      - Inline autocomplete now shows a live preview of pages and blocks. 
+        - Toggle it with `Ctrl-O`
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F9NeqRPqlRY.gif?alt=media&token=8f822705-785c-415a-88b1-551a73928a0a)
+      - Search results highlight matching terms and truncate long blocks to keep results scannable
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FbOegvHYIPK.png?alt=media&token=4c144530-be49-4ffc-bc9f-47ccf2b3db3d)
+      - Reference counts are shown next to pages in autocomplete so you can gauge relevance at a glance
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FAr9bHFfZRz.png?alt=media&token=b962b26d-9464-4845-8574-daa2617ecc65)
+        - You can also disable this in user preferences
+    - Added attachment transfer for [[Local Graph]]s
+    - Added attachments view in settings for [[Local Graph]]s
+  - [[Bug Fixes]]
+    - Fix displaying titles like `[[> title]]` in blocks, before this mistakenly displayed a block quote
+    - Fixed the "Click here to update" button sometimes not updating
+- [[March 11th, 2026]]
+  - [[Quality of Life Improvements]]
+    - Improved [[All Pages]] load time by 50% and now preserves the selected view/sort for the duration of your session.
+  - [[Roam Depot Extensions]]
+    - **[Chief of Staff](https://github.com/mlava/chief-of-staff)**
+      - An AI assistant embedded in Roam Research. Chief of Staff connects your Roam graph to large language models (Anthropic, OpenAI, Google Gemini, or Mistral) and to external tools via [Composio](https://composio.dev/), letting you ask questions, search and manage tasks, and orchestrate actions across your connected apps — all without leaving Roam.
+      - {{[[video]]: https://www.loom.com/share/9aa3c07de0f147af971d2fc54fe65e4a}}
+    - **Object Metadata Autocomplete**
+      - A Roam Research extension that lets you search for real-world objects (books, places, and more) and create structured pages with their metadata.
+      - **Features**
+        - **Book Autocomplete**
+          - Search [OpenLibrary](https://openlibrary.org/) for books and create rich pages with metadata:
+            - Cover image, author(s), publish year, rating, page count, subjects
+            - Author pages are auto-created with `isa::[[person]] [[author]]`
+            - Book link is copied to clipboard and the page opens in the sidebar
+        - **Google Maps Autocomplete**
+          - Search Google Places for locations and create pages with:
+            - Address, coordinates, Google Maps URL, website, vicinity
+            - Location type tags (e.g. `[[restaurant]]`, `[[park]]`)
+      - **Usage**
+        - Open the Roam command palette (`Cmd+P`) and run:
+          - Book autocomplete — search and insert books
+          - Google maps autocomplete — search and insert locations
+- [[March 9th, 2026]]
+  - [[Quality of Life Improvements]]
+    - Moved all export / import options into a central location in settings
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FD-7v-qinZG.png?alt=media&token=451faf58-1e18-49f4-9b68-5132cac471cd)
+    - Renamed "User" settings to "Preferences" and "Files" to "Attachments"
+    - Changed the styling to limit the width of settings
+  - [[Roam Depot Extensions]]
+    - **DNP Default Filters**
+      - A Roam Research extension that applies default linked references filters to daily note pages.
+      - **Configuration**
+        - Go to Settings > Roam Depot > DNP Default Filters and set:
+          - Includes filter — comma-separated page names to include (e.g. `Queries, Projects`)
+          - Removes filter — comma-separated page names to exclude (e.g. `TODO, Evergreens`)
+          - Auto-apply on navigation — toggle automatic filter application on/off (on by default)
+      - **Features**
+        - **Auto-apply**
+          - When enabled, the extension automatically applies your configured filters to any daily note page's linked references section — both on Roam load (for today's DNP) and whenever you navigate to a DNP. Filters are merged with any existing ones on the page (no duplicates), and only applied once per DNP per session to avoid overwriting manual changes.
+        - **Command palette**
+          - Use Cmd+P (or Ctrl+P) and search for "DNP Filters: Apply to current page" to manually apply filters to whatever daily note page you're currently viewing. This also merges with existing filters.
+- [[February 27th, 2026]]
+  - [[Quality of Life Improvements]]
+    - Added the ability to choose your own bullet color for multi-user graphs
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FLU1zNLqfi-.png?alt=media&token=c44ba233-a5b7-4fcd-b279-4202a97eaf67)
+      - You can also edit the bullet color of API token's pages you create from their display name page
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FCYsmiXRKg-.png?alt=media&token=7e5f950b-929f-456a-b116-dadbd668b006)
+- [[February 26th, 2026]]
+  - [[Quality of Life Improvements]]
+    - Speed up the opening of [[Unlinked References]]
+    - Added TSX [[Code Block]]s
+  - [[Bug Fixes]]
+    - **Blockquote and callout paste/import fixes** — Pasting or importing blockquotes and callouts from HTML (e.g. from web pages) and Markdown now correctly produces single Roam quote blocks. Previously, multi-paragraph blockquotes would create separate blocks for each line. Consecutive `>` lines in Markdown imports are now grouped into a single blockquote block.
+    - **Blockquote viewer improvements** — The blockquote and callout viewer now properly handles the `>` prefix, including multi-line blockquotes and cases where `>` is not followed by a space. Previously, the first character after `>` could be clipped.
+    - **Blockquote and callout copy as HTML** — Copying blockquote and callout blocks now produces proper `<blockquote>` HTML on the clipboard, so pasting into other apps preserves the quote formatting.
+    - Fix some issues pasting from github
+  - [[Roam Depot Extensions]]
+    - **Quick Capture shortcut**
+      - Allows a quick-capture experience without having to change context of whatever you're working on. Just press a hotkey and start typing!
+      - ![](https://camo.githubusercontent.com/9758bd3c25bec18d5cd362987139b3ba0e4c0864c4420431fd622636c0878adb/68747470733a2f2f63646e2e6c6f6f6d2e636f6d2f73657373696f6e732f7468756d626e61696c732f64363235666638623565343934396432626464313466373931643161653333332d303538396330333266633439386562372d66756c6c2d706c61792e676966)[🔗](https://www.loom.com/share/d625ff8b5e4949d2bdd14f791d1ae333)
+      - **How It Works**
+        - Press the hotkey (Ctrl+Shift+N on Mac, Alt+N on Windows/Linux) to:
+          - Create a new block at the bottom of today's Daily Notes page.
+          - Open that block in the right sidebar.
+          - Focus the cursor on it, ready for typing.
+        - You can customize the hotkey from the Command Palette.
+    - **Export with References**
+      - Export a Roam page or block — along with all its backlinks — to your clipboard in markdown format.
+      - For each backlink, the referencing block and all its children are included, grouped by source page.
+      - **Usage**
+        - **Commands**
+          - The extension registers three entry points:
+          - {{[[table]]}}
+            - Trigger
+              - Command
+                - Behavior
+            - Command palette
+              - Export with References
+                - Exports the focused block (if cursor is in a block) or the current page (if no block is focused)
+            - Command palette
+              - Export Page with References
+                - Always exports the entire current page, regardless of which block is focused
+            - Block context menu
+              - Export with References
+                - Right-click a block bullet → exports that specific block
+        - **From the Command Palette**
+          - Navigate to a page, or focus on a block
+          - Open the command palette (`Cmd/Ctrl + P`)
+          - Search for Export with References or Export Page with References
+          - The markdown is copied to your clipboard
+        - **From the Context Menu**
+          - Right-click on a block's bullet point
+          - Select Export with References
+          - The block content and its backlinks are copied to your clipboard
+      - **Output Format**
+        - The exported markdown looks like this:
+        - ```plain text
+          # Page Title- first block on the page
+            - nested child block
+          - second block
+
+          ## Backlinks### [[Source Page A]]- block that references the exported page
+            - child of the referencing block
+            - another child
+
+          ### [[Source Page B]]- another referencing block```
+          - `[[page references]]` are preserved as-is
+          - If there are no backlinks, the "Backlinks" section is omitted
+          - Children of each backlink block are included with proper indentation
+      - **Installation**
+        - Search for Export with References in the [Roam Depot](https://roamresearch.com/#/app/roamjs/page/rmGPdf3tS) marketplace and click install.
+    - **Roam Deep Research**
+      - Run long-form research jobs from inside Roam, poll/stream results from external providers, and write structured output back into your graph.
+      - **Purpose**
+        - This extension gives you a single command-palette workflow to:
+          - dispatch a research prompt to a provider (`Gemini`, `OpenRouter`, or `Manus`)
+          - track job state (`dispatched`, `polling`/`streaming`, `writing`, terminal states)
+          - write a structured result tree under a `Deep Research task::` block
+          - keep job metadata and status in extension settings for recovery and retries
+      - **Requirements**
+        - A valid API key for at least one supported provider (Gemini, OpenRouter, or Manus).
+        - The Manus provider requires Roam's built-in CORS proxy (`corsAnywhereProxyUrl`). The extension will display an error if the proxy is unavailable.
+      - **Core Functions**
+        - **1) Job Dispatch**
+          - Command palette: `Run Deep Research task`
+          - Slash command: `/Run Deep Research task` (runs against the current block)
+          - Prompt UI uses `iziToast` input modal
+          - Context is collected from selected/focused Roam blocks with safety limits:
+            - block cap
+            - character cap
+            - API call budget
+            - depth cap
+        - **2) Provider Execution Modes**
+          - `Gemini`: polling mode via `/v1beta/interactions`
+          - `Manus`: polling mode via `/v1/tasks` (through Roam CORS proxy)
+          - `OpenRouter`: streaming mode via SSE (`/api/v1/chat/completions`)
+        - **3) Status + Recovery**
+          - Cross-tab lease ownership for polling/writeback
+          - Persisted job state in `extensionAPI.settings`
+          - On load:
+            - resumes eligible polling jobs
+            - marks stale streaming jobs failed (streaming cannot resume after reload)
+            - runs maintenance/pruning
+        - **4) Writeback**
+          - Writes output as Roam blocks with batching and depth/size limits
+          - Adds `results_written:: true` marker for idempotency
+          - Includes sections such as:
+            - `Summary::`
+            - `Key Findings::`
+            - `Evidence / Citations::`
+            - `Open Questions::`
+            - `Suggested Next Actions::`
+            - `Attachments::`
+            - `References::`
+            - `Provenance::`
+        - **5) Cancellation + Retry**
+          - Command palette: `Cancel Deep Research task`
+          - Provider-aware cancellation:
+            - Gemini: DELETE interaction
+            - Manus: DELETE task, with local fallback
+            - OpenRouter: abort stream
+          - Retry path reuses prompt and current context collection flow
+        - **6) Tools API**
+          - Registers a public tools bridge at:
+            - `window.RoamExtensionTools['deep-research']`
+          - Tools:
+            - `rdr_run_research`
+            - `rdr_get_jobs`
+            - `rdr_cancel_job`
+          - Broadcast events:
+            - `rdr:job-dispatched`
+            - `rdr:job-completed`
+            - `rdr:job-failed`
+            - `rdr:job-canceled`
+      - **Settings (UI)**
+        - Settings shown in the extension panel and their behaviour impact:`Research provider`Values: `gemini`, `openrouter`, `manus`Changes runtime path (polling vs streaming), API auth, and provider normalisation.Provider key + model/profile`gemini`:`Gemini API key``Research agent` (currently fixed to `deep-research-pro-preview-12-2025`)`openrouter`:`OpenRouter API key``Research model` (select from curated deep-research models)`manus`:`Manus API key``Agent profile` (`manus-1.6`, `manus-1.6-lite`, `manus-1.6-max`)`Max job duration (minutes)`Upper wall-clock bound before a polling job is abandoned.`Max output blocks`Hard cap for writeback size and truncation behaviour.`Store raw output on schema errors`Adds raw provider payload blocks when structured parsing fails.`Archive completed jobs`Moves old terminal jobs to monthly archive pages before cleanup.`Upload attachments to Roam`
+          - Downloads provider attachments, uploads to Roam storage, and embeds if possible.
+          - Manus is one provider that specifically provides files that can be downloaded and stored within Roam Research storage if this setting is switched on.
+      - **Limitations**
+        - Streaming jobs (OpenRouter) cannot survive a page reload. If the tab is closed or refreshed mid-stream, the job is marked failed. Polling providers (Gemini, Manus) automatically resume after reload.
+        - Only one research job can run at a time.
+      - **Data + Safety Notes**
+        - API keys are stored in Roam extension settings (browser IndexedDB), not encrypted.
+        - The extension avoids overwriting non-empty user blocks by creating sibling/fallback roots where possible.
+        - Large output is truncated to respect block/size/depth safety limits.
+- [[February 25th, 2026]]
+  - [[Quality of Life Improvements]]
+    - [[Import]] dialog redesign with a two-panel layout — scrollable page list on the left, detail panel on the right
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FjeXoRCKlI6.png?alt=media&token=c0023c8b-b862-4847-a1bd-74c6e83ef1a1)
+      - As well as a lot more improvements
+        - Added folder selection for importing entire directories of markdown files
+        - Subfolder paths are now reflected in page titles (e.g. notes/Claim instead of Claim) to avoid false duplicates
+        - Added per-page title editing with option to update [[references]] across all imported pages
+        - Identical pages are auto-unchecked and dimmed; empty pages that already exist in the graph are flagged
+        - Block UID conflicts are now automatically remapped instead of failing the import
+        - Added callout directing users to Image Import for image files from another graph
+        - Fixed Select All / Deselect All being slow on large imports
+        - Improved performance for imports with many pages (500+)
+- [[February 22nd, 2026]]
+  - [[Quality of Life Improvements]]
+    - [[File Manager]] 
+      - Import / Export files, useful when restoring your graph to a new one, or backing up your files
+        - When exporting to the same directory twice, it will not duplicate the files
+        - Currently only supported in the desktop app, chome and edge browsers
+      - Small redesign from a list into a grid
+- [[February 19th, 2026]]
+  - [[Mobile Native View]]
+    - Added callouts
+      - [[>]] [[!TIP]] Callouts are here! Try typing `> [!warning] Watch out` in any block.
+        See the [[Callouts]] page for all available types and how to style your own custom ones
+    - Fixed Markdown links with parentheses
+    - Fixed applying templates that include headings or text align
+    - Pasting a URL over selected text now creates a Markdown link (like the web app)
+    - Fixed [[iOS]] pasted text disappear after accepting paste
+  - [[Quality of Life Improvements]]
+    - Four / five backtick code blocks, useful for writing markdown in code blocks.
+      - Create with `/markdown`
+- [[February 18th, 2026]]
+  - [[Quality of Life Improvements]]
+    - `/code block` slash command now inserts at the cursor position instead of replacing the entire block content
+    - `{{date}}` picker now auto-focuses today's date on open, so arrow keys work immediately for keyboard navigation 
+    - Selecting a date in the `{{date}}` picker now refocuses the block with the cursor placed after the inserted page reference 
+  - [[Roam Depot Extensions]]
+    - **tldraw**
+      - Turn any matching page into a fast, visual whiteboard with draggable page and block nodes, quick linking, and keyboard-friendly canvas controls.
+      - **Notice! This is a beta extension.**
+        - This extension is in active development and may contain bugs.
+        - If you notice anything off, or have feature requests, please reach out on GitHub or Slack.
+      - **Features**
+        - Auto load a canvas on pages that match your patterns (default: `Canvas/*`)
+        - Works in both the main view and right sidebar
+        - Adds dedicated Page and Block node tools to the tldraw toolbar
+        - Supports paste and drag/drop of links and block refs directly onto the canvas
+        - Includes a searchable inspector for picking target pages or blocks
+        - Opens linked items in the main view (`Ctrl+click`) or sidebar (`Shift+click`)
+        - Provides a configurable maximize hotkey for full-screen focus
+      - **Quick Start**
+        - The default canvas page pattern is `Canvas/*`.
+        - To create a canvas, create a page with a title like:
+          - `Canvas/Project Planning`
+          - `Canvas/Ideas`
+        - When you open that page, the canvas loads automatically.
+- [[February 11th, 2026]]
+  - [[New Features]]
+    - [[>]] [[!TIP]] Callouts are here! Try typing `> [!warning] Watch out` in any block.
+      See the [[Callouts]] page for all available types and how to style your own custom ones
+  - [[Quality of Life Improvements]]
+    - Copy inline code block with right click -> "copy code" button
+- [[February 10th, 2026]]
+  - [[Quality of Life Improvements]]
+    - Markdown links now support urls with parenthesis in them, as well as `[](<url>)` for other urls which might not display right
+      - `[Mathematical theory](https://en.wikipedia.org/wiki/Theory_(mathematics))`
+      - `[title ...](<special url>)`
+        - wrapping a url in `<>` should always work, no matter then special characters in the URL
+  - [[Bug Fixes]]
+    - Fixed a bug that caused data loss in code blocks
+      - Code blocks now save progress while you are typing in them, no need to click outside to save anymore
+    - Fixed a bug with code blocks where pasting + changing the language would open, then close the language picker without letting you select a language
+  - [[Roam Depot Extensions]]
+    - **Breadcrumbs**
+      - Never lose your place in Roam again. Breadcrumbs adds a clickable trail of your recent pages and blocks in the top bar, so you can jump back instantly and navigate your graph with confidence.
+        [Ask DeepWiki](https://deepwiki.com/RoamJS/breadcrumbs)
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F8kTyi7mpNe.png?alt=media&token=a8c20ab4-f1bc-4214-a554-79086e97853e)
+      - **Features**
+        - Tracks recently visited pages and block locations
+        - Renders oldest-to-current breadcrumb trail in the top bar
+        - Click any non-current breadcrumb to navigate back
+        - Distinguishes pages vs blocks with different styles
+        - Supports Blueprint dark mode (`.bp3-dark`)
+      - **Settings**
+        - `Max breadcrumbs`: max number of prior locations to keep
+        - `Truncate length`: max label length before truncation
+    - **Sticky Notes**
+      - Quick, ephemeral notes that float on top of your Roam Research graph. Jot something down, drag it wherever you want, and when you're done—remove it. No clutter, no permanent page unless you want one. 
+        [Ask DeepWiki](https://deepwiki.com/RoamJS/sticky-notes)
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FAMz6_lODQk.png?alt=media&token=8cc8e968-2e77-4498-b736-a53dd18ab82b)
+      - **What are Sticky Notes?**
+        - Sticky Notes are lightweight notes that sit in a layer above your Roam graph. They're meant for quick, temporary capture: ideas you're playing with, reminders for the current session, or scratch space while you work. When you delete a sticky note, it's gone—the block is removed from your graph. No archive, no cleanup later.
+      - **Features**
+        - Full Roam inside every note — Each sticky is a real Roam block. Use tags `#like-this`, images, embeds, links, and everything else you normally do in Roam.
+        - Drag anywhere — Grab the note by the header bar and drag it anywhere on your screen. Position and size are remembered for your session.
+        - Resize — Drag the corner or edge of a note to make it bigger or smaller.
+        - Minimize — Collapse a note to just its title bar when you want it out of the way but still visible.
+        - Ephemeral by design — Delete a note with the ✕ button and the block is removed from Roam. Perfect for throwaway thoughts and temporary scratch space.
+      - **How to use**
+        - Create a sticky note — Open the command palette (`Ctrl/Cmd + Shift + P`), run "Sticky Notes: Create Sticky Note", and a new note appears.
+        - Move it — Click and drag the colored header bar to place the note wherever you like.
+        - Edit — Type in the note as you would in any Roam block. Use `#tags`, `/commands`, images, and links.
+        - Remove it — Click the ✕ on the note when you're done. The note and its content are deleted from your graph.
+        - Sticky notes are stored under a single Roam page (`roam/js/sticky-note`) so they stay in your graph while they exist, but the extension is built so you can treat them as disposable: create, use, delete.
+    - **Stats**
+      - Know your graph in seconds—pages, words, links, and tags in one sleek drawer.
+        [Ask DeepWiki](https://deepwiki.com/RoamJS/stats)
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FDIGMiHQbFg.png?alt=media&token=4c5ce8ca-2890-46f4-b4e8-a7db5b37ba1e)
+      - **Features**
+        - Overview — Pages, interconnections (block refs), Firebase links, external links
+        - Content breakdown — Text blocks (count, words, characters), block quotes, code blocks
+        - Block types — Counts for TODO, DONE, query, embed, table, kanban, video, roam/js (click a tag to open that page)
+        - Account — Current user display name and email
+      - Open the drawer via the command palette: Stats: Toggle Stats Drawer.
+- [[January 30th, 2026]]
+  - [[Roam Depot Extensions]]
+    - **[YouTube Transcript Sync](https://github.com/qcrao/roam-yts)**
+      - A Roam Research extension that fetches YouTube video transcripts and inserts them into your graph.
+      - ![Demo](https://github.com/qcrao/roam-yts/raw/main/assets/demo.png?raw=true)[🔗](https://github.com/qcrao/roam-yts/blob/main/assets/demo.png?raw=true)
+      - **Features**
+        - Import transcripts from any YouTube video with captions
+        - Clickable timestamps that jump to the video position
+        - Multiple format options: nested blocks, single block, or code block
+      - **Installation**
+        - Go to Settings > Roam Depot > Community Extensions
+        - Search for "YouTube Transcript Sync"
+        - Click Install
+      - **Setup**
+        - Get your API key from [supadata.ai](https://supadata.ai/) (free tier includes 100 credits/month - enough for daily use)
+        - Open Settings > YouTube Transcript Sync
+        - Enter your API key
+        - ![Settings](https://github.com/qcrao/roam-yts/raw/main/assets/settings.png?raw=true)[🔗](https://github.com/qcrao/roam-yts/blob/main/assets/settings.png?raw=true)
+      - **Usage**
+        - Paste a YouTube URL in any block (e.g., `https://youtube.com/watch?v=...`)
+        - Click on the block containing the URL
+        - Open command palette (`Cmd/Ctrl + P`) and run Import Youtube Transcript
+        - Tip: To enable clickable timestamp navigation, click the small button before the YouTube link to embed the video. Without embedding, transcripts will still be imported but timestamps won't jump to the video position.
+        - ![Usage](https://github.com/qcrao/roam-yts/raw/main/assets/usage.png?raw=true)[🔗](https://github.com/qcrao/roam-yts/blob/main/assets/usage.png?raw=true)
+      - **Transcript Formats**
+        - {{[[table]]}}
+          - Format
+            - Description
+          - Nested Blocks
+            - Each segment as a child block with clickable timestamp
+          - Single Block
+            - All text in one block with soft line breaks and clickable timestamps
+          - Code Block
+            - Plain text in a code block (timestamps are not clickable)
+        - ![single block](https://github.com/qcrao/roam-yts/raw/main/assets/single%20block.png?raw=true)[🔗](https://github.com/qcrao/roam-yts/blob/main/assets/single%20block.png?raw=true)
+        - ![code block](https://github.com/qcrao/roam-yts/raw/main/assets/code%20block.png?raw=true)[🔗](https://github.com/qcrao/roam-yts/blob/main/assets/code%20block.png?raw=true)
+- [[January 16th, 2026]]
+  - [[Bug Fixes]]
+    - Fixed outline highlight priority so selected blocks (blue) display over search highlights (yellow)
+      - Removed extra margin on block highlight outline
+    - Fixed shift-click on Daily Notes in sidebar to properly open today's page
+    - Fixed page title sync to properly update when title changes in the database
+    - When renaming a page causes a merge with an existing page:
+      - Main window now only navigates to the merged page if you had the deleted page open
+      - Sidebar windows showing the deleted page now navigate to the merged page instead of closing
+  - [[Quality of Life Improvements]]
+    - Increased bottom padding on pages from `120px` to `35vh` for more scroll room
+  - [[Roam Depot Extensions]]
+    - **Better Command Palette (BCP)**
+      - Better Command Palette enhances Roam Research’s command palette by letting you pin your favourite commands so they always appear at the top. You can also sort unpinned commands alphabetically if that’s your preference.
+      - This extension is intentionally lightweight, safe, and non-invasive:
+        - ✅ Does not modify your graph (no block/page writes)
+        - ✅ Does not override Roam commands
+        - ✅ Works entirely at the UI layer (DOM decoration + reordering)
+      - **✨ Features**
+        - **⭐ Pin favourite commands**
+          - Click the star next to any command to pin it
+          - Pinned commands move to the top instantly
+          - A divider is shown between pinned and unpinned commands (when both exist)
+        - **💾 Per-graph persistence**
+          - Your pinned commands are stored in Roam Depot settings for this graph
+          - Pins are restored every time you open the command palette
+        - **🔤 Sort unpinned commands**
+          - Choose Roam native, A → Z, or Z → A in settings
+          - Optionally override the sort mode for the current command-palette session using the footer buttons
+          - Note: pinned commands are always shown in A → Z order for stability.
+        - **⚡ Fast & safe**
+          - Only activates while the command palette is open
+          - Uses scoped `MutationObserver`s to react to Roam UI changes
+          - No polling, no key simulation, no DOM cloning
+      - **🖱 Usage**
+        - Open the command palette (`Cmd–P` / `Ctrl–P`)
+        - Click the ☆ star next to any command to pin it
+        - Pinned commands appear at the top immediately
+        - Click ★ to unpin
+        - The extension also adds three small buttons in the footer of the Command Palette. These allow you to override your global sort preference on a per-session basis.
+        - Footer sort overrides apply only to the current palette session and reset when the palette closes.
+      - **⚙️ Settings**
+        - This extension uses Roam Depot settings:
+          - Sort mode: `Roam native` / `A → Z` / `Z → A`
+          - Pinned commands storage: saved automatically as you pin/unpin
+        - Clearing the extension’s settings resets all pins and returns sorting to Roam native.
+      - **🧠 How it works**
+        - Watches for the Command Palette modal to appear
+        - Decorates each command with a star button
+        - Tracks pinned commands by a stable key derived from:
+          - label text, and
+          - shortcut (when present)
+        - Reorders the menu in place using Roam’s existing DOM nodes
+        - Resets cleanly when the palette closes
+      - **♿ Accessibility**
+        - Stars and sort controls are implemented as real `<button>` elements
+        - Keyboard focusable
+        - Uses `aria-label` and `aria-pressed`
+      - **🛡 Safety & compatibility**
+        - Works with built-in commands and extension commands
+        - Does not interfere with filtering/searching/keyboard navigation
+        - If Roam changes the palette DOM, the extension fails gracefully (no graph impact)
+      - **📌 Limitations (by design)**
+        - Commands are identified by their label (and shortcut when present)
+          - If a command’s label changes, you may need to re-pin it
+        - The “original order” baseline is learned per palette open
+          - Roam remains the source of truth for native ordering
+        - These choices keep the extension robust and future-proof.
+- [[January 12th, 2026]]
+  - **[[Roam Reader]] v1.1.4**
+    - __If you don't know about Roam Reader yet, some resources first__
+      - **[[Roam Reader]]**
+        - Your new tool for taking notes __intentionally__, reading in context, and growing ideas as you go
+        - Watch our [in-depth video tutorial (7 min long)](https://www.youtube.com/watch?v=stJ7SGo6J9w) or just read along!
+          - After that, if still interested, you can watch this 1-hour+ video of Live reading & writing with Roam Reader: https://www.youtube.com/watch?v=TNbo049RQ3g
+        - 📌 **Take notes in context**
+          - As you're reading, tap the astrolabe in the address bar, confirm the correct metadata and click on __Take Notes__
+          - A sidebar will open on the side, you're now reading, highlighting and writing in the same view without losing context
+        - 🖍️ **Highlight + comment as you read**
+          - Select any text from any article → click on on one of the icons: __highlight__, __tag__ or __comment__
+          - Your highlights are instantly added to the sidebar, synced with your Roam graph
+          - Use any of Roam's features on your outlined annotations!
+        - 🔖 **Save articles to your reading list**
+          - Click the astrolabe → **“Save to Inbox”**
+            You can tweak the title, tags, and metadata before it lands in your Roam graph.
+          - The default reading lists are: __Inbox, Shortlist, Archive, __but you can also make your own!
+        - ⚙️ **Setup takes 30 seconds:**
+          - Install the Chrome extension → Pin it → Pick an article → Click the astrolabe to sign in and then select your graph → You’re ready to go!
+        - Bugs, questions, feature ideas? Send them our way: [support@roamresearch.com](mailto:support@roamresearch.com) or via chat!
+        - ---
+        - **[[FAQ]]s** below:
+          - **Q:** I do not use Chrome. Is this available for Firefox/Safari?
+            - Soon! That is one of the first items in our plan 
+          - **Q:** Are encrypted graphs not supported?
+            - Yes, sadly. They will be supported later, but in a limited form compared to normal hosted graphs (more details below)
+              - a thread from Roam Slack:
+                - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fe_vrVza29A.png?alt=media&token=24030c1e-8b63-4513-a4a5-17351036a3d4)
+          - **Q:** Do you have a rough timeline for future additions/enhancements?
+            - Yes! Here is a rough short term plan for Roam Reader:
+              - ironing out all the bugs
+              - Roam Reader for mobile (at least a minimal version to allow capture)
+              - extension builds for other browsers (firefox, safari)
+          - **Q:** Where can I geek out about this and workflows for it !?!
+            - In the [roam-reader]([[Slack/roam-reader]]) channel in our [Slack](https://join.slack.com/t/roamresearch/shared_invite/zt-2ukldw4mq-vkF95tb~0zbzkJ38nzZ6uA)!
+        - **Direct Links**
+          - Install link for chrome extension: https://chromewebstore.google.com/detail/roam-reader/kghmbkhikifcnkjoakokkhdkfdhieonb?hl=en
+    - [[Loom video]] going through the major changes
+      - {{[[video]]: https://www.loom.com/share/8336c18bfe2b4d79819a15eefc8f1142}}
+    - **✨ New Features in Reading List**
+      - Filter Your Reading List
+        - Click any tag, author, or domain to instantly filter your reading list
+        - Shift-click to add multiple filters (e.g., show articles tagged both "AI" and "Research")
+        - Toggle between AND/OR matching for your filters
+        - Search across article titles, descriptions, and metadata
+      - Save Your Filters
+        - Save any filter combination as a reusable "Saved View"
+        - Saved views sync to your Roam graph under [[Roam Reader Saved Views]]
+        - Access all your saved views from the new left sidebar
+        - Rename or delete saved views anytime
+      - Advanced Query Builder
+        - Switch to advanced mode for complex queries with AND/OR/NOT logic
+        - Filter by annotation count (e.g., "articles with more than 5 annotations")
+        - Filter by specific reading list membership
+        - Combine conditions in ways not possible with simple filters
+        - Visual tree editor makes building queries intuitive
+      - Performance Improvements
+        - Virtualized list rendering for smooth scrolling with large reading lists
+        - Noticeably faster for users with 100+ saved articles
+    - **🔧 Improvements**
+      - "Bump to Top" action to move articles to the top of your list
+    - **🐛 Bug Fixes**
+      - Fixed nested page tags not displaying correctly in the popup
+      - Fixed search not returning expected results in some cases
+      - Fixed display issues for users without a display name set
+      - Fixed local file annotations not working
+      - Fixed occasional crashes when loading large reading lists
+      - Improved URL matching to reduce false duplicates
+  - [[Roam Depot Extensions]]
+    - **Better Bullets (Roam Research extension)**
+      - Replace Roam’s default bullet dot with meaningful, user-configurable glyph bullets — triggered by simple prefix markers you type at the start of a block.
+      - This extension is designed to be fast, reliable across Roam DB + DOM, and safe for daily use (no destructive edits unless you explicitly enable marker stripping).
+      - **What it does**
+        - When you type a marker at the beginning of a block (e.g. `-> `), Better Bullets:
+          - Recognises the marker (with optional “require space after marker” safety).
+          - Persists the detected bullet “type” into the block’s props (`better-bullets/type`), so the UI stays correct even after you strip the marker.
+          - Renders a matching bullet glyph via CSS by applying a class like `better-bullet-arrow` to the block container.
+        - Optional:
+          - If Strip marker prefix from text is enabled, the marker is removed __after__ recognition (never while the block is focused).
+      - **Quick start**
+        - Install the extension (Roam Depot).
+        - Open Settings → Better Bullets.
+        - Leave defaults as-is to start:
+          - ✅ Require a space after marker = ON
+          - ⛔ Strip marker prefix from text = OFF
+        - Try a few markers at the start of a block:
+          - `= `, `-> `, `=> `, `?? `, `... `
+      - **Marker → bullet map (default)**
+        - Tip: With “Require a space after marker” ON (default), markers only trigger when followed by a visible space/tab/NBSP or end-of-line.
+        - {{[[table]]}}
+          - Meaning
+            - Marker
+              - Bullet
+          - Equal / definition
+            - `=`
+              - `=`
+          - Leads to
+            - `->`
+              - `→`
+          - Result
+            - `=>`
+              - `⇒`
+          - Question
+            - `?`
+              - `?`
+          - Important / warning
+            - `!`
+              - `!`
+          - Idea / addition
+            - `+`
+              - `+`
+          - Right-angle arrow
+            - `v>` (configurable)
+              - `⤷`
+          - Contrast / however
+            - `~`
+              - `≠`
+          - Evidence / support
+            - `^`
+              - `▸`
+          - Conclusion / synthesis
+            - `∴` (configurable)
+              - `∴`
+          - Hypothesis / tentative
+            - `??`
+              - `◊`
+          - Depends on / prerequisite
+            - `<-`
+              - `↤`
+          - Decision / choice
+            - `
+              - `
+          - Reference / related
+            - `@`
+              - `↗`
+          - Process / ongoing
+            - `...`
+              - `↻`
+      - **Settings**
+        - **Require a space after marker (default: ON)**
+          - Prevents accidental triggers inside words. Example: with this ON, `->hello` won’t trigger; `-> hello` will.
+        - **Strip marker prefix from text (default: OFF)**
+          - If enabled, leading markers are removed after the block is recognised.
+          - Bullet type is preserved using block props, so the bullet stays even after the prefix disappears.
+        - **Enable toggles per bullet type (default: ON)**
+          - Disable any bullet type you don’t want.
+          - For bullet types with configurable prefixes, the prefix input only appears when that bullet type is enabled.
+      - **Command palette actions**
+        - Better Bullets: Clear bullet type from focused block
+        - Removes the persisted `better-bullets/type` prop from the focused block.
+        - Better Bullets: Enable all bullet types
+        - Better Bullets: Disable all bullet types
+        - Better Bullets: Show cheat sheet
+        - Prints a quick reference of enabled bullets, markers, and meanings.
+      - **CSS variables (optional)**
+        - You can customise sizing/alignment by overriding these variables (e.g. in your theme CSS):
+        - ```plain text
+          :root {
+            --bb-bullet-size: 14px;
+            --bb-bullet-font-size: 12px;
+            --bb-bullet-translate-y: 0px;
+          }```
+      - **Notes & troubleshooting**
+        - If markers don’t trigger, check:
+          - The bullet type is enabled
+          - You’re using the correct marker
+          - “Require a space after marker” behaviour matches how you’re typing
+        - If you enable marker stripping: stripping never happens while the block is focused, and is applied shortly after blur (focus-out) to avoid fighting the editor.
+      - **Privacy & safety**
+        - Runs entirely in your browser.
+        - Only writes to Roam via standard block updates when persisting `better-bullets/type`, and (optionally) when stripping marker prefixes you explicitly enabled.
+- [[January 7th, 2026]]
+  - [[Bug Fixes]]
+    - Fixed bullet alignment with headers
+    - Fixed `#.rm-g` group css to display when a block is selected inside the group
+    - [[Mobile Web]]
+      - Enabled **auto-capitalization**
+        - Because `shift+enter` usually adds a new line within the current block, we adjusted when that behavior triggers so you won’t get “stuck” with `shift` held down and unable to create a new block.
+        - **Tradeoff:** creating multi-line blocks is now a bit harder.
+        - In order to add a new line to the current block, you must have shift on, and not be at the start of the block, or after ". "
+      - When working with blocks that are larger than the screen, we fixed it to not keep scrolling to the top of the block, it will now scroll to the cursor position.
+      - Fixed displaying iframe components
+      - Fixed tapping on an image to bring up the image modal
+      - Added a button to submit the share with form for adding editors/readers to a graph on mobile
+
+#### [[2025]]
+
+- [[December 31st, 2025]]
+  - [[Quality of Life Improvements]]
+    - New commands (no default hotkeys set)
+      - Add block below current block
+      - Delete current block
+      - Toggle expand/collapse for the blocks in the main window
+- [[December 30th, 2025]]
+  - [[Bug Fixes]]
+    - Youtube videos now respect start times when the link includes a time (?t=)
+    - Fixed block [[Alias]] tooltips sometimes flickering when the block contains large content like an image, or when the window is small
+      - The fix is not perfect, and may cut off content if the block is very large, but you can at least get a sense of what the block is
+    - Fixed `{{table}}` not sorting rows correctly in some cases
+    - Fixed many issues with the `{{or: opt1 | opt2 | opt3}}` component
+      - Fixed the display on [[Firefox]]
+      - Fixed it getting stuck with empty options sometimes
+    - Fixed drag and dropping to reorder left sidebar shortcuts in [[Firefox]]
+    - Gave images a minimum size to prevent them from becoming too small to resize (smaller than the button to focus the block)
+    - Fixed `{{word-count}}` and word count in [[All Pages]] to work better with non English languages (notably Cyrillic)
+      - Many languages like Thai are fairly ambiguous, for those languages this should be seen as a best guess estimate of the word count.
+- [[December 29th, 2025]]
+  - [[Desktop App]] [[Bug Fixes]]
+    - Fixed regression in windows with ctrl-shfit-v double pasting caused by the last update
+- [[December 23rd, 2025]]
+  - [[Desktop App]]
+    - Added an option to toggle spellcheck in the edit menu
+    - Fixed `cmd-shift-v` (paste as plaintext) on [[Mac]]
+    - Fixed [[Mac]] icon display to be compatible with icon appearance settings, and fixed the default display to not be hazy (bug caused by the liquid glass update)
+    - Fixed local graph's videos not being playable
+    - Added a warning if you have the intel mac version installed on apple silicon
+    - Updated the right click menu to only show applicable options
+- [[December 22nd, 2025]]
+  - [[Quality of Life Improvements]]
+    - Return cursor back to the focused block when canceling `cmd-u` (find or create) search
+    - When focused on the find or create search, the application losing focus will no longer clear the current search
+    - After selecting multiple blocks and deleting them, we now refocus the outline. This was also causing a bug where `cmd-enter` afterwards would also not refocus the outline
+    - Added [[Roam Reader]] and help docs links to the home page
+- [[December 19th, 2025]]
+  - [[Quality of Life Improvements]]
+    - Added support for the standard key command for plaintext paste on mac, `cmd-opt-shift-v`
+- [[December 18th, 2025]]
+  - [[Quality of Life Improvements]]
+    - Hotkeys for incrementing/decrementing date links
+      - No default is set, go into setting to choose one. `Alt+Up/Down` is good if you don't use those for something else
+  - [[Bug Fixes]]
+    - Fixed bullet alignment on [[Firefox]]
+    - Fixed the display of numbered lists with more than 99 items
+    - Added/fixed the display of empty page titles in all pages view
+    - Fixed issue with `{{calc}}` and having two in the same block which reference different blocks
+      - Example::
+        - {{[[calc]]: 2+2}} {{[[calc]]: 3+2}}
+          - 2
+          - 3
+    - Fixed issue with latex referencing the same block twice
+      - Example::
+        - $$\frac{$$n_1$$}{$$n^n$$ + $$n^n$$}$$
+          - $$n_1$$
+          - $$n^n$$
+    - Fixed `cmd/ctrl-f` on desktop app inside a code block triggering both the code block find and the page find
+    - Fixed an issue where changing the padding of `.rm-block-text` css class caused the arrow keys to stop working
+- [[December 15th, 2025]]
+  - [[Bug Fixes]]
+    - Fixed broken references to [[PDF]] and [[Video]] uploads as well as some broken references created from the mobile app
+      - This requires a graph upgrade, which might take some time to run as we scan the graph for broken references
+    - Fixed Korean typed `가[` inserting `가[가[]` (duplicating the character)
+    - Fixed Safari breaking Chinese composition sometimes resulting in the wrong characters to be inserted
+    - Fixed Japanese quotes inserting brackets`[「]`
+    - Fixed backticks sometimes inserting multiple times when composing with Brazilian or Spanish
+    - Fixed last character repeating after a newline when typing in Korean with an external keyboard on iPad
+    - Fixed `option + >` not inputting ≥ (on [[Mac]])
+    - We now replace double Chinese punctuation with english in order to trigger autocompletes
+      - `【 【` -> `[[]]`
+      - `（（` -> `(())`
+      - `；；` -> `;;`
+      - `：：` -> `::`
+  - [[Roam Depot Extensions]]
+    - **Roam Export Block**
+      - A Roam Research extension that exports blocks (together with their children) to multiple formats, keeping the structure and formatting ready to paste into other applications.
+      - **Inspired by [logseq-export-block](https://github.com/avelino/logseq-export-block)** - A similar plugin for Logseq that served as the foundation for this Roam Research adaptation.
+      - **Features**
+        - Export Roam blocks with their children to multiple formats
+        - Maintain formatting and indentation appropriate for each target platform
+        - Copy directly to clipboard for easy pasting
+        - Support for rich text formatting where applicable
+        - Available directly from the block context menu
+      - **Supported Export Formats**
+        - **Slack**: Optimized formatting for Slack messages with proper link conversion and Slack-specific syntax
+        - **WhatsApp**: Clean formatting that works well with WhatsApp's limited markup
+        - **Google Docs**: Rich text formatting for better document integration
+        - **Rich Text**: General purpose rich text export
+      - **Installation**
+        - Open Roam Research and navigate to the **Roam Depot**.
+        - Search for **"Roam Export Block"** (or load the bundle manually if developing locally).
+        - Install/enable the extension.
+      - **Usage**
+        - Right-click on any block in Roam Research
+        - From the context menu, select one of the export options:
+          - `Export to Slack`
+          - `Export to WhatsApp`
+          - `Export to Google Docs`
+          - `Export to RichText`
+        - The block and its children will be copied to your clipboard in the selected format
+        - Paste the content into your target application
+      - **How It Works**
+        - The extension processes your Roam blocks and their children, applying format-specific transformations:
+          - Converts Roam markdown-style formatting to the appropriate syntax for each platform
+          - Handles links, lists, and indentation according to each platform's requirements
+          - For rich text formats (Slack, Google Docs), provides both plain text and HTML versions for better pasting results
+          - Uses modern clipboard APIs with fallbacks for maximum compatibility
+    - **Roam Todoist Backup**
+      - Roam Research extension that keeps a read-only backup of all Todoist tasks inside dedicated task pages of your graph.
+      - plugin inspired by [logseq-todoist-backup](https://github.com/avelino/logseq-todoist-backup)
+      - **Overview**
+        - Read-only integration with the Todoist REST API.
+        - Manual sync pelo command palette do Roam (`Todoist: Sync backup`) ou pelo ícone na topbar.
+        - Sincronização automática com intervalo configurável (padrão 5 minutos).
+        - Cada tarefa vive em uma página dedicada `todoist/<todoist-id>`, preservando histórico por item.
+        - Atualiza blocos existentes com base em `todoist-id::`, evitando duplicidades e removendo tarefas inexistentes sem apagar concluídas.
+        - Gera blocos compatíveis com Roam, incluindo links, descrição, tags de projeto, labels saneadas e datas no padrão das páginas diárias.
+        - Converte labels inline do Todoist (`@label`) para hashtags (`#label`) para facilitar filtros dentro do Roam.
+      - **Requirements**
+        - Roam Research with extension support (Roam Depot or custom script loader).
+        - Todoist personal API token with read access.
+      - **Configuration**
+        - Abra `Roam Depot → Extension Settings → Todoist Backup`. A aba exibe todos os campos configuráveis:
+          - **Todoist Token**: cole o token pessoal obtido em [Todoist Integrations](https://todoist.com/prefs/integrations).
+          - **Target Page Prefix**: prefixo das páginas de destino (padrão `todoist`). Cada tarefa é escrita em `prefix/<todoist-id>`.
+          - **Sync Interval (minutes)**: intervalo entre sincronizações automáticas (mínimo `1` minuto).
+          - **Download Comments**: ativa o download dos comentários do Todoist.
+          - **Excluded Task Title Patterns**: informe expressões regulares (uma por linha) para ignorar tarefas pelo título.
+          - **Enable Debug Logs**: habilita logs detalhados no console do navegador.
+          - **Status Alias**: personalize os rótulos exibidos para tarefas ativas, concluídas e removidas.
+        - As alterações são aplicadas na próxima sincronização manual ou automática.
+      - **Usage**
+        - **Manual sync**: clique no ícone da topbar (📁) ou execute `Todoist: Sync backup`.
+        - **Automatic sync**: roda em segundo plano conforme o intervalo configurado.
+        - **Formato do bloco principal**:
+        - ```plain text
+          [[January 2nd, 2025]] Task title #ProjectName
+            todoist-id:: [123456789](https://todoist.com/showTask?id=123456789)
+            todoist-due:: January 2nd, 2025
+            todoist-desc:: Optional description
+            todoist-labels:: #label-1 #label-2
+            todoist-completed:: [[January 2nd, 2025]]
+            todoist-status:: ✅
+            comments...
+              todoist-comments:: 2
+              [todoist](https://todoist.com/app/task/123456789/comment/456) Comment text
+                todoist-comment-id:: 456
+                todoist-comment-posted:: 2025-01-02T10:00:00.000Z```
+        - Dates are rendered as `MMMM Do, YYYY`, aligned with Roam's daily pages standard. Labels are sanitized and prefixed with `#`. When comment capture is active, a `comments...` child block brings each Todoist comment ordered chronologically.
+      - **Sync behavior**
+        - Each task remains on the `todoist/<todoist-id>` page. Existing blocks are updated, new ones are added, and tasks removed from Todoist stop appearing (completed ones remain).
+        - Displayed dates use the `MMMM Do, YYYY` format, allowing direct links with Roam's daily pages.
+        - Comments (when enabled) appear as child blocks with direct links to Todoist.
+        - The entire flow is read-only in relation to Todoist.
+    - **Roam Oura Ring Integration**
+      - Roam Research extension that syncs your Oura Ring health metrics into daily pages.
+      - **Features**
+        - **Sleep**: Score, bedtime, duration, sleep stages (deep/REM/light/awake), efficiency, HRV, and contributor scores.
+        - **Readiness**: Score, temperature deviation/trend, and contributor breakdown.
+        - **Activity**: Steps, movement, calories, activity time breakdown, MET metrics, and goals.
+        - **Heart Rate**: Daily average, minimum, and maximum BPM.
+        - **Workouts**: Activity type, duration, calories, distance, intensity, and source.
+        - **Tags**: Custom tags with timestamps and comments from the Oura app.
+        - Pages are created as `ouraring/YYYY-MM-DD` with the header `#ouraring [[Month Do, YYYY]]`.
+      - **Requirements**
+        - Roam Research with extension support (Roam Depot or custom script loader).
+        - Oura personal access token with read access to your data.
+      - **Installation**
+      - **Via Roam Depot (Recommended)**
+        - Open Roam Research
+        - Go to **Settings → Roam Depot → Community Extensions**
+        - Search for "Oura Ring" and click Install
+      - **Manual Installation**
+        - Build the extension: `pnpm install && pnpm build`
+        - Load `extension.js` via Roam's custom script loader
+      - **Configuration**
+        - Open **Roam Depot → Extension Settings → Oura Ring** and configure:
+        - {{[[table]]}}
+          - Setting
+            - Default
+              - Description
+          - **Oura Personal Access Token**
+            - (empty)
+              - Token from [Oura Cloud → Personal Access Tokens](https://cloud.ouraring.com/personal-access-tokens)
+          - **Page Prefix**
+            - `ouraring`
+              - Prefix for daily pages (pages saved as `prefix/YYYY-MM-DD`)
+          - **Days to Sync**
+            - `7`
+              - How many past days to fetch (includes today)
+          - **Enable Debug Logs**
+            - `false`
+              - Show detailed logs in browser console
+        - If the settings panel is unavailable, the extension creates a fallback config page at `roam/js/ouraring`.
+      - **CORS Proxy**
+        - The Oura API doesn't include CORS headers, which means browsers block direct requests from web applications. This extension uses **Roam's native CORS proxy** (`roamAlphaAPI.constants.corsAnywhereProxyUrl`) to route API requests, adding the necessary headers automatically.
+        - This proxy is hosted by the Roam team and only works from Roam domains, ensuring security and reliability without any configuration required.
+      - **Usage**
+        - **Automatic**: The extension syncs recent data when it loads.
+        - **Manual**: Click the heart icon in the topbar or run `Oura: Sync daily data` from the command palette (Cmd/Ctrl + P).
+      - **Page Structure**
+        - Each daily page follows this structure (sections are omitted when empty):
+        - ```plain text
+          #ouraring [[November 29th, 2025]]
+            Sleep
+              Score: 85
+              Bedtime: 22:30 – 06:45
+              Total sleep: 7h 32m
+              ...
+              Contributors
+                Deep sleep: 85
+                ...
+            Readiness
+              Score: 78
+              Temperature deviation: +0.15°C
+              ...
+            Activity
+              Score: 90
+              Steps: 8543
+              ...
+            Heart rate
+              62 bpm avg / min 48 / max 145
+            Workouts
+              07:30 – Running (45m, 320 kcal, 5.20 km, moderate)
+            Tags
+              22:00 – [[No Caffeine]]
+              08:30 – [[Meditation]] – 15 min session```
+- [[December 13th, 2025]]
+  - **[[New Features]]  🚀**
+    - **[[Roam Reader]]**
+      - Your new tool for taking notes __intentionally__, reading in context, and growing ideas as you go
+      - Watch our [in-depth video tutorial (7 min long)](https://www.youtube.com/watch?v=stJ7SGo6J9w) or just read along!
+        - After that, if still interested, you can watch this 1-hour+ video of Live reading & writing with Roam Reader: https://www.youtube.com/watch?v=TNbo049RQ3g
+      - 📌 **Take notes in context**
+        - As you're reading, tap the astrolabe in the address bar, confirm the correct metadata and click on __Take Notes__
+        - A sidebar will open on the side, you're now reading, highlighting and writing in the same view without losing context
+      - 🖍️ **Highlight + comment as you read**
+        - Select any text from any article → click on on one of the icons: __highlight__, __tag__ or __comment__
+        - Your highlights are instantly added to the sidebar, synced with your Roam graph
+        - Use any of Roam's features on your outlined annotations!
+      - 🔖 **Save articles to your reading list**
+        - Click the astrolabe → **“Save to Inbox”**
+          You can tweak the title, tags, and metadata before it lands in your Roam graph.
+        - The default reading lists are: __Inbox, Shortlist, Archive, __but you can also make your own!
+      - ⚙️ **Setup takes 30 seconds:**
+        - Install the Chrome extension → Pin it → Pick an article → Click the astrolabe to sign in and then select your graph → You’re ready to go!
+      - Bugs, questions, feature ideas? Send them our way: [support@roamresearch.com](mailto:support@roamresearch.com) or via chat!
+      - ---
+      - **[[FAQ]]s** below:
+        - **Q:** I do not use Chrome. Is this available for Firefox/Safari?
+          - Soon! That is one of the first items in our plan 
+        - **Q:** Are encrypted graphs not supported?
+          - Yes, sadly. They will be supported later, but in a limited form compared to normal hosted graphs (more details below)
+            - a thread from Roam Slack:
+              - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fe_vrVza29A.png?alt=media&token=24030c1e-8b63-4513-a4a5-17351036a3d4)
+        - **Q:** Do you have a rough timeline for future additions/enhancements?
+          - Yes! Here is a rough short term plan for Roam Reader:
+            - ironing out all the bugs
+            - Roam Reader for mobile (at least a minimal version to allow capture)
+            - extension builds for other browsers (firefox, safari)
+        - **Q:** Where can I geek out about this and workflows for it !?!
+          - In the [roam-reader]([[Slack/roam-reader]]) channel in our [Slack](https://join.slack.com/t/roamresearch/shared_invite/zt-2ukldw4mq-vkF95tb~0zbzkJ38nzZ6uA)!
+      - **Direct Links**
+        - Install link for chrome extension: https://chromewebstore.google.com/detail/roam-reader/kghmbkhikifcnkjoakokkhdkfdhieonb?hl=en
+- [[December 11th, 2025]]
+  - [[Bug Fixes]]
+    - Fixed hotkeys settings being slow when a lot of extensions are installed
+    - Fix some extension commands not properly opening/closing blocks
+- [[December 10th, 2025]]
+  - [[Bug Fixes]] & [[Quality of Life Improvements]]
+    - [[Advanced Block Search]]
+      - Changed to clearing the search box when selecting a block
+      - Added shift-tab to go up a level (tab navigates down a level)
+      - When focused on a block/page, it will now search text/blocks referenced in blocks
+      - Fixed a bug where when using from the [[Command Palette]] it would not insert the block reference
+        - If no block is selected, it will copy the reference to the clipboard
+    - Fixed inline block/page search sometimes overlapping the text when the search text wraps to a new line
+    - Fixed not showing [[roam/comments]] as a template on the [[roam/templates]] page
+- [[December 2nd, 2025]]
+  - [[Quality of Life Improvements]]
+    - Added the ability to set a graph's homepage
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FiOMt1i1WNx.png?alt=media&token=767118c0-2630-4bfb-86c9-2723c6e430fa)
+  - [[Bug Fixes]]
+    - Fixed deleting a page with a block reference in the title not linking the page's linked references to the block
+      - This is useful if you want to change a page into a block
+        - Create a block -> copy page content into it -> copy block ref -> rename page to the block ref -> delete page
+      - Similar to this, fixed the same issue with a tag in the page title
+    - Fixed renaming pages with latex in them
+    - Fixed renaming pages with `{}` in them
+    - Fixed renaming a page to an emoji, previously it broke tag references
+    - Fixed search sidebar crashing Roam if you renamed a page in the results while the results are open
+- [[November 25th, 2025]]
+  - Fix [[block view]] copy/paste, import/export, and use in templates
+- [[November 20th, 2025]]
+  - **Better Tasks for Roam Research**
+    - Bring true task management to Roam Research!
+    - This extension automatically recognises and manages TODO items that match defined repeat patterns and/or date attributes, optionally generating the next instance when a repeating Better Task is completed.
+    - Note: This extension is in active development and should be considered a beta release. Please let me know of any bugs or unexpected behaviours in Slack - https://app.slack.com/client/TNEAEL9QW/
+    - This video provides a basic overview of some of the functionality of this extension.
+    - https://www.loom.com/share/bb6ffd38ff35441ab2ed5138b5c2cb70
+    - **📘 Quick Overview**
+      - You can create a Better Task directly or via the Command Palette — both behave identically, store their data in child blocks for reliability, and can include either a repeat rule or just start/defer/due dates for one-off scheduling.
+    - **🔹 Child Block Style**
+      - ```plain text
+        {{[[TODO]]}} Write weekly newsletter
+          - BT_attrRepeat:: every Friday
+          - BT_attrDue:: [[2025-11-07]]```
+      - When completed:
+      - ```plain text
+        {{[[DONE]]}} Write weekly newsletter
+          - BT_attrRepeat:: every Friday
+          - BT_attrDue:: [[2025-11-07]]- completed:: [[2025-10-31]]```
+      - Optionally include a start attribute `BT_attrStart::` (when the task becomes available) and/or defer attribute `BT_attrDefer::` (when it should resurface). These labels are configurable in settings; defaults are `BT_attrStart` and `BT_attrDefer`. The completion attribute defaults to `completed::` but can also be configured in Settings.
+    - **🔹 Scheduled (One-Off) Tasks**
+      - Leave the repeat field blank while setting any combination of `start::`, `defer::`, or `due::` to create a __scheduled one-off__ task. It uses the same child-block storage, pills, snooze controls, and completion logic — just without spawning a follow-up block. Completing it writes `completed:: [[<today>]]` and hides the pill.
+    - **🔹 Optional Metadata**
+      - Better Tasks also understands the following optional child-block attributes (names configurable in settings; defaults shown):
+      - ```plain text
+        - BT_attrProject:: [[Website Refresh]]- BT_attrWaitingFor:: [[Finance Team]]- BT_attrContext:: @computer, #office
+        - BT_attrPriority:: high
+        - BT_attrEnergy:: medium```
+      - These lines are purely optional—omit any you don’t need. Whenever a metadata value exists, it appears both in the dashboard and in the inline pill with quick actions:
+        - Click → opens/creates the referenced page (project, waiting-for, context).
+        - Shift+Click → opens that page in the right sidebar.
+        - Cmd/Ctrl+Click → prompts you to edit the value directly.
+      - Priority/energy pills cycle through low/medium/high/none on click. You can also add/remove metadata from the “⋯” menu on the pill or the dashboard row.
+    - **🔹 Inline Pill Indicators**
+      - Regardless of how you enter the attributes, the extension emits a compact pill next to each Better Task whenever its child blocks are collapsed:
+      - ![alt text](https://raw.githubusercontent.com/mlava/better-tasks/main/images/image.png)[🔗](https://raw.githubusercontent.com/mlava/better-tasks/main/images/image.png)
+        - Pills disappear automatically when you expand the task (so you can edit the child blocks directly) and reappear when the block is collapsed.
+        - Marking the TODO complete hides the pill until the extension spawns the next occurrence, keeping finished items visually quiet.
+        - Tasks without a repeat rule still show the pill with their start/defer/due dates, just without the ↻ segment.
+        - Dates within the next 7 days show the weekday name (`Wed`, `Thu`); anything further out shows a short date (`Feb 26`), so you can scan upcoming items quickly.
+        - ↻ Repeat pill — Click to edit; Alt+Click copies the rule to the clipboard.
+        - ⏱ Start / ⏳ Defer / 📅 Next — Click to open the corresponding Daily Note Page.
+        - Shift+Click opens that page in the right sidebar (matches Roam).
+        - Alt-Cmd/Ctrl+Click on the due pill snoozes +1 day.
+        - Alt/Ctrl/Meta+Click on any date pill opens a date picker to change that date.
+        - 📁 / ⌛ / @ / ! / 🔋 metadata — Only appear when a project, waiting-for, context, priority, or energy is set. Click to open the page or cycle the value (priority/energy); Shift+Click opens in the sidebar; Cmd/Ctrl+Click prompts you to edit.
+        - ⋯ Menu — Opens the full Better Task menu (see below).
+    - **⚙️ Settings**
+      - **Destination for Next Task**
+        - Determines where the next instance of a Better Task appears:
+          - Daily Notes Page (DNP) — Default; next occurrence is created on its due date’s DNP.
+          - Same Page — Next occurrence appears below the current one.
+          - Under a Heading on DNP — Adds the new task under the heading you specify (default: “Tasks”).
+      - **DNP heading**
+        - Heading for Under a Heading on DNP
+      - **Repeat attribute name**
+        - Label for a child block attribute for the recurrence pattern
+      - **Start attribute name**
+        - Label for the optional “start/available on” date attribute (default `BT_attrStart`)
+      - **Defer attribute name**
+        - Label for the optional “defer/snooze until” date attribute (default `BT_attrDefer`)
+      - **Due attribute name**
+        - Label for the optional “due” date attribute (default `BT_attrDue`)
+      - **Completed attribute name**
+        - Label written when the task is marked DONE (default `BT_attrCompleted`).
+        - You can change any of these attributes in Settings. These defaults have been chosen to minimise the risk of unexpected behaviours if you already use start:: defer:: repeat:: due:: or completed:: in your graph for other purposes.
+      - **Confirm Before Spawning Next Task**
+        - If enabled, shows a confirmation dialogue (“Spawn next occurrence?”) when you complete a repeating Better Task.
+      - **First day of the week**
+        - Tells Better Tasks which weekday your graph treats as the start of the week, and allows you to match your Roam Research preference setting.
+        - Weekly rules that span multiple days or intervals (e.g., `every 2 weeks on Sat & Sun`, `Mon-Fri`) interpret ranges using this anchor. Default is Monday.
+    - **🤖 AI Task Input Parsing (Experimental)**
+      - What it does: optionally sends the raw task text to OpenAI (BYO key, client-side) and maps the returned JSON into Better Task title/repeat/date attributes. If anything fails, the normal “Create a Better Task” flow runs instead.
+      - How to enable: in Better Tasks settings, set AI parsing mode to “Use my OpenAI key” and paste your key into AI API key. When mode is Off or the key is blank, AI parsing is skipped automatically.
+      - Privacy: the key and task text are sent directly from your browser to OpenAI; no extra backend is used. The key is stored in Roam’s extension settings (standard for Roam Depot AI extensions).
+      - Limitations: early feature; repeat/date parsing may be conservative. Project/context/priority/energy fields are accepted but currently ignored. Ambiguous input may fall back to manual entry.
+      - Failure behaviour: network/JSON/validation issues show a small toast (“AI parsing unavailable…”) and the normal Better Task prompt runs so task creation never blocks.
+      - How it flows: use the existing “Create a Better Task” command palette entry or block context menu. If AI is enabled and you have text in the block, it’s sent to OpenAI; otherwise you’ll be prompted for text. A small spinner toast appears while waiting for the API.
+      - Data safety: only the task text you supply plus your API key are sent directly to OpenAI; no proxy/server is involved. Nothing else from your graph is transmitted. If you hit quota issues, you’ll see a toast pointing you to the provider’s billing/limits page (`https://platform.openai.com/settings/organization/billing/overview`).
+    - Note: The settings pane for the extension allows you to use whatever name for the repeat and start/defer/due date atttributes you choose. The extension defaults to using 'BT_attrRepeat', 'BT_attrStart', 'BT_attrDefer' and 'BT_attrDue' for the recurrence pattern and start/defer/due dates respectively. If you happen to already use these attributes for other purposes, the extension will recognise and attempt to use them if you don't set alternatives in the settings. Using 'frequency' and 'when' for example, would prevent the extension from acting on anything for which you already use 'BT_attrRepeat' and 'BT_attrDue'.
+    - **🧩 Pills and Menus**
+      - Each task shows an inline “pill” next to its checkbox when the child blocks are collapsed.
+      - Pill actions:
+        - Repeat pill (↻) — Click to edit; Alt+Click to copy rule text.
+        - Due pill (Next:) — Click to open DNP; Shift+Click opens in right sidebar; Alt-Cmd/Ctrl+Click snoozes +1 day; Alt/Ctrl/Meta+Click opens the date picker.
+        - ⋯ (menu) — Opens the task menu with more options:
+      - {{[[table]]}}
+        - Action
+          - Description
+        - Snooze +1 day
+          - Push start date forward 1 day
+        - Snooze +3 days
+          - Push start date forward 3 days
+        - Snooze to next Monday
+          - Move start to the next Monday
+        - Snooze (pick date)
+          - Choose a custom start date
+        - Skip this occurrence
+          - Jump directly to next repeat cycle
+        - Generate next now
+          - Immediately create the next task
+        - End recurrence
+          - Stop this task from repeating
+      - All actions support Undo via a toast notification. If a start date isn't configured the buttons snooze the due date instead. Skip / generate / end only appear for tasks with a repeat rule.
+    - **📊 Better Tasks Dashboard**
+      - Open the dashboard from the command palette (`Toggle Better Tasks Dashboard`) or the icon ![](https://raw.githubusercontent.com/mlava/better-tasks/main/images/image-2.png)[🔗](https://raw.githubusercontent.com/mlava/better-tasks/main/images/image-2.png) that appears in Roam’s top bar. The dashboard lists every Better Task (recurring or scheduled one-off) with:
+        - Powerful filters for recurrence type, availability (start/defer), due bucket, and completion status.
+        - Quick snooze actions, completion toggles, and links back to the originating blocks.
+        - Background refreshes whenever task attributes change so pills and dashboard stay in sync.
+        - A floating panel you can drag anywhere within the Roam window. The position is remembered, so place it where it works best for your workflow.
+        - A subtle ⋯ menu beside each task’s pills that lets you add or remove repeat/start/defer/due attributes (or edit them) without leaving the dashboard.
+        - Optional metadata chips (project, waiting-for, context, priority, energy) with filters plus add/remove buttons that mirror the inline pill behaviour.
+        - A quick-add input at the top: type a task and hit OK or Enter to create it (uses AI parsing when enabled, otherwise the manual Better Task flow with scheduling).
+        - Clicking the repeat or date pills in the dashboard mirrors the inline pill behaviour: you can open the same pickers, copy repeat text, or jump straight to the target Daily Note without expanding the block in Roam.
+      - Use the dashboard to triage overdue work, snooze tasks, or jump straight to the next daily note page without leaving Roam.
+    - **🎨 Theme Compatibility (Adaptive)**
+      - Better Tasks samples colours from Roam’s active theme and applies a lightweight contrast layer so the dashboard and pills feel native in both light and dark modes. The adaptive styling now works with Roam Studio, CSS Dark Mode Toggle, Roam "Native" Dark and Blueprint light/dark themes; if you spot any illegible text or mismatched backgrounds in your graph, please report the theme so we can fine‑tune it.
+      - ![](https://raw.githubusercontent.com/mlava/better-tasks/main/images/theming.gif)[🔗](https://raw.githubusercontent.com/mlava/better-tasks/main/images/theming.gif)
+    - **🧭 Commands**
+      - You can trigger these from Roam’s Command Palette (`Ctrl+P` / `Cmd+P`) or block context menu:
+        - Convert TODO to Better Task
+        - Create a Better Task
+      - These commands let you turn an existing task into a repeating Better Task or start a new scheduled TODO; just leave the repeat field blank to create a one-off with start/defer/due timing.
+    - **📆 Repeat Field Syntax (Current Support)**
+      - The `repeat::` attribute accepts natural-language patterns. Parsing is case-insensitive, tolerates extra whitespace, and supports separators like commas, `/`, `&`, and the word and.
+      - Abbreviations and ranges are supported (e.g., `Mon`, `Tue`, `Thu`, `MWF`, `TTh`, `Mon–Fri`).
+      - Anchor date: the next occurrence is calculated from `due::` (preferred). If no `due::` is present, the current date is used as the anchor.
+      - Week start: ranges and some weekly rules respect your First day of the week setting in the extension.
+      - This video demonstrates some of the recurrence/repeat functions:
+      - https://www.loom.com/share/f8856114bfd14d40a228292e7bcff9ee
+      - **🗓️ Daily & Business Days**
+        - {{[[table]]}}
+          - Example
+            - Meaning
+          - `every day` | `daily`
+            - once per day
+          - `every 2 days` | `every other day` | `every second day`
+            - every 2 days
+          - `every three days`
+            - every 3 days
+          - `every 5 days`
+            - every 5 days
+          - `every weekday` | `business days` | `workdays`
+            - Monday–Friday
+          - `every 2 weekdays`
+            - every 2 business days (Mon–Fri cadence)
+      - **📅 Weekly — Single Day (any case/abbrev)**
+        - {{[[table]]}}
+          - Example
+            - Meaning
+          - `every monday`
+            - every week on Monday
+          - `every mon` | `EVERY MON` | `every MOnDaY`
+            - variants accepted
+      - **📅 Weekly — Base Keywords & Intervals**
+        - {{[[table]]}}
+          - Example
+            - Meaning
+          - `weekly` | `every week`
+            - once per week (no fixed day)
+          - `every other week` | `every second week` | `biweekly` | `fortnightly` | `every fortnight`
+            - every 2 weeks
+          - `every 3 weeks`
+            - every third week (no fixed day)
+      - **📅 Weekly — Multiple Days (lists & separators)**
+        - {{[[table]]}}
+          - Example
+            - Meaning
+          - `weekly on tue, thu`
+            - Tuesday and Thursday
+          - `weekly on tue thu`
+            - same (spaces only)
+          - `weekly on tue & thu`
+            - same (`&` supported)
+          - `weekly on tue/thu` | `Tu/Th` | `t/th`
+            - slash shorthand
+          - `every mon, wed, fri` | `MWF`
+            - Monday, Wednesday, Friday
+          - `TTh`
+            - Tuesday and Thursday
+          - `weekly on tue, thu and sat & sun`
+            - mixed separators supported
+      - **📅 Weekly — Ranges (includes wrap-around)**
+        - {{[[table]]}}
+          - Example
+            - Meaning
+          - `every mon-fri` | `every mon–fri` | `every mon—fri`
+            - Monday through Friday
+          - `every fri–sun`
+            - Friday → Sunday range
+          - `every su–tu`
+            - Sunday → Tuesday (wrap)
+      - **📅 Weekly — Interval + Specific Day(s)**
+        - {{[[table]]}}
+          - Example
+            - Meaning
+          - `every 2 weeks on monday`
+            - every 2nd Monday
+          - `every 3 weeks on fri`
+            - every 3rd Friday
+          - `every 4 weeks on tue, thu`
+            - every 4th week on Tue & Thu
+      - **🗓️ Monthly — By Day Number (single/multi, clamps, EOM)**
+        - {{[[table]]}}
+          - Example
+            - Meaning
+          - `monthly`
+            - same calendar day each month (uses `due::` day)
+          - `every month on day 15`
+            - 15th of each month
+          - `the 1st day of each month`
+            - 1st day every month
+          - `day 31 of each month`
+            - clamps to end of shorter months
+          - `last day of the month` | `EOM`
+            - last calendar day each month
+          - `on the 1st and 15th of each month`
+            - 1st & 15th
+          - `on the 15th and last day of each month`
+            - 15th + EOM
+          - `on the 5th, 12th, 20th of each month` | `on the 5th/12th/20th of each month` | `on the 5th & 12th & 20th of each month`
+            - multiple specific dates
+      - **🗓️ Monthly — Nth Weekday Variants**
+        - `first monday of each month`
+        - `2nd wed every month`
+        - `last friday of each month`
+        - `1st and 3rd monday of each month`
+        - `penultimate friday of each month` / `second last friday ...`
+        - `first weekday of each month`
+        - `last weekday of each month`
+        - `every month on the second tuesday`
+        - `2nd Tue each month`
+        - `the last thu each month`
+      - **🗓️ Every N Months (date or Nth weekday)**
+        - `every 2 months on the 10th`
+        - `every 3 months on the 2nd tuesday`
+        - `quarterly`
+        - `semiannual` / `semi-annually` / `twice a year`
+      - **🎉 Yearly — Fixed Date & Nth Weekday-in-Month**
+        - `every March 10`, `on 10 March every year`
+        - `annually`, `yearly` (fixed-date anchor)
+        - `first Monday of May every year`
+      - **📆 Weekends**
+        - {{[[table]]}}
+          - Example
+            - Meaning
+          - `every weekend` | `weekends`
+            - Saturday & Sunday
+    - **Notes**
+      - Abbreviations & aliases: `Mon/Mon./Monday`, `Thu/Thurs/Thursday`, `MWF`, `TTh` are accepted.
+      - Ranges: `Mon–Fri` (or `Mon-Fri`) expands to all included days.
+      - Clamping: Day numbers beyond a month’s end clamp to the last valid date (e.g., `31st` → Feb 28/29).
+      - “Every N weekdays” counts business days (Mon–Fri) only.
+      - Pluralisation is flexible: `monday`/`mondays`, `week`/`weeks`, etc.
+    - **💡 Tips**
+      - Any TODO with a `repeat::` value automatically becomes a repeating Better Task.
+      - Completing it will spawn the next occurrence (optionally after confirmation).
+      - Collapsing a Better Task shows its pill; expanding it reveals the underlying child blocks for editing.
+      - Most actions (skip, snooze, edit) display an Undo toast.
+    - **🧰 Example Workflow**
+      - Draft the task (inline or empty block), then run Convert TODO to Better Task (or simply Create a Better Task if you’re starting fresh). The toast lets you enter the title, optional repeat rule, and optional start/defer/due dates; it stores the canonical data in child blocks and shows the inline pill.
+      - Mark it done — for repeating Better Tasks, the extension automatically creates the next task on its start date (or due date if no start is provided) so it appears on the right Daily Note or page.
+      - If you snooze or skip via the pill menu, the defer/due child blocks update and the pill reflects the new dates immediately.
+    - Enjoy Better Task management directly inside Roam Research!
+- [[November 19th, 2025]]
+  - [[Desktop App]] update
+    - [[Windows]] new app menu bar
+    - Fixed [[Mac]] performance issues with macos 26 (liquid glass)
+- [[November 11th, 2025]]
+  - [[Bug Fixes]]
+    - [[PDF]]
+      - Fixed encrypted graphs not working full screen
+      - Fixed encrypted graphs area highlight failing to upload image
+      - Fixed clicking highlights inside of diagrams to open the PDF
+      - Fixed some flakeyness when clicking a highlight to open the pdf and scroll it into view
+    - Fixed [[block view]]s inside of numbered lists
+- [[November 6th, 2025]]
+  - [[Roam Depot Extensions]]
+    - **Roam Copilot**
+      - ![Watch the video](https://github.com/qcrao/copilot/raw/main/assets/demo-cover.png?raw=true)[🔗](https://youtu.be/SaAvypfKgUo) 
+      - 👆 [Click to watch the demo video](https://youtu.be/SaAvypfKgUo)
+      - 🚀 Transform your Roam Research experience with AI-powered insights
+      - Roam Copilot brings the power of advanced AI directly into your Roam workspace. Get instant, context-aware assistance for brainstorming, analysis, and idea connections without ever leaving your graph.
+      - ✨ Key Highlights:
+        - 🧠 Context-Aware Intelligence - Automatically understands your current page content
+        - 🏠 Privacy-First with Local AI - Full support for local models via Ollama
+        - ⚡ Multi-Provider Support - OpenAI, Anthropic, Grok, DeepSeek, Qwen, Gemini, Groq, XAI, Ollama, and custom models
+        - 🎯 User-friendly Interface - Resizable window on the right side of your main workspace
+      - ![](https://github.com/qcrao/copilot/raw/main/assets/hero.png?raw=true)[🔗](https://github.com/qcrao/copilot/blob/main/assets/hero.png?raw=true)
+      - **✨ What Makes Roam Copilot Special**
+        - **🎯 Smart Context Understanding**
+          - Automatically reads your current page content
+          - Uses visible blocks, including sidebar notes, as conversation context
+          - No manual copy-pasting required
+        - **🏠 Privacy & Control**
+          - Local AI Models - Run powerful models privately via Ollama. Your data stays where you want it
+          - Multiple Providers - OpenAI, Anthropic, Grok, or custom endpoints
+        - **💬 Intuitive Chat Experience**
+          - User-friendly Interface - Draggable, resizable, and minimizable
+          - Conversation History - Never lose your AI conversations
+          - Quick Templates - Pre-built prompts for common workflows
+          - Command Palette - Keyboard shortcuts for power users
+          - Smart Input Features - @ to search pages, drag & drop blocks, / for templates
+      - **📝 Powerful Templates**
+        - Official Templates - Pre-built prompts for common workflows
+          - Insights
+          - Writing assistance
+        - Custom Templates - Create your own templates
+          - Define custom prompts
+          - Add descriptions and icons
+          - Organize by categories
+        - ![](https://github.com/qcrao/copilot/raw/main/assets/prompt-template.png?raw=true)[🔗](https://github.com/qcrao/copilot/blob/main/assets/prompt-template.png?raw=true)
+      - **🚀 Quick Start**
+        - **Installation from Roam Depot**
+          - Install from Roam Depot - Search for "Roam Copilot" in your Roam Research extensions
+          - Configure Your AI Provider - Add API keys for OpenAI, Anthropic, or Grok in settings
+          - Start Chatting - Click the lightbulb icon in the bottom-right corner
+        - **Prerequisites**
+          - [Roam Research](https://roamresearch.com/) account
+          - API key from your preferred AI provider (or [Ollama](https://ollama.ai/) for local models)
+        - **Using Local Models (Ollama)**
+          - To use Roam Copilot with a local Ollama instance, you must configure Ollama to accept requests from Roam Research. This is a critical security step required by Ollama. Here is a detailed guide to get it working:
+          - 1. Check if Ollama is Running
+          - Open your terminal and run the following command. You should see a response from the Ollama server.
+          - ```plain text
+            curl http://localhost:11434/```
+          - 2. List Your Installed Models
+          - Verify which models you have available locally.
+          - ```plain text
+            ollama list
+            # or via the API
+            curl http://localhost:11434/api/tags```
+          - 3. Set the Allowed Origin for Roam Research
+          - This is the most important step. You need to tell Ollama to accept connections from `https://roamresearch.com`.
+        - **One-Click Setup Script (Recommended)**
+          - We provide scripts that automatically set up, test, and clean up CORS configuration. You can either download them from the repository or use our hosted versions:
+          - Download and run the setup script:
+          - ```plain text
+            # Option 1: Download from public URL
+            curl -fsSL https://public.qcrao.com/rr-copilot/setup_ollama_cors.sh | bash```
+          - This script will:
+            - Add the environment variable to your shell configuration file (`.zshrc`, `.bash_profile`, etc.)
+            - Create a persistent launchd configuration on macOS
+            - Restart Ollama automatically
+            - Verify the CORS configuration
+          - To test if CORS is working correctly:
+          - ```plain text
+            # Download and run the test script
+            curl -fsSL https://public.qcrao.com/rr-copilot/test_ollama_cors.sh | bash```
+          - To remove the CORS configuration later:
+          - ```plain text
+            # Download and run the cleanup script
+            curl -fsSL https://public.qcrao.com/rr-copilot/cleanup_ollama_cors.sh | bash```
+      - **💬 How to Use**
+        - **Getting Started**
+          - 💡 Click the lightbulb icon in the bottom-right corner, or
+          - ⌨️ Use Command Palette (`Cmd+P` / `Ctrl+P`) → Search "Roam Copilot"
+        - **Chat Interface**
+          - 🔄 Auto-Context - Your current page content is automatically included
+          - 📚 Chat History - Access previous conversations from the sidebar
+          - ➕ New Conversations - Start fresh chats anytime
+          - 🔽 Minimize/Expand - Keep it out of the way when not needed
+        - **Settings**
+          - You can configure the AI models and other settings from the settings panel.
+          - ![](https://github.com/qcrao/copilot/raw/main/assets/settings.png?raw=true)[🔗](https://github.com/qcrao/copilot/blob/main/assets/settings.png?raw=true)
+      - **Contributing**
+        - Contributions are welcome! Please feel free to submit a pull request or open an issue.
+      - **License**
+        - This project is licensed under the [MIT License](https://github.com/qcrao/copilot/blob/main/LICENSE).
+  - [[Bug Fixes]]
+    - Fix tab view tab titles updating and bug with no tabs
+- [[October 24th, 2025]]
+  - [[Roam Depot Extensions]]
+    - **Quick Insert Block**
+      - When you need to insert a block above or below the target block , this plugin can help you reduce the number of steps.
+      - ![embed mode](https://user-images.githubusercontent.com/23192045/219314019-b3cd117c-81a8-4616-b251-633aac968dc6.gif)[🔗](https://user-images.githubusercontent.com/23192045/219314019-b3cd117c-81a8-4616-b251-633aac968dc6.gif)
+- [[October 2nd, 2025]]
+  - [[Quality of Life Improvements]]
+    - import / export hotkeys
+- [[October 1st, 2025]]
+  - [[Bug Fixes]]
+    - Fix displaying [[dropbox]] files in the new [[PDF]] viewer and annotator
+- [[September 30th, 2025]]
+  - **[[New Features]]  🚀**
+    - [[PDF]] viewer and annotator
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FfXRflkCrp8.png?alt=media&token=4e376ecd-39e6-4af5-a06d-ed8b59905876)
+      - Click and drag to select and highlight text or hold `alt` and click and drag to select an area
+- [[September 16th, 2025]]
+  - Bug fixes for export
+  - Database update for upcoming features
+  - "Replace with another DNP" in page reference right-click menu
+    - makes the alt-click UI for daily note page refs more discoverable
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FuRLOMDHRLj.png?alt=media&token=c04a0908-0b31-4880-b732-c75554fc5135)
+- [[August 29th, 2025]]
+  - Update [[excalidraw]] to the latest version
+  - Fix bug in [[excalidraw]] where backticks would add a bunch of unwanted text to the block
+- [[August 18th, 2025]]
+  - [[Bug Fixes]]
+    - Fixed tags not being created after an image
+    - Fixed [[Filters]] with the `{{mentions}}` component not applying right
+    - Fixed selecting the `{{date}}` component out of bounds, and increased the date range to 10 years from now
+- [[August 15th, 2025]]
+  - [[Roam Depot Extensions]]
+    - **[Roam References Radar](https://github.com/dive2Pro/roam-references-radar)**
+      - A Roam Research plugin that helps you discover more potential connections in your knowledge graph by identifying and suggesting relevant references.
+      - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FiUgA8O8PQA.mp4?alt=media&token=4a7e0c3e-72a0-46be-8384-e0ce056967b0}}
+      - **Key Functionality**
+        - Automatic Execution: The plugin starts working immediately after installation without any manual configuration needed.
+        - Visual Indicators: When a block contains text that can be referenced to an existing page, an icon appears at the end of the block as a visual indicator.
+        - Interactive Popover: Clicking on the indicator icon opens a popover that displays all potential reference keywords found in the block.
+        - Multiple Reference Links: For each identified keyword, the popover displays multiple possible reference links, allowing you to select the most relevant connection for your knowledge graph.
+      - **Usage Tips**
+        - Page Recognition Rules: The plugin automatically identifies pages in your Roam graph but filters out pages with overly short titles (such as single characters) to ensure more accurate and useful connection recommendations.
+- [[August 2nd, 2025]]
+  - [[Quality of Life Improvements]]
+    - Added [[Filter]] on the daily notes page
+    - Added a [[Filter]] option to include or exclude all daily notes pages
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FnwAFzuzoRs.png?alt=media&token=dcf61182-4670-4d57-b619-4579b11d0e59)
+      - Similar to Added a [[Roam Query]] clause to filter on all daily notes at once
+    - [[Roam Query]] builder now appears __above__ the results, letting you watch updates live as you refine the query.
+      - We’ve also swapped the pen icon for a hammer to avoid confusion pen icons which usually focus the underlying block
+    - Added a [[Roam Query]] clause to filter on all daily notes at once
+      - This is equivalent to manually listing out all of the pages, e.i [[August 1, 2023]], [[August 2nd, 2023]], and so on
+      - Meaning that this will include blocks on daily notes or under a reference to a daily note
+    - Fixed [[Roam Query]] search to also search page titles
+- [[July 18th, 2025]]
+  - [[Quality of Life Improvements]]
+    - Added sorting for [[Query]] as well as filtering
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FyRMpyi15TY.png?alt=media&token=983b2736-804e-4279-beb0-9f9632a615f6)
+    - Moved sorting for [[Linked References]] into the settings menu
+    - Replaced "Page Date" sorting with "Most Recent" to be more clear on the purpose, functionally they are almost the same.
+- [[July 15th, 2025]]
+  - [[Roam Depot Extensions]]
+    - **Image OCR**
+      - Use tesseract.js to examine and extract text from images in your Roam Research graph.
+      - If you often take photos of poweerpoint presentations to save them for later, you'll understand the need to be able to extract text from those images. Using this extension you can extract text from an image or series of images and apply the recognised text as a child block to the image.
+      - There are several ways you can achieve this with this extension:
+        - Block context menu - Extensions / 'Get Text from Images (OCR) in selected block(s)'
+        - Block context menu - Extensions / 'Get Text from Images (OCR) in child blocks'
+        - Multiselect menu - Plugins / 'Get Text from Images (OCR) in selected block(s)'
+      - You can see this in this gif:
+      - ![](https://github.com/mlava/image-ocr/raw/main/Screen%20Recording%202025-06-20%20at%2010.44.04%E2%80%AFam.gif)[🔗](https://github.com/mlava/image-ocr/blob/main/Screen%20Recording%202025-06-20%20at%2010.44.04%E2%80%AFam.gif)
+      - The extension checks each selected block for the presence of an image tag. If there aren't any image tags nothing will happen. If it recognises an image tag it will attempt to recognise text and then apply as a child block.
+      - You can specify the recognition language in the Roam Depot settings, or it will default to English. You can also set a confidence threshold. Tesseract.js reports how confident it is in the text extracted. If you set a confidence threshold and the recognition confidence is below that level, the text won't be applied to your graph.
+      - In the case of a single block, toasts will be shown if the extension fails to recognise text in the image or the confidence level is below your set confidence threshold. If you run the extension on multiple blocks the toasts are disabled (stops toast spam on screen). It might be worth testing your language and confidence settings on single images until you're satisfied you have the settings refined.
+    - **DOCX Viewer**
+      - Roam Research allows you to upload and render pdfs, but until now you couldn't do that for DOCX files. You can with this extension.
+      - Drag & drop, paste or `/upload` a docx file into your graph and the extension will recognise the file, and render it in place.
+      - ![Example docx](https://github.com/mlava/docx-upload-render/raw/be1ea5087af8ac8230d3971fe5e33ecd64953538/image.png)[🔗](https://github.com/mlava/docx-upload-render/blob/be1ea5087af8ac8230d3971fe5e33ecd64953538/image.png)
+      - If your document is more than one page long, the docx previewer will try to paginate and show buttons as below. (If your document is a single page the buttons will not appear.)
+      - ![Nav buttons](https://github.com/mlava/docx-upload-render/raw/be1ea5087af8ac8230d3971fe5e33ecd64953538/image-1.png)[🔗](https://github.com/mlava/docx-upload-render/blob/be1ea5087af8ac8230d3971fe5e33ecd64953538/image-1.png)
+      - You can also examine existing pages for docx files you've uploaded to your graph, and convert them to the correct format to allow them to render.
+      - There are several ways you can do this:
+        - Command Palette options
+          - Render DOCX files in page - will check all blocks on the page for docx files
+          - Render DOCX files in focused block - will check the currently focused block for docx files
+          - Render DOCX files in focused block and children - will check the focused block and all children for docx files
+        - Block Context menu
+          - Render DOCX files in block(s) - will check the selected block for docx files
+          - Render DOCX files in block(s) and children - will check the selected block and all of its children for docx files
+        - Multiselect Context menu
+          - if you drag your mouse over several blocks and then right-click on the highlighted area, you can then use Plugins / Render DOCX files in selected block(s)
+        - Individual Multiselect
+          - you can select non-adjacent blocks using individual multiselect and then open the block context menu on any of them, select Extensions / Render DOCX files in block(s).
+      - **Important Limitations:**
+        - this extension allows you to preview docx files, but not edit them. AFAIK there are no nodejs packages that will render a docx file in React that would allow editing to occur.
+        - there might be some rendering issues for some content, as the imported library converts the docx content to html to render it.
+        - some docx documents will appear very long, as the renderer looks for page breaks within the source and if it doesn't find any it continues to render the content without forcing a page break
+      - With many thanks to [@dvargas92495](https://github.com/dvargas92495) and [@mdroidian](https://github.com/mdroidian) for their brilliant work and community contribution of https://github.com/RoamJS/roamjs-components. None of my extensions that use react components would be possible without their generosity.
+- [[July 8th, 2025]]
+  - [[Quality of Life Improvements]]
+    - Added sorting for [[Linked References]]
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Ff0KB2rmZyp.png?alt=media&token=65bccfb1-4c55-43b5-ba52-83acccc07e8d)
+    - Added settings for group by page, nesting under parent results, and show paths for [[Linked References]]
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FAsLfJgw471.png?alt=media&token=5cb165d7-f21d-4b31-a980-8256be708434)
+- [[June 27th, 2025]]
+  - [[Quality of Life Improvements]]
+    - New billing page https://roamresearch.com/#/billing
+      - Moved from the top of the all graphs page
+    - New image modal with zoom, pan, copy and download features.
+- [[June 24th, 2025]]
+  - [[Bug Fixes]]
+    - Fix `{{video: }}` not displaying `youtu.be` shortened urls
+- [[June 13th, 2025]]
+  - [[Quality of Life Improvements]]
+    - Fix selecting blocks with the mouse when the blocks are aligned horizontally, such as with the horizontal [[block view]] or with css
+    - Auto scroll the page when selecting blocks with the mouse
+- [[May 15th, 2025]]
+  - [[Bug Fixes]]
+    - Fix a bug with the automatic deleting of empty pages which caused orphan blocks, we now wait two days to clean up any empty (unused) pages
+- [[May 13th, 2025]]
+  - [[Quality of Life Improvements]]
+    - All [[Search]]es across Roam will now find accented characters without explicitly having to search for the accent
+  - [[Bug Fixes]]
+    - Fixed issue with [[Import]] in which duplicate pages with accents would be created sometimes
+- [[April 29th, 2025]]
+  - [[Quality of Life Improvements]]
+    - Added [[embed-children]] and [[embed-path]] to [[/ Commands]]
+    - improved the way the inline auto complete (`(())`, `[[]]`, etc) work to better keep the active item in view
+- [[April 17th, 2025]]
+  - [[Bug Fixes]]
+    - [[Query Builder]]
+      - Change the editing icon to an eye when editing to be more clear and fix the tooltip to say "View Results"
+      - Fixed a bug that caused pages created while the editor is open to not show up in auto complete
+- [[April 15th, 2025]]
+  - 🚀 **Roam Just Got Much Faster!** #[[Performance Improvement]]
+    - Previously, the more blocks open on screen, either from pages in the sidebar or open queries, the slower Roam became.
+    - Slowdowns were particularly bad if you had a query open which returned a lot of results, even if the query was set to not auto update. They also happened frequently if you forgot to close old sidebar pages, or editing a page with a lot of linked references. 
+    - We've optimized Roam’s performance so it stays snappy and responsive, no matter how much content you have open.
+    - [[Example]] creating a few blocks and deleting them with a query open
+      - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FopzCefLlvB.mp4?alt=media&token=8a51b5c7-f145-403d-a521-aaf8c99072ef}}
+- [[April 11th, 2025]]
+  - 🖖 Small update to our [[Roam Append API]] (with some user-facing improvements)
+    - You can now pass nested markdown input in the "string" argument and it will be properly parsed into blocks
+      - To use it, just make sure the string starts with a "- "
+      - Example:
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fg-Uda__Bcs.png?alt=media&token=cb977b54-a411-4f3f-ad4c-a54436b2d493)
+    - If you're a user and not a dev, this enables new functionalities for you too!
+      - For example, our [[Zapier Integration]] now has a highly-requested functionality: you can add multi nested content now too!
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FJ8KVVoIBuT.png?alt=media&token=738811ff-c0f8-45ba-8a9e-652a89fc512d)
+      - Similarly, for our [[Apple Shortcuts/Speak to Roam]], if you had enabled the Postprocess/Summary step, then now the output summary will be split into the required number of blocks (which is how it should've looked from the get-go!)
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F9rU95vQcP_.png?alt=media&token=171394db-ee6f-4df2-a8ba-980c5dadedae)
+        - Left is old behavior; Right is current behavior
+    - If you're a dev and are interested in the [[Roam Append API]] itself, please checkout our Developer Documentation graph: https://roamresearch.com/#/app/developer-documentation/page/eb8OVhaFC
+- [[April 9th, 2025]]
+  - [[Roam Depot Extensions]]
+    - **Perplexity AI**
+      - Search the advanced conversational search engine at Perplexity AI using their API from within your Roam Research graph!
+      - You will need an API key from https://www.perplexity.ai/settings/api and you can enter this in the Roam Depot settings for this extension.
+      - You will also need to choose the AI model to use for your search. The currently available options are available from https://docs.perplexity.ai/guides/model-cards.
+      - Pricing for the Perplexity AI service can be found at https://docs.perplexity.ai/guides/pricing, and rate limits and usage tiers are at https://docs.perplexity.ai/guides/usage-tiers.
+      - You can trigger this extension using the Command palette and the 'Ask Perplexity' command. You can choose to output the Sources on which Perplexity has relied to create its response. You can also turn on the option to show a Follow Up section. With both turned on the output to your first question will be something like this:
+      - ![image](https://github.com/user-attachments/assets/494ed76a-2861-431b-9f44-595040cc4369)
+      - When this extension is installed, it creates a page in your graph with a SmartBlock. If you are using the SmartBlocks extension, which you absolutely should be, you can turn on the option to ask Follow-Up Questions in your Roam Depot Settings for this extension. Then, click the 'Ask Follow-Up Question' button as shown in the image above. This will create a pop-up in which you can enter a follow-up query.
+      - The result of the call will be displayed nested below the original query.
+      - ![image](https://github.com/user-attachments/assets/12c35358-0ca0-449d-aadb-31b31d02a339)
+      - You can keep asking follow-up questions for as long as you wish, and the extension will keep track of the discussions.
+      - The settings pane in Roam Depot looks something like this:
+      - ![image](https://github.com/user-attachments/assets/f210a0b4-6c82-4f9c-8b39-312531210f6c)
+      - The 'Include Sources in Follow-Up' setting allows you to turn on or off the sources display for any follow-up questions. Some users might prefer to have Sources for their first query but not their follow-up queries. It's up to you.
+      - Finally, the 'Default instructions' field allows you to specify some general instructions you wish to apply to all queries. Examples of these can be found on the Perplexity website, but one is copied below for convenience.
+      - `Consider all context from our conversation thread and use that context along with any results your search may produce to inform your response.`
+      - Perplexity also has an array of settings you could use to fine-tune your queries if you wish. You can access these by turning the 'Advanced Perplexity Settings' switch to ON.
+      - Each of these settings is described in the documents at https://docs.perplexity.ai/api-reference/chat-completions. This extension will check to make sure that any changes you specify are within the parameters described in the Perplexity docs. Note that a toast will appear if something you enter is outside the allowed range.
+      - For the 'Search domain filter' you can enter domains that you wish to search from or exclude. This feature is only available for some Perplexity account tiers. If you wish to use this, you need to enter an array as shown below. "space.com" will allow searching this domain. "-wikipedia.org" will exclude data from Wikipedia due to the preceding - sign. There is a limit of three domain filters you can list.
+      - `["space.com", "nasa.gov", "-wikipedia.org"]`
+      - If you have any issues, you can check the API documents at Perplexity or ask questions on [Slack](https://app.slack.com/client/TNEAEL9QW/).
+    - **[Card Theme](https://github.com/qcrao/card-theme)**
+      - Card Theme is a Roam Research extension that provides a beautiful, card-based theme with special styling for different types of notes (Fleeting, Literature, Reference, Permanent, and Question notes).
+      - ![overview](https://github.com/qcrao/card-theme/raw/main/assets/card-theme.png)
+      - **Features**
+        - **Beautiful Card-Based Design**
+          - Clean and modern card-based interface
+          - Beautiful styling for different note types
+          - Shadow effects and rounded corners for better visual hierarchy
+        - **Note Type Styling**
+          - Fleeting Notes (F-Note): Light style with red accent
+          - Literature Notes (L-Note): Light style with green accent
+          - Reference Notes (R-Note): Light style with orange accent
+          - Permanent Notes (Z-Note): Blue gradient with arrow design
+          - Question Notes (Q-Note): Orange style with arrow design
+        - **Enhanced Navigation**
+          - Pin/unpin main content area
+      - **Installation**
+        - In Roam Research, go to Settings > Roam Depot > Community extensions
+        - Search for "Card Theme"
+        - Click "Install"
+      - **Configuration**
+        - After installation, the theme will be automatically applied to your Roam Research graph. No additional configuration is required.
+      - **Usage**
+        - **Pin/Unpin Main Content**
+          - The theme includes a pin/unpin feature for better navigation:
+            - Click the pin icon in the top bar to toggle between modes
+            - When unpinned: Main content stays fixed while right sidebar scrolls independently
+            - When pinned: Main content scrolls with right sidebar together.
+        - **Note Type Tags**
+          - To use the different note styles, simply tag your blocks with the appropriate tag:
+            - `#F-Note` - For Fleeting Notes
+            - `#L-Note` - For Literature Notes
+            - `#R-Note` - For Reference Notes
+            - `#Z-Note` - For Permanent Notes
+            - `#Q-Note` - For Question Notes
+          - ![note-type-tags](https://github.com/qcrao/card-theme/raw/main/assets/notes-styles.png)
+      - **Acknowledgments**
+        - This theme is built upon several amazing contributions from the Roam Research community:
+          - [Masonry Vanilla theme](https://gitmurf.github.io/masonry-vanilla/) by GitMurf, which provides the foundational masonry layout and functionality
+          - [Lisa Marie Cabrelli](https://www.youtube.com/@LisaMarieCabrelli/playlists), whose "Roam for Results" course demonstrated the practical application and effectiveness of this theme style
+          - The broader Roam Research community for their continuous contributions and improvements to the theming ecosystem
+        - The combination of these resources inspired the creation of this card-based theme to enhance the note-taking experience in Roam Research.
+    - **DOI Handling**
+      - Paste DOIs into Roam Research and receive a nicely formatted link instead of Roam's default simple text output. OR, check a page for all DOIs not already formatted as markdown and replace them with formatted links.
+      - Currently, Roam Research pastes DOIs as simple text:
+      - `10.1088/1741-4326/ab8e8b` or `doi.org/10.1016/j.neuron.2021.09.035` unless they are already preceded by `https://`
+      - With this extension, you can copy a DOI into your clipboard, focus a block in your graph and then trigger the Command Palette option 'Paste DOI from clipboard'. There are three options for how you can format the output, configurable in Roam Depot settings for this extension.
+        - Unaltered - what you have in your clipboard is shown as the alias for the link `[clipboard text](link)`
+        - Normalised - the alias will be formatted in the format `[10.1088/1741-4326/ab8e8b](https://doi.org/10.1088/1741-4326/ab8e8b)`
+        - Item Name - the extension will contact CrossRef and try to resolve a name for the item the DOI points to. The alias will then be the name `[Testing a global standard for quantifying species recovery and assessing conservation impact](https://doi.org/10.1111/cobi.13756)`
+      - The other Command Palette command is to 'Check page for DOIs'. This will parse the entire page of text, or that date's page if you're on the daily note page. Where it finds DOIs that aren't already in markdown alias format `[]()` the extension will convert that string to a markdown link using your preferred display format from the settings.
+- [[March 28th, 2025]]
+  - [[Quality of Life Improvements]] ✨ for `:q`
+    - Background:: (in case you do not know what `:q` is)
+      - `:q` queries can be used to display the results of datomic/datascript queries in your Roam graph
+      - `:q` feature has existed since very early Roam, but we revamped it a few months ago in december
+        - Teaser into the revamped `:q`
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FCDgZUSitGM.gif?alt=media&token=a36140c6-3719-460d-ace1-13d2f06e9aee)
+    - **The new improvements:**
+      - Ability to "Nest under parent results" for columns containing blocks/pages
+        - Demo
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FW_4ykkTS4q.gif?alt=media&token=725810da-fb46-4240-a8d9-707e1cb648e5)
+        - Also, we now automatically detect which attributes in the find spec are roam entities
+          - so, no need anymore to return uids and have `uid` in the name
+          - for example, to show the pages in the graph, the query is as easy as
+            - `:q [:find ?p :where [?p :node/title]]`
+              - :q [:find ?p :where [?p :node/title]]
+      - Ability to transform columns containing strings
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FGa-vTwnAYN.gif?alt=media&token=11214de0-2b55-4821-940a-76efc9d1fe53)
+        - (i.e. column showing a `:block/string` or `:node/title`
+        - For now, only have two transformation functions
+          - `to number`
+            - Most useful to extract a number from a block and then sort according to that value
+          - `remove attribute`
+        - Example:: q getting children of a block and parsing out number
+          - sample data (student + roll number)
+            - Alice 1
+            - Bob 2
+            - Claire 3
+            - Herbert 43
+            - Andy 78
+          - the query
+            - ```clojure
+              [:find ?e ?s
+               :where
+               [?parent :block/uid "CQjUT-rQD"]
+               [?parent :block/children ?e]
+               [?e :block/string ?s]]```
+            - :q ```clojure
+              [:find ?e ?s
+               :where
+               [?parent :block/uid "CQjUT-rQD"]
+               [?parent :block/children ?e]
+               [?e :block/string ?s]]```
+      - Ability to customize how many results/rows to show per page (+ shuffle results)
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F3tX-_cHQeW.gif?alt=media&token=d10ee7af-80d0-4d26-9583-4f349de23633)
+        - Description::
+          - default pagination value is 10 rows/page
+          - can be customized via the footer
+          - If query has less than pagination, then the footer is not visible
+            - in those cases, the rows/page selector is in the `...` menu
+          - We've also added a new "shuffle results" button in the `...` menu
+        - Demo
+          - Example:: get 4 random pages in the graph
+            - `:q "Pages in the graph" [:find ?p :where [?p :node/title]]`
+            - :q "Pages in the graph" [:find ?p :where [?p :node/title]]
+            - GIF
+              - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F3tX-_cHQeW.gif?alt=media&token=d10ee7af-80d0-4d26-9583-4f349de23633)
+      - Ability to represent dates inside of `:q` (i.e. date arithmetic)
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FzEfhEoXV0B.png?alt=media&token=330aaad1-260d-454d-8527-1209d2c08b25)
+      - Some new useful inbuilt `rules` to ease writing queries
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F_ikW0ObQXq.png?alt=media&token=b39ba1c7-f30c-4518-9c0a-c1c27e1f3ab4)
+      - Ability to resize columns
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FiH5G9ViGcP.gif?alt=media&token=a79436e1-8120-492a-83cf-3740ad4a69bc)
+      - Ability to have the query syntax in a separate code block
+        - `:q "Title" ((clojure code block with query))`
+        - **An example:**
+          - **instead of **
+            - `:q "Number of pages in the graph" [:find (count ?page) . :where [?page :node/title _]]`
+              - :q 
+                "Number of pages in the graph"
+                [:find (count ?page) . :where [?page :node/title _]]
+          - **you can have**
+            - a block with the query syntax
+              - ```clojure
+                [:find (count ?page) . 
+                 :where 
+                 [?page :node/title]]```
+            - and the main block uses this: 
+              (looks like `:q "Number of pages in the graph" ((Zjbs1ksj0))`)
+              - :q "Number of pages in the graph" ```clojure
+                [:find (count ?page) . 
+                 :where 
+                 [?page :node/title]]```
+          - **Why?**
+            - datalog queries are easier to type when in a code block
+            - you can reuse query syntax across multiple queries
+    - **Video demo:**
+      - {{[[video]]: https://www.loom.com/share/a3e5f8126d924b3eb95c7c11209eceee}}
+    - For more info & examples, please go to this page: [[Examples of :q query blocks]]
+- [[March 27th, 2025]]
+  - Fixed [[bug]] which caused blocks with versions to get orphaned when deleted
+    - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FGpxVIPTKLy.mp4?alt=media&token=9a766494-2a02-4616-a5a8-2870f309e7e6}}
+  - Fixed [[bug]] which caused the cursor to get put in the wrong place after some multi-select operations
+  - Speed up multi-select delete, indent and unindent actions
+- [[March 20th, 2025]]
+  - [[Quality of Life Improvements]]
+    - [[Mermaid Diagrams]]
+      - Removed horizontal scroll that was annoying on some diagrams
+      - Added support for the definition of the diagram to be a code block
+        - {{[[mermaid]]}}
+          - ```plain text
+            quadrantChart
+                title Reach and engagement of campaigns
+                x-axis Low Reach --> High Reach
+                y-axis Low Engagement --> High Engagement
+                quadrant-1 We should expand
+                quadrant-2 Need to promote
+                quadrant-3 Re-evaluate
+                quadrant-4 May be improved
+                Campaign A: [0.3, 0.6]
+                Campaign B: [0.45, 0.23]
+                Campaign C: [0.57, 0.69]
+                Campaign D: [0.78, 0.34]
+                Campaign E: [0.40, 0.34]
+                Campaign F: [0.35, 0.78]```
+      - Added support for setting the default [[Theme]]
+        - You can set the default theme with custom css
+          - {{[[roam/css]]}}
+            - ```css
+              :root {
+                --mermaidjs-theme: dark;
+              }```
+          - You will have to reload the page after applying this for it to take affect
+          - See the [docs for possible themes](https://mermaid.js.org/config/theming.html#available-themes)
+- [[March 18th, 2025]]
+  - [[Quality of Life Improvements]]
+    - [[Mermaid Diagrams]] update
+      - Updated to the most recent mermaidjs, you can now create any of the diagrams listed in [the docs](https://mermaid.js.org/intro/)
+        - {{[[mermaid]]}}
+      - You can create a new mermaid diagram by typing `/mermaid` and selecting mermaid from the dropdown
+      - Fixed a [[bug]] where a full screen error would occasionally show up when copying the block's ref on a mermaid diagram
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FstMFh1gX6B.png?alt=media&token=72dda514-38c0-48a5-8f8a-c2907738672a)
+- [[March 7th, 2025]]
+  - [[New Features]]
+    - [[Query]] Titles
+      - Click into the top bar to edit the title of your queries
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fmr5_4Du19I.gif?alt=media&token=ea5ce359-f4ba-4bb2-b042-cf9e91ed4b01)
+- [[March 6th, 2025]]
+  - Adds a timeout of 5 seconds to [:q query]([[Examples of :q query blocks]])
+    - this way, if you accidentally write (or generate 😉) a `:q`query that is very inefficient, it won't freeze your Roam graph indefinitely
+    - If this timeout is causing issues for you even for a valid query, please contact us at [support@roamresearch.com](mailto:support@roamresearch.com)
+  - [[Developer Notes]]
+    - We've added a timeout to `q`, `pull`, and variant functions in [[Roam Alpha API]]
+      - Throws an error with message `Query and/or pull expression took too long to run.` when you run into the timeout limit
+      - More info: https://roamresearch.com/#/app/developer-documentation/page/sxT2BV3Ko
+- [[March 4th, 2025]]
+  - [[Bug Fixes]]
+    - cut / paste no longer creates "ghost" references
+    - Shift click opens version blocks in the sidebar
+- [[February 27th, 2025]]
+  - [[New Features]]
+    - [[Query Builder]] For native Roam [[queries]]
+      - Click on the pen icon in the top right to edit an existing query or type `/query` to open a new one
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FjutKnCquhv.gif?alt=media&token=f177c6db-224d-4f15-b56e-452cb18351a7)
+- [[February 24th, 2025]]
+  - [[Bug Fixes]]
+    - Fixed multiple bugs with pasting [[Markdown]] introduced by a recent update
+      - Roam will now convert the visual nesting of the copied text much better than before even if it isn't valid markdown
+      - An example of what wasn't working before
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FzNcgjeT97c.png?alt=media&token=c39c159a-c3aa-4a73-b68f-8506ab2fe0fd)![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FfFPKrBAD9s.png?alt=media&token=eea7ddfb-af3d-4702-b4b7-f166a5751e58)
+        - Now it converts it into the proper nesting
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FvBRI5ivdE6.png?alt=media&token=67c94872-fbb9-457e-bde0-b999db259f16)
+- [[February 23rd, 2025]]
+  - **[[Zen Mode]]**
+    - **Zen Mode (or Focus mode)** allows you to focus on just the current page or block by hiding all unnecessary UI elements
+      - What happens when you trigger Zen Mode?
+        - hides the left and right sidebars
+        - hides the topbar ( a minimal topbar is visible on hover )
+          - a minimal topbar is visible on hover
+            - only has
+              - sync dot
+              - help button
+              - navigation arrow buttons (in desktop app)
+        - hides the search bar (you need to use the hotkey to trigger when in this mode)
+        - and, in [[Desktop App]], switches to full screen (removing menu bar too)
+      - When you get out of Zen Mode, it brings everything back to how it was before
+    - **Demo**
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F-gPHx_5hvn.gif?alt=media&token=15319200-d502-43c8-b7b2-1b14486eb5f5)
+    - **How to use?**
+      - You can trigger Zen Mode by opening the command palette (`cmd-p` or `ctrl-p`) and then triggering the command **"Toggle Zen Mode"**
+        - To quit Zen mode, you just trigger that command again
+    - **Some useful shortcuts for navigating when in Zen Mode:**
+      - Search: `cmd-u` or `ctrl-u`
+      - Go to daily notes: `ctrl-shift-d` or `alt-d`
+    - **Huge thanks** to [[Mark Lavercombe]] for his extension [Focus Mode](https://github.com/mlava/focus-mode) which was a major source of inspiration for this feature
+      - We liked it so much that we decided to make it native 😁
+      - If you want more customizability than the native feature provides (like say, you want to not hide right sidebar, or keep search intact), do play around with his extension!
+  - **[[Desktop App]] 0.0.25**
+    - New option for Windows/Linux: `Menu Bar` > `View` > `Hide menu bar when fullscreen`
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FCdvskeh9qk.gif?alt=media&token=8813f630-3616-447f-bae2-54d733ab485a)
+- [[February 21st, 2025]]
+  - [[Roam Depot Extensions]]
+    - **Live AI Assistant**
+      - **Powerful and versatile AI Assistant tailor-made for Roam. Rely on efficient and smart built-in prompts, create rich custom prompts or use voice, image or any part of your graph as prompt or context, change the style of the AI responses or create your custom styles !**
+      - **Unlock the full power of advanced Roam queries using simple natural language queries with NL Query Agents! Discover a new way to interact with your graph with Live Outliner Agent, and structure AI responses exactly as you need. Support up-to-date models, and most of existing models through OpenRouter and local ones through Ollama.**
+      - **🆕 New in v.12 (MAJOR UPDATE)**
+        - New context menu with a large set of built-in prompts and better way to handle custom prompts
+        - AI Agents to convert natural language requests in Roam queries or :q queries, search and ask question to your graph
+        - Live Outliner Agent, a brand new way to apply generative AI to any given part of your Roam graph (an AI canva tailored for Roam)
+        - Tokens and pricing counter
+        - Recent models support, including DeepSeek, o3-mini (avaible only if you are tier 3 minimum currently)...
+        - (See changelog [here](https://github.com/fbgallet/roam-extension-speech-to-roam/blob/main/CHANGELOG.md))
+        - Live AI Demo `:q`:
+        - ![Live AI Demo q](https://github.com/user-attachments/assets/e7fee859-df46-44a7-a4ba-3b638314e26c)
+        - Left sidebar or topbar controls:
+        - ![image](https://github.com/user-attachments/assets/f0567cce-c0d0-4736-992b-65dbce441d62)
+      - ****GETTING STARTED****
+        - Choose the LLM provider(s) that will provide you with an API key to use their services at will and copy your API key in the extension settings.
+        - OpenAI and Anthropic currently provide the most suitable and widely tested models for Live AI Assistant, but many other options are available. For paid models, you will be billed for each request based on the number of tokens used, which in practice is **very much cheaper** than existing subscriptions, and without the specific limitations of these subscriptions (you don't need any subscription to use Live AI Assistant, do not confuse the paid use of the API with, for example, ChatGPT Plus).
+        - Obtaining an API key is a simple operation, accessible to any user. Follow the [instructions provided here](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/api-keys-and-pricing.md) if you do not already have API keys and see [here](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/api-keys-and-pricing.md#main-models-pricing-per-million-tokens) current API pricing.
+      - **Simple prompt**
+        - Just write some basic prompt in a block (or press the microphone button and provide vocal instructions), keep the cursor focus in this block and click on the AI Generation button (lightning bolt icon). That's all !
+        - You can change the **default model** in the extension settings or in the Live AI context menu, by right-clicking on a command to display the available models, and right-clicking on a model to set it as default model.
+        - You can easily use **structured prompts** by selecting multiple blocks (including images with models supporting image recognition). Note that block references will be resolved and remplaced by the corresponding block content.
+        - You can easily **compare AI models** responses: right click on 'Generate a response again' button `⟳` appearing on the right of the AI response and choose another model. The new response will be inserted just above the first one.
+      - **Chat with your AI Assistant**
+        - You can easily continue any conversation with an AI Assistant:
+        - ![Live AI chat demo 2](https://github.com/user-attachments/assets/db9582f1-9db5-4c21-954a-eab5a21aa030)
+          - click on the conversation icon on the right of the last AI response block (if generated recently) or simply insert a block as next sibling of an AI response block (the one that contains it's role description, provided in settings, by default: `AI Assistant (<model>):`). It is not necessary to insert your role (such as "Me:") but more convenient in terms of readability.
+          - write or dictate your prompt (it can include children blocks),
+          - click on the button to continue the conversation, or run the usual AI generation command, or click on "Continue the conversation" command in Live AI context menu (all previous sibling blocks and their children will be taken into account).
+      - **Apply built-in prompts to existing content**
+        - Often, you will ask your assistant to process information already available in your graph, such as translating or summarizing a set of blocks. You could write instructions and copy the blocks to process to use them as a big prompt, but to make the most common tasks easier, Live AI Assistant offers a set of built-in prompts (around fifty) designed to be effective, rigorous, and tailored to Roam's specific constraints. You simply need, either:
+          - to select (by multi-block selection) the content to process and choose the built-in prompt from the context menu.
+          - open the context menu, select some context element to use as input content and choose the built-in prompt to apply.
+        - To open the **context menu**, the most efficient way is to use the `Live AI Assistant: Open commands context menu` command from the Command Palette (Cmd/Ctrl + p), or even better, use the shortcut (default is `Cmd + Ctrl + a`, which you can modify as you wish). Two other very simple options: right-click on the AI completion icon, or Cmd/Ctrl + right-click anywhere on the page where right-clicking does not have a specific function in Roam.
+        - ⚡️ **In practice, all you need is a hotkey and a few letters to quickly find a command. For example, to translate a block into French, you just need to press 'cmd + Ctrl + a', type 'fre' and press Enter! It's almost instant !**
+        - You can add specific instructions to built-in prompts simply by clicking the '+' button on the left of the prompt search box.
+        - You can view the exact content of each of these prompts [here](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/428602f8a383b46425a80f6e63ec2ef3af05d1b8/src/ai/prompts.js#L112).
+      - **Create & apply custom prompts**
+        - Create your custom prompts simply by inserting `#liveai/prompt` in some block. The content of this block will be used as title of your custom prompt and all its children will be used as a structured prompt (block references will be resolved). They will appear in the "custom prompts" section of the context menu. In the title block of your custom prompt, you can define an inline context, see the syntax [here]((https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/generative-ai.md#3-context-definition-and-inline-context).
+      - **Providing rich context**
+        - You can easily **add context** to your prompt, that is, a large set of data from your graph that will serve either as resources or as data to be processed, depending on the nature of your prompt and whether you have selected a set of blocks to process or not. In the first case, the context will be added to the system prompt and not as content to be processed. In the second case, the context will be inserted into the user prompt, to be processed directly.
+        - To define the context, you can either check the corresponding box in the context menu or press the corresponding modifier keys to catch all the content of the following elements (at different children depths depending on the element type and settings):
+          - **Page** (click +`Alt`): the current page zoom where the focus block or selected blocks are inserted, or by default, the main page zoom (at the center of the display)
+          - **LinkedRefs** (click +`Ctrl`): the linked references of the current page
+          - **Sidebar** (click +`Shift`): all the content of the sidebar
+          - **DNPs** (click +`Ctrl`): if you are in Daily Notes, the last DNPs (7 by default, you can increase the limit in the options)
+        - See more details on context definition and inline context [here](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/generative-ai.md#3-context-definition-and-inline-context)
+      - **Query Agents**
+        - Currently, 4 complementary AI Agents can help users to find precise information in their Roam Graph through natural language queries. The first three do not send any data from your graph to the LLM, they simply interpret the user's request to transform it into native Roam database queries. In contrast, the "Ask to your graph..." agent will have access to the data extracted by the queries to answer your question or proceed with the required processing.
+          - **Natural language query**: transform the user request in a properly formatted Roam query. It supports period range and semantic variations, [see details here](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/query-agents.md#natural-language-query-agent). Very reliable.
+          - **Natural language :q Datomic query**: transform the user request in a Datalog Datomic query using the native `:q` query syntax. The results are less reliable than with the previous agent because the syntax is much more complex. It works very well for fairly simple queries, more randomly for complex ones. [See details here](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/query-agents.md#natural-language-q-datomic-agent).
+          - **Smart Search Agent**: transform the user requests in a set of Datomic queries relying on .q Roam API, to support more complexe queries with hierarchical conditions. In principle allows for more precise results than previous agents, but it can be slow or even cause momentary freezing for large graphs. ⚠️ Use with caution, knowing that this is an experimental feature 🧪. [See details here](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/query-agents.md#smart-search-agent).
+          - **Ask to your graph...**: relying on the results of the SmartSearch Agent, proceed to post-processing expressed in the user instructions or question. ⚠️ Use with caution, knowing that this is an experimental feature 🧪. [See details here](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/query-agents.md#ask-to-your-graph).
+      - **Live Outliner Agent**
+        - This is another way of using AI, an alternative to the "Chat" format. It involves an Agent that autonomously chooses to modify an outline, that is, a set of blocks located under a given parent block, based on user requests. Instead of generating a series of content one after another as in a chat, the Live Outliner Agent modifies, adds, or removes specific blocks in the outline, while maintaining the same structure. In other words, the generation is inserted into a pre-existing structure (similar to a template) and acts only surgically, modifying only the necessary elements, which reduces the number of output tokens. It's a powerful and innovative feature, still experimental 🧪. [See details here](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/live-outliner.md).
+      - **Detailed documentation [🔗](https://github.com/fbgallet/roam-extension-live-ai-assistant/tree/main#detailed-documentation)**
+        - **Generative AI**
+          - [Voice transcription](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/generative-ai.md#voice-transcription)
+          - [Built-in prompts](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/generative-ai.md#built-in-prompts)
+          - [Context definition and inline context](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/generative-ai.md#3-context-definition-and-inline-context)
+          - [Custom prompts](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/generative-ai.md#custom-prompts)
+          - [Custom styles](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/generative-ai.md#custom-styles)
+          - [Using SmartBlocks commands](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/generative-ai.md#smartblocks-commands)
+        - **AI Agents**
+          - [Query Agents](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/query-agents.md)
+          - [Live Outliner Agent](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/live-outliner.md)
+        - **LLM Providers**
+          - [Get API Keys](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/api-keys-and-pricing.md#get-api-keys)
+          - [Models pricing](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/api-keys-and-pricing.md#main-models-pricing-per-million-tokens)
+          - [Ollama to run local models](https://github.com/fbgallet/roam-extension-live-ai-assistant/blob/main/docs/api-keys-and-pricing.md#using-ollama-to-run-local-models)
+      - **Support my work**
+        - This extension requires a lot of work in my free time. If you want to encourage me to develop further and enhance it, you can [buy me a coffee ☕ here](https://buymeacoffee.com/fbgallet) or [sponsor me on Github](https://github.com/sponsors/fbgallet). Thanks in advance for your support! 🙏
+      - **For any question or suggestion, DM me on **X/Twitter** and follow me to be informed of updates and new extensions : [@fbgallet](https://x.com/fbgallet).**
+        - Please report any issue [here](https://github.com/fbgallet/roam-extension-live-ai-assistant/issues).
+- [[February 20th, 2025]]
+  - **New abilities to query**
+    - Ability to query for blocks `created-by:` or `edited-by:` any user
+      - Makes it possible to have queries like:
+        - example: Tasks created by [Conor]([[Conor White-Sullivan]]) and edited (i.e. finished) by [Baibhav]([[Baibhav Bista]])
+          - `{{[[query]]: {and: [[DONE]] {created-by: [[Conor White-Sullivan]]} {edited-by: [[Baibhav Bista]]}}}}`
+        - another example: Tasks completed by a team member in a particular project
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FQ1crGolNlD.png?alt=media&token=23507d6e-2096-4c8e-8beb-a2c86b03a2f1)
+      - Additional notes
+        - Use [[user's display page]]. You can find a user's display page title by hovering over a block they created.
+        - Note that `edited-by:` matches only the user who last edited the block.
+        - change in behavior for `by:`
+          - `by:` previously used to behave like `edited-by:` but now matches blocks either created or edited by particular user
+    - API tokens now have their own display name pages of the format [[API Token: ...desc...]]
+      - main consequence is that you can now query for blocks/pages created/edited by tokens
+      - **example:** if you're using our [[Raycast]] extension (deets here), you can query for blocks created or edited by the corresponding API token
+        - `{{[[query]]: {by: [[API Token: Baibhav's Raycast]]}}}`
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FsdaSGwoRHN.png?alt=media&token=4c9e7529-a69a-42f0-9d32-50ca8be6fc25)
+      - to learn how to create API tokens, please visit [[Create API Tokens]]
+- [[February 19th, 2025]]
+  - [[Roam Depot Extensions]]
+    - **Discourse Graphs**
+      - The Discourse Graph extension enables Roam users to seamlessly add additional semantic structure to their notes, including specified page types and link types that model scientific discourse, to enable more complex and structured knowledge synthesis work, such as a complex interdisciplinary literature review, and enhanced collaboration with others on this work.
+      - For more information about Discourse Graphs, check out our website at [https://discoursegraphs.com](https://discoursegraphs.com/)
+- [[February 17th, 2025]]
+  - **[[Quality of Life Improvements]] [[roam@0.12.0]]**
+    - [[Encrypted Graphs]] now load up to 5 times faster than before, with much less memory usage. They are now only about 2 times slower to load than a regular graph of similar size. 
+      - This might fix the "graph is too large" error on mobile for encrypted graphs
+    - Regular graphs also got a small improvement to load time.
+    - We hopefully fixed Roam freezing when coming back from being idle (in the background). Previously, if you had a really large graph this could freeze your graph for minutes at a time, and possibly crash it.
+- [[February 14th, 2025]]
+  - [[Bug Fixes]]
+    - Fixed [[Unlinked References]] not working right for [[nested [[page refs]]]]
+    - Fixed pasting in markdown with roam links like `[changes]([[Change Log]])`
+- [[February 7th, 2025]]
+  - [[Quality of Life Improvements]]
+    - Automatically clean up empty (and with no references) daily notes option
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F2EUSQSgbVO.png?alt=media&token=1ed64b85-f753-40a3-9993-ade66b42ab0e)
+- [[February 5th, 2025]]
+  - [[File Manager]]
+    - Added a download all button
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FG58nJFKhpI.png?alt=media&token=5a3dd6dc-a507-45e5-ba5f-3abc997b75ea)
+      - Only available on chrome and the desktop app
+    - Most recent uploads now show at the top
+    - Fixed the files panel being slow to open by adding a "show more" button at the bottom
+    - Fixed bug causing the file manager to crash Roam
+  - [[Bug Fixes]]
+    - Fixed some images (svgs) not displaying in [[Encrypted Graphs]]
+- [[February 4th, 2025]]
+  - [[Bug Fixes]]
+    - Fixed nested tables crashing Roam
+- [[February 3rd, 2025]]
+  - [[Quality of Life Improvements]]
+    - Fixed markdown [[Export]] freezing and reduced memory usage
+    - Fixed markdown [[Export]] for [[embed-path]] and [[embed-children]]
+    - Small load time improvements
+- [[January 27th, 2025]]
+  - Added graph size metrics to the graph settings tab
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FhzzKAVY9ID.png?alt=media&token=cfd987a9-604a-4f12-8e78-70e0630cf1b4)
+- [[January 23rd, 2025]]
+  - Small [[Quality of Life Improvements]]
+    - Fix markdown import for daily-note-style titled pages
+      - If you have markdown files named like "January 23rd, 2025", then they now show up in the "Daily Notes" view
+        - Note that the files will need to be exactly in Roam's DNP title format for this to work
+    - Fix infinite spinner issue when exporting all files as Flat markdown
+  - [[Roam Depot Extensions]]
+    - **Last Year Today**
+      - Last Year Today is a Roam Research extension that automatically shows you what you wrote on the same day in previous years. It helps you reflect on your past thoughts, track your progress, and rediscover valuable insights from your journal entries.
+      - ![historical-pages](https://github.com/qcrao/last-year-today/raw/main/assets/historical-pages.png?raw=true)
+      - **Features**
+        - **Automatic Daily Updates**
+          - Automatically opens your historical pages at a configurable time each day
+          - Displays entries from previous years in the right sidebar
+          - Customizable number of years to look back (1-10 years)
+        - **Visual Distinction**
+          - Historical pages are visually distinct with custom styling
+          - Beautiful borders and hourglass icons for easy identification
+          - Clean and intuitive interface
+        - **Flexible Controls**
+          - Command palette integration for manual control
+          - Open and close historical pages on demand
+          - Configurable settings through the Roam Research settings panel
+      - **Installation**
+        - In Roam Research, go to Settings > Roam Depot > Community extensions
+        - Search for "Last Year Today"
+        - Click "Install"
+      - **Configuration**
+        - After installation, configure the extension in the Roam Research settings panel:
+          - **Years Back**: Choose how many years to look back (1-10 years)
+            - Default: 1 year
+            - Maximum: 10 years
+          - **Hour to Open Last Year Today Page**: Set when the historical pages should automatically open
+            - Default: 9 AM
+            - Range: 0-23 (24-hour format)
+        - ![settings](https://github.com/qcrao/last-year-today/raw/main/assets/settings.png?raw=true)
+      - **Usage**
+        - **Automatic Updates**
+          - The extension will automatically open your historical pages in the right sidebar at your configured time each day. Each historical page will be displayed in chronological order, from oldest to newest.
+        - **Manual Controls**
+          - You can also control the extension manually through the command palette (Cmd/Ctrl + P):
+            - **Open Last Year Today**
+              - Opens historical pages in the right sidebar
+              - Shows pages from previous years for the current date
+            - **Close Last Year Today**
+              - Closes all historical page windows
+              - Cleans up the sidebar
+          - ![command-palette](https://github.com/qcrao/last-year-today/raw/main/assets/command-palette.png?raw=true)
+        - **Visual Indicators**
+          - Historical pages are marked with:
+            - Distinctive borders
+            - Hourglass icon (⏳)
+            - Highlighted date headers
+            - Subtle shadows for depth
+          - ![historical-page](https://github.com/qcrao/last-year-today/raw/main/assets/historical-page.png?raw=true)
+- [[January 9th, 2025]]
+  - Small [[Quality of Life Improvements]]
+    - Exclude media links from search results
+      - (both in web app and in [[mobile]] Native View)
+    - Fix incorrect behavior of [[nested [[page refs]]]] in queries
+    - In Mac, Support emacs-style `ctrl-p` and `ctrl-n` hotkeys for navigating up/down in a number of list views
+      - in page ref autocomplete (i.e. `[[]]`), cross graph search (`cmd-shift-u`), Find or create page (`cmd-u`) and Advanc3ed block search (`ctrl-shift-9`)
+      - You can already use vim-style `ctrl-k` and `ctrl-j` for navigating up/down too
+    - [[bluesky]] posts now embed nicely too!
+      - An example post
+        - https://bsky.app/profile/inkandswitch.com/post/3laaktm2s7x2s
+- [[January 8th, 2025]]
+  - [[Quality of Life Improvements]]
+    - **Better touch screen experience for the web app**
+      - (tablet users should really like this change)
+      - Long press on any page or block reference to open context menu (i.e. right-click menu)
+        - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FIGSfzIKdoG.mov?alt=media&token=5811a001-0b70-4584-908e-805683bf14da}}
+      - Weird accidental selection issues on iOS/iPadOS should be much reduced
+    - **Right-click menus now work more consistently across the app**
+      - Now available for alias links to block or alias links to page too
+      - For consistency, block ref context menu can now be triggered by right-click too (the original way i.e. left-click still works)
+      - ctrl-click works for right click (on MacOS)
+    - Small misc fixes:
+      - Fixes bug of shift-click sometimes selecting other content
+        - was particularly noticeable in linked refs
+      - Fixes ctrl-n (hotkey for "Open new Roam window") not working for some screens in Windows/Linux Desktop app
+- [[January 7th, 2025]]
+  - [[Roam Depot Extensions]]
+    - **[API.Bible](https://github.com/mlava/bible) by [[Mark Lavercombe]]**
+      - Import verses, sections, passages and chapters from your preferred Bible into your Roam Research graph.
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fo5h1Qe2kuz.png?alt=media&token=8ed904fe-0e16-433f-91a5-036ec1a43b52)
+      - Features
+        - Command Palette
+          - Search Bible by string
+            - this option will present a search modal and then search the text of your preferred Bible for that string. It will then present a list of options to choose from in another modal, and then import the text of that verse once you've decided.
+              - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F-WclRghWeU.png?alt=media&token=ed3e0a8c-7df4-41a3-b151-318c04754e50)
+              - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FdOnzP1bNx-.png?alt=media&token=6864deab-5438-4a77-bb9c-e244475d6e26)
+          - Import Bible section
+            - a long list of available sections for your Bible will appear. This isn't very user friendly, but perhaps some might prefer this option.
+              - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FAYnZBClxiT.png?alt=media&token=7ec6e1f6-40e4-4e3c-bf1b-ae0e4dba1049)
+          - Import Bible section by Chapter
+            - this option allows you to choose sections from a specific chapter, which presents a much shorter dropdown list.
+          - Search for and import a Bible section by title
+            - this will allow you to enter a search string and will then check for sections matching that string.
+          - Import a Bible passage or verse
+            - this will allow to specify a verse or range of verses from a Book and Chapter to import
+              - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FnW-J6leiZY.png?alt=media&token=805725ed-d67b-4291-871d-93eb5ea6ec41)
+          - Import a random Bible verse
+            - fairly obvious
+      - Details
+        - This extension requires an API key for API.Bible. You can sign up for free at https://scripture.api.bible/signup Then, go to https://scripture.api.bible/admin/applications and create a new application. Complete as shown below to get an API key
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FTvGmRq0nTM.png?alt=media&token=15c19a26-08a9-4738-85fd-3146bfe6454f)
+        - Copy the long alphanumeric key from https://scripture.api.bible/admin/applications and enter it into the settings for this extension in Roam Depot.
+        - Then, select your preferred language. This will call the API.Bible api and retrieve a list of Bibles available in your language. Once the Preferred Bible Version dropdown appears, choose a Bible and Roam will import some basic information about that Bible for future use.
+        - Not all Bible versions in the API have all Books and only some have Bible 'sections' - a series of verses that form a specific story. e.g.
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fo5h1Qe2kuz.png?alt=media&token=8ed904fe-0e16-433f-91a5-036ec1a43b52)
+        - You then have several options available to get scripture into your graph:
+          - Command Palette
+            - Search Bible by string
+              - this option will present a search modal and then search the text of your preferred Bible for that string. It will then present a list of options to choose from in another modal, and then import the text of that verse once you've decided.
+                - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F-WclRghWeU.png?alt=media&token=ed3e0a8c-7df4-41a3-b151-318c04754e50)
+                - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FdOnzP1bNx-.png?alt=media&token=6864deab-5438-4a77-bb9c-e244475d6e26)
+            - Import Bible section
+              - a long list of available sections for your Bible will appear. This isn't very user friendly, but perhaps some might prefer this option.
+                - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FAYnZBClxiT.png?alt=media&token=7ec6e1f6-40e4-4e3c-bf1b-ae0e4dba1049)
+            - Import Bible section by Chapter
+              - this option allows you to choose sections from a specific chapter, which presents a much shorter dropdown list.
+            - Search for and import a Bible section by title
+              - this will allow you to enter a search string and will then check for sections matching that string.
+            - Import a Bible passage or verse
+              - this will allow to specify a verse or range of verses from a Book and Chapter to import
+                - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FnW-J6leiZY.png?alt=media&token=805725ed-d67b-4291-871d-93eb5ea6ec41)
+            - Import a random Bible verse
+              - fairly obvious
+          - SmartBlock
+            - is you have SmartBlocks installed, you can use the SmartBlock command <%IMPORTRANDOMVERSE%> and create a button for your daily template, for example.
+        - Notes:
+          - as not all Bible versions in the API have sections defined, those Command Palette options will not work if you have chosen a Bible without sections.
+- [[January 3rd, 2025]]
+  - **[[Desktop App]] 0.0.24**
+    - A few Quality Of Life updates:
+      - Setting to "**Ask confirmation when quitting Roam**"
+        - very useful if, like some of our team members, you accidentally close the desktop app while trying to close some other window/app 😅
+        - You can turn this on via File menu > "Ask confirmation when quitting Roam"
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FNaMCX4Lb4O.png?alt=media&token=7ca9e0bd-fdb6-4197-b1b7-1d085ffec503)
+      - Reopen last opened windows when using the desktop app again
+        - This used to work on MacOS before, but now it works across the board - on Windows and Linux too!
+      - ARM versions of the desktop app now available for Windows and Linux
+        - You can download the installers by going to our homepage: https://roamresearch.com/
+    - [[Video]] going through this QOL release
+      - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F3zOjPceTF4.mp4?alt=media&token=650dbfad-d762-4012-bc7c-a954b7e8a51c}}
+- [[January 2nd, 2025]]
+  - [[Roam Depot Extensions]]
+    - **[Bluesky Extract](https://github.com/8bitgentleman/roam-depot-bluesky-extract) by [[Matt Vogel]]**
+      - Extract Bluesky posts into your Roam Research graph with formatted text and images.
+      - **Features [🔗](https://github.com/8bitgentleman/roam-depot-bluesky-extract#features)**
+        - Extract Bluesky posts with a customizable template
+        - Import images as child blocks or inline
+        - Auto-extract posts on graph load when tagged
+        - Multiple ways to trigger extraction:
+          - Right-click menu
+          - Command palette
+          - Keyboard shortcut (Ctrl+Shift+B)
+      - **Usage [🔗](https://github.com/8bitgentleman/roam-depot-bluesky-extract#usage)**
+        - Paste a Bluesky post URL into a block
+        - Either:
+          - Use the right-click menu and select "Extract Bluesky Post"
+          - Use the command palette (Cmd+P) and search for "Extract Bluesky Post"
+          - Use the keyboard shortcut Ctrl+Shift+B (configurable)
+      - **Configuration [🔗](https://github.com/8bitgentleman/roam-depot-bluesky-extract#configuration)**
+        - The plugin can be configured in the Roam Depot settings panel:
+          - **Post Template**: Customize how extracted posts appear using variables:
+            - `{POST}` - Post content
+            - `{URL}` - Post URL
+            - `{AUTHOR_NAME}` - Author's display name
+            - `{AUTHOR_HANDLE}` - Author's Bluesky handle
+            - `{AUTHOR_URL}` - Author's Bluesky profile URL
+            - `{DATE}` - Post date
+            - `{NEWLINE}` - Line break
+            - `{IMAGES}` - Post images (when using inline mode)
+          - **Image Location**: Choose how images are handled:
+            - Child block: Images appear as blocks under the post
+            - Inline: Images appear within the post block
+            - Skip images: Images are not extracted
+          - **Auto Extract**: Automatically extract posts tagged with a specific tag when Roam loads. This is particularly useful when using a Quick Caption solution on mobile. When browsing bluesky share a post to roam and tag the block before sending it. Next time you load up your graph the post will be automatically extracted.
+          - **Auto Extract Tag**: Customize the tag used for auto-extraction (default: "bluesky-extract")
+    - **[Bluesky Post](https://github.com/8bitgentleman/roam-depot-bluesky-post) by [[Matt Vogel]]**
+      - Post directly from Roam Research to Bluesky! This Roam Depot extension allows you to share your thoughts, notes, and threads from Roam to your Bluesky account with just a few clicks.
+      - **Features [🔗](https://github.com/8bitgentleman/roam-depot-bluesky-post#features)**
+        - 🚀 Post single blocks or entire thread structures
+        - 🖼️ Supports image uploads (including Dropbox images)
+        - #️⃣ Automatically converts Roam page references to hashtags
+        - 📝 Resolves block references in posts
+        - 📅 Optional date stamping of posted content
+        - ⌨️ Command palette integration with default hotkey (Ctrl+Shift+P)
+      - **Configuration [🔗](https://github.com/8bitgentleman/roam-depot-bluesky-post#configuration)**
+        - **Bluesky Account Setup [🔗](https://github.com/8bitgentleman/roam-depot-bluesky-post#bluesky-account-setup)**
+          - Go to Settings > Bluesky Post
+          - Enter your Bluesky username and password
+          - Click the "+" button to save your credentials
+        - **Date Append Settings (Optional) [🔗](https://github.com/8bitgentleman/roam-depot-bluesky-post#date-append-settings-optional)**
+          - Enable/disable automatic date appending to posted blocks
+          - Customize the date append template (default: "sent on {DATE}")
+      - **Usage [🔗](https://github.com/8bitgentleman/roam-depot-bluesky-post#usage)**
+        - Select any block in your Roam graph
+        - Either:
+          - Use the command palette (Ctrl+P) and search for "🦋 Post to Bluesky"
+          - Use the hotkey Ctrl+Shift+P
+        - The block and its children (if any) will be posted as a thread to Bluesky
+      - **Formatting Support [🔗](https://github.com/8bitgentleman/roam-depot-bluesky-post#formatting-support)**
+        - `[[Page References]]` are converted to #hashtags
+        - `((Block References))` are resolved to their content
+        - Images with `![alt](url)` syntax are uploaded
+      - **Notes [🔗](https://github.com/8bitgentleman/roam-depot-bluesky-post#notes)**
+        - Character limit per post: 300 characters
+        - Supports nested thread creation from block hierarchies
+        - Images from Dropbox links are automatically handled
+
+#### [[2024]]
+
+- [[December 23rd, 2024]]
+  - [[mobile]] 1.1.4
+    - Unlock [[Encrypted Graphs]] with Face ID (ios) or fingerprint (android)
+      - Your password will be stored on your device, either in Keychain on ios or Keystore on android
+    - Fix a bug which sometimes prevented the regular (web) view from working while offline
+    - **Native View**
+      - Added the /date and `{{date}}` component
+      - Made it so that the references view opens blocks by default which only contain the referenced page (to match the behavior of web)
+- [[December 20th, 2024]]
+  - [[Quality of Life Improvements]]
+    - **Revamp of `:q` query blocks**
+      - `:q` queries can be used to display the results of datomic/datascript queries in your Roam graph
+        - They are kind of an advanced feature (because of the syntax that you have to write the queries in)
+        - However, if you're not technically inclined like that, don't fret!
+          We have some new beginner-friendly query improvements coming soon! 😉
+          (also, if you have a `:q` you would like help with, can always ask in the Roam Slack. We have a lot of really helpful members!)
+      - Teaser into the revamped `:q`
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FCDgZUSitGM.gif?alt=media&token=a36140c6-3719-460d-ace1-13d2f06e9aee)
+      - Longer Demo video
+        - {{[[video]]: https://www.loom.com/share/b384798d37904947afefe9059c71035e}}
+      - For examples and documentation, please checkout [[Examples of :q query blocks]]
+  - [[Bug Fixes]]
+    - Fixed issue with pasting images from some websites
+      - introduced by Fixed lots of long standing bugs with copy and paste from other websites
+- [[December 17th, 2024]]
+  - [[Bug Fixes]]
+    - Fixed a long standing memory leak
+- [[December 15th, 2024]]
+  - [[mobile]] 1.1.0
+    - **Deep links to the mobile app**
+      - https://roamresearch.com and roam:// links will now open up in the mobile app when clicked on inside of another app
+    - **Native View**
+      - Added a "share link" button to the multi-select toolbar
+      - Fix syncing issues when editing a graph on mobile and the web app at the same time
+      - Double tap on the roam icon of the open graph to navigate to daily notes
+      - Fixed the first day of the week setting of the calendar to match the setting on the web app
+      - Changed the design of the calendar to be more compact
+      - Fixed the display of read only graphs
+      - Small performance improvement to the initial load time
+- [[December 14th, 2024]]
+  - Fixed regression where [[Desktop App]] wouldn't save the last open windows
+- [[December 6th, 2024]]
+  - [[Desktop App]] 0.0.23
+    - Fixed warning when installing on [[Windows]]
+    - Fixed it not working on [[Ubuntu]] >= 24.10
+    - Fixed images in offline graph's [[excalidraw]] not displaying
+    - Fixed images uploaded through offline graph's [[excalidraw]] not having the right file extension
+- [[December 5th, 2024]]
+  - [[Bug Fixes]]
+    - Fixed pasting `{{table}}`s from Microsoft Excel desktop
+    - Fixed some bugs when pasting from Microsoft word desktop
+      - Formatting like bold and italics should copy over now
+      - Paste shouldn't include extra (random) newlines anymore
+- [[November 26th, 2024]]
+  - [[New Features]]
+    - [[query]] full text search
+      - You can now use `{search: <search query>}` to search inside of your queries!
+      - {{[[query]]: {and: [[Bug Fixes]] {search: import}}}}
+      - You can also combine two searches with AND to search across block's paths
+        - `{{[[query]]: {and: {search: June} {search: mobile}}}}`
+        - {{[[query]]: {and: {search: June} {search: mobile}}}}
+- [[November 25th, 2024]]
+  - [[Quality of Life Improvements]]
+    - Small speed improvement when opening `(())` search
+  - [[Bug Fixes]]
+    - Fix alignment of bullets in queries
+    - Fix alignment of the outermost | in inline refs
+- [[November 24th, 2024]]
+  - [[Quality of Life Improvements]]
+    - Add vb and vbscript to [[Code Block]]s
+- [[November 21st, 2024]]
+  - [[Bug Fixes]]
+    - Fixed pasting [[Table]]s, they now convert into `{{[[table]]}}`
+- [[November 19th, 2024]]
+  - [[Bug Fixes]]
+    - Fixed lots of bugs when [importing]([[Import]]) [[Markdown]] (or pasting from a plain text source)
+      - Fixed an issue with multiline blocks, we previously didn't export multiline blocks with proper spacing for the new line, causing the new line to be interpreted as a new block at the wrong depth
+        - Previously exported markdown files will still be broken but newly exported markdown files will work correctly with the new import
+        - This also fixes import/export of code blocks
+      - We now convert `*italics*` into Roam syntax `__italics__`
+        - The only exception from regular markdown now is `__italics__`, which normally means bold, but passes through as italics so that Roam exports work correctly
+      - In general, we should parse markdown from other sources a lot better now
+    - Fixed lots of long standing bugs with copy and paste from other websites
+      - Fixed pasting code blocks and inline code
+      - Fixed pasting numbered lists
+      - Fixed pasting from logseq losing data in the paste
+      - We now better preserve whitespace when pasting
+    - Fixed import bug when the daily log for today doesn't exist yet
+    - Improved memory usage for [[Restore]] graph. It's now much less likely to cause out of memory and crash the page
+    - Fixed a memory leak that could occur if Roam stayed open for a long time without restarting
+- [[November 18th, 2024]]
+  - [[Roam Depot Extensions]]
+    - **[Learn English in RR (Roam Research)](https://github.com/qcrao/learn-english-in-RR/tree/main#learn-english-in-rr-roam-research)**
+      - Learn English in RR is a powerful Roam Research extension designed to enhance your English learning experience within your Roam graph. This extension provides various features to help you understand, practice, and remember new English words and phrases.
+      - Recommendation: create a new Roam graph for learning English.
+      - ![extract new words](https://github.com/qcrao/learn-english-in-RR/raw/main/assets/extract-new-words.gif?raw=true)[🔗](https://github.com/qcrao/learn-english-in-RR/blob/main/assets/extract-new-words.gif?raw=true)
+      - **Features**
+        - **Word Extraction and Explanation**
+          - Extract new words or phrases from your Roam blocks, new words should be highlighted with ^^ (e.g., ^^unpretentious^^)
+          - Get detailed explanations including phonetics, definitions, examples, synonyms, antonyms, etymology, and usage notes
+        - **Text-to-Speech**
+          - Listen to the pronunciation of highlighted words or phrases
+          - Customizable voice selections
+        - **Mother Language Support**
+          - Receive translations and explanations in your native language
+          - Supports a wide range of languages (use [language codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes))
+        - **AI-Powered Explanations**
+          - Utilizes OpenAI's GPT models for comprehensive word explanations
+          - Customizable AI model selection
+        - **Interactive UI**
+          - Speech icons automatically added to highlighted text
+          - Context menu integration for quick access to features
+      - **Installation**
+        - In Roam Research, navigate to Settings > Roam Depot > Community extensions > Browse > Search "Learn English in RR"
+        - Click "Install"
+      - **Configuration**
+        - After installation, configure the extension in the Roam Research settings panel:
+          - **Voice Selection**: Choose your preferred voice for text-to-speech (Nicky, Aaron, or Junior)
+          - **Mother Language**: Set your native language code (e.g., zh for Chinese, en for English)
+          - **Stream Response**: Toggle streaming responses from GPT models
+          - **OpenAI Model**: Select the AI model for explanations (e.g., gpt-4o-mini, gpt-3.5-turbo)
+          - **OpenAI API Key**: Enter your OpenAI API key for GPT model access
+    - **Usage**
+      - **1. **Customizing Explanations****
+        - Adjust the mother language in settings for translations in your native language
+        - Change the OpenAI model for different levels of explanation detail
+      - **2. **Active the block****
+        - Note: cursor should be inside the block when you extract new words, that means the block should be active
+        - ![active the block](https://github.com/qcrao/learn-english-in-RR/raw/main/assets/active_the_block.gif?raw=true)[🔗](https://github.com/qcrao/learn-english-in-RR/blob/main/assets/active_the_block.gif?raw=true)
+      - **3. **Extracting New Words****
+        - Highlight a word or phrase with ^^ (e.g., ^^unpretentious^^)
+        - Better less than 10 words at a time
+        - Right-click and select "Extract new words" from the context menu or use the hotkey Cmd+Shift+E (you should first set the hotkey in the settings) or use Cmd+P and type extract new words
+        - The extension will generate a detailed explanation below the current block
+      - **right click context menu**
+        - ![right click context menu](https://github.com/qcrao/learn-english-in-RR/raw/main/assets/right-click-extensions.jpg?raw=true)[🔗](https://github.com/qcrao/learn-english-in-RR/blob/main/assets/right-click-extensions.jpg?raw=true)
+      - **hotkeys**
+        - ![hotkeys](https://github.com/qcrao/learn-english-in-RR/raw/main/assets/hotkeys.jpg?raw=true)[🔗](https://github.com/qcrao/learn-english-in-RR/blob/main/assets/hotkeys.jpg?raw=true)
+      - **command palette**
+        - ![command palette](https://github.com/qcrao/learn-english-in-RR/raw/main/assets/cmd+p.jpg?raw=true)[🔗](https://github.com/qcrao/learn-english-in-RR/blob/main/assets/cmd+p.jpg?raw=true)
+      - **4. **Text-to-Speech****
+        - ![new words](https://github.com/qcrao/learn-english-in-RR/raw/main/assets/new_words.jpg?raw=true)[🔗](https://github.com/qcrao/learn-english-in-RR/blob/main/assets/new_words.jpg?raw=true)
+          - Hover over any highlighted text or the icon to hear the pronunciation
+        - **NOTE: Retry if the explanation is not detailed enough, you can delete the existing explanation and try again**
+    - **Tips**
+      - Use the extension regularly to build your vocabulary within your Roam graph
+      - Combine with other Roam features like daily notes and spaced repetition for effective learning
+      - Experiment with different AI models to find the best balance of speed and detail for your needs
+    - **Support**
+      - If you encounter any issues or have suggestions for improvement, please open an issue on the GitHub repository or contact me through email: qcrao91@gmail.com.
+- [[November 12th, 2024]]
+  - [[Quality of Life Improvements]]
+    - Added the [mhchecm](https://mhchem.github.io/MathJax-mhchem/) extension for [[KaTeX]]/[[Latex]]
+      - This adds two functions for 
+        - chemical equations
+          - `/ce`
+            - $$\ce{CO2 + C -> 2 CO}$$
+            - $$\ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-}$$
+            - $$C_p[\ce{H2O(l)}] = \pu{75.3 J // mol K}$$
+        - physical units
+          - `/pu`
+            - $$\pu{123 kJ/mol}$$
+            - $$\pu{1.2E3 kJ}$$
+- [[November 4th, 2024]]
+  - [[Roam Depot Extensions]]
+    - **[Blueprint](https://github.com/rcvd/blueprint)**
+      - blueprint is a performance optimised theme for Roam Research incorporating a bunch of UI/UX enhancements. It is based on [blueprint.js](https://blueprintjs.com/), the React-based UI toolkit for building complex data-dense interfaces.
+      - ![](https://github.com/rcvd/blueprint/raw/main/screenshots/light.png)[🔗](https://github.com/rcvd/blueprint/raw/main/screenshots/light.png)
+      - ![](https://github.com/rcvd/blueprint/raw/main/screenshots/dark.png)[🔗](https://github.com/rcvd/blueprint/raw/main/screenshots/dark.png)
+      - **Disclaimer**
+        - blueprint is work in progress, while it already reached a high level of maturity, there are still some things to be done. Please help making it the best theme for Roam Research by giving feedback, suggestions and reporting bugs.
+      - **Installation**
+        - Disable all other themes including Roam Studio
+        - Enable blueprint
+        - No further customisation or settings are needed
+      - **Enhancements**
+        - Lightning fast UI performance
+        - Consistent theming throughout the app in dark and light mode
+        - Enhanced readability and better layout for Roam's base components
+        - Mobile enhancements
+        - Popular Roam Depot plugins will be themed (work in progress)
+      - **Feature Requests, Bugs, and Feedback**
+        - If you have an idea for a new feature or find a bug (e.g., un-themed components in Roam, unusable plugins), file it under [Issues](https://github.com/rcvd/blueprint/issues) with a short description and a screenshot.
+        - If you have any additional comments or suggestions, please feel free to send them to [alex@goedel.io](mailto:alex@goedel.io).
+      - **If you want to support my work**
+        - [Become a GitHub Sponsor](https://github.com/sponsors/rcvd)
+        - [Buy Me a Coffee](https://www.buymeacoffee.com/rcvdio)
+        - [Become a supporter on gödel.io](https://www.goedel.io/subscribe?utm_medium=web&utm_source=subscribe-widget&utm_content=47299057)
+        - [Flattr](https://flattr.com/@rcvd)
+        - [Paypal](https://paypal.me/rcvd)
+- [[November 1st, 2024]]
+  - ✨ [[Quality of Life Improvements]] for [[Roam Depot]]
+    - Admins can now enable extensions for all users which are invited to the graph
+    - All of the admin's settings will be copied and used by other users in the graph (be careful if your settings have sensitive information like API keys)
+    - Just click on the globe icon next to the extension to turn on for other users
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FqyktBIi2zh.png?alt=media&token=296e8aeb-524c-4504-b6a6-359855004c61)
+      - You can also __disable__ extensions for other users in your graph, preventing them from installing them
+- [[October 12th, 2024]]
+  - **✨ [[Quality of Life Improvements]] for [[queries]]**
+    - **New query option "Nest under parent results"**
+      - For queries which have a lot of results, you can use this option to reduce clutter
+        - mostly useful for queries for tasks/TODOs or if you use extensions like [[Abhay]]'s Autotag
+      - **Quick Start:** In a query's settings (the ⚙️ icon), enable the setting "Nest under parent results"
+        - Then, 
+          - for a block tree like 
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2FrHyvJvwsMQ.png?alt=media&token=ae433692-7e25-4de0-9bfc-605d9817e5fa)
+          - which previously showed up in a query like
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2FImERogHlJO.png?alt=media&token=b3dab56e-1bad-4ade-af30-de3be594cd33)
+          - it will instead show up as 
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2FZzfI1ZGNYE.png?alt=media&token=1ca9df39-95d5-4fb9-9594-a9b6b9424d85)
+      - **Demo Video**
+        - {{[[video]]: https://www.loom.com/share/6a5d555e70f2477ca3a3bb305c95290e}}
+      - **Description & Example (If you do not want to watch the video above)**
+        - Lets say you have todos like this
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2FrHyvJvwsMQ.png?alt=media&token=ae433692-7e25-4de0-9bfc-605d9817e5fa)
+        - then a TODOs query looks like this
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2FImERogHlJO.png?alt=media&token=b3dab56e-1bad-4ade-af30-de3be594cd33)
+        - Note that above is pretty cluttered and it is difficult to find the main info (which generally is just the topmost match i.e. " {{TODO}} Main task")
+        - If you turn on "Nest under parent results" option from the query settings, then you will see just the topmost result and then have the option to see nested results if you want
+          - turn on
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2F3i-dHoEJyb.png?alt=media&token=2379ddfb-b4f9-4164-84c6-3eb7eba53979)
+          - after turning it on
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2FZzfI1ZGNYE.png?alt=media&token=1ca9df39-95d5-4fb9-9594-a9b6b9424d85)
+          - When viewing the nested matches, they show up in a flattened list in the order they appear in the outline
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2FyRF42GllBt.png?alt=media&token=62733fb9-61ef-460e-98ab-9d214a6b86d3)
+          - Alternatively you can also view them via long pressing on the caret to the left of the parent result. The nested results are highlighted by a golden outline (another example below)
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2FwGL5FyUPPZ.png?alt=media&token=caf13984-e419-442d-873a-2110fc2f9ad8)
+- [[October 9th, 2024]]
+  - [[Roam Depot Extensions]]
+    - **Block Distributor**
+      - Block Sender is a Roam Research extension that automates the creation of block references based on user-defined tag rules.
+      - **🎬 Example**
+        - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FQypfHsYp4w.mp4?alt=media&token=4eec5e8c-8055-4693-ac0d-439036d2979e}}
+      - **✨ How It Works**
+        - When a block is tagged with a watched tag, Block Sender detects the change
+        - A block reference is created at the specified destination
+        - The original tag is removed from the source block
+        - The original block remains in its original location
+      - **🚀 Usage**
+        - Install the extension in your Roam Research graph
+        - Navigate to the extension settings
+        - Create rules by specifying:
+          - A tag to watch
+          - A destination type (block, page, or block UID)
+          - The specific destination
+        - Block Sender will now monitor your graph and create block references according to your rules
+      - **💡 Benefits**
+        - Enhance information connectivity in your Roam graph
+        - Automate cross-referencing and reduce manual block referencing
+        - Maintain clean, tag-free blocks while creating new connections
+        - Preserve original context while distributing information
+    - **Tag Painter**
+      - Want to create tag styles but don't know CSS? Tag Painter allows you to easily customize the appearance of your tags within Roam.
+      - ![](https://github.com/8bitgentleman/roam-depot-tag-painter/raw/main/screenshot.png)[🔗](https://github.com/8bitgentleman/roam-depot-tag-painter/raw/main/screenshot.png)
+      - **Features**
+        - Customize tag colors, backgrounds, borders, and more
+        - Add content before or after tags
+        - Saved styles persist across sessions
+        - Search functionality for quick access to CSS properties
+        - Toggle tag editing mode on/off with a convenient topbar button
+      - **Usage**
+        - Click the style icon (paintbrush) in the Roam Research topbar to activate Tag Painter.
+        - When active, the button will be highlighted, indicating that tag editing is enabled.
+        - Hover over any tag in your Roam graph to open the Tag Painter menu.
+        - Use the search bar to find CSS properties you want to apply.
+        - Select properties and adjust their values using the provided inputs.
+        - Changes are applied and saved automatically.
+        - Click the style icon again to deactivate Tag Painter and return to normal tag behavior.
+- [[October 1st, 2024]]
+  - [[New Feature]] [[Graph History]]
+    - Travel back to any previous version of your Roam with **Graph History **to** **__access previous states of your notes__ or __recover accidentally deleted data__
+    - Settings! -> Graph History: pick date+time! -> Go!
+    - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FPsILnyDDvo.mp4?alt=media&token=883e4371-b19c-415f-95fb-2d3a6b1d7994}}
+- [[September 30th, 2024]]
+  - [[Quality of Life Improvements]] for the [[Auto Backups]]
+    - New setting: "Create a backup **every week**"
+      - previously, the only options were "every day" or "every hour"
+      - We feel like a weekly backup makes more sense in a lot of cases
+    - For local graphs, if you do not have auto backups turned on, alerts every time you open the graph
+      - We are strongly pushing towards setting up local graphs because they are stored in browser's local storage and so are lost if you clear browsing history/data
+        - ****Where are local graphs stored?****
+          - Local graphs are stored in your browser's local storage. This means that if you clear your browser data then you will lose all the data in your local graph. To mitigate this risk, we recommend you set up daily automatic backups.
+      - Also please note that since we have [[Encrypted Graphs]], if possible, we recommend using those instead of local graphs.
+    - Better error handling when running into any errors during backup (for example, browser permission errors)
+    - Please note that we previously changed auto backups to use the new export format: [[MessagePack]] (for faster exporting & reduction in file size)
+- [[September 25th, 2024]]
+  - **📡 The [Roam x Zapier integration]([[Zapier Integration]]) is now live!**
+    - Automate your workflow by connecting Slack, Gmail, and more straight to Roam. Set up Zaps to have everything flow directly into your graph
+    - Pick your trigger in Zapier, set Roam as the destination, or vice-versa & done 🚀
+    - No clutter, no manual work 🦾
+    - Link: https://zapier.com/apps/roam-research/integrations
+    - Some examples of things you can do:
+      - 🔗 First up: Slack -> Roam
+        - In the middle of an important Slack convo and there’s something you want to keep for later? Just save the message, and Zapier will drop it right into Roam, organized & ready to link up👇
+          (Also, you can add the Zapier app to Slack if you want to add an extra comment!)
+          - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FGrjkq5vnMB.mp4?alt=media&token=043ce47a-05c6-46d7-9598-e33ecf3b33a2}}
+      - ⭐️ Next: Starred emails -> Roam
+        - You star an email, and Zapier pulls it into Roam automatically. No more hunting through your inbox. It’s right there, ready to tag, link, or archive 📥
+          - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FZNWCIlE2nW.mp4?alt=media&token=18108178-6a2d-45a3-bbbf-9e75534f96df}}
+      - 📄 Bonus: Google Forms -> Roam
+        - Need to collect top-secret mission briefings (or regular info) through a form? You can set up a Zap to send responses directly into Roam. No need to copy-paste—just let the answers show up where you need them 🎯
+          - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fn5NU-83WFa.mp4?alt=media&token=b7a67469-d56c-488d-a814-1af118497aec}}
+    - Here is a **Walkthrough Video** showing how to connect your Roam graph to Zapier:
+      - **Walkthrough Video** showing how to connect your Roam graph to Zapier
+        - {{[[video]]: https://www.loom.com/share/0434049965254f3e86ae8909a368ca52}}
+        - apart from the setup process, this video also demonstrates how to use Zap templates, in particular, [one that adds new starred emails in Gmail to Roam daily note page](https://zapier.com/apps/gmail/integrations/roam-research/255568759/add-new-starred-emails-in-gmail-to-your-daily-note-pages-in-roam-research)
+    - More details in the [[Zapier Integration]] page
+- [[September 11th, 2024]]
+  - [[Mobile Native View]]
+    - Fixed copy and paste issues caused by the last release on [[android]]
+- [[September 9th, 2024]]
+  - Small [[Quality of Life Improvements]]
+    - Better [[File Manager]]
+      - Download button to be able to easily download media
+        - this works in encrypted graphs too
+        - Downloaded file name extra info:
+          - Filename for the downloaded media reflects the **graph name**, the **id of the file in the roam graph**, and the **original filename**
+            - New filename is 
+              `graph-name` + "-" + `file-id-in-graph` + "-" + `original-file-name`
+    - Fixed issue where reference counter for blocks in linked references would get split up into two lines 
+- [[September 3rd, 2024]]
+  - [[Quality of Life Improvements]]
+    - [[MessagePack]] (.msgpack) export and restore format
+      - MessagePack format is much more efficient than [[EDN]]
+        - ~4x faster at exporting
+        - ~4-10x less memory usage
+        - 30% reduction in size of the file (more important for [[Auto Backups]] than anything else)
+    - Changed [[Auto Backups]] to use [[MessagePack]] format
+    - Changed [[Export all]] [[EDN]] and [[MessagePack]] formats to not download a zip file
+  - [[Mobile Native View]]
+    - Fixed current day not being created automatically
+    - Fixed search graph search icon not aligned
+    - Fixed calendar not matching the theme
+- [[August 30th, 2024]]
+  - [[Mobile Native View]]
+    - Fix issue with last release on samsung [[android]] 14 which broke quick capture and the regular view
+- [[August 29th, 2024]]
+  - [[Mobile Native View]]
+    - Drag and drop multiple blocks at once, scroll when at the edge of the screen when dragging and many more small fixes to DnD
+    - Fixed pasting the correct formatting into Roam from the web and many other apps
+    - Added the ability to change heading and text align
+    - Added support for emoji reactions
+  - [[Bug Fixes]]
+    - Fixed [[roam/render]] code blocks showing up in search
+    - Fixed queries and other large UI elements showing up in search 
+- [[August 28th, 2024]]
+  - [[Quality of Life Improvements]]
+    - update emojis to unicode 15 and small changes to the emoji display
+- [[August 8th, 2024]]
+  - [[Roam Depot Extensions]]
+    - **[Semantic Scholar](https://github.com/mlava/semantic-scholar)**
+      - Access the scientific literature right within your Roam Research graph.
+      - This extension allows you to get data from the 214 Million Papers, 2.49 Billion Citations and 79 Million Authors in the Semantic Scholar database.
+      - There are a number of ways to access the data:
+        - Article title search
+        - Article Id search
+        - Author name search
+        - Author Id search
+        - Recommended articles using one article as the prompt
+        - Relevant articles for a search term
+      - All six options can have Roam Research hotkeys enabled to make searching for new data as quick as a keystroke!
+      - **Notes:**
+        - Please note that Semantic Scholar offers an API key by application, however this extension DOES NOT need an API key to work. Without an API key, Semantic Scholar limits calls to their API, and you might receive an error message that you are trying to import data too often. I have implemented a retry mechanism that will attempt up to ten times at ten second intervals, and will provide feedback about what is happening.
+        - You can apply for an API key at https://www.semanticscholar.org/product/api#api-key. If you are approved, you can enter the token in the Roam Depot settings for this extension, under the 'Set Here' or 'Home' tab.
+        - I successfully applied for an API key by stating that I was accessing the data for personal usage and would not be downloading any individual articles/papers in bulk, but one at a time.
+        - Rest assured that unless Semantic Scholar changes their access provisions, this extension will work without an API key. It might just be a bit slower, and give you warnings from time-to-time.
+      - To import a specific article, you can use IDs from Semantic Scholar (Corpus Id or Paper Id), DOI, Association for Computational Linguistics ID (ACL), arXiv ID, Microsoft Academic Graph ID (MAG), PubMed ID or PubMed Central ID. You can control which data is retrieved for an individual article by setting your preferences in the Roam Depot settings in the Article tab.
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FUAske22vHg.png?alt=media&token=6ad48487-ffbc-4672-be54-686d685b89e8)
+      - You can decide what data you want to see for an article, and the order in which it is output. These options include Journal data, Article Type, Authors, References, Citations, Influential Citations, External Sources and Abstract.
+      - If an article is Open Access and/or has an Open Access PDF, links to these sources will be displayed with the Article metadata.
+      - Author metadata can be imported using the Semantic Scholar Author ID. Again, the data types you wish to retrieve for an author can be set in the Author tab in the Roam Depot settings.
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FDuUdBz8kaa.png?alt=media&token=97c7fb5c-2319-469f-bb57-7894d9b5cce1)
+      - You can also decide what data you want to see for an author, and the order in which it is output. These options include Affiliations, Home Page, Citation Count, h-Index and Publications.
+      - You can choose to hide certain types of data from Article or Author import, and this will prevent that data being called from the Semantic Scholar API. This will reduce data transfer.
+      - You can search for a paper by title, and Semantic Scholar will only return a single result. Of course, you can filter the search to limit to particular Fields of Study, years of publication, venue of publication, minimum citation count, Open Access status and the availability of an Open Access PDF.
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FrtcySieB8n.png?alt=media&token=ca41b36a-63ef-4d0f-8232-747690925e6a)
+      - Or, search for an author by name and Semantic Scholar will return a list of authors. You can define how many you want to retrieve in the Author tab in settings.
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FCojEFm7Lrd.png?alt=media&token=d270bd83-427f-47f0-8589-28bc13358394)
+      - Semantic Scholar uses a machine learning algorithm to determine relationships between articles, and you can access this feature in two ways. The first is to search for articles using the Relevance Search feature. You can enter a search term and a variety of filters to find the most accurate results.
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fahehr8z8In.png?alt=media&token=cd50dbd9-26bf-4dbc-9a60-d3b46a41c83e)
+      - Or, search for recommended articles related to a specific article using the article Paper Id from Semantic Scholar.
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Ffd34_MhZl2.png?alt=media&token=88b610c2-6620-4276-9c48-28b8767c2ed2)
+      - You can define how many results to obtain for Recommended or Relevance searches in the appropriate tab in Roam Depot settings.
+      - Semantic Scholar classifies their data using the following Fields of Study:
+        - Computer Science
+        - Medicine
+        - Chemistry
+        - Biology
+        - Materials Science
+        - Physics
+        - Geology
+        - Psychology
+        - Art
+        - History
+        - Geography
+        - Sociology
+        - Business
+        - Political Science
+        - Economics
+        - Philosophy
+        - Mathematics
+        - Engineering
+        - Environmental Science
+        - Agricultural and Food Sciences
+        - Education
+        - Law
+        - Linguistics
+      - You can set your preferred Fields of Study in the Roam Depot settings for this extension as comma-separated list. e.g. Medicine,Biology,Business
+      - The best features are enabled if you also have the SmartBlocks extension installed. When you install this extension, a new page will be created in your graph entitled 'Semantic Scholar Configuration'. This has all of the required SmartBlocks so that you won't need to create anything yourself.
+      - When you import any data from Semantic Scholar, a SmartBlock button will be placed after all article titles, author names, and search results. You can click that SmartBlock button to import the data for that item to your graph as well. For lists of Recommended or Relevant Article searches, or Author Name searches, you will be presented with both Refresh and Import More SmartBlock buttons. If you import 5 authors, for example, the Import More button will import another five authors. Refresh will update the data if there has been new publications become available.
+- [[August 6th, 2024]]
+  - [[Roam Depot Extensions]]
+    - **[Automatic DNP](https://github.com/mlava/auto-DNP)**
+      - Roam CRM turns your graph into a __Relationship Management__ tool. Inspired by [Sivers](https://sive.rs/hundreds), and David Rockefeller's collection of [200,000 index cards](https://archive.is/zxbCA), Roam CRM keeps people and dates important to you top of mind.
+      - **Usage Example**
+        - **NOTE**
+        - There are certain tags and templates that Roam CRM relies on; **Tags:: #people** and **#Agenda** are the most vital. While these are not currently customizable they may be in the future.
+      - **Setup**
+        - Roam CRM is built on top of several Roam extensions. Please install them on Roam Depot:
+          - [Google](https://github.com/dvargas92495/roamjs-google) by David Vargas
+            - Install Google extension from Roam Depot
+            - Add your google accounts and calendar by following that extension's README
+            - You can now automatically pull events into Daily Note
+          - [Workbench](https://github.com/dvargas92495/roamjs-workbench) by David Vargas
+            - Install Workbench extension and enable the Attribute Select feature
+            - Navigate to the newly created page in your graph [[roam/js/attribute-select]]
+            - Add the attribute Contact Frequency
+            - Add these five options
+              - #[[A List]]: Contact every two weeks
+              - #[[B List]]: Contact every two months
+              - #[[C List]]: Contact every six months
+              - #[[D List]]: Contact once a year
+              - #[[F List]]: Never contact
+            - This is for convenience when switching a person's contact frequency. These durations are customizable in the Roam CRM settings.
+          - [Query Builder](https://github.com/dvargas92495/roamjs-query-builder) by David Vargas
+            - Install Query Builder extension
+            - Import Call Rollup Queries from
+      - **Features**
+        - **Metadata**
+          - Roam CRM creates metadata for each Tags::#people page inspired by [Matt Mochary](https://docs.google.com/spreadsheets/d/1Ti_xaV9IVvj-bklxOjNY-IeGsC-YqcgvB03qvfFQrnI/). This metadata and its structure is important, **without this structure Roam CRM will not work.**
+          - Each person page must have metadata structure which looks like this. You can use the **Person Metadata Template** button in the Roam CRM settings to import a quick Roam template for this metadata structure ![](https://github.com/8bitgentleman/roam-depot-Roam-CRM/raw/main/images/metadata.png)[🔗](https://github.com/8bitgentleman/roam-depot-Roam-CRM/raw/main/images/metadata.png)
+          - At the bare minimum a person page must have this metadata for it to be recoginzed by Roam CRM ![](https://github.com/8bitgentleman/roam-depot-Roam-CRM/raw/main/images/metadataMinimum.png)[🔗](https://github.com/8bitgentleman/roam-depot-Roam-CRM/raw/main/images/metadataMinimum.png)
+        - **Agenda Addr**
+          - Inefficient leaders waste a lot of time reaching out about or responding to one-off issues in real time. A much more efficient method is to batch your issues and discuss them all at once.
+            - Make a block anywhere that has as persons name ([[Bill Gates]] for example) and a hashtag #Agenda
+            - Roam CRM will automatically nest a block ref on Bill's page under an agenda attribute
+            - Use a hashtag to have the extension hide the name in the Agenda, e.g. #[[Bill Gates]]
+            - Next time you talk, you'll remember everything you wanted to tell Bill
+            - ![](https://github.com/8bitgentleman/roam-depot-Roam-CRM/raw/main/images/agendaAddr.gif)[🔗](https://github.com/8bitgentleman/roam-depot-Roam-CRM/raw/main/images/agendaAddr.gif)
+        - **Contact Reminders**
+          - Set contact frequency reminders for each person. This can be customized in the settings. A modal will pop up reminding you to contact them.
+            - #[[A List]]: Contact every two weeks
+            - #[[B List]]: Contact every two months
+            - #[[C List]]: Contact every six months
+            - #[[D List]]: Contact once a year
+            - #[[F List]]: Never contact
+          - Within the modal you can type a quick message to each person to stay in flow. This message will be nested on their page for future reference.
+            - ![](https://github.com/8bitgentleman/roam-depot-Roam-CRM/raw/main/images/modal%20message.png)[🔗](https://github.com/8bitgentleman/roam-depot-Roam-CRM/raw/main/images/modal%20message.png)
+        - **Birthday Reminders**
+          - Birthday reminders happen 14 days before, and on the day of. They remind you that 'Bill Gates turned 46 today.' A and B listers birthday reminders show up in the modal 14 & 7 days before as well as on the day of.
+            - ![](https://github.com/8bitgentleman/roam-depot-Roam-CRM/raw/main/images/modal%20birthdays.png)[🔗](https://github.com/8bitgentleman/roam-depot-Roam-CRM/raw/main/images/modal%20birthdays.png)
+          - C and B lister birthdays only show up on the day-of as a block ref on the DNP
+            - ![](https://github.com/8bitgentleman/roam-depot-Roam-CRM/raw/main/images/birthdayRef.png)[🔗](https://github.com/8bitgentleman/roam-depot-Roam-CRM/raw/main/images/birthdayRef.png)
+          - D and F listers do now show up at all
+        - **Full Page CRM UI**
+          - Easially accessable through the (optional) left sidebar button or via the modal toolbar the CRM Workspace is the central hub for all your contacts and your timeline of events.
+            - People
+              - A sortable list of all contacts together in one place
+            - Events
+              - Birthdays, calls, meetings, and any mentions are all shown in chronological order (sorted by either the DNP they show up on or the block's creation date)
+            - Home
+              - Coming soon, this will be a homepage for quick access to all CRM functionality. If you have ideas or wants for this space do reach out!
+          - ![](https://github.com/8bitgentleman/roam-depot-Roam-CRM/raw/main/images/workplace.gif)[🔗](https://github.com/8bitgentleman/roam-depot-Roam-CRM/raw/main/images/workplace.gif)
+        - **Google Calendar Sync**
+          - Via the Google extension RoamCRM, has the ability (toggable in settings) to connect to a google calendar and sync upcoming events to your graph. When enabled events in the next 7 days with more than 1 guest/attendee will be synced to your graph on the Daily Notes Page coresponding with the event date. If the event attendees, date, or details change Roam CRM will update the graph block accordingly.
+          - ![](https://github.com/8bitgentleman/roam-depot-Roam-CRM/raw/main/images/event.png)[🔗](https://github.com/8bitgentleman/roam-depot-Roam-CRM/raw/main/images/event.png)
+        - **Hotkeys**
+          - Roam CRM adds quality of life hotkeys for a variety of tasks including:
+            - Interacting with the right sidebar
+            - Showing the Reminder Modal as well as the Full Page CRM Workplace
+          - All hotkeys are configurable in settings
+    - **[Sheet Music](https://github.com/mlava/sheet-music)**
+      - For music lovers, sheet music in Roam Research is finally available!
+      - Create your own music using [abc notation](https://abcnotation.com/wiki/abc:standard) or paste and render sheet music for music you find on the internet.
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FcYbkazDa8-.png?alt=media&token=27a878ba-3f8c-401f-9721-cbcc0fe2a283)
+      - There are two options available at present:
+        - Paste music in the abc notation directly into your graph using the command palette option 'Paste sheet music in ABC notation'
+        - Create music in abc notation within your graph. Start with a blank template by using the command palette option 'Create sheet music in ABC notation'
+      - You can find examples of music in abc notation at:
+        - https://abcnotation.com/examples
+        - https://thesession.org/
+        - https://www.montrealsession.ca/index.html
+      - Standard abc notation applies - you can find a key to the notation at [abc notation](https://abcnotation.com/wiki/abc:standard).
+      - **Notes:**
+        - In this first iteration, only one piece of music can be rendered on a page. I am working on a fix to allow multiple pieces to render correctly.
+        - At present, dragging notes in the rendered music will change the child block in RR but not the textarea box. I am working on a fix. In the meantime, you can click the pencil icon at top right to re-render the music and the changes you've made will be picked up.
+- [[July 25th, 2024]]
+  - Fixed issue with [[Graph Overview]] explore mode where if a page was selected but then deleted it would cause an infinite loading spinner
+- [[July 24th, 2024]]
+  - Update password requirements to be more secure
+  - Force all users to reset their passwords (sign in with google/apple not affected)
+    - Reasoning::
+      - Over the past two weeks we have been working to defend against a DDOS/credential stuffing attack. Credential stuffing is where the attackers have a list of emails and possible passwords (from the dark web) and they attempt to log in to Roam with each one. For those who are technical, you can read [this article](https://medium.com/swlh/google-firebase-authentication-vulnerability-245050cb7ceb) that explains the vulnerability of our auth provider in more depth.
+      - This has been a very sophisticated attack, we think they have access to millions of different computers (they rotate IP addresses very quickly) and millions of email addresses they are attempting to log into. For awhile we had managed to slow them down and stop them, but they adapted and resumed the attack.
+      - The attackers have unfortunately gained access to some accounts this way.
+      - I want to be clear that Roam did not leak these emails and passwords, we never directly have access to your password, we use Google/Firebase to manage them. Most accounts are unaffected and the attackers are mostly trying emails which don’t have accounts with Roam. The only way a Roam account could be affected by this attack is IF you had reused your Roam password somewhere else AND that service leaked your password. This attack also **does not affect those who use google or apple sign in only**, and it does not affect encrypted graphs, unless the encrypted graph password was used in another service and leaked there.
+      - I recommend everyone visits https://haveibeenpwned.com/ to see if your email/password has been involved in a data breach. It’s likely that if it has, then this attacker has tried to sign into Roam with it.We are still working with our authentication provider’s support (Google) to see if there is something we can do to stop attacks like this, but it increasingly looks like there is not.
+      - We are taking this very seriously and trying to do everything we can to protect the security of your Roam accounts. Therefore, we have decided to **change our password requirements to be more secure, and force all users to reset their passwords**. As soon as you sign out, you will not be able to sign back in until you reset your password. Eventually we will force everyone to sign out as well. We may also build more security features like multi-factor authentication in the future.
+      - When setting a new password, we highly recommend using a unique one you have not used anywhere else. This is because, at the end of the day, if someone has your email and password, there is not that much we can do.
+      - If you have any difficulty resetting your password, please email [support@roamresearch.com](mailto:support@roamresearch.com). I am very sorry for any inconvenience this might have caused.
+- [[July 22nd, 2024]]
+  - Internal security updates
+- [[July 12th, 2024]]
+  - Fix [[Desktop App]] sign in not working when not on the all graphs page
+- [[July 7th, 2024]]
+  - **[[Quality of Life Improvements]]**
+    - **A better **"Created on day"** sidebar window**
+      - This view shows the pages and blocks created on the day
+        - (other than the blocks created on the daily note itself)
+        - You can think of it as a complement to the daily note
+      - Trigger it via right-clicking the title for a Daily Note and then "View created on ..."
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fq3uoRWuNv-.png?alt=media&token=5f27e129-752e-4c9c-909f-279c4ad3e4f3)
+- [[June 27th, 2024]]
+  - **[[Quality of Life Improvements]]**
+    - New switcher to switch between different embed types: `embed`, `embed-path` and `embed-children`
+      - Checkout GIF below to see the different block embed types in action!
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FV8ug0xdOsW.gif?alt=media&token=53f4ea0f-71be-4573-b8fb-e2a2c1afade7)
+    - More comprehensive right-click context menu for page references  
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FSOxjx-xsvx.png?alt=media&token=51d70fa8-e6ce-4dd4-ad1e-18ce86523dc0)
+- [[June 14th, 2024]]
+  - **[[New Features]] 🚀**
+    - **Alt-click (or opt-click) on a daily note page link to change the date**
+      - If you're a fellow procrastinator, you can use this to snooze any tasks for a future date! 😅
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FizI6dbMQOx.gif?alt=media&token=8329d5c1-9d63-4878-ab8f-f88357de53e1)
+      - Some common use cases:
+        - (these are also showcased in the GIF above)
+        - If you have a task you'd planned for this week but will not be able to get it done, snooze it to start of next week
+        - When you find old/overdue tasks, assign them to today so you do not forget about them
+      - Btw, the “Coming Monday” in the date shortcuts gets set to “Coming Sunday” or other day of the week depending upon the “First day of the week” setting in Settings > User > International
+    - **Pin/Stick sidebar windows to the top!**
+      - Long press on the pin button to pin a sidebar window to the top
+      - The window will then have a red pin button
+      - New windows will appear below the pinned-to-top window
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FcMTUy-_bkg.gif?alt=media&token=d754ba68-f0eb-4fc1-8cb3-ddfc13d32bb6)
+      - If you're a developer ...
+        - ... and want to access this programmatically, please check it out in [our frontend api changelog here](https://roamresearch.com/#/app/developer-documentation/page/rmWKYSSUh)
+      - __Related change__ to how closing pinned sidebar windows works
+        - Previously they used to come back/resurrect
+        - Now they will not resurrect.
+        - To make sure closing pinned windows does not happen accidentally, a new confirmation dialog has been added
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FM-A4Ya7m4t.png?alt=media&token=eb6c11e9-2e67-46a9-8752-f2937a024508)
+  - [[Roam Depot Extensions]]
+    - **[Full Calendar](https://github.com/fbgallet/roam-extension-calendar)**
+      - **A comprehensive calendar to get an overview of your tasks and activities spread over numerous Daily Notes Pages.**
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FAWO10afP6z.gif?alt=media&token=ca3bd4a5-8a1b-45d6-ab2d-00bb2a652fa0)
+- [[June 13th, 2024]]
+  - [[Mobile Native View]] 1.0.93
+    - Added `{{video}}` components
+    - Fixed bug with checking todos inside of a block ref
+    - Fixed bug with drag and drop reordering when dragging a block down in the list
+    - Fixed bug with deleting blocks and replacing references with the block text
+    - Added [[Delete Account]]
+- [[June 12th, 2024]]
+  - [[Roam Depot Extensions]]
+    - **Block Share Card Extension**
+      - The Block Share Card extension for Roam Research enables users to effortlessly share the currently zoomed-in block as an image, tailored for optimal viewing on mobile and desktop devices.
+      - This extension enhances the user experience by simplifying the sharing process and ensuring content is easily readable on any device.
+      - **[[Screenshots]]**
+        - Desktop View
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FmsUODwW92l.png?alt=media&token=9d65ce6d-de13-4a51-968a-af3fbe0deefa)
+        - Mobile View
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Flx7cv0rJKd.png?alt=media&token=dd84b142-3643-4b5f-ad67-0e44e16c6eee)
+      - **Features**
+        - **Instant Block Sharing:** Quickly share any zoomed-in block from your Roam Research page with a single click.
+        - **Mobile and Desktop Optimization:** Choose from two image export options designed for different device displays:
+          - **Mobile:** Creates a narrower image, perfect for viewing on mobile devices.
+          - **Desktop:** Generates a wider image, ideal for desktop screens.
+      - **Usage**
+        - Once the extension is installed, you'll find a new sharing icon in the Roam Research toolbar. To use the extension:
+          - Zoom into the block that you wish to share.
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Ftpf8Fggg_i.png?alt=media&token=9ba35cf2-7d09-4334-816e-b19beaff869d)
+          - Click the sharing icon from the Block Share Card extension.
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FXRdVCQfL5r.png?alt=media&token=8a080b18-f631-4995-b0b7-e074e6365bb4)
+          - Select "Mobile" or "Desktop" based on your preference for the image format.
+          - After selection, the image will be automatically downloaded to a specified folder, allowing you to easily access and share it across platforms.
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fw2h9sEgquB.png?alt=media&token=4d43ddd3-7d0f-4dae-914d-603bb66495ba)
+- [[June 11th, 2024]]
+  - [[Delete Account]] option in account settings
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FpZIJQdU0Wz.png?alt=media&token=0ea9af98-42d6-4a92-a20e-e7389684e576)
+- [[June 6th, 2024]]
+  - [[Roam Depot Extensions]]
+    - **Crosswords**
+      - A new extension by [[Mark Lavercombe]]!
+      - Import, render and complete a random New York Times crossword in Roam Research
+      - Screenshot
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F-N63QwsV72.png?alt=media&token=b9b7198f-71df-45ca-ae18-645b85acce75)
+      - You can import a crossword using:
+        - command palette command 'Random crossword from New York Times'
+        - using a SmartBlock as shown:
+          - #SmartBlock crossword
+            - `<%NYTCROSSWORD%>`
+          - `{{NYTCrossword:SmartBlock:crossword}}`
+      - Your guessed letters are saved in your graph, so you can come back on another device or at another time and complete the puzzle. Good luck!
+- [[May 29th, 2024]]
+  - **[[New Features]] 🚀**
+    - [[Diagram]]s got a makeover!
+      - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-maya%2FpN9-ApURme.mov?alt=media&token=4d87d6a5-10be-47b9-bcbd-45707162182f}}
+      - Create one with /diagram -> click to expand -> name your mindmap
+        - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-maya%2FcO8743btPn.mov?alt=media&token=cbeb5a9a-6fb7-4945-9dba-3ddb87eb2def}}
+      - To add a new block/node, double click the space — then align them
+        - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-maya%2F0TOQ2WZC3D.mov?alt=media&token=f404d8db-459a-4966-ae98-cc55d1af85d5}}
+      - Play around with multiple resizable groups, move them around!
+        - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-maya%2FDzvqF9twDX.mov?alt=media&token=4e3c2ca8-ead7-4d83-893f-419fe10800f7}}
+      - Connect your block by holding ⌥ (on mac) or ALT (windows) on the block and dragging your mouse to the connecting node. Infinite possibilities...
+        - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-maya%2FZ7M8D7S0rJ.MOV?alt=media&token=075a029e-0af2-498d-8622-b4d097b03244}}
+      - Now, create a diagram inside another diagram! Select blocks or a block group > right-click > Move to subdiagram
+        - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-maya%2FQtYQA1vTf4.mov?alt=media&token=8f354d26-e94e-44a3-a6a1-59dea851af76}}
+- [[May 25th, 2024]]
+  - **[[New Features]] 🚀**
+    - **The New [[Roam Append API]] is out now!**
+      - This allows you to capture stuff to your unencrypted & **encrypted** graphs!
+      - **If you’re not a dev**, 
+        - just know that this opens up a lot of possibilities for capture to your roam graphs.
+          - The recent improved Speak to Roam apple shortcut uses this, for example. 
+          - We also have a couple more use-cases/integrations which will be dropping soon!
+            - In particular, a Zapier Integration, which would allow you to do things like:
+              - Automatically save Google Form/typeform responses to a page in your graph
+              - Add Slack saved messages to your graph
+                - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FFhgiLlDqKX.png?alt=media&token=c84dc8a0-f03e-43d8-8655-02db813bbbd2)
+              - etc
+      - **If you’re a dev**, please checkout our developer-documentation graph for the docs: https://roamresearch.com/#/app/developer-documentation/page/eb8OVhaFC
+        - ![a quick peek at the cURL request](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FRgioQ_1trU.png?alt=media&token=346445ff-c254-48ba-b06a-08bf1e14c494)
+- [[May 23rd, 2024]]
+  - [[Desktop App]] Update (0.0.21)
+    - Security updates, no new features
+      - For some users, if you were having persistent slowness with the desktop app, this might make it faster
+    - We dropped support for windows 7 and 8, both of which reached microsoft's end of life over a year ago
+- [[May 22nd, 2024]]
+  - **Improved [Speak to Roam Apple Shortcut]([[Apple Shortcuts/Speak to Roam]]) with support for encrypted graphs, capture to daily note, and more!! ✨✨**
+    - Link to install the newest version **v1.3.0**: https://www.icloud.com/shortcuts/ae1ae833cada4999b44d9ac5dda2dc6d
+      - Please checkout the [[Getting started]] guide to get started
+    - **Improvements**
+      - We now support both encrypted graphs and unencrypted graphs
+        - On encrypted graphs, you can create an "append-only" token!
+      - Captures to today's Daily Notes Page by default
+        - Captures are stored under a block/capture group `[[Speak to Roam]] Captures`
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FHju0azD0Rk.png?alt=media&token=0aeb4cfa-8d59-45d0-bc34-e498769a94b1)
+        - If you do not want to capture to DNP, you can alternatively pass an input page to capture underneath!
+      - More resilient to shortcut failure (If shortcut fails, you can find the recordings in Files in `Shortcuts/SpeakToRoam/FailedRecordings`. If it suceeds, you can find them in `Shortcuts/SpeakToRoam/HandledRecordings`. Behavior slightly different on Apple Watch)
+      - Shortcut is now available on the Share Sheet without extra configuration
+        - You can use this to share recordings from the Voice Memos app to Roam via the shortcut!
+    - **Requirements**
+      - apple devices only (iphone, ipad, mac, apple watch, etc.)
+      - Need an OpenAI API key for transcription & optional post-processing. 
+        - if you do not have one, we go through how to create one in the steps below
+- [[May 17th, 2024]]
+  - [[Quality of Life Improvements]]
+    - [[Linked References]] now searches through the children of references and opens the tree up down to the match
+      - Previously it would only search through the path or the linked block
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FnnEuwBBgSN.gif?alt=media&token=9acfa0d6-83e2-4235-998f-9c6d57e5e659)
+- [[May 3rd, 2024]]
+  - [[Quality of Life Improvements]] for the [[Command Palette]]
+    - Improved the design to match [[Cross Graph Search]]
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FaWWXsiwNAT.png?alt=media&token=7f5df44e-534f-4964-8521-8826bb7d85e1)
+    - Renamed "quick search" to "Find or create page search" to match what it was called elsewhere
+    - Added all of the commands/hotkeys you can use "everywhere" (see the hotkeys settings), such as toggling the sidebars, moving back / forward a day, or toggling brackets.
+    - In addition to these we added more commands for
+      - Open all pages
+      - Open graph overview
+      - Open today's daily note in sidebar
+- [[April 26th, 2024]]
+  - **[[New Features]] 🚀**
+    - [[Cross Graph Search]]
+      - Quickly find and open content across all of your graphs!
+      - Trigger with `cmd-shift-u` on mac or `ctrl-shift-u` on windows
+      - Demo::
+        - {{[[video]]: https://www.loom.com/share/b99af123b0b84d118594a04fce159e47}}
+  - [[Mobile Native View]] 1.0.86
+    - Image improvements
+      - Tap on an image to bring it up in fullscreen
+      - Pinch to zoom in
+      - Share or download the image
+    - Fix -- [[iOS]] smart dash deleting a block (disabled smart dashes)
+    - Added an edit block button to the toolbar so you can edit images or other components when there is no space to click into the block
+- [[April 22nd, 2024]]
+  - [[Mobile Native View]] [[New Features]] 1.0.84
+    - Image and video capture
+    - Image, video, and file upload
+    - `{{query}}` #[[Query]]
+    - `{{table}}` #[[Table]]
+    - Other components including `{{slider}}, {{word-count}}, {{character-count}}, {{embed-path}}, {{embed-children}}`
+    - `((parentheticals))`
+    - Automatic wrapping for `{`
+    - Improved the display of the block path in references, removed showing newlines and increased the space between lines
+- [[April 17th, 2024]]
+  - [[Mobile Native View]] 1.0.82
+    - Fixed search erroring out sometimes
+    - Fixed multiselect toolbar in Ipad landscape mode not showing up
+    - Increased width of editing bar buttons by a few pixels
+    - Fixed url display with other text in the block
+- [[April 13th, 2024]]
+  - [[Quality of Life Improvements]]
+    - Added [[xml]] support for [[Code Block]]s
+- [[April 5th, 2024]]
+  - [[Quality of Life Improvements]]
+    - When deleting a page, instead of navigating to daily notes, we now navigate back to the last existing page or block in your history
+    - Added delete page to the context menu from right clicking on a page title so you can delete pages from the sidebar
+  - [[Bug Fixes]]
+    - Fixed templates which internally referenced the first block in the template had broken references when applying the template
+      - Example::
+        - test broken references template #roam/templates
+          - Referencing this block was broken
+          - Like this -> Referencing this block was broken
+        - Applying the template ended up like this ->
+          - Referencing this block was broken
+          - Like this -> ((fmZlzz2th))
+- [[March 29th, 2024]]
+  - Fixed emojis in namespaced page titles #[[Bug Fixes]]
+    - Before and after
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FQxHeHLMzdd.png?alt=media&token=16d7136d-77e6-4e4b-8359-4a856a153e36)
+  - Updated our underlying code editor (codemirror) to the latest and remove the active line highlight
+- [[March 28th, 2024]]
+  - [[mobile]] [[iOS]] and [[android]] [[Bug Fixes]] #[[Mobile Native View]]
+    - Fixed paste not working at all on [[android]] (still needs more work of formatting paste from external source but Roam to Roam paste works now)
+    - Fixed sharing multiple photos / files at once on [[android]]
+    - Fixed issue where history could display empty history items
+    - Fixed issue where references page could be missing data
+    - Fixed font size changing when phone's accessibility setting font size is changed
+    - Fixed encrypted graphs overlapping the status bar when beta is on
+- [[March 22nd, 2024]]
+  - [[New Features]] #[[Mobile Native View]]
+    - https://twitter.com/RoamResearch/status/1771368456937676986
+- [[March 13th, 2024]]
+  - **[[New Features]] 🚀 #[[mobile]] #[[Mobile Native View]]**
+    - Added the ability to edit the new mobile beta for believers
+      - Tap on "daily notes" to bring up a calendar to navigate to future or past days
+      - Hold the back button to bring up your history, or to navigate to daily notes or open your shortcuts
+- [[March 12th, 2024]]
+  - Fix setting custom hotkeys on [[mobile]] web
+- [[January 27th, 2024]]
+  - [[Roam Depot Extensions]]
+    - **[Live AI Assistant (formerly Speech-to-Roam)](https://github.com/fbgallet/roam-extension-speech-to-roam)**
+      - Speak instead of having to type into Roam. 
+        Additionally, you can speak to a GPT model (providing context to the model from your Roam graph by selecting blocks before calling the command!), or even do translations to English
+      - **Features**
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FxtLDz8oskA.png?alt=media&token=7d96b57a-b6dd-45b9-9c3e-da784e4c5a31)
+          - By default, the controls will be inserted in the left sidebar, after "Daily Notes". It's possible to display them in the topbar (always visible, more convenient on mobile).
+        - **Voice transcription**
+          - the transcribed text will be inserted at the bottom of the current page (or page view) or appended to the current focused block.
+          - Uses either an OpenAI API Key (that you need to set up in the extension settings), or if you disable Whisper, uses the free Web Speech API (⚠️ not available in Electron Desktop app and Firefox or Arc browser)
+        - **Translation**
+          - A large number of [source languages are supported](https://platform.openai.com/docs/guides/speech-to-text/supported-languages), but the target language is currently limited to English. This limitation can be easily overcome through post-processing using a GPT model, as it only requires asking it to translate into any language.
+        - **Speak directly to an AI Assistant (OpenAI GPT models)**
+          - ask any question, rephrasing, completion, translation! Feel free to specify the expected format of the response (its length, style, etc.).
+          - assistant response is inserted as last child of prompt block (current limitation: the answer is only one long block)
+          - you can easily **provide context by selecting some block(s)** in the page or right sidebar. You can use it to extend a conversation, ask a question about any content, request a summary or translation, and so on. 🚀
+          - on mobile (selection being not possible), place the cursor in a block to use its content as context, or enable the option to use the whole current view as context (unless you place the cursor in a blank block).
+          - model by default is currently gpt-3.5-turbo-1106
+            - you can try other chat completion model, or your own fine-tuned models
+      - **Quick Start**
+        - Install the extension by searching for "Speech to Roam" in Roam Depot
+        - Then, right after installation,
+          - In the settings, provide an OpenAI API key (by copying/pasting an existing key or generating a new key via [this link](https://platform.openai.com/api-keys)). You need an account on OpenAI to benefit from Whisper transcriptions.
+      - ⚠️ __Currently, this extension doesn't work on either the MacOS desktop app or the Android app, but it works on browsers (desktop and mobile) and on Windows desktop app.__
+- [[January 25th, 2024]]
+  - [[Roam Depot Extensions]]
+    - **[Nautilus](https://github.com/tombarys/roam-depot-nautilus)**
+      - Nautilus is a Roam Research extension with a unique approach to stress-free day planning and time blocking in Roam
+      - This visual approach reduces the feeling of being overwhelmed, enhances task-effort estimating skills, and clearly shows what the feasible tasks are for the rest of the day. The spiral shape mirrors one's diminishing energy for creative tasks over a given day.
+      - **Features**
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FW6-cphnZ2t.png?alt=media&token=f8b434e1-653b-455a-8971-4020ed0781b6)
+      - **Usage**
+        - only once: install **Nautilus** and **TODO Trigger** extension
+        - insert the component at the top of your Daily Page using ;;Nautilus template
+        - indent all events and tasks that you want to accomplish below the component as its children
+        - start inserting tasks, then folow up with events
+        - use e.g. "12:30-14:20" or "9 to 10:45" to anchor fixed time events
+        - use e.g. "10m" or "20min" to set the task duration (other than default)
+        - use e.g. "d18:30" or "d9:05" in tasks to denote the time when they were finished (or use extension for it)
+        - during a day: reorder tasks and move some of them after fixed events to ensure they will not be planned earlier
+      - **Quick Start Video**
+        - {{[[video]]: https://www.loom.com/embed/c66b99a39a5a4f74b2889ccab467e9eb?sid=5809279e-7deb-44e2-a448-f9de33ba8510}}
+- [[January 22nd, 2024]]
+  - Ability to customize the Quick Capture template in the mobile app #mobile 
+    - Please watch the [[Loom video]] below to see how it works
+      - {{[[video]]: https://www.loom.com/share/d63674bcd45e4b17bf247ec94893150c}}
+  - Small fixes / additions
+    - Fixes bug on paste from other websites where do not have :create/time and :create/user
+    - Fixes rare issue in multi user graphs where blocks seemed to appear in multiple places when lots of users were writing at the same time 
+    - Fixes bug where options for "Adjust width of main page" does not change properly when resized
+    - ... other small bug fixes in the client
+    - Apple users might want to check out **[Speak to Roam]([[Apple Shortcuts/Speak to Roam]])** Apple Shortcut (speak and send transcript to your Roam graph)
+    - A number of small fixes and improvements on the backend API. If you're interested, please checkout [the docs in the developer-documentation graph](https://roamresearch.com/#/app/developer-documentation/page/W4Po8pcHQ)
+      - more info: [[Developer Documentation]]
+
+#### [[2023]]
+
+- [[September 26th, 2023]]
+  - Fix issues with pages and blocks having more than 1000 children
+  - Fix issues with broken references sometimes linking to the wrong block, references starting with numbers like `((88lsljdkf))` could create links if that uid didn't already exist in the graph
+- [[September 19th, 2023]]
+  - **[[New Features]] 🚀 #[[mobile]]**
+    - We are excited to announce the first beta release of our redesigned mobile app! Our focus has been on ensuring quick access, eliminating "graph is too large" errors, and giving the app a more native feel. We're rolling out to believers first to stress test the system.
+    - To enable, visit the settings tab at the bottom, flip the switch and open a graph.
+    - The app is currently in "read only" mode. The capability to edit will be rolled out in the coming weeks.
+    - An active internet connection is required. It's possible we may add limited offline capability in the future.
+    - Unfortunately, encrypted graphs are not supported since it relies on our new backend API
+    - This release also includes some improvements for everyone 
+      - Dark mode and new light theme colors to match the web app
+      - Fixed issues with sharing to the app
+      - Added graphs with read only access to the graph list
+      - Decreased size of the bottom navigation bar
+- [[September 12th, 2023]]
+  - Improve keypress performance
+  - Fix x.com ([[Twitter]]) link embeds
+    - Added a user setting to not auto expand the embeds
+- [[August 30th, 2023]]
+  - Added links to our [slack](https://join.slack.com/t/roamresearch/shared_invite/zt-21yynf99v-39t09XesqSiIsz_1VFmwtA) and [developer documentation](https://roamresearch.com/#/app/developer-documentation) to the help section (?) in the top right
+    - Also rewrote a lot of the clojurescript and roam/render documentation in the dev graph
+- [[August 28th, 2023]]
+  - `{{embed-children: ((block ref))}}`
+    - like [[embed]], but it only displays the children of the block
+    - Example::
+      - A
+        - 1
+        - 2
+      - B
+        - A
+          - 1
+          - 2
+- [[August 23rd, 2023]]
+  - Button to reload graph and disable all extensions
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FnOcedJDFG9.png?alt=media&token=1b2ce47e-b8e5-41a3-8236-a20426ea7a95)
+    - Useful if you are having an issue with Roam and think it might be one of your extensions
+- [[August 21st, 2023]]
+  - [[Performance Improvement]] reduce the amount of work done per user action by 50% (update block, create new block, etc..), Roam should feel a little bit more snappy, especially with more content on the screen.
+  - Fix [[query]] updating sometimes when it shouldn't
+- [[August 18th, 2023]]
+  - Small fixes for [[Video Timestamps]]
+    - If there are two or more of the same videos on screen, play the last used one
+    - Scroll video into view if it's not visible
+- [[August 15th, 2023]]
+  - Small fixes to [[Graph Overview]]
+    - Saves last used settings locally
+    - Fix selected pages not always being highlighted
+    - Rename "Connect Selected Pages" to "Show links between" to clarify that it does not change your graph
+- [[August 14th, 2023]]
+  - **New and Updated [[Raycast]] extension for Roam!!**
+    - MacOS users, watch the demo video below to get a sense of the power of having your Roam graph (or graphs 😉) at your fingertips:
+      - {{[[video]]: https://www.loom.com/share/3fa11c532cb44822a047caecc638e47f}}
+    - Features::
+      - Search across all your installed graphs or in one specific graph
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FtIlPw_oQ-a.png?alt=media&token=3c666344-8de3-4595-8947-55a216095a2e)
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fv3emRcKcRu.png?alt=media&token=59421ab9-6b29-4b13-b3ee-10ca03ed503d)
+      - Quick capture notes to your Roam graph without leaving your keyboard
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fj8GEmEGAx8.png?alt=media&token=f65dc849-dfa1-4ce3-b820-659036a49151)
+      - View a random block from your roam graph
+      - Easily create Raycast quicklinks to open Roam graphs or specific pages in the graph even faster
+        ... and more features baking in the oven!
+    - Getting Started Guide
+      - Install [[Raycast]] from https://raycast.com
+      - Then install the Roam Extension from: https://raycast.com/roamresearch/roam-research
+      - Follow the loom video below to add a graph
+        - {{[[video]]: https://www.loom.com/share/31ada35f7c8b4f44a2ba537b15237854}}
+    - If you run into any issues, drop us a message at support@roamresearch.com or via Intercom and we will get on it immediately.  
+    - Big thanks to [[hyc]] for their work on the initial version of this extension 🙏
+    - P.S. Users of the older versions of the Raycast extension will need to add their graph(s) again. Sorry for the inconvenience, this should only be a one time thing
+  - [[Roam Depot Extensions]]
+    - **[Send To Graph](https://github.com/8bitgentleman/roam-depot-send-to-graph)**
+      - A Roam Research extension to send blocks from one graph to another. The destination graph does not need to be open. This is a one-way push. The blocks are added to the new graph as if you had created them manually yourself.
+      - **Features**
+        - Send blocks to another graph with a simple right-click command or via hotkey.
+        - Configure multiple graphs to send blocks to.
+        - Option to nest sent blocks under a parent block (for example an __#inbox__ tag) in the destination graph.
+      - **Setup**
+        - This extension uses the new Roam backend API to allow sending of blocks to graphs that you do not have open. Note: only the creator of a graph can create new API tokens.
+          - In your destination graph go to the Graph Settings page and select New API Token
+            - ![](https://github.com/8bitgentleman/roam-depot-send-to-graph/raw/main/assets/api-1.png)[🔗](https://github.com/8bitgentleman/roam-depot-send-to-graph/raw/main/assets/api-1.png)
+          - Name the token however you want but make sure to set the Access Scope to Edit Access. This gives the extention edit permissions to the graph.
+            - Note: When sending blocks I __ONLY__ add to the destination graph. There is no code to modify or delete __ANYTHING__.
+            - ![](https://github.com/8bitgentleman/roam-depot-send-to-graph/raw/main/assets/api-2.png)[🔗](https://github.com/8bitgentleman/roam-depot-send-to-graph/raw/main/assets/api-2.png)
+          - Select Create to generate your unique graph API token. Make sure to save the generated token before navigating away as it is not possible to see the token again once you have navigated away.
+          - Open up the Source Graph and navigate to the Send To Graph settings page.
+          - Add the Graph name and Edit Access token for the destination graph to the settings panel and hit the plus symbol. If either of these is incorrect in any way blocks you attempt to send will not go through. You can add as many graphs as you like.
+            - ![](https://github.com/8bitgentleman/roam-depot-send-to-graph/raw/main/assets/api-3.png)[🔗](https://github.com/8bitgentleman/roam-depot-send-to-graph/raw/main/assets/api-3.png)
+      - **Usage**
+        - There are 2 ways of using the Send-To-Graph extension:
+          - Right-click on a block and select "Send to Graph". If you have multiple graphs configured, you will be asked to select the destination graph.
+          - Alternatively, assign a hotkey via the settings panel to send the currently focused block to another graph.
+      - **Example**
+        - {{video: https://github.com/8bitgentleman/roam-depot-send-to-graph/assets/4028391/fee66356-1a15-4432-9b73-52ece2c4d6d9}}
+- [[August 8th, 2023]]
+  - [[New Features]]
+    - New [[Graph Overview]]
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FHu0-7f3pv7.png?alt=media&token=9c4cf03c-01c9-418c-b449-1488d18346c4)
+      - Graph overview now works with very large graphs!
+      - New "Explore" Feature
+        - Add pages to see how they connect, what other pages link into them, or what pages they link to.
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FokRLHhG1iU.png?alt=media&token=c8939b2f-7f21-4ede-b99b-d9a2d19ab906)
+      - The default layout is now a force directed layout, we unfortunetly had to remove the dagre and cose layouts (which only worked with very small graphs anyway)
+  - [[Roam Depot Extensions]]
+    - **Graph Radar**
+      - A Roam Research component to show the last edited pages in a graph. Useful for multiplayer graph or graphs not visited often.
+      - **Example**
+        - ![](https://github.com/8bitgentleman/roam-depot-graph-radar/raw/main/example.gif)[🔗](https://github.com/8bitgentleman/roam-depot-graph-radar/raw/main/example.gif)
+      - **Setup**
+        - First make sure that **User code** is enabled in your settings. This allows custom components in your graph.
+        - ![](https://github.com/8bitgentleman/roam-depot-tidy-todos/raw/main/settings.png)[🔗](https://github.com/8bitgentleman/roam-depot-tidy-todos/raw/main/settings.png)
+      - **Usage**
+        - Easiest way to insert the component is though Roam's native template menu. Simply type ;; and look for **EXTENSION NAME HERE**
+        - ![](https://github.com/8bitgentleman/roam-depot-graph-radar/raw/main/template.png)[🔗](https://github.com/8bitgentleman/roam-depot-graph-radar/raw/main/template.png)
+        - ![](https://github.com/8bitgentleman/roam-depot-graph-radar/raw/main/explainer.png)[🔗](https://github.com/8bitgentleman/roam-depot-graph-radar/raw/main/explainer.png)
+    - **Marco Polo - CJK Symbols Converter**
+      - Automatically pair the following CJK(Chinese, Japanese, and Korean) brackets and quotation marks entered when the CJK input methods are activated.
+        - "【"
+        - "（"
+        - "「"
+        - "『"
+      - Convert following consecutive inputs CJK(Chinese, Japanese, and Korean) brackets and quotation marks - a usage which does not exist in these languages - into corresponding Roam Research citation brackets or symbols when the CJK input methods are activated.
+        - "【【】】": "[[]]"
+        - "（（））": "(())"
+        - "『「』」": "{{}}"
+        - "「『」』": "{{}}"
+        - "『『』』": "{{}}"
+        - "「「」」": "{{}}"
+- [[August 7th, 2023]]
+  - [[Roam Depot Extensions]]
+    - **Paste from PDF**
+      - When some text copied from a PDF is in the clipboard, the command Paste PDF text from clipboard, removing undue line breaks replace line breaks by space and paste the text in the current block, at the current cursor position.
+      - Provide also the corresponding SmartBlocks command: REPLACENEWLINEBYSPACE with the text to paste as first argument. You can use it with the following SmartBlock (it can also be installed from the SmartBlocks Store).
+      - - #SmartBlock Paste text from pdf (replace new line by space)
+            - <%SET:cbText,<%CLIPBOARDPASTETEXT%>%><%REPLACENEWLINEBYSPACE:<%GET:cbText%>%>
+      - **[🔗](https://github.com/fbgallet/roam-extension-paste-from-pdf/tree/d52fd10913df564c6b9d3df45b90753912cbc1a5#for-any-question-or-suggestion-dm-me-on-twitter-and-follow-me-to-be-informed-of-updates-and-new-extensions--fbgallet)For any question or suggestion, DM me on **Twitter** and follow me to be informed of updates and new extensions : [@fbgallet](https://twitter.com/fbgallet).**
+    - **Roam Tabs**
+      - Manage your working pages with tabs.
+      - ![image](https://user-images.githubusercontent.com/23192045/246862057-8423abe5-8697-4b9e-949d-cd707711a4b6.png)[🔗](https://user-images.githubusercontent.com/23192045/246862057-8423abe5-8697-4b9e-949d-cd707711a4b6.png)
+      - **Open Page In a New Tab**
+        - You can open the switch palette by pressing Ctrl or the Meta key and clicking the link (page or block reference). This will open a new tab.
+        - You can enable the "Auto" mode, after which just **clicking** will open a tab (if the page tab exists, it will focus on that tab).
+        - ![image](https://user-images.githubusercontent.com/23192045/246862399-08b26378-8358-43fa-8924-4ae6c23975bf.png)[🔗](https://user-images.githubusercontent.com/23192045/246862399-08b26378-8358-43fa-8924-4ae6c23975bf.png)
+      - **Switch Tab**
+        - ![image](https://user-images.githubusercontent.com/23192045/249030317-820e8902-0532-4a6e-ab3b-4d1f2d4f123a.png)[🔗](https://user-images.githubusercontent.com/23192045/249030317-820e8902-0532-4a6e-ab3b-4d1f2d4f123a.png)
+        - You can open the switch palette by
+          - Command Pallete ![image](https://user-images.githubusercontent.com/23192045/249029975-212bdf80-1c5c-4da3-b545-9db90b8a405d.png)[🔗](https://user-images.githubusercontent.com/23192045/249029975-212bdf80-1c5c-4da3-b545-9db90b8a405d.png)
+          - custom hotkeys ![image](https://user-images.githubusercontent.com/23192045/249029837-5fe48402-a157-490e-b408-3b57e35bbb25.png)[🔗](https://user-images.githubusercontent.com/23192045/249029837-5fe48402-a157-490e-b408-3b57e35bbb25.png)
+      - **Remember scroll position**
+        - Each tab can remember your scroll position and reback to it when you switch back to the tab
+        - ![remember tab position](https://user-images.githubusercontent.com/23192045/249031404-d2413b24-8859-429e-a7a8-44241897aedc.gif)[🔗](https://user-images.githubusercontent.com/23192045/249031404-d2413b24-8859-429e-a7a8-44241897aedc.gif)
+      - **Open Tab in Sidebar**
+        - **Shift** + click on tabs
+    - **Auto Hide**
+      - Auto Hide is a module for [Roam Research](https://roamresearch.com/) that hides the topbar when you scroll down.
+      - **Main Features**
+        - Hides the topbar when you scroll down and shows it when you hover with the mouse on the original location.
+        - Offers a setting to show the topbar when you scroll up
+        - Offers a setting for setting the topbar background color to match your personal theme. Not needed for Roam Studio.
+      - **If you want to support my work**
+        - [Become a GitHub Sponsor](https://github.com/sponsors/rcvd)
+        - [Buy Me a Coffee](https://www.buymeacoffee.com/rcvdio)
+        - [Become a supporter on gödel.io](https://www.goedel.io/subscribe?utm_medium=web&utm_source=subscribe-widget&utm_content=47299057)
+        - [Flattr](https://flattr.com/@rcvd)
+        - [Paypal](https://paypal.me/rcvd)
+    - **Save Scrollbar Position**
+      - A simple Roam Research extension that saves the position of the scrollbar on each page, and when you return to this page, it reverts to the position you last viewed.
+      - It just saves the position of the scrollbar in the browser's memory, so when you refresh the browser, the last saved data will be cleared.
+      - Demo1: ![demo1](https://github.com/studyduck/roam-save-scrollbar-position/raw/main/demo1.gif)[🔗](https://github.com/studyduck/roam-save-scrollbar-position/blob/main/demo1.gif)
+      - Demo2: ![demo2](https://github.com/studyduck/roam-save-scrollbar-position/raw/main/demo2.gif)[🔗](https://github.com/studyduck/roam-save-scrollbar-position/blob/main/demo2.gif)
+- [[August 1st, 2023]]
+  - [[Quality of Life Improvements]]
+    - Changes to `{{video}}` `{{video-timestamp}}` #[[Video Timestamps]]
+      - Video timestamps now include a block reference to the video they belong to
+        - They can be dragged anywhere in Roam, and you can see all of the timestamps of a video from the linked references
+        - Old video timestamps will still work, but they are not auto updated to include the block reference
+      - Fixed a bug where timestamps would play a video hidden in the zoom path
+      - Inserting a timestamp now automatically adds a space after the timestamp
+    - Templates will now apply the state of `{{sliders}}`, `{{excalidraw}}`, `{{diagram}}` and other `{{}}` components
+      - You can also now reference templates inside themselves to track the usage of them
+        - Example::
+          - #roam/templates Daily mood template that tracks itself
+            - How is my mood? *
+              - {{[[slider]]}}
+    - When selecting a block with shift-arrow up or down, scroll the block into view
+- [[June 26th, 2023]]
+  - Changes to the block context menu
+    - New button and key command for copying embed
+      - Original button still works to copy the block ref
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FywRWXjCVNW.png?alt=media&token=630eaa4f-819e-433c-96ba-a0735c5cdb51)
+- [[June 20th, 2023]]
+  - [[Bug Fixes]]
+    - Fix filtering `{{mentions}}` and `{{children-mentions}}` components
+- [[June 15th, 2023]]
+  - [[Experimental]] [[New Feature]]
+    - `{{children-mentions: [[page]]}}`
+      - Like linked references but it also collects the linked references from all of the children blocks of `[[page]]`. you can also use it with a block reference
+- [[June 12th, 2023]]
+  - **[[Quality of Life Improvements]] ✨**
+    - [[Performance Improvements]] and new search feature for [[Linked References]]
+      - Linked references now load lazily, which means it should open __much__ faster than before.
+      - The downside is that you can no longer search through them with `cmd-f` or `ctrl-f`, you need to use the built in search component.
+      - The new search looks through all of the references, the paths of the references, or the children if the children are open.
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F58Rma4DQAw.png?alt=media&token=542425e8-6a9d-422e-a06b-dcce8f8c1b61)
+  - [[Roam Depot Extensions]]
+    - **[Magic Tags](https://github.com/rcvd/magic-tags)**
+      - Magic Tags by [[Alexander Rink]] transforms tags you specify into beautiful icons while maintaining all functionality, like backlinking and searching.
+      - ![Demo of magic tags in action](https://github.com/rcvd/magic-tags/raw/main/screenshots/magic-tags.gif)[🔗](https://github.com/rcvd/magic-tags/raw/main/screenshots/magic-tags.gif)
+      - **How does it work**
+        - Select the Icon Theme. [Blueprint](https://blueprintjs.com/docs/versions/3/#icons) is the default for Roam Research. Roam Studio provides [Feather Icons](https://feathericons.com/).
+        - Select the first magic word - this is the name of the tag (e.g., if your tag is #love, your magic word is "love")
+        - Select an icon from the predefined list
+        - Select a color from the predefined list
+        - Select the lightness of the color
+        - **Notes** You can use the same icon for multiple tags - with different colors if you like. An example of this would be a marker for high and critical tasks, which both would use the alert icon, but in yellow for high and red for critical.
+        - ![Settings showing tags using the same icon but different colors](https://github.com/rcvd/magic-tags/raw/main/screenshots/high-critical.png)[🔗](https://github.com/rcvd/magic-tags/raw/main/screenshots/high-critical.png)
+      - **Feature Requests, Bugs, and Feedback**
+        - If you need an additional icon, have an idea for a new feature, or find a bug, file it under [Issues](https://github.com/rcvd/MagicTags/issues) with a short description and a screenshot. If you have any additional comments or suggestions, please send them to [alex@goedel.io](mailto:alex@goedel.io).
+      - **If you want to support Alex's work**
+        - [Become a GitHub Sponsor](https://github.com/sponsors/rcvd)
+        - [Buy Me a Coffee](https://www.buymeacoffee.com/rcvdio)
+        - [Become a supporter on gödel.io](https://www.goedel.io/subscribe?utm_medium=web&utm_source=subscribe-widget&utm_content=47299057)
+        - [Flattr](https://flattr.com/@rcvd)
+        - [Paypal](https://paypal.me/rcvd)
+    - **[roam-depot-todo-progress-bar](https://github.com/8bitgentleman/roam-depot-todo-progress-bar)**
+      - Roam Research progress bar component for visually tracking TODOs in a list.
+      - **Example**
+        - ![](https://github.com/8bitgentleman/roam-depot-todo-progress-bar/raw/main/example.gif)[🔗](https://github.com/8bitgentleman/roam-depot-todo-progress-bar/raw/main/example.gif)
+      - **Setup**
+        - First make sure that **User code** is enabled in your settings. This allows custom components in your graph.
+        - ![](https://github.com/8bitgentleman/roam-depot-todo-progress-bar/raw/main/settings.png)[🔗](https://github.com/8bitgentleman/roam-depot-todo-progress-bar/raw/main/settings.png)
+      - **Usage**
+        - Easiest way to insert the component is though Roam's native template menu. Simply type ;; and look for **TODO Progress Bar**
+        - ![](https://github.com/8bitgentleman/roam-depot-todo-progress-bar/raw/main/template.png)[🔗](https://github.com/8bitgentleman/roam-depot-todo-progress-bar/raw/main/template.png)
+    - **[oblique-strategies](https://github.com/mlava/oblique-strategies)**
+      - Overcome creative block by using an Oblique Strategy.
+      - Originally create by Brian Eno and Peter Schmidt as a way to encourage lateral thinking, Oblique Strategies were originally available as a stack of cards from which you would draw a random card which held a simple prompt. See also: https://en.wikipedia.org/wiki/Oblique_Strategies for more information.
+      - ![image](https://user-images.githubusercontent.com/6857790/238811874-8d73b616-2bc1-49c4-89b0-f3755ed1a5a3.png)[🔗](https://user-images.githubusercontent.com/6857790/238811874-8d73b616-2bc1-49c4-89b0-f3755ed1a5a3.png)
+      - There have been six editions. This extension for Roam Research provides the ability to draw from any of the first five editions, or a combined list containing all of the prompts from the first five editions. The prompts were sourced from https://github.com/noaoh/oblique-stratagems with thanks.
+      - An Oblique Strategy prompt can be obtained using a Command Palette command or Roam Research Hotkey.
+      - The following commands are available:
+      - Random Oblique Strategy Random Oblique Strategy - 1st Edition Random Oblique Strategy - 2nd Edition Random Oblique Strategy - 3rd Edition Random Oblique Strategy - 4th Edition Random Oblique Strategy - 5th Edition
+    - **[Automatic DNP](https://github.com/mlava/auto-DNP)**
+      - Automatically paste in your preferred daily note page template when you open your DNP for the first time each day.
+      - This extension allows you to define templates for every day of the week, or for weekdays and weekends if you prefer to keep it simple.
+      - Usage
+        - Use the Roam Depot settings panel to choose either Daily or Weekday/Weekend for Preferred Mode.
+        - Then, paste in the block reference of a template to the corresponding fields in the Roam Depot settings screen. The example below shows the configuration for Weekday/Weekend mode:
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FDlSwEX58eB.png?alt=media&token=c4ec9f22-124c-40c8-8f0b-56b662afe774)
+    - **[Roam Power Previewer](https://github.com/dragonforce2010/roam-power-previewer)**
+      - Allows you to preview a website in a side drawer, without having to go out of Roam!
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FjnZuhSGODA.gif?alt=media&token=02e9465f-5ab4-4da7-847d-0d2f6691c23f)
+      - Usage
+        - After installing the extension from Roam Depot, just click on a link
+        - Please note that If you don't want to preview the website content in the sidedrawer or sometimes the website you are tring to preview has a iframe securty policy which forbids to do so, then you can simply press the following keys(ctrl, meta, shift) when click the link, to view the website in a new tab in browser
+    - 
+- [[June 9th, 2023]]
+  - [[Bug Fixes]]
+    - Editing `{{excalidraw}}` drawings or `{{slider}}`s also updates the last edited time
+- [[June 6th, 2023]]
+  - **[[Quality of Life Improvements]] ✨**
+    - [[Performance Improvement]] to [[Filters]]
+      - Opening filters is 4-5x faster
+      - Adding or removing a filter is 15-30x faster
+      - Memory usage is a lot less
+      - This is assuming [[Linked References]] is closed, because displaying all of the references is still very slow
+        - We will be releasing an improvement to linked references to solve this problem soon
+      - Internally we completely rewrote how these work to use the same logic as queries, so that in the future we can add OR filters
+      - The counts for tags changed inside of linked refs filter
+        - The counts now represent how many of the linked references have that tag. When you filter for "includes" a tag, it will show you that many references
+    - Small [[Performance Improvement]] to [[Unlinked References]]
+    - Small [[Performance Improvement]] to [[Streak]]
+    - Another small [[Performance Improvement]] to [[All Pages]]
+    - Fixed bug that caused versions to be reordered
+    - Fixed old daily notes loading on scroll
+      - previously it could get stuck and you would have to hover over the new note
+- [[May 19th, 2023]]
+  - [[Quality of Life Improvements]] ✨
+    - [[Find or create page]] performance improvement
+      - Search is now 2x faster
+        - Uses 1/3 of the memory of before
+    - Fixed double digit numbered lists inside of the `{{search: }}` component
+      - Example::
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FzD-5DbE3zD.png?alt=media&token=1f7591f4-0e1c-4c22-a77a-eac822150c92)
+- [[May 16th, 2023]]
+  - **[[Quality of Life Improvements]] ✨**
+    - Big [[Query]] update!
+      - Queries are 2 to 10 times faster than before, depending on what you are querying for
+      - Queries do not auto update by default now
+        - To rerun the query, click the refresh button on the top right
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FSyeBzzxFj4.png?alt=media&token=dce1c454-ea46-4e82-85a4-e0aeb6c11571)
+          - Closing and re opening the query will also rerun it
+        - We made this change so that Roam doesn't get really slow when you have a query open on the page
+        - If you liked how it worked before, you can change the default back to auto updating in user settings
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fxorb9ZSk2R.png?alt=media&token=855f684f-b57a-4545-b86e-9a324138134e)
+    - Delete blocks confirmation dialog
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FYDoO8C2WQa.png?alt=media&token=55f1ba57-50d1-4bbf-ba62-43550f8a8fa2)
+        - Hit `enter` to confirm, or `escape` to cancel
+      - You can change the threshold for when to get the warning in user settings
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FckUnHuP2ba.png?alt=media&token=c2805de1-db28-4287-93ed-701f51957aaa)
+- [[May 15th, 2023]]
+  - [[Roam Depot Extensions]]
+    - **[Switch+](https://github.com/dive2Pro/roam-switch-plus)**
+      - An awesome new extension by [[hyc]] which will change the way you navigate between blocks on a page. 
+      - Has a number of different modes: text mode, tag mode, line mode, sidebar mode, latest changes mode. 
+      - Usage
+        - Shortcut to activate the extension is ctrl/cmd + shift + p
+          Then, just start typing to search
+        - You can switch modes by typing `@`, `:`, `r:` or `e:` in the beginning of the search, or you can also set hotkeys which takes you directly to a particular mode
+      - Do checkout the video walkthrough below:
+        - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FzIJm0nHEOh.mp4?alt=media&token=d69cb2b5-8002-459e-9eae-08022a028f70}}
+      - Separate GIFs demo-ing each mode
+        - Text Mode
+          - ![](https://user-images.githubusercontent.com/23192045/236662454-11c2ccb4-6285-41bb-b9eb-5f5232ee8275.gif)
+        - Tag Mode
+          - ![search with tags](https://user-images.githubusercontent.com/23192045/236662466-e5d1f2d4-7189-434b-b13b-79330a2f0082.gif)
+        - Line Mode
+          - ![search with line](https://user-images.githubusercontent.com/23192045/236662488-c7eca005-51cd-4bad-b781-5446b099b09c.gif)
+        - Right Sidebar Mode
+          - ![search with sidebar](https://user-images.githubusercontent.com/23192045/236662513-0deef455-86c9-4e98-abcf-11981e0ce805.gif)
+      - If you like this, you might like another one of [[hyc]]'s extensions: [Search+](https://github.com/dive2Pro/roam-search-plus). Search for it in Roam Depot!
+    - **[Power CSS Pack](https://github.com/Roam-Research/roam-depot/pull/530)**
+      - An extension by [[Zhang Michael]] which adds a lot of useful CSS classes you can use to change how a particular block in your Roam graph looks
+      - Usage
+        - Just apply the tag you want in your block and the corresponding style will be applied. Some examples:
+          - `#.css-level-bg`
+          - `#.css-level-color`
+          - `#.css-font-yellow`
+          - `#.css-bg-olive-300`
+          - `#.css-grid3`
+      - Check the GIF below for some examples:
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FfzFyJoIH5_.gif?alt=media&token=122ef668-6881-4489-b10f-6fb1f675de25)
+    - **[Roam Power Themes](https://github.com/dragonforce2010/roam-power-themes)**
+      - An extension by [[Zhang Michael]] with a collection of 23 beautiful themes
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2FExploreSpace%2FTDzPIseMY_.31.47.gif?alt=media&token=69075b59-b268-4eb7-a28e-f0ad113212d4)
+- [[May 10th, 2023]]
+  - **[[Quality of Life Improvements]] ✨**
+    - Delete button in Mobile App Quick Capture
+      - [[Screenshots]]
+- [[May 9th, 2023]]
+  - **[[Quality of Life Improvements]] ✨**
+    - Fixes for sign in via Google/Apple issues
+      - Say goodbye to the dreaded "Enable Third Party Cookies to Sign up with Google" error message 🤣
+    - [[Desktop App]] version 0.0.18
+      - Upgraded to electron 22
+        - Alongside security updates and performance improvements,  enables new features like `has()` CSS selector.
+      - Changed history navigation shortcuts to default browser ones (`cmd + [ / ]` in mac, `alt + left/right` in windows/linux). Old shortcuts still work too.
+      - Fixes issue where forward and backward buttons in some mouses (like Logi) did not work
+      - Fixes issues in Ubuntu 22.04, popOS 22.04, etc.
+    - Added a setting "Exportable By" via which graph owners/admins can allow/restrict users from being able to export graph data
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F6SvAKpTn3y.png?alt=media&token=fcf7e7d0-039f-4d82-9e63-d9508372a7f2)
+      - Settings is under the "Sharing" tab in the settings panel
+        - ... > Settings > Sharing > Exportable By
+      - The default is "Anyone with access to the full graph". 
+        - If the graph has not been shared with any other email and is not public, then that option is the same as "Only Me" 
+- [[April 21st, 2023]]
+  - **[[Quality of Life Improvements]] ✨**
+    - More [[Performance Improvements]] to block autocomplete search
+- [[April 20th, 2023]]
+  - **[[Quality of Life Improvements]] ✨**
+    - [[Performance Improvements]] to the All Pages view
+- [[April 17th, 2023]]
+  - **[[Quality of Life Improvements]] ✨**
+    - [[Performance Improvements]] and [[Bug Fixes]] for block autocomplete search i.e. the search you get when pressing `((`
+- [[April 14th, 2023]]
+  - **[[New Features]] 🚀**
+    - Tabs [[block view]] #[[Experimental]]
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FmikHhmNdg1.png?alt=media&token=354991dc-d7c2-43fa-9f43-6c6b229a19ec)
+      - If you haven't heard of block views yet
+        - You can change the current block view by searching in the command palette (`cmd-p`) for "Change Block View"
+          - Then type the letter of the block view you wish to use as displayed on the screen
+          - You can also set a hotkey for it
+        - Block views are still experimental and many parts of Roam don't work seamlessly with them yet
+- [[April 13th, 2023]]
+  - **[[Excalidraw]] update**
+    - Excalidraw is a virtual hand-drawn style whiteboard. We've now upgraded to the latest version (v0.14)
+    - You can create a drawing via the slash menu: `/excalidraw`
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F-JEizrN2ki.png?alt=media&token=4b2242fc-7063-4889-8985-26f906ca50c0)
+      - above is an image so that it displays properly in older Roam clients. If you'd like to play with it, the excalidraw drawing itself is nested underneath this block
+        - {{[[excalidraw]]}} {{-: Text elements in drawing: updated to latest version (v0.14) ; use via slash command: "/excalidraw" ;   Some notable upgrades ; - Supports images inside of the drawings ; - Dark mode, Canvas Background ; - Ability to resize the drawings in view mode ; - Text elements within the drawing can now be searched ; - Better pen support ; - etc }}
+    - Some notable upgrades
+      - Supports images inside of the drawings
+      - Dark mode, Canvas Background
+      - Ability to resize the drawings in view mode
+      - Text elements within the drawing can now be searched 
+        - Works for all new drawings. For old drawings, you have to open them once in edit/fullscreen mode
+      - Better pen support
+      - etc
+  - **[[Quality of Life Improvements]] ✨**
+    - Added JSON and JSON-LD [[Code Block]] languages
+    - Theme Authors and [[CSS]] hackers can now target code blocks for specific languages via new CSS classes of the format `.rm-code-block--{lang}`. For example: `.rm-code-block--js` for javascript code blocks, `.rm-code-block--clj` for Clojure code blocks #[[CSS Changes]]
+      - As an example, here are the customized CSS we're using for the new JSON and JSON-LD languages (color scheme inspired from VS Code)
+        - ```css
+          .rm-code-block--json, .rm-code-block--json-ld {
+            // colors inspired from VS Code
+            .cmt-propertyName {
+              color: #22509F;
+            }
+            .cmt-bool {
+              color: #0000ff;
+            }
+            .cmt-number {
+              color: #458A64;
+            }
+            .cmt-string {
+              color: #95261F
+            }
+
+          }
+
+          .rm-code-block--json-ld {
+            // json-ld seems to use cmt-atom for booleans and cmt-meta for property names that begin with @
+            .cmt-atom {
+              color: #0000ff;
+            }
+            .cmt-meta {
+              color: #22509fb6; // a lighter version of cmt-propertyName
+            }
+          }```
+  - **[[Bug Fixes]] 🛠**
+    - Released fixes for issues related to [[Roam Depot]] extensions and non-persistence of user settings
+      - If you're still encountering issues after this update, please contact us at support@roamresearch.com
+- [[April 6th, 2023]]
+  - [[Roam Depot Extensions]]
+    - **[Roam Portal](https://github.com/dkapila/Roam-Portal)**
+      - One of the most loved Roam extensions, now available in Roam Depot!
+      - An easy-to-use but super-powerful search engine designed to help you explore your data visually.
+      - Here are just a few ideas for things you can do via this extension:
+        - **Filter blocks by user:** Filter blocks modified by a particular user.
+        - **View recently edited blocks:** View your recently edited blocks.
+        - **Search for reactions:** Search for reactions from users. 
+        - **References**: Study frequent pages and blocks mentioned in your search
+        - **Time**: Analyze results over time
+        - In other words, it's an easy to use
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FP-owbAhtRb.png?alt=media&token=078687d0-3cf1-41b1-8b8a-ca190f17ec80)
+      - **[🔗](https://github.com/dkapila/Roam-Portal#getting-started) How to use**
+        - After installing the extension, simply click on the Roam Portal icon located in the top right corner of the toolbar. 
+        - For a video tutorial on how to use Roam Portal, [click here](https://www.loom.com/share/717fa8b788844c23aa08dd7d448bf0bf).
+    - **[Roam To SMS](https://github.com/mlava/roam-sms)**
+      - Send SMS messages from within Roam Research!
+      - This extension allows you to send the contents of a block to an SMS contact using the Nexmo / Vonage API.
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FofvGhtact3.png?alt=media&token=5841c323-03f9-4f3e-a105-01809e77d2aa)
+- [[March 16th, 2023]]
+  - **[[Bug Fixes]] 🛠**
+    - Fixes Roam Depot issue where "blank extensions" would appear in "Installed Extensions" section
+- [[March 9th, 2023]]
+  - [[Roam Depot Extensions]]
+    - **[Link Preview](https://github.com/dive2Pro/roam-link-preview)**
+      - Show brief information for external links in roam
+        - ![image](https://user-images.githubusercontent.com/23192045/219956966-43781827-285d-4b66-a493-cdfdd7ea2c01.png)[🔗](https://user-images.githubusercontent.com/23192045/219956966-43781827-285d-4b66-a493-cdfdd7ea2c01.png)
+        - ![image](https://user-images.githubusercontent.com/23192045/219956975-20999ad0-f2ff-4a60-8891-9ee766a7c348.png)[🔗](https://user-images.githubusercontent.com/23192045/219956975-20999ad0-f2ff-4a60-8891-9ee766a7c348.png)
+      - **[🔗](https://github.com/dive2Pro/roam-link-preview/tree/388b5b724f6c5ddc264ac222c15b5719c9755d34#how-to-use)How to use**
+        - You can create a custom component: link-preview with the URL as the argument
+        - {{link-preview https://google.com}}
+          - You can write the currently copied link into Roam using a custom shortcut key
+        - ![image](https://user-images.githubusercontent.com/23192045/219956992-d574628e-959d-4247-be9b-b3a3d6c81e16.png)[🔗](https://user-images.githubusercontent.com/23192045/219956992-d574628e-959d-4247-be9b-b3a3d6c81e16.png)
+          - You can use the context block menu to transform all links in the entire block.
+        - ![image](https://user-images.githubusercontent.com/23192045/223105097-8920f688-d22e-477c-af7e-461179d4dc47.png)[🔗](https://user-images.githubusercontent.com/23192045/223105097-8920f688-d22e-477c-af7e-461179d4dc47.png)
+    - **[Quick Insert Block](https://github.com/dive2Pro/roam-quick-insert-block)**
+      - When you need to insert a block above or below the target block , this plugin can help you reduce the number of steps.
+      - ![embed mode](https://user-images.githubusercontent.com/23192045/219314019-b3cd117c-81a8-4616-b251-633aac968dc6.gif)[🔗](https://user-images.githubusercontent.com/23192045/219314019-b3cd117c-81a8-4616-b251-633aac968dc6.gif)
+    - **[Sidebar Separators](https://github.com/mlava/sidebar-separators)**
+      - Organize your left sidebar shortcuts with separators.
+      - Sometimes you just want some visual separation between your list of shortcuts. This extension allows you to add a horizontal line or blank space between any of your shortcuts, so you can achieve just that.
+      - ![image](https://user-images.githubusercontent.com/6857790/219263679-cd1ab703-bc54-49c3-a7a0-a82016b66199.png)[🔗](https://user-images.githubusercontent.com/6857790/219263679-cd1ab703-bc54-49c3-a7a0-a82016b66199.png)
+      - In the above image I've inserted a horizontal line after my second shortcut and a blank line after my sixth shortcut.
+      - You can configure each separator in the Roam Depot settings. Use an integer to state where to insert the separator - it will be inserted after that numbered shortcut.
+      - You can have up to three separators, but if there's a need I'll add the option to create more.
+    - **[Roam Depot Format Hotkeys](https://github.com/8bitgentleman/roam-depot-format-hotkeys)**
+      - Adds hotkeys for various block formatting options including:
+        - Justify Block (Left, Center, Right, Full)
+        - View As Numbered List
+    - **[Page references counter](https://github.com/fbgallet/roam-extension-ref-count)**
+      - **[🔗](https://github.com/fbgallet/roam-extension-ref-count/tree/0de3d685be89d75b62e0e99883e589ac4b62bbc8#inline-count-for-page-references-tags-and-attributes-as-superscript-like-vanilla-inline-block-reference-counter)Inline count for page references, tags and attributes as superscript (like vanilla inline block reference counter).**
+        - 🔎 References counts are also displayed when you search for a reference, inline or in Quick search, in the autocomplete box, what is particularly useful to identify the actually used pages and the unused or wrong spellings!
+        - ![ref-count-v1](https://user-images.githubusercontent.com/74436347/218118672-4d7e74aa-e47f-49fb-ac95-7e59e2b1b854.gif)[🔗](https://user-images.githubusercontent.com/74436347/218118672-4d7e74aa-e47f-49fb-ac95-7e59e2b1b854.gif)
+        - By default, inline counts are always displayed. As an option, you can make the count appear only on hover over a given page reference. You can toggle separately inline count and search count with dedicated commands in command palette (with customizable hotkeys).
+      - **[🔗](https://github.com/fbgallet/roam-extension-ref-count/tree/0de3d685be89d75b62e0e99883e589ac4b62bbc8#for-any-question-or-suggestion-dm-me-on-twitter-and-follow-me-to-be-informed-of-updates-and-new-extensions--fbgallet)For any question or suggestion, DM me on **Twitter** and follow me to be informed of updates and new extensions : [@fbgallet](https://twitter.com/fbgallet).**
+        - To report some issue, follow [this link (Github)](https://github.com/fbgallet/roam-extension-stats/issues) and click on 'New issue'.
+- [[March 1st, 2023]]
+  - **[[Quality of Life Improvements]] ✨**
+    - Added Go, Markdown, and TOML [[Code Block]] languages
+  - **[[Bug Fixes]] 🛠**
+    - Fix astrolabe spinning off center
+- [[February 27th, 2023]]
+  - **[[Quality of Life Improvements]] ✨**
+    - `#.rm-hide-for-readers` css class / tag. Hides the block and it's descendants for people who only have read access to that block. 
+      - Useful for hiding a contributing guide on a public graph from those that can't edit
+      - It is only a visual change ((you can still find the block in the DOM)) so don't use it to hide any secret information
+    - You can now sort [[Roam Depot]] extensions by downloads, created time, updated time, or alphabetical
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FU-NrN02BGg.png?alt=media&token=15d8a284-e52e-4b10-a9f9-9cb2cdc080f1)
+    - [[Roam Depot]] search improvements
+      - Now it searches through authors, tags, full descriptions, and handles partial matches better
+      - You can search for all the extensions by an author
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F3Kf40HxZ1Z.png?alt=media&token=c1692a8c-e61a-4dc1-8751-3e0a59da6781)
+    - New syntax supported in LaTeX. Now also supports Macros!
+      - KaTeX (the LaTeX typesetting library we use) has been updated to the latest version, and Macros have been set up
+      - (demos below will not work if Roam has not updated to the latest version. A screenshot has been attached underneath this block)
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FZB3wt0PRFV.png?alt=media&token=76a9bae9-d167-49cb-a177-d0319d6ce85c)
+      - Examples of some new supported syntax
+        - angl and angln
+          - $$A_{\angl n} + B_{\angl g} + C_\angln$$
+        - set
+          - $$\Set{x \| y}$$
+        - etc.
+      - Macros
+        - macro definition
+          - these definition blocks need to be visible in order for them to be registered
+          - $$\gdef\matrix#1{\begin{bmatrix}#1\end{bmatrix}}$$
+            - `\gdef\matrix#1{\begin{bmatrix}#1\end{bmatrix}}`
+        - katex blocks using the matrix macro defined above
+          - $$
+            \matrix{1&2&4\\1&2&3}
+            $$
+            - `\matrix{1&2&4\\1&2&3}`
+        - [More info on using macros](https://katex.org/docs/supported.html#macros)
+      - If you run into any issues with your latex blocks, please checkout the migration guide: https://katex.org/docs/migration.html
+        - We're now on v0.16.4
+        - If that does not resolve the issue, please contact Roam Support
+- [[February 17th, 2023]]
+  - **[[Bug Fixes]] 🛠**
+    - Fixed the screen jump that happens when clicking into a block in the [[mobile]] app
+      - Requires:: [[iOS]] 15.5 or greater (or [[android]])
+      - **Before**
+        - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2FXcnjD59K61.MOV?alt=media&token=f2a52be0-21d8-4b59-b797-3985af297e4e}}
+      - **After**
+        - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2F6hyWxIeNdl.MOV?alt=media&token=7a0e5e66-ee37-46ae-9b5b-cf872c81d1a0}}
+    - Fixed the block moving off screen when moving a block up or down on [[mobile]]
+      - **Before**
+        - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2FlWKgJmFnLk.MOV?alt=media&token=ed03d18a-e9c3-4665-a699-1bb76cb45f7c}}
+      - **After**
+        - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2Fu9q9wrvDQ6.MOV?alt=media&token=9e71a37f-9c0b-45c5-af8d-6c2f8dc4452e}}
+    - Fixed issues of mobile bar misbehaving
+      - for example, in some devices, it would float way up and then slowly float down. In others, it would get obscured. The behavior should be much better now across the board
+      - Requires:: [[iOS]] 15.5 or greater (or [[android]])
+  - **[[Quality of Life Improvements]] ✨**
+    - Filter [[queries]] by the author of blocks with `{by: [[user's display page]]}`
+      - You can find a user's display page title by hovering over a block they created
+      - Example::
+        - {{[[query]]: {and: [[Quality of Life Improvements]] {by: [[Baibhav Bista]]}}}}
+- [[February 14th, 2023]]
+  - **[[Quality of Life Improvements]] ✨**
+    - Ability to set up hotkeys for commands set up by Extensions
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F7bpy58-iBH.gif?alt=media&token=a86d51dc-b3fc-4c1c-a9c2-c45feabeaa1d)
+      - Currently you might see all commands nested under "Ungrouped Extension Hotkeys". Extension-wise groupings will be available once the extension migrates to the new API (If you're an extension dev, [more here](https://roamresearch.com/#/app/developer-documentation/page/Xf6HHUsb3))
+      - Video
+        - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FsYWw81Fk4s.mp4?alt=media&token=492f1dab-db08-4d4a-a57e-be0d05dcd655}}
+    - Expand block references in templates auto complete
+      - **Before**
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FymqWiBfJcx.png?alt=media&token=5207037b-bbc8-45fc-9b13-3886207cad77)
+      - **After**
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FKlF9cmZNS1.png?alt=media&token=d8a1a734-bc0d-4ea7-88fe-10b25be02095)
+    - Typing `"` or `'` with text selected will wrap the text with the matching character
+    - Pasting a link with text selected will automatically wrap the selected text with a markdown link
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FGFhJOF08A8.gif?alt=media&token=acb621be-8855-474c-b5f4-16898ef64446)
+    - Fix display of localhost links, i.e. http://localhost:8020/#/app/test103
+      - **Before**
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F3uyFe-uWQC.png?alt=media&token=36d28887-4178-4616-aff6-2c2f5c5471cf)
+      - **After**
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FabUPk7Hjhs.png?alt=media&token=5bdcc815-e409-47dc-8ecf-6f667737d0b9)
+- [[February 13th, 2023]]
+  - **[[New Features]] 🚀**
+    - `cmd-f` / `ctrl-f` find in page search for the [[Desktop App]] (version `0.0.16` or higher)
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FgUXDFC3iyv.gif?alt=media&token=48f93162-7116-4c7d-a325-f630cac5d16c)
+- [[February 11th, 2023]]
+  - **[[New Features]] 🚀**
+    - Streak 
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FcGQgqUSI84.png?alt=media&token=d386efe3-ea41-46e4-92e6-c08d06428683)
+        - got this via `{{[[streak]]: [[Daily Highlight]]}}`
+      - Provide it a reference to one or more pages or blocks, it will generate a heatmap showing how often that ref pattern appeared in your daily notes. 
+      - Click any cell to open matching blocks in the sidebar
+      - use via `/streak`
+      - you can pass in a single page, or pass in multiple pages, or even pass in query-type syntax!
+        - examples
+          - `{{[[streak]]: [[DONE]]}}`
+          - `{{[[streak]]: [[DONE]] [[Solutions]]}}`
+          - `{{[[streak]]: {or: [[DONE]] [[Solutions]]}}}`
+      - [[Conor White-Sullivan]]'s tweet
+        - https://twitter.com/Conaw/status/1624154783560142848
+- [[February 8th, 2023]]
+  - **[[Quality of Life Improvements]] ✨**
+    - Multi-select move block up / down (Mac: `cmd-shift-up/down`, PC: `alt-shift-up/down`)
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FbibqCXYQLm.gif?alt=media&token=0c4f7e85-8b2c-418a-8017-1b42154ed0d9)
+  - **[[Bug Fixes]] 🛠**
+    - [[mobile]] [[iOS]] Fix sync issues that would sometimes appear when reinstating app from background
+      - [[android]] version did not have this issue but will be receiving an update as well in the next few days
+  - **[[New Features]] 🚀**
+    - Open search in sidebar (alt-enter or opt-enter)
+      - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F5_JZnrFS-l.mp4?alt=media&token=b6bfe09e-14f3-42af-be58-02bb6a2fffbc}}
+      - One can also use the slash command for a persistent search view (i.e. type `/search`)
+- [[February 7th, 2023]]
+  - **[[Quality of Life Improvements]] ✨**
+    - If global filters are applied on the log, then show the filter icon so you can remove them
+- [[February 1st, 2023]]
+  - [[Roam Depot Extensions]]
+    - **[Self-Destructing Blocks](https://github.com/8bitgentleman/roam-depot-block-self-destruct)**
+      - Set blocks to self-destruct (be deleted) after a period of time. Every hour the plugin will search for all blocks that reference #[[self-destruct]] (configurable to whatever you would like). Any of those references that are older than the time set will be deleted.
+      - A custom deletion time can be set by nesting an attribute below the block that you want deleted.
+      - **[🔗](https://github.com/8bitgentleman/roam-depot-block-self-destruct#use-case-ideas)Use Case Ideas**
+        - Blocks left over from daily templates
+        - Using queries on your Daily Notes page or old queries in general.
+        - Keeping your graph lean and clean
+      - **[🔗](https://github.com/8bitgentleman/roam-depot-block-self-destruct#examples)Examples**
+        - ![](https://github.com/8bitgentleman/roam-depot-block-self-destruct/raw/main/example.png)[🔗](https://github.com/8bitgentleman/roam-depot-block-self-destruct/raw/main/example.png)
+    - **[Hide Topbar Buttons](https://github.com/mlava/hide-topbar-buttons)**
+      - Reduce unneccessary clutter!
+      - This extension allows you to take control of the appearance of your Roam Research topbar. You can choose to show or hide default Roam Research buttons in the topbar.
+      - ![image](https://user-images.githubusercontent.com/6857790/213940140-67f212c2-596f-4771-a92a-e5519136a80a.png)[🔗](https://user-images.githubusercontent.com/6857790/213940140-67f212c2-596f-4771-a92a-e5519136a80a.png)
+      - In the topbar you can choose to hide:
+        - Page Filter button
+        - Calendar button
+        - Three Dot menu button
+        - Page Width button
+        - Help button
+        - Right Sidebar button
+      - You can select to Hide on Mobile or Hide on All Platforms. This means you can have different settings for different purposes.
+      - For example, if you want to hide the Help button on mobile only but hide the Calendar button on all platforms, just select Hide on Mobile for Help and Hide on All Platforms for Calendar.
+      - TODO:
+        - allow buttons from Roam Depot extensions to be hidden
+    - **[Augmented Headings](https://github.com/mlava/augmented-headings)**
+      - Add H4, H5 and H6 headings to your Roam Research graph!
+      - With this extension, you can create H4-H6 headings and control their CSS very easily. Simply install the extension and then modify the settings in Roam Depot. Note that if you don't change the font settings in Roam Depot settings you won't see any change in the text output even if you make that block a heading. You **must** set font settings to see any difference.
+      - **New:**
+        - added setting to allow user-configured heading tags. If you don't want #h4 you could use #.h4 or even #purple_elephant for that heading tag, and the extension will handle it.
+      - The new headings even work with my Sticky Headings and Table of Contents extension as well!
+      - ![image](https://user-images.githubusercontent.com/6857790/214956832-d2711867-ab73-4af0-9e29-074eaf0b3ac8.png)[🔗](https://user-images.githubusercontent.com/6857790/214956832-d2711867-ab73-4af0-9e29-074eaf0b3ac8.png)
+      - For each heading level you can configure:
+        - font size
+        - font weight
+        - font style
+        - font variant
+      - You can set a heading using the Command Palette. Click into a block and then select 'Toggle Heading - H4', 'Toggle Heading - H5' or 'Toggle Heading - H6'. Or, right click on the block bullet, go to Plugins and then select the Toggle commands from there.
+      - If your heading is H4 and you click to toggle H4, it will return to normal text. This is how Roam handles H1-H3. However, if you toggle to a different heading level (e.g. H4 -> H5) it will overwrite to the new level. Again, this is how Roam handles this case.
+- [[January 31st, 2023]]
+  - **[[Bug Fixes]] 🛠**
+    - Fix plaintext paste (`ctrl-shift-v`) pasting twice on desktop app in linux and windows
+  - [[Roam Depot Extensions]]
+    - **[Roam Website Title Parser](https://github.com/dragonforce2010/roam-website-title-parser)**
+      - This extension can parse the website title and transform the link to the markdown format when you paste a url into roam block
+      - For example, when you paste a link like this `https://developer.roamjs.com/`, this extension is gonna transform it to `[Introduction - RoamJS](https://developer.roamjs.com/)`
+- [[January 30th, 2023]]
+  - **[[Bug Fixes]] 🛠**
+    - Fix Chinese language autocomplete not working in top level blocks in references
+    - Fix Chinese language showing the incorrect word count in all pages
+- [[January 24th, 2023]]
+  - **[[Bug Fixes]] 🛠**
+    - Fix drag and drop on [[android]]
+
+#### [[2022]]
+
+- [[December 20th, 2022]]
+  - Fixes a couple of performance issues, should be noticeable especially for [[Local Graph]]s
+- [[November 30th, 2022]]
+  - [[Roam Depot Extensions]]
+    - **Roam reference expands**
+      - show the path of the block reference
+      - ![](https://github.com/dive2Pro/roam-reference-expand/raw/49e028ae09c5ec50eeec4436bd81247b7a7e0685/SCR-20221124-d9c.png)
+      - ![](https://github.com/dive2Pro/roam-reference-expand/raw/master/reference%20extends.gif)
+      - **Uninstall**
+        - All configurations are stored on the [[roam/reference extends/config]] page and need to be removed manually if you want to uninstall the plugin cleanly.
+    - **Mapbox**
+      - Render interactive maps directly in your graph!
+      - **Usage**
+        - Type `{{maps}}` in a block. When the block renders, an interactive map will render in its place!
+        - To position the map at a particular center, create a child block with text "Center". Under that block, put in the latitude and longitude coordinates of the center delimited by a comma.
+        - To start the map at a particular zoom level, create a child block with text "Zoom". Under that block, put in the zoom level value which should be a number. A minimum value of 0 is zoomed all the way out and a maximum value of 18 is zoomed all the way in.
+        - To add Markers to the map, create a child block with text "Markers". Under that block, add one child for every marker you want to include. In the block, write the text you'd like as the label of the block. As a child of **that** block, put the latitude and longitude coordinates of the marker.
+        - For example, the following configuration will have to be set as the child of the block to produce the map below:
+          - Center
+            - 32.715736, -117.161087
+          - Zoom
+            - 12
+          - Markers
+            - David Vargas
+              - 32.7, -117.2
+            - RoamJS
+              - 32.72, -117.1
+        - If the Marker text is already a tag in your graph, clicking on the marker pin will take you to that page. Shift clicking the marker will open the tag in the sidebar.
+        - You could also filter the markers that are displayed on your map. Clicking the wrench icon on the top right will open the settings overlay, where you could specify a tag to filter by. All markers that are pages that have a block with the entered tag will remain on the map while the rest get filtered out.
+- [[November 29th, 2022]]
+  - [[Roam Depot Extensions]]
+    - **Oura Ring**
+      - Import your Oura Ring daily summaries on a given day into your daily note page!
+      - **[🔗](https://github.com/dvargas92495/roamjs-oura-ring#usage)Usage**
+        - You'll first need to add your personal access token associated with your Oura Ring account to the Token field in your Roam Depot Settings. The extension needs this in order to access your personal data. [Click here](https://cloud.ouraring.com/personal-access-tokens), to generate your own personal access token.
+        - To import your Oura Ring data to your daily note page, open the Command Palette and enter "Import Oura Ring". If the current page is a Daily note page, it will query the day before the page title, since you usually want to track last night's sleep. Otherwise, it will query yesterday's data by default. It will output the following text:
+        - ```javascript
+          Bedtime Start:: hh:mm:ss
+          Bedtime End:: hh:mm:ss
+          Sleep Duration:: hh:mm:ss
+          Total Sleep:: hh:mm:ss
+          Total Awake:: hh:mm:ss
+          Light Sleep:: hh:mm:ss
+          Rem Sleep:: hh:mm:ss
+          Deep Sleep:: hh:mm:ss
+          Day Start:: hh:mm:ss
+          Day End:: hh:mm:ss
+          Low Activity:: hh:mm:ss
+          Medium Activity:: hh:mm:ss
+          High Activity:: hh:mm:ss
+          Rest Activity:: hh:mm:ss
+          Readiness Score:: hh:mm:ss```
+        - You can also import the data by creating a button by typing `{{import oura ring}}` into a page and clicking the button.
+    - **Roam native dark theme**
+      - ![](https://github.com/dive2Pro/roam-native-dark/raw/master/SCR-20221120-hek.png)[🔗](https://github.com/dive2Pro/roam-native-dark/blob/master/SCR-20221120-hek.png)
+      - ![](https://github.com/dive2Pro/roam-native-dark/raw/master/SCR-20221120-hfj.png)[🔗](https://github.com/dive2Pro/roam-native-dark/blob/master/SCR-20221120-hfj.png)
+- [[November 28th, 2022]]
+  - [[Roam Depot Extensions]]
+    - **SamePage**
+      - Official Roam client into [SamePage](https://samepage.network/) - the intra tool-for-thought protocol.
+      - Use SamePage to connect your Roam Graph to other notebooks to sync changes across them, perform cross notebook queries, and more! To get started, install this extension and request an invite code by emailing [support@samepage.network](mailto:support@samepage.network). Check out our docs at https://samepage.network/docs!
+      - **WARNING**
+        - The SamePage family of extensions are still **in beta** and are not considered stable yet for real or sensitive data. All data shared on SamePage is considered public and probability of data loss is high.
+    - Previously, extensions were not listed on the change log, please check out our [github](https://github.com/Roam-Research/roam-depot) for a [full list of new extensions and updates](https://github.com/Roam-Research/roam-depot/pulls?q=is%3Apr+is%3Aclosed). From now on, all new extensions will be listed here
+- [[November 11th, 2022]]
+  - Small fixes
+    - Fixes issue on restore graph from EDN where some graphs would get stuck near completion
+    - Fixes "Roam was not built in a day" error that would arise sometimes when collapsing right sidebar windows corresponding to pages
+- [[October 6th, 2022]]
+  - [[New Features]]
+    - Single Block Multiselect Mode
+      - Select blocks but not their children or select non consecutive blocks and perform bulk actions on them
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FCtabMYCHRV.png?alt=media&token=2ff14e70-6c2c-4e3b-8dc0-318966366c07)
+      - **How to use**
+        - Toggle the mode on / off with `ctrl-m` (PC) or `cmd-m` (Mac) (customizable)
+        - Then click a checkbox to select it
+        - Shift click another checkbox to select a range between that checkbox and the last one selected
+      - **Available commands**
+        - Drag and dropping blocks
+        - Right click context menu
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FhmG851Z2bl.png?alt=media&token=f2366b67-bd41-4e3c-b373-46bbee59f956)
+      - This feature is still a work in progress.
+        - Key commands (tab, shift-tab etc) do not work with it
+- [[September 30th, 2022]]
+  - Small fix: if a window already exists in the sidebar and it is tried to open again, it jumps up to the top of the sidebar
+  - A number of changes throughout the last week for integration of write actions with the new backend API
+    - [[Developer Notes]]: Checkout [Roam Backend API (Beta) docs](https://roamresearch.com/#/app/developer-documentation/page/W4Po8pcHQ). 
+      - New addition: [Write actions](https://roamresearch.com/#/app/developer-documentation/page/J-hxpYKmK)
+- [[September 7th, 2022]]
+  - [[New Features]]  #[[Improvements]]
+    - [Blueprint Color](https://blueprintjs.com/docs/versions/3/#core/colors) palettes for code blocks (these colors match what is used in Roam)
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FtBmBkVpT0d.png?alt=media&token=35ab4556-dbd5-4694-9621-63a726147657)
+  - #[[Quality of Life Improvements]] #[[Bug Fixes]]
+    - Fixed checkbox alignment on [[Firefox]]
+      - **Before**
+        - ![Screenshot 2022-09-07 at 17 57 57](https://user-images.githubusercontent.com/285292/188948053-ba930d81-6bc4-4de9-8d13-d0fe9acc01f5.png)
+      - **After**
+        - ![Screenshot 2022-09-07 at 17 58 16](https://user-images.githubusercontent.com/285292/188948064-96cd01d0-6822-4294-b3fb-19462121368a.png)
+- [[August 18th, 2022]]
+  - [[New Features]] __sort of__ #[[Tag Styles]]
+    - We decided to include some of the most useful [[roam/css]] [[Tag Styles]] we've developed for ourselves, you may find helpful/inspiring .rm-E  .rm-g  and .rm-hide
+      - **.rm-E **
+        - Behavior::
+          - Blocks tagged with `#.rm-E` will display their immediate children next to them, 
+            - rather than indented below them
+        - Use Cases::
+          - When you want a sort of [[Mind Map]] light behavior, 
+            - or just want to view things side by side
+          - 🤷‍♂️ it's nice to have when you want it not much more to it than that
+        - Example::
+          - A #.rm-E 
+            - B
+              - Note that this only impacts the first level of nesting
+            - C
+              - If you want to go further, you have to keep using the tag
+            - D [[.rm-E]]
+              - Using the link, not the tag
+              - so you can see where it is used
+              - E [[.rm-E]] 
+                -  since this class hides itself when used as a tag
+      - **.rm-g **
+        - Behavior::
+          - Blocks tagged with `#.rm-g` are hidden when they are open  - revealing the children nested within them 
+            - Children are styled to look like they are one level higher in the block hiearchy than they are -- useful for adding meta-data tags without visually cluttering your outline.
+        - Use Cases::
+          - when you want to group a collection of items and hide the block that contains them
+        - Example::
+          - [[.rm-g]] #[[Fruits]] 
+            - Apples
+            - Pears
+            - Cherries
+      - **.rm-hide**
+        - Use Cases::
+          - When you want to add some info to a block without visually cluttering things up - but still allow the info to be discoverable easily
+        - Behavior::
+          - This block only displays when it is open - when it is closed, it is replaced with a very light bar across it's length
+            - The bar get's darker on hover, and which
+              - when you click it - it opens the block
+          - In some ways a mirror of .rm-g  
+        - Example::
+          - {{[[DONE]]}} This is a task that I'm hiding the metadata for
+            - Total Time:: 2 min #.rm-hide  
+              - Start time:: 17:26
+              - End time:: 17:28  
+          - The block above me (({{[[DONE]]}} This is a task that I'm hiding the metadata for)) has a hidden child - hover between us and click the bar to expand it - or arrow key up from me, or down from it, and you'll see it
+            - Have some hidden children here too
+            - #.rm-hide 
+              - hidden children
+            - Look between us!
+  - [[CSS Changes]]
+    - Zooming out from sidebar, embed-path, or backlinks now outlines the block you were originally focused on, rather than coloring the block and all it's children with an obnoxious yellow
+      - Example::
+        - Shift click on this reference [[>]] Socrates is Mortal and then click a breadcrumb in the sidebar and 
+          - you'll see this  ->  ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FKfjpSlNswz.png?alt=media&token=7ab3240d-5f22-4292-b0d0-6ca3d217b115)
+    - Images now display inline (previously the forced a line break)
+    - References of blockquotes and Images now display inline
+      - Now it is easier to use them for building up compound statements
+        - Example::
+          - [[>]] All Men are Mortal
+          - [[>]] Socrates is a Man
+          - [[>]] Socrates is Mortal
+          - > [[IF]] [[>]] All Men are Mortal [[AND]] [[>]] Socrates is a Man 
+            [[THEN]] [[>]] Socrates is Mortal
+- [[August 17th, 2022]]
+  - [[New Features]]  #[[Improvements]]
+    - [[Latex]] now will parse block references, including other latex so you can comp
+      - Example::
+        - $$\Large$$\frac{$$n_1$$}{$$n^n$$}$$ + \sum_{i=1}^z $$\mapsto $$n^n$$$$ $$
+          - **Recursive Latex**
+            - $$\frac{$$n_1$$}{$$n^n$$}$$
+              - $$n_1$$
+              - $$n^n$$
+          - **Plain Text**
+            - \sum_{i=1}^z
+              - ^z
+              - i=1
+          - **Reference of Reference - to describe how variable used in another context**
+            - $$\mapsto $$n^n$$$$
+              - Here you can describe the meaning of mapsto n^n
+              - $$n^n$$
+                - Here you could describe the meaning of the n^n that is being described here
+          - **Sizing**
+            - \Large
+              - Try changing \Large to 
+                - \Huge
+                - \Small
+      - Use Cases::
+        - Being able to separately describe each element of the equation.
+  - #[[Quality of Life Improvements]] #[[Bug Fixes]] **[[Feature Behavior Change]]**
+    - Behavior of [[Inline Calculator]] `{{calc: }}` for parsing block references has changed 
+      - [[Old State]]
+        - Previously, when you composed calculations across many blocks - all of the math text was pulled up and flattened - which could lead to unexpected behavior when building up statements and making calculations that depended on other calculations 
+          - Example::
+            - Wait? 2 times 4 doesn't equal 5! ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FeoLoaSY0y_.png?alt=media&token=0fb80ad2-894a-40b5-ba87-841b7fa3cd63)
+              - After Change:: 2 times 4 = 8  ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FC500DSjbn0.png?alt=media&token=5ea62b8f-f710-4e59-ba20-b7d4e25c474e)
+          - The old hack to get around required you to wrap block references in a `( )` to make sure that that each component in the calculation was evaluated independently before the values were aggregated  After this update, every reference used in a calculation will be wrapped in a `()` automatically before calculation is applied remember [[PEMDAS]]?
+            - This is what is actually being evaluated now - if you're using lots of nested refs  ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F_0bfRasZfz.png?alt=media&token=edd56c7d-6590-44be-92e3-4b187a50fad2)
+      - [[New State]]
+        - After this update, every reference used in a calculation will be wrapped in a `()` automatically before calculation is applied
+          - Example::
+            - 2 times 4 = 8  ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FC500DSjbn0.png?alt=media&token=5ea62b8f-f710-4e59-ba20-b7d4e25c474e)
+              - Try it here
+          - 2 times 20 = 40, not 21
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2FZCxS2W-TvQ.png?alt=media&token=64cd1702-a33f-4517-b198-ebad16f9836c)
+        - New Features::
+          - Clicking the green text of the [[calc]] function has always displayed content of the internals of the calcuation, but now if you click on the = sign after doing this, you can see the fully expanded function which is being evaluated, so you can confirm that everything is happening the way you want it to 
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FvIZpt-B0OI.png?alt=media&token=a87650f5-0fcc-46c0-a31a-2231b01f9d6d)
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F0QAGtWb2NP.png?alt=media&token=f7821d1a-5834-45bc-99c0-6240757cffcd)
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F_0bfRasZfz.png?alt=media&token=edd56c7d-6590-44be-92e3-4b187a50fad2)
+            - **Try it yourself**
+              - [[Z]] {{[[calc]]: [[X]] {{calc: 1 + 1}} * [[Y]] {{calc: 2 + 2}}}}
+                - [[X]] {{calc: 1 + 1}}
+                  - 1
+                  - 1
+                - [[Y]] {{calc: 2 + 2}}
+                  - 2
+                  - 2
+- [[August 15th, 2022]]
+  - [[New Features]] #[[Alpha]]
+    - `{{embed-path: ((block-ref))}}` - Experimental new view of block embeds where path is visible and clickable - similar to what you'd see for the block in inline-references 
+      - [[Problem it Solves]]
+        - Often when viewing embeds, it is frustrating to not be able to see the context of the embed - the embed-path component lets you see the parent path of the block at a glance, and navigate to it quickly.
+  - #[[CSS Changes]]
+    - Changed the styling when you zoom out of a block in a context - like sidebar and moved the color into a css variable 
+      - `var(--inline-highlight-color)` for the color of ^^highlights^^
+      - `var(--highlight-color)` for color of highlighted blocks due to zooming out in a embedded context like within backlinks, sidebar, or block refs.
+- [[August 11th, 2022]]
+  - [[Quality of Life Improvements]]
+    - Search field to help you find the graph you want to switch to d
+      -  in sidebar 
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FXqRHzdD9g9.png?alt=media&token=307c2373-aee6-4cc4-8321-8926a2aa7faa)
+      - on all-graphs page
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FZldEt56a8N.png?alt=media&token=9f6292f0-3ec2-4117-8359-dae3760063ab)
+    - Update to the help database to remove custom styling
+-  [[July 25th, 2022]]
+  - [[Roam Depot]] #[[Plugins]]
+    - [[PhonetoNote]]
+      - Create a dedicated phone number to send and forward messages to a Roam graph + more
+        - https://twitter.com/phonetonote/status/1551764556707397633?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
+-  [[July 19th, 2022]]
+  - [[Roam Depot]] #[[Plugins]] 
+    -  [[Matter]] 
+      -  great way to sync highlights
+      - https://twitter.com/matter/status/1549490849595080704?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
+- [[July 15th, 2022]]
+  - #[[New Features]] [[Roam Depot]] #[[Major Launch]]
+    - https://twitter.com/RoamResearch/status/1547823281478066177?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
+  - [[Roam Depot]] #Plugins 
+    - [[Bionic Text]]
+      - https://twitter.com/fbgallet/status/1548083399977340930?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
+- [[July 11th, 2022]]
+  - Fixed backspace deleting selected blocks when opening up the command pallete
+    - Also added refocusing of the selected block when hitting `escape` to exit the command pallete
+  - Increase markdown import limit from 10 to 10,000
+- [[June 24th, 2022]]
+  - [[mobile]]
+    - [[iOS]]
+      - Fixed tab, shift-tab, backspace, and arrow keys on ipad with an external keyboard
+      - Fixed sign in flash on app restart
+      - Fixed saving the last used graph across app restarts
+    - [[android]]
+      - Fixed back gesture
+      - Added native Google and Apple sign in
+      - Added sign out
+- [[June 15th, 2022]]
+  - [[mobile]] [[iOS]]
+    - Apple sign in
+    - Native google sign in
+    - Fixed sharing text with newlines in it
+    - Password Manager autofill for login/password
+- [[June 12th, 2022]]
+  - [[Desktop App]] Links
+    - Requires updating the desktop app to `0.0.15`
+    - Deep links that allow one to directly navigate to a graph/page/block in the desktop app
+    - Demo video (showing some convenient usage tricks too)
+      - {{[[video]]: https://www.loom.com/share/fb5095868df041a597712b7403c87ed4}}
+    - URL Format
+      - Similar format to normal Roam web links
+        - instead of `https://roamresearch.com/` we have `roam://`
+      - Example
+        - Roam web link: `https://roamresearch.com/#/app/help/page/hyL5OPFah`
+        - Desktop app link: `roam://#/app/help/page/hyL5OPFah`
+- [[June 6th, 2022]]
+  - Sign in with Apple
+  - Report this page for public graphs
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F_F1M_ESBjE.png?alt=media&token=3b062277-b461-4c1d-877e-260f53017f5c)
+- [[June 3rd, 2022]]
+  - Fixed bug with namespaces not showing correctly
+    - introduced yesterday in Fixed bug with changing the code block language
+- [[June 2nd, 2022]]
+  - Fixed bug with changing the code block language
+    - introduced by parsing change
+  - Keep original block first in ordering of inline refs
+  - Password reset emails now use app.roamresearch.com
+- [[May 25th, 2022]]
+  - Fix the parsing of bold in italics and italics in bold (and highlight and strikethrough). It no longer matters what order you put them in.
+    - Examples::
+      - `**__^^bih^^__**`: **__^^bih^^__**
+      - `__**^^ibh^^**__`: __**^^ibh^^**__
+      - `**^^__bhi__^^**`: **^^__bhi__^^**
+      - `__**^^ibh^^**__`: __**^^ibh^^**__
+      - `^^**__hbi__**^^`: ^^**__hbi__**^^
+      - `**__^^bih^^__**`: **__^^bih^^__**
+  - Small improvement to all pages search ((Longer debounce time and normalize the search value))
+- [[May 23rd, 2022]]
+  - Fix [[mobile]] quick capture crashing when displaying old quick captures
+- [[May 9th, 2022]]
+  - Fixed [[mobile]] quick capture page auto complete results
+- [[April 4th, 2022]]
+  - Added the ability to remove email-password login if you are also signed in with Google
+- [[April 3rd, 2022]]
+  - ****Mobile App****
+    - The Roam mobile app is now available for download on the [iOS](https://apps.apple.com/us/app/roam-mobile/id1609277273) (iphone and ipad) and [android](https://play.google.com/store/apps/details?id=com.roamresearch.relemma&hl=en_US&gl=US) app stores
+- [[March 10th, 2022]]
+  - Performance improvement to opening pages with a large amount of mentions while the mentions are closed (~4x faster for a page with 6.1k mentions)
+    - Note that this does not improve the performance of actually opening the mentions
+- [[March 8th, 2022]]
+  - [[Code Block]]
+    - [[Solidiity]] syntax highlighting support
+    - Fixed issue with color picker showing on the `constructor` keyword
+- [[March 3rd, 2022]]
+  - Fixes "All Pages" view so that all columns (Word Count, Mentions, Updated, etc) can be seen when searched
+    - (was a CSS bug introduced some time ago)
+- [[February 16th, 2022]]
+  - Apple Silicon (M1) [[Desktop App]]
+    - Do you need to install the new App?
+      - First [check if you are using a new M1 Mac](https://www.howtogeek.com/706226/how-to-check-if-your-mac-is-using-an-intel-or-apple-silicon-processor/)
+      - If you are using an M1 Mac, then you should install the new app
+        - It will be much faster than the old one
+    - See our migration guide for how to migrate from our old (intel) desktop app to the new (Apple Silicon) one
+- [[February 12th, 2022]]
+  - Initial load memory and performance updates, related to Preparation work for graph load / memory improvements (stay tuned)
+    - You may experience a longer load time on while your graph upgrades, you should see a message like this
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FlgY6E66Azc.png?alt=media&token=99a2a6c2-1fd2-4dc5-a6a9-53a1bc45fb53)
+    - [[Technical Details]]
+      - Loading from Roam's servers
+        - up to 50% faster
+        - up to 66% less peak memory usage (during load)
+        - up to 20% reduction in idle memory usage (after app loads)
+      - Loading from Indexeddb (local)
+        - up to 16% faster
+        - up to 40% less peak memory usage (during load)
+        - up to 20% reduction in idle memory usage (after app loads)
+        - up to 33% reduction in used disk space
+      - https://www.loom.com/share/824de8dbd66c40e591eac1404e66198e
+- [[February 11th, 2022]]
+  - Fix having to double click to edit text on [[iOS]] [[Safari]]
+    - Before
+      - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FMgQBi2FROY.MP4?alt=media&token=10254893-b682-4a78-94e5-3ec85d632f1a}}
+    - After
+      - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FXbMOzNrxpu.MP4?alt=media&token=42386235-418c-42a3-9b4c-5e6699a5cf0e}}
+- [[February 9th, 2022]]
+  - Fixed bug selecting multiple blocks in embeds and linked references
+- [[February 7th, 2022]]
+  - Update datascript to `1.3.9` * *
+    - Includes [performance improvements](https://github.com/tonsky/datascript/blob/master/CHANGELOG.md#130) that might make extensions faster
+  - Bug fixes related to Preparation work for graph load / memory improvements (stay tuned)
+    - Delayed full release of load performance improvements
+  - Fixed potential memory leak
+  - Bug fixes to our update / upgrade mechanism
+- [[February 3rd, 2022]]
+  - Prevent clicking out of [[Import]] while files are importing
+    - Also added text showing progress, similar to EDN restore
+  - Change [[Encrypted Graphs]] password
+    - In the settings panel
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FJ6QeY8K-Zf.png?alt=media&token=2eb6670a-49b7-4696-b35d-0a2d06357815)
+  - Fix paste bug causing images to be pasted instead of text from Microsoft Word
+  - Revert Update datascript to `1.3.8`
+    - Unfortunately had a bug that broke some extensions, will re release as soon as the bug is fixed
+- [[February 1st, 2022]]
+  - Add icon to encrypted graphs in all graphs view
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FnyXbh-I1p-.png?alt=media&token=28305988-ec3d-40df-a6fb-68da45ee5609)
+  - Update datascript to `1.3.8`
+    - Includes [performance improvements](https://github.com/tonsky/datascript/blob/master/CHANGELOG.md#130) that might make extensions faster
+  - Fix bug with [[Restore]] graph, causing some data to not be imported correctly
+  - Fix not [[Export]]ing `:log/id`, causing daily note pages to not show up in the log
+- [[January 29th, 2022]]
+  - [[Encrypted Graphs]]
+  - Unlimited graphs for all
+  - Increase upload file size from 100MB to 500MB
+- [[January 28th, 2022]]
+  - Preparation work for graph load / memory improvements (stay tuned)
+  - Small additions to the roamAlphaAPI (see docs [here](https://roamresearch.com/#/app/developer-documentation/page/tIaOPdXCj) for detailed changelog)
+- [[January 25th, 2022]]
+  - [[Import]]
+    - Small speed / memory improvements
+    - Bug fix causing import to fail when importing a large amount of files
+- [[January 3rd, 2022]]
+  - A major change and some minor additions to `roamAlphaAPI`, the API that roam extensions are built on top of.
+    - If you're a dev or are interested, more details [here](https://roamresearch.com/#/app/developer-documentation/page/tIaOPdXCj)
+
+#### [[2021]]
+
+- [[December 7th, 2021]]
+  - [[Quality of Life Improvements]]
+    - Better error checking for queries
+      - fixed bug where queries could previously lead to "Roam was not built in a day" errors 
+    - [[Performance Improvements]] for imports and queries
+- [[November 26th, 2021]]
+  - [[Quality of Life Improvements]]
+    - Fix upload issues in [[iOS]] 
+    - Automatic handling of snapshot issues
+- [[November 17th, 2021]]
+  - Natural Language Date suggestions now work in "Find or Create Page" search bar
+    -  Example screenshot
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FM37NPNdNsm.png?alt=media&token=90e32ba6-8c10-4cca-8ddc-ff78d605c8b0)
+- [[November 10th, 2021]]
+  - Natural Language Dates
+    - You can now write dates in natural language in Roam.
+    - Write the date in square brackets [[ ]] in any format, and Roam will convert it to a date.  
+    - Select the suggested date for it to be entered in your block. 
+    - **Example Screenshot**
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FVzRPrXeIeH.png?alt=media&token=2173eb04-fd27-43e0-b1ca-cce79de3efde)
+    - Some other examples you might want to try
+      - `[[5 days ago]]`
+      - `[[2 weeks from now]]`
+      - `[[last friday]]`
+      - `[[wed]]`
+      - `[[2021-11-13]]`
+      - `[[11-13-2021]]`
+      - `[[17 nov 2019]]`
+- [[November 9th, 2021]]
+  - [[Code Block]] [[Quality of Life Improvements]]
+    - Updated to `codemirror.next`
+      - Performance for large code blocks should be significantly better
+    - Styling changes
+      - **before**
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fzf8iKJxhjd.png?alt=media&token=840a48fc-71ce-4252-a6c7-d98ad3d85d3f)
+      - **after**
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FVbqMOAbS_G.png?alt=media&token=0b5230ad-1701-4728-bf97-19d6fe45ee04)
+        - 
+    - Added `latex` and `dart` languages
+    - Added collapsable code gutters
+    - Added highlighting matching brackets
+    - Changed the default font to [fira code](https://github.com/tonsky/FiraCode)
+    - Added line wrapping
+      - [[Example]]
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F7wwZFV60hs.png?alt=media&token=5c951c49-c9b4-4385-b2ac-30663b6d4b32)
+- [[November 5th, 2021]]
+  - [[Bug Fixes]] - fix errant text insertion for [[Firefox]] tab change
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FBBUiFSsRHb.png?alt=media&token=1a30076d-4afd-441e-9fea-311bbcfce4bb)
+- [[October 12th, 2021]]
+  - Major [[Performance Improvements]] to filters on pages and backlinks 
+    - Should be particularly noticeable on huge collections - like TODO pages or user display name pages in multiplayer graphs.
+- [[October 7th, 2021]]
+  - [[Quality of Life Improvements]]
+    - Fix [[autocomplete]] appearing offscreen in [[embed]]s, the [[Right Sidebar]] and [[mobile]]
+      - [[embed]]
+        - **before**
+          - Autocomplete gets "trapped" inside of the embed
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fl-yBff_stw.png?alt=media&token=72683948-7ebc-440c-8bd6-0e34aff4a8bd)
+          - and scrolls the embed, which sometimes leads to the embed getting stuck
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FVobJ470b9-.png?alt=media&token=1d4a2e9a-9b1e-401f-8182-12b962a5bfb0)
+        - **after**
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2FdfjnNdt-Xv.png?alt=media&token=6a134550-fb43-4035-bfb3-fa5fdc74f840)
+      - [[Right Sidebar]]
+        - **before**
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F0jSiiGlMdB.png?alt=media&token=b1a96c21-c829-411c-b49b-bc3d51833fa7)
+          - also sometimes led to a similar issue as with embeds, where the sidebar got stuck offscreen
+        - **after**
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FI8GsnHl0hB.png?alt=media&token=c7a6d654-5135-4168-8f4f-c88d6ae9993f)
+      - [[mobile]]
+        - **before**
+          - Autocomplete causes the whole screen to scroll to the right
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fj5Gk-J5ayh.png?alt=media&token=e6246ae0-ebdc-4fe2-9283-522f0f22be1e)
+        - **after**
+          - Autocomplete adjusts to fit the size of the screen
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FPBNQMc-v1S.png?alt=media&token=c977b686-2179-4627-8324-55867e264010)
+- [[September 28th, 2021]]
+  - **[[Quality of Life Improvements]] ✨**
+    - All settings, including keyboard shortcut customizations accessible from [[Command Palette]] 
+      - `cmd-p` on [[Mac]]
+      - `control-p` on [[Windows]] or [[Linux]]
+      - __handy way to discover or remember different keyboard shortcuts__
+      - Example::
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FBykG_v_8KV.png?alt=media&token=76c76dce-6346-4b6e-9435-843f07219956)
+- [[September 27th, 2021]]
+  - **[[Quality of Life Improvements]] ✨**
+    - Added a shortcut (`Cmd/Ctrl+Opt+R`) to toggle [[Youtube]] [[Videos]] playback while typing in a block
+    - Made [[Video Timestamps]] look a little nicer
+  - **[[Bug Fixes]]  🛠**
+    - Fixed bug that caused Roam to crash when [[Query]] using `between` contained only one date
+- [[September 21st, 2021]]
+  - [[Customization]] #[[End User Programming]] #[[Quality of Life Improvements]]
+    - Custom components in [[JSX]] and [[Javascript]]
+    - {{[[video]]: https://grain.co/highlight/NkzVPjnoX3P8gavWAVq9g00DiABYGCE1gWZIU63J}}
+    - [[Example]]
+      - {{[[video]]: https://grain.co/highlight/2xiEAKKj5It1deDSFzbwWMbm3JXLwqt0OdtzmQ53}}
+- [[September 18th, 2021]]
+  - [[Customization]] [[Improvements]]
+    - Styling changes applied to blocks via `#.style-tags-like-this` now propogate to references of those blocks red #.bg-red-500  #.text-white , white and blue #.bg-blue-500 #.text-white 
+      - white
+      - blue #.bg-blue-500 #.text-white 
+      - red #.bg-red-500  #.text-white 
+    - Propogates many levels up too -- see ((Styling changes applied to blocks via `#.style-tags-like-this` now propogate to references of those blocks red #.bg-red-500  #.text-white , white and blue #.bg-blue-500 #.text-white )) 
+- [[August 26th, 2021]]
+  - **[[Bug Fixes]]  🛠**
+    - Fixed bug where when opening references of a block in the sidebar, two instances would show up
+    - Fixed issues around Display Name not showing
+  - **[[Developer Notes]] 🧑‍💻 **
+    - Fixed bug for removing window via front-end API
+    - Fixed bug for opening mentions in sidebar via front-end API
+- [[August 11th, 2021]]
+  - **[[New Features]] 🚀**
+    - You can now use [[Video Timestamps]] for Youtube videos!
+    - Either type `/video timestamp` or hit `Cmd/Ctrl+Alt+t` under a video to enter a timestamp
+    - Example::
+      - {{[[video]]: https://www.youtube.com/watch?v=4yXK9OMc2OU}}
+        - {{[[video-timestamp]]: 00:07:07}} 
+          - #Notes Cmd+U opens search bar 
+          - {{[[video-timestamp]]: 00:07:08}}
+          - {{[[video-timestamp]]: 00:07:08}}
+          - {{[[video-timestamp]]: 00:08:57}}
+          - {{[[video-timestamp]]: 00:09:02}}
+          - {{[[video-timestamp]]: 00:09:43}}
+          - {{[[video-timestamp]]: 00:09:45}}
+  - **[[Quality of Life Improvements]] ✨**
+    - Fixed [[Mobile Menu Bar]] to insert double brackets instead of single brackets
+- [[August 3rd, 2021]]
+  - **[[Bug Fixes]]  🛠**
+    - Fixed bug with image links containing `\r`
+- [[July 11th, 2021]]
+  - **[[New Features]] 🚀**
+    - You can now change your sign in email inside the new `Account` panel in the `Settings` menu
+- [[July 8th, 2021]]
+  - **[[Bug Fixes]] 🛠 **
+    - Fixed bug where cursor remained did not move to the end of the generated template content
+    - Fixed bug where inline css would get loaded before styling from `roam/css`
+    - Minor bug fixes and improvements.
+    - **[[Developer Notes]] 🧑‍💻 **
+      - `data.block.create` and `data.block.update` can now be used to set alignment,  heading, and the children blocks' view type. See [developer docs](https://roamresearch.com/#/app/developer-documentation/page/CAtB5a7wv) for more info.
+- [[June 23rd, 2021]]
+  - **[[Quality of Life Improvements]] ✨**
+    - Slash menu () will only trigger when the slash is at the very beginning of a block, or preceded by a space - __not__ in the middle of a word
+- [[June 11th, 2021]]
+  - **[[New Features]] 🚀**
+    - Desktop app for macOS, Linux, and Windows is out now!
+      - Download from the `...` menu in the top right of your screen, the [[Graphs and Settings]] page, or [our home page](https://roamresearch.com)
+- [[June 9th, 2021]]
+  - **[[Quality of Life Improvements]] ✨**
+    - Much faster load times when opening a graph
+- [[June 8th, 2021]]
+  - **[[Bug Fixes]] 🛠 **
+    - Fixed some bugs around auto-backups, graph deletion, file manager
+- [[June 4th, 2021]]
+  - **[[Quality of Life Improvements]] ✨**
+    - [[Date picker]]
+      - Made it much faster
+      - You can now change first day of week and see the week number
+        - Go to `Settings > User Settings > International` to toggle.
+      - Improved styling
+        - {{[[table]]}}
+          - Before
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FsfZWPjD0QC.png?alt=media&token=553e5c25-9bb5-43c1-8a1e-b2081810cce3)
+          - After
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FQTG7J8YQV-.png?alt=media&token=d637b2c6-157f-4d2d-a810-cf0c9e1fb5f7)
+        - 
+- [[June 2nd, 2021]]
+  - **[[Quality of Life Improvements]] ✨**
+    - You can now copy a [[Block References]] while editing it (via `Cmd/Ctrl+Shift+C`)
+    - You can now see other references inline for [[Block References]]. Go to `Settings > User Settings > Inline Reference Counts` to activate.
+  - **[[Bug Fixes]] 🛠 **
+    - Fixed plaintext paste in [[Safari]]
+- [[May 25th, 2021]]
+  - **[[Bug Fixes]] 🛠 **
+    - Reverted Block embeds will now be expanded by default
+    - Comment button will no longer keep showing up after taking screenshots or switching apps
+    - Made date picker faster
+    - Fixed pasting multiple blocks multiple times
+  - **[[New Features]] 🚀 #.h**
+    - Added support for [[Kroki]] diagrams ([Link](https://kroki.io)) #.h
+      - How it works::
+        - Write your kroki code in a code/regular block, for instance,
+          - ```plain text
+            graph TD
+              A[ Anyone ] -->|Can help | B( Go to github.com/yuzutech/kroki )
+              B --> C{ How to contribute? }
+              C --> D[ Reporting bugs ]
+              C --> E[ Sharing ideas ]
+              C --> F[ Advocating ]```
+        - Then use the following syntax
+          - `{{[[kroki]]: TYPE_HERE: BLOCK_REF_HERE}}`
+            - so for instance, `{{[[kroki]]: mermaid:((13fZ8yxDr))}}` will produce:
+              - {{[[kroki]]: mermaid:```plain text
+                graph TD
+                  A[ Anyone ] -->|Can help | B( Go to github.com/yuzutech/kroki )
+                  B --> C{ How to contribute? }
+                  C --> D[ Reporting bugs ]
+                  C --> E[ Sharing ideas ]
+                  C --> F[ Advocating ]```}}
+      - Screenshots::
+        - ![](https://camo.githubusercontent.com/a4f4453e86abb6804f9f92ca477e8be856653aad9571ad62b728b22ee4e0634a/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f666972657363726970742d35373761322e61707073706f742e636f6d2f6f2f696d6773253246617070253246726f616d2d7465616d253246682d65424e786637314a2e706e673f616c743d6d6564696126746f6b656e3d31386662333735362d336163372d346262362d616363612d393166333562626638633432)
+- [[May 17th, 2021]]
+  - **[[New Features]] 🚀**
+    - You can now quickly jump to/between [[Daily Notes]] pages using the date picker!
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fy0yYV8dNw_.png?alt=media&token=df5b78f9-3a25-4a8c-8b7c-3eed0dba191e)
+  - Open graph-view for page has been moved into the dropdown menu
+  - [[Secret Feature]] - to be announced after round on testing
+- [[May 16th, 2021]]
+  - **[[Quality of Life Improvements]] ✨**
+    - [[Pages]] [[Sharing]] has been re-introduced
+    - [[Query]] will load 50 results at a time ((to prevent humongous queries from freezing Roam))
+    - [[Query]] results can now be grouped by pages
+    - You can now show/hide paths of blocks in [[Query]] results
+  - **[[Developer Notes]] 🧑‍💻 **
+    - Added `data-uid` to [[Block References]]
+- [[May 12th, 2021]]
+  - **[[Bug Fixes]] 🛠 **
+    - Long-pressing the expand/collapse button will expand all blocks in linked references, like in normal blocks.
+    - Fixed PDFs not rendering
+- [[May 7th, 2021]]
+  - **[[Quality of Life Improvements]] ✨**
+    - Block embeds will now be expanded by default
+- [[May 4th, 2021]]
+  - **[[Quality of Life Improvements]] ✨**
+    - You can now shift-click breadcrumbs/path of zoomed-in block to open in [[Right Sidebar]]
+    - **[[Bug Fixes]] 🛠 **
+      - Made [[Query]] and [[Linked References]] slightly faster
+      - Pasting blocks containing images will no longer destroy block structure
+      - Made text highlights legible in [[Block References]] previews
+      - **[[Developer Notes]] 🧑‍💻**
+        - iFrame Components are a new possibility for extending Roam. Write components using any JS framework, host it on your own server, but interact with Roam graph data. Documentation https://roamresearch.com/#/app/developer-documentation/page/YNgZSgVSS.
+- [[May 3rd, 2021]]
+  - **[[New Features]] 🚀**
+    - Hidden feature for [[Roam Team]]'s internal use, will be notifying believers if no bugs in next few days, and rest of the community shortly after that.
+- [[April 30th, 2021]]
+  - **[[Quality of Life Improvements]] ✨**
+    - Added syntax highlighting for [[SPARQL]] and [[Turtle]] #[[.Kifah]]
+    - **[[Developer Notes]] 🧑‍💻**
+      - As part of our ongoing effort to keep Roam secure, we're improving how extension settings are stored. **Please review your roam/js, roam/css and Custom Components settings and re-enable the ones you want to use again. **
+  - **[[Bug Fixes]] 🛠**
+    - Auto-backups will no longer trigger when you switch/reload your graph.
+    - The block info pop-up will no longer show up while dragging blocks on [[Safari]]
+    - Fixed a bug with graph settings not appearing on local graphs
+- [[April 29th, 2021]]
+  - **[[New Features]] 🚀**
+    - You can now easily manage/delete all your uploaded files by going to `... > Settings > Files`
+  - **[[Bug Fixes]] 🛠**
+    - Pasted HTML links/images whose URL contains brackets will no longer break [[Alias]]. Go ahead, paste that [[Wikipedia]] page!
+    - Prevent creating orphaned blocks on backspace
+  - **[[Developer Notes]] 🧑‍💻**
+    - Moved `data-edit-time`, `data-create-time`, and `data-edit-display-name` from `span.rm-bullet` to `div.rm-block`
+    - Added `data-edit-photo-url`
+    - So now we can style the entire block easily based on who wrote it and access the users' profile photo url if they have one from signing in with google ((and in the future all users when we allow custom profile pictures))
+- [[April 28th, 2021]]
+  - **[[Bug Fixes]] 🛠**
+    - Fixed bug which created orphan blocks when deleting in [[Linked References]]
+- [[April 23rd, 2021]]
+  - **[[Bug Fixes]] 🛠**
+    - Contents of [[Kanban]] will now load normally when its children are collapsed
+    - Pressing Enter will split the Kanban card instead of inserting an empty card
+    - Cards can be deleted or joined like in normal blocks
+    - Some components like images will no longer overflow the kanban
+    - Disabled vertical scrolling on the [[Mobile Menu Bar]]
+    - Minor performance improvements
+- [[April 22nd, 2021]]
+  - **[[Bug Fixes]] 🛠**
+    - Fixed performance regression
+    - Made settings modal mobile-friendly.
+- [[April 21st, 2021]]
+  - **[[Quality of Life Improvements]] ✨**
+    - Added buttons for undo, redo, square+round brackets to the mobile menu bar!
+  - **[[Bug Fixes]] 🛠 **
+    - Cursor will be placed correctly when adding TODO via the mobile menu bar
+    - Multibar lines will no longer show over the mobile menu bar
+- [[April 20th, 2021]]
+  - **[[Bug Fixes]] 🛠 **
+    - Fixed Graph Settings not opening and removed sharing tab for [[Local Graph]]
+- [[April 18th, 2021]]
+  - **[[Quality of Life Improvements]] ✨**
+    - Improved dropdown menu 
+    - Moved Sharing settings into its own tab
+  - **[[Bug Fixes]] 🛠 **
+    - Redo will now work more than once
+- [[April 16th, 2021]]
+  - **[[New Features]] 🚀 **
+    - Custom shortcuts! You can find them in `Settings > Hotkeys`
+  - **[[Quality of Life Improvements]] ✨**
+    - You can now hide code blocks in search results. To toggle, go to `Settings > User Settings`.
+    - User Settings and Graph Settings have been unified into the new Settings modal.
+  - **[[Bug Fixes]] 🛠 **
+    - Empty `<a>` (link) tags in pasted content will no longer be rendered.
+- [[April 15th, 2021]]
+  - **[[New Features]] 🚀**
+    - Unlimited [local graphs]([[Local Graph]]) are now available for all Roam subscribers!
+- [[April 14th, 2021]]
+  - **[[Quality of Life Improvements]] ✨**
+    - Hitting tab while writing a page reference will autocomplete the first option
+  - **[[Bug Fixes]] 🛠**
+    - Fixed an embed styling issue
+- [[April 12th, 2021]]
+  - **[[Quality of Life Improvements]] ✨**
+    - Added [[Elixir]] as a code block option
+- [[April 9th, 2021]]
+  - **[[Quality of Life Improvements]]**
+    - Page width is now persisted
+- [[April 7th, 2021]]
+  - **[[Quality of Life Improvements]] ✨**
+    - Improved mobile menu bar and replaced Drawing helper button with [[TODO]] button
+      - {{[[kanban]]}}
+        - Before::
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2F6Xk2JBlhBF.png?alt=media&token=4da2b9c2-37de-405d-98a9-212b0f5cdffe)
+        - After::
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2F6Yjwj-4gvL.png?alt=media&token=ff977aec-d135-4caa-9f76-3edf05a9b570)
+    - **UI Updates**
+      - Cleaned up the [[Left Sidebar]]
+        - {{[[table]]}}
+          - Before::
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2FArTNrMYLgt.png?alt=media&token=c0a5d24c-b242-410c-a1a9-029a7638ac88)
+          - After::
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2FCMTzJVwz0x.png?alt=media&token=fc77ed41-c550-4859-a13b-791d0962132b)
+      - Cleaned up [[Quick Capture]]
+        - {{[[kanban]]}}
+          - Before::
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2FiY8WCjeeTO.png?alt=media&token=b2da9700-7c0b-42f6-8b07-4e3dd4e20f41)
+          - After::
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2Feuu53BSFc4.png?alt=media&token=14a8ee81-8ea0-4439-ac74-2129804b2917)
+      - Revamped Import modal
+        - {{[[table]]}}
+          - Before::
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2FSX7k6To7rD.png?alt=media&token=4056c63d-e4ba-4bec-a978-dfcefac1dcc9)
+
+          - After::
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2FkXpJm3dgXf.png?alt=media&token=7cd87887-93d4-4c41-8952-db82777e1117)
+        - {{[[table]]}}
+          - Before::
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2FbMLzO7q-5M.png?alt=media&token=d3fb0597-9eab-4c3d-a9f0-8ff72ab2f086)
+
+          - After::
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2FItNe6Dk54D.png?alt=media&token=116c8d07-837a-43f6-9020-a0e9b23f9fe1)
+      - Updated Sharing settings
+        - {{[[table]]}}
+          - Before::
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2FuWcVSPMzHQ.png?alt=media&token=fd0ca15c-03e6-49c6-91f4-3bc352450dbc)
+          - After::
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2F6sPn5_q0gs.png?alt=media&token=74e2fa98-7488-4729-b0e8-7b664692aa79)
+        - And with the page sharing security warning:
+          - {{[[table]]}}
+            - Before::
+              - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2F5JbnowYACh.png?alt=media&token=886f3455-154f-4c9c-b5da-8ce127517675)
+            - After::
+              - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2FkzwI4ilx0f.png?alt=media&token=14985bc9-daaa-474d-91d1-8511632b8dbf)
+        - The sharing options:
+          - {{[[table]]}}
+            - Before::
+              - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2F1Nz_WX-5rJ.png?alt=media&token=1e9f9b67-22b6-43c2-b244-beee49393e46)
+            - After::
+              - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2FgKV0seo2nF.png?alt=media&token=61a7206b-6dd5-4ccd-b7c3-429e6dff7522)
+      - Lighter Roam bullets, slightly thinner bold text, and subtler multibar so you can focus on your content
+        - {{[[table]]}}
+          - Before::
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2F6mUQuhMfeY.png?alt=media&token=3e46c965-ad22-45a5-ba51-4fce71a60283)
+          - After::
+            - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2FOWqQH4AWhh.png?alt=media&token=c19e6e1e-ca64-4a30-b4c3-35b0e4177deb)
+- [[April 6th, 2021]]
+  - **[[Quality of Life Improvements]] ✨**
+    - **Kanbans are now directly editable**
+      - Navigate around with key commands (cmd-<arrow> on Mac)
+      - Relocate cards with key commands (cmd-shift-<arrow> on Mac)
+      - Reorder with drag n' drop
+      - Drag and drop blocks in and out of the kanban with more precise location control
+      - Edit cards in the kanban
+      - Enter adds a card below and focuses it
+      - Click in a column to add a card
+  - **[[Bug Fixes]] 🛠**
+    - Minor performance improvements
+- [[April 5th, 2021]]
+  - **[[Bug Fixes]] 🛠**
+    - Fixed a memory leak and improved performance
+- [[April 2nd, 2021]]
+  - **[[Quality of Life Improvements]] ✨**
+    - Added shortcut hint in context menu for copying [[Block References]]
+    - Made it clearer that deleting a graph doesn't immediately allow using its name again
+      - {{[[table]]}}
+        - Before::
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2F5j3PFaZ5Xz.png?alt=media&token=6d36fc43-b6bc-434d-98fa-22250b6416c9)
+        - After::
+          - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam-team%2FkDgsAI3wOK.png?alt=media&token=07e6f288-00dd-4a03-ac21-1d10ea038f3d)
+  - **[[Bug Fixes]] 🛠**
+    - Update Changelog link in `Check for Updates` toast
+- [[March 30th, 2021]]
+  - **[[New Features]] 🚀**
+    - You can now export the block you're zoomed into instead of the whole page
+  - **[[Quality of Life Improvements]] ✨**
+    - Block embeds are now resolved to text in [[Markdown]] exports
+    - Added an icon to easily access the right sidebar
+      - The shorcuts icon has been turned into an option inside the ... dropdown menu
+    - Added better visual feedback for adding/removing shortcuts
+  - **[[Bug Fixes]] 🛠**
+    - Strikethrough and redo shortcuts on Windows have been reverted to Win+Y and Ctrl+Y respectively following reports that users couldn't redo more than once.
+- [[March 28th, 2021]]
+  - **[[New Features]] 🚀**
+    - You can now export in [[Flattened Markdown]], which removes all indentation and block formatting
+  - **[[Quality of Life Improvements]] ✨**
+    - [[Block Embed]]s will remember whether you closed or opened them between page reloads
+    - When editing a page title, any preceding/trailing whitespaces will be automatically removed
+    - When exporting a single [page]([[Pages]]), you'll directly receive the exported file instead of a zipped file.
+- [[March 24th, 2021]]
+  - **[[New Features]] 🚀 **
+    - New Help Graph!
+  - **[[Quality of Life Improvements]] ✨ **
+    - Added warning banner to experimental graphs 
+
+### [Change Log Archive](https://roamresearch.com/#/app/help-archive/page/dxTi-iUs2)
+
+- [[roam/comments]]
+  - [[May 11th, 2023]]
+    - [[Baibhav Bista]]
+      - [[Screenshots]]
+        - If anyone is curious how I got the two images side by side, open the command palette (cmd-p) and then "Change block view". The one I'm using here is "horizontal"
+          - If you use these block views regularly, might want to set a hotkey for it. That can be done via the command palette as well
+  - [[February 2nd, 2022]]
+    - [[Joshua Brown]]
+      - Unlimited graphs for all
+        - * not for beta users
