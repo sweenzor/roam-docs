@@ -20,9 +20,8 @@ jobs:
         working-directory: scripts
         env:
           # Read-only roam-graph-tokens, one repo secret per graph; graphs.json
-          # names the env var each graph reads ("tokenEnv"). When set, the
-          # export uses the official Backend API instead of the
-          # headless-browser fallback.
+          # names the env var each graph reads ("tokenEnv"). Required — the
+          # export runs over the official Backend API.
           ROAM_API_TOKEN_DEVELOPER_DOCUMENTATION: ${{ secrets.ROAM_API_TOKEN_DEVELOPER_DOCUMENTATION }}
           ROAM_API_TOKEN_HELP: ${{ secrets.ROAM_API_TOKEN_HELP }}
         run: |

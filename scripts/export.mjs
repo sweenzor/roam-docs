@@ -1,19 +1,14 @@
-// Exports public Roam Research graphs to data/graph-<name>.json.
+// Exports public Roam Research graphs to data/graph-<name>.json via the official
+// Roam Backend API (plain HTTP — no browser needed; the browser lives only in
+// introspect.mjs, because window.roamAlphaAPI exists only in the running app).
 //
 // Which graphs: every entry in graphs.json (repo root), or just $ROAM_GRAPH
 // when that env var is set.
 //
-// Two transports, in order of preference:
-//   1. Roam Backend API (official REST) — used when the graph has an API token.
-//      Requires a read-only roam-graph-token for the graph (only the graph
-//      owner can mint one; ask the Roam Research team in #developers on their Slack).
-//      The token is read from the env var named by the graph's "tokenEnv" in
-//      graphs.json (ROAM_API_TOKEN for graphs not listed there).
-//      Plain HTTP: runs anywhere, no browser needed.
-//   2. Headless Chromium fallback (anonymous read-only session on the public
-//      graph, driving the same datalog API via window.roamAlphaAPI).
-//
-// Both produce an identical graph JSON so generate.mjs doesn't care which ran.
+// Auth: every graph needs a read-only roam-graph-token (only the graph owner
+// can mint one; ask the Roam Research team in #developers on their Slack).
+// The token is read from the env var named by the graph's "tokenEnv" in
+// graphs.json (ROAM_API_TOKEN for ad-hoc graphs not listed there).
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -84,78 +79,12 @@ async function exportViaBackendApi(graph, token) {
   return { shortcuts, pages };
 }
 
-async function exportViaBrowser(graph) {
-  const { chromium } = await import('playwright');
-  const browser = await chromium.launch();
-  const page = await browser.newPage();
-  const network = [];
-  page.on('request', (r) =>
-    network.push({ kind: 'request', method: r.method(), type: r.resourceType(), url: r.url() })
-  );
-  page.on('websocket', (ws) => network.push({ kind: 'websocket', url: ws.url() }));
-
-  console.log(`Browser fallback: loading https://roamresearch.com/#/app/${graph} ...`);
-  await page.goto(`https://roamresearch.com/#/app/${graph}`, {
-    waitUntil: 'domcontentloaded',
-    timeout: 90_000,
-  });
-  await page.waitForFunction(
-    () => {
-      try {
-        return (
-          window.roamAlphaAPI &&
-          window.roamAlphaAPI.q('[:find (count ?e) . :where [?e :node/title]]') > 0
-        );
-      } catch {
-        return false;
-      }
-    },
-    { timeout: 180_000, polling: 2_000 }
-  );
-  // Wait for sync to finish streaming blocks in.
-  let prev = -1;
-  for (let i = 0; i < 60; i++) {
-    const count = await page.evaluate(() =>
-      window.roamAlphaAPI.q('[:find (count ?e) . :where [?e :block/uid]]')
-    );
-    if (count === prev) break;
-    prev = count;
-    await page.waitForTimeout(3_000);
-  }
-  console.log(`Graph loaded: ${prev} entities.`);
-
-  const json = await page.evaluate(
-    ([pattern, pagesQ, shortcutsQ]) => {
-      const uids = window.roamAlphaAPI.q(pagesQ);
-      const pages = uids.map((uid) =>
-        window.roamAlphaAPI.pull(pattern, `[:block/uid "${uid}"]`)
-      );
-      let shortcuts = [];
-      try {
-        shortcuts = window.roamAlphaAPI.q(shortcutsQ);
-      } catch {}
-      return JSON.stringify({ shortcuts, pages });
-    },
-    [PULL_PATTERN, PAGE_UIDS_Q, SHORTCUTS_Q]
-  );
-  fs.writeFileSync(path.join(OUT_DIR, 'network-log.json'), JSON.stringify(network, null, 1));
-  await browser.close();
-  return JSON.parse(json);
-}
-
 async function exportGraph(graph, token) {
-  let result;
-  if (token) {
-    result = await exportViaBackendApi(graph, token);
-  } else {
-    console.log(`No API token for ${graph} — falling back to headless browser.`);
-    result = await exportViaBrowser(graph);
-  }
-
+  const result = await exportViaBackendApi(graph, token);
   const out = {
     graph,
     exportedAt: new Date().toISOString(),
-    transport: token ? 'backend-api' : 'browser',
+    transport: 'backend-api',
     shortcuts: result.shortcuts,
     pages: result.pages,
   };
@@ -169,8 +98,9 @@ const names = process.env.ROAM_GRAPH
   : GRAPH_CONFIGS.map((g) => g.name);
 for (const name of names) {
   const cfg = GRAPH_CONFIGS.find((g) => g.name === name);
-  // Graphs without a tokenEnv get no token (an unrelated graph's token would
-  // 403); ad-hoc ROAM_GRAPH runs of unlisted graphs fall back to ROAM_API_TOKEN.
-  const token = cfg ? cfg.tokenEnv && process.env[cfg.tokenEnv] : process.env.ROAM_API_TOKEN;
-  await exportGraph(name, token || undefined);
+  const tokenEnv = cfg?.tokenEnv || 'ROAM_API_TOKEN';
+  const token = process.env[tokenEnv];
+  if (!token)
+    throw new Error(`Missing read-only API token for graph "${name}": set ${tokenEnv}.`);
+  await exportGraph(name, token);
 }
