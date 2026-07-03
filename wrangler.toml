@@ -1,0 +1,5 @@
+# Cloudflare Pages configuration (read automatically by Pages git integration).
+# Serves the generated static site from public/ with no build step.
+name = "roam-docs"
+compatibility_date = "2026-07-03"
+pages_build_output_dir = "public"
