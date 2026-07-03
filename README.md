@@ -1,41 +1,70 @@
 # roam-docs
 
-A machine-friendly mirror of Roam Research's official
+A machine-friendly mirror of public Roam Research graphs — currently the official
 [developer-documentation](https://roamresearch.com/#/app/developer-documentation) and
-[help](https://roamresearch.com/#/app/help) graphs,
+[help](https://roamresearch.com/#/app/help) graphs —
 built for AI coding tools (Claude, ChatGPT, Cursor, …) that can't read docs that live
 inside a Roam Research graph. Served at [roamdocs.fyi](https://roamdocs.fyi) via
 Cloudflare Pages.
 
-**Contributions welcome** — better type signatures, more examples, rendering fixes:
-open an issue or PR.
+**Contributions welcome** — better type signatures, more examples, rendering fixes,
+more graphs: open an issue or PR.
 
 ## What's published (everything under `public/`)
+
+The graph name is the first URL path segment:
 
 | Path | What it is |
 | --- | --- |
 | `/llms.txt` | [llms.txt](https://llmstxt.org) index of everything on the site |
-| `/llms-full.txt` | Full developer-docs export: every page + release notes + a live-introspected inventory of all `window.roamAlphaAPI` functions |
-| `/docs/<page>.md` | One markdown file per developer docs page |
-| `/help/llms-full.txt` | Full export of the help graph (user documentation) |
-| `/help/<page>.md` | One markdown file per help page |
+| `/<graph>/llms-full.txt` | Full markdown export of one graph, one file per graph (the `developer-documentation` one also carries a live-introspected inventory of all `window.roamAlphaAPI` functions) |
+| `/<graph>/<page>.md` | One markdown file per page of each graph |
+| `/<graph>/release-notes.md` | Dated daily-note updates from that graph, when it has any |
 | `/types/roam-alpha-api.d.ts` | TypeScript definitions for `window.roamAlphaAPI` — coverage verified against live introspection, including functions missing from the official docs (e.g. `depot.getInstalledExtensions`) |
 | `/examples/*` | Short copy-pasteable examples (queries, writes, extension skeleton, Backend API) |
+
+Legacy URLs (`/docs/*` and the root `/llms-full.txt`, from before the graph name
+was in the path) 301-redirect via `public/_redirects`.
+
+## Adding a graph
+
+Add an entry to `graphs.json`:
+
+```json
+{
+  "name": "my-graph",
+  "title": "My Graph",
+  "description": "One-liner for the llms-full.txt header.",
+  "tokenEnv": "MY_GRAPH_TOKEN",
+  "descriptions": { "Some Page": "What this page covers" }
+}
+```
+
+`name` is the Roam graph name and becomes the URL path segment; `title` is the heading
+on the landing page and in `llms.txt`. `tokenEnv` (optional) names the env var holding a
+read-only API token for the graph. `descriptions` (optional) curates which pages appear
+in the main `llms.txt` section, with what description — the graph's sidebar shortcuts
+are featured automatically either way.
+
+then re-run the pipeline (or let the scheduled workflow pick it up). The graph must be
+public (or have a read-only token). Pages appear at `/my-graph/<page>.md`, the full
+export at `/my-graph/llms-full.txt`.
 
 ## How it works
 
 ```
-scripts/export.mjs      pulls every page of the public graph
-                        → Backend API (plain HTTP) if ROAM_API_TOKEN is set
+scripts/export.mjs      pulls every page of each graph in graphs.json
+                        → Backend API (plain HTTP) when the graph's tokenEnv is set
                         → else headless Chromium driving window.roamAlphaAPI.q/pull
-                          (the graph is public; anonymous read-only session)
+                          (public graphs; anonymous read-only session)
 scripts/introspect.mjs  walks window.roamAlphaAPI in a live session → full function
                         inventory + probed return shapes (needs the browser by nature)
-scripts/generate.mjs    data/*.json → public/ (llms.txt, llms-full.txt, docs/, index.html)
-                        + verifies every introspected function appears in the .d.ts
+scripts/generate.mjs    graphs.json + data/*.json → public/ (llms.txt, per-graph
+                        llms-full.txt + pages, index.html) + verifies every
+                        introspected function appears in the .d.ts
 ```
 
-`data/graph.json` and `data/api-surface.json` are committed so the site can be rebuilt
+`data/graph-*.json` and `data/api-surface.json` are committed so the site can be rebuilt
 without network access. A scheduled GitHub Action (`.github/workflows/refresh.yml`)
 re-runs the pipeline daily and pushes only when content actually changed; Cloudflare
 Pages deploys on push.
@@ -57,8 +86,9 @@ docker run --rm -v "$PWD":/work -w /work/scripts mcr.microsoft.com/playwright:v1
 ## Notes
 
 - The graphs are pulled via datalog (`q`/recursive `pull`), not DOM scraping; the browser
-  is only the runtime that hosts the API. With a read-only `roam-graph-token` for the
-  graph (only Roam Research can mint one — ask in #developers on their Slack), `export.mjs`
-  switches to the official REST API automatically via the `ROAM_API_TOKEN` secret.
+  is only the runtime that hosts the API. With a read-only `roam-graph-token` for a
+  graph (only the graph owner can mint one — for Roam's own graphs, ask in #developers
+  on their Slack), `export.mjs` switches to the official REST API automatically via the
+  env var named by that graph's `tokenEnv` in `graphs.json`.
 - `types/roam-alpha-api.d.ts` is hand-maintained; CI warns when Roam Research ships a new
   function that isn't typed yet (the generator's coverage check).

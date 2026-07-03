@@ -1,9 +1,9 @@
-# Roam Research Help & User Documentation — full export
+# Help & user documentation — full export
 
-> Complete markdown export of Roam Research's official help graph
-> (https://roamresearch.com/#/app/help): the product's user documentation.
+> Complete markdown export of the public Roam Research graph "help"
+> (https://roamresearch.com/#/app/help). Roam Research's official help graph: the product's user documentation.
 > Exported 2026-07-03T16:36:48.284Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
-> Developer/API documentation is exported separately: https://roamdocs.fyi/llms-full.txt
+> Also on this site: Developer documentation — https://roamdocs.fyi/developer-documentation/llms-full.txt
 
 ## Table of contents
 

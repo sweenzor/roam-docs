@@ -1,6 +1,6 @@
-# Roam Research Documentation (developer + user docs)
+# Roam Research Documentation
 
-> Markdown mirror of Roam Research's official developer-documentation and help graphs,
+> Markdown mirror of public Roam Research graphs (developer-documentation, help),
 > refreshed automatically, plus live-introspected TypeScript definitions for
 > window.roamAlphaAPI (v1.1.2) and copy-pasteable examples. Sources of truth: the
 > public graphs and a running Roam Research session; regenerated on a schedule.
@@ -10,25 +10,25 @@ Last export: 2026-07-03T15:59:08.478Z
 
 ## Developer documentation
 
-- [Developer Hub](https://roamdocs.fyi/docs/developer-hub.md): Entry point / map of all Roam Research developer documentation
-- [Roam Alpha API](https://roamdocs.fyi/docs/roam-alpha-api.md): The frontend JS API (window.roamAlphaAPI): datalog q/pull, block & page CRUD, UI control, file storage
-- [Roam Depot/Extension API](https://roamdocs.fyi/docs/roam-depot-extension-api.md): Extension API passed to Depot extensions (settings panels, commands, lifecycle)
-- [Roam Depot/Extensions](https://roamdocs.fyi/docs/roam-depot-extensions.md): How to build, test and publish Roam Depot extensions
-- [roam/css](https://roamdocs.fyi/docs/roam-css.md): Theming Roam Research with custom CSS via the roam/css page
-- [roam/js](https://roamdocs.fyi/docs/roam-js.md): Running custom JavaScript in a graph via roam/js blocks
-- [roam/cljs](https://roamdocs.fyi/docs/roam-cljs.md): Running ClojureScript in a graph
-- [roam/render](https://roamdocs.fyi/docs/roam-render.md): Custom components rendered inside blocks (ClojureScript/Reagent)
-- [Roam Backend API (Beta)](https://roamdocs.fyi/docs/roam-backend-api-beta.md): Official REST API: datalog q / pull / pull-many + write actions over HTTP with roam-graph-tokens
-- [Roam Append API](https://roamdocs.fyi/docs/roam-append-api.md): Append-only HTTP API for capture (works with encrypted graphs)
-- [Yet-to-release updates](https://roamdocs.fyi/docs/yet-to-release-updates.md): API changes announced but not yet released
-- [Available Libraries](https://roamdocs.fyi/docs/available-libraries.md): Official SDKs and community libraries
-- [Contact Us](https://roamdocs.fyi/docs/contact-us.md): How to reach the Roam Research developer team
-- [Local API](https://roamdocs.fyi/docs/local-api.md): Local HTTP API exposed by the Roam Research desktop app
+- [Developer Hub](https://roamdocs.fyi/developer-documentation/developer-hub.md): Entry point / map of all Roam Research developer documentation
+- [Roam Alpha API](https://roamdocs.fyi/developer-documentation/roam-alpha-api.md): The frontend JS API (window.roamAlphaAPI): datalog q/pull, block & page CRUD, UI control, file storage
+- [Roam Depot/Extension API](https://roamdocs.fyi/developer-documentation/roam-depot-extension-api.md): Extension API passed to Depot extensions (settings panels, commands, lifecycle)
+- [Roam Depot/Extensions](https://roamdocs.fyi/developer-documentation/roam-depot-extensions.md): How to build, test and publish Roam Depot extensions
+- [roam/css](https://roamdocs.fyi/developer-documentation/roam-css.md): Theming Roam Research with custom CSS via the roam/css page
+- [roam/js](https://roamdocs.fyi/developer-documentation/roam-js.md): Running custom JavaScript in a graph via roam/js blocks
+- [roam/cljs](https://roamdocs.fyi/developer-documentation/roam-cljs.md): Running ClojureScript in a graph
+- [roam/render](https://roamdocs.fyi/developer-documentation/roam-render.md): Custom components rendered inside blocks (ClojureScript/Reagent)
+- [Roam Backend API (Beta)](https://roamdocs.fyi/developer-documentation/roam-backend-api-beta.md): Official REST API: datalog q / pull / pull-many + write actions over HTTP with roam-graph-tokens
+- [Roam Append API](https://roamdocs.fyi/developer-documentation/roam-append-api.md): Append-only HTTP API for capture (works with encrypted graphs)
+- [Yet-to-release updates](https://roamdocs.fyi/developer-documentation/yet-to-release-updates.md): API changes announced but not yet released
+- [Available Libraries](https://roamdocs.fyi/developer-documentation/available-libraries.md): Official SDKs and community libraries
+- [Contact Us](https://roamdocs.fyi/developer-documentation/contact-us.md): How to reach the Roam Research developer team
+- [Local API](https://roamdocs.fyi/developer-documentation/local-api.md): Local HTTP API exposed by the Roam Research desktop app
+- [developer-documentation/llms-full.txt](https://roamdocs.fyi/developer-documentation/llms-full.txt): All of the developer-documentation graph in one file
 
 ## API reference
 
 - [roam-alpha-api.d.ts](https://roamdocs.fyi/types/roam-alpha-api.d.ts): TypeScript definitions for window.roamAlphaAPI — all 129 live-introspected functions
-- [llms-full.txt](https://roamdocs.fyi/llms-full.txt): All developer docs in one file: every page + release notes + full API inventory
 
 ## Examples
 
@@ -47,16 +47,16 @@ Last export: 2026-07-03T15:59:08.478Z
 - [White Paper](https://roamdocs.fyi/help/white-paper.md): Abstract. Roam is an online workspace for organizing and evaluating knowledge. The system is built on a directed graph, which frees it from 
 - [Privacy Policy](https://roamdocs.fyi/help/privacy-policy.md): TLDR: Roam does not own your data, nor do we sell it to others or use it for advertising. We will never read or access your private notes wi
 - [Terms and Conditions](https://roamdocs.fyi/help/terms-and-conditions.md): TLDR: Roam does not own your data, nor do we sell it to others or use it for advertising. We will never read or access your private notes wi
-- [help/llms-full.txt](https://roamdocs.fyi/help/llms-full.txt): All user documentation in one file
+- [help/llms-full.txt](https://roamdocs.fyi/help/llms-full.txt): All of the help graph in one file
 
 ## Optional
 
-- [Roam Clojurescript API](https://roamdocs.fyi/docs/roam-clojurescript-api.md): Clojure Core Namespaces
-- [Datomic Alpha API](https://roamdocs.fyi/docs/datomic-alpha-api.md): Important Note: This is the documentation for the Depreciated (& inactive) Datomic API. We have a new API! see it here, Roam Backend API (Be
-- [iFrame Components](https://roamdocs.fyi/docs/iframe-components.md): Important Note: This is Depreciated, it still most likely works but we will not be continuing it's development
-- [Attributes Data Model](https://roamdocs.fyi/docs/attributes-data-model.md): Introduction: it's a hypergraph
-- [datalog-block-query](https://roamdocs.fyi/docs/datalog-block-query.md): Older Loom videos
-- [Developer release notes](https://roamdocs.fyi/docs/release-notes.md): Dated updates from the developer graph (newest first)
+- [Roam Clojurescript API](https://roamdocs.fyi/developer-documentation/roam-clojurescript-api.md): Clojure Core Namespaces
+- [Datomic Alpha API](https://roamdocs.fyi/developer-documentation/datomic-alpha-api.md): Important Note: This is the documentation for the Depreciated (& inactive) Datomic API. We have a new API! see it here, Roam Backend API (Be
+- [iFrame Components](https://roamdocs.fyi/developer-documentation/iframe-components.md): Important Note: This is Depreciated, it still most likely works but we will not be continuing it's development
+- [Attributes Data Model](https://roamdocs.fyi/developer-documentation/attributes-data-model.md): Introduction: it's a hypergraph
+- [datalog-block-query](https://roamdocs.fyi/developer-documentation/datalog-block-query.md): Older Loom videos
+- [Developer documentation release notes](https://roamdocs.fyi/developer-documentation/release-notes.md): Dated daily-note updates (newest first)
 - [Commentarii Roamani](https://roamdocs.fyi/help/commentarii-roamani.md): Hello Again, Roamans -- April 5th, 2025
 - [roam/templates](https://roamdocs.fyi/help/roam-templates.md): Dev docs .h
 - [Diagram](https://roamdocs.fyi/help/diagram.md): Diagrams are an extra dimension of the blocks in your graph. You can lay your thoughts out in a 2D infinite canvas, group and connect ideas.
@@ -169,4 +169,4 @@ Last export: 2026-07-03T15:59:08.478Z
 - [Key Commands](https://roamdocs.fyi/help/key-commands.md): Turn key commands instruction on with custom components like this
 - [Roam Slack](https://roamdocs.fyi/help/roam-slack.md): We have a thriving community on Slack!
 - [Linked References](https://roamdocs.fyi/help/linked-references.md): Description::
-- [Help release notes](https://roamdocs.fyi/help/release-notes.md): Dated updates from the help graph (newest first)
+- [Help & user documentation release notes](https://roamdocs.fyi/help/release-notes.md): Dated daily-note updates (newest first)

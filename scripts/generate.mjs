@@ -1,13 +1,15 @@
-// Builds the Cloudflare Pages site (public/) from data/graph-*.json + data/api-surface.json:
-//   public/llms.txt           — llms.txt index for the whole site (https://llmstxt.org)
-//   public/llms-full.txt      — developer docs graph, full export + API inventory
-//   public/docs/<slug>.md     — one markdown file per developer docs page
-//   public/help/llms-full.txt — help (user documentation) graph, full export
-//   public/help/<slug>.md     — one markdown file per help page
-//   public/types/…            — TypeScript definitions (copied from types/)
-//   public/examples/…         — copy-pasteable examples (copied from examples/)
-//   public/index.html         — landing page
-// Also checks that every introspected API function appears in the .d.ts.
+// Builds the Cloudflare Pages site (public/) from graphs.json + data/graph-*.json
+// + data/api-surface.json:
+//   public/llms.txt              — llms.txt index for the whole site (https://llmstxt.org)
+//   public/<graph>/llms-full.txt — one full markdown export per graph
+//   public/<graph>/<slug>.md     — one markdown file per page of each graph
+//   public/types/…               — TypeScript definitions (copied from types/)
+//   public/examples/…            — copy-pasteable examples (copied from examples/)
+//   public/index.html            — landing page
+//   public/_redirects            — legacy-URL redirects (Cloudflare Pages)
+// The graphs to publish are listed in graphs.json at the repo root; the graph
+// name is the first URL path segment. Also checks that every introspected API
+// function appears in the .d.ts.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -18,6 +20,8 @@ const PUBLIC = path.join(ROOT, 'public');
 // Base URL for absolute links in llms.txt (BASE_URL env overrides).
 const BASE = (process.env.BASE_URL || 'https://roamdocs.fyi').replace(/\/$/, '');
 const REPO_URL = 'https://github.com/sweenzor/roam-docs';
+
+const GRAPH_CONFIGS = JSON.parse(fs.readFileSync(path.join(ROOT, 'graphs.json'), 'utf8'));
 
 const surface = JSON.parse(fs.readFileSync(path.join(DATA, 'api-surface.json'), 'utf8'));
 const API_VERSION = surface.roamAlphaAPI.apiVersion?.value || '?';
@@ -33,9 +37,10 @@ const slug = (t) =>
 
 // ---------------------------------------------------------------------------
 // Graph processing (everything scoped per graph: uid resolution must not leak
-// across graphs).
-function processGraph(graphFile, outDir) {
-  const graph = JSON.parse(fs.readFileSync(path.join(DATA, graphFile), 'utf8'));
+// across graphs). Pages are published under public/<graph name>/.
+function processGraph(cfg) {
+  const graph = JSON.parse(fs.readFileSync(path.join(DATA, `graph-${cfg.name}.json`), 'utf8'));
+  const outDir = cfg.name;
 
   const uidMap = new Map();
   for (const p of graph.pages) {
@@ -177,7 +182,7 @@ function processGraph(graphFile, outDir) {
     fs.writeFileSync(path.join(PUBLIC, outDir, 'release-notes.md'), releaseNotes);
   }
 
-  return { graph, ordered, pageMeta, changelogDnps, releaseNotes, renderPage };
+  return { cfg, graph, ordered, pageMeta, changelogDnps, releaseNotes, renderPage };
 }
 
 // ---------------------------------------------------------------------------
@@ -199,8 +204,8 @@ const fnInventory = inventory.filter((i) => i.args !== undefined);
 fs.rmSync(PUBLIC, { recursive: true, force: true });
 fs.mkdirSync(PUBLIC, { recursive: true });
 
-const dev = processGraph('graph-developer-documentation.json', 'docs');
-const help = processGraph('graph-help.json', 'help');
+const graphs = GRAPH_CONFIGS.map((cfg) => processGraph(cfg));
+const exportedAt = graphs[0].graph.exportedAt;
 
 // ---- copy types/ and examples/ ----
 for (const dir of ['types', 'examples']) {
@@ -230,148 +235,124 @@ let dtsNote = '';
 }
 
 // ---------------------------------------------------------------------------
-// llms-full.txt (developer docs + API inventory)
-{
+// <graph>/llms-full.txt — one full export per graph
+for (const g of graphs) {
+  const others = graphs.filter((o) => o !== g);
   const out = [
-    '# Roam Research Developer Documentation — full export',
+    `# ${g.cfg.title} — full export`,
     '',
-    `> Complete markdown export of Roam Research's official developer-documentation graph`,
-    `> (https://roamresearch.com/#/app/developer-documentation), plus a live-introspected`,
-    `> inventory of window.roamAlphaAPI v${API_VERSION}.`,
-    `> Exported ${dev.graph.exportedAt}. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.`,
-    `> Help / user documentation is exported separately: ${BASE}/help/llms-full.txt`,
-    '',
-    '## Table of contents',
-    '',
-    ...dev.pageMeta.map((m) => `- ${m.title}`),
-    '- Release notes (daily-note updates)',
-    '- Appendix: window.roamAlphaAPI function inventory',
-    '',
-  ];
-  for (const p of dev.ordered) {
-    out.push('---', '');
-    out.push(dev.renderPage(p));
-  }
-  if (dev.releaseNotes) out.push('---', '', dev.releaseNotes);
-  out.push(
-    '---',
-    '',
-    '# Appendix: window.roamAlphaAPI function inventory (live-introspected)',
-    '',
-    'Every callable on `window.roamAlphaAPI`, captured from a running Roam Research session.',
-    `Full TypeScript signatures: ${BASE}/types/roam-alpha-api.d.ts`,
-    '',
-    ...fnInventory.map(
-      (f) => `- window.roamAlphaAPI.${f.path}(${'…'.repeat(Math.min(f.args, 1))}) — ${f.args} arg(s)`
+    `> Complete markdown export of the public Roam Research graph "${g.cfg.name}"`,
+    `> (https://roamresearch.com/#/app/${g.cfg.name}). ${g.cfg.description || ''}`,
+    ...(g.cfg.apiInventory
+      ? [`> Includes a live-introspected inventory of window.roamAlphaAPI v${API_VERSION}.`]
+      : []),
+    `> Exported ${g.graph.exportedAt}. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.`,
+    ...others.map(
+      (o) => `> Also on this site: ${o.cfg.title} — ${BASE}/${o.cfg.name}/llms-full.txt`
     ),
     '',
-    '## Non-function properties',
-    '',
-    ...inventory
-      .filter((i) => i.args === undefined)
-      .map((i) => `- window.roamAlphaAPI.${i.path} : ${i.type} = ${i.value}`),
-    ''
-  );
-  fs.writeFileSync(path.join(PUBLIC, 'llms-full.txt'), out.join('\n'));
-}
-
-// ---------------------------------------------------------------------------
-// help/llms-full.txt (user documentation)
-{
-  const out = [
-    '# Roam Research Help & User Documentation — full export',
-    '',
-    `> Complete markdown export of Roam Research's official help graph`,
-    `> (https://roamresearch.com/#/app/help): the product's user documentation.`,
-    `> Exported ${help.graph.exportedAt}. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.`,
-    `> Developer/API documentation is exported separately: ${BASE}/llms-full.txt`,
-    '',
     '## Table of contents',
     '',
-    ...help.pageMeta.map((m) => `- ${m.title}`),
-    ...(help.releaseNotes ? ['- Release notes (daily-note updates)'] : []),
+    ...g.pageMeta.map((m) => `- ${m.title}`),
+    ...(g.releaseNotes ? ['- Release notes (daily-note updates)'] : []),
+    ...(g.cfg.apiInventory ? ['- Appendix: window.roamAlphaAPI function inventory'] : []),
     '',
   ];
-  for (const p of help.ordered) {
+  for (const p of g.ordered) {
     out.push('---', '');
-    out.push(help.renderPage(p));
+    out.push(g.renderPage(p));
   }
-  if (help.releaseNotes) out.push('---', '', help.releaseNotes);
-  fs.writeFileSync(path.join(PUBLIC, 'help', 'llms-full.txt'), out.join('\n'));
+  if (g.releaseNotes) out.push('---', '', g.releaseNotes);
+  if (g.cfg.apiInventory) {
+    out.push(
+      '---',
+      '',
+      '# Appendix: window.roamAlphaAPI function inventory (live-introspected)',
+      '',
+      'Every callable on `window.roamAlphaAPI`, captured from a running Roam Research session.',
+      `Full TypeScript signatures: ${BASE}/types/roam-alpha-api.d.ts`,
+      '',
+      ...fnInventory.map(
+        (f) => `- window.roamAlphaAPI.${f.path}(${'…'.repeat(Math.min(f.args, 1))}) — ${f.args} arg(s)`
+      ),
+      '',
+      '## Non-function properties',
+      '',
+      ...inventory
+        .filter((i) => i.args === undefined)
+        .map((i) => `- window.roamAlphaAPI.${i.path} : ${i.type} = ${i.value}`),
+      ''
+    );
+  }
+  fs.writeFileSync(path.join(PUBLIC, g.cfg.name, 'llms-full.txt'), out.join('\n'));
 }
 
 // ---------------------------------------------------------------------------
 // llms.txt (site-wide index)
-const DEV_DESCRIPTIONS = {
-  'Developer Hub': 'Entry point / map of all Roam Research developer documentation',
-  'Roam Alpha API': 'The frontend JS API (window.roamAlphaAPI): datalog q/pull, block & page CRUD, UI control, file storage',
-  'Roam Depot/Extension API': 'Extension API passed to Depot extensions (settings panels, commands, lifecycle)',
-  'Roam Depot/Extensions': 'How to build, test and publish Roam Depot extensions',
-  'roam/css': 'Theming Roam Research with custom CSS via the roam/css page',
-  'roam/js': 'Running custom JavaScript in a graph via roam/js blocks',
-  'roam/cljs': 'Running ClojureScript in a graph',
-  'roam/render': 'Custom components rendered inside blocks (ClojureScript/Reagent)',
-  'Roam Backend API (Beta)': 'Official REST API: datalog q / pull / pull-many + write actions over HTTP with roam-graph-tokens',
-  'Roam Append API': 'Append-only HTTP API for capture (works with encrypted graphs)',
-  'Yet-to-release updates': 'API changes announced but not yet released',
-  'Available Libraries': 'Official SDKs and community libraries',
-  'Contact Us': 'How to reach the Roam Research developer team',
-  'Local API': 'Local HTTP API exposed by the Roam Research desktop app',
-};
 {
   const link = (label, href, desc) => `- [${label}](${BASE}${href})${desc ? `: ${desc}` : ''}`;
-  const devMain = dev.pageMeta.filter((m) => DEV_DESCRIPTIONS[m.title]);
-  const devOther = dev.pageMeta.filter((m) => !DEV_DESCRIPTIONS[m.title]);
-  const helpShortcuts = new Set(
-    [...(help.graph.shortcuts || [])].map(([t]) => t)
-  );
-  const helpMain = help.pageMeta.filter((m) => helpShortcuts.has(m.title));
-  const helpOther = help.pageMeta.filter((m) => !helpShortcuts.has(m.title));
   const out = [
-    '# Roam Research Documentation (developer + user docs)',
+    '# Roam Research Documentation',
     '',
-    '> Markdown mirror of Roam Research\'s official developer-documentation and help graphs,',
+    `> Markdown mirror of public Roam Research graphs (${graphs.map((g) => g.cfg.name).join(', ')}),`,
     `> refreshed automatically, plus live-introspected TypeScript definitions for`,
     `> window.roamAlphaAPI (v${API_VERSION}) and copy-pasteable examples. Sources of truth: the`,
     '> public graphs and a running Roam Research session; regenerated on a schedule.',
     `> Source & contributions: ${REPO_URL}`,
     '',
-    `Last export: ${dev.graph.exportedAt}`,
-    '',
-    '## Developer documentation',
-    '',
-    ...devMain.map((m) => link(m.title, `/docs/${m.slug}.md`, DEV_DESCRIPTIONS[m.title])),
-    '',
-    '## API reference',
-    '',
-    link(
-      'roam-alpha-api.d.ts',
-      '/types/roam-alpha-api.d.ts',
-      `TypeScript definitions for window.roamAlphaAPI — all ${fnInventory.length} live-introspected functions${dtsNote}`
-    ),
-    link('llms-full.txt', '/llms-full.txt', 'All developer docs in one file: every page + release notes + full API inventory'),
-    '',
-    '## Examples',
-    '',
-    ...fs.readdirSync(path.join(ROOT, 'examples')).map((f) => link(f, `/examples/${f}`, '')),
-    '',
-    '## Help & user documentation',
-    '',
-    ...helpMain.map((m) => link(m.title, `/help/${m.slug}.md`, m.first)),
-    link('help/llms-full.txt', '/help/llms-full.txt', 'All user documentation in one file'),
-    '',
-    '## Optional',
-    '',
-    ...devOther.map((m) => link(m.title, `/docs/${m.slug}.md`, m.first)),
-    ...(dev.releaseNotes
-      ? [link('Developer release notes', '/docs/release-notes.md', 'Dated updates from the developer graph (newest first)')]
-      : []),
-    ...helpOther.map((m) => link(m.title, `/help/${m.slug}.md`, m.first)),
-    ...(help.releaseNotes
-      ? [link('Help release notes', '/help/release-notes.md', 'Dated updates from the help graph (newest first)')]
-      : []),
+    `Last export: ${exportedAt}`,
     '',
   ];
+  const optional = [];
+  for (const g of graphs) {
+    const descs = g.cfg.descriptions || {};
+    const shortcuts = new Set([...(g.graph.shortcuts || [])].map(([t]) => t));
+    // Main section: curated pages (with a description) plus the graph's own
+    // sidebar shortcuts; everything else goes under Optional.
+    const isMain = (m) => descs[m.title] !== undefined || shortcuts.has(m.title);
+    const main = g.pageMeta.filter(isMain);
+    const other = g.pageMeta.filter((m) => !isMain(m));
+    out.push(
+      `## ${g.cfg.title}`,
+      '',
+      ...main.map((m) => link(m.title, `/${g.cfg.name}/${m.slug}.md`, descs[m.title] || m.first)),
+      link(
+        `${g.cfg.name}/llms-full.txt`,
+        `/${g.cfg.name}/llms-full.txt`,
+        `All of the ${g.cfg.name} graph in one file`
+      ),
+      ''
+    );
+    if (g.cfg.apiInventory) {
+      out.push(
+        '## API reference',
+        '',
+        link(
+          'roam-alpha-api.d.ts',
+          '/types/roam-alpha-api.d.ts',
+          `TypeScript definitions for window.roamAlphaAPI — all ${fnInventory.length} live-introspected functions${dtsNote}`
+        ),
+        '',
+        '## Examples',
+        '',
+        ...fs.readdirSync(path.join(ROOT, 'examples')).map((f) => link(f, `/examples/${f}`, '')),
+        ''
+      );
+    }
+    optional.push(
+      ...other.map((m) => link(m.title, `/${g.cfg.name}/${m.slug}.md`, m.first)),
+      ...(g.releaseNotes
+        ? [
+            link(
+              `${g.cfg.title} release notes`,
+              `/${g.cfg.name}/release-notes.md`,
+              'Dated daily-note updates (newest first)'
+            ),
+          ]
+        : [])
+    );
+  }
+  out.push('## Optional', '', ...optional, '');
   fs.writeFileSync(path.join(PUBLIC, 'llms.txt'), out.join('\n'));
 }
 
@@ -379,15 +360,29 @@ const DEV_DESCRIPTIONS = {
 // Landing page
 {
   const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-  const pageList = (meta, dir) =>
-    meta.map((m) => `  <li><a href="/${dir}/${m.slug}.md">${esc(m.title)}</a></li>`).join('\n');
+  const pageList = (g) =>
+    [
+      ...g.pageMeta.map(
+        (m) => `  <li><a href="/${g.cfg.name}/${m.slug}.md">${esc(m.title)}</a></li>`
+      ),
+      ...(g.releaseNotes
+        ? [`  <li><a href="/${g.cfg.name}/release-notes.md">Release notes</a></li>`]
+        : []),
+    ].join('\n');
+  const graphLinks = graphs.map(
+    (g) => `<a href="https://roamresearch.com/#/app/${g.cfg.name}">${g.cfg.name}</a>`
+  );
+  const prose =
+    graphLinks.length > 1
+      ? `${graphLinks.slice(0, -1).join(', ')} and ${graphLinks.at(-1)}`
+      : graphLinks[0];
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Machine-friendly mirror of Roam Research's official developer and help documentation: llms.txt, full markdown exports, and TypeScript definitions for window.roamAlphaAPI.">
-<title>Roam Research Docs — llms.txt mirror (developer + help)</title>
+<meta name="description" content="Machine-friendly mirror of public Roam Research documentation graphs: llms.txt, full markdown exports, and TypeScript definitions for window.roamAlphaAPI.">
+<title>Roam Research Docs — llms.txt mirror</title>
 <style>
   body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
   @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
@@ -399,32 +394,31 @@ const DEV_DESCRIPTIONS = {
 </head>
 <body>
 <h1>Roam Research Docs</h1>
-<p>A machine-friendly mirror of Roam Research's official
-<a href="https://roamresearch.com/#/app/developer-documentation">developer-documentation</a> and
-<a href="https://roamresearch.com/#/app/help">help</a> graphs,
+<p>A machine-friendly mirror of the public Roam Research graphs
+${prose},
 regenerated on a schedule. Point your AI coding tool here.</p>
 <ul>
   <li><a href="/llms.txt"><code>llms.txt</code></a> — index of everything on this site</li>
-  <li><a href="/llms-full.txt"><code>llms-full.txt</code></a> — all developer docs in one file</li>
-  <li><a href="/help/llms-full.txt"><code>help/llms-full.txt</code></a> — all user documentation in one file</li>
+${graphs
+  .map(
+    (g) =>
+      `  <li><a href="/${g.cfg.name}/llms-full.txt"><code>${g.cfg.name}/llms-full.txt</code></a> — all of ${esc(g.cfg.title)} in one file</li>`
+  )
+  .join('\n')}
   <li><a href="/types/roam-alpha-api.d.ts"><code>roam-alpha-api.d.ts</code></a> — TypeScript definitions for <code>window.roamAlphaAPI</code> (${fnInventory.length} functions, live-introspected)</li>
 </ul>
 <p><a href="${REPO_URL}">Contributions welcome</a></p>
-<details>
-<summary><h2>Developer documentation</h2></summary>
+${graphs
+  .map(
+    (g) => `<details>
+<summary><h2>${esc(g.cfg.title)}</h2></summary>
 <ul>
-${pageList(dev.pageMeta, 'docs')}
-${dev.releaseNotes ? '  <li><a href="/docs/release-notes.md">Release notes</a></li>' : ''}
+${pageList(g)}
 </ul>
-</details>
-<details>
-<summary><h2>Help &amp; user documentation</h2></summary>
-<ul>
-${pageList(help.pageMeta, 'help')}
-${help.releaseNotes ? '  <li><a href="/help/release-notes.md">Release notes</a></li>' : ''}
-</ul>
-</details>
-<p>Last export: ${dev.graph.exportedAt} · <a href="${REPO_URL}">source on GitHub</a></p>
+</details>`
+  )
+  .join('\n')}
+<p>Last export: ${exportedAt} · <a href="${REPO_URL}">source on GitHub</a></p>
 </body>
 </html>
 `;
@@ -444,10 +438,20 @@ ${help.releaseNotes ? '  <li><a href="/help/release-notes.md">Release notes</a><
 </html>
 `
   );
+
+  // Legacy URLs from before the graph name became the first path segment
+  // (developer docs lived at /docs/ and its full export at the site root).
+  fs.writeFileSync(
+    path.join(PUBLIC, '_redirects'),
+    ['/llms-full.txt /developer-documentation/llms-full.txt 301', '/docs/* /developer-documentation/:splat 301', ''].join('\n')
+  );
 }
 
 console.log(
-  `Generated: dev ${dev.pageMeta.length} pages, help ${help.pageMeta.length} pages, ` +
-    `llms.txt, llms-full.txt (${(fs.statSync(path.join(PUBLIC, 'llms-full.txt')).size / 1024).toFixed(0)} KB), ` +
-    `help/llms-full.txt (${(fs.statSync(path.join(PUBLIC, 'help', 'llms-full.txt')).size / 1024).toFixed(0)} KB), index.html`
+  `Generated: ${graphs
+    .map(
+      (g) =>
+        `${g.cfg.name} ${g.pageMeta.length} pages (llms-full.txt ${(fs.statSync(path.join(PUBLIC, g.cfg.name, 'llms-full.txt')).size / 1024).toFixed(0)} KB)`
+    )
+    .join(', ')}, llms.txt, index.html`
 );

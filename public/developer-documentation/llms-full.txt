@@ -1,10 +1,10 @@
-# Roam Research Developer Documentation — full export
+# Developer documentation — full export
 
-> Complete markdown export of Roam Research's official developer-documentation graph
-> (https://roamresearch.com/#/app/developer-documentation), plus a live-introspected
-> inventory of window.roamAlphaAPI v1.1.2.
+> Complete markdown export of the public Roam Research graph "developer-documentation"
+> (https://roamresearch.com/#/app/developer-documentation). Roam Research's official developer docs: window.roamAlphaAPI, extensions, the Backend API.
+> Includes a live-introspected inventory of window.roamAlphaAPI v1.1.2.
 > Exported 2026-07-03T15:59:08.478Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
-> Help / user documentation is exported separately: https://roamdocs.fyi/help/llms-full.txt
+> Also on this site: Help & user documentation — https://roamdocs.fyi/help/llms-full.txt
 
 ## Table of contents
 

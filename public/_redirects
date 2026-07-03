@@ -1,0 +1,2 @@
+/llms-full.txt /developer-documentation/llms-full.txt 301
+/docs/* /developer-documentation/:splat 301

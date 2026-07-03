@@ -16,17 +16,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Export graph + introspect API
+      - name: Export graphs + introspect API
         working-directory: scripts
         env:
-          # Optional. If a read-only roam-graph-token for developer-documentation is
-          # ever available, set it as a repo secret and the export switches from the
-          # headless-browser fallback to the official Backend API automatically.
+          # Optional, per graph: graphs.json names the env var holding each
+          # graph's read-only roam-graph-token ("tokenEnv"). When set, the
+          # export switches from the headless-browser fallback to the official
+          # Backend API automatically.
           ROAM_API_TOKEN: ${{ secrets.ROAM_API_TOKEN }}
         run: |
           npm install --no-audit --no-fund --loglevel=error
-          ROAM_GRAPH=developer-documentation node export.mjs
-          ROAM_API_TOKEN= ROAM_GRAPH=help node export.mjs
+          node export.mjs   # exports every graph in graphs.json
           node introspect.mjs
 
       - name: Generate site
@@ -45,6 +45,6 @@ jobs:
           if git diff --cached --quiet -I'exportedAt' -I'Last export' -I'^> Exported'; then
             echo 'No content changes — skipping commit.'
           else
-            git commit -m 'chore: refresh docs from Roam developer graph'
+            git commit -m 'chore: refresh docs from Roam graphs'
             git push
           fi

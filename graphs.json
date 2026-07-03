@@ -1,0 +1,30 @@
+[
+  {
+    "name": "developer-documentation",
+    "title": "Developer documentation",
+    "description": "Roam Research's official developer docs: window.roamAlphaAPI, extensions, the Backend API.",
+    "tokenEnv": "ROAM_API_TOKEN",
+    "apiInventory": true,
+    "descriptions": {
+      "Developer Hub": "Entry point / map of all Roam Research developer documentation",
+      "Roam Alpha API": "The frontend JS API (window.roamAlphaAPI): datalog q/pull, block & page CRUD, UI control, file storage",
+      "Roam Depot/Extension API": "Extension API passed to Depot extensions (settings panels, commands, lifecycle)",
+      "Roam Depot/Extensions": "How to build, test and publish Roam Depot extensions",
+      "roam/css": "Theming Roam Research with custom CSS via the roam/css page",
+      "roam/js": "Running custom JavaScript in a graph via roam/js blocks",
+      "roam/cljs": "Running ClojureScript in a graph",
+      "roam/render": "Custom components rendered inside blocks (ClojureScript/Reagent)",
+      "Roam Backend API (Beta)": "Official REST API: datalog q / pull / pull-many + write actions over HTTP with roam-graph-tokens",
+      "Roam Append API": "Append-only HTTP API for capture (works with encrypted graphs)",
+      "Yet-to-release updates": "API changes announced but not yet released",
+      "Available Libraries": "Official SDKs and community libraries",
+      "Contact Us": "How to reach the Roam Research developer team",
+      "Local API": "Local HTTP API exposed by the Roam Research desktop app"
+    }
+  },
+  {
+    "name": "help",
+    "title": "Help & user documentation",
+    "description": "Roam Research's official help graph: the product's user documentation."
+  }
+]
