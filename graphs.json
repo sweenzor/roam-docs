@@ -4,7 +4,7 @@
     "title": "Developer documentation",
     "description": "Roam Research's official developer docs: window.roamAlphaAPI, extensions, the Backend API.",
     "tokenEnv": "ROAM_API_TOKEN",
-    "apiInventory": true,
+    "apiAppendices": true,
     "descriptions": {
       "Developer Hub": "Entry point / map of all Roam Research developer documentation",
       "Roam Alpha API": "The frontend JS API (window.roamAlphaAPI): datalog q/pull, block & page CRUD, UI control, file storage",

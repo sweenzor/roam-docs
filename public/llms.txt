@@ -26,19 +26,6 @@ Last export: 2026-07-03T15:59:08.478Z
 - [Local API](https://roamdocs.fyi/developer-documentation/local-api.md): Local HTTP API exposed by the Roam Research desktop app
 - [developer-documentation/llms-full.txt](https://roamdocs.fyi/developer-documentation/llms-full.txt): All of the developer-documentation graph in one file
 
-## API reference
-
-- [roam-alpha-api.d.ts](https://roamdocs.fyi/types/roam-alpha-api.d.ts): TypeScript definitions for window.roamAlphaAPI — all 129 live-introspected functions
-
-## Examples
-
-- [01-queries.js](https://roamdocs.fyi/examples/01-queries.js)
-- [02-writing-blocks.js](https://roamdocs.fyi/examples/02-writing-blocks.js)
-- [03-extension-skeleton.js](https://roamdocs.fyi/examples/03-extension-skeleton.js)
-- [04-backend-api.sh](https://roamdocs.fyi/examples/04-backend-api.sh)
-- [05-backend-api.js](https://roamdocs.fyi/examples/05-backend-api.js)
-- [06-render-components.js](https://roamdocs.fyi/examples/06-render-components.js)
-
 ## Help & user documentation
 
 - [Welcome to Roam](https://roamdocs.fyi/help/welcome-to-roam.md): Getting started ℹ️ (hint... shift-click the links in blue below 😉) .box
