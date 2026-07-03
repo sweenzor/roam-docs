@@ -428,6 +428,21 @@ ${help.releaseNotes ? '  <li><a href="/help/release-notes.md">Release notes</a><
 </html>
 `;
   fs.writeFileSync(path.join(PUBLIC, 'index.html'), html);
+
+  // With a 404.html present, Pages returns real 404s instead of serving
+  // index.html as an SPA fallback for unknown paths.
+  fs.writeFileSync(
+    path.join(PUBLIC, '404.html'),
+    `<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>404 — Roam Research Docs</title></head>
+<body style="font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem;">
+<h1>404 — not found</h1>
+<p>Try the index: <a href="/llms.txt">/llms.txt</a> or the <a href="/">homepage</a>.</p>
+</body>
+</html>
+`
+  );
 }
 
 console.log(
