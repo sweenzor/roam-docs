@@ -2,7 +2,7 @@
  * TypeScript definitions for window.roamAlphaAPI (Roam Research frontend API).
  *
  * Coverage is verified against a live-introspected inventory of the running app
- * (see /llms-full.txt appendix): every function that exists on window.roamAlphaAPI
+ * (see the /developer-documentation/llms-full.txt appendix): every function that exists on window.roamAlphaAPI
  * appears here, including ones missing from the official docs. Functions whose
  * parameter shapes are not (yet) officially documented are marked @undocumented —
  * their existence and arity are verified, their argument types are best-effort.
