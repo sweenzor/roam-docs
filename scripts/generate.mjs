@@ -393,6 +393,8 @@ const DEV_DESCRIPTIONS = {
   @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
   code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
   li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
 </style>
 </head>
 <body>
@@ -408,16 +410,20 @@ regenerated on a schedule. Point your AI coding tool here.</p>
   <li><a href="/types/roam-alpha-api.d.ts"><code>roam-alpha-api.d.ts</code></a> — TypeScript definitions for <code>window.roamAlphaAPI</code> (${fnInventory.length} functions, live-introspected)</li>
 </ul>
 <p><a href="${REPO_URL}">Contributions welcome</a></p>
-<h2>Developer documentation</h2>
+<details>
+<summary><h2>Developer documentation</h2></summary>
 <ul>
 ${pageList(dev.pageMeta, 'docs')}
 ${dev.releaseNotes ? '  <li><a href="/docs/release-notes.md">Release notes</a></li>' : ''}
 </ul>
-<h2>Help &amp; user documentation</h2>
+</details>
+<details>
+<summary><h2>Help &amp; user documentation</h2></summary>
 <ul>
 ${pageList(help.pageMeta, 'help')}
 ${help.releaseNotes ? '  <li><a href="/help/release-notes.md">Release notes</a></li>' : ''}
 </ul>
+</details>
 <p>Last export: ${dev.graph.exportedAt} · <a href="${REPO_URL}">source on GitHub</a></p>
 </body>
 </html>
