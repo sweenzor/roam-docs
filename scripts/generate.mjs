@@ -514,7 +514,7 @@ for (const g of graphs) {
         : []),
     ].join('\n');
   const graphLinks = graphs.map(
-    (g) => `<a href="https://roamresearch.com/#/app/${g.cfg.name}">${g.cfg.name}</a>`
+    (g) => `<a href="https://roamresearch.com/#/app/${g.cfg.name}"><code>${g.cfg.name}</code></a>`
   );
   const prose =
     graphLinks.length > 1
@@ -542,13 +542,16 @@ for (const g of graphs) {
 ${prose},
 regenerated on a schedule. Point your AI coding tool here.</p>
 <ul>
-  <li><a href="/llms.txt"><code>llms.txt</code></a> — index of everything on this site</li>
+  <li><a href="/llms.txt"><code>llms.txt</code></a> — index of everything on this site
+    <ul>
 ${graphs
   .map(
     (g) =>
-      `  <li><a href="/${g.cfg.name}/llms-full.txt"><code>${g.cfg.name}/llms-full.txt</code></a> — all of ${esc(g.cfg.title)} in one file</li>`
+      `      <li>graph <code>${g.cfg.name}</code> (${esc(g.cfg.title)}): <a href="/${g.cfg.name}/llms-full.txt"><code>llms-full.txt</code></a> — every page in one file</li>`
   )
   .join('\n')}
+    </ul>
+  </li>
 </ul>
 ${graphs
   .map(
