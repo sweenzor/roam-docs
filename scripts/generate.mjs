@@ -492,7 +492,7 @@ for (const g of graphs) {
       ),
       ''
     );
-    if (g.cfg.apiInventory) {
+    if (g.cfg.apiAppendices) {
       out.push(
         '## API reference',
         '',
