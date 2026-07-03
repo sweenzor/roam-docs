@@ -1,9 +1,9 @@
 # Roam Research Developer Documentation — full export
 
-> Complete markdown export of Roam's official developer-documentation graph
+> Complete markdown export of Roam Research's official developer-documentation graph
 > (https://roamresearch.com/#/app/developer-documentation), plus a live-introspected
 > inventory of window.roamAlphaAPI v1.1.2.
-> Exported 2026-07-03T15:59:08.478Z. Notation: [[Page]] = Roam page link, ((uid)) refs are resolved inline.
+> Exported 2026-07-03T15:59:08.478Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
 
 ## Table of contents
 
@@ -7792,7 +7792,7 @@
 
 # Appendix: window.roamAlphaAPI function inventory (live-introspected)
 
-Every callable on `window.roamAlphaAPI`, captured from a running Roam session.
+Every callable on `window.roamAlphaAPI`, captured from a running Roam Research session.
 Full TypeScript signatures: /types/roam-alpha-api.d.ts
 
 - window.roamAlphaAPI.createBlock(…) — 1 arg(s)

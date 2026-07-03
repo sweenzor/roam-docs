@@ -238,10 +238,10 @@ if (fs.existsSync(dtsPath)) {
   const out = [
     '# Roam Research Developer Documentation — full export',
     '',
-    `> Complete markdown export of Roam's official developer-documentation graph`,
+    `> Complete markdown export of Roam Research's official developer-documentation graph`,
     `> (https://roamresearch.com/#/app/developer-documentation), plus a live-introspected`,
     `> inventory of window.roamAlphaAPI v${surface.roamAlphaAPI.apiVersion?.value || ''}.`,
-    `> Exported ${graph.exportedAt}. Notation: [[Page]] = Roam page link, ((uid)) refs are resolved inline.`,
+    `> Exported ${graph.exportedAt}. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.`,
     '',
     '## Table of contents',
     '',
@@ -260,7 +260,7 @@ if (fs.existsSync(dtsPath)) {
     '',
     '# Appendix: window.roamAlphaAPI function inventory (live-introspected)',
     '',
-    'Every callable on `window.roamAlphaAPI`, captured from a running Roam session.',
+    'Every callable on `window.roamAlphaAPI`, captured from a running Roam Research session.',
     'Full TypeScript signatures: /types/roam-alpha-api.d.ts',
     '',
     ...fnInventory.map((f) => `- window.roamAlphaAPI.${f.path}(${'…'.repeat(Math.min(f.args, 1))}) — ${f.args} arg(s)`),
@@ -278,11 +278,11 @@ if (fs.existsSync(dtsPath)) {
 // ---------------------------------------------------------------------------
 // llms.txt (index)
 const DESCRIPTIONS = {
-  'Developer Hub': 'Entry point / map of all Roam developer documentation',
+  'Developer Hub': 'Entry point / map of all Roam Research developer documentation',
   'Roam Alpha API': 'The frontend JS API (window.roamAlphaAPI): datalog q/pull, block & page CRUD, UI control, file storage',
   'Roam Depot/Extension API': 'Extension API passed to Depot extensions (settings panels, commands, lifecycle)',
   'Roam Depot/Extensions': 'How to build, test and publish Roam Depot extensions',
-  'roam/css': 'Theming Roam with custom CSS via the roam/css page',
+  'roam/css': 'Theming Roam Research with custom CSS via the roam/css page',
   'roam/js': 'Running custom JavaScript in a graph via roam/js blocks',
   'roam/cljs': 'Running ClojureScript in a graph',
   'roam/render': 'Custom components rendered inside blocks (ClojureScript/Reagent)',
@@ -290,8 +290,8 @@ const DESCRIPTIONS = {
   'Roam Append API': 'Append-only HTTP API for capture (works with encrypted graphs)',
   'Yet-to-release updates': 'API changes announced but not yet released',
   'Available Libraries': 'Official SDKs and community libraries',
-  'Contact Us': 'How to reach the Roam developer team',
-  'Local API': 'Local HTTP API exposed by the Roam desktop app',
+  'Contact Us': 'How to reach the Roam Research developer team',
+  'Local API': 'Local HTTP API exposed by the Roam Research desktop app',
 };
 {
   const link = (label, href, desc) => `- [${label}](${BASE}${href})${desc ? `: ${desc}` : ''}`;
@@ -300,10 +300,10 @@ const DESCRIPTIONS = {
   const out = [
     '# Roam Research Developer Documentation',
     '',
-    '> Markdown mirror of the official Roam developer docs graph, refreshed automatically,',
+    '> Markdown mirror of the official Roam Research developer docs graph, refreshed automatically,',
     `> plus live-introspected TypeScript definitions for window.roamAlphaAPI (v${surface.roamAlphaAPI.apiVersion?.value || '?'})`,
     '> and copy-pasteable examples. Sources of truth: the public developer-documentation',
-    '> graph and a running Roam session; regenerated on a schedule.',
+    '> graph and a running Roam Research session; regenerated on a schedule.',
     '',
     `Last export: ${graph.exportedAt}`,
     '',
@@ -346,7 +346,7 @@ const DESCRIPTIONS = {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roam Developer Docs — llms.txt mirror</title>
+<title>Roam Research Developer Docs — llms.txt mirror</title>
 <style>
   body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
   @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
@@ -355,7 +355,7 @@ const DESCRIPTIONS = {
 </style>
 </head>
 <body>
-<h1>Roam Developer Docs</h1>
+<h1>Roam Research Developer Docs</h1>
 <p>A machine-friendly mirror of Roam Research's official
 <a href="https://roamresearch.com/#/app/developer-documentation">developer-documentation graph</a>,
 regenerated on a schedule. Point your AI coding tool here.</p>

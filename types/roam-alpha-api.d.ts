@@ -16,7 +16,7 @@ export {};
 // ---------------------------------------------------------------------------
 // Shared types
 
-/** 9-character Roam uid, e.g. "nNdE8rkMx". Daily note pages use "MM-DD-YYYY". */
+/** 9-character Roam Research uid, e.g. "nNdE8rkMx". Daily note pages use "MM-DD-YYYY". */
 export type RoamUid = string;
 
 /** Datalog entity id: a numeric db id or an entity lookup like `[:block/uid "abc123xyz"]`. */
@@ -254,7 +254,7 @@ export interface RoamAlphaAPI {
 
     backend: {
       /**
-       * Runs the query on Roam's backend rather than the local datascript db.
+       * Runs the query on Roam Research's backend rather than the local datascript db.
        * Useful before local sync completes; slower per-call.
        */
       q(query: string, ...args: unknown[]): Promise<any>;
@@ -270,7 +270,7 @@ export interface RoamAlphaAPI {
     undo(): Promise<void>;
     redo(): Promise<void>;
 
-    /** Run a Roam {{query}} (the block-embeddable query syntax, not datalog). @undocumented */
+    /** Run a Roam Research {{query}} (the block-embeddable query syntax, not datalog). @undocumented */
     roamQuery(query: string): unknown;
     /** @undocumented Text search (sync). */
     search(query: string): unknown;
@@ -307,7 +307,7 @@ export interface RoamAlphaAPI {
     };
 
     /**
-     * AI/agent-oriented read APIs (these power Roam's MCP server).
+     * AI/agent-oriented read APIs (these power Roam Research's MCP server).
      * @undocumented Discovered via live introspection.
      */
     ai: {
@@ -434,7 +434,7 @@ export interface RoamAlphaAPI {
         el: HTMLElement;
         "hide-mentions?"?: boolean;
       }): void;
-      /** Render a string of Roam-flavored markdown. */
+      /** Render a string of Roam Research-flavored markdown. */
       renderString(args: { string: string; el: HTMLElement }): void;
       renderSearch(args: {
         "search-query-str": string;
@@ -479,7 +479,7 @@ export interface RoamAlphaAPI {
     };
 
     /**
-     * React components for embedding Roam UI in custom React trees.
+     * React components for embedding Roam Research UI in custom React trees.
      * @undocumented Discovered via live introspection; props unverified.
      */
     react: {

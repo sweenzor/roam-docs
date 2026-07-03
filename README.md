@@ -3,7 +3,7 @@
 A machine-friendly mirror of Roam Research's official
 [developer-documentation graph](https://roamresearch.com/#/app/developer-documentation),
 built for AI coding tools (Claude, ChatGPT, Cursor, …) that can't read docs that live
-inside a Roam graph. Served as a static site on Cloudflare Pages.
+inside a Roam Research graph. Served as a static site on Cloudflare Pages.
 
 ## What's published (everything under `public/`)
 
@@ -51,7 +51,7 @@ docker run --rm -v "$PWD":/work -w /work/scripts mcr.microsoft.com/playwright:v1
 
 - The graph is pulled via datalog (`q`/recursive `pull`), not DOM scraping; the browser
   is only the runtime that hosts the API. With a read-only `roam-graph-token` for the
-  graph (only Roam can mint one — ask in #developers on their Slack), `export.mjs`
+  graph (only Roam Research can mint one — ask in #developers on their Slack), `export.mjs`
   switches to the official REST API automatically via the `ROAM_API_TOKEN` secret.
-- `types/roam-alpha-api.d.ts` is hand-maintained; CI warns when Roam ships a new
+- `types/roam-alpha-api.d.ts` is hand-maintained; CI warns when Roam Research ships a new
   function that isn't typed yet (the generator's coverage check).

@@ -1,9 +1,9 @@
-// Exports the public Roam developer-documentation graph to data/graph.json.
+// Exports the public Roam Research developer-documentation graph to data/graph.json.
 //
 // Two transports, in order of preference:
 //   1. Roam Backend API (official REST) — used when ROAM_API_TOKEN is set.
 //      Requires a read-only roam-graph-token for the graph (only the graph
-//      owner can mint one; ask the Roam team in #developers on their Slack).
+//      owner can mint one; ask the Roam Research team in #developers on their Slack).
 //      Plain HTTP: runs anywhere, no browser needed.
 //   2. Headless Chromium fallback (anonymous read-only session on the public
 //      graph, driving the same datalog API via window.roamAlphaAPI).

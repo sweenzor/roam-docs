@@ -1,19 +1,19 @@
 # Roam Research Developer Documentation
 
-> Markdown mirror of the official Roam developer docs graph, refreshed automatically,
+> Markdown mirror of the official Roam Research developer docs graph, refreshed automatically,
 > plus live-introspected TypeScript definitions for window.roamAlphaAPI (v1.1.2)
 > and copy-pasteable examples. Sources of truth: the public developer-documentation
-> graph and a running Roam session; regenerated on a schedule.
+> graph and a running Roam Research session; regenerated on a schedule.
 
 Last export: 2026-07-03T15:59:08.478Z
 
 ## Docs
 
-- [Developer Hub](https://roam-docs.pages.dev/docs/developer-hub.md): Entry point / map of all Roam developer documentation
+- [Developer Hub](https://roam-docs.pages.dev/docs/developer-hub.md): Entry point / map of all Roam Research developer documentation
 - [Roam Alpha API](https://roam-docs.pages.dev/docs/roam-alpha-api.md): The frontend JS API (window.roamAlphaAPI): datalog q/pull, block & page CRUD, UI control, file storage
 - [Roam Depot/Extension API](https://roam-docs.pages.dev/docs/roam-depot-extension-api.md): Extension API passed to Depot extensions (settings panels, commands, lifecycle)
 - [Roam Depot/Extensions](https://roam-docs.pages.dev/docs/roam-depot-extensions.md): How to build, test and publish Roam Depot extensions
-- [roam/css](https://roam-docs.pages.dev/docs/roam-css.md): Theming Roam with custom CSS via the roam/css page
+- [roam/css](https://roam-docs.pages.dev/docs/roam-css.md): Theming Roam Research with custom CSS via the roam/css page
 - [roam/js](https://roam-docs.pages.dev/docs/roam-js.md): Running custom JavaScript in a graph via roam/js blocks
 - [roam/cljs](https://roam-docs.pages.dev/docs/roam-cljs.md): Running ClojureScript in a graph
 - [roam/render](https://roam-docs.pages.dev/docs/roam-render.md): Custom components rendered inside blocks (ClojureScript/Reagent)
@@ -21,8 +21,8 @@ Last export: 2026-07-03T15:59:08.478Z
 - [Roam Append API](https://roam-docs.pages.dev/docs/roam-append-api.md): Append-only HTTP API for capture (works with encrypted graphs)
 - [Yet-to-release updates](https://roam-docs.pages.dev/docs/yet-to-release-updates.md): API changes announced but not yet released
 - [Available Libraries](https://roam-docs.pages.dev/docs/available-libraries.md): Official SDKs and community libraries
-- [Contact Us](https://roam-docs.pages.dev/docs/contact-us.md): How to reach the Roam developer team
-- [Local API](https://roam-docs.pages.dev/docs/local-api.md): Local HTTP API exposed by the Roam desktop app
+- [Contact Us](https://roam-docs.pages.dev/docs/contact-us.md): How to reach the Roam Research developer team
+- [Local API](https://roam-docs.pages.dev/docs/local-api.md): Local HTTP API exposed by the Roam Research desktop app
 
 ## API reference
 
