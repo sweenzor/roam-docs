@@ -17,7 +17,7 @@ The graph name is the first URL path segment:
 | Path | What it is |
 | --- | --- |
 | `/llms.txt` | [llms.txt](https://llmstxt.org) index of everything on the site |
-| `/<graph>/llms-full.txt` | Full markdown export of one graph, one file per graph. The `developer-documentation` one ends with mirror-generated appendices (labeled as such in the file — additions by this project, not content from the official graph): a live-introspected inventory of all `window.roamAlphaAPI` functions, the copy-pasteable examples, and the full TypeScript definitions inlined, so the file is self-contained for agents |
+| `/<graph>/llms-full.txt` | Full markdown export of one graph, one file per graph. The `developer-documentation` one ends with mirror-generated appendices (labeled as such in the file — additions by this project, not content from the official graph): the live-introspected `window.roamAlphaAPI` function inventory and its changelog across refreshes, probed return values, the datalog attribute inventory, the copy-pasteable examples, and the full TypeScript definitions inlined — self-contained for agents |
 | `/<graph>/<page>.md` | One markdown file per page of each graph |
 | `/<graph>/release-notes.md` | Dated daily-note updates from that graph, when it has any |
 | `/types/roam-alpha-api.d.ts` | TypeScript definitions for `window.roamAlphaAPI` — coverage verified against live introspection, including functions missing from the official docs (e.g. `depot.getInstalledExtensions`) |
