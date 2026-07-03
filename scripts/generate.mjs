@@ -408,11 +408,7 @@ regenerated on a schedule. Point your AI coding tool here.</p>
   <li><a href="/help/llms-full.txt"><code>help/llms-full.txt</code></a> — all user documentation in one file</li>
   <li><a href="/types/roam-alpha-api.d.ts"><code>roam-alpha-api.d.ts</code></a> — TypeScript definitions for <code>window.roamAlphaAPI</code> (${fnInventory.length} functions, live-introspected)</li>
 </ul>
-<div class="contrib">
-  <strong><a href="${REPO_URL}">Open source on GitHub</a></strong> — contributions welcome!
-  Better type signatures, more examples, rendering fixes, new doc sources: issues and PRs
-  are appreciated at <a href="${REPO_URL}">sweenzor/roam-docs</a>.
-</div>
+<p><a href="${REPO_URL}">Contributions welcome</a></p>
 <h2>Developer documentation</h2>
 <ul>
 ${pageList(dev.pageMeta, 'docs')}
