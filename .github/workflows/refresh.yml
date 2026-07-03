@@ -19,11 +19,12 @@ jobs:
       - name: Export graphs + introspect API
         working-directory: scripts
         env:
-          # Optional, per graph: graphs.json names the env var holding each
-          # graph's read-only roam-graph-token ("tokenEnv"). When set, the
-          # export switches from the headless-browser fallback to the official
-          # Backend API automatically.
-          ROAM_API_TOKEN: ${{ secrets.ROAM_API_TOKEN }}
+          # Read-only roam-graph-tokens, one repo secret per graph; graphs.json
+          # names the env var each graph reads ("tokenEnv"). When set, the
+          # export uses the official Backend API instead of the
+          # headless-browser fallback.
+          ROAM_API_TOKEN_DEVELOPER_DOCUMENTATION: ${{ secrets.ROAM_API_TOKEN_DEVELOPER_DOCUMENTATION }}
+          ROAM_API_TOKEN_HELP: ${{ secrets.ROAM_API_TOKEN_HELP }}
         run: |
           npm install --no-audit --no-fund --loglevel=error
           node export.mjs   # exports every graph in graphs.json

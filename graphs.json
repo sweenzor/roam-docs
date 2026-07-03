@@ -3,7 +3,7 @@
     "name": "developer-documentation",
     "title": "Developer documentation",
     "description": "Roam Research's official developer docs: window.roamAlphaAPI, extensions, the Backend API.",
-    "tokenEnv": "ROAM_API_TOKEN",
+    "tokenEnv": "ROAM_API_TOKEN_DEVELOPER_DOCUMENTATION",
     "apiAppendices": true,
     "descriptions": {
       "Developer Hub": "Entry point / map of all Roam Research developer documentation",
@@ -25,6 +25,7 @@
   {
     "name": "help",
     "title": "Help & user documentation",
-    "description": "Roam Research's official help graph: the product's user documentation."
+    "description": "Roam Research's official help graph: the product's user documentation.",
+    "tokenEnv": "ROAM_API_TOKEN_HELP"
   }
 ]
