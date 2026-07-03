@@ -1,11 +1,12 @@
-// Builds the Cloudflare Pages site (public/) from graphs.json + data/graph-*.json
-// + data/api-surface.json:
+// Builds the Cloudflare Pages site (public/) from graphs.json plus the data/
+// files written by export.mjs and introspect.mjs:
 //   public/llms.txt              — llms.txt index for the whole site (https://llmstxt.org)
+//   public/llms-full.txt         — every graph's full export concatenated
 //   public/<graph>/llms-full.txt — one full markdown export per graph
 //   public/<graph>/<slug>.md     — one markdown file per page of each graph
 //   public/types/…               — TypeScript definitions (copied from types/)
 //   public/examples/…            — copy-pasteable examples (copied from examples/)
-//   public/index.html            — landing page
+//   public/index.html, 404.html  — landing and error pages
 //   public/_redirects            — legacy-URL redirects (Cloudflare Pages)
 // The graphs to publish are listed in graphs.json at the repo root; the graph
 // name is the first URL path segment. Also checks that every introspected API
@@ -183,7 +184,7 @@ function processGraph(cfg) {
     fs.writeFileSync(path.join(PUBLIC, outDir, 'release-notes.md'), releaseNotes);
   }
 
-  return { cfg, graph, ordered, pageMeta, changelogDnps, releaseNotes, renderPage };
+  return { cfg, graph, ordered, pageMeta, releaseNotes, renderPage };
 }
 
 // ---------------------------------------------------------------------------
@@ -206,6 +207,7 @@ fs.rmSync(PUBLIC, { recursive: true, force: true });
 fs.mkdirSync(PUBLIC, { recursive: true });
 
 const graphs = GRAPH_CONFIGS.map((cfg) => processGraph(cfg));
+// All graphs export in one pipeline run; the first one's timestamp stands for the batch.
 const exportedAt = graphs[0].graph.exportedAt;
 
 // ---- copy types/ and examples/ ----
@@ -229,7 +231,7 @@ let dtsNote = '';
   if (missing.length) {
     console.warn(`WARNING: ${missing.length} introspected API function(s) missing from .d.ts:`);
     for (const m of missing) console.warn(`  window.roamAlphaAPI.${m.path}`);
-    dtsNote = ` (${missing.length} newly-discovered functions not yet typed — see llms-full.txt inventory)`;
+    dtsNote = ` (${missing.length} newly-discovered functions not yet typed — see the llms-full.txt function inventory appendix)`;
   } else {
     console.log(`.d.ts coverage OK: all ${fnInventory.length} functions present.`);
   }

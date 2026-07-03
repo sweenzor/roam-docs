@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "export": "node export.mjs",
+    "introspect": "node introspect.mjs",
     "generate": "node generate.mjs"
   },
   "dependencies": {
