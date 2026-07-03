@@ -1,6 +1,6 @@
 {
  "graph": "developer-documentation",
- "exportedAt": "2026-07-03T19:06:03.658Z",
+ "exportedAt": "2026-07-03T19:31:23.452Z",
  "attributes": [
   {
    "attr": ":attrs/lookup",
@@ -64,7 +64,7 @@
   },
   {
    "attr": ":block/uid",
-   "entities": 4703,
+   "entities": 4705,
    "type": "string",
    "example": "\"hwhK9Kj-n\""
   },
@@ -82,13 +82,13 @@
   },
   {
    "attr": ":create/time",
-   "entities": 4321,
+   "entities": 4322,
    "type": "number",
    "example": "1619841442834"
   },
   {
    "attr": ":create/user",
-   "entities": 4320,
+   "entities": 4321,
    "type": "number",
    "example": "828"
   },
@@ -100,13 +100,13 @@
   },
   {
    "attr": ":edit/time",
-   "entities": 4786,
+   "entities": 4787,
    "type": "number",
    "example": "1636016072031"
   },
   {
    "attr": ":edit/user",
-   "entities": 4554,
+   "entities": 4555,
    "type": "number",
    "example": "828"
   },
@@ -142,25 +142,25 @@
   },
   {
    "attr": ":node/title",
-   "entities": 401,
+   "entities": 402,
    "type": "string",
    "example": "\"February 26th, 2026\""
   },
   {
    "attr": ":page/edit-nonce",
-   "entities": 401,
+   "entities": 402,
    "type": "string",
    "example": "\"BdToZgaT-\""
   },
   {
    "attr": ":page/edit-time",
-   "entities": 401,
+   "entities": 402,
    "type": "number",
    "example": "1615210312839"
   },
   {
    "attr": ":page/edit-user",
-   "entities": 401,
+   "entities": 402,
    "type": "number",
    "example": "828"
   },
@@ -172,13 +172,13 @@
   },
   {
    "attr": ":page/word-count",
-   "entities": 401,
+   "entities": 402,
    "type": "number",
    "example": "24"
   },
   {
    "attr": ":restrictions/prevent-clean",
-   "entities": 18,
+   "entities": 19,
    "type": "number",
    "example": "1763068662519"
   },
@@ -196,7 +196,7 @@
   },
   {
    "attr": ":token/description",
-   "entities": 2,
+   "entities": 3,
    "type": "string",
    "example": "\"roam-mcp CLI\""
   },
@@ -220,7 +220,7 @@
   },
   {
    "attr": ":user/display-page",
-   "entities": 9,
+   "entities": 10,
    "type": "number",
    "example": "<redacted>"
   },
@@ -238,19 +238,19 @@
   },
   {
    "attr": ":user/uid",
-   "entities": 139,
+   "entities": 140,
    "type": "string",
    "example": "<redacted>"
   },
   {
    "attr": ":version/id",
-   "entities": 54,
+   "entities": 55,
    "type": "string",
    "example": "\"0.11.0\""
   },
   {
    "attr": ":version/nonce",
-   "entities": 54,
+   "entities": 55,
    "type": "string",
    "example": "\"uuidb362776d-a585-47a2-9f06-c620f56de0e8\""
   },

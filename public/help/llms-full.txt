@@ -2,7 +2,7 @@
 
 > Complete markdown export of the public Roam Research graph "help"
 > (https://roamresearch.com/#/app/help). Roam Research's official help graph: the product's user documentation.
-> Exported 2026-07-03T16:36:48.284Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
+> Exported 2026-07-03T19:31:18.302Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
 > Also on this site: Developer documentation — https://roamdocs.fyi/developer-documentation/llms-full.txt
 
 ## Table of contents
@@ -18,8 +18,8 @@
 - Diagram
 - Roam-specific :q additions
 - Themes
-- What You Can't Say
 - Block References
+- What You Can't Say
 - Formatting
 - Navigation
 - Beating the Averages
@@ -35,16 +35,16 @@
 - Blocks
 - Graphs and Settings
 - Search
-- Why you can't say
 - Callouts
-- Zapier Integration
+- Why you can't say
 - Encrypted Graphs
+- Zapier Integration
 - Mermaid Diagrams
-- Right Sidebar
-- / Commands
 - Security
-- Query
+- / Commands
+- Right Sidebar
 - Courses
+- Query
 - Updating Roam
 - Create API Tokens
 - Articles
@@ -54,76 +54,76 @@
 - roam/render
 - Filter
 - Welcome to Roam v2
-- Pages
 - Zettelkasten
-- All Pages
+- Pages
 - Graph Overview
+- All Pages
+- Daily Notes
 - Pomodoro timer
 - Hosted Graph
-- Daily Notes
 - Community
-- Extensions
-- Beginner's Guide
 - Precise Links
-- Templates
+- Beginner's Guide
+- Extensions
 - Audio Player
+- Templates
 - Roam Help
 - roam/css
-- Notable Graphs
 - Miscellaneous
+- Notable Graphs
 - Calculator
-- Personal CRM
+- Project Management
 - News and Press
 - Table
-- Project Management
-- Video Embed
+- Personal CRM
 - Upload Files
-- Workflows
+- Video Embed
 - Install Roam
-- Longform writing
+- Workflows
 - Mentions
+- Longform writing
 - Images
-- Journaling
 - Research
+- Journaling
 - Export
-- Long Videos
-- Date picker
-- Attributes
-- Bidirectional linking
-- Studying
 - Meeting notes
+- Long Videos
+- Studying
+- Attributes
+- Date picker
+- Bidirectional linking
 - Code Block
 - Page References
-- Scripture Study
 - Sharing
-- Word count
-- Cancelling your membership during your free trial
 - Spanish
+- Word count
+- Scripture Study
 - Console Logs
+- Cancelling your membership during your free trial
 - Block Search
-- Roam Depot
 - Character count
-- Why Roam?
-- Chinese
 - Current time
+- Why Roam?
 - Adding soft line breaks in a block
-- Import
-- Version Control
+- Roam Depot
+- Chinese
+- Wiki
 - Kids
 - Left Sidebar
-- Wiki
-- Today
+- Version Control
+- Import
 - Slider
+- Today
 - Russian
-- Numbered List Extension
-- Encrypted Block
 - Tomorrow
+- Encrypted Block
+- Numbered List Extension
 - Tags
+- Roam Slack
 - Alexander Rink
 - Korean
-- Latex
 - Key Commands
-- Roam Slack
+- Latex
 - Linked References
 - Release notes (daily-note updates)
 
@@ -9124,107 +9124,6 @@
 
 ---
 
-# What You Can't Say
-
-- [[Essay]] [[Paul Graham]]
-- [[Full Text]] 
-  - January 2004
-  - 
-    - Have you ever seen an old photo of yourself and been embarrassed at the way you looked? __Did we actually dress like that?__ We did. And we had no idea how silly we looked. It's the nature of fashion to be invisible, in the same way the movement of the earth is invisible to all of us riding on it.
-    - What scares me is that there are moral fashions too. They're just as arbitrary, and just as invisible to most people. But they're much more dangerous. Fashion is mistaken for good design; moral fashion is mistaken for good. Dressing oddly gets you laughed at. Violating moral fashions can get you fired, ostracized, imprisoned, or even killed.
-    - If you could travel back in a time machine, one thing would be true no matter where you went: you'd have to watch what you said. Opinions we consider harmless could have gotten you in big trouble. I've already said at least one thing that would have gotten me in big trouble in most of Europe in the seventeenth century, and did get Galileo in big trouble when he said it — that the earth moves. [1]
-    - It seems to be a constant throughout history: In every period, people believed things that were just ridiculous, and believed them so strongly that you would have gotten in terrible trouble for saying otherwise.
-    - Is our time any different? To anyone who has read any amount of history, the answer is almost certainly no. It would be a remarkable coincidence if ours were the first era to get everything just right.
-    - It's tantalizing to think we believe things that people in the future will find ridiculous. What __would__ someone coming back to visit us in a time machine have to be careful not to say? That's what I want to study here. But I want to do more than just shock everyone with the heresy du jour. I want to find general recipes for discovering what you can't say, in any era.
-  - **The Conformist Test**
-    - Let's start with a test: Do you have any opinions that you would be reluctant to express in front of a group of your peers?
-    - If the answer is no, you might want to stop and think about that. If everything you believe is something you're supposed to believe, could that possibly be a coincidence? Odds are it isn't. Odds are you just think what you're told.
-    - The other alternative would be that you independently considered every question and came up with the exact same answers that are now considered acceptable. That seems unlikely, because you'd also have to make the same mistakes. Mapmakers deliberately put slight mistakes in their maps so they can tell when someone copies them. If another map has the same mistake, that's very convincing evidence.
-    - Like every other era in history, our moral map almost certainly contains a few mistakes. And anyone who makes the same mistakes probably didn't do it by accident. It would be like someone claiming they had independently decided in 1972 that bell-bottom jeans were a good idea.
-    - If you believe everything you're supposed to now, how can you be sure you wouldn't also have believed everything you were supposed to if you had grown up among the plantation owners of the pre-Civil War South, or in Germany in the 1930s — or among the Mongols in 1200, for that matter? Odds are you would have.
-    - Back in the era of terms like "well-adjusted," the idea seemed to be that there was something wrong with you if you thought things you didn't dare say out loud. This seems backward. Almost certainly, there is something wrong with you if you __don't__ think things you don't dare say out loud.
-  - **Trouble**
-    - What can't we say? One way to find these ideas is simply to look at things people do say, and get in trouble for. [2]
-    - Of course, we're not just looking for things we can't say. We're looking for things we can't say that are true, or at least have enough chance of being true that the question should remain open. But many of the things people get in trouble for saying probably do make it over this second, lower threshold. No one gets in trouble for saying that 2 + 2 is 5, or that people in Pittsburgh are ten feet tall. Such obviously false statements might be treated as jokes, or at worst as evidence of insanity, but they are not likely to make anyone mad. The statements that make people mad are the ones they worry might be believed. I suspect the statements that make people maddest are those they worry might be true.
-    - If Galileo had said that people in Padua were ten feet tall, he would have been regarded as a harmless eccentric. Saying the earth orbited the sun was another matter. The church knew this would set people thinking.
-    - Certainly, as we look back on the past, this rule of thumb works well. A lot of the statements people got in trouble for seem harmless now. So it's likely that visitors from the future would agree with at least some of the statements that get people in trouble today. Do we have no Galileos? Not likely.
-    - To find them, keep track of opinions that get people in trouble, and start asking, could this be true? Ok, it may be heretical (or whatever modern equivalent), but might it also be true?
-  - **Heresy**
-    - This won't get us all the answers, though. What if no one happens to have gotten in trouble for a particular idea yet? What if some idea would be so radioactively controversial that no one would dare express it in public? How can we find these too?
-    - Another approach is to follow that word, heresy. In every period of history, there seem to have been labels that got applied to statements to shoot them down before anyone had a chance to ask if they were true or not. "Blasphemy", "sacrilege", and "heresy" were such labels for a good part of western history, as in more recent times "indecent", "improper", and "unamerican" have been. By now these labels have lost their sting. They always do. By now they're mostly used ironically. But in their time, they had real force.
-    - The word "defeatist", for example, has no particular political connotations now. But in Germany in 1917 it was a weapon, used by Ludendorff in a purge of those who favored a negotiated peace. At the start of World War II it was used extensively by Churchill and his supporters to silence their opponents. In 1940, any argument against Churchill's aggressive policy was "defeatist". Was it right or wrong? Ideally, no one got far enough to ask that.
-    - We have such labels today, of course, quite a lot of them, from the all-purpose "inappropriate" to the dreaded "divisive." In any period, it should be easy to figure out what such labels are, simply by looking at what people call ideas they disagree with besides untrue. When a politician says his opponent is mistaken, that's a straightforward criticism, but when he attacks a statement as "divisive" or "racially insensitive" instead of arguing that it's false, we should start paying attention.
-    - So another way to figure out which of our taboos future generations will laugh at is to start with the labels. Take a label — "sexist", for example — and try to think of some ideas that would be called that. Then for each ask, might this be true?
-    - Just start listing ideas at random? Yes, because they won't really be random. The ideas that come to mind first will be the most plausible ones. They'll be things you've already noticed but didn't let yourself think.
-    - In 1989 some clever researchers tracked the eye movements of radiologists as they scanned chest images for signs of lung cancer. [3] They found that even when the radiologists missed a cancerous lesion, their eyes had usually paused at the site of it. Part of their brain knew there was something there; it just didn't percolate all the way up into conscious knowledge. I think many interesting heretical thoughts are already mostly formed in our minds. If we turn off our self-censorship temporarily, those will be the first to emerge.
-  - **Time and Space**
-    - If we could look into the future it would be obvious which of our taboos they'd laugh at. We can't do that, but we can do something almost as good: we can look into the past. Another way to figure out what we're getting wrong is to look at what used to be acceptable and is now unthinkable.
-    - Changes between the past and the present sometimes do represent progress. In a field like physics, if we disagree with past generations it's because we're right and they're wrong. But this becomes rapidly less true as you move away from the certainty of the hard sciences. By the time you get to social questions, many changes are just fashion. The age of consent fluctuates like hemlines.
-    - We may imagine that we are a great deal smarter and more virtuous than past generations, but the more history you read, the less likely this seems. People in past times were much like us. Not heroes, not barbarians. Whatever their ideas were, they were ideas reasonable people could believe.
-    - So here is another source of interesting heresies. Diff present ideas against those of various past cultures, and see what you get. [4] Some will be shocking by present standards. Ok, fine; but which might also be true?
-    - You don't have to look into the past to find big differences. In our own time, different societies have wildly varying ideas of what's ok and what isn't. So you can try diffing other cultures' ideas against ours as well. (The best way to do that is to visit them.) Any idea that's considered harmless in a significant percentage of times and places, and yet is taboo in ours, is a candidate for something we're mistaken about.
-    - For example, at the high water mark of political correctness in the early 1990s, Harvard distributed to its faculty and staff a brochure saying, among other things, that it was inappropriate to compliment a colleague or student's clothes. No more "nice shirt." I think this principle is rare among the world's cultures, past or present. There are probably more where it's considered especially polite to compliment someone's clothing than where it's considered improper. Odds are this is, in a mild form, an example of one of the taboos a visitor from the future would have to be careful to avoid if he happened to set his time machine for Cambridge, Massachusetts, 1992. [5]
-  - **Prigs**
-    - Of course, if they have time machines in the future they'll probably have a separate reference manual just for Cambridge. This has always been a fussy place, a town of i dotters and t crossers, where you're liable to get both your grammar and your ideas corrected in the same conversation. And that suggests another way to find taboos. Look for prigs, and see what's inside their heads.
-    - Kids' heads are repositories of all our taboos. It seems fitting to us that kids' ideas should be bright and clean. The picture we give them of the world is not merely simplified, to suit their developing minds, but sanitized as well, to suit our ideas of what kids ought to think. [6]
-    - You can see this on a small scale in the matter of dirty words. A lot of my friends are starting to have children now, and they're all trying not to use words like "fuck" and "shit" within baby's hearing, lest baby start using these words too. But these words are part of the language, and adults use them all the time. So parents are giving their kids an inaccurate idea of the language by not using them. Why do they do this? Because they don't think it's fitting that kids should use the whole language. We like children to seem innocent. [7]
-    - Most adults, likewise, deliberately give kids a misleading view of the world. One of the most obvious examples is Santa Claus. We think it's cute for little kids to believe in Santa Claus. I myself think it's cute for little kids to believe in Santa Claus. But one wonders, do we tell them this stuff for their sake, or for ours?
-    - I'm not arguing for or against this idea here. It is probably inevitable that parents should want to dress up their kids' minds in cute little baby outfits. I'll probably do it myself. The important thing for our purposes is that, as a result, a well brought-up teenage kid's brain is a more or less complete collection of all our taboos — and in mint condition, because they're untainted by experience. Whatever we think that will later turn out to be ridiculous, it's almost certainly inside that head.
-    - How do we get at these ideas? By the following thought experiment. Imagine a kind of latter-day Conrad character who has worked for a time as a mercenary in Africa, for a time as a doctor in Nepal, for a time as the manager of a nightclub in Miami. The specifics don't matter — just someone who has seen a lot. Now imagine comparing what's inside this guy's head with what's inside the head of a well-behaved sixteen year old girl from the suburbs. What does he think that would shock her? He knows the world; she knows, or at least embodies, present taboos. Subtract one from the other, and the result is what we can't say.
-  - **Mechanism**
-    - I can think of one more way to figure out what we can't say: to look at how taboos are created. How do moral fashions arise, and why are they adopted? If we can understand this mechanism, we may be able to see it at work in our own time.
-    - Moral fashions don't seem to be created the way ordinary fashions are. Ordinary fashions seem to arise by accident when everyone imitates the whim of some influential person. The fashion for broad-toed shoes in late fifteenth century Europe began because Charles VIII of France had six toes on one foot. The fashion for the name Gary began when the actor Frank Cooper adopted the name of a tough mill town in Indiana. Moral fashions more often seem to be created deliberately. When there's something we can't say, it's often because some group doesn't want us to.
-    - The prohibition will be strongest when the group is nervous. The irony of Galileo's situation was that he got in trouble for repeating Copernicus's ideas. Copernicus himself didn't. In fact, Copernicus was a canon of a cathedral, and dedicated his book to the pope. But by Galileo's time the church was in the throes of the Counter-Reformation and was much more worried about unorthodox ideas.
-    - To launch a taboo, a group has to be poised halfway between weakness and power. A confident group doesn't need taboos to protect it. It's not considered improper to make disparaging remarks about Americans, or the English. And yet a group has to be powerful enough to enforce a taboo. Coprophiles, as of this writing, don't seem to be numerous or energetic enough to have had their interests promoted to a lifestyle.
-    - I suspect the biggest source of moral taboos will turn out to be power struggles in which one side only barely has the upper hand. That's where you'll find a group powerful enough to enforce taboos, but weak enough to need them.
-    - Most struggles, whatever they're really about, will be cast as struggles between competing ideas. The English Reformation was at bottom a struggle for wealth and power, but it ended up being cast as a struggle to preserve the souls of Englishmen from the corrupting influence of Rome. It's easier to get people to fight for an idea. And whichever side wins, their ideas will also be considered to have triumphed, as if God wanted to signal his agreement by selecting that side as the victor.
-    - We often like to think of World War II as a triumph of freedom over totalitarianism. We conveniently forget that the Soviet Union was also one of the winners.
-    - I'm not saying that struggles are never about ideas, just that they will always be made to seem to be about ideas, whether they are or not. And just as there is nothing so unfashionable as the last, discarded fashion, there is nothing so wrong as the principles of the most recently defeated opponent. Representational art is only now recovering from the approval of both Hitler and Stalin. [8]
-    - Although moral fashions tend to arise from different sources than fashions in clothing, the mechanism of their adoption seems much the same. The early adopters will be driven by ambition: self-consciously cool people who want to distinguish themselves from the common herd. As the fashion becomes established they'll be joined by a second, much larger group, driven by fear. [9] This second group adopt the fashion not because they want to stand out but because they are afraid of standing out.
-    - So if you want to figure out what we can't say, look at the machinery of fashion and try to predict what it would make unsayable. What groups are powerful but nervous, and what ideas would they like to suppress? What ideas were tarnished by association when they ended up on the losing side of a recent struggle? If a self-consciously cool person wanted to differentiate himself from preceding fashions (e.g. from his parents), which of their ideas would he tend to reject? What are conventional-minded people afraid of saying?
-      - This technique won't find us all the things we can't say. I can think of some that aren't the result of any recent struggle. Many of our taboos are rooted deep in the past. But this approach, combined with the preceding four, will turn up a good number of unthinkable ideas.
-  - **Why**
-    - Some would ask, why would one want to do this? Why deliberately go poking around among nasty, disreputable ideas? Why look under rocks?
-    - I do it, first of all, for the same reason I did look under rocks as a kid: plain curiosity. And I'm especially curious about anything that's forbidden. Let me see and decide for myself.
-    - Second, I do it because I don't like the idea of being mistaken. If, like other eras, we believe things that will later seem ridiculous, I want to know what they are so that I, at least, can avoid believing them.
-    - Third, I do it because it's good for the brain. To do good work you need a brain that can go anywhere. And you especially need a brain that's in the habit of going where it's not supposed to.
-    - Great work tends to grow out of ideas that others have overlooked, and no idea is so overlooked as one that's unthinkable. Natural selection, for example. It's so simple. Why didn't anyone think of it before? Well, that is all too obvious. Darwin himself was careful to tiptoe around the implications of his theory. He wanted to spend his time thinking about biology, not arguing with people who accused him of being an atheist.
-    - In the sciences, especially, it's a great advantage to be able to question assumptions. The m.o. of scientists, or at least of the good ones, is precisely that: look for places where conventional wisdom is broken, and then try to pry apart the cracks and see what's underneath. That's where new theories come from.
-    - A good scientist, in other words, does not merely ignore conventional wisdom, but makes a special effort to break it. Scientists go looking for trouble. This should be the m.o. of any scholar, but scientists seem much more willing to look under rocks. [10]
-    - Why? It could be that the scientists are simply smarter; most physicists could, if necessary, make it through a PhD program in French literature, but few professors of French literature could make it through a PhD program in physics. Or it could be because it's clearer in the sciences whether theories are true or false, and this makes scientists bolder. (Or it could be that, because it's clearer in the sciences whether theories are true or false, you have to be smart to get jobs as a scientist, rather than just a good politician.)
-    - Whatever the reason, there seems a clear correlation between intelligence and willingness to consider shocking ideas. This isn't just because smart people actively work to find holes in conventional thinking. I think conventions also have less hold over them to start with. You can see that in the way they dress.
-    - It's not only in the sciences that heresy pays off. In any competitive field, you can [win big](http://www.paulgraham.com/avg.html) by seeing things that others daren't. And in every field there are probably heresies few dare utter. Within the US car industry there is a lot of hand-wringing now about declining market share. Yet the cause is so obvious that any observant outsider could explain it in a second: they make bad cars. And they have for so long that by now the US car brands are antibrands — something you'd buy a car despite, not because of. Cadillac stopped being the Cadillac of cars in about 1970. And yet I suspect no one dares say this. [11] Otherwise these companies would have tried to fix the problem.
-    - Training yourself to think unthinkable thoughts has advantages beyond the thoughts themselves. It's like stretching. When you stretch before running, you put your body into positions much more extreme than any it will assume during the run. If you can think things so outside the box that they'd make people's hair stand on end, you'll have no trouble with the small trips outside the box that people call innovative.
-  - **__Pensieri Stretti__**
-    - When you find something you can't say, what do you do with it? My advice is, don't say it. Or at least, pick your battles.
-    - Suppose in the future there is a movement to ban the color yellow. Proposals to paint anything yellow are denounced as "yellowist", as is anyone suspected of liking the color. People who like orange are tolerated but viewed with suspicion. Suppose you realize there is nothing wrong with yellow. If you go around saying this, you'll be denounced as a yellowist too, and you'll find yourself having a lot of arguments with anti-yellowists. If your aim in life is to rehabilitate the color yellow, that may be what you want. But if you're mostly interested in other questions, being labelled as a yellowist will just be a distraction. Argue with idiots, and you become an idiot.
-    - The most important thing is to be able to think what you want, not to say what you want. And if you feel you have to say everything you think, it may inhibit you from thinking improper thoughts. I think it's better to follow the opposite policy. Draw a sharp line between your thoughts and your speech. Inside your head, anything is allowed. Within my head I make a point of encouraging the most outrageous thoughts I can imagine. But, as in a secret society, nothing that happens within the building should be told to outsiders. The first rule of Fight Club is, you do not talk about Fight Club.
-    - When Milton was going to visit Italy in the 1630s, Sir Henry Wootton, who had been ambassador to Venice, told him his motto should be __"i pensieri stretti & il viso sciolto."__ Closed thoughts and an open face. Smile at everyone, and don't tell them what you're thinking. This was wise advice. Milton was an argumentative fellow, and the Inquisition was a bit restive at that time. But I think the difference between Milton's situation and ours is only a matter of degree. Every era has its heresies, and if you don't get imprisoned for them you will at least get in enough trouble that it becomes a complete distraction.
-    - I admit it seems cowardly to keep quiet. When I read about the harassment to which the Scientologists subject their critics [12], or that pro-Israel groups are "compiling dossiers" on those who speak out against Israeli human rights abuses [13], or about people being sued for violating the DMCA [14], part of me wants to say, "All right, you bastards, bring it on." The problem is, there are so many things you can't say. If you said them all you'd have no time left for your real work. You'd have to turn into Noam Chomsky. [15]
-    - The trouble with keeping your thoughts secret, though, is that you lose the advantages of discussion. Talking about an idea leads to more ideas. So the optimal plan, if you can manage it, is to have a few trusted friends you can speak openly to. This is not just a way to develop ideas; it's also a good rule of thumb for choosing friends. The people you can say heretical things to without getting jumped on are also the most interesting to know.
-  - **__Viso Sciolto?__**
-    - I don't think we need the __viso sciolto__ so much as the __pensieri stretti.__ Perhaps the best policy is to make it plain that you don't agree with whatever zealotry is current in your time, but not to be too specific about what you disagree with. Zealots will try to draw you out, but you don't have to answer them. If they try to force you to treat a question on their terms by asking "are you with us or against us?" you can always just answer "neither".
-    - Better still, answer "I haven't decided." That's what Larry Summers did when a group tried to put him in this position. Explaining himself later, he said "I don't do litmus tests." [16] A lot of the questions people get hot about are actually quite complicated. There is no prize for getting the answer quickly.
-    - If the anti-yellowists seem to be getting out of hand and you want to fight back, there are ways to do it without getting yourself accused of being a yellowist. Like skirmishers in an ancient army, you want to avoid directly engaging the main body of the enemy's troops. Better to harass them with arrows from a distance.
-    - One way to do this is to ratchet the debate up one level of abstraction. If you argue against censorship in general, you can avoid being accused of whatever heresy is contained in the book or film that someone is trying to censor. You can attack labels with meta-labels: labels that refer to the use of labels to prevent discussion. The spread of the term "political correctness" meant the beginning of the end of political correctness, because it enabled one to attack the phenomenon as a whole without being accused of any of the specific heresies it sought to suppress.
-    - Another way to counterattack is with metaphor. Arthur Miller undermined the House Un-American Activities Committee by writing a play, "The Crucible," about the Salem witch trials. He never referred directly to the committee and so gave them no way to reply. What could HUAC do, defend the Salem witch trials? And yet Miller's metaphor stuck so well that to this day the activities of the committee are often described as a "witch-hunt."
-    - Best of all, probably, is humor. Zealots, whatever their cause, invariably lack a sense of humor. They can't reply in kind to jokes. They're as unhappy on the territory of humor as a mounted knight on a skating rink. Victorian prudishness, for example, seems to have been defeated mainly by treating it as a joke. Likewise its reincarnation as political correctness. "I am glad that I managed to write 'The Crucible,'" Arthur Miller wrote, "but looking back I have often wished I'd had the temperament to do an absurd comedy, which is what the situation deserved." [17]
-  - **ABQ**
-    - A Dutch friend says I should use Holland as an example of a tolerant society. It's true they have a long tradition of comparative open-mindedness. For centuries the low countries were the place to go to say things you couldn't say anywhere else, and this helped to make the region a center of scholarship and industry (which have been closely tied for longer than most people realize). Descartes, though claimed by the French, did much of his thinking in Holland.
-    - And yet, I wonder. The Dutch seem to live their lives up to their necks in rules and regulations. There's so much you can't do there; is there really nothing you can't say?
-      - Certainly the fact that they value open-mindedness is no guarantee. Who thinks they're not open-minded? Our hypothetical prim miss from the suburbs thinks she's open-minded. Hasn't she been taught to be? Ask anyone, and they'll say the same thing: they're pretty open-minded, though they draw the line at things that are really wrong. (Some tribes may avoid "wrong" as judgemental, and may instead use a more neutral sounding euphemism like "negative" or "destructive".)
-    - When people are bad at math, they know it, because they get the wrong answers on tests. But when people are bad at open-mindedness they don't know it. In fact they tend to think the opposite. Remember, it's the nature of fashion to be invisible. It wouldn't work otherwise. Fashion doesn't seem like fashion to someone in the grip of it. It just seems like the right thing to do. It's only by looking from a distance that we see oscillations in people's idea of the right thing to do, and can identify them as fashions.
-    - Time gives us such distance for free. Indeed, the arrival of new fashions makes old fashions easy to see, because they seem so ridiculous by contrast. From one end of a pendulum's swing, the other end seems especially far away.
-    - To see fashion in your own time, though, requires a conscious effort. Without time to give you distance, you have to create distance yourself. Instead of being part of the mob, stand as far away from it as you can and watch what it's doing. And pay especially close attention whenever an idea is being suppressed. Web filters for children and employees often ban sites containing pornography, violence, and hate speech. What counts as pornography and violence? And what, exactly, is "hate speech?" This sounds like a phrase out of __1984.__
-    - Labels like that are probably the biggest external clue. If a statement is false, that's the worst thing you can say about it. You don't need to say that it's heretical. And if it isn't false, it shouldn't be suppressed. So when you see statements being attacked as x-ist or y-ic (substitute your current values of x and y), whether in 1630 or 2030, that's a sure sign that something is wrong. When you hear such labels being used, ask why.
-    - Especially if you hear yourself using them. It's not just the mob you need to learn to watch from a distance. You need to be able to watch your own thoughts from a distance. That's not a radical idea, by the way; it's the main difference between children and adults. When a child gets angry because he's tired, he doesn't know what's happening. An adult can distance himself enough from the situation to say "never mind, I'm just tired." I don't see why one couldn't, by a similar process, learn to recognize and discount the effects of moral fashions.
-    - You have to take that extra step if you want to think clearly. But it's harder, because now you're working against social customs instead of with them. Everyone encourages you to grow up to the point where you can discount your own bad moods. Few encourage you to continue to the point where you can discount society's bad moods.
-    - How can you see the wave, when you're the water? Always be questioning. That's the only defence. What can't you say? And why?
-  - **Notes**[ ](http://www.paulgraham.com/saynotes.html)
-    - **Thanks** to Sarah Harlin, Trevor Blackwell, Jessica Livingston, Robert Morris, Eric Raymond and Bob van der Zwaan for reading drafts of this essay, and to Lisa Randall, Jackie McDonough, Ryan Stanley and Joel Rainey for conversations about heresy. Needless to say they bear no blame for opinions expressed in it, and especially for opinions __not__ expressed in it.
-
----
-
 # Block References
 
 - One of Roam's most powerful, flagship features
@@ -9326,6 +9225,107 @@
   - [What is a block in Roam Research (and what are block embeds)?](https://www.roamtips.com/home/what-is-block-roam-research) by [[Roam Tips]]
 - Key Commands::
   - `(())`
+
+---
+
+# What You Can't Say
+
+- [[Essay]] [[Paul Graham]]
+- [[Full Text]] 
+  - January 2004
+  - 
+    - Have you ever seen an old photo of yourself and been embarrassed at the way you looked? __Did we actually dress like that?__ We did. And we had no idea how silly we looked. It's the nature of fashion to be invisible, in the same way the movement of the earth is invisible to all of us riding on it.
+    - What scares me is that there are moral fashions too. They're just as arbitrary, and just as invisible to most people. But they're much more dangerous. Fashion is mistaken for good design; moral fashion is mistaken for good. Dressing oddly gets you laughed at. Violating moral fashions can get you fired, ostracized, imprisoned, or even killed.
+    - If you could travel back in a time machine, one thing would be true no matter where you went: you'd have to watch what you said. Opinions we consider harmless could have gotten you in big trouble. I've already said at least one thing that would have gotten me in big trouble in most of Europe in the seventeenth century, and did get Galileo in big trouble when he said it — that the earth moves. [1]
+    - It seems to be a constant throughout history: In every period, people believed things that were just ridiculous, and believed them so strongly that you would have gotten in terrible trouble for saying otherwise.
+    - Is our time any different? To anyone who has read any amount of history, the answer is almost certainly no. It would be a remarkable coincidence if ours were the first era to get everything just right.
+    - It's tantalizing to think we believe things that people in the future will find ridiculous. What __would__ someone coming back to visit us in a time machine have to be careful not to say? That's what I want to study here. But I want to do more than just shock everyone with the heresy du jour. I want to find general recipes for discovering what you can't say, in any era.
+  - **The Conformist Test**
+    - Let's start with a test: Do you have any opinions that you would be reluctant to express in front of a group of your peers?
+    - If the answer is no, you might want to stop and think about that. If everything you believe is something you're supposed to believe, could that possibly be a coincidence? Odds are it isn't. Odds are you just think what you're told.
+    - The other alternative would be that you independently considered every question and came up with the exact same answers that are now considered acceptable. That seems unlikely, because you'd also have to make the same mistakes. Mapmakers deliberately put slight mistakes in their maps so they can tell when someone copies them. If another map has the same mistake, that's very convincing evidence.
+    - Like every other era in history, our moral map almost certainly contains a few mistakes. And anyone who makes the same mistakes probably didn't do it by accident. It would be like someone claiming they had independently decided in 1972 that bell-bottom jeans were a good idea.
+    - If you believe everything you're supposed to now, how can you be sure you wouldn't also have believed everything you were supposed to if you had grown up among the plantation owners of the pre-Civil War South, or in Germany in the 1930s — or among the Mongols in 1200, for that matter? Odds are you would have.
+    - Back in the era of terms like "well-adjusted," the idea seemed to be that there was something wrong with you if you thought things you didn't dare say out loud. This seems backward. Almost certainly, there is something wrong with you if you __don't__ think things you don't dare say out loud.
+  - **Trouble**
+    - What can't we say? One way to find these ideas is simply to look at things people do say, and get in trouble for. [2]
+    - Of course, we're not just looking for things we can't say. We're looking for things we can't say that are true, or at least have enough chance of being true that the question should remain open. But many of the things people get in trouble for saying probably do make it over this second, lower threshold. No one gets in trouble for saying that 2 + 2 is 5, or that people in Pittsburgh are ten feet tall. Such obviously false statements might be treated as jokes, or at worst as evidence of insanity, but they are not likely to make anyone mad. The statements that make people mad are the ones they worry might be believed. I suspect the statements that make people maddest are those they worry might be true.
+    - If Galileo had said that people in Padua were ten feet tall, he would have been regarded as a harmless eccentric. Saying the earth orbited the sun was another matter. The church knew this would set people thinking.
+    - Certainly, as we look back on the past, this rule of thumb works well. A lot of the statements people got in trouble for seem harmless now. So it's likely that visitors from the future would agree with at least some of the statements that get people in trouble today. Do we have no Galileos? Not likely.
+    - To find them, keep track of opinions that get people in trouble, and start asking, could this be true? Ok, it may be heretical (or whatever modern equivalent), but might it also be true?
+  - **Heresy**
+    - This won't get us all the answers, though. What if no one happens to have gotten in trouble for a particular idea yet? What if some idea would be so radioactively controversial that no one would dare express it in public? How can we find these too?
+    - Another approach is to follow that word, heresy. In every period of history, there seem to have been labels that got applied to statements to shoot them down before anyone had a chance to ask if they were true or not. "Blasphemy", "sacrilege", and "heresy" were such labels for a good part of western history, as in more recent times "indecent", "improper", and "unamerican" have been. By now these labels have lost their sting. They always do. By now they're mostly used ironically. But in their time, they had real force.
+    - The word "defeatist", for example, has no particular political connotations now. But in Germany in 1917 it was a weapon, used by Ludendorff in a purge of those who favored a negotiated peace. At the start of World War II it was used extensively by Churchill and his supporters to silence their opponents. In 1940, any argument against Churchill's aggressive policy was "defeatist". Was it right or wrong? Ideally, no one got far enough to ask that.
+    - We have such labels today, of course, quite a lot of them, from the all-purpose "inappropriate" to the dreaded "divisive." In any period, it should be easy to figure out what such labels are, simply by looking at what people call ideas they disagree with besides untrue. When a politician says his opponent is mistaken, that's a straightforward criticism, but when he attacks a statement as "divisive" or "racially insensitive" instead of arguing that it's false, we should start paying attention.
+    - So another way to figure out which of our taboos future generations will laugh at is to start with the labels. Take a label — "sexist", for example — and try to think of some ideas that would be called that. Then for each ask, might this be true?
+    - Just start listing ideas at random? Yes, because they won't really be random. The ideas that come to mind first will be the most plausible ones. They'll be things you've already noticed but didn't let yourself think.
+    - In 1989 some clever researchers tracked the eye movements of radiologists as they scanned chest images for signs of lung cancer. [3] They found that even when the radiologists missed a cancerous lesion, their eyes had usually paused at the site of it. Part of their brain knew there was something there; it just didn't percolate all the way up into conscious knowledge. I think many interesting heretical thoughts are already mostly formed in our minds. If we turn off our self-censorship temporarily, those will be the first to emerge.
+  - **Time and Space**
+    - If we could look into the future it would be obvious which of our taboos they'd laugh at. We can't do that, but we can do something almost as good: we can look into the past. Another way to figure out what we're getting wrong is to look at what used to be acceptable and is now unthinkable.
+    - Changes between the past and the present sometimes do represent progress. In a field like physics, if we disagree with past generations it's because we're right and they're wrong. But this becomes rapidly less true as you move away from the certainty of the hard sciences. By the time you get to social questions, many changes are just fashion. The age of consent fluctuates like hemlines.
+    - We may imagine that we are a great deal smarter and more virtuous than past generations, but the more history you read, the less likely this seems. People in past times were much like us. Not heroes, not barbarians. Whatever their ideas were, they were ideas reasonable people could believe.
+    - So here is another source of interesting heresies. Diff present ideas against those of various past cultures, and see what you get. [4] Some will be shocking by present standards. Ok, fine; but which might also be true?
+    - You don't have to look into the past to find big differences. In our own time, different societies have wildly varying ideas of what's ok and what isn't. So you can try diffing other cultures' ideas against ours as well. (The best way to do that is to visit them.) Any idea that's considered harmless in a significant percentage of times and places, and yet is taboo in ours, is a candidate for something we're mistaken about.
+    - For example, at the high water mark of political correctness in the early 1990s, Harvard distributed to its faculty and staff a brochure saying, among other things, that it was inappropriate to compliment a colleague or student's clothes. No more "nice shirt." I think this principle is rare among the world's cultures, past or present. There are probably more where it's considered especially polite to compliment someone's clothing than where it's considered improper. Odds are this is, in a mild form, an example of one of the taboos a visitor from the future would have to be careful to avoid if he happened to set his time machine for Cambridge, Massachusetts, 1992. [5]
+  - **Prigs**
+    - Of course, if they have time machines in the future they'll probably have a separate reference manual just for Cambridge. This has always been a fussy place, a town of i dotters and t crossers, where you're liable to get both your grammar and your ideas corrected in the same conversation. And that suggests another way to find taboos. Look for prigs, and see what's inside their heads.
+    - Kids' heads are repositories of all our taboos. It seems fitting to us that kids' ideas should be bright and clean. The picture we give them of the world is not merely simplified, to suit their developing minds, but sanitized as well, to suit our ideas of what kids ought to think. [6]
+    - You can see this on a small scale in the matter of dirty words. A lot of my friends are starting to have children now, and they're all trying not to use words like "fuck" and "shit" within baby's hearing, lest baby start using these words too. But these words are part of the language, and adults use them all the time. So parents are giving their kids an inaccurate idea of the language by not using them. Why do they do this? Because they don't think it's fitting that kids should use the whole language. We like children to seem innocent. [7]
+    - Most adults, likewise, deliberately give kids a misleading view of the world. One of the most obvious examples is Santa Claus. We think it's cute for little kids to believe in Santa Claus. I myself think it's cute for little kids to believe in Santa Claus. But one wonders, do we tell them this stuff for their sake, or for ours?
+    - I'm not arguing for or against this idea here. It is probably inevitable that parents should want to dress up their kids' minds in cute little baby outfits. I'll probably do it myself. The important thing for our purposes is that, as a result, a well brought-up teenage kid's brain is a more or less complete collection of all our taboos — and in mint condition, because they're untainted by experience. Whatever we think that will later turn out to be ridiculous, it's almost certainly inside that head.
+    - How do we get at these ideas? By the following thought experiment. Imagine a kind of latter-day Conrad character who has worked for a time as a mercenary in Africa, for a time as a doctor in Nepal, for a time as the manager of a nightclub in Miami. The specifics don't matter — just someone who has seen a lot. Now imagine comparing what's inside this guy's head with what's inside the head of a well-behaved sixteen year old girl from the suburbs. What does he think that would shock her? He knows the world; she knows, or at least embodies, present taboos. Subtract one from the other, and the result is what we can't say.
+  - **Mechanism**
+    - I can think of one more way to figure out what we can't say: to look at how taboos are created. How do moral fashions arise, and why are they adopted? If we can understand this mechanism, we may be able to see it at work in our own time.
+    - Moral fashions don't seem to be created the way ordinary fashions are. Ordinary fashions seem to arise by accident when everyone imitates the whim of some influential person. The fashion for broad-toed shoes in late fifteenth century Europe began because Charles VIII of France had six toes on one foot. The fashion for the name Gary began when the actor Frank Cooper adopted the name of a tough mill town in Indiana. Moral fashions more often seem to be created deliberately. When there's something we can't say, it's often because some group doesn't want us to.
+    - The prohibition will be strongest when the group is nervous. The irony of Galileo's situation was that he got in trouble for repeating Copernicus's ideas. Copernicus himself didn't. In fact, Copernicus was a canon of a cathedral, and dedicated his book to the pope. But by Galileo's time the church was in the throes of the Counter-Reformation and was much more worried about unorthodox ideas.
+    - To launch a taboo, a group has to be poised halfway between weakness and power. A confident group doesn't need taboos to protect it. It's not considered improper to make disparaging remarks about Americans, or the English. And yet a group has to be powerful enough to enforce a taboo. Coprophiles, as of this writing, don't seem to be numerous or energetic enough to have had their interests promoted to a lifestyle.
+    - I suspect the biggest source of moral taboos will turn out to be power struggles in which one side only barely has the upper hand. That's where you'll find a group powerful enough to enforce taboos, but weak enough to need them.
+    - Most struggles, whatever they're really about, will be cast as struggles between competing ideas. The English Reformation was at bottom a struggle for wealth and power, but it ended up being cast as a struggle to preserve the souls of Englishmen from the corrupting influence of Rome. It's easier to get people to fight for an idea. And whichever side wins, their ideas will also be considered to have triumphed, as if God wanted to signal his agreement by selecting that side as the victor.
+    - We often like to think of World War II as a triumph of freedom over totalitarianism. We conveniently forget that the Soviet Union was also one of the winners.
+    - I'm not saying that struggles are never about ideas, just that they will always be made to seem to be about ideas, whether they are or not. And just as there is nothing so unfashionable as the last, discarded fashion, there is nothing so wrong as the principles of the most recently defeated opponent. Representational art is only now recovering from the approval of both Hitler and Stalin. [8]
+    - Although moral fashions tend to arise from different sources than fashions in clothing, the mechanism of their adoption seems much the same. The early adopters will be driven by ambition: self-consciously cool people who want to distinguish themselves from the common herd. As the fashion becomes established they'll be joined by a second, much larger group, driven by fear. [9] This second group adopt the fashion not because they want to stand out but because they are afraid of standing out.
+    - So if you want to figure out what we can't say, look at the machinery of fashion and try to predict what it would make unsayable. What groups are powerful but nervous, and what ideas would they like to suppress? What ideas were tarnished by association when they ended up on the losing side of a recent struggle? If a self-consciously cool person wanted to differentiate himself from preceding fashions (e.g. from his parents), which of their ideas would he tend to reject? What are conventional-minded people afraid of saying?
+      - This technique won't find us all the things we can't say. I can think of some that aren't the result of any recent struggle. Many of our taboos are rooted deep in the past. But this approach, combined with the preceding four, will turn up a good number of unthinkable ideas.
+  - **Why**
+    - Some would ask, why would one want to do this? Why deliberately go poking around among nasty, disreputable ideas? Why look under rocks?
+    - I do it, first of all, for the same reason I did look under rocks as a kid: plain curiosity. And I'm especially curious about anything that's forbidden. Let me see and decide for myself.
+    - Second, I do it because I don't like the idea of being mistaken. If, like other eras, we believe things that will later seem ridiculous, I want to know what they are so that I, at least, can avoid believing them.
+    - Third, I do it because it's good for the brain. To do good work you need a brain that can go anywhere. And you especially need a brain that's in the habit of going where it's not supposed to.
+    - Great work tends to grow out of ideas that others have overlooked, and no idea is so overlooked as one that's unthinkable. Natural selection, for example. It's so simple. Why didn't anyone think of it before? Well, that is all too obvious. Darwin himself was careful to tiptoe around the implications of his theory. He wanted to spend his time thinking about biology, not arguing with people who accused him of being an atheist.
+    - In the sciences, especially, it's a great advantage to be able to question assumptions. The m.o. of scientists, or at least of the good ones, is precisely that: look for places where conventional wisdom is broken, and then try to pry apart the cracks and see what's underneath. That's where new theories come from.
+    - A good scientist, in other words, does not merely ignore conventional wisdom, but makes a special effort to break it. Scientists go looking for trouble. This should be the m.o. of any scholar, but scientists seem much more willing to look under rocks. [10]
+    - Why? It could be that the scientists are simply smarter; most physicists could, if necessary, make it through a PhD program in French literature, but few professors of French literature could make it through a PhD program in physics. Or it could be because it's clearer in the sciences whether theories are true or false, and this makes scientists bolder. (Or it could be that, because it's clearer in the sciences whether theories are true or false, you have to be smart to get jobs as a scientist, rather than just a good politician.)
+    - Whatever the reason, there seems a clear correlation between intelligence and willingness to consider shocking ideas. This isn't just because smart people actively work to find holes in conventional thinking. I think conventions also have less hold over them to start with. You can see that in the way they dress.
+    - It's not only in the sciences that heresy pays off. In any competitive field, you can [win big](http://www.paulgraham.com/avg.html) by seeing things that others daren't. And in every field there are probably heresies few dare utter. Within the US car industry there is a lot of hand-wringing now about declining market share. Yet the cause is so obvious that any observant outsider could explain it in a second: they make bad cars. And they have for so long that by now the US car brands are antibrands — something you'd buy a car despite, not because of. Cadillac stopped being the Cadillac of cars in about 1970. And yet I suspect no one dares say this. [11] Otherwise these companies would have tried to fix the problem.
+    - Training yourself to think unthinkable thoughts has advantages beyond the thoughts themselves. It's like stretching. When you stretch before running, you put your body into positions much more extreme than any it will assume during the run. If you can think things so outside the box that they'd make people's hair stand on end, you'll have no trouble with the small trips outside the box that people call innovative.
+  - **__Pensieri Stretti__**
+    - When you find something you can't say, what do you do with it? My advice is, don't say it. Or at least, pick your battles.
+    - Suppose in the future there is a movement to ban the color yellow. Proposals to paint anything yellow are denounced as "yellowist", as is anyone suspected of liking the color. People who like orange are tolerated but viewed with suspicion. Suppose you realize there is nothing wrong with yellow. If you go around saying this, you'll be denounced as a yellowist too, and you'll find yourself having a lot of arguments with anti-yellowists. If your aim in life is to rehabilitate the color yellow, that may be what you want. But if you're mostly interested in other questions, being labelled as a yellowist will just be a distraction. Argue with idiots, and you become an idiot.
+    - The most important thing is to be able to think what you want, not to say what you want. And if you feel you have to say everything you think, it may inhibit you from thinking improper thoughts. I think it's better to follow the opposite policy. Draw a sharp line between your thoughts and your speech. Inside your head, anything is allowed. Within my head I make a point of encouraging the most outrageous thoughts I can imagine. But, as in a secret society, nothing that happens within the building should be told to outsiders. The first rule of Fight Club is, you do not talk about Fight Club.
+    - When Milton was going to visit Italy in the 1630s, Sir Henry Wootton, who had been ambassador to Venice, told him his motto should be __"i pensieri stretti & il viso sciolto."__ Closed thoughts and an open face. Smile at everyone, and don't tell them what you're thinking. This was wise advice. Milton was an argumentative fellow, and the Inquisition was a bit restive at that time. But I think the difference between Milton's situation and ours is only a matter of degree. Every era has its heresies, and if you don't get imprisoned for them you will at least get in enough trouble that it becomes a complete distraction.
+    - I admit it seems cowardly to keep quiet. When I read about the harassment to which the Scientologists subject their critics [12], or that pro-Israel groups are "compiling dossiers" on those who speak out against Israeli human rights abuses [13], or about people being sued for violating the DMCA [14], part of me wants to say, "All right, you bastards, bring it on." The problem is, there are so many things you can't say. If you said them all you'd have no time left for your real work. You'd have to turn into Noam Chomsky. [15]
+    - The trouble with keeping your thoughts secret, though, is that you lose the advantages of discussion. Talking about an idea leads to more ideas. So the optimal plan, if you can manage it, is to have a few trusted friends you can speak openly to. This is not just a way to develop ideas; it's also a good rule of thumb for choosing friends. The people you can say heretical things to without getting jumped on are also the most interesting to know.
+  - **__Viso Sciolto?__**
+    - I don't think we need the __viso sciolto__ so much as the __pensieri stretti.__ Perhaps the best policy is to make it plain that you don't agree with whatever zealotry is current in your time, but not to be too specific about what you disagree with. Zealots will try to draw you out, but you don't have to answer them. If they try to force you to treat a question on their terms by asking "are you with us or against us?" you can always just answer "neither".
+    - Better still, answer "I haven't decided." That's what Larry Summers did when a group tried to put him in this position. Explaining himself later, he said "I don't do litmus tests." [16] A lot of the questions people get hot about are actually quite complicated. There is no prize for getting the answer quickly.
+    - If the anti-yellowists seem to be getting out of hand and you want to fight back, there are ways to do it without getting yourself accused of being a yellowist. Like skirmishers in an ancient army, you want to avoid directly engaging the main body of the enemy's troops. Better to harass them with arrows from a distance.
+    - One way to do this is to ratchet the debate up one level of abstraction. If you argue against censorship in general, you can avoid being accused of whatever heresy is contained in the book or film that someone is trying to censor. You can attack labels with meta-labels: labels that refer to the use of labels to prevent discussion. The spread of the term "political correctness" meant the beginning of the end of political correctness, because it enabled one to attack the phenomenon as a whole without being accused of any of the specific heresies it sought to suppress.
+    - Another way to counterattack is with metaphor. Arthur Miller undermined the House Un-American Activities Committee by writing a play, "The Crucible," about the Salem witch trials. He never referred directly to the committee and so gave them no way to reply. What could HUAC do, defend the Salem witch trials? And yet Miller's metaphor stuck so well that to this day the activities of the committee are often described as a "witch-hunt."
+    - Best of all, probably, is humor. Zealots, whatever their cause, invariably lack a sense of humor. They can't reply in kind to jokes. They're as unhappy on the territory of humor as a mounted knight on a skating rink. Victorian prudishness, for example, seems to have been defeated mainly by treating it as a joke. Likewise its reincarnation as political correctness. "I am glad that I managed to write 'The Crucible,'" Arthur Miller wrote, "but looking back I have often wished I'd had the temperament to do an absurd comedy, which is what the situation deserved." [17]
+  - **ABQ**
+    - A Dutch friend says I should use Holland as an example of a tolerant society. It's true they have a long tradition of comparative open-mindedness. For centuries the low countries were the place to go to say things you couldn't say anywhere else, and this helped to make the region a center of scholarship and industry (which have been closely tied for longer than most people realize). Descartes, though claimed by the French, did much of his thinking in Holland.
+    - And yet, I wonder. The Dutch seem to live their lives up to their necks in rules and regulations. There's so much you can't do there; is there really nothing you can't say?
+      - Certainly the fact that they value open-mindedness is no guarantee. Who thinks they're not open-minded? Our hypothetical prim miss from the suburbs thinks she's open-minded. Hasn't she been taught to be? Ask anyone, and they'll say the same thing: they're pretty open-minded, though they draw the line at things that are really wrong. (Some tribes may avoid "wrong" as judgemental, and may instead use a more neutral sounding euphemism like "negative" or "destructive".)
+    - When people are bad at math, they know it, because they get the wrong answers on tests. But when people are bad at open-mindedness they don't know it. In fact they tend to think the opposite. Remember, it's the nature of fashion to be invisible. It wouldn't work otherwise. Fashion doesn't seem like fashion to someone in the grip of it. It just seems like the right thing to do. It's only by looking from a distance that we see oscillations in people's idea of the right thing to do, and can identify them as fashions.
+    - Time gives us such distance for free. Indeed, the arrival of new fashions makes old fashions easy to see, because they seem so ridiculous by contrast. From one end of a pendulum's swing, the other end seems especially far away.
+    - To see fashion in your own time, though, requires a conscious effort. Without time to give you distance, you have to create distance yourself. Instead of being part of the mob, stand as far away from it as you can and watch what it's doing. And pay especially close attention whenever an idea is being suppressed. Web filters for children and employees often ban sites containing pornography, violence, and hate speech. What counts as pornography and violence? And what, exactly, is "hate speech?" This sounds like a phrase out of __1984.__
+    - Labels like that are probably the biggest external clue. If a statement is false, that's the worst thing you can say about it. You don't need to say that it's heretical. And if it isn't false, it shouldn't be suppressed. So when you see statements being attacked as x-ist or y-ic (substitute your current values of x and y), whether in 1630 or 2030, that's a sure sign that something is wrong. When you hear such labels being used, ask why.
+    - Especially if you hear yourself using them. It's not just the mob you need to learn to watch from a distance. You need to be able to watch your own thoughts from a distance. That's not a radical idea, by the way; it's the main difference between children and adults. When a child gets angry because he's tired, he doesn't know what's happening. An adult can distance himself enough from the situation to say "never mind, I'm just tired." I don't see why one couldn't, by a similar process, learn to recognize and discount the effects of moral fashions.
+    - You have to take that extra step if you want to think clearly. But it's harder, because now you're working against social customs instead of with them. Everyone encourages you to grow up to the point where you can discount your own bad moods. Few encourage you to continue to the point where you can discount society's bad moods.
+    - How can you see the wave, when you're the water? Always be questioning. That's the only defence. What can't you say? And why?
+  - **Notes**[ ](http://www.paulgraham.com/saynotes.html)
+    - **Thanks** to Sarah Harlin, Trevor Blackwell, Jessica Livingston, Robert Morris, Eric Raymond and Bob van der Zwaan for reading drafts of this essay, and to Lisa Randall, Jackie McDonough, Ryan Stanley and Joel Rainey for conversations about heresy. Needless to say they bear no blame for opinions expressed in it, and especially for opinions __not__ expressed in it.
 
 ---
 
@@ -10641,50 +10641,6 @@
 
 ---
 
-# Why you can't say
-
-- #[[Full Text]] {{=: | [[Kevin Lacker]] [[Whiteboarding Challenges]] [[Taboos]]}}
-  - [Kevin Lacker's blog](https://lacker.io/)
-  - [About Me](https://lacker.io/about/)
-  - **Why You Can't Say**
-    - Apr 5, 2017
-    - Recently on a tip from [Ivan Kirigin](https://twitter.com/ikirigin) I reread this now-ancient Paul Graham article, [What You Can’t Say](http://www.paulgraham.com/say.html). Like the idea of [Straussian reading](http://lacker.io/books/2017/03/26/straussian-reading.html), the essay is looking for secret truths which are currently inappropriate to share publicly.
-    - > It's tantalizing to think we believe things that people in the future will find ridiculous. What __would__ someone coming back to visit us in a time machine have to be careful not to say? That's what I want to study here. But I want to do more than just shock everyone with the heresy du jour. I want to find general recipes for discovering what you can't say, in any era.
-    - At first I was going to dig in, follow the instructions in this essay, perhaps try to get meta and turn them on the essay itself, and find some secret truths. But there was just too much to bite off at once and I ended up gnawing on a tangent.
-    - Specifically, the part that really sparked some thought for me was this hypothesis on the source of taboos:
-    - > To launch a taboo, a group has to be poised halfway between weakness and power. A confident group doesn't need taboos to protect it. It's not considered improper to make disparaging remarks about Americans, or the English. And yet a group has to be powerful enough to enforce a taboo.*
-    - > I suspect the biggest source of moral taboos will turn out to be power struggles in which one side only barely has the upper hand. That's where you'll find a group powerful enough to enforce taboos, but weak enough to need them.
-    - I’m not totally convinced that most moral taboos come from power struggles. My personal suspicion is that the best explanation of the source of moral taboos comes from the theory of [[Social Constructionism]]
-    - 
-    - __Human beings rationalize their experience by creating models of the social world and share and reify these models through language.__
-    - Basically, some truths you believe because they are inherently logical. If at least one of Alice, Bob and Eve has a wrench in their pocket, but Alice and Bob have no pockets, then Eve has the wrench. Some truths you believe because there is empirical evidence. The Earth is round because I saw it on the SpaceX video. But some truths you believe just because other people believe them.
-    - Instinctively you might think, oh ho that is one of the [147 types of bad arguments](http://www.don-lindsay-archive.org/skeptic/arguments.html). But in practice there are a zillion things you believe not because of logic, but because other people told you to.
-      - You shouldn’t eat mud
-      - Red lights mean stop
-      - Human life is a precious thing
-    - Lots of useful and totally true facts about the world are socially constructed.
-    - This can lead to a taboo situation, though. A small group believes X. A much larger group believes Not X. Since both of these truths are socially constructed, there’s no baseline reality. There’s no way to have an intelligent debate. So the larger group turns into an angry internet mob and shouts down the smaller group.
-    - I believe the topic of startup advice is particularly vulnerable to this phenomenon. You cannot deduce the principles of running a startup from first principles. One effective mechanism is to learn what worked for successful startup founders - to seek out their socially constructed truth. But that’s a pretty small group. In particular, the set of all people in tech industry is a much larger group. Sometimes these groups have opposing socially constructed truths.
-    - Here’s an example: whiteboard interviews. Are whiteboard interviews a good strategy for interviewing people, or a bad strategy for interviewing people?
-    - Go read mainstream tech news or social media and you will conclude that whiteboard interviews are terrible. From the first few search results for “whiteboard interviews”:
-      - [“Whiteboard interviews are widely hated. They also discriminate against people who are already underrepresented in the field.”](https://theoutline.com/post/1166/programmers-are-confessing-their-coding-sins-to-protest-a-broken-job-interview-process)
-      - [“Virtually every developer I’ve talked with agrees that one’s ability to write algorithms from memory on a whiteboard has almost nothing to do with real day-to-day developer work.”](https://medium.freecodecamp.com/why-is-hiring-broken-it-starts-at-the-whiteboard-34b088e5a5db)
-      - [“Tech interviews are hard enough, but for many tech pros there’s an aspect that’s downright unbearable: the whiteboard. Developers complain about it often (and have for years), while some tech companies have stopped whiteboard exercises altogether. The question remains: should we just ditch the whiteboard?”](http://insights.dice.com/2016/11/21/whiteboard-interview-problems/)
-    - The mainstream conclusion is clearly that whiteboard interviews are a bad idea. But on the other hand:
-    - ![big-five](https://lacker.io/assets/big-five.jpg)
-    - The most successful companies all use whiteboard interviews. It’s not just the top big companies, it’s the top late stage startups, top early stage startups, the top tier at every point. Nevertheless, the median tech internet is opposed. What’s happening here?
-    - I think the fundamental discord comes from the nature of interviewing. For example, [Google accepts under 1% of job applicants](https://www.quora.com/What-is-Googles-internship-acceptance-rate). And yet Google has [70,000 employees](https://www.statista.com/statistics/273744/number-of-full-time-google-employees/). If my simplistic math holds up, they have rejected over 7 million people.
-    - Personally, when I go apply for a job, I think of it like an axiom that I deserve that job. When I get rejected I usually conclude the company is either morons or evil or perhaps if the interviewers were very kind I will be charitable and just conclude that it’s a flawed process. So yeah, I can see how there would be 7 million people out there convinced that Google interviews are a flawed process. They know they are correct because their friends mostly agree with them. But I don’t think Larry is kicking himself wishing they had never adopted the whiteboard interview.
-    - What is really a shame, though, is that once I had a conversation with a startup CTO that went like this:
-    - __Me: So how’s recruiting?CTO: Going great, not having any trouble finding software engineers.Me: Wow, I don’t hear that often.CTO: Yeah, once we raised we needed 8 people and we hired them in a month.Me: Double wow. How did your tiny team even do enough interviews to hire 8 people in a month?CTO: Oh, we only had to interview 9 people.Me: Uh oh. How did you interview them?CTO: Well as everyone knows, whiteboard interviews are terrible, so we just kind of chatted about their past experience.Me: Oh no.CTO: I have a really good feeling about this.__
-    - So, be careful about taking the median startup advice. You might end up with the median outcome.
-  - **Kevin Lacker's blog[["subscribe via" " " "[RSS](https://lacker.io/feed.xml)"]]**
-    - [ lacker](https://github.com/lacker)
-    - [ lacker](https://twitter.com/lacker)
-    - TODO: insert description here
-
----
-
 # Callouts
 
 - Callouts are styled [[Blockquote]]s with a type-specific icon and color. 
@@ -10782,6 +10738,95 @@
 
 ---
 
+# Why you can't say
+
+- #[[Full Text]] {{=: | [[Kevin Lacker]] [[Whiteboarding Challenges]] [[Taboos]]}}
+  - [Kevin Lacker's blog](https://lacker.io/)
+  - [About Me](https://lacker.io/about/)
+  - **Why You Can't Say**
+    - Apr 5, 2017
+    - Recently on a tip from [Ivan Kirigin](https://twitter.com/ikirigin) I reread this now-ancient Paul Graham article, [What You Can’t Say](http://www.paulgraham.com/say.html). Like the idea of [Straussian reading](http://lacker.io/books/2017/03/26/straussian-reading.html), the essay is looking for secret truths which are currently inappropriate to share publicly.
+    - > It's tantalizing to think we believe things that people in the future will find ridiculous. What __would__ someone coming back to visit us in a time machine have to be careful not to say? That's what I want to study here. But I want to do more than just shock everyone with the heresy du jour. I want to find general recipes for discovering what you can't say, in any era.
+    - At first I was going to dig in, follow the instructions in this essay, perhaps try to get meta and turn them on the essay itself, and find some secret truths. But there was just too much to bite off at once and I ended up gnawing on a tangent.
+    - Specifically, the part that really sparked some thought for me was this hypothesis on the source of taboos:
+    - > To launch a taboo, a group has to be poised halfway between weakness and power. A confident group doesn't need taboos to protect it. It's not considered improper to make disparaging remarks about Americans, or the English. And yet a group has to be powerful enough to enforce a taboo.*
+    - > I suspect the biggest source of moral taboos will turn out to be power struggles in which one side only barely has the upper hand. That's where you'll find a group powerful enough to enforce taboos, but weak enough to need them.
+    - I’m not totally convinced that most moral taboos come from power struggles. My personal suspicion is that the best explanation of the source of moral taboos comes from the theory of [[Social Constructionism]]
+    - 
+    - __Human beings rationalize their experience by creating models of the social world and share and reify these models through language.__
+    - Basically, some truths you believe because they are inherently logical. If at least one of Alice, Bob and Eve has a wrench in their pocket, but Alice and Bob have no pockets, then Eve has the wrench. Some truths you believe because there is empirical evidence. The Earth is round because I saw it on the SpaceX video. But some truths you believe just because other people believe them.
+    - Instinctively you might think, oh ho that is one of the [147 types of bad arguments](http://www.don-lindsay-archive.org/skeptic/arguments.html). But in practice there are a zillion things you believe not because of logic, but because other people told you to.
+      - You shouldn’t eat mud
+      - Red lights mean stop
+      - Human life is a precious thing
+    - Lots of useful and totally true facts about the world are socially constructed.
+    - This can lead to a taboo situation, though. A small group believes X. A much larger group believes Not X. Since both of these truths are socially constructed, there’s no baseline reality. There’s no way to have an intelligent debate. So the larger group turns into an angry internet mob and shouts down the smaller group.
+    - I believe the topic of startup advice is particularly vulnerable to this phenomenon. You cannot deduce the principles of running a startup from first principles. One effective mechanism is to learn what worked for successful startup founders - to seek out their socially constructed truth. But that’s a pretty small group. In particular, the set of all people in tech industry is a much larger group. Sometimes these groups have opposing socially constructed truths.
+    - Here’s an example: whiteboard interviews. Are whiteboard interviews a good strategy for interviewing people, or a bad strategy for interviewing people?
+    - Go read mainstream tech news or social media and you will conclude that whiteboard interviews are terrible. From the first few search results for “whiteboard interviews”:
+      - [“Whiteboard interviews are widely hated. They also discriminate against people who are already underrepresented in the field.”](https://theoutline.com/post/1166/programmers-are-confessing-their-coding-sins-to-protest-a-broken-job-interview-process)
+      - [“Virtually every developer I’ve talked with agrees that one’s ability to write algorithms from memory on a whiteboard has almost nothing to do with real day-to-day developer work.”](https://medium.freecodecamp.com/why-is-hiring-broken-it-starts-at-the-whiteboard-34b088e5a5db)
+      - [“Tech interviews are hard enough, but for many tech pros there’s an aspect that’s downright unbearable: the whiteboard. Developers complain about it often (and have for years), while some tech companies have stopped whiteboard exercises altogether. The question remains: should we just ditch the whiteboard?”](http://insights.dice.com/2016/11/21/whiteboard-interview-problems/)
+    - The mainstream conclusion is clearly that whiteboard interviews are a bad idea. But on the other hand:
+    - ![big-five](https://lacker.io/assets/big-five.jpg)
+    - The most successful companies all use whiteboard interviews. It’s not just the top big companies, it’s the top late stage startups, top early stage startups, the top tier at every point. Nevertheless, the median tech internet is opposed. What’s happening here?
+    - I think the fundamental discord comes from the nature of interviewing. For example, [Google accepts under 1% of job applicants](https://www.quora.com/What-is-Googles-internship-acceptance-rate). And yet Google has [70,000 employees](https://www.statista.com/statistics/273744/number-of-full-time-google-employees/). If my simplistic math holds up, they have rejected over 7 million people.
+    - Personally, when I go apply for a job, I think of it like an axiom that I deserve that job. When I get rejected I usually conclude the company is either morons or evil or perhaps if the interviewers were very kind I will be charitable and just conclude that it’s a flawed process. So yeah, I can see how there would be 7 million people out there convinced that Google interviews are a flawed process. They know they are correct because their friends mostly agree with them. But I don’t think Larry is kicking himself wishing they had never adopted the whiteboard interview.
+    - What is really a shame, though, is that once I had a conversation with a startup CTO that went like this:
+    - __Me: So how’s recruiting?CTO: Going great, not having any trouble finding software engineers.Me: Wow, I don’t hear that often.CTO: Yeah, once we raised we needed 8 people and we hired them in a month.Me: Double wow. How did your tiny team even do enough interviews to hire 8 people in a month?CTO: Oh, we only had to interview 9 people.Me: Uh oh. How did you interview them?CTO: Well as everyone knows, whiteboard interviews are terrible, so we just kind of chatted about their past experience.Me: Oh no.CTO: I have a really good feeling about this.__
+    - So, be careful about taking the median startup advice. You might end up with the median outcome.
+  - **Kevin Lacker's blog[["subscribe via" " " "[RSS](https://lacker.io/feed.xml)"]]**
+    - [ lacker](https://github.com/lacker)
+    - [ lacker](https://twitter.com/lacker)
+    - TODO: insert description here
+
+---
+
+# Encrypted Graphs
+
+### Limitations of encrypted graphs
+
+#### Warning #.bg-red-200
+
+- If you forget your password for an encrypted graph
+  - **We cannot retrieve or reset it, and we cannot recover your encrypted notes**
+- [[Roam Depot]] and [[roam/js]] extensions running in an encrypted graph will have access to the unencrypted data
+  - If you want to be sure your notes are secure **do not use** [[roam/js]] extensions that you did not write yourself
+  - Roam Depot extensions undergo a review process which includes a security review, so they should be okay for most purposes. 
+    - If the data is very critical, you may want to not use any Roam Depot extensions either
+- [[Quick Capture]] is disabled
+- Existing graphs cannot be encrypted
+  - We recommend creating a new encrypted graph and importing the existing graph, then delete the existing graph
+- Backups and [[Export]]s of the graph are **not encrypted**
+  - Backups and exports currently do not contain the unencrypted images and media files
+    - We hope to add this in the future
+- [[Offline Graph]]s on the desktop app do not encrypt the images / media files you upload
+  - The media files are stored on your computer, unencrypted
+- You can still share an encrypted graph with someone else, but they need the password used to encrypt it to access the graph
+  - In the future we hope to release the ability to have multiple password to a graph
+- Load times of encrypted graphs may be longer than non encrypted
+- Future features, such as a backend API, may not be available for encrypted graphs
+  - We designed it with the backend API in mind, but likely many of the features of it will not be possible for encrypted graphs
+- More Info
+  - Images and media files are encrypted only on hosted graphs
+    - This may effect the load time of them
+    - [[Offline Graph]]s on the desktop app do not encrypt the images / media files you upload
+  - Roam only encrypts blocks, pages, and media files
+    - Some metadata about your graph is not encrypted
+      - For example whether block text is centered or a heading is not encrypted, but the actual content of the block is
+    - [[Developer]]
+      - These keys are encrypted
+        - `:user/display-name :user/email :create/email :edit/email :node/title :block/string :user/uid :user/photo-url :entity/attrs :block/props :ent/emojis :user/settings`
+- How do I change my password?
+  - In the settings panel
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FZwq0lx1Ply.png?alt=media&token=f9b59eb8-6d4e-47e8-a95d-c351a4451ca5)
+- How do I create an encrypted graph?
+  - {{[[video]]: https://www.loom.com/share/5f7cea684d154559a16d0167cd53f93b}}
+- How can I verify that my graph is encrypted?
+  - {{[[video]]: https://www.loom.com/share/338bd42b80b647aaa0bed3082c53dccd}}
+
+---
+
 # Zapier Integration
 
 - [Zapier](https://zapier.com/apps/roam-research/integrations) lets you connect Roam Research to 6,000+ other web services. Automated connections called Zaps, set up in minutes with no coding, can automate your day-to-day tasks and build workflows between apps that otherwise wouldn't be possible.
@@ -10850,51 +10895,6 @@
     - If you're using an **unencrypted graph**, you can use all of the building blocks above
     - If you're using an **encrypted graph**, you cannot do any reads from the graph (due to it being end to end encrypted), so the only primitives you can use are the **3 write actions**
       - In other words, you can only append/add stuff to the graph. This is also suggested by the fact that the only kind of API tokens you can create for encrypted graphs is **append-only access**
-
----
-
-# Encrypted Graphs
-
-### Limitations of encrypted graphs
-
-#### Warning #.bg-red-200
-
-- If you forget your password for an encrypted graph
-  - **We cannot retrieve or reset it, and we cannot recover your encrypted notes**
-- [[Roam Depot]] and [[roam/js]] extensions running in an encrypted graph will have access to the unencrypted data
-  - If you want to be sure your notes are secure **do not use** [[roam/js]] extensions that you did not write yourself
-  - Roam Depot extensions undergo a review process which includes a security review, so they should be okay for most purposes. 
-    - If the data is very critical, you may want to not use any Roam Depot extensions either
-- [[Quick Capture]] is disabled
-- Existing graphs cannot be encrypted
-  - We recommend creating a new encrypted graph and importing the existing graph, then delete the existing graph
-- Backups and [[Export]]s of the graph are **not encrypted**
-  - Backups and exports currently do not contain the unencrypted images and media files
-    - We hope to add this in the future
-- [[Offline Graph]]s on the desktop app do not encrypt the images / media files you upload
-  - The media files are stored on your computer, unencrypted
-- You can still share an encrypted graph with someone else, but they need the password used to encrypt it to access the graph
-  - In the future we hope to release the ability to have multiple password to a graph
-- Load times of encrypted graphs may be longer than non encrypted
-- Future features, such as a backend API, may not be available for encrypted graphs
-  - We designed it with the backend API in mind, but likely many of the features of it will not be possible for encrypted graphs
-- More Info
-  - Images and media files are encrypted only on hosted graphs
-    - This may effect the load time of them
-    - [[Offline Graph]]s on the desktop app do not encrypt the images / media files you upload
-  - Roam only encrypts blocks, pages, and media files
-    - Some metadata about your graph is not encrypted
-      - For example whether block text is centered or a heading is not encrypted, but the actual content of the block is
-    - [[Developer]]
-      - These keys are encrypted
-        - `:user/display-name :user/email :create/email :edit/email :node/title :block/string :user/uid :user/photo-url :entity/attrs :block/props :ent/emojis :user/settings`
-- How do I change my password?
-  - In the settings panel
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FZwq0lx1Ply.png?alt=media&token=f9b59eb8-6d4e-47e8-a95d-c351a4451ca5)
-- How do I create an encrypted graph?
-  - {{[[video]]: https://www.loom.com/share/5f7cea684d154559a16d0167cd53f93b}}
-- How can I verify that my graph is encrypted?
-  - {{[[video]]: https://www.loom.com/share/338bd42b80b647aaa0bed3082c53dccd}}
 
 ---
 
@@ -10996,89 +10996,6 @@
 
 ---
 
-# Right Sidebar
-
-- Roam Team Videos::
-  - **Sidebar in Roam by [[Conor White-Sullivan]]**
-    - {{[[video]]: https://www.youtube.com/watch?v=7dASSNABtIo}}
-      #[[Right Sidebar]] | #[[Linked References]] | #[[TODO/DONE]]
-- Community Videos::
-  - **Roam Research: Right Sidebar and Block References by [[Les Kristofs]]**
-    - {{[[video]]: https://www.youtube.com/watch?v=rorHyn0BBb4}}
-      #[[Block References]] | #[[Right Sidebar]]
-- Team GIFs::
-  - **Opening and closing sidebar**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Foh12rmm8uU.gif?alt=media&token=12d7561b-9dc4-4d0b-b7f0-00e035f8262b)
-  - **Opening window in sidebar**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FreiOGPqeaa.gif?alt=media&token=c7e3f831-0bb8-45f8-8fa0-50de1f0749bb)
-  - **Opening graph view in sidebar**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FkpGLAaEjC1.gif?alt=media&token=4f147b01-9eec-4808-b0e6-890d7589e118)
-  - **Rearranging order of sidebar**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FhtRa6S3U91.gif?alt=media&token=fbea0dca-db1f-4891-932d-b715a7f8c2da)
-  - **Expand and collapse windows in sidebar**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FVoJDU4Dqoi.gif?alt=media&token=052da9ba-e75d-410d-9694-ee7c8edbed6a)
-  - **Pin and unpin windows in sidebar**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FnwoLmwV4FC.gif?alt=media&token=c6ceda4a-24b4-485f-b442-d0a6028c27c4)
-  - **Creating a page and opening it in the right sidebar**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F1bVd2VxOSY.gif?alt=media&token=529f75f8-4d68-4e54-9e91-8a0bd6a64767)
-  - **Open Kanban in sidebar**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FuqWn53xv7q.gif?alt=media&token=111f7548-04db-4587-9005-e103ca2f6047)
-  - **Open pages from all pages in right sidebar**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FDcJ5GFlnvx.gif?alt=media&token=ee49c2a4-5933-4ac8-9feb-15bb5cc3c8ad)
-  - **Resizing sidebar**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F9Nd8zc3dsH.gif?alt=media&token=0c0df213-1fff-45bd-a642-1bccc8126bed)
-  - **Open node in sidebar**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FzO8buehcAl.gif?alt=media&token=0de4cdf5-26a2-440c-a0af-57ede8199623)
-- Articles::
-  - **[How to use the Roam sidebar](https://www.roamtips.com/home/roam-research-sidebar) by [[Roam Tips]]**
-    - #[[Right Sidebar]] | #[[Block Embed]] | #[[Linked References]]
-- Key Commands::
-  - `Shift+click` on the page you want to open in the Right Sidebar
-  - `Ctrl+Shift+O` to open link under cursor
-
----
-
-# / Commands
-
-- The / Commands give you access to a variety of functions in Roam
-  - Key Commands:: 
-    - To access / Commands, type `/` + `any of the below keyword` + `enter` (in any block) to access each feature 
-  - Team GIFs::
-    - ![An example of accessing the TODO function via / Commands](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FoebmqUA8lT.gif?alt=media&token=0567d373-7f43-4934-9d92-c5f5030b6e42)
-
-- #.--rm-grid 
-  - ****Functions****
-    - [[TODO]]
-    - [[Page References]]
-    - [[Block References]]
-    - [[Block Embed]]
-    - [[Table]]
-    - [[Diagram]]
-    - [[Upload Files]]
-    - [[Templates]]
-    - [[Video Embed]]
-    - [[Calculator]]
-    - [[Mentions]]
-    - [[Word count]]
-    - [[Character count]]
-    - [[Query]]
-  - ****Time****
-    - [[Current time]]
-    - [[Today]]
-    - [[Tomorrow]]
-    - [[Date picker]]
-    - [[Pomodoro timer]]
-  - **[Formatting]([[Formatting]])**
-    - [[Links]]
-    - [[Code Block]]
-    - [[Inline Code]]
-    - [[Bold]]
-    - [[Italics]]
-    - [[KaTeX]]
-    - [[Strikethrough]]
-
----
-
 # Security
 
 ## [Security Policy](https://github.com/Roam-Research/issues/security/policy)
@@ -11132,49 +11049,86 @@
 
 ---
 
-# Query
+# / Commands
 
-- [[.--]]
-  - ****Types of queries****
-    - ****and****
-      - Find all blocks matching multiple conditions – i.e. blocks or their parents containing multiple page or block references.
-      - `{{query: {and: [[page A]] [[page B]] }}}
-        {{query: {and: [[articles]] ((block)) }}}
-        {{query: {and: [[Tyler Cowen]] ((block)) [[econ]] }}}
-        `
-    - ****or****
-      - Find all blocks matching any of a number of conditions – i.e. blocks or their parents containing any of the selected page or block references.
+- The / Commands give you access to a variety of functions in Roam
+  - Key Commands:: 
+    - To access / Commands, type `/` + `any of the below keyword` + `enter` (in any block) to access each feature 
+  - Team GIFs::
+    - ![An example of accessing the TODO function via / Commands](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FoebmqUA8lT.gif?alt=media&token=0567d373-7f43-4934-9d92-c5f5030b6e42)
 
-      - `{{query: {or: [[page A]] [[page B]] }}}
-        {{query: {or: [[Zen]] [[Buddhism]] }}}
-        {{query: {or: [[Utah]] [[Idaho]] [[Montana]] }}}
-        `
-    - ****not****
-      - Exclude blocks matching any of the page or block references selected.
-      - `{{query: {and: [[page A]] {not: [[page B]] }}}}
-        {{query: {and: [[Slate Star Codex]] {not: [[psychiatry]] }}}}`
-    - ****between****
-      - Finds all blocks on daily pages and blocks mentioning a date between two days. ^^**This only works on Daily Notes page**^^.
-      - You can use the following as a shorthand: [[today]], [[tomorrow]], [[yesterday]], [[last week]], [[next week]], [[last month]], and [[next month]]. 
-      - `{{query: {between: [[January 1st, 2021]] [[today]] }}
-        {{query: {and: [[mistakes]] {between: [[January 1st, 2020]] [[December 31st, 2020]] }}}}
-        {{query: {and: [[TODO]] {between: [[last week]] [[today]] }}}}`
-  - **Community Videos::**
-    - **Query syntax and logic: how to ask Roam questions with queries by [[Robert Haisfield]]**
-      - {{[[video]]: https://www.youtube.com/watch?v=LJZBGJOzhUY&t=20s&ab_channel=RobertHaisfield}}
-    - **How Queries Work in Roam Research by [[R.J. Nestor]]**
-      - {{[[video]]: https://www.youtube.com/watch?v=lBmklV0n8D0}}
-    - **Roam Research Search Queries by [[David Perell]]**
-      - {{[[video]]: https://www.youtube.com/watch?v=HoccqyiHvPw}}
-    - **Insight Hunting with Queries in Roam by [[Cortex Futura]]**
-      - {{[[video]]: https://www.youtube.com/watch?v=gLAlQGM_l1Q}}
-    - **Roam Research Query Tutorial: Pending Tasks for Task Management and Task Dashboard Using Queries by [[The Upgraded Brain]]**
-      - {{[[video]]: https://www.youtube.com/watch?v=Kg5omIyWu8s}}
-  - **Articles::**
-    - **[How to query in Roam](https://roamhacks.com/how-to-query-roam/) by [[Roamhacks]]**
-    - **[Searching Roam With Queries: A Primer](https://www.roamstack.com/roam-queries-primer/) by [[RoamStack]]**
-  - **Key Commands::**
-    - `/query`
+- #.--rm-grid 
+  - ****Functions****
+    - [[TODO]]
+    - [[Page References]]
+    - [[Block References]]
+    - [[Block Embed]]
+    - [[Table]]
+    - [[Diagram]]
+    - [[Upload Files]]
+    - [[Templates]]
+    - [[Video Embed]]
+    - [[Calculator]]
+    - [[Mentions]]
+    - [[Word count]]
+    - [[Character count]]
+    - [[Query]]
+  - ****Time****
+    - [[Current time]]
+    - [[Today]]
+    - [[Tomorrow]]
+    - [[Date picker]]
+    - [[Pomodoro timer]]
+  - **[Formatting]([[Formatting]])**
+    - [[Links]]
+    - [[Code Block]]
+    - [[Inline Code]]
+    - [[Bold]]
+    - [[Italics]]
+    - [[KaTeX]]
+    - [[Strikethrough]]
+
+---
+
+# Right Sidebar
+
+- Roam Team Videos::
+  - **Sidebar in Roam by [[Conor White-Sullivan]]**
+    - {{[[video]]: https://www.youtube.com/watch?v=7dASSNABtIo}}
+      #[[Right Sidebar]] | #[[Linked References]] | #[[TODO/DONE]]
+- Community Videos::
+  - **Roam Research: Right Sidebar and Block References by [[Les Kristofs]]**
+    - {{[[video]]: https://www.youtube.com/watch?v=rorHyn0BBb4}}
+      #[[Block References]] | #[[Right Sidebar]]
+- Team GIFs::
+  - **Opening and closing sidebar**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Foh12rmm8uU.gif?alt=media&token=12d7561b-9dc4-4d0b-b7f0-00e035f8262b)
+  - **Opening window in sidebar**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FreiOGPqeaa.gif?alt=media&token=c7e3f831-0bb8-45f8-8fa0-50de1f0749bb)
+  - **Opening graph view in sidebar**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FkpGLAaEjC1.gif?alt=media&token=4f147b01-9eec-4808-b0e6-890d7589e118)
+  - **Rearranging order of sidebar**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FhtRa6S3U91.gif?alt=media&token=fbea0dca-db1f-4891-932d-b715a7f8c2da)
+  - **Expand and collapse windows in sidebar**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FVoJDU4Dqoi.gif?alt=media&token=052da9ba-e75d-410d-9694-ee7c8edbed6a)
+  - **Pin and unpin windows in sidebar**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FnwoLmwV4FC.gif?alt=media&token=c6ceda4a-24b4-485f-b442-d0a6028c27c4)
+  - **Creating a page and opening it in the right sidebar**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F1bVd2VxOSY.gif?alt=media&token=529f75f8-4d68-4e54-9e91-8a0bd6a64767)
+  - **Open Kanban in sidebar**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FuqWn53xv7q.gif?alt=media&token=111f7548-04db-4587-9005-e103ca2f6047)
+  - **Open pages from all pages in right sidebar**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FDcJ5GFlnvx.gif?alt=media&token=ee49c2a4-5933-4ac8-9feb-15bb5cc3c8ad)
+  - **Resizing sidebar**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F9Nd8zc3dsH.gif?alt=media&token=0c0df213-1fff-45bd-a642-1bccc8126bed)
+  - **Open node in sidebar**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FzO8buehcAl.gif?alt=media&token=0de4cdf5-26a2-440c-a0af-57ede8199623)
+- Articles::
+  - **[How to use the Roam sidebar](https://www.roamtips.com/home/roam-research-sidebar) by [[Roam Tips]]**
+    - #[[Right Sidebar]] | #[[Block Embed]] | #[[Linked References]]
+- Key Commands::
+  - `Shift+click` on the page you want to open in the Right Sidebar
+  - `Ctrl+Shift+O` to open link under cursor
 
 ---
 
@@ -11235,6 +11189,52 @@
 
 - Learn how to make the most out of Roam with real-life examples and powerful mental models. Nesslabs's Anne-Laure Le Cunff will guide you through the essentials with short videos and templates for a variety of workflows, helping you kickstart your Roam journey.
 - 
+
+---
+
+# Query
+
+- [[.--]]
+  - ****Types of queries****
+    - ****and****
+      - Find all blocks matching multiple conditions – i.e. blocks or their parents containing multiple page or block references.
+      - `{{query: {and: [[page A]] [[page B]] }}}
+        {{query: {and: [[articles]] ((block)) }}}
+        {{query: {and: [[Tyler Cowen]] ((block)) [[econ]] }}}
+        `
+    - ****or****
+      - Find all blocks matching any of a number of conditions – i.e. blocks or their parents containing any of the selected page or block references.
+
+      - `{{query: {or: [[page A]] [[page B]] }}}
+        {{query: {or: [[Zen]] [[Buddhism]] }}}
+        {{query: {or: [[Utah]] [[Idaho]] [[Montana]] }}}
+        `
+    - ****not****
+      - Exclude blocks matching any of the page or block references selected.
+      - `{{query: {and: [[page A]] {not: [[page B]] }}}}
+        {{query: {and: [[Slate Star Codex]] {not: [[psychiatry]] }}}}`
+    - ****between****
+      - Finds all blocks on daily pages and blocks mentioning a date between two days. ^^**This only works on Daily Notes page**^^.
+      - You can use the following as a shorthand: [[today]], [[tomorrow]], [[yesterday]], [[last week]], [[next week]], [[last month]], and [[next month]]. 
+      - `{{query: {between: [[January 1st, 2021]] [[today]] }}
+        {{query: {and: [[mistakes]] {between: [[January 1st, 2020]] [[December 31st, 2020]] }}}}
+        {{query: {and: [[TODO]] {between: [[last week]] [[today]] }}}}`
+  - **Community Videos::**
+    - **Query syntax and logic: how to ask Roam questions with queries by [[Robert Haisfield]]**
+      - {{[[video]]: https://www.youtube.com/watch?v=LJZBGJOzhUY&t=20s&ab_channel=RobertHaisfield}}
+    - **How Queries Work in Roam Research by [[R.J. Nestor]]**
+      - {{[[video]]: https://www.youtube.com/watch?v=lBmklV0n8D0}}
+    - **Roam Research Search Queries by [[David Perell]]**
+      - {{[[video]]: https://www.youtube.com/watch?v=HoccqyiHvPw}}
+    - **Insight Hunting with Queries in Roam by [[Cortex Futura]]**
+      - {{[[video]]: https://www.youtube.com/watch?v=gLAlQGM_l1Q}}
+    - **Roam Research Query Tutorial: Pending Tasks for Task Management and Task Dashboard Using Queries by [[The Upgraded Brain]]**
+      - {{[[video]]: https://www.youtube.com/watch?v=Kg5omIyWu8s}}
+  - **Articles::**
+    - **[How to query in Roam](https://roamhacks.com/how-to-query-roam/) by [[Roamhacks]]**
+    - **[Searching Roam With Queries: A Primer](https://www.roamstack.com/roam-queries-primer/) by [[RoamStack]]**
+  - **Key Commands::**
+    - `/query`
 
 ---
 
@@ -12017,6 +12017,45 @@
 
 ---
 
+# Zettelkasten
+
+### Roam Team Videos::
+
+#### Live Zettling on Roam by [[Conor White-Sullivan]]
+
+- {{[[video]]:https://www.youtube.com/watch?v=ScRrcL__SSI&t=2029s&ab_channel=ConorWhite-Sullivan}}
+  #[[Current time]] | #[[Page References]] | #[[Block References]] | #[[Indentation]] | #[[Daily Notes]] | #[[Right Sidebar]] | #[[Block Embed]] | #[[Alias]] | #[[TODO/DONE]] | #[[Indentation]] | #[[Query]] | #[[Table]]
+- Articles::
+  - **[Active Reading in Roam Research Featuring the Zettelkasten Method](https://padminipyapali.medium.com/zettelkasten-method-roam-research-f7b341f14fbd) by [[Padmini Pyapali]]**
+  - #[[Block References]] | #[[Page References]]
+  - **[Implementing Zettelkasten in Roam: A Practical Guide](https://www.roambrain.com/implementing-zettelkasten-in-roam/) by [[RoamBrain]]**
+  - #[[Page References]] | #[[Block References]] 
+  - **[Roamkasten - a practical how to guide to optimize Zettelkasten in Roam Research](https://www.thrivinghenry.com/writings/roamkasten-a-practical-how-to-guide-to-optimize-zettelkasten-in-roam-research) by [[Thriving Henry]]**
+
+  - #[[Page References]] | #[[Linked References]] | #[[Unlinked References]] | #[[Indentation]] |
+  - **[Roamkasten - a practical how to guide to optimize Zettelkasten in Roam Research](https://www.thrivinghenry.com/writings/roamkasten-a-practical-how-to-guide-to-optimize-zettelkasten-in-roam-research) by [[Thriving Henry]]**
+  - #[[Page References]] | #[[Linked References]] | #[[Unlinked References]] | #[[Indentation]] | #[[Block References]] | #[[Right Sidebar]]
+  - 
+
+### Community Videos::
+
+#### How to Take Smart Notes | Zettelkasten Method in Roam Research by [[Shu Omi]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=ljyo_WAJevQ&t=188s&ab_channel=ShuOmi}}
+  #[[Page References]] | #[[Right Sidebar]] | #[[Block References]] | #[[Linked References]] | #[[Filter]] 
+
+#### How Taking Smart, Simple Notes Will Make You a Better Writer
+by [[Drew Coffman]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=wMOACjJzfgM}}
+
+#### Roam Tour: Professor [[Joel Chan]]- Zettelkasten and Evergreen Notes for Generative Thought by [[Robert Haisfield]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=A6PIrVZoZAk&ab_channel=RobertHaisfield}}
+  #[[Page References]] | #[[Right Sidebar]] | #[[Query]] | #[[Linked References]] | #[[Indentation]] 
+
+---
+
 # Pages
 
 ### Team GIFs::
@@ -12062,42 +12101,26 @@
 
 ---
 
-# Zettelkasten
+# Graph Overview
 
-### Roam Team Videos::
-
-#### Live Zettling on Roam by [[Conor White-Sullivan]]
-
-- {{[[video]]:https://www.youtube.com/watch?v=ScRrcL__SSI&t=2029s&ab_channel=ConorWhite-Sullivan}}
-  #[[Current time]] | #[[Page References]] | #[[Block References]] | #[[Indentation]] | #[[Daily Notes]] | #[[Right Sidebar]] | #[[Block Embed]] | #[[Alias]] | #[[TODO/DONE]] | #[[Indentation]] | #[[Query]] | #[[Table]]
-- Articles::
-  - **[Active Reading in Roam Research Featuring the Zettelkasten Method](https://padminipyapali.medium.com/zettelkasten-method-roam-research-f7b341f14fbd) by [[Padmini Pyapali]]**
-  - #[[Block References]] | #[[Page References]]
-  - **[Implementing Zettelkasten in Roam: A Practical Guide](https://www.roambrain.com/implementing-zettelkasten-in-roam/) by [[RoamBrain]]**
-  - #[[Page References]] | #[[Block References]] 
-  - **[Roamkasten - a practical how to guide to optimize Zettelkasten in Roam Research](https://www.thrivinghenry.com/writings/roamkasten-a-practical-how-to-guide-to-optimize-zettelkasten-in-roam-research) by [[Thriving Henry]]**
-
-  - #[[Page References]] | #[[Linked References]] | #[[Unlinked References]] | #[[Indentation]] |
-  - **[Roamkasten - a practical how to guide to optimize Zettelkasten in Roam Research](https://www.thrivinghenry.com/writings/roamkasten-a-practical-how-to-guide-to-optimize-zettelkasten-in-roam-research) by [[Thriving Henry]]**
-  - #[[Page References]] | #[[Linked References]] | #[[Unlinked References]] | #[[Indentation]] | #[[Block References]] | #[[Right Sidebar]]
+- [[.--]]
+  - **Open graph overview from left sidebar**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FjJz0CNicqY.gif?alt=media&token=1d8ca7df-25cd-458f-8f9e-09e130327c27)
   - 
-
-### Community Videos::
-
-#### How to Take Smart Notes | Zettelkasten Method in Roam Research by [[Shu Omi]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=ljyo_WAJevQ&t=188s&ab_channel=ShuOmi}}
-  #[[Page References]] | #[[Right Sidebar]] | #[[Block References]] | #[[Linked References]] | #[[Filter]] 
-
-#### How Taking Smart, Simple Notes Will Make You a Better Writer
-by [[Drew Coffman]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=wMOACjJzfgM}}
-
-#### Roam Tour: Professor [[Joel Chan]]- Zettelkasten and Evergreen Notes for Generative Thought by [[Robert Haisfield]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=A6PIrVZoZAk&ab_channel=RobertHaisfield}}
-  #[[Page References]] | #[[Right Sidebar]] | #[[Query]] | #[[Linked References]] | #[[Indentation]] 
+  - **Change layout**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FVlZpC492oI.gif?alt=media&token=d6055ce8-6b3b-4ece-b942-3253fae20be6)
+  - 
+  - **Remove log days**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FT1YtPOXv6j.gif?alt=media&token=835832b8-b060-4519-9970-eaef8c564f52)
+  - 
+  - **Selecting node and zooming in on node**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FvxMzNcxM0B.gif?alt=media&token=c7452963-0954-4425-8a44-c7e4f0bb37e1)
+  - 
+  - **Moving node**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FeKRmqKzotE.gif?alt=media&token=8dc9fe95-3c1b-4330-8f00-110bbaac99ff)
+  - 
+  - **Open node in sidebar**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FzO8buehcAl.gif?alt=media&token=0de4cdf5-26a2-440c-a0af-57ede8199623)
 
 ---
 
@@ -12141,26 +12164,31 @@ by [[Drew Coffman]]
 
 ---
 
-# Graph Overview
+# Daily Notes
 
 - [[.--]]
-  - **Open graph overview from left sidebar**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FjJz0CNicqY.gif?alt=media&token=1d8ca7df-25cd-458f-8f9e-09e130327c27)
-  - 
-  - **Change layout**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FVlZpC492oI.gif?alt=media&token=d6055ce8-6b3b-4ece-b942-3253fae20be6)
-  - 
-  - **Remove log days**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FT1YtPOXv6j.gif?alt=media&token=835832b8-b060-4519-9970-eaef8c564f52)
-  - 
-  - **Selecting node and zooming in on node**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FvxMzNcxM0B.gif?alt=media&token=c7452963-0954-4425-8a44-c7e4f0bb37e1)
-  - 
-  - **Moving node**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FeKRmqKzotE.gif?alt=media&token=8dc9fe95-3c1b-4330-8f00-110bbaac99ff)
-  - 
-  - **Open node in sidebar**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FzO8buehcAl.gif?alt=media&token=0de4cdf5-26a2-440c-a0af-57ede8199623)
+
+### **Daily Notes are the backbone of the Roam experience.**
+
+- When you sign into Roam, you will start on a page with today's date.
+- We encourage people to start writing on this page because it gives context to your notes.
+- For example, if you take meeting notes in the Daily Note, the date of your meeting will always be tied to the notes.
+- ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/64002864636/original/qqL4apOfjDpoVLBx5JJu6TnrANUlTZSblg.png?1600974212)
+- Even if you create a new page, it's often helpful to do so from the Daily Note. This way, you'll be able to see when you created these pages, and your work will be visible when reviewing your days.
+- Consider the following Daily Note:
+- ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/64002864729/original/jzf65Bfvc_C7CcxpeokK5YM20u9Kv_5G6A.png?1600974564)
+- What does this person get by using the Daily Note instead of just working in the [[Weekly Experiments]] and [[5 Year Plan]] pages?
+- The context for why they started Weekly Experiments
+- An overview on what they changed in their 5 Year Plan, and an intention to work on it more next week.
+
+### **Conclusion**
+
+- Roam is all about making connections. The Daily Note is intended to help you make connections with yourself over time.
+- Your future self will thank you!
+
+### Roam Team Videos::
+
+- {{[[video]]: https://www.loom.com/share/ed65ea5c73e04035a910c9c96510d83a}}
 
 ---
 
@@ -12209,34 +12237,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Daily Notes
-
-- [[.--]]
-
-### **Daily Notes are the backbone of the Roam experience.**
-
-- When you sign into Roam, you will start on a page with today's date.
-- We encourage people to start writing on this page because it gives context to your notes.
-- For example, if you take meeting notes in the Daily Note, the date of your meeting will always be tied to the notes.
-- ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/64002864636/original/qqL4apOfjDpoVLBx5JJu6TnrANUlTZSblg.png?1600974212)
-- Even if you create a new page, it's often helpful to do so from the Daily Note. This way, you'll be able to see when you created these pages, and your work will be visible when reviewing your days.
-- Consider the following Daily Note:
-- ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/64002864729/original/jzf65Bfvc_C7CcxpeokK5YM20u9Kv_5G6A.png?1600974564)
-- What does this person get by using the Daily Note instead of just working in the [[Weekly Experiments]] and [[5 Year Plan]] pages?
-- The context for why they started Weekly Experiments
-- An overview on what they changed in their 5 Year Plan, and an intention to work on it more next week.
-
-### **Conclusion**
-
-- Roam is all about making connections. The Daily Note is intended to help you make connections with yourself over time.
-- Your future self will thank you!
-
-### Roam Team Videos::
-
-- {{[[video]]: https://www.loom.com/share/ed65ea5c73e04035a910c9c96510d83a}}
-
----
-
 # Community
 
 - [[Roam Slack]]
@@ -12258,23 +12258,23 @@ by [[Drew Coffman]]
 
 ---
 
-# Extensions
+# Precise Links
 
-- CSS
-  - [{:tag :h3}Roam themes: how to style Roam Research with custom CSS ...](https://nesslabs.com/roam-research-themes-custom-styling-css)
-  - [{:tag :h3}Painting Roam with Custom CSS - Maggie Appleton](https://maggieappleton.com/paintingroam/)
-  - [{:tag :h3}Best Roam Research CSS Themes — Keep Productive](https://www.keepproductive.com/blog/best-roam-research-css-themes)
-  - [{:tag :h3}Ultimate list of Roam Research themes and CSS styles ...](https://www.roamtips.com/home/roam-research-css-styles)
-  - [{:tag :h3}Make Your Roam Theme Your Own With These CSS Snippets ...](https://www.maggiedelano.com/2020/09/05/roamcsssnippets.html)
-  - [{:tag :h3}CSS for Roam (1st lesson): Roam with Style | by Cato Minor ...](https://catominor3.medium.com/roam-with-style-8a18c216d338)
-  - [{:tag :h3}RoamThemes - Style your Roam with Custom Themes](https://roamthemes.io/)
-  - [{:tag :h3}Pro Tip: Roam Research now supports custom themes, via CSS.](https://capiche.com/q/pro-tip-roam-research-now-supports-custom-themes-via-css)
-- JS Plugin
-  - [Make Roam for Your Mind: Ode to Customization | by Cato ...](https://catominor3.medium.com/make-roam-for-your-mind-9e7f09e6a7b0)
-  - [JavaScript for Roam (introduction) | by Cato Minor | Medium](https://catominor3.medium.com/javascript-for-roam-introduction-f19f82ca297)
-- Chrome Extension
-  - [Roam JS Extensions](https://roamjs.com/docs/)
-  - [Roam Hacker](https://www.youtube.com/channel/UClmpveyXiwZP3PlKpDKdGEA/videos)
+- Example
+  - say I have a collection of statements like these
+    - Socrates is a Man
+      - certainty:: {{[[slider]]}}
+    - Socrates is Mortal
+      - certainty:: {{[[slider]]}}
+    - All Men are Mortal
+      - certainty:: {{[[slider]]}}
+  - Then I can reference those statements into a compound statement like this
+    - If Socrates is a Man and All Men are Mortal then Socrates is Mortal
+      - certainty:: {{[[slider]]}}
+      - 
+  - I will then see that statement whenever I visit one of the blocks that is referenced within it
+    - like this
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fv8%2Fhelp%2FbGuVgwv7eo?alt=media&token=5cc08cb5-9668-4812-9084-38cd9cd816cf)
 
 ---
 
@@ -12312,23 +12312,43 @@ by [[Drew Coffman]]
 
 ---
 
-# Precise Links
+# Extensions
 
-- Example
-  - say I have a collection of statements like these
-    - Socrates is a Man
-      - certainty:: {{[[slider]]}}
-    - Socrates is Mortal
-      - certainty:: {{[[slider]]}}
-    - All Men are Mortal
-      - certainty:: {{[[slider]]}}
-  - Then I can reference those statements into a compound statement like this
-    - If Socrates is a Man and All Men are Mortal then Socrates is Mortal
-      - certainty:: {{[[slider]]}}
-      - 
-  - I will then see that statement whenever I visit one of the blocks that is referenced within it
-    - like this
-      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fv8%2Fhelp%2FbGuVgwv7eo?alt=media&token=5cc08cb5-9668-4812-9084-38cd9cd816cf)
+- CSS
+  - [{:tag :h3}Roam themes: how to style Roam Research with custom CSS ...](https://nesslabs.com/roam-research-themes-custom-styling-css)
+  - [{:tag :h3}Painting Roam with Custom CSS - Maggie Appleton](https://maggieappleton.com/paintingroam/)
+  - [{:tag :h3}Best Roam Research CSS Themes — Keep Productive](https://www.keepproductive.com/blog/best-roam-research-css-themes)
+  - [{:tag :h3}Ultimate list of Roam Research themes and CSS styles ...](https://www.roamtips.com/home/roam-research-css-styles)
+  - [{:tag :h3}Make Your Roam Theme Your Own With These CSS Snippets ...](https://www.maggiedelano.com/2020/09/05/roamcsssnippets.html)
+  - [{:tag :h3}CSS for Roam (1st lesson): Roam with Style | by Cato Minor ...](https://catominor3.medium.com/roam-with-style-8a18c216d338)
+  - [{:tag :h3}RoamThemes - Style your Roam with Custom Themes](https://roamthemes.io/)
+  - [{:tag :h3}Pro Tip: Roam Research now supports custom themes, via CSS.](https://capiche.com/q/pro-tip-roam-research-now-supports-custom-themes-via-css)
+- JS Plugin
+  - [Make Roam for Your Mind: Ode to Customization | by Cato ...](https://catominor3.medium.com/make-roam-for-your-mind-9e7f09e6a7b0)
+  - [JavaScript for Roam (introduction) | by Cato Minor | Medium](https://catominor3.medium.com/javascript-for-roam-introduction-f19f82ca297)
+- Chrome Extension
+  - [Roam JS Extensions](https://roamjs.com/docs/)
+  - [Roam Hacker](https://www.youtube.com/channel/UClmpveyXiwZP3PlKpDKdGEA/videos)
+
+---
+
+# Audio Player
+
+- You can upload and embed audio into Roam! Check out this interactive demo on [[Conor White-Sullivan]] describing Roam as Excel
+  - {{audio: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Fhz3WHZhdUg.mp3?alt=media&token=9af83477-66d5-4b97-8643-2d9844ba6b99}}
+- Team GIFs::
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FOIMsl6U0Jb.gif?alt=media&token=db707c6f-7936-4813-9a3f-2475a3d027c0)
+- Roam Team Videos::
+  - {{[[video]]: https://www.loom.com/share/5c6c03a96aec4a1ab62234a86209abb2}}
+- Community Videos::
+  - Playing sound files in Roam Research by [[Darin Flynn]]
+    - {{[[video]]: https://www.youtube.com/watch?v=J-x4srxcNrU}}
+      #[[Audio Player]] | #[[Block References]]
+- Articles::
+  - [How to upload and play audio files in Roam Research](https://nesslabs.com/roam-research-audio-files) by [[Ness Labs]] [[Anne-Laure Le Cunff]]
+    - #[[/ Commands]] | #[[Audio Player]]
+- Key Commands::
+  - `/upload`
 
 ---
 
@@ -12365,26 +12385,6 @@ by [[Drew Coffman]]
 ### Key Commands::
 
 - Search for template to trigger `;;`
-
----
-
-# Audio Player
-
-- You can upload and embed audio into Roam! Check out this interactive demo on [[Conor White-Sullivan]] describing Roam as Excel
-  - {{audio: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Fhz3WHZhdUg.mp3?alt=media&token=9af83477-66d5-4b97-8643-2d9844ba6b99}}
-- Team GIFs::
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FOIMsl6U0Jb.gif?alt=media&token=db707c6f-7936-4813-9a3f-2475a3d027c0)
-- Roam Team Videos::
-  - {{[[video]]: https://www.loom.com/share/5c6c03a96aec4a1ab62234a86209abb2}}
-- Community Videos::
-  - Playing sound files in Roam Research by [[Darin Flynn]]
-    - {{[[video]]: https://www.youtube.com/watch?v=J-x4srxcNrU}}
-      #[[Audio Player]] | #[[Block References]]
-- Articles::
-  - [How to upload and play audio files in Roam Research](https://nesslabs.com/roam-research-audio-files) by [[Ness Labs]] [[Anne-Laure Le Cunff]]
-    - #[[/ Commands]] | #[[Audio Player]]
-- Key Commands::
-  - `/upload`
 
 ---
 
@@ -12451,6 +12451,30 @@ by [[Drew Coffman]]
 
 ---
 
+# Miscellaneous
+
+### [[Wiki]]
+
+### [[Scripture Study]]
+
+### [[Language Learning]]
+
+### [[Hacking and Coding]]
+
+### Roam Research for [[Kids]]
+
+### International Languages
+
+- [[Chinese]]
+- [[Korean]]
+- [[Russian]]
+- [[Spanish]]
+- [[German]]
+- [[Japanese]]
+- [[Turkish]]
+
+---
+
 # Notable Graphs
 
 ## Directory
@@ -12482,30 +12506,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Miscellaneous
-
-### [[Wiki]]
-
-### [[Scripture Study]]
-
-### [[Language Learning]]
-
-### [[Hacking and Coding]]
-
-### Roam Research for [[Kids]]
-
-### International Languages
-
-- [[Chinese]]
-- [[Korean]]
-- [[Russian]]
-- [[Spanish]]
-- [[German]]
-- [[Japanese]]
-- [[Turkish]]
-
----
-
 # Calculator
 
 - Calculates basic arithmetic. 
@@ -12529,33 +12529,33 @@ by [[Drew Coffman]]
 
 ---
 
-# Personal CRM
+# Project Management
 
 ### Community Videos::
 
-#### Roam: The Best Personal CRM Ever by [[Nat Eliason]]
+#### Managing tasks and projects with Roam Research by [[Mickey Mellen]]
 
-- {{[[video]]: https://www.youtube.com/watch?v=cRDgrdlfYdE&ab_channel=NatEliason}}
-  #[[Page References]] | #[[Sidebar]] | #[[Linked References]] | #[[Attributes]]
+- {{[[video]]: https://www.youtube.com/watch?v=NoNebWRn9ZQ&ab_channel=MickeyMellen}}
+  #[[TODO/DONE]] | #[[Page References]] | #[[Daily Notes]] | #[[Linked References]] | #[[Date picker]] | #[[Filter]] 
 
-#### Mini CRM in Roam Research: Logging Meeting Notes by [[R.J. Nestor]]
+#### PARA in Roam Reserach, Managing projects and tasks by [[Praveen Anuraj]]
 
-- {{[[video]]: https://www.youtube.com/watch?v=CnakhkONQ_g&ab_channel=R.J.Nestor}}
-  #[[Page References]] | #[[Sidebar]] | #[[Daily Notes]] | #[[Tags]] | #[[Indentation]] | #[[Linked References]] | #[[Filter]] | #[[Attributes]] 
+- {{[[video]]: https://www.youtube.com/watch?v=SQ71uG1q79g&ab_channel=PraveenAnuraj}}
+  #[[Page References]] | #[[TODO/DONE]] | #[[Query]] | #[[Date picker]] 
 
 ### Articles::
 
-#### [Using Roam Research as a Customer Relationship Manager](https://thesweetsetup.com/using-roam-research-as-a-customer-relationship-manager/) by [[Josh Ginter]]
+#### [How I’m using Roam Research to Document a Sales Project | by Eran Boodnero | Medium](https://medium.com/@eboodnero/how-i-became-a-productivity-power-house-9da20ba728c0)
 
-- #[[Page References]] | #[[Attributes]] | #[[Templates]] | #[[Daily Notes]] #[[Current time]] | #[[Task Management]] | #[[Calculator]] | #[[Pomodoro timer]] | #[[Kanban]] 
+- #[[Page References]] | #[[TODO/DONE]] | #[[Block References]] | #[[Daily Notes]] 
 
-#### [Use Roam Research as a Personal CRM - Nicolo S's pro tip about Roam Research | YourStack](https://yourstack.com/pro-tips/340-use-roam-research-as-a-personal-crm) by [[Nicolo S]]
+#### [Project management for people who like flow and hate project management – Joshua Mitchell](https://lelon.io/blog/roam-research-project-management)
 
-- #[[Attributes]] | #[[Page References]]
+- #[[Page References]] | #[[TODO/DONE]] | #[[Current time]] | #[[Right Sidebar]] | #[[Linked References]] | #[[Search]] 
 
-#### [Roam Research: Why I Love It and How I Use It](https://www.nateliason.com/blog/roam#crm) by [[Nat Eliason]]
+#### [Tasks and notes: A match made in Roam - R.J. Nestor](https://rjnestor.com/home/tasks-and-notes-a-match-made-in-roam/)
 
-- #[[Attributes]] | #[[Page References]] | #[[Linked References]]
+- #[[Page References]] | #[[Query]] | #[[Block References]] | #[[Replace With]] |  #[[text and alias]] | #[[TODO/DONE]]
 - 
 
 ---
@@ -12617,34 +12617,52 @@ by [[Drew Coffman]]
 
 ---
 
-# Project Management
+# Personal CRM
 
 ### Community Videos::
 
-#### Managing tasks and projects with Roam Research by [[Mickey Mellen]]
+#### Roam: The Best Personal CRM Ever by [[Nat Eliason]]
 
-- {{[[video]]: https://www.youtube.com/watch?v=NoNebWRn9ZQ&ab_channel=MickeyMellen}}
-  #[[TODO/DONE]] | #[[Page References]] | #[[Daily Notes]] | #[[Linked References]] | #[[Date picker]] | #[[Filter]] 
+- {{[[video]]: https://www.youtube.com/watch?v=cRDgrdlfYdE&ab_channel=NatEliason}}
+  #[[Page References]] | #[[Sidebar]] | #[[Linked References]] | #[[Attributes]]
 
-#### PARA in Roam Reserach, Managing projects and tasks by [[Praveen Anuraj]]
+#### Mini CRM in Roam Research: Logging Meeting Notes by [[R.J. Nestor]]
 
-- {{[[video]]: https://www.youtube.com/watch?v=SQ71uG1q79g&ab_channel=PraveenAnuraj}}
-  #[[Page References]] | #[[TODO/DONE]] | #[[Query]] | #[[Date picker]] 
+- {{[[video]]: https://www.youtube.com/watch?v=CnakhkONQ_g&ab_channel=R.J.Nestor}}
+  #[[Page References]] | #[[Sidebar]] | #[[Daily Notes]] | #[[Tags]] | #[[Indentation]] | #[[Linked References]] | #[[Filter]] | #[[Attributes]] 
 
 ### Articles::
 
-#### [How I’m using Roam Research to Document a Sales Project | by Eran Boodnero | Medium](https://medium.com/@eboodnero/how-i-became-a-productivity-power-house-9da20ba728c0)
+#### [Using Roam Research as a Customer Relationship Manager](https://thesweetsetup.com/using-roam-research-as-a-customer-relationship-manager/) by [[Josh Ginter]]
 
-- #[[Page References]] | #[[TODO/DONE]] | #[[Block References]] | #[[Daily Notes]] 
+- #[[Page References]] | #[[Attributes]] | #[[Templates]] | #[[Daily Notes]] #[[Current time]] | #[[Task Management]] | #[[Calculator]] | #[[Pomodoro timer]] | #[[Kanban]] 
 
-#### [Project management for people who like flow and hate project management – Joshua Mitchell](https://lelon.io/blog/roam-research-project-management)
+#### [Use Roam Research as a Personal CRM - Nicolo S's pro tip about Roam Research | YourStack](https://yourstack.com/pro-tips/340-use-roam-research-as-a-personal-crm) by [[Nicolo S]]
 
-- #[[Page References]] | #[[TODO/DONE]] | #[[Current time]] | #[[Right Sidebar]] | #[[Linked References]] | #[[Search]] 
+- #[[Attributes]] | #[[Page References]]
 
-#### [Tasks and notes: A match made in Roam - R.J. Nestor](https://rjnestor.com/home/tasks-and-notes-a-match-made-in-roam/)
+#### [Roam Research: Why I Love It and How I Use It](https://www.nateliason.com/blog/roam#crm) by [[Nat Eliason]]
 
-- #[[Page References]] | #[[Query]] | #[[Block References]] | #[[Replace With]] |  #[[text and alias]] | #[[TODO/DONE]]
+- #[[Attributes]] | #[[Page References]] | #[[Linked References]]
 - 
+
+---
+
+# Upload Files
+
+- You can upload and embed files in Roam, including audio, PDFs, and images, so you can access files right on the spot  
+  - Upload audio [[Audio Player]]
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FOIMsl6U0Jb.gif?alt=media&token=db707c6f-7936-4813-9a3f-2475a3d027c0)
+  - Upload PDFs 
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FSV5zdzJ_v6.gif?alt=media&token=1cd664ff-cd24-4b0e-80fb-8b139841b07c)
+  - Upload [[Images]]
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Fp8y1UIR1C0.gif?alt=media&token=b7b763f2-b5f6-4e37-a015-0053dc0bf63c)
+- Community Videos::
+  - Roam Research: Adding a File by [[Les Kristofs]]
+    - {{[[video]]: https://www.youtube.com/watch?v=JgT_zGrudko}}
+      #[[Upload Files]] | #[[/ Commands]]
+- Key Commands::
+  - `/upload`
 
 ---
 
@@ -12665,21 +12683,21 @@ by [[Drew Coffman]]
 
 ---
 
-# Upload Files
+# Install Roam
 
-- You can upload and embed files in Roam, including audio, PDFs, and images, so you can access files right on the spot  
-  - Upload audio [[Audio Player]]
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FOIMsl6U0Jb.gif?alt=media&token=db707c6f-7936-4813-9a3f-2475a3d027c0)
-  - Upload PDFs 
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FSV5zdzJ_v6.gif?alt=media&token=1cd664ff-cd24-4b0e-80fb-8b139841b07c)
-  - Upload [[Images]]
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Fp8y1UIR1C0.gif?alt=media&token=b7b763f2-b5f6-4e37-a015-0053dc0bf63c)
-- Community Videos::
-  - Roam Research: Adding a File by [[Les Kristofs]]
-    - {{[[video]]: https://www.youtube.com/watch?v=JgT_zGrudko}}
-      #[[Upload Files]] | #[[/ Commands]]
-- Key Commands::
-  - `/upload`
+#### **Does Roam have a mobile app? Can I install it on my machine?**
+
+- Not yet, however Roam is available now as a webapp which gives you full access to your Roam and functions in a similar way to an app available through the appstore.
+- Here's how to install Roam as a webapp on your **phone** or **tablet**:
+  - Go to chrome (or the other browser you use such as safari, firefox etc), then go to [http://www.roamresearch.com](http://www.roamresearch.com/), and it will ask you to sign in to your Roam account.
+  - Once you sign in you will see this screen below. And then click the prompt at the bottom that says 'Add Roam to homescreen', which will install Roam as a link on your tablet/phone.
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2FALLP4qNh6G.png?alt=media&token=83f0d3f8-9d42-4016-b83b-4c29816cb2a1)
+  - An alternative way to do this, if you go to [roamresearch.com](http://roamresearch.com/) and sign in, you should should see 'install full site' as a button on the top right of page, if you click this it will install Roam on your device.
+- Here's how to install Roam as a webapp on your **desktop**: 
+  - Go to Chrome, and open your Roam graph
+  - From Chrome's three-dot-menu, go to "More Tools", "Create Shortcut"
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Fq2dKP-MzXc.gif?alt=media&token=801dbe63-be9d-4d89-84cf-0c2ab85e3066)
+- More on this: https://www.roamtips.com/home/roam-research-app-mac-windows
 
 ---
 
@@ -12710,21 +12728,20 @@ by [[Drew Coffman]]
 
 ---
 
-# Install Roam
+# Mentions
 
-#### **Does Roam have a mobile app? Can I install it on my machine?**
-
-- Not yet, however Roam is available now as a webapp which gives you full access to your Roam and functions in a similar way to an app available through the appstore.
-- Here's how to install Roam as a webapp on your **phone** or **tablet**:
-  - Go to chrome (or the other browser you use such as safari, firefox etc), then go to [http://www.roamresearch.com](http://www.roamresearch.com/), and it will ask you to sign in to your Roam account.
-  - Once you sign in you will see this screen below. And then click the prompt at the bottom that says 'Add Roam to homescreen', which will install Roam as a link on your tablet/phone.
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2FALLP4qNh6G.png?alt=media&token=83f0d3f8-9d42-4016-b83b-4c29816cb2a1)
-  - An alternative way to do this, if you go to [roamresearch.com](http://roamresearch.com/) and sign in, you should should see 'install full site' as a button on the top right of page, if you click this it will install Roam on your device.
-- Here's how to install Roam as a webapp on your **desktop**: 
-  - Go to Chrome, and open your Roam graph
-  - From Chrome's three-dot-menu, go to "More Tools", "Create Shortcut"
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Fq2dKP-MzXc.gif?alt=media&token=801dbe63-be9d-4d89-84cf-0c2ab85e3066)
-- More on this: https://www.roamtips.com/home/roam-research-app-mac-windows
+- Mentions help you pull information (i.e., References) right on any [[Blocks]], without you having to open extra windows or sidebars to access them
+  - For example, pulling the mentions for the [[Linked References]] and [[Unlinked References]] for White Paper
+    - {{[[mentions]]: [[White Paper]]}}
+- Community Videos::
+  - How To Use Roam Research Basics: Mentions and Using It With Daily To Dos or Task Management by [[The Upgraded Brain]]
+    - {{[[video]]: https://www.youtube.com/watch?v=5zC0EEeeMX0}}
+      #[[Task Management]] | #[[Mentions]] | #[[Task Management]]
+- Articles::
+  - [What are page mentions and block mentions in Roam?](https://www.roamtips.com/home/page-mentions-and-block-mentions-roam) by [[Roam Tips]]
+    - #[[/ Commands]] | #[[Mentions]]
+- Key Commands::
+  - `/mentions`
 
 ---
 
@@ -12746,23 +12763,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Mentions
-
-- Mentions help you pull information (i.e., References) right on any [[Blocks]], without you having to open extra windows or sidebars to access them
-  - For example, pulling the mentions for the [[Linked References]] and [[Unlinked References]] for White Paper
-    - {{[[mentions]]: [[White Paper]]}}
-- Community Videos::
-  - How To Use Roam Research Basics: Mentions and Using It With Daily To Dos or Task Management by [[The Upgraded Brain]]
-    - {{[[video]]: https://www.youtube.com/watch?v=5zC0EEeeMX0}}
-      #[[Task Management]] | #[[Mentions]] | #[[Task Management]]
-- Articles::
-  - [What are page mentions and block mentions in Roam?](https://www.roamtips.com/home/page-mentions-and-block-mentions-roam) by [[Roam Tips]]
-    - #[[/ Commands]] | #[[Mentions]]
-- Key Commands::
-  - `/mentions`
-
----
-
 # Images
 
 - You can include images on Roam in these two ways
@@ -12778,32 +12778,6 @@ by [[Drew Coffman]]
           #[[Key Commands]]
 - Key Commands::
   - `![image](yourimageurl.com)` to pull from the internt
-
----
-
-# Journaling
-
-### Articles::
-
-#### [How to Keep a Journal in Roam Research](https://markmcelroy.com/how-to-keep-a-journal-in-roam-research/) by [[Mark McElroy]]
-
-- #[[Daily Notes]] | #[[Page References]] | #[[Slider]]
-
-#### [How to use Roam Research for Interstitial Journaling](https://www.cortexfutura.com/interstitial-journaling-roam-research/) by [[Cortex Futura]]
-
-- #[[Daily Notes]] | #[[Current time]] | #[[Page References]]
-
-#### [Atomic Journaling - Expanding Thoughts](https://brandontoner.substack.com/p/atomic-journaling) by [[Brandon Toner]]
-
-- #[[Daily Notes]] | #[[Templates]] | #[[Block References]]
-
-#### [Interstitial journaling: combining notes, to-do & time tracking](https://nesslabs.com/interstitial-journaling) by [[Anne-Laure Le Cunff]]
-
-- #[[Daily Notes]] | #[[Current time]] | #[[Task Management]] | #[[Page References]]
-
-#### [The Power of Roaman Journaling](https://www.roambrain.com/the-power-of-roaman-journaling/) by [[Tracy Winchell]]
-
-- #[[Templates]] | #[[Daily Notes]] | #[[Current time]] | #[[Block Embed]]
 
 ---
 
@@ -12836,6 +12810,32 @@ by [[Drew Coffman]]
 
 ---
 
+# Journaling
+
+### Articles::
+
+#### [How to Keep a Journal in Roam Research](https://markmcelroy.com/how-to-keep-a-journal-in-roam-research/) by [[Mark McElroy]]
+
+- #[[Daily Notes]] | #[[Page References]] | #[[Slider]]
+
+#### [How to use Roam Research for Interstitial Journaling](https://www.cortexfutura.com/interstitial-journaling-roam-research/) by [[Cortex Futura]]
+
+- #[[Daily Notes]] | #[[Current time]] | #[[Page References]]
+
+#### [Atomic Journaling - Expanding Thoughts](https://brandontoner.substack.com/p/atomic-journaling) by [[Brandon Toner]]
+
+- #[[Daily Notes]] | #[[Templates]] | #[[Block References]]
+
+#### [Interstitial journaling: combining notes, to-do & time tracking](https://nesslabs.com/interstitial-journaling) by [[Anne-Laure Le Cunff]]
+
+- #[[Daily Notes]] | #[[Current time]] | #[[Task Management]] | #[[Page References]]
+
+#### [The Power of Roaman Journaling](https://www.roambrain.com/the-power-of-roaman-journaling/) by [[Tracy Winchell]]
+
+- #[[Templates]] | #[[Daily Notes]] | #[[Current time]] | #[[Block Embed]]
+
+---
+
 # Export
 
 #### [[Markdown]] Export
@@ -12857,6 +12857,31 @@ by [[Drew Coffman]]
 #### Auto Backups
 
 - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FE-1xkkvU6W.gif?alt=media&token=c94c84b4-a93b-471f-8f05-8b7632671cae)
+
+---
+
+# Meeting notes
+
+### Community Videos::
+
+#### Mini CRM in Roam Research: Logging meeting notes by [[R.J. Nestor]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=CnakhkONQ_g&t=6s&ab_channel=R.J.Nestor}}
+  #[[Daily Notes]] | #[[Tags]] | #[[Indentation]] | #[[Linked References]] | #[[Filter]] | #[[Right Sidebar]]
+
+### Roam Team Videos::
+
+#### Meeting Notes in Roam by [[Conor White-Sullivan]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=wMOOU8uFLZI&t=129s&ab_channel=ConorWhite-Sullivan}}
+  #[[Page References]] | #[[Daily Notes]] | #[[Date picker]] | #[[Linked References]] | #[[TODO/DONE]] | #[[Right Sidebar]] | #[[Filter]] | #[[Query]] | #[[Block References]] | #[[Alias]]
+
+#### Taking Notes on 1:1s by [[Conor White-Sullivan]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=otoF_ane688&ab_channel=ConorWhite-Sullivan}} #[[Conor White-Sullivan]]
+- {{[[video]]: https://www.youtube.com/watch?v=otoF_ane688&ab_channel=ConorWhite-Sullivan}}
+  #[[Current time]] | #[[Page References]] | #[[Right Sidebar]] | #[[Linked References]] | #[[Query]] | #[[TODO/DONE]] | #[[Block References]] 
+- 
 
 ---
 
@@ -12885,20 +12910,24 @@ by [[Drew Coffman]]
 
 ---
 
-# Date picker
+# Studying
 
-- Date picker helps you pick a date's page by showing you a calendar
-  - {{date}}
-- Roam Team Videos::
-  - Scheduling with Roam by [[Conor White-Sullivan]]
-    - {{[[video]]: https://www.youtube.com/watch?v=ByiFhtlI66A}}
-      #[[Linked References]] | #[[TODO/DONE]] | #[[Date picker]]
 - Community Videos::
-  - How to Build a Weekly Schedule in Roam by [[Dalton Mabery]]
-    - {{[[video]]: https://www.youtube.com/watch?v=E8GW5QhY9VY}}
-      #[[Date picker]] | #[[TODO/DONE]] | #[[Tags]] | #[[Filter]] | #[[Linked References]] | #[[Query]]
-- Key Commands::
-  - `/date`
+  - **Roam Research: Notetaking Session for School by [[J M]]**
+    - {{[[video]]: https://www.youtube.com/watch?v=ZOWk76FhwEU&feature=youtu.be&ab_channel=JM}}
+      #[[Page References]] | #[[Indentation]] | #[[Right Sidebar]] 
+  - **Roam for Students | How to Take Notes in a Lecture by [[Shu Omi]]**
+    - {{[[video]]: https://www.youtube.com/watch?v=nWgXBGDP3nI&ab_channel=ShuOmi}}
+      #[[Page References]] | #[[Indentation]]
+  - **How I use Roam Research for Lecture Notes (for college students) by [[Abhinav Kejriwal]]**
+    - {{[[video]]: https://www.youtube.com/watch?v=gBYwBNY3pNc&ab_channel=AbhinavKejriwal}}
+      #[[Page References]] | #[[Sidebar]] | #[[Block References]]
+
+### Articles::
+
+#### [How I Used Roam Research to Study for Medical School](https://toolsforgrowth.substack.com/p/how-i-used-roam-research-to-study)
+
+- #[[Daily Notes]] | #[[Page References]] | #[[Indentation]] | #[[Linked References]]
 
 ---
 
@@ -12921,6 +12950,23 @@ by [[Drew Coffman]]
 
 ---
 
+# Date picker
+
+- Date picker helps you pick a date's page by showing you a calendar
+  - {{date}}
+- Roam Team Videos::
+  - Scheduling with Roam by [[Conor White-Sullivan]]
+    - {{[[video]]: https://www.youtube.com/watch?v=ByiFhtlI66A}}
+      #[[Linked References]] | #[[TODO/DONE]] | #[[Date picker]]
+- Community Videos::
+  - How to Build a Weekly Schedule in Roam by [[Dalton Mabery]]
+    - {{[[video]]: https://www.youtube.com/watch?v=E8GW5QhY9VY}}
+      #[[Date picker]] | #[[TODO/DONE]] | #[[Tags]] | #[[Filter]] | #[[Linked References]] | #[[Query]]
+- Key Commands::
+  - `/date`
+
+---
+
 # Bidirectional linking
 
 - It doesn't matter what [page]([[Pages]]) you've written a note on, if you mention an idea, every place where you mentioned that idea will get collected underneath that page in the [[Linked References]] section when you turn turn that idea into a [page reference]([[Page References]])
@@ -12933,52 +12979,6 @@ by [[Drew Coffman]]
   - `[[` to find or create [[Page References]]
   - `cmd+u` (macOS) / `ctrl+u` (PC) to [[Find or create page]]
   - `#` to find or create [[Page References]] as a [tag]([[Tags]])
-
----
-
-# Studying
-
-- Community Videos::
-  - **Roam Research: Notetaking Session for School by [[J M]]**
-    - {{[[video]]: https://www.youtube.com/watch?v=ZOWk76FhwEU&feature=youtu.be&ab_channel=JM}}
-      #[[Page References]] | #[[Indentation]] | #[[Right Sidebar]] 
-  - **Roam for Students | How to Take Notes in a Lecture by [[Shu Omi]]**
-    - {{[[video]]: https://www.youtube.com/watch?v=nWgXBGDP3nI&ab_channel=ShuOmi}}
-      #[[Page References]] | #[[Indentation]]
-  - **How I use Roam Research for Lecture Notes (for college students) by [[Abhinav Kejriwal]]**
-    - {{[[video]]: https://www.youtube.com/watch?v=gBYwBNY3pNc&ab_channel=AbhinavKejriwal}}
-      #[[Page References]] | #[[Sidebar]] | #[[Block References]]
-
-### Articles::
-
-#### [How I Used Roam Research to Study for Medical School](https://toolsforgrowth.substack.com/p/how-i-used-roam-research-to-study)
-
-- #[[Daily Notes]] | #[[Page References]] | #[[Indentation]] | #[[Linked References]]
-
----
-
-# Meeting notes
-
-### Community Videos::
-
-#### Mini CRM in Roam Research: Logging meeting notes by [[R.J. Nestor]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=CnakhkONQ_g&t=6s&ab_channel=R.J.Nestor}}
-  #[[Daily Notes]] | #[[Tags]] | #[[Indentation]] | #[[Linked References]] | #[[Filter]] | #[[Right Sidebar]]
-
-### Roam Team Videos::
-
-#### Meeting Notes in Roam by [[Conor White-Sullivan]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=wMOOU8uFLZI&t=129s&ab_channel=ConorWhite-Sullivan}}
-  #[[Page References]] | #[[Daily Notes]] | #[[Date picker]] | #[[Linked References]] | #[[TODO/DONE]] | #[[Right Sidebar]] | #[[Filter]] | #[[Query]] | #[[Block References]] | #[[Alias]]
-
-#### Taking Notes on 1:1s by [[Conor White-Sullivan]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=otoF_ane688&ab_channel=ConorWhite-Sullivan}} #[[Conor White-Sullivan]]
-- {{[[video]]: https://www.youtube.com/watch?v=otoF_ane688&ab_channel=ConorWhite-Sullivan}}
-  #[[Current time]] | #[[Page References]] | #[[Right Sidebar]] | #[[Linked References]] | #[[Query]] | #[[TODO/DONE]] | #[[Block References]] 
-- 
 
 ---
 
@@ -13036,27 +13036,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Scripture Study
-
-### Community Videos::
-
-#### Processing Sermon/Bible Notes Using Roam Research by [[Mickey Mellen]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=nplokaE6FKY&ab_channel=MickeyMellen}}
-  #[[Page References]] | #[[Linked References]] | #[[Graph Overview]] | #[[Block References]] | #[[Sidebar]]
-
-### Articles::
-
-#### [How I’m Using Roam Research for Bible Study](https://thesweetsetup.com/how-im-using-roam-research-for-bible-study/) by [[Josh Ginter]]
-
-- #[[Graph Overview]] | #[[Date picker]] | #[[Upload Files]] | #[[Markdown]] | #[[Page References]] | #[[Block References]]
-
-#### [Processing sermon and Bible notes using Roam](https://www.roambrain.com/processing-sermon-and-bible-notes-using-roam/) by [[Mickey Mellen]]
-
-- #[[Page References]] | #[[Linked References]] | #[[Graph Overview]] | #[[Block References]] | #[[Sidebar]]
-
----
-
 # Sharing
 
 #### Sharing graph as read-only
@@ -13074,33 +13053,6 @@ by [[Drew Coffman]]
 #### Sharing graph with specific readers
 
 - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FrdZtxdwzbn.gif?alt=media&token=d46dd91e-4963-4dca-bb5f-82f7975e1b6b)
-
----
-
-# Word count
-
-- Word count counts the number of words in a block, for example
-  - The below child block has 115 words
-    - Roam is an online workspace for organizing and evaluating knowledge. The system is built on a directed graph, which frees it from the constraints of the classic file tree. Users can remix and connect ideas in multiple overlapping hierarchies, with each unit of information becoming a node in a dynamic network. Any given node can occupy multiple positions simultaneously, convey information through defined relationships, and populate changes throughout the graph. With weightings assigned to the strength of relationships between nodes, Roam also becomes a tool for Bayesian inference and decision making. The ultimate goal is to extend the system to collaborative reasoning, allowing groups to build shared mental maps and make faster and better-informed decisions. {{[[word-count]]}}
-  - The below child block has 0 words
-    - {{word-count}}
-- You can also go to ALL PAGES on your [[Left Sidebar]] and view the pages with the most to least word count, or vice versa 
-- Key Commands::
-  - `/word`
-
----
-
-# Cancelling your membership during your free trial
-
-- [Sign In](https://roamresearch.com/#/signin) to your Roam account, with the email address you used at sign up:
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FBj_clKqSJv.png?alt=media&token=c948a55a-37cb-4426-9d56-8cbd44981fe0)
-- Then, you can cancel/manage your trial/subscription directly from the following link:
-  https://roamresearch.com/#/billing
-- You can also access your Billing page by going to the [Graphs & Settings](https://roamresearch.com/#/app) page, and cancel/manage your subscription by clicking on your **Name/Email > Billing > Manage Subscription > Cancel Subscription**
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FNUB1yF5V5R.gif?alt=media&token=68629f15-205e-4e27-81dd-293e0ba9b6cf)
-- This will cancel your trial. If you have any problems at all, please contact Roam support at [support@roamresearch.com](mailto:support@roamresearch.com). We can also cancel your trial/plan manually on your behalf well.
-- For your information, Canceling or failing to renew a subscription has 0 effect on your notes - you won't be able to add new notes or edit them, but you'll have access to the graph and the ability to [export your notes](https://roamresearch.com/#/app/help/page/FK4fiJVom) (as Markdown, JSON, EDN or [MessagePack](https://roamresearch.com/#/app/help/page/8StBIyCnR) format).
-- Thanks for trying Roam!
 
 ---
 
@@ -13123,6 +13075,40 @@ by [[Drew Coffman]]
 
 ---
 
+# Word count
+
+- Word count counts the number of words in a block, for example
+  - The below child block has 115 words
+    - Roam is an online workspace for organizing and evaluating knowledge. The system is built on a directed graph, which frees it from the constraints of the classic file tree. Users can remix and connect ideas in multiple overlapping hierarchies, with each unit of information becoming a node in a dynamic network. Any given node can occupy multiple positions simultaneously, convey information through defined relationships, and populate changes throughout the graph. With weightings assigned to the strength of relationships between nodes, Roam also becomes a tool for Bayesian inference and decision making. The ultimate goal is to extend the system to collaborative reasoning, allowing groups to build shared mental maps and make faster and better-informed decisions. {{[[word-count]]}}
+  - The below child block has 0 words
+    - {{word-count}}
+- You can also go to ALL PAGES on your [[Left Sidebar]] and view the pages with the most to least word count, or vice versa 
+- Key Commands::
+  - `/word`
+
+---
+
+# Scripture Study
+
+### Community Videos::
+
+#### Processing Sermon/Bible Notes Using Roam Research by [[Mickey Mellen]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=nplokaE6FKY&ab_channel=MickeyMellen}}
+  #[[Page References]] | #[[Linked References]] | #[[Graph Overview]] | #[[Block References]] | #[[Sidebar]]
+
+### Articles::
+
+#### [How I’m Using Roam Research for Bible Study](https://thesweetsetup.com/how-im-using-roam-research-for-bible-study/) by [[Josh Ginter]]
+
+- #[[Graph Overview]] | #[[Date picker]] | #[[Upload Files]] | #[[Markdown]] | #[[Page References]] | #[[Block References]]
+
+#### [Processing sermon and Bible notes using Roam](https://www.roambrain.com/processing-sermon-and-bible-notes-using-roam/) by [[Mickey Mellen]]
+
+- #[[Page References]] | #[[Linked References]] | #[[Graph Overview]] | #[[Block References]] | #[[Sidebar]]
+
+---
+
 # Console Logs
 
 - To capture console logs
@@ -13133,6 +13119,20 @@ by [[Drew Coffman]]
           - Right click anywhere in the console logs
             - Click "Save as"
               - Save
+
+---
+
+# Cancelling your membership during your free trial
+
+- [Sign In](https://roamresearch.com/#/signin) to your Roam account, with the email address you used at sign up:
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FBj_clKqSJv.png?alt=media&token=c948a55a-37cb-4426-9d56-8cbd44981fe0)
+- Then, you can cancel/manage your trial/subscription directly from the following link:
+  https://roamresearch.com/#/billing
+- You can also access your Billing page by going to the [Graphs & Settings](https://roamresearch.com/#/app) page, and cancel/manage your subscription by clicking on your **Name/Email > Billing > Manage Subscription > Cancel Subscription**
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FNUB1yF5V5R.gif?alt=media&token=68629f15-205e-4e27-81dd-293e0ba9b6cf)
+- This will cancel your trial. If you have any problems at all, please contact Roam support at [support@roamresearch.com](mailto:support@roamresearch.com). We can also cancel your trial/plan manually on your behalf well.
+- For your information, Canceling or failing to renew a subscription has 0 effect on your notes - you won't be able to add new notes or edit them, but you'll have access to the graph and the ability to [export your notes](https://roamresearch.com/#/app/help/page/FK4fiJVom) (as Markdown, JSON, EDN or [MessagePack](https://roamresearch.com/#/app/help/page/8StBIyCnR) format).
+- Thanks for trying Roam!
 
 ---
 
@@ -13148,18 +13148,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Roam Depot
-
-- Official [[Plugins]]
-  - [[July 21st, 2021]]
-    - https://twitter.com/RoamResearch/status/1550192726540374016?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
-  - [[PhonetoNote]]
-    - https://twitter.com/phonetonote/status/1551764556707397633?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
-  - [[Matter]]
-    - https://twitter.com/matter/status/1549490849595080704?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
-
----
-
 # Character count
 
 - Character count counts the number of characters in a block, for example
@@ -13169,6 +13157,19 @@ by [[Drew Coffman]]
     - {{character-count}}
 - Key Commands::
   - `/character`
+
+---
+
+# Current time
+
+- Current time displays the current time in your time zone, it's great for tracking time while writing daily logs 
+  - For example
+    - 21:19
+  - Task Management by [[Conor White-Sullivan]]
+    - {{[[video]]: https://www.youtube.com/watch?v=3aCl7dCYVqA&t=6s&ab_channel=ConorWhite-Sullivan}}
+      #[[TODO/DONE]] | #[[Daily Notes]] | #[[Filter]] | #[[Linked References]] | #[[Block Embed]] | #[[Current time]] | #[[Block References]]
+- Key Commands::
+  - `/time`
 
 ---
 
@@ -13182,6 +13183,30 @@ by [[Drew Coffman]]
   - **Exploring Networked Thought: The Story of Roam Research by [[Futurism]]**
     - {{[[video]]: https://www.youtube.com/watch?v=EqyJweIHaeg}}
       #[[Bidirectional linking]]
+
+---
+
+# Adding soft line breaks in a block
+
+- Each individual bullet point in a page in Roam is referred to as a block.  When you press enter Roam creates a new block on the next line in your page.  Here's an example from a test page where I create five separate blocks.
+- ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/64001916149/original/e94i3GMtvW2xgqkj42JQP1KtV5M4yHYawQ.gif?1597887885)
+- It's also possible to create blocks that include soft line breaks between text.  If you have a block with a lot of text, rather than have all your text as a slab, using soft lines breaks allows you to space out this text within a single block.
+- To add a soft line break press enter + shift.  You can then write on a new line, but it remains in the same block.  Here's an example where I add soft line breaks by pressing enter + shift five times between the first and second sentence. In contrast to the first example, both of these sentences in the second example remain in the same block. You can notice this because there are no bullets between the top and bottom sentence.
+- ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/64001917960/original/NDHp7Y48v_0YTBpzRgivRN1Ef7AuhRgL_w.gif?1597894336)
+- Adding soft line breaks is a nice formatting tool, it allows you to create blocks with a lot of rich information such as paragraphs but also giving the text a more readable style with these blocks.
+- The best way to see whether soft line breaks are a useful feature for you is try it out yourself
+
+---
+
+# Roam Depot
+
+- Official [[Plugins]]
+  - [[July 21st, 2021]]
+    - https://twitter.com/RoamResearch/status/1550192726540374016?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
+  - [[PhonetoNote]]
+    - https://twitter.com/phonetonote/status/1551764556707397633?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
+  - [[Matter]]
+    - https://twitter.com/matter/status/1549490849595080704?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
 
 ---
 
@@ -13200,55 +13225,20 @@ by [[Drew Coffman]]
 
 ---
 
-# Current time
+# Wiki
 
-- Current time displays the current time in your time zone, it's great for tracking time while writing daily logs 
-  - For example
-    - 21:19
-  - Task Management by [[Conor White-Sullivan]]
-    - {{[[video]]: https://www.youtube.com/watch?v=3aCl7dCYVqA&t=6s&ab_channel=ConorWhite-Sullivan}}
-      #[[TODO/DONE]] | #[[Daily Notes]] | #[[Filter]] | #[[Linked References]] | #[[Block Embed]] | #[[Current time]] | #[[Block References]]
-- Key Commands::
-  - `/time`
+### Community Videos::
 
----
+#### Creating a Life Wiki in Roam by [[Shu Omi]]
 
-# Adding soft line breaks in a block
+- {{[[video]]: https://www.youtube.com/watch?v=PrEuEgxZMQw}}
+  #[[Graph]] | #[[Diagram]]
 
-- Each individual bullet point in a page in Roam is referred to as a block.  When you press enter Roam creates a new block on the next line in your page.  Here's an example from a test page where I create five separate blocks.
-- ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/64001916149/original/e94i3GMtvW2xgqkj42JQP1KtV5M4yHYawQ.gif?1597887885)
-- It's also possible to create blocks that include soft line breaks between text.  If you have a block with a lot of text, rather than have all your text as a slab, using soft lines breaks allows you to space out this text within a single block.
-- To add a soft line break press enter + shift.  You can then write on a new line, but it remains in the same block.  Here's an example where I add soft line breaks by pressing enter + shift five times between the first and second sentence. In contrast to the first example, both of these sentences in the second example remain in the same block. You can notice this because there are no bullets between the top and bottom sentence.
-- ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/64001917960/original/NDHp7Y48v_0YTBpzRgivRN1Ef7AuhRgL_w.gif?1597894336)
-- Adding soft line breaks is a nice formatting tool, it allows you to create blocks with a lot of rich information such as paragraphs but also giving the text a more readable style with these blocks.
-- The best way to see whether soft line breaks are a useful feature for you is try it out yourself
+### Articles::
 
----
+#### [Building a Personal Wikipedia with Roam Research](https://thalein.medium.com/building-a-personal-wikipedia-with-roam-research-b26b489b9e4b) by [[Tim de Rooij]] 
 
-# Import
-
-#### Importing [[JSON]]
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Fc7Lo7AEKTW.gif?alt=media&token=30f458c8-7c5e-4777-8e7d-d1324f6453a6)
-
-#### Importing [[Markdown]]
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FqVCxXBjzNU.gif?alt=media&token=7f3f8124-9e32-486d-9e3d-c004598f346c)
-
-#### Restore your entire graph from [[EDN]] or [[MessagePack]]
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FOTJ1ZlcVwn.gif?alt=media&token=ddd6d7a9-b708-40f0-8bd6-0d5587262b95)
-
----
-
-# Version Control
-
-- Version control helps you create different versions of of the same block, often used when you want to make multiple drafts of something
-  - This is an example with Roam's elevator pitch, click on the numbers to see the different versions
-    - Roam is a tool to compound knowledge, something I'd be proud to look back on how my brain has grew and evolved 20 years later.
-- Key Commands::
-  - `Ctrl+,` for Windows
-  - `Cmd+,` for Mac
+- #[[Attributes]] | #[[Block References]] | #[[Linked References]]
 
 ---
 
@@ -13285,30 +13275,30 @@ by [[Drew Coffman]]
 
 ---
 
-# Wiki
+# Version Control
 
-### Community Videos::
-
-#### Creating a Life Wiki in Roam by [[Shu Omi]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=PrEuEgxZMQw}}
-  #[[Graph]] | #[[Diagram]]
-
-### Articles::
-
-#### [Building a Personal Wikipedia with Roam Research](https://thalein.medium.com/building-a-personal-wikipedia-with-roam-research-b26b489b9e4b) by [[Tim de Rooij]] 
-
-- #[[Attributes]] | #[[Block References]] | #[[Linked References]]
+- Version control helps you create different versions of of the same block, often used when you want to make multiple drafts of something
+  - This is an example with Roam's elevator pitch, click on the numbers to see the different versions
+    - Roam is a tool to compound knowledge, something I'd be proud to look back on how my brain has grew and evolved 20 years later.
+- Key Commands::
+  - `Ctrl+,` for Windows
+  - `Cmd+,` for Mac
 
 ---
 
-# Today
+# Import
 
-- The "today" function auto generates today's daily notes page, it will either give you a static result, or a variable result ("today" will always point to today's date, rather than a set date) when used in a [[Query]] 
-  - For example, a static result: today is [[March 8th, 2021]]
-  - A variable result: {{[[query]]: {and: [[today]] [[tomorrow]] {not: [[query]]}}}}
-- Key Commands::
-  - `/today`
+#### Importing [[JSON]]
+
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Fc7Lo7AEKTW.gif?alt=media&token=30f458c8-7c5e-4777-8e7d-d1324f6453a6)
+
+#### Importing [[Markdown]]
+
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FqVCxXBjzNU.gif?alt=media&token=7f3f8124-9e32-486d-9e3d-c004598f346c)
+
+#### Restore your entire graph from [[EDN]] or [[MessagePack]]
+
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FOTJ1ZlcVwn.gif?alt=media&token=ddd6d7a9-b708-40f0-8bd6-0d5587262b95)
 
 ---
 
@@ -13319,6 +13309,16 @@ by [[Drew Coffman]]
   - {{[[slider]]}}
 - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FqaRPRyZuKx.gif?alt=media&token=3a89f74b-4888-4b79-9efa-35d27e88fd23)
   - Other users can click on the slider to give their rating as well
+
+---
+
+# Today
+
+- The "today" function auto generates today's daily notes page, it will either give you a static result, or a variable result ("today" will always point to today's date, rather than a set date) when used in a [[Query]] 
+  - For example, a static result: today is [[March 8th, 2021]]
+  - A variable result: {{[[query]]: {and: [[today]] [[tomorrow]] {not: [[query]]}}}}
+- Key Commands::
+  - `/today`
 
 ---
 
@@ -13338,13 +13338,13 @@ by [[Drew Coffman]]
 
 ---
 
-# Numbered List Extension
+# Tomorrow
 
-- Thank you for installing the Numbered List extension for Roam Research. This page has been automatically generated to allow creation of a SmartBlock to allow you to refresh your numbered lists after you move things around and re-order them.
-- Below the horizontal line is the Refresh Numbered List SmartBlock. Please don't change it unless you know what you are doing!
-- ---
-- #SmartBlock Refresh Numbered List
-  - <%REFRESHNUMBEREDLIST%>
+- The "tomorrow" function auto generates tomorrow's daily notes page, it will either give you a static result, or a variable result ("tomorrow" will always point to tomorrow's date, rather than a set date) when used in a [[Query]] 
+  - For example, a static result: tomorrow is [[March 9th, 2021]]
+  - A variable result: {{[[query]]: {and: [[today]] [[tomorrow]] {not: [[query]]}}}}
+- Key Commands::
+  - `/tomorrow`
 
 ---
 
@@ -13360,13 +13360,13 @@ by [[Drew Coffman]]
 
 ---
 
-# Tomorrow
+# Numbered List Extension
 
-- The "tomorrow" function auto generates tomorrow's daily notes page, it will either give you a static result, or a variable result ("tomorrow" will always point to tomorrow's date, rather than a set date) when used in a [[Query]] 
-  - For example, a static result: tomorrow is [[March 9th, 2021]]
-  - A variable result: {{[[query]]: {and: [[today]] [[tomorrow]] {not: [[query]]}}}}
-- Key Commands::
-  - `/tomorrow`
+- Thank you for installing the Numbered List extension for Roam Research. This page has been automatically generated to allow creation of a SmartBlock to allow you to refresh your numbered lists after you move things around and re-order them.
+- Below the horizontal line is the Refresh Numbered List SmartBlock. Please don't change it unless you know what you are doing!
+- ---
+- #SmartBlock Refresh Numbered List
+  - <%REFRESHNUMBEREDLIST%>
 
 ---
 
@@ -13376,6 +13376,19 @@ by [[Drew Coffman]]
   - Usually used at the end of blocks or at the beginning, whereas normally [[Page References]] are used alone as parent block or inline as part of a sentence
 - Key Commands::
   - `#` to find or create [[Page References]] as a [tag]([[Tags]])
+
+---
+
+# Roam Slack
+
+## We have a thriving community on Slack! 
+
+## Join via [this link](https://join.slack.com/t/roamresearch/shared_invite/zt-1x2y9jkx1-KkSjlsWeTdfXy5H8hMB7tg)
+
+### We've got a curated graph of content of important things, accessible [here](https://roamresearch.com/#/app/roam-slack)
+
+#### If you'd like access to the archive, fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSc8SpE4UOr2UynEqk-2Ob9TZECQaYGNO6XksphxqVPH2HosmQ/viewform)
+
 
 ---
 
@@ -13397,15 +13410,6 @@ by [[Drew Coffman]]
 #### ['롬 리서치' 카테고리의 글 목록](https://learning-and-practice.tistory.com/category/%EB%A1%AC%20%EB%A6%AC%EC%84%9C%EC%B9%98)
 
 - #[[Right Sidebar]] | #[[Block References]] | #[[Block Embed]] | #[[Daily Notes]] | #[[Page References]] | #[[Linked References]] | #[[Indentation]] | #[[Unlinked References]]
-
----
-
-# Latex
-
-- Description::
-  - Any text entered with `$$double dollar signs$$` will be evaluated as latex, using [[Khan Academy]]'s katex typesetting library -- see docs for that here https://katex.org/ - particularly here https://katex.org/docs/supported.html
-- [[Change Log]]
-  - {{embed-path: [[Latex]] now will parse block references, including other latex so you can comp}}
 
 ---
 
@@ -13738,16 +13742,12 @@ by [[Drew Coffman]]
 
 ---
 
-# Roam Slack
+# Latex
 
-## We have a thriving community on Slack! 
-
-## Join via [this link](https://join.slack.com/t/roamresearch/shared_invite/zt-1x2y9jkx1-KkSjlsWeTdfXy5H8hMB7tg)
-
-### We've got a curated graph of content of important things, accessible [here](https://roamresearch.com/#/app/roam-slack)
-
-#### If you'd like access to the archive, fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSc8SpE4UOr2UynEqk-2Ob9TZECQaYGNO6XksphxqVPH2HosmQ/viewform)
-
+- Description::
+  - Any text entered with `$$double dollar signs$$` will be evaluated as latex, using [[Khan Academy]]'s katex typesetting library -- see docs for that here https://katex.org/ - particularly here https://katex.org/docs/supported.html
+- [[Change Log]]
+  - {{embed-path: [[Latex]] now will parse block references, including other latex so you can comp}}
 
 ---
 
