@@ -9,40 +9,40 @@ Last export: 2026-07-03T15:59:08.478Z
 
 ## Docs
 
-- [Developer Hub](/docs/developer-hub.md): Entry point / map of all Roam developer documentation
-- [Roam Alpha API](/docs/roam-alpha-api.md): The frontend JS API (window.roamAlphaAPI): datalog q/pull, block & page CRUD, UI control, file storage
-- [Roam Depot/Extension API](/docs/roam-depot-extension-api.md): Extension API passed to Depot extensions (settings panels, commands, lifecycle)
-- [Roam Depot/Extensions](/docs/roam-depot-extensions.md): How to build, test and publish Roam Depot extensions
-- [roam/css](/docs/roam-css.md): Theming Roam with custom CSS via the roam/css page
-- [roam/js](/docs/roam-js.md): Running custom JavaScript in a graph via roam/js blocks
-- [roam/cljs](/docs/roam-cljs.md): Running ClojureScript in a graph
-- [roam/render](/docs/roam-render.md): Custom components rendered inside blocks (ClojureScript/Reagent)
-- [Roam Backend API (Beta)](/docs/roam-backend-api-beta.md): Official REST API: datalog q / pull / pull-many + write actions over HTTP with roam-graph-tokens
-- [Roam Append API](/docs/roam-append-api.md): Append-only HTTP API for capture (works with encrypted graphs)
-- [Yet-to-release updates](/docs/yet-to-release-updates.md): API changes announced but not yet released
-- [Available Libraries](/docs/available-libraries.md): Official SDKs and community libraries
-- [Contact Us](/docs/contact-us.md): How to reach the Roam developer team
-- [Local API](/docs/local-api.md): Local HTTP API exposed by the Roam desktop app
+- [Developer Hub](https://roam-docs.pages.dev/docs/developer-hub.md): Entry point / map of all Roam developer documentation
+- [Roam Alpha API](https://roam-docs.pages.dev/docs/roam-alpha-api.md): The frontend JS API (window.roamAlphaAPI): datalog q/pull, block & page CRUD, UI control, file storage
+- [Roam Depot/Extension API](https://roam-docs.pages.dev/docs/roam-depot-extension-api.md): Extension API passed to Depot extensions (settings panels, commands, lifecycle)
+- [Roam Depot/Extensions](https://roam-docs.pages.dev/docs/roam-depot-extensions.md): How to build, test and publish Roam Depot extensions
+- [roam/css](https://roam-docs.pages.dev/docs/roam-css.md): Theming Roam with custom CSS via the roam/css page
+- [roam/js](https://roam-docs.pages.dev/docs/roam-js.md): Running custom JavaScript in a graph via roam/js blocks
+- [roam/cljs](https://roam-docs.pages.dev/docs/roam-cljs.md): Running ClojureScript in a graph
+- [roam/render](https://roam-docs.pages.dev/docs/roam-render.md): Custom components rendered inside blocks (ClojureScript/Reagent)
+- [Roam Backend API (Beta)](https://roam-docs.pages.dev/docs/roam-backend-api-beta.md): Official REST API: datalog q / pull / pull-many + write actions over HTTP with roam-graph-tokens
+- [Roam Append API](https://roam-docs.pages.dev/docs/roam-append-api.md): Append-only HTTP API for capture (works with encrypted graphs)
+- [Yet-to-release updates](https://roam-docs.pages.dev/docs/yet-to-release-updates.md): API changes announced but not yet released
+- [Available Libraries](https://roam-docs.pages.dev/docs/available-libraries.md): Official SDKs and community libraries
+- [Contact Us](https://roam-docs.pages.dev/docs/contact-us.md): How to reach the Roam developer team
+- [Local API](https://roam-docs.pages.dev/docs/local-api.md): Local HTTP API exposed by the Roam desktop app
 
 ## API reference
 
-- [roam-alpha-api.d.ts](/types/roam-alpha-api.d.ts): TypeScript definitions for window.roamAlphaAPI — all 129 live-introspected functions
-- [llms-full.txt](/llms-full.txt): Everything in one file: all docs pages + release notes + full API inventory
+- [roam-alpha-api.d.ts](https://roam-docs.pages.dev/types/roam-alpha-api.d.ts): TypeScript definitions for window.roamAlphaAPI — all 129 live-introspected functions
+- [llms-full.txt](https://roam-docs.pages.dev/llms-full.txt): Everything in one file: all docs pages + release notes + full API inventory
 
 ## Examples
 
-- [01-queries.js](/examples/01-queries.js)
-- [02-writing-blocks.js](/examples/02-writing-blocks.js)
-- [03-extension-skeleton.js](/examples/03-extension-skeleton.js)
-- [04-backend-api.sh](/examples/04-backend-api.sh)
-- [05-backend-api.js](/examples/05-backend-api.js)
-- [06-render-components.js](/examples/06-render-components.js)
+- [01-queries.js](https://roam-docs.pages.dev/examples/01-queries.js)
+- [02-writing-blocks.js](https://roam-docs.pages.dev/examples/02-writing-blocks.js)
+- [03-extension-skeleton.js](https://roam-docs.pages.dev/examples/03-extension-skeleton.js)
+- [04-backend-api.sh](https://roam-docs.pages.dev/examples/04-backend-api.sh)
+- [05-backend-api.js](https://roam-docs.pages.dev/examples/05-backend-api.js)
+- [06-render-components.js](https://roam-docs.pages.dev/examples/06-render-components.js)
 
 ## Optional
 
-- [Roam Clojurescript API](/docs/roam-clojurescript-api.md): Clojure Core Namespaces
-- [Datomic Alpha API](/docs/datomic-alpha-api.md): Important Note: This is the documentation for the Depreciated (& inactive) Datomic API. We have a new API! see it here, Roam Backend API (Be
-- [iFrame Components](/docs/iframe-components.md): Important Note: This is Depreciated, it still most likely works but we will not be continuing it's development
-- [Attributes Data Model](/docs/attributes-data-model.md): Introduction: it's a hypergraph
-- [datalog-block-query](/docs/datalog-block-query.md): Older Loom videos
-- [Release notes](/docs/release-notes.md): Dated updates from the developer graph (newest first)
+- [Roam Clojurescript API](https://roam-docs.pages.dev/docs/roam-clojurescript-api.md): Clojure Core Namespaces
+- [Datomic Alpha API](https://roam-docs.pages.dev/docs/datomic-alpha-api.md): Important Note: This is the documentation for the Depreciated (& inactive) Datomic API. We have a new API! see it here, Roam Backend API (Be
+- [iFrame Components](https://roam-docs.pages.dev/docs/iframe-components.md): Important Note: This is Depreciated, it still most likely works but we will not be continuing it's development
+- [Attributes Data Model](https://roam-docs.pages.dev/docs/attributes-data-model.md): Introduction: it's a hypergraph
+- [datalog-block-query](https://roam-docs.pages.dev/docs/datalog-block-query.md): Older Loom videos
+- [Release notes](https://roam-docs.pages.dev/docs/release-notes.md): Dated updates from the developer graph (newest first)

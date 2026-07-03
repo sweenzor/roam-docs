@@ -13,8 +13,8 @@ import path from 'node:path';
 const ROOT = path.resolve(import.meta.dirname, '..');
 const DATA = path.join(ROOT, 'data');
 const PUBLIC = path.join(ROOT, 'public');
-// Base URL for absolute links in llms.txt; empty = relative links.
-const BASE = (process.env.BASE_URL || '').replace(/\/$/, '');
+// Base URL for absolute links in llms.txt (BASE_URL env overrides).
+const BASE = (process.env.BASE_URL || 'https://roam-docs.pages.dev').replace(/\/$/, '');
 
 const graph = JSON.parse(fs.readFileSync(path.join(DATA, 'graph.json'), 'utf8'));
 const surface = JSON.parse(fs.readFileSync(path.join(DATA, 'api-surface.json'), 'utf8'));
