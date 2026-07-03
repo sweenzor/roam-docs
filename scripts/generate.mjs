@@ -430,7 +430,6 @@ ${graphs
       `  <li><a href="/${g.cfg.name}/llms-full.txt"><code>${g.cfg.name}/llms-full.txt</code></a> — all of ${esc(g.cfg.title)} in one file</li>`
   )
   .join('\n')}
-  <li><a href="/types/roam-alpha-api.d.ts"><code>roam-alpha-api.d.ts</code></a> — TypeScript definitions for <code>window.roamAlphaAPI</code> (${fnInventory.length} functions, live-introspected)</li>
 </ul>
 <p><a href="${REPO_URL}">Contributions welcome</a></p>
 ${graphs
