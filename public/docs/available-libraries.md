@@ -1,0 +1,64 @@
+# Available Libraries
+
+- Roam exports a number of dependencies that we use internally for extensions, roam/js and roam/render to use
+- Sync dependencies
+  - Dependencies bundled with Roam core will be provided on the window object
+  - {{table}}
+    - **Package Name**
+      - **Version**
+        - **Global Var**
+    - `react`
+      - `18.2.0`
+        - `window.React`
+    - `react-dom`
+      - `18.2.0`
+        - `window.ReactDOM`
+    - `@blueprintjs/core`
+      - `^3.50.4`
+        - `window.Blueprint.Core`
+    - `@blueprintjs/select`
+      - `^3.18.6`
+        - `window.Blueprint.Select`
+    - `@blueprintjs/datetime`
+      - `^3.23.14`
+        - `window.Blueprint.DateTime`
+    - `chrono-node`
+      - `^2.3.2`
+        - `window.ChronoNode`
+    - `idb`
+      - ` 7.1.1`
+        - `window.idb`
+    - `nanoid`
+      - `^2.0.4`
+        - `window.Nanoid`
+    - `file-saver`
+      - `^2.0.2`
+        - `window.FileSaver`
+    - `crypto-js`
+      - `^3.1.9-1`
+        - `window.CryptoJS`
+    - `tslib`
+      - `2.2.0`
+        - `TSLib`
+- Async dependencies
+  - Some of Roam's dependencies are loaded only when a user uses them, your extension should do the same thing
+    - We understand dynamically loading is pretty difficult for a beginner, if that is you, you can ask us for help or for an exception to this rule
+  - {{table}}
+    - **Package Name**
+      - **Version**
+        - **Global Var**
+    - `marked-react`
+      - `^1.1.2`
+        - `RoamLazy.MarkedReact`
+    - `marked`
+      - `4.3.0`
+        - `RoamLazy.Marked`
+    - `jszip`
+      - `^3.10.0`
+        - `RoamLazy.JSZip`
+    - `cytoscape`
+      - `^3.7.2`
+        - `RoamLazy.Cytoscape`
+    - `insect.js`
+      - `5.6.0`
+        - `RoamLazy.Insect`

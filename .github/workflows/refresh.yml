@@ -1,0 +1,49 @@
+name: Refresh docs from Roam
+
+on:
+  schedule:
+    - cron: '23 5 * * *' # daily 05:23 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.53.0-noble
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Export graph + introspect API
+        working-directory: scripts
+        env:
+          # Optional. If a read-only roam-graph-token for developer-documentation is
+          # ever available, set it as a repo secret and the export switches from the
+          # headless-browser fallback to the official Backend API automatically.
+          ROAM_API_TOKEN: ${{ secrets.ROAM_API_TOKEN }}
+        run: |
+          npm install --no-audit --no-fund --loglevel=error
+          node export.mjs
+          node introspect.mjs
+
+      - name: Generate site
+        working-directory: scripts
+        env:
+          BASE_URL: ${{ vars.BASE_URL }} # optional; absolute links in llms.txt when set
+        run: node generate.mjs
+
+      - name: Commit & push if content changed
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -A data public
+          # Ignore diffs that are only the export timestamp lines.
+          if git diff --cached --quiet -I'exportedAt' -I'Last export' -I'^> Exported'; then
+            echo 'No content changes — skipping commit.'
+          else
+            git commit -m 'chore: refresh docs from Roam developer graph'
+            git push
+          fi

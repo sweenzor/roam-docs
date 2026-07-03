@@ -1,0 +1,12 @@
+{
+  "name": "roam-docs-scripts",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "export": "node export.mjs",
+    "generate": "node generate.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.53.0"
+  }
+}

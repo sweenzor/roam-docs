@@ -1,0 +1,111 @@
+{
+ "apiVersion": {
+  "async": false,
+  "value": "1.1.2"
+ },
+ "graph": {
+  "async": false,
+  "value": {
+   "name": "developer-documentation",
+   "type": "hosted",
+   "isEncrypted": false
+  }
+ },
+ "platform": {
+  "async": false,
+  "value": {
+   "isIOS": false,
+   "isMobile": false,
+   "isMobileApp": false,
+   "isPC": true,
+   "isTouchDevice": false,
+   "isDesktop": false
+  }
+ },
+ "constants": {
+  "async": false,
+  "value": {
+   "corsAnywhereProxyUrl": "https://us-central1-firescript-577a2.cloudfunctions.net/proxy-corsAnywhere"
+  }
+ },
+ "depot.getInstalledExtensions()": {
+  "async": false,
+  "value": {}
+ },
+ "user.uid()": {
+  "async": false,
+  "value": null
+ },
+ "user.isAdmin()": {
+  "async": false,
+  "value": false
+ },
+ "data.semanticSearchEnabled()": {
+  "async": false,
+  "value": false
+ },
+ "util.generateUID()": {
+  "async": false,
+  "value": "<9-char uid, e.g. \"wG2VsyRpi\">"
+ },
+ "util.dateToPageTitle(new Date(2026,0,15))": {
+  "async": false,
+  "value": "January 15th, 2026"
+ },
+ "util.dateToPageUid(new Date(2026,0,15))": {
+  "async": false,
+  "value": "01-15-2026"
+ },
+ "util.pageTitleToDate('January 15th, 2026')": {
+  "async": false,
+  "value": {
+   "<<Date>>": "2026-01-15T00:00:00.000Z"
+  }
+ },
+ "ui.rightSidebar.getWindows()": {
+  "async": false,
+  "value": []
+ },
+ "ui.getFocusedBlock()": {
+  "async": false,
+  "value": null
+ },
+ "ui.filters.getGlobalFilters()": {
+  "async": false,
+  "value": {
+   "includes": [],
+   "removes": []
+  }
+ },
+ "ui.multiselect.getSelected()": {
+  "async": false,
+  "value": []
+ },
+ "ui.individualMultiselect.getSelectedUids()": {
+  "async": false,
+  "value": []
+ },
+ "ui.mainWindow.getOpenView()": {
+  "async": true,
+  "value": {
+   "type": "outline",
+   "uid": "49715b-M2",
+   "title": "Developer Hub"
+  }
+ },
+ "ui.mainWindow.getOpenPageOrBlockUid()": {
+  "async": true,
+  "value": "49715b-M2"
+ },
+ "q('[:find (count ?e) . :where [?e :block/uid]]')": {
+  "async": false,
+  "value": 4703
+ },
+ "pull(minimal)": {
+  "async": false,
+  "value": {
+   ":block/uid": "nNdE8rkMx",
+   ":node/title": "Contact Us"
+  }
+ }
+}

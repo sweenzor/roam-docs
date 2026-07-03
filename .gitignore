@@ -1,0 +1,5 @@
+node_modules/
+scripts/package-lock.json
+.DS_Store
+# discovery artifact from browser exports; contains short-lived session tokens in URLs
+data/network-log.json

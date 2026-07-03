@@ -1,0 +1,1002 @@
+{
+ "roamAlphaAPI": {
+  "constants": {
+   "kind": "namespace",
+   "children": {
+    "corsAnywhereProxyUrl": {
+     "kind": "string",
+     "value": "https://us-central1-firescript-577a2.cloudfunctions.net/proxy-corsAnywhere"
+    }
+   }
+  },
+  "createBlock": {
+   "kind": "function",
+   "jsLength": 1,
+   "cljsArities": [],
+   "variadic": false
+  },
+  "ui": {
+   "kind": "namespace",
+   "children": {
+    "rightSidebar": {
+     "kind": "namespace",
+     "children": {
+      "setWindowOrder": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "collapseWindow": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "pinWindow": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "getWindows": {
+       "kind": "function",
+       "jsLength": 0,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "expandWindow": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "removeWindow": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "close": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "addWindow": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "open": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "unpinWindow": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "blockRefContextMenu": {
+     "kind": "namespace",
+     "children": {
+      "addCommand": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "removeCommand": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "multiselect": {
+     "kind": "namespace",
+     "children": {
+      "getSelected": {
+       "kind": "function",
+       "jsLength": 0,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "blockContextMenu": {
+     "kind": "namespace",
+     "children": {
+      "addCommand": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "removeCommand": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "filters": {
+     "kind": "namespace",
+     "children": {
+      "setPageLinkedRefsFilters": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "setSidebarWindowFilters": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "setPageFilters": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "addGlobalFilter": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "getGlobalFilters": {
+       "kind": "function",
+       "jsLength": 0,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "getSidebarWindowFilters": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "getPageFilters": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "getPageLinkedRefsFilters": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "removeGlobalFilter": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "mainWindow": {
+     "kind": "namespace",
+     "children": {
+      "openDailyNotes": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "getOpenView": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "unregisterComponent": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "openBlock": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "registerComponent": {
+       "kind": "function",
+       "jsLength": 2,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "closeComponent": {
+       "kind": "function",
+       "jsLength": 0,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "openPage": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "focusFirstBlock": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "getOpenPageOrBlockUid": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "openComponent": {
+       "kind": "function",
+       "jsLength": 2,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "pageRefContextMenu": {
+     "kind": "namespace",
+     "children": {
+      "addCommand": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "removeCommand": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "pageLinkContextMenu": {
+     "kind": "namespace",
+     "children": {
+      "addCommand": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "removeCommand": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "slashCommand": {
+     "kind": "namespace",
+     "children": {
+      "addCommand": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "removeCommand": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "graphView": {
+     "kind": "namespace",
+     "children": {
+      "addCallback": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "removeCallback": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "wholeGraph": {
+       "kind": "namespace",
+       "children": {
+        "setMode": {
+         "kind": "function",
+         "jsLength": 1,
+         "cljsArities": [],
+         "variadic": false
+        },
+        "setExplorePages": {
+         "kind": "function",
+         "jsLength": 1,
+         "cljsArities": [],
+         "variadic": false
+        },
+        "getExplorePages": {
+         "kind": "function",
+         "jsLength": 0,
+         "cljsArities": [],
+         "variadic": false
+        },
+        "addCallback": {
+         "kind": "function",
+         "jsLength": 1,
+         "cljsArities": [],
+         "variadic": false
+        },
+        "removeCallback": {
+         "kind": "function",
+         "jsLength": 1,
+         "cljsArities": [],
+         "variadic": false
+        }
+       }
+      }
+     }
+    },
+    "setBlockFocusAndSelection": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "callout": {
+     "kind": "namespace",
+     "children": {
+      "addType": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "removeType": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "individualMultiselect": {
+     "kind": "namespace",
+     "children": {
+      "getSelectedUids": {
+       "kind": "function",
+       "jsLength": 0,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "components": {
+     "kind": "namespace",
+     "children": {
+      "renderBlock": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "renderPage": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "renderString": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "renderSearch": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "unmountNode": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "msContextMenu": {
+     "kind": "namespace",
+     "children": {
+      "addCommand": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "removeCommand": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "pageContextMenu": {
+     "kind": "namespace",
+     "children": {
+      "addCommand": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "removeCommand": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "leftSidebar": {
+     "kind": "namespace",
+     "children": {
+      "open": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "close": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "react": {
+     "kind": "namespace",
+     "children": {
+      "Block": {
+       "kind": "function",
+       "jsLength": 3,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "Page": {
+       "kind": "function",
+       "jsLength": 3,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "Search": {
+       "kind": "function",
+       "jsLength": 3,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "BlockString": {
+       "kind": "function",
+       "jsLength": 3,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "getFocusedBlock": {
+     "kind": "function",
+     "jsLength": 0,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "commandPalette": {
+     "kind": "namespace",
+     "children": {
+      "addCommand": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "removeCommand": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    }
+   }
+  },
+  "updateBlock": {
+   "kind": "function",
+   "jsLength": 1,
+   "cljsArities": [],
+   "variadic": false
+  },
+  "q": {
+   "kind": "function",
+   "jsLength": 2,
+   "cljsArities": [],
+   "variadic": false
+  },
+  "createPage": {
+   "kind": "function",
+   "jsLength": 1,
+   "cljsArities": [],
+   "variadic": false
+  },
+  "graph": {
+   "kind": "namespace",
+   "children": {
+    "name": {
+     "kind": "string",
+     "value": "developer-documentation"
+    },
+    "type": {
+     "kind": "string",
+     "value": "hosted"
+    },
+    "isEncrypted": {
+     "kind": "boolean",
+     "value": "false"
+    }
+   }
+  },
+  "util": {
+   "kind": "namespace",
+   "children": {
+    "generateUID": {
+     "kind": "function",
+     "jsLength": 0,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "pageTitleToDate": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "dateToPageTitle": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "dateToPageUid": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "uploadFile": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
+    }
+   }
+  },
+  "moveBlock": {
+   "kind": "function",
+   "jsLength": 1,
+   "cljsArities": [],
+   "variadic": false
+  },
+  "user": {
+   "kind": "namespace",
+   "children": {
+    "uid": {
+     "kind": "function",
+     "jsLength": 0,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "isAdmin": {
+     "kind": "function",
+     "jsLength": 0,
+     "cljsArities": [],
+     "variadic": false
+    }
+   }
+  },
+  "deleteBlock": {
+   "kind": "function",
+   "jsLength": 1,
+   "cljsArities": [],
+   "variadic": false
+  },
+  "depot": {
+   "kind": "namespace",
+   "children": {
+    "getInstalledExtensions": {
+     "kind": "function",
+     "jsLength": 0,
+     "cljsArities": [],
+     "variadic": false
+    }
+   }
+  },
+  "pull": {
+   "kind": "function",
+   "jsLength": 3,
+   "cljsArities": [],
+   "variadic": false
+  },
+  "updatePage": {
+   "kind": "function",
+   "jsLength": 1,
+   "cljsArities": [],
+   "variadic": false
+  },
+  "deletePage": {
+   "kind": "function",
+   "jsLength": 1,
+   "cljsArities": [],
+   "variadic": false
+  },
+  "file": {
+   "kind": "namespace",
+   "children": {
+    "get": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "upload": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "delete": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
+    }
+   }
+  },
+  "data": {
+   "kind": "namespace",
+   "children": {
+    "redo": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "q": {
+     "kind": "function",
+     "jsLength": 2,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "user": {
+     "kind": "namespace",
+     "children": {
+      "upsert": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "pull_many": {
+     "kind": "function",
+     "jsLength": 3,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "removePullWatch": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "block": {
+     "kind": "namespace",
+     "children": {
+      "create": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "fromMarkdown": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "addComment": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "move": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "update": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "delete": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "reorderBlocks": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "undo": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "async": {
+     "kind": "namespace",
+     "children": {
+      "q": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "pull": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "pull_many": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "search": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "semanticSearch": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "fast": {
+       "kind": "namespace",
+       "children": {
+        "q": {
+         "kind": "function",
+         "jsLength": 1,
+         "cljsArities": [],
+         "variadic": false
+        }
+       }
+      }
+     }
+    },
+    "roamQuery": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "backend": {
+     "kind": "namespace",
+     "children": {
+      "q": {
+       "kind": "function",
+       "jsLength": 2,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "fast": {
+     "kind": "namespace",
+     "children": {
+      "q": {
+       "kind": "function",
+       "jsLength": 2,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "pull": {
+     "kind": "function",
+     "jsLength": 3,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "ai": {
+     "kind": "namespace",
+     "children": {
+      "getPage": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "getBlock": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "getBacklinks": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "roamQuery": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "search": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "searchTemplates": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "getGraphGuidelines": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "getComments": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "addPullWatch": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "page": {
+     "kind": "namespace",
+     "children": {
+      "create": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "fromMarkdown": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "update": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "delete": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "addShortcut": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "removeShortcut": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "search": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "semanticSearchEnabled": {
+     "kind": "function",
+     "jsLength": 0,
+     "cljsArities": [],
+     "variadic": false
+    }
+   }
+  },
+  "platform": {
+   "kind": "namespace",
+   "children": {
+    "isIOS": {
+     "kind": "boolean",
+     "value": "false"
+    },
+    "isMobile": {
+     "kind": "boolean",
+     "value": "false"
+    },
+    "isMobileApp": {
+     "kind": "boolean",
+     "value": "false"
+    },
+    "isPC": {
+     "kind": "boolean",
+     "value": "true"
+    },
+    "isTouchDevice": {
+     "kind": "boolean",
+     "value": "false"
+    },
+    "isDesktop": {
+     "kind": "boolean",
+     "value": "false"
+    }
+   }
+  },
+  "apiVersion": {
+   "kind": "string",
+   "value": "1.1.2"
+  }
+ }
+}
