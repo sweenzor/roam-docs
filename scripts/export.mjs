@@ -30,9 +30,11 @@ const PAGE_UIDS_Q = '[:find [?uid ...] :where [?e :node/title] [?e :block/uid ?u
 const SHORTCUTS_Q =
   '[:find ?title ?order :where [?e :page/sidebar ?order] [?e :node/title ?title]]';
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
 async function exportViaBackendApi(graph, token) {
   const base = `https://api.roamresearch.com/api/graph/${graph}`;
-  const post = async (route, body) => {
+  const post = async (route, body, attempt = 0) => {
     const res = await fetch(`${base}/${route}`, {
       method: 'POST',
       redirect: 'follow', // api.roamresearch.com redirects to the graph's shard
@@ -44,6 +46,11 @@ async function exportViaBackendApi(graph, token) {
       },
       body: JSON.stringify(body),
     });
+    if (res.status === 429 && attempt < 5) {
+      console.warn(`  429 on /${route} — waiting 65s for the quota window to reset...`);
+      await sleep(65_000);
+      return post(route, body, attempt + 1);
+    }
     if (!res.ok) throw new Error(`POST /${route} -> ${res.status}: ${(await res.text()).slice(0, 500)}`);
     return (await res.json()).result;
   };
@@ -51,8 +58,11 @@ async function exportViaBackendApi(graph, token) {
   const uids = await post('q', { query: PAGE_UIDS_Q });
   console.log(`Backend API: ${uids.length} pages, pulling trees...`);
   const pages = [];
+  // Quota is 500 req/min/graph; pace batches to stay safely under it.
   const CONCURRENCY = 4;
+  const BATCH_INTERVAL_MS = 700; // ≈340 req/min
   for (let i = 0; i < uids.length; i += CONCURRENCY) {
+    const batchStarted = Date.now();
     const batch = uids.slice(i, i + CONCURRENCY);
     const pulled = await Promise.all(
       batch.map((uid) =>
@@ -61,6 +71,9 @@ async function exportViaBackendApi(graph, token) {
     );
     pages.push(...pulled.filter(Boolean));
     if (i % 100 < CONCURRENCY) console.log(`  ${Math.min(i + CONCURRENCY, uids.length)}/${uids.length}`);
+    const elapsed = Date.now() - batchStarted;
+    if (elapsed < BATCH_INTERVAL_MS && i + CONCURRENCY < uids.length)
+      await sleep(BATCH_INTERVAL_MS - elapsed);
   }
   let shortcuts = [];
   try {
