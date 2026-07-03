@@ -59,14 +59,15 @@ scripts/export.mjs      pulls every page of each graph in graphs.json
                         → else headless Chromium driving window.roamAlphaAPI.q/pull
                           (public graphs; anonymous read-only session)
 scripts/introspect.mjs  walks window.roamAlphaAPI in a live session → full function
-                        inventory + probed return shapes (needs the browser by nature)
+                        inventory + probed return shapes + datalog attribute inventory
+                        (needs the browser by nature)
 scripts/generate.mjs    graphs.json + data/*.json → public/ (llms.txt, per-graph
                         llms-full.txt + pages, index.html) + verifies every
                         introspected function appears in the .d.ts
 ```
 
-`data/graph-*.json` and `data/api-surface.json` are committed so the site can be rebuilt
-without network access. A scheduled GitHub Action (`.github/workflows/refresh.yml`)
+`data/*.json` (graph exports, API surface, probes, datalog attributes) are committed so
+the site can be rebuilt without network access. A scheduled GitHub Action (`.github/workflows/refresh.yml`)
 re-runs the pipeline daily and pushes only when content actually changed; Cloudflare
 Pages deploys on push.
 

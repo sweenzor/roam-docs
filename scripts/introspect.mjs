@@ -1,8 +1,9 @@
 // Introspects window.roamAlphaAPI in a live (anonymous, read-only) session on the
 // public developer-documentation graph. Requires a browser because the API only
 // exists in the running app. Writes:
-//   data/api-surface.json — every namespace/function with arity info
-//   data/api-probes.json  — live return values of safe, side-effect-free getters
+//   data/api-surface.json         — every namespace/function with arity info
+//   data/api-probes.json          — live return values of safe, side-effect-free getters
+//   data/datalog-attributes.json  — every datascript attribute observed in the graph
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -132,6 +133,41 @@ fs.writeFileSync(
   JSON.stringify(JSON.parse(probes), null, 1)
 );
 console.log('Wrote api-probes.json.');
+
+// ---- Datalog attribute inventory ---------------------------------------------
+// Enumerates every attribute present in the graph's datascript db, with usage
+// count, observed value type, and a truncated example value. Attribute names are
+// exactly what q/pull patterns accept.
+const attrs = await page.evaluate(() => {
+  const A = window.roamAlphaAPI;
+  // (str ?a) inside the query: q's keyword→JS conversion drops the namespace
+  // (":block/uid" would come back as just "uid"), stringifying keeps it intact.
+  const names = A.q('[:find [?s ...] :where [_ ?a _] [(str ?a) ?s]]').sort();
+  const out = [];
+  for (const attr of names) {
+    try {
+      const entities = A.q(`[:find (count ?e) . :where [?e ${attr}]]`);
+      const raw = A.q(`[:find ?v . :where [_ ${attr} ?v]]`);
+      const type = typeof raw;
+      let example;
+      if (attr.startsWith(':user/')) {
+        example = '<redacted>'; // graph editors' account details add no doc value
+      } else {
+        example = JSON.stringify(raw);
+        if (example && example.length > 80) example = example.slice(0, 77) + '…';
+      }
+      out.push({ attr, entities, type, example });
+    } catch (e) {
+      out.push({ attr, error: String(e && e.message).slice(0, 120) });
+    }
+  }
+  return JSON.stringify(out);
+});
+fs.writeFileSync(
+  path.join(OUT_DIR, 'datalog-attributes.json'),
+  JSON.stringify({ graph: GRAPH, exportedAt: new Date().toISOString(), attributes: JSON.parse(attrs) }, null, 1)
+);
+console.log(`Wrote datalog-attributes.json (${JSON.parse(attrs).length} attributes).`);
 
 await browser.close();
 console.log('Done.');

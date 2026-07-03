@@ -1,0 +1,276 @@
+{
+ "graph": "developer-documentation",
+ "exportedAt": "2026-07-03T19:06:03.658Z",
+ "attributes": [
+  {
+   "attr": ":attrs/lookup",
+   "entities": 257,
+   "type": "number",
+   "example": "5803"
+  },
+  {
+   "attr": ":block/children",
+   "entities": 2091,
+   "type": "number",
+   "example": "5803"
+  },
+  {
+   "attr": ":block/heading",
+   "entities": 50,
+   "type": "number",
+   "example": "2"
+  },
+  {
+   "attr": ":block/open",
+   "entities": 4073,
+   "type": "boolean",
+   "example": "true"
+  },
+  {
+   "attr": ":block/order",
+   "entities": 4059,
+   "type": "number",
+   "example": "12"
+  },
+  {
+   "attr": ":block/page",
+   "entities": 4058,
+   "type": "number",
+   "example": "3966"
+  },
+  {
+   "attr": ":block/parents",
+   "entities": 4059,
+   "type": "number",
+   "example": "5803"
+  },
+  {
+   "attr": ":block/props",
+   "entities": 10,
+   "type": "object",
+   "example": "{\"image-size\":{\"https://firebasestorage.googleapis.com/v0/b/firescript-577a2.…"
+  },
+  {
+   "attr": ":block/refs",
+   "entities": 1536,
+   "type": "number",
+   "example": "2393"
+  },
+  {
+   "attr": ":block/string",
+   "entities": 4154,
+   "type": "string",
+   "example": "\"If callback provided, only removes watch with that callback\""
+  },
+  {
+   "attr": ":block/uid",
+   "entities": 4703,
+   "type": "string",
+   "example": "\"hwhK9Kj-n\""
+  },
+  {
+   "attr": ":block/view-type",
+   "entities": 1,
+   "type": "string",
+   "example": "\"tabs\""
+  },
+  {
+   "attr": ":children/view-type",
+   "entities": 29,
+   "type": "string",
+   "example": "\"bullet\""
+  },
+  {
+   "attr": ":create/time",
+   "entities": 4321,
+   "type": "number",
+   "example": "1619841442834"
+  },
+  {
+   "attr": ":create/user",
+   "entities": 4320,
+   "type": "number",
+   "example": "828"
+  },
+  {
+   "attr": ":edit/seen-by",
+   "entities": 817,
+   "type": "number",
+   "example": "830"
+  },
+  {
+   "attr": ":edit/time",
+   "entities": 4786,
+   "type": "number",
+   "example": "1636016072031"
+  },
+  {
+   "attr": ":edit/user",
+   "entities": 4554,
+   "type": "number",
+   "example": "828"
+  },
+  {
+   "attr": ":entity/attrs",
+   "entities": 290,
+   "type": "object",
+   "example": "[[{\"source\":[\"uid\",\"P_2znWfDD\"],\"value\":[\"uid\",\"P_2znWfDD\"]},{\"source\":[\"uid\"…"
+  },
+  {
+   "attr": ":graph/name",
+   "entities": 1,
+   "type": "string",
+   "example": "\"developer-documentation\""
+  },
+  {
+   "attr": ":graph/settings",
+   "entities": 1,
+   "type": "object",
+   "example": "{\"users-blocks-immutable?\":false,\"homepage-uid\":\"49715b-M2\"}"
+  },
+  {
+   "attr": ":last-used/time",
+   "entities": 1,
+   "type": "number",
+   "example": "1693321131470"
+  },
+  {
+   "attr": ":log/id",
+   "entities": 228,
+   "type": "number",
+   "example": "1671552971449"
+  },
+  {
+   "attr": ":node/title",
+   "entities": 401,
+   "type": "string",
+   "example": "\"February 26th, 2026\""
+  },
+  {
+   "attr": ":page/edit-nonce",
+   "entities": 401,
+   "type": "string",
+   "example": "\"BdToZgaT-\""
+  },
+  {
+   "attr": ":page/edit-time",
+   "entities": 401,
+   "type": "number",
+   "example": "1615210312839"
+  },
+  {
+   "attr": ":page/edit-user",
+   "entities": 401,
+   "type": "number",
+   "example": "828"
+  },
+  {
+   "attr": ":page/sidebar",
+   "entities": 14,
+   "type": "number",
+   "example": "12"
+  },
+  {
+   "attr": ":page/word-count",
+   "entities": 401,
+   "type": "number",
+   "example": "24"
+  },
+  {
+   "attr": ":restrictions/prevent-clean",
+   "entities": 18,
+   "type": "number",
+   "example": "1763068662519"
+  },
+  {
+   "attr": ":token/ai",
+   "entities": 2,
+   "type": "boolean",
+   "example": "true"
+  },
+  {
+   "attr": ":token/created-by-uid",
+   "entities": 2,
+   "type": "string",
+   "example": "\"VlRhovvR7xelaiL4Yg1osW8jrLz2\""
+  },
+  {
+   "attr": ":token/description",
+   "entities": 2,
+   "type": "string",
+   "example": "\"roam-mcp CLI\""
+  },
+  {
+   "attr": ":token/device-name",
+   "entities": 2,
+   "type": "string",
+   "example": "\"Baibhav's Mac\""
+  },
+  {
+   "attr": ":token/type",
+   "entities": 2,
+   "type": "string",
+   "example": "\"local\""
+  },
+  {
+   "attr": ":user/display-name",
+   "entities": 73,
+   "type": "string",
+   "example": "<redacted>"
+  },
+  {
+   "attr": ":user/display-page",
+   "entities": 9,
+   "type": "number",
+   "example": "<redacted>"
+  },
+  {
+   "attr": ":user/photo-url",
+   "entities": 73,
+   "type": "string",
+   "example": "<redacted>"
+  },
+  {
+   "attr": ":user/settings",
+   "entities": 13,
+   "type": "object",
+   "example": "<redacted>"
+  },
+  {
+   "attr": ":user/uid",
+   "entities": 139,
+   "type": "string",
+   "example": "<redacted>"
+  },
+  {
+   "attr": ":version/id",
+   "entities": 54,
+   "type": "string",
+   "example": "\"0.11.0\""
+  },
+  {
+   "attr": ":version/nonce",
+   "entities": 54,
+   "type": "string",
+   "example": "\"uuidb362776d-a585-47a2-9f06-c620f56de0e8\""
+  },
+  {
+   "attr": ":version/upgraded-nonce",
+   "entities": 49,
+   "type": "string",
+   "example": "\"uuidb362776d-a585-47a2-9f06-c620f56de0e8\""
+  },
+  {
+   "attr": ":window/filters",
+   "entities": 1,
+   "type": "object",
+   "example": "{\"includes\":[\"dSAi8APjS\"],\"removes\":[]}"
+  },
+  {
+   "attr": ":window/id",
+   "entities": 1,
+   "type": "string",
+   "example": "\"sidebar-block-alAWikuJ6\""
+  }
+ ]
+}
