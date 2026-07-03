@@ -17,14 +17,15 @@ The graph name is the first URL path segment:
 | Path | What it is |
 | --- | --- |
 | `/llms.txt` | [llms.txt](https://llmstxt.org) index of everything on the site |
+| `/llms-full.txt` | Every graph's full export concatenated into one file (the per-graph exports below are smaller) |
 | `/<graph>/llms-full.txt` | Full markdown export of one graph, one file per graph. The `developer-documentation` one ends with mirror-generated appendices (labeled as such in the file — additions by this project, not content from the official graph): the live-introspected `window.roamAlphaAPI` function inventory and its changelog across refreshes, probed return values, the datalog attribute inventory, the copy-pasteable examples, and the full TypeScript definitions inlined — self-contained for agents |
 | `/<graph>/<page>.md` | One markdown file per page of each graph |
 | `/<graph>/release-notes.md` | Dated daily-note updates from that graph, when it has any |
 | `/types/roam-alpha-api.d.ts` | TypeScript definitions for `window.roamAlphaAPI` — coverage verified against live introspection, including functions missing from the official docs (e.g. `depot.getInstalledExtensions`) |
 | `/examples/*` | Short copy-pasteable examples (queries, writes, extension skeleton, Backend API) |
 
-Legacy URLs (`/docs/*` and the root `/llms-full.txt`, from before the graph name
-was in the path) 301-redirect via `public/_redirects`.
+Legacy `/docs/*` URLs (from before the graph name was in the path) 301-redirect via
+`public/_redirects`.
 
 ## Adding a graph
 

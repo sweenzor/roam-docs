@@ -394,7 +394,9 @@ appendices.push({
 });
 
 // ---------------------------------------------------------------------------
-// <graph>/llms-full.txt — one full export per graph
+// <graph>/llms-full.txt — one full export per graph, collected for the
+// site-wide concatenation at /llms-full.txt below
+const fullExports = [];
 for (const g of graphs) {
   const others = graphs.filter((o) => o !== g);
   const out = [
@@ -428,7 +430,30 @@ for (const g of graphs) {
   if (g.cfg.apiAppendices) {
     for (const a of appendices) out.push('---', '', ...a.lines, '');
   }
-  fs.writeFileSync(path.join(PUBLIC, g.cfg.name, 'llms-full.txt'), out.join('\n'));
+  const text = out.join('\n');
+  fs.writeFileSync(path.join(PUBLIC, g.cfg.name, 'llms-full.txt'), text);
+  fullExports.push(text);
+}
+
+// ---------------------------------------------------------------------------
+// /llms-full.txt — the llms-full.txt convention expects everything at the site
+// root, so concatenate every graph's export (each section keeps its own header
+// and provenance notes).
+{
+  const header = [
+    '# Roam Research Documentation — full export (all graphs)',
+    '',
+    `> All ${graphs.length} graphs on this site in one file: ${graphs.map((g) => g.cfg.name).join(', ')}.`,
+    '> Each graph section below starts with its own header and provenance notes; the',
+    '> per-graph files are smaller if you only need one:',
+    ...graphs.map((g) => `> - ${BASE}/${g.cfg.name}/llms-full.txt`),
+    `> Index of individual pages: ${BASE}/llms.txt`,
+    '',
+  ].join('\n');
+  fs.writeFileSync(
+    path.join(PUBLIC, 'llms-full.txt'),
+    header + fullExports.map((text) => `\n---\n\n${text}`).join('')
+  );
 }
 
 // ---------------------------------------------------------------------------
@@ -496,7 +521,13 @@ for (const g of graphs) {
         : [])
     );
   }
-  out.push('## Optional', '', ...optional, '');
+  out.push(
+    '## Optional',
+    '',
+    ...optional,
+    link('llms-full.txt (all graphs)', '/llms-full.txt', 'Every graph concatenated into one large file'),
+    ''
+  );
   fs.writeFileSync(path.join(PUBLIC, 'llms.txt'), out.join('\n'));
 }
 
@@ -550,6 +581,7 @@ ${graphs
       `      <li>graph <code>${g.cfg.name}</code> (${esc(g.cfg.title)}): <a href="/${g.cfg.name}/llms-full.txt"><code>llms-full.txt</code></a> — every page in one file</li>`
   )
   .join('\n')}
+      <li>everything: <a href="/llms-full.txt"><code>llms-full.txt</code></a> — all graphs in one file</li>
     </ul>
   </li>
 </ul>
@@ -585,10 +617,10 @@ ${pageList(g)}
   );
 
   // Legacy URLs from before the graph name became the first path segment
-  // (developer docs lived at /docs/ and its full export at the site root).
+  // (developer docs lived at /docs/).
   fs.writeFileSync(
     path.join(PUBLIC, '_redirects'),
-    ['/llms-full.txt /developer-documentation/llms-full.txt 301', '/docs/* /developer-documentation/:splat 301', ''].join('\n')
+    ['/docs/* /developer-documentation/:splat 301', ''].join('\n')
   );
 }
 
