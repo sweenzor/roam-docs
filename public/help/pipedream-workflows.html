@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pipedream Workflows — Roam Research Docs</title>
+<meta name="description" content="Pipedream is a no-code / low-code platform where one can build powerful workflows that connect your applications, services, APIs, and more">
+<link rel="canonical" href="https://roamdocs.fyi/help/pipedream-workflows">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Pipedream Workflows — Roam Research Docs">
+<meta property="og:description" content="Pipedream is a no-code / low-code platform where one can build powerful workflows that connect your applications, services, APIs, and more">
+<meta property="og:url" content="https://roamdocs.fyi/help/pipedream-workflows">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Pipedream Workflows</h1>
+<ul>
+<li>Pipedream is a no-code / low-code platform where one can build powerful workflows that connect your applications, services, APIs, and more
+<ul>
+<li>In other words, it is similar to [Zapier](<a href="/help/zapier-integration">Zapier Integration</a>) but is more powerful and flexible (particularly if you can code a little bit)
+<ul>
+<li>If you do not know how to code, do not worry, the workflows below do not require any coding knowledge to set up
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Workflows
+<ul>
+<li><strong><strong>Audio file in Cloud Storage -&gt; Transcript &amp; Summary in Roam</strong></strong>
+<ul>
+<li><strong>Just upload an audio file to Dropbox/GDrive, and automatically get the transcript and summary in your Daily Note!!</strong>
+</li>
+<li><strong><strong>What you will need</strong></strong>
+<ul>
+<li>A Roam graph you want to capture to
+<ul>
+<li>This works even in encrypted graphs!
+</li>
+<li>Won't work for local graphs though 😢
+</li>
+</ul>
+</li>
+<li>An OpenAI API Key
+<ul>
+<li>we use OpenAI APIs for both transcription and summarization
+<ul>
+<li>transcribing the audio file - uses <em>Whisper</em>
+</li>
+<li>summarizing the transcript - uses <em>gpt-4o-mini</em>
+</li>
+</ul>
+</li>
+<li>If you do not have an OpenAI API key, please go to https://platform.openai.com/api-keys &gt; create new secret key
+<ul>
+<li>Do note that api keys using the Trial credit are rate limited pretty hard by OpenAI. If you think you will use this workflow regularly, we recommend you set up billing, then create a new secret key and use that in this workflow
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><strong>Costs</strong></strong>
+<ul>
+<li><strong>tldr:</strong> a little bit more than 0.36$ per hour of audio (or $0.006 per minute of audio)
+<ul>
+<li>as long as you do not have very frequent usages
+<ul>
+<li><strong>Alternative:</strong> If your use case is that you have a lot of small recordings/voice memos that you want to send to Roam, and if you are in the Apple Ecosystem, please checkout our <a href="/help/apple-shortcuts-speak-to-roam">Apple Shortcuts/Speak to Roam</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Breakdown
+<ul>
+<li>Whisper cost = <strong>$0.006 / minute</strong> (or eqvt 0.36$ per hour of audio)
+<ul>
+<li>this should be the vast majority of the cost of using this workflow
+</li>
+</ul>
+</li>
+<li>Summarization (gpt-4o-mini) cost = <strong>negligible</strong>
+<ul>
+<li>The cost for this should be much less than transcription since this is OpenAI's cheapest model till date
+</li>
+</ul>
+</li>
+<li>Pipedream: <strong>Free (for non-heavy usage)</strong> (details below)
+<ul>
+<li>Pipedream's free plan is very generous (compared to competitors) and should be more than enough for regular usage
+</li>
+<li>Their free plan is 10 credits/day. Most voice recordings should only use up 1 credit.
+<ul>
+<li>So, this means their free plan supports 10 voice recordings per day.
+</li>
+</ul>
+</li>
+<li>You will probably only need to upgrade if you use this workflow more frequently or if you input larger files
+<ul>
+<li>Larger files can take up multiple credits. For example, when testing with a podcast episode of 1.5 hours, it took up 3 credits
+</li>
+</ul>
+</li>
+<li><strong>Alternative:</strong> If your use case is that you have a lot of small recordings/voice memos that you want to send to Roam, and if you are in the Apple Ecosystem, please checkout our <a href="/help/apple-shortcuts-speak-to-roam">Apple Shortcuts/Speak to Roam</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><strong>Installation Process</strong></strong>
+<ul>
+<li>Please watch the video and use the links below
+</li>
+<li>This workflow has two versions
+<ul>
+<li>Google drive version: https://pipedream.com/new?h=tch_ovfa8o
+</li>
+<li>Dropbox version: https://pipedream.com/new?h=tch_8rf9P4
+</li>
+</ul>
+</li>
+<li><strong>Loom video showing how to set up the workflow for yourself</strong>
+<ul>
+<li>{{video: https://www.loom.com/share/17c40a12022c476dbf85f5eb086e63eb}}
+</li>
+<li>(Baibhav here: sorry for the long video 😅, this goes through setting up the workflow as well as any problems that might arise)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><strong>Things to keep in mind</strong> </strong>
+<ul>
+<li>First, please watch the video!
+</li>
+<li>When setting up the Google drive version, in the second step, <code>File</code> config might be empty. You NEED to enter <code>{{steps.trigger.event.id}}</code> there
+<ul>
+<li>this not being automatically set seems to be a bug in Pipedream
+</li>
+</ul>
+</li>
+<li>When setting up the Dropbox version, in the second step, the <code>Path</code> config might be empty. You NEED to enter <code>{{steps.trigger.event.path_lower}}</code> there
+<ul>
+<li>this not being automatically set seems to be a bug in Pipedream
+</li>
+</ul>
+</li>
+<li>If you run into any issues, please contact us at [support@roamresearch.com](mailto:support@roamresearch.com)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Idea: weekly digest sent to your gmail
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="pipedream-workflows.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/bcwmhOi5m">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

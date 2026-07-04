@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yet-to-release updates — Roam Research Docs</title>
+<meta name="description" content="if you run into issues with any of the following, please contact me (Baibhav Bista) on the Roam Public Slack or post on the developers chann">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/yet-to-release-updates">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Yet-to-release updates — Roam Research Docs">
+<meta property="og:description" content="if you run into issues with any of the following, please contact me (Baibhav Bista) on the Roam Public Slack or post on the developers chann">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/yet-to-release-updates">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>Yet-to-release updates</h1>
+<ul>
+<li>if you run into issues with any of the following, please contact me (Baibhav Bista) on the Roam Public Slack or post on the #developers channel there
+</li>
+<li>IN THE WORKS
+<ul>
+<li><a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> function that gives parsed markdown string for a block (with children blocks)
+<ul>
+<li>deployment to test in:: https://relemma-git-roamalphapi-getmarkdownstring.roamresearch.com/
+</li>
+<li><code>window.roamAlphaAPI</code><code>.data</code><code>.block</code>
+<ul>
+<li><code>.getParsedMarkdownString</code>
+<ul>
+<li>Description::
+<ul>
+<li>Get parsed markdown string for a block (and optionally, it's children)
+</li>
+<li>&quot;parsed&quot; meaning that block refs are resolved to their strings (and block embeds to their block trees!)
+</li>
+<li>am not sure I like the shape of the API right now. Let me know if you have any feedback
+</li>
+<li>Can't be used for page uids.
+<ul>
+<li>If you want to get md string for a page, You want to get :block/children for the page, sort them by :block/order and then call this fn for each :block/uid in that ordered list.
+</li>
+<li>Why not for pages?
+<ul>
+<li>pages are slightly but confusingly different because there is no standard to include the page title
+<ul>
+<li>so page md exports will not include the :node/title
+</li>
+<li>however, we want block md exports to include the :block/string
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>arg 1: <code>block-uid</code>
+<ul>
+<li>Type::
+<ul>
+<li>Block / page's uid
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>arg 2: <code>childrenDepth</code>
+<ul>
+<li>can be one of
+<ul>
+<li>true
+<ul>
+<li>give me all nested children
+</li>
+</ul>
+</li>
+<li>false
+<ul>
+<li>do not give me children
+</li>
+</ul>
+</li>
+<li>positive integer
+<ul>
+<li>give me children upto this depth
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>console.log(
+  window.roamAlphaAPI.data.block.getParsedMarkdownString(&quot;rT56JCmqH&quot;, true)
+);
+
+console.log(
+  window.roamAlphaAPI.data.block.getParsedMarkdownString(&quot;rT56JCmqH&quot;, false)
+);
+
+console.log(
+  window.roamAlphaAPI.data.block.getParsedMarkdownString(&quot;rT56JCmqH&quot;, 3)
+);
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ARCHIVE
+<ul>
+<li>isolate Depot extensions to platforms #.rm-falsified
+<ul>
+<li>Falsified due to:: we will have a native mobile app and they will not run custom code at all
+</li>
+<li>deployment to test in:: https://relemma-git-feat-roam-depot-enabled-platforms.roamresearch.com/
+<ul>
+<li>if you run into issues with any of the following, please contact me (Baibhav Bista) on the Roam Public Slack or post on the #developers channel there
+</li>
+</ul>
+</li>
+<li>Loom video (a bit outdated regarding the options)
+<ul>
+<li>{{video: https://www.loom.com/share/9adff7cbbf104c17815849a589693aaa}}
+</li>
+</ul>
+</li>
+<li>Basic idea is more for users to be able to isolate Roam depot extensions to certain platforms
+<ul>
+<li>some examples
+<ul>
+<li>users might not want to/need to have power-user like extensions like &quot;Workbench&quot; in mobile
+<ul>
+<li>well to be frank, I don't know if one would want to have &quot;Workbench&quot; in mobile or if it has mobile targeted features. I included it because it was the first thing I thought of when thinking about extensions for power users
+</li>
+</ul>
+</li>
+<li>users might have extensions meant for mobile which do not make sense to be run in browser, like &quot;Mobile Gesture Actions&quot;
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Options are:
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FI0qVg3f6Ua.png?alt=media&amp;token=16c10b0d-8fbe-441f-b222-98730da96e39" alt="" loading="lazy">
+</li>
+<li>All devices
+<ul>
+<li>enabled on everything
+</li>
+</ul>
+</li>
+<li>Mobile Only
+<ul>
+<li>Allows for mobile devices (but not tablets)
+</li>
+<li>should work both for the mobile app and for mobile site
+</li>
+<li>Tablets are removed from this criteria by checking for if the userAgent includes &quot;iPad&quot; or &quot;Tablet&quot; or if it includes &quot;Android' but not &quot;Mobile&quot;
+</li>
+</ul>
+</li>
+<li>Desktop &amp; Tablets
+<ul>
+<li>essentially the negation of the &quot;Mobile Only&quot; option
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Extensions are allowed to have defaults
+<ul>
+<li>if no default is set or invalid default is provided, it defaults to &quot;all&quot;
+</li>
+<li>Assumption is that very few extensions will have to set defaults
+<ul>
+<li>only few like &quot;Mobile Gesture Actions&quot;  might want to
+</li>
+</ul>
+</li>
+<li>Extension devs can select default for their extension in metadata json i.e. in <code>roam-depot-repo/extensions/github-username/extension-name.json</code> as &quot;default-enabled-platforms&quot;
+<ul>
+<li>Options::
+<ul>
+<li>&quot;all&quot;
+</li>
+<li>&quot;desktop-and-tablets&quot;
+</li>
+<li>&quot;only-mobile&quot;
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>default value is signified in the settings, so the user knows the default recommended value for the extension
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="yet-to-release-updates.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/9cnS3QNDu">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

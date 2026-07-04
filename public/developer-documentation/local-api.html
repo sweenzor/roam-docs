@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local API — Roam Research Docs</title>
+<meta name="description" content="__Just released, breaking changes might still happen__">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/local-api">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Local API — Roam Research Docs">
+<meta property="og:description" content="__Just released, breaking changes might still happen__">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/local-api">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>Local API</h1>
+<ul>
+<li><strong><em>Just released, breaking changes might still happen</em></strong>
+</li>
+<li>The desktop app exposes a local HTTP API on port 3333 for external applications to interact with <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a>.
+</li>
+<li><strong>Enable</strong>
+<ul>
+<li>Open the desktop app
+</li>
+<li>Open settings menu and enable
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FCwkAs7bG3T.png?alt=media&amp;token=4ed8739d-6247-4f9e-924d-127e66f31186" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Port &amp; Last Graph Discovery</strong>
+<ul>
+<li>The port is usually 3333, but if that port is taken we increment until we find a usable port.
+</li>
+<li>Read <code>~/.roam-local-api.json</code> to discover the port and last opened graph:
+<ul>
+<li><pre><code>{
+  &quot;port&quot;: 3333,
+  &quot;last-graph&quot;: &quot;my-graph-name&quot;
+}</code></pre>
+</li>
+<li><code>port</code> - the current API port (may be stale if app is not running)
+</li>
+<li><code>last-graph</code> - the most recently opened graph name
+</li>
+</ul>
+</li>
+<li>This file persists when the app closes, so check if the port is responsive before using it
+</li>
+</ul>
+</li>
+<li><strong>Endpoints</strong>
+<ul>
+<li><strong>Execute API action</strong>
+<ul>
+<li><pre><code> text
+POST http://localhost:3333/api/:graph-name
+Content-Type: application/json
+
+{&quot;action&quot;: &quot;...&quot;, &quot;args&quot;: [...]}</code></pre>
+</li>
+<li><code>action</code> - the <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> method path (e.g., <code>data.q</code>, <code>data.block.create</code>)
+</li>
+<li><code>args</code> - array of arguments to pass to the method
+</li>
+<li><strong>Examples</strong>
+<ul>
+<li>Query all page titles:
+<ul>
+<li><pre><code>curl -X POST http://localhost:3333/api/my-graph \
+-H &quot;Content-Type: application/json&quot; \
+-d '{&quot;action&quot;: &quot;data.q&quot;, &quot;args&quot;: [&quot;[:find ?title :where [?e :node/title ?title]]&quot;]}'</code></pre>
+</li>
+</ul>
+</li>
+<li>Create a block:
+<ul>
+<li><pre><code>curl -X POST http://localhost:3333/api/my-graph \
+-H &quot;Content-Type: application/json&quot; \
+-d '{&quot;action&quot;: &quot;data.block.create&quot;, &quot;args&quot;: [{&quot;location&quot;: {&quot;parent-uid&quot;: &quot;abc123&quot;, &quot;order&quot;: 0}, &quot;block&quot;: {&quot;string&quot;: &quot;Hello&quot;}}]}'</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Response</strong>
+<ul>
+<li>Success: <code>{&quot;success&quot;: true, &quot;result&quot;: [...]}</code>
+</li>
+<li>Error: <code>{&quot;success&quot;: false, &quot;error&quot;: &quot;Local API is disabled. Enable it in Settings menu.&quot;}</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>List open graphs</strong>
+<ul>
+<li><pre><code> text
+GET http://localhost:3333/api/graphs/open</code></pre>
+</li>
+<li>Returns graphs currently open in the desktop app
+</li>
+<li><strong>Example</strong>
+<ul>
+<li><pre><code>curl http://localhost:3333/api/graphs/open</code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Response</strong>
+<ul>
+<li>Success: <code>{&quot;success&quot;: true, &quot;result&quot;: [{&quot;name&quot;: &quot;my-graph&quot;, &quot;type&quot;: &quot;hosted&quot;}, ...]}</code>
+</li>
+<li><code>type</code> is either <code>&quot;hosted&quot;</code> or <code>&quot;offline&quot;</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>List available graphs</strong>
+<ul>
+<li><pre><code> text
+GET http://localhost:3333/api/graphs/available</code></pre>
+</li>
+<li>Returns all graphs the user has access to
+</li>
+<li>Requires at least one graph window to be open
+</li>
+<li><strong>Example</strong>
+<ul>
+<li><pre><code>curl http://localhost:3333/api/graphs/available</code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Response</strong>
+<ul>
+<li>Success: <code>{&quot;success&quot;: true, &quot;result&quot;: [...]}</code>
+</li>
+<li>Error (no window open): <code>{&quot;success&quot;: false, &quot;error&quot;: &quot;No graph window open. Please open a graph first.&quot;}</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="local-api.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/8ikgtLSXz">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iFrame Components — Roam Research Docs</title>
+<meta name="description" content="Important Note: This is Depreciated, it still most likely works but we will not be continuing it's development">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/iframe-components">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="iFrame Components — Roam Research Docs">
+<meta property="og:description" content="Important Note: This is Depreciated, it still most likely works but we will not be continuing it's development">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/iframe-components">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>iFrame Components</h1>
+<h4><strong>Important Note: </strong> This is Depreciated, it still most likely works but we will not be continuing it's development</h4>
+<h3>Overview</h3>
+<ul>
+<li>With iFrame Components, you can develop custom interfaces, widgets, and data visualizations in any framework and host on your own server. The components get iframed into a Roam block, and through message passing, have access to a limited subset of graph data, and the ability to write/edit the blocks nested below itself.
+</li>
+</ul>
+<h3>Examples</h3>
+<ul>
+<li>Spreadsheet-like table with data stored in blocks nested below
+<ul>
+<li>{{iframe-component: https://iframe.stianhaklev.repl.co/spreadsheet | 3x3}}
+<ul>
+<li>A1: 30
+</li>
+<li>B1: 40
+</li>
+<li>C1: 50
+</li>
+<li>B3: 90
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Word cloud of RoamAlphaAPI methods
+<ul>
+<li>test {{iframe-component: https://iframe.stianhaklev.repl.co/wordcloud Reference::}} it 
+</li>
+<li>
+</li>
+</ul>
+</li>
+<li>Very simple chat
+<ul>
+<li>{{iframe-component: https://iframe.stianhaklev.repl.co/chat}}
+<ul>
+<li>Buzz Lightyear: Hello
+</li>
+<li>Other user: Nice to meet you!
+</li>
+<li>Baibhav Bista: test
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>You can find the source of these examples <a href="https://github.com/houshuang/iframe">here</a> . These are hosted on Repl.it, but could be hosted anywhere. (If you host on repl.it, make sure to make your repo &quot;always on&quot;)
+</li>
+</ul>
+<h3>How to use in a Roam graph</h3>
+<ul>
+<li>The syntax is <code>{{iframe-component: URL [block-refs] | [options]}}</code>
+</li>
+<li>The minimum is just iframe-component, followed by a URL. 
+<ul>
+<li>You can optionally specify one or more block-references separated by a space, like in the word cloud example above
+</li>
+<li>You can optionally specify one or more queries separated by a space, like this: <code>{and: {[[Food]] not: [[Vegetarian]]}}</code>.
+<ul>
+<li>So a full example of using invoking the word cloud with a query would look like 
+<ul>
+<li><code>{{iframe-component: https://iframe.stianhaklev.repl.co/wordcloud {and: [[parameters]]} }}</code>
+<ul>
+<li>{{iframe-component: https://iframe.stianhaklev.repl.co/wordcloud {and: <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a>}}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>You can optionally add options after a vertical bar (|), as in the spreadsheet example above
+</li>
+</ul>
+</li>
+<li>Permissions::
+<ul>
+<li>Components always have read and write access to the blocks nested below them. 
+</li>
+<li>In addition, they have read access to all blocks-with-children that are specified as block references when invoking a component.
+</li>
+<li>In the examples above, the spreadsheet only has read and write access to the data nested below, whereas the word cloud has read access to the block reference that is provided, and could additionally store data in the blocks nested below.
+</li>
+<li>Components are also able to zoom in on a block in the main window, or open a block in the right sidebar, functionality that would typically be tied to clicking/shift-clicking on the representation of a block.
+</li>
+</ul>
+</li>
+</ul>
+<h3>How to develop an iFrame Component</h3>
+<ul>
+<li>iFrame Components are simply &quot;small websites&quot; served inside iFrames. These can be written using any JS framework, or even in a language that compiles to JS, and hosted anywhere. Because of iFrame isolation, they do not have access to manipulate the Roam DOM or call the <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a>, like <a href="/developer-documentation/roam-js">roam/js</a> can. However, through message passing using <code>postMessage</code>, they receive data about the relevant subset of blocks, and can call a number of API functions.
+</li>
+<li>Iframe Resizer::
+<ul>
+<li>In order for Roam to be able to automatically resize the iFrame according to the content, you need to include the iframe-resizer contentwindow.min.js script (<a href="https://raw.githubusercontent.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.contentWindow.min.js">link</a>) on any page you serve. 
+<ul>
+<li>For Create React App, you can just copy this file to the public folder, and include this in your index.html:
+<ul>
+<li><pre><code>&lt;script src=&quot;%PUBLIC_URL%/iframeResizer.contentWindow.min.js&quot;/&gt;&lt;/script&gt;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Options::
+<ul>
+<li>Any options written after the <code>|</code> are passed in the URL parameter <code>opts</code>, so the actual URL called for the spreadsheet above, which is invoked using <code>{{iframe-component: https://iframe.stianhaklev.repl.co/spreadsheet | 3x3}}</code> is actually <code>https://iframe.stianhaklev.repl.co/spreadsheet?opts=3x3</code>
+</li>
+</ul>
+</li>
+<li>Communications::
+<ul>
+<li>All communication with Roam happens through <code>postMessage</code>. 
+<ul>
+<li>All API calls consist of an object with a type, and other keys depending on the type.
+</li>
+<li>When the component has loaded and is ready, it should begin by sending the &quot;ready&quot; message.
+<ul>
+<li><pre><code>window.parent.postMessage({ type: &quot;roamIframeAPI.ready&quot; }, &quot;*&quot;);</code></pre>
+</li>
+</ul>
+</li>
+<li>Receiving data::
+<ul>
+<li>Once Roam has received the ready signal, it will send the first data. The iFrame component will need to listen using <code>addEventListener(&quot;message)</code>. 
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>window.addEventListener(&quot;message&quot;, (e) =&gt; {
+  if (!typeof e.data === &quot;object&quot; || !e.data[&quot;roam-data&quot;]) {
+    return;
+  }
+  // do things with e.data
+}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>After the initial data is sent, the full data will be sent again whenever there is a change in one of the blocks subscribed to. 
+</li>
+</ul>
+</li>
+<li>Structure of the roam-data object::
+<ul>
+<li>keys::
+<ul>
+<li>blocks-below:: iframe component block-and-children
+</li>
+<li>block-refs:: array of block-and-children for each block ref
+</li>
+<li>queries:: Object, where keys are the queries, and values is an array of blocks with children
+</li>
+<li>user::
+<ul>
+<li>display-name:: display name or &quot;anonymous&quot;
+</li>
+<li>uid:: unique user id
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li>chat above
+<ul>
+<li><pre><code>{
+    &quot;blocks-below&quot;: {
+        &quot;order&quot;: 0,
+        &quot;uid&quot;: &quot;diqQJPCS1&quot;,
+        &quot;string&quot;: &quot;{{iframe-component: https://iframe.stianhaklev.repl.co/chat}}&quot;,
+        &quot;id&quot;: 1392,
+        &quot;children&quot;: [
+            {
+                &quot;order&quot;: 0,
+                &quot;uid&quot;: &quot;W5RHM_o56&quot;,
+                &quot;string&quot;: &quot;Buzz Lightyear: Hello&quot;,
+                &quot;id&quot;: 1396
+            },
+            {
+                &quot;order&quot;: 1,
+                &quot;uid&quot;: &quot;SAbdRqJJ8&quot;,
+                &quot;string&quot;: &quot;Other user:Nice to meet you!&quot;,
+                &quot;id&quot;: 1397
+            }
+        ]
+    },
+    &quot;block-refs&quot;: [],
+    &quot;user&quot;: {
+        &quot;display-name&quot;: &quot;Buzz Lightyear&quot;,
+        &quot;uid&quot;: &quot;fsgfsfsgT5FZQdzAI7P40aB3&quot;
+    }
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>word cloud above
+<ul>
+<li><pre><code>{
+    &quot;blocks-below&quot;: {
+        &quot;order&quot;: 0,
+        &quot;uid&quot;: &quot;diqQJPCS1&quot;,
+        &quot;string&quot;: &quot;{{iframe-component: https://iframe.stianhaklev.repl.co/chat ((jg94ngNDd))}}&quot;,
+        &quot;id&quot;: 1392
+    },
+    &quot;block-refs&quot;: [
+        {
+            &quot;order&quot;: 1,
+            &quot;uid&quot;: &quot;jg94ngNDd&quot;,
+            &quot;string&quot;: &quot;The minimum is just iframe-component, followed by a URL. &quot;,
+            &quot;id&quot;: 1338,
+            &quot;children&quot;: [
+                {
+                    &quot;order&quot;: 0,
+                    &quot;uid&quot;: &quot;gnglVpCCV&quot;,
+                    &quot;string&quot;: &quot;You can optionally specify one or more block-references separated by a space, like in the word cloud example above&quot;,
+                    &quot;id&quot;: 1337
+                },
+                {
+                    &quot;order&quot;: 1,
+                    &quot;uid&quot;: &quot;j13RVmFat&quot;,
+                    &quot;string&quot;: &quot;You can optionally add options after a vertical bar (|), as in the spreadsheet example above&quot;,
+                    &quot;id&quot;: 1339
+                }
+            ]
+        }
+    ],
+    &quot;user&quot;: {
+        &quot;display-name&quot;: &quot;Buzz Lightyear&quot;,
+        &quot;uid&quot;: &quot;sdfsdfsdfVlT5FZQdzAI7P40aB3&quot;
+    }
+}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>RoamIframeAPI::
+<ul>
+<li>The API methods follow the format of <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> closely.
+</li>
+<li><code>.block</code>
+<ul>
+<li><code>create</code>
+<ul>
+<li>Description::
+<ul>
+<li>Creates a new block at a location
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>location</code>
+<ul>
+<li><code>parent-uid</code> <strong>optional</strong> defaults to the Iframe Component block. <em>Must be a descendant of the Iframe Component block.</em>
+</li>
+<li><code>order</code> <strong>optional</strong> defaults to &quot;last&quot;
+</li>
+</ul>
+</li>
+<li><code>block</code>
+<ul>
+<li><code>string</code> <strong>required</strong>
+</li>
+<li><code>uid</code> <strong>optional</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Usage::
+<ul>
+<li><a href="/developer-documentation/roam-js">roam/js</a>
+<ul>
+<li><pre><code>window.parent.postMessage({ 
+    type: &quot;roamIframeAPI.data.block.create&quot;, 
+    block: {string: changeCell.key+': '+ 
+            updatedCell.value }}, &quot;*&quot;);</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>move</code>
+<ul>
+<li>Description::
+<ul>
+<li>Move a block to a new location
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>location</code>
+<ul>
+<li><code>parent-uid</code> <strong>required</strong> <em>Must be a descendant of the Iframe Component block.</em>
+</li>
+<li><code>order</code> <strong>required</strong>
+</li>
+</ul>
+</li>
+<li><code>block</code>
+<ul>
+<li><code>uid</code> <strong>required</strong> <em>Must be a descendant of the Iframe Component block.</em>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>update</code>
+<ul>
+<li>Description::
+<ul>
+<li>Updates a block's text and/or collapsed state
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>block</code>
+<ul>
+<li><code>uid</code> <strong>required</strong> <em>Must be a descendant of the Iframe Component block.</em>
+</li>
+<li><code>string</code> <strong>optional</strong>
+</li>
+<li><code>open</code> <strong>optional</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>delete</code>
+<ul>
+<li>Description::
+<ul>
+<li>Delete a block and all its children, and recalculates order of sibling blocks
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>block</code>
+<ul>
+<li><code>uid</code> <strong>required</strong> <em>Must be a descendant of the Iframe Component block.</em>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>.right-sidebar</code>
+<ul>
+<li><code>.add-window</code>
+<ul>
+<li>Description::
+<ul>
+<li>Adds a window to the right sidebar. If the sidebar is closed, opens it.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>window</code>
+<ul>
+<li><code>type</code>
+<ul>
+<li>Required
+</li>
+<li>Can be one of:
+<ul>
+<li>&quot;mentions&quot;
+</li>
+<li>&quot;block&quot;
+</li>
+<li>&quot;outline&quot;
+</li>
+<li>&quot;graph&quot;
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>block-uid</code>
+<ul>
+<li>Required 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Usage::
+<ul>
+<li><a href="/developer-documentation/roam-js">roam/js</a>
+<ul>
+<li><pre><code>window.parent.postMessage({ 
+  type: &quot;roamIframeAPI.ui.right-sidebar.add-window&quot;, 
+  window: {&quot;block-uid&quot;:  targetBlock.uid , 
+           &quot;type&quot;: &quot;block&quot;}}, &quot;*&quot;);</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>.main-window</code>
+<ul>
+<li><code>.zoom-block</code>
+<ul>
+<li>Description::
+<ul>
+<li>Zooms the main window into a specific block UID. (Like clicking on a bullet).
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>block</code>
+<ul>
+<li><code>uid</code> <strong>required</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="iframe-components.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/YNgZSgVSS">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

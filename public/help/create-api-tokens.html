@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create API Tokens — Roam Research Docs</title>
+<meta name="description" content="(how to create Roam API tokens for a graph)">
+<link rel="canonical" href="https://roamdocs.fyi/help/create-api-tokens">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Create API Tokens — Roam Research Docs">
+<meta property="og:description" content="(how to create Roam API tokens for a graph)">
+<meta property="og:url" content="https://roamdocs.fyi/help/create-api-tokens">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Create API Tokens</h1>
+<ul>
+<li>(how to create Roam API tokens for a graph)
+<ul>
+<li>If you're a developer, you can use these with Roam Backend API or Roam Append API 
+</li>
+</ul>
+</li>
+<li>Steps to create new API Token
+<ul>
+<li><strong>Walkthrough GIF</strong>
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FO6sd1Ey3g2.gif?alt=media&amp;token=18c9f89e-e86b-4f9e-97cc-8cf1dc9d3954" alt="" loading="lazy">
+</li>
+<li>Process is the same for encrypted graphs but you should select the &quot;append-only&quot; scope instead (It is the only option for encrypted graphs)
+</li>
+<li>Please note that you can only create API tokens for your graphs, not for graphs that have been shared with you
+</li>
+</ul>
+</li>
+<li><strong>Steps</strong> (if you prefer following via text)
+<ul>
+<li>Open your settings via ... &gt; Settings, then go to the &quot;Graph&quot; tab
+<ul>
+<li> <img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FfagWR_XbE7.png?alt=media&amp;token=0d1d5156-d91b-4078-ad2f-e35db1ceb8ba" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>In the &quot;Graph&quot; tab in settings, click on the green &quot;+ New API Token&quot; button
+<ul>
+<li>Do note that you need to be the owner/admin of the graph in order to create API tokens
+</li>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FvLvpJCRi36.png?alt=media&amp;token=7cc08bb8-f684-4537-ba15-0f76c07e30d1" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>After clicking the button, please enter a clear description of expected usage. In the access scope, select <strong>read &amp; edit access</strong> for unencrypted graphs and <strong>append-only access</strong> for encrypted graphs. More regarding scope below
+<ul>
+<li>More details regarding scopes for API tokens below:
+<ul>
+<li><strong>read-only access</strong>
+<ul>
+<li>(only available for unencrypted graphs)
+</li>
+<li>This scope only allows access to read to your graph.
+</li>
+<li>In the case of the Zapier integration, this means that you can only use the &quot;Trigger&quot;s, but not the &quot;Action&quot;s
+</li>
+</ul>
+</li>
+<li><strong>read &amp; edit access</strong>
+<ul>
+<li>(only available for unencrypted graphs)
+</li>
+<li>this scope is the most permissive one. It allows the service to both read your graph and edit/add stuff to it. 
+</li>
+<li>In the case of the Zapier integration, this means that you can use both the &quot;Trigger&quot;s and the &quot;Action&quot;s
+</li>
+</ul>
+</li>
+<li><strong>append-only access</strong>
+<ul>
+<li>(available for <strong>both</strong> encrypted &amp; unencrypted graphs)
+</li>
+<li>this access only provides the service ability to <em>add</em> stuff to your graph
+</li>
+<li>In the case of the Zapier integration, this means that you can only use the &quot;Actions&quot;s, but not the &quot;Trigger&quot;s
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In the next screen, click on the &quot;Clipboard&quot; icon 📋 to copy the token to your clipboard. It will start with &quot;roam-graph-token-&quot;
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FtnYMdlay_y.png?alt=media&amp;token=e49cdfbc-872e-44b6-bc01-4b0c0b22a386" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="create-api-tokens.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/fDF1AS-vb">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

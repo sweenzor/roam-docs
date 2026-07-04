@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datomic Alpha API — Roam Research Docs</title>
+<meta name="description" content="Important Note: This is the documentation for the Depreciated (&amp; inactive) Datomic API. We have a new API! see it here, Roam Backend API (Be">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/datomic-alpha-api">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Datomic Alpha API — Roam Research Docs">
+<meta property="og:description" content="Important Note: This is the documentation for the Depreciated (&amp; inactive) Datomic API. We have a new API! see it here, Roam Backend API (Be">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/datomic-alpha-api">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>Datomic Alpha API</h1>
+<h4><strong>Important Note: </strong> This is the documentation for the Depreciated (&amp; inactive) Datomic API. We have a new API! see it here, <a href="/developer-documentation/roam-backend-api-beta">Roam Backend API (Beta)</a></h4>
+<h4>Reference::</h4>
+<ul>
+<li>Description::
+<ul>
+<li>The Datomic Alpha API allows you to programatically interact with <strong>Experimental Roam Graphs</strong>.
+</li>
+<li><strong>Experimental Roam Graphs</strong> make use of our new backend infrastructure and are separate from existing graphs.
+<ul>
+<li>Our goal is to migrate existing graphs to the new infrastructure when it is finalized.
+</li>
+</ul>
+</li>
+<li>Our goal with an Alpha release is to gather information on use cases and usage to further shape work on the API.
+</li>
+<li>Any part of the API may change during the Alpha period.
+</li>
+<li>Any data in <strong>Experimental Roam Graphs</strong> is subject to:
+<ul>
+<li>deletion
+</li>
+<li>alteration
+</li>
+<li>unintended access
+</li>
+</ul>
+</li>
+<li><strong>Do not use Experimental Graphs or the Datomic Alpha API for important or sensitive information.</strong>
+</li>
+</ul>
+</li>
+<li>terms::
+<ul>
+<li><strong>Experimental Roam Graphs</strong>
+<ul>
+<li>Hosted Roam graph based on upcoming backend infrastructure.
+</li>
+</ul>
+</li>
+<li><strong>Datomic Alpha API</strong>
+<ul>
+<li>programmatic interface to <strong>Experimental Roam Graphs</strong>s
+</li>
+</ul>
+</li>
+<li><strong>Block</strong>
+<ul>
+<li>base structure in Roam, corresponding to visible blocks of text and other functionality.
+</li>
+</ul>
+</li>
+<li><strong>Page</strong>
+<ul>
+<li>base structure in Roam, corresponding to the top level structure containing child blocks.
+</li>
+</ul>
+</li>
+<li><strong>API key</strong>
+<ul>
+<li>Unique string that grants an app access to the <strong>Datomic Alpha API</strong>.
+<ul>
+<li>Your app always uses this key when communicating with the API.
+</li>
+</ul>
+</li>
+<li>Currently obtained by messaging the either Filipe or Josh in the Alpha API slack channel.
+<ul>
+<li>Please provide your roam login email when asking for an API key.
+</li>
+</ul>
+</li>
+<li>API keys are subject to the following quota
+<ul>
+<li>500 requests per second, with burst of 2,500 requests
+</li>
+<li>100,000 requests per month starting on the 1st day
+</li>
+<li>If these are insufficient for your use case, please get in touch.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>API token</strong>
+<ul>
+<li>Unique string that grants an app access to an <strong>Experimental Roam Graphs</strong>.
+<ul>
+<li>Your app stores this token for an users graph.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Usage::
+<ul>
+<li>The API can only interact with graphs created via the <code>Create Experimental Graph</code> button on the <code>Hosted Graphs</code> section of https://roamresearch.com/#/app
+<ul>
+<li>this button is only visible for users that are part of the alpha.
+</li>
+</ul>
+</li>
+<li>The API receives a payload containing both the action to be performed and the action parameters.
+</li>
+<li>REST API
+<ul>
+<li>The REST API exposes a single URL where payloads are sent over HTTPS POST together with a header containing the API key.
+<ul>
+<li>The <strong>API key</strong> must be provided in a <code>x-api-key</code> header.
+</li>
+<li>The <strong>API token</strong> must be provided in a <code>x-api-token</code> header.
+</li>
+<li>Payload format must be provided via the <code>Content-Type</code> header.
+<ul>
+<li>Returns will use the same format.
+</li>
+</ul>
+</li>
+<li>Supported formats:
+<ul>
+<li><code>application/edn</code>
+<ul>
+<li>See https://github.com/edn-format/edn for specification
+</li>
+<li>See https://github.com/edn-format/edn/wiki/Implementations for implementations.
+</li>
+</ul>
+</li>
+<li><code>application/json</code>
+<ul>
+<li>Widely available across most programming languages.
+</li>
+</ul>
+</li>
+<li><code>application/transit+json</code>
+<ul>
+<li>See https://github.com/cognitect/transit-format#specification for specification
+</li>
+<li>See https://github.com/cognitect/transit-format#implementations for implementations
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>JS SDK
+<ul>
+<li>The Roam web client exposes the <code>window.roamDatomicAlphaAPI</code> JS SDK as a convenient way to access the API from within <code>roam/js</code> or the browser console.
+<ul>
+<li>when using the SDK the <code>graph-name</code> action parameter is automatically filled in to the current graph.
+</li>
+<li>no <strong>API key</strong> or <strong>API token</strong> is needed when using the JS SDK.
+</li>
+<li>payload format is always JSON for the JS SDK.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The API is currently based on <a href="https://www.datomic.com/">Datomic</a> dialect of <a href="https://en.wikipedia.org/wiki/Datalog">Datalog</a>
+<ul>
+<li>the extent to which Datomic and Datalog is exposed is the final API is under consideration.
+</li>
+<li><a href="http://www.learndatalogtoday.org/">Learn Datalog Today</a> is an excellent resource for those curious about Datalog. 
+</li>
+<li><a href="https://docs.datomic.com/on-prem/query.html">Datomic's docs</a> are also a great place to learn more about its flavour of Datalog
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>status::
+<ul>
+<li><strong>Experimental Roam Graphs</strong> are <strong>available</strong> to Alpha participants
+</li>
+<li><strong>Datomic Alpha API</strong> is <strong>available</strong> and <strong>under active development</strong>.
+</li>
+<li>REST API is <strong>available</strong>.
+</li>
+<li>JS SDK is <strong>available</strong>.
+</li>
+<li>Actions are <strong>missing return documentation</strong>.
+<ul>
+<li>actions that create entities should return them, allowing you to use the newly created entity.
+</li>
+</ul>
+</li>
+<li>Entity schema is <strong>missing documentation</strong>.
+</li>
+</ul>
+</li>
+<li>known problems::
+<ul>
+<li>Attributes do not work
+<ul>
+<li>Creating or updating a block with an attribute in it won't update attribute tables correctly, please do not use
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>action parameter schema::
+<ul>
+<li><code>graph-name</code>
+<ul>
+<li>Name of the graph.
+</li>
+<li>string
+</li>
+</ul>
+</li>
+<li><code>selector</code>
+<ul>
+<li>Datomic Pull pattern
+<ul>
+<li>see https://docs.datomic.com/on-prem/pull.html for details
+</li>
+</ul>
+</li>
+<li>string
+</li>
+<li><strong>required</strong>
+</li>
+</ul>
+</li>
+<li><code>query</code>
+<ul>
+<li>Datomic query
+<ul>
+<li>see https://docs.datomic.com/on-prem/query.html for details
+</li>
+<li>where clauses are limited to only data patterns.
+</li>
+</ul>
+</li>
+<li>string
+</li>
+</ul>
+</li>
+<li><code>inputs</code>
+<ul>
+<li>Datomic query inputs
+<ul>
+<li>see https://docs.datomic.com/on-prem/query.html for details
+</li>
+</ul>
+</li>
+<li>vector of any
+</li>
+</ul>
+</li>
+<li><code>block</code>
+<ul>
+<li><code>uid</code>
+<ul>
+<li>Unique identifier for the block.
+</li>
+<li>string
+</li>
+</ul>
+</li>
+<li><code>string</code>
+<ul>
+<li>Text content of the block.
+</li>
+<li>string
+</li>
+</ul>
+</li>
+<li><code>open</code>
+<ul>
+<li>Collapse state of the block.
+</li>
+<li>boolean
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>location</code>
+<ul>
+<li><code>parent-uid</code>
+<ul>
+<li>Unique Identifier for block parent under which the block should be inserted.
+</li>
+<li>string
+</li>
+</ul>
+</li>
+<li><code>order</code>
+<ul>
+<li>Index where the block should be inserted under the parent.
+<ul>
+<li>Starts at zero.
+</li>
+</ul>
+</li>
+<li>string
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>page</code>
+<ul>
+<li><code>uid</code>
+<ul>
+<li>Unique identifier for the page.
+</li>
+<li>string
+</li>
+</ul>
+</li>
+<li><code>title</code>
+<ul>
+<li>Title of the page.
+</li>
+<li>string
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>actions::
+<ul>
+<li>read
+<ul>
+<li><code>pull</code>
+<ul>
+<li>Description::
+<ul>
+<li>Pull is a declarative way to make hierarchical (and possibly nested) selections of information about entities.
+</li>
+<li>Exposes <a href="https://docs.datomic.com/cloud/query/query-pull.html">Datomic Pull</a> over graph entities.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>graph-name</code> <strong>required</strong>
+</li>
+<li><code>selector</code> <strong>required</strong>
+</li>
+<li><code>uid</code> <strong>required</strong>
+</li>
+</ul>
+</li>
+<li>Usage::
+<ul>
+<li>Retrieve the string of block <code>yS-It9SFL</code>.
+<ul>
+<li>JS SDK
+<ul>
+<li><pre><code>roamDatomicAlphaAPI({
+  &quot;action&quot;: &quot;pull&quot;,
+  &quot;selector&quot;: &quot;[:block/string]&quot;,
+  &quot;uid&quot;: &quot;yS-It9SFL&quot;
+});</code></pre>
+</li>
+</ul>
+</li>
+<li>REST API
+<ul>
+<li><pre><code>curl \
+ -X POST https://4c67k7zc26.execute-api.us-west-2.amazonaws.com/v1/alphaAPI \
+ -H &quot;Content-Type: application/edn&quot; \
+ -H &quot;x-api-key: YOUR_API_KEY_HERE&quot; \
+ -H &quot;x-api-token: GRAPH_TOKEN_HERE&quot; \
+ -d '{:action     &quot;pull&quot; 
+      :graph-name &quot;an-experimental-graph&quot;
+      :selector   [:block/string]
+      :uid        &quot;yS-It9SFL&quot;}'</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>q</code>
+<ul>
+<li>Description::
+<ul>
+<li>Deductive query.
+</li>
+<li>Exposes <a href="https://docs.datomic.com/cloud/query/query-data-reference.html">Datomic Query</a> over graph entities.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>graph-name</code> <strong>required</strong>
+</li>
+<li><code>query</code> <strong>required</strong>
+</li>
+<li><code>inputs</code> <strong>optional</strong>
+</li>
+</ul>
+</li>
+<li>Usage::
+<ul>
+<li>Get all titles. 
+<ul>
+<li>JS SDK
+<ul>
+<li><pre><code>await roamDatomicAlphaAPI({
+  &quot;action&quot;: &quot;q&quot;,
+  &quot;query&quot;: &quot;[:find ?t \
+             :where [?e :node/title ?t]]&quot;});</code></pre>
+</li>
+</ul>
+</li>
+<li>REST API
+<ul>
+<li><pre><code>curl \
+ -X POST https://4c67k7zc26.execute-api.us-west-2.amazonaws.com/v1/alphaAPI \
+ -H &quot;Content-Type: application/edn&quot; \
+ -H &quot;x-api-key: YOUR_API_KEY_HERE&quot; \
+ -H &quot;x-api-token: GRAPH_TOKEN_HERE&quot; \
+ -d '{:action     &quot;q&quot; 
+      :graph-name &quot;an-experimental-graph&quot;
+      :query      &quot;[:find ?t
+                    :where
+                    [?e :node/title ?t]]&quot;}'</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Get all pages.
+<ul>
+<li>JS SDK
+<ul>
+<li><pre><code>await roamDatomicAlphaAPI({
+  &quot;action&quot;: &quot;q&quot;,
+  &quot;query&quot;: &quot;[:find (pull ?page [*]) \
+        	 :where \
+             [?page :node/title]]&quot;});</code></pre>
+</li>
+</ul>
+</li>
+<li>REST API
+<ul>
+<li><pre><code>curl \
+ -X POST https://4c67k7zc26.execute-api.us-west-2.amazonaws.com/v1/alphaAPI \
+ -H &quot;Content-Type: application/edn&quot; \
+ -H &quot;x-api-key: YOUR_API_KEY_HERE&quot; \
+ -H &quot;x-api-token: GRAPH_TOKEN_HERE&quot; \
+ -d '{:action     &quot;q&quot; 
+      :graph-name &quot;an-experimental-graph&quot;
+      :query      &quot;[:find (pull ?page [*])
+                     :where
+                     [?page :node/title]]&quot;}'</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Get all pages in the left sidebar.
+<ul>
+<li>JS SDK
+<ul>
+<li><pre><code>await roamDatomicAlphaAPI({
+  &quot;action&quot;: &quot;q&quot;,
+  &quot;query&quot;: &quot;[:find (pull ?page [*]) \
+             :where \
+             [?page :page/sidebar]]&quot;});</code></pre>
+</li>
+</ul>
+</li>
+<li>REST API
+<ul>
+<li><pre><code>curl \
+ -X POST https://4c67k7zc26.execute-api.us-west-2.amazonaws.com/v1/alphaAPI \
+ -H &quot;Content-Type: application/edn&quot; \
+ -H &quot;x-api-key: YOUR_API_KEY_HERE&quot; \
+ -H &quot;x-api-token: GRAPH_TOKEN_HERE&quot; \
+ -d '{:action     &quot;q&quot; 
+      :graph-name &quot;an-experimental-graph&quot;
+      :query      &quot;[:find (pull ?page [*])
+                    :where \
+                    [?page :page/sidebar]]&quot;}'</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Get all blocks' strings and their uids.
+<ul>
+<li>JS SDK
+<ul>
+<li><pre><code>await roamDatomicAlphaAPI({
+  &quot;action&quot;: &quot;q&quot;,
+  &quot;query&quot;: &quot;[:find (pull ?block [:block/string :block/uid]) \
+        	 :where \
+             [?block :block/string]]&quot;});</code></pre>
+</li>
+</ul>
+</li>
+<li>REST API
+<ul>
+<li><pre><code>curl \
+ -X POST https://4c67k7zc26.execute-api.us-west-2.amazonaws.com/v1/alphaAPI \
+ -H &quot;Content-Type: application/edn&quot; \
+ -H &quot;x-api-key: YOUR_API_KEY_HERE&quot; \
+ -H &quot;x-api-token: GRAPH_TOKEN_HERE&quot; \
+ -d '{:action     &quot;q&quot; 
+      :graph-name &quot;an-experimental-graph&quot;
+      :query      &quot;[:find (pull ?block [:block/string :block/uid])
+                    :where
+                    [?block :block/string]]&quot;}'</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Get all pages and their blocks in a tree structure.
+<ul>
+<li>JS SDK
+<ul>
+<li><pre><code>await roamDatomicAlphaAPI({
+  &quot;action&quot;: &quot;q&quot;,
+  &quot;query&quot;: &quot;[:find (pull ?page [:node/title :block/uid :block/string :block/order {:block/children ...}]) \
+             :where \
+             [?page :node/title] \
+             [?page :block/children]]&quot;});</code></pre>
+</li>
+</ul>
+</li>
+<li>REST API
+<ul>
+<li><pre><code>curl \
+ -X POST https://4c67k7zc26.execute-api.us-west-2.amazonaws.com/v1/alphaAPI \
+ -H &quot;Content-Type: application/edn&quot; \
+ -H &quot;x-api-key: YOUR_API_KEY_HERE&quot; \
+ -H &quot;x-api-token: GRAPH_TOKEN_HERE&quot; \
+ -d '{:action     &quot;q&quot; 
+      :graph-name &quot;an-experimental-graph&quot;
+      :query      &quot;[:find (pull ?page [:node/title :block/uid :block/string :block/order {:block/children ...}])
+             		:where
+           		    [?page :node/title]
+                    [?page :block/children]]&quot;}'</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Get the page with the title <code>&quot;October 4th, 2020&quot;</code> and its blocks in a tree structure.
+<ul>
+<li>JS SDK
+<ul>
+<li><pre><code>
+let title = &quot;October 4th, 2020&quot;
+await roamDatomicAlphaAPI({
+  &quot;action&quot;: &quot;q&quot;,
+  &quot;query&quot;: &quot;[:find (pull ?page [:node/title :block/uid :block/string :block/order {:block/children ...}]) \
+             :in $ ?title \
+			 :where \
+             [?page :node/title ?title] \
+             [?page :block/children]]&quot;,
+  &quot;inputs&quot;: [title]});</code></pre>
+</li>
+</ul>
+</li>
+<li>REST API
+<ul>
+<li><pre><code>curl \
+ -X POST https://4c67k7zc26.execute-api.us-west-2.amazonaws.com/v1/alphaAPI \
+ -H &quot;Content-Type: application/edn&quot; \
+ -H &quot;x-api-key: YOUR_API_KEY_HERE&quot; \
+ -H &quot;x-api-token: GRAPH_TOKEN_HERE&quot; \
+ -d '{:action     &quot;q&quot; 
+      :graph-name &quot;an-experimental-graph&quot;
+      :inputs     [&quot;October 4th, 2020&quot;]
+      :query      &quot;[:find (pull ?page [:node/title :block/uid :block/string :block/order {:block/children ...}])
+                    :in $ ?title
+                    :where
+                    [?page :node/title ?title]
+                    [?page :block/children]]&quot;}'</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>write
+<ul>
+<li>block
+<ul>
+<li><code>create-block</code>
+<ul>
+<li>Description::
+<ul>
+<li>Create a new block at a location.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>graph-name</code> <strong>required</strong>
+</li>
+<li><code>location</code>
+<ul>
+<li><code>parent-uid</code> <strong>required</strong>
+</li>
+<li><code>order</code> <strong>required</strong>
+</li>
+</ul>
+</li>
+<li><code>block</code>
+<ul>
+<li><code>string</code> <strong>required</strong>
+</li>
+<li><code>uid</code> <strong>optional</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Usage::
+<ul>
+<li>Create a block as the first child under <code>09-22-2020</code> with the text <code>Mondays are cool!</code>
+<ul>
+<li>JS SDK
+<ul>
+<li><pre><code>roamDatomicAlphaAPI({
+  &quot;action&quot;: &quot;create-block&quot;,
+  &quot;location&quot;: {
+    &quot;parent-uid&quot;: &quot;09-22-2020&quot;,
+    &quot;order&quot;: 0
+  },
+  &quot;block&quot;: {
+    &quot;string&quot;: &quot;Mondays are cool!&quot;
+  }
+});</code></pre>
+</li>
+</ul>
+</li>
+<li>REST API
+<ul>
+<li><pre><code>curl \
+ -X POST https://4c67k7zc26.execute-api.us-west-2.amazonaws.com/v1/alphaAPI \
+ -H &quot;Content-Type: application/edn&quot; \
+ -H &quot;x-api-key: YOUR_API_KEY_HERE&quot; \
+ -H &quot;x-api-token: GRAPH_TOKEN_HERE&quot; \
+ -d '{:action     &quot;create-block&quot; 
+      :graph-name &quot;an-experimental-graph&quot;
+      :location   {:parent-uid &quot;09-22-2020&quot;
+                   :order      0}
+      :block      {:string &quot;Mondays are cool!&quot;}}'</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>move-block</code>
+<ul>
+<li>Description::
+<ul>
+<li>Move a block to a new location.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>graph-name</code> <strong>required</strong>
+</li>
+<li><code>location</code>
+<ul>
+<li><code>parent-uid</code> <strong>required</strong>
+</li>
+<li><code>order</code> <strong>required</strong>
+</li>
+</ul>
+</li>
+<li><code>block</code>
+<ul>
+<li><code>uid</code> <strong>required</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Usage::
+<ul>
+<li>Move block <code>yS-It9SFL</code> as the 6th child under <code>09-23-2020</code>.
+<ul>
+<li>JS SDK
+<ul>
+<li><pre><code>roamDatomicAlphaAPI({
+  &quot;action&quot;: &quot;move-block&quot;,
+  &quot;location&quot;: {
+    &quot;parent-uid&quot;: &quot;09-23-2020&quot;,
+    &quot;order&quot;: 5
+  },
+  &quot;block&quot;: {
+    &quot;uid&quot;: &quot;yS-It9SFL&quot;
+  }
+});</code></pre>
+</li>
+</ul>
+</li>
+<li>REST API
+<ul>
+<li><pre><code>curl \
+ -X POST https://4c67k7zc26.execute-api.us-west-2.amazonaws.com/v1/alphaAPI \
+ -H &quot;Content-Type: application/edn&quot; \
+ -H &quot;x-api-key: YOUR_API_KEY_HERE&quot; \
+ -H &quot;x-api-token: GRAPH_TOKEN_HERE&quot; \
+ -d '{:action     &quot;move-block&quot; 
+      :graph-name &quot;an-experimental-graph&quot;
+      :location   {:parent-uid &quot;09-23-2020&quot;
+                   :order      5}
+      :block      {:uid &quot;yS-It9SFL&quot;}}'</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>update-block</code>
+<ul>
+<li>Description::
+<ul>
+<li>Update a blocks text and/or collapsed state.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>graph-name</code> <strong>required</strong>
+</li>
+<li><code>block</code>
+<ul>
+<li><code>uid</code> <strong>required</strong>
+</li>
+<li><code>string</code> <strong>required</strong>
+</li>
+<li><code>open</code> <strong>optional</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Usage::
+<ul>
+<li>Set <code>yS-It9SFL</code> to be closed with the text <code>Poof!</code>.
+<ul>
+<li>JS SDK
+<ul>
+<li><pre><code>roamDatomicAlphaAPI({
+  &quot;action&quot;: &quot;update-block&quot;,
+  &quot;block&quot;: {
+    &quot;uid&quot;: &quot;yS-It9SFL&quot;,
+    &quot;open&quot;: false,
+    &quot;string&quot;: &quot;Poof!&quot;
+  }
+});</code></pre>
+</li>
+</ul>
+</li>
+<li>REST API
+<ul>
+<li><pre><code>curl \
+ -X POST https://4c67k7zc26.execute-api.us-west-2.amazonaws.com/v1/alphaAPI \
+ -H &quot;Content-Type: application/edn&quot; \
+ -H &quot;x-api-key: YOUR_API_KEY_HERE&quot; \
+ -H &quot;x-api-token: GRAPH_TOKEN_HERE&quot; \
+ -d '{:action     &quot;update-block&quot; 
+      :graph-name &quot;an-experimental-graph&quot;
+      :block      {:uid    &quot;yS-It9SFL&quot;
+                   :open   false
+                   :string &quot;Poof!&quot;}}'</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>delete-block</code>
+<ul>
+<li>Description::
+<ul>
+<li>Delete a block and all its children, and recalculates order of sibling blocks.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>graph-name</code> <strong>required</strong>
+</li>
+<li><code>block</code>
+<ul>
+<li><code>uid</code> <strong>required</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Usage::
+<ul>
+<li>Delete block <code>yS-It9SFL</code>.
+<ul>
+<li>JS SDK
+<ul>
+<li><pre><code>roamDatomicAlphaAPI({
+  &quot;action&quot;: &quot;delete-block&quot;,
+  &quot;block&quot;: {
+    &quot;uid&quot;: &quot;yS-It9SFL&quot;
+  }
+});</code></pre>
+</li>
+</ul>
+</li>
+<li>REST API
+<ul>
+<li><pre><code>curl \
+ -X POST https://4c67k7zc26.execute-api.us-west-2.amazonaws.com/v1/alphaAPI \
+ -H &quot;Content-Type: application/edn&quot; \
+ -H &quot;x-api-key: YOUR_API_KEY_HERE&quot; \
+ -H &quot;x-api-token: GRAPH_TOKEN_HERE&quot; \
+ -d '{:action     &quot;delete-block&quot; 
+      :graph-name &quot;an-experimental-graph&quot;
+      :block      {:uid &quot;yS-It9SFL&quot;}}'</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>page
+<ul>
+<li><code>create-page</code>
+<ul>
+<li>Description::
+<ul>
+<li>Create a new page with a given title.
+</li>
+<li>Pages with title in the format of <code>September 22nd, 2020</code> will create a new daily note if it does not yet exist.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>graph-name</code> <strong>required</strong>
+</li>
+<li><code>page</code>
+<ul>
+<li><code>title</code> <strong>required</strong>
+</li>
+<li><code>uid</code> <strong>optional</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Usage::
+<ul>
+<li>Create a new page titled <code>Reminder Inbox</code>.
+<ul>
+<li>JS SDK
+<ul>
+<li><pre><code>roamDatomicAlphaAPI({
+  &quot;action&quot;: &quot;create-page&quot;,
+  &quot;page&quot;: {
+    &quot;title&quot;: &quot;Reminder Inbox&quot;
+  }
+});</code></pre>
+</li>
+</ul>
+</li>
+<li>REST API
+<ul>
+<li><pre><code>curl \
+ -X POST https://4c67k7zc26.execute-api.us-west-2.amazonaws.com/v1/alphaAPI \
+ -H &quot;Content-Type: application/edn&quot; \
+ -H &quot;x-api-key: YOUR_API_KEY_HERE&quot; \
+ -H &quot;x-api-token: GRAPH_TOKEN_HERE&quot; \
+ -d '{:action     &quot;create-page&quot; 
+      :graph-name &quot;an-experimental-graph&quot;
+      :page       {:title &quot;Reminder Inbox&quot;}}'</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>update-page</code>
+<ul>
+<li>Description::
+<ul>
+<li>Update a pages title.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>graph-name</code> <strong>required</strong>
+</li>
+<li><code>page</code>
+<ul>
+<li><code>uid</code> <strong>required</strong>
+</li>
+<li><code>title</code> <strong>required</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Usage::
+<ul>
+<li>Change title of page <code>aY-ItUT65</code> to <code>Testing Alpha API</code>.
+<ul>
+<li>JS SDK
+<ul>
+<li><pre><code>roamDatomicAlphaAPI({
+  &quot;action&quot;: &quot;update-page&quot;,
+  &quot;page&quot;: {
+    &quot;uid&quot;: &quot;aY-ItUT65&quot;
+    &quot;title&quot;: &quot;Testing Alpha API&quot;
+  }
+});</code></pre>
+</li>
+</ul>
+</li>
+<li>REST API
+<ul>
+<li><pre><code>curl \
+ -X POST https://4c67k7zc26.execute-api.us-west-2.amazonaws.com/v1/alphaAPI \
+ -H &quot;Content-Type: application/edn&quot; \
+ -H &quot;x-api-key: YOUR_API_KEY_HERE&quot; \
+ -H &quot;x-api-token: GRAPH_TOKEN_HERE&quot; \
+ -d '{:action     &quot;update-page&quot; 
+      :graph-name &quot;an-experimental-graph&quot;
+      :page       {:uid   &quot;aY-ItUT65&quot;
+                   :title &quot;Testing Alpha API&quot;}}'</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>delete-page</code>
+<ul>
+<li>Description::
+<ul>
+<li>Delete a page and all its children blocks.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>graph-name</code> <strong>required</strong>
+</li>
+<li><code>page</code>
+<ul>
+<li><code>uid</code> <strong>required</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Usage::
+<ul>
+<li>Delete page <code>09-22-2020</code>.
+<ul>
+<li>JS SDK
+<ul>
+<li><pre><code>roamDatomicAlphaAPI({
+  &quot;action&quot;: &quot;delete-page&quot;,
+  &quot;page&quot;: {
+    &quot;uid&quot;: &quot;09-22-2020&quot;
+  }
+});</code></pre>
+</li>
+</ul>
+</li>
+<li>REST API
+<ul>
+<li><pre><code>curl \
+ -X POST https://4c67k7zc26.execute-api.us-west-2.amazonaws.com/v1/alphaAPI \
+ -H &quot;Content-Type: application/edn&quot; \
+ -H &quot;x-api-key: YOUR_API_KEY_HERE&quot; \
+ -H &quot;x-api-token: GRAPH_TOKEN_HERE&quot; \
+ -d '{:action     &quot;delete-page&quot; 
+      :graph-name &quot;an-experimental-graph&quot;
+      :page       {:uid &quot;09-22-2020&quot;}}'</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="datomic-alpha-api.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/RPQgIfLzH">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

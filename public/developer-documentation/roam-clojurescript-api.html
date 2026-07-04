@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roam Clojurescript API — Roam Research Docs</title>
+<meta name="description" content="Clojure Core Namespaces">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/roam-clojurescript-api">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Roam Clojurescript API — Roam Research Docs">
+<meta property="og:description" content="Clojure Core Namespaces">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/roam-clojurescript-api">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>Roam Clojurescript API</h1>
+<ul>
+<li>Clojure Core Namespaces
+<ul>
+<li><code>clojure.core</code>
+<ul>
+<li>everything in clojure.core
+</li>
+</ul>
+</li>
+<li><code>clojure.pprint</code>
+<ul>
+<li>everything in cljs.pprint
+</li>
+</ul>
+</li>
+<li><code>cljs.pprint</code>
+<ul>
+<li>everything in cljs.pprint
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Roam Namespaces
+<ul>
+<li>In general these namespaces match the <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> exactly, except they accept a clojure map with keywords
+<ul>
+<li>There are some differences, such as <code>roam.datascript.reactive</code> for re-rendering reagent components, or <code>roam.katex</code> for rendering katex reagent components
+</li>
+</ul>
+</li>
+<li><code>roam.datascript</code>
+<ul>
+<li><code>q</code>
+<ul>
+<li>Description:: 
+<ul>
+<li>Calls <a href="https://cljdoc.org/d/datascript/datascript/1.2.5/api/datascript.core#q">datascript.core/q</a> passing current graph's db automatically
+<ul>
+<li>&gt; Executes a datalog query
+</li>
+</ul>
+</li>
+<li>Resources::
+<ul>
+<li><a href="https://cljdoc.org/d/datascript/datascript/1.2.5/api/datascript.core#q">datascript.core/q docs</a>
+</li>
+<li>For a deeper dive into queries, see <a href="https://docs.datomic.com/on-prem/query.html">datomic docs on query</a>.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>arguments:: <code>[query &amp; inputs]</code>
+<ul>
+<li>query
+<ul>
+<li>datalog query 
+</li>
+</ul>
+</li>
+<li>inputs
+<ul>
+<li>any inputs to the query (except the db, which is passed automatically)
+</li>
+<li><strong>Note:</strong>  If you have inputs, the <code>:in</code> clause is compulsory (for eg <code>:in $ input1 input2</code>)  
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Usage::
+<ul>
+<li>Roam render component that shows the parent page's title for a block 
+<ul>
+<li>block passed as input is the block at the top of this page: <br>
+Equivalent to <a href="/developer-documentation/roam-js">roam/js</a> but language of choice is clojurescript
+</li>
+<li>{{roam/render: <pre><code>(ns developer-doc.rd.q
+  (:require 
+   [roam.datascript :as rd]))
+
+(defn main []
+  [:div  
+    (str
+     (rd/q 
+      '[:find ?parent-page-title .
+        :in $ ?block-uid
+        :where
+        [?block :block/uid  ?block-uid]
+        [?block :block/page ?page]
+        [?page  :node/title ?parent-page-title]] 
+      &quot;TpIGtsnL7&quot;))])</code></pre>}}
+<ul>
+<li><pre><code>(ns developer-doc.rd.q
+  (:require 
+   [roam.datascript :as rd]))
+
+(defn main []
+  [:div  
+    (str
+     (rd/q 
+      '[:find ?parent-page-title .
+        :in $ ?block-uid
+        :where
+        [?block :block/uid  ?block-uid]
+        [?block :block/page ?page]
+        [?page  :node/title ?parent-page-title]] 
+      &quot;TpIGtsnL7&quot;))])</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>pull</code>
+<ul>
+<li>Description::
+<ul>
+<li>Calls <a href="https://cljdoc.org/d/datascript/datascript/1.2.5/api/datascript.core#pull">datascript.core/pull</a> passing current graph's db automatically
+<ul>
+<li>&gt; Fetches data from database using recursive declarative description.
+</li>
+</ul>
+</li>
+<li>Resources::
+<ul>
+<li><a href="https://cljdoc.org/d/datascript/datascript/1.2.5/api/datascript.core#pull">datascript.core/pull docs</a>
+</li>
+<li>For a deeper dive, see <a href="https://docs.datomic.com/on-prem/query/pull.html">datomic docs on pull api</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>arguments:: <code>[pattern eid]</code>
+<ul>
+<li>pattern
+<ul>
+<li>aka selector
+</li>
+</ul>
+</li>
+<li>eid
+</li>
+</ul>
+</li>
+<li>Usage::
+<ul>
+<li>Roam render component that displays the following information for a page: uid, title, all direct children (with their own uid and :block/string)
+<ul>
+<li>{{roam/render: <pre><code>(ns developer-doc.rd.pull
+  (:require 
+   [roam.datascript :as rd]))
+
+(defn main []
+  [:div  
+    (str
+     (rd/pull 
+      '[:block/uid 
+        :node/title 
+        {:block/children [:block/uid :block/string]}] 
+      '[:block/uid &quot;11-20-2021&quot;]))])</code></pre>}}
+<ul>
+<li><pre><code>(ns developer-doc.rd.pull
+  (:require 
+   [roam.datascript :as rd]))
+
+(defn main []
+  [:div  
+    (str
+     (rd/pull 
+      '[:block/uid 
+        :node/title 
+        {:block/children [:block/uid :block/string]}] 
+      '[:block/uid &quot;11-20-2021&quot;]))])</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>entity</code>
+<ul>
+<li>Description::
+<ul>
+<li>Calls <a href="https://cljdoc.org/d/datascript/datascript/1.2.5/api/datascript.core#entity">datascript.core/entity</a> passing current graph's <code>db</code> automatically
+<ul>
+<li>&gt; Retrieves an entity by its id from database. Entities are <mark>lazy</mark> map-like structures to navigate DataScript database content.
+</li>
+</ul>
+</li>
+<li>Resources::
+<ul>
+<li><a href="https://cljdoc.org/d/datascript/datascript/1.2.5/api/datascript.core#entity">datascript.core/entity docs</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>arguments::
+<ul>
+<li>eid
+<ul>
+<li>entity id
+</li>
+<li>can directly pass entity id or can use lookup attr
+<ul>
+<li>therefore, both of the following are valid
+<ul>
+<li><code>7161</code>
+</li>
+<li><code>'[:block/uid &quot;11-27-2021&quot;]</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Usage::
+<ul>
+<li>a roam render component that displays the title of a page and the top bullets in order
+<ul>
+<li>{{roam/render: <pre><code>(ns developer-doc.rd.entity
+  (:require 
+   [roam.datascript :as rd]))
+
+(defn main []
+  (let [page-ent (rd/entity '[:block/uid &quot;11-27-2021&quot;])
+        title    (:node/title page-ent)
+        children (-&gt;&gt; (:block/children page-ent)
+                      (sort :block/order))]
+    [:div 
+     [:h1 title]
+     [:ul
+      (for [child children]
+        [:li (:block/string child)])]]))</code></pre>}}
+<ul>
+<li><pre><code>(ns developer-doc.rd.entity
+  (:require 
+   [roam.datascript :as rd]))
+
+(defn main []
+  (let [page-ent (rd/entity '[:block/uid &quot;11-27-2021&quot;])
+        title    (:node/title page-ent)
+        children (-&gt;&gt; (:block/children page-ent)
+                      (sort :block/order))]
+    [:div 
+     [:h1 title]
+     [:ul
+      (for [child children]
+        [:li (:block/string child)])]]))</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>datoms</code>
+<ul>
+<li>Description::
+<ul>
+<li>Calls <a href="https://cljdoc.org/d/datascript/datascript/1.2.5/api/datascript.core#datoms">datascript.core/datoms</a> passing current graph's db automatically
+<ul>
+<li>&gt; Index lookup. Returns a sequence of datoms (lazy iterator over actual DB index) which components (e, a, v) match passed arguments.
+</li>
+</ul>
+</li>
+<li>Resources::
+<ul>
+<li><a href="https://cljdoc.org/d/datascript/datascript/1.2.5/api/datascript.core#datoms">datascript.core/datoms docs</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>arguments:: <code>[index &amp; args]</code>
+<ul>
+<li>index
+<ul>
+<li>the database index to be looked up
+</li>
+<li>Possible values
+<ul>
+<li><code>:eavt</code> 
+</li>
+<li><code>:aevt</code>
+</li>
+<li><code>:avet</code>
+</li>
+</ul>
+</li>
+<li>Note::
+<ul>
+<li><code>:eavt</code>  and <code>:aevt</code> contain all datoms.
+</li>
+<li><code>:avet</code> only contains datoms for references, :db/unique and :db/index attributes.
+<ul>
+<li>in the case of Roam's graphs, these would be
+<ul>
+<li><code>:node/title</code>
+</li>
+<li><code>:window/id</code>
+</li>
+<li><code>:user/email</code>
+</li>
+</ul>
+</li>
+<li>However, all of the above are <code>:db/unique</code> properties, so you may be better off doing a direct entity lookup
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>args
+<ul>
+<li>the passed args match against components (e, a, v) of the datoms 
+<ul>
+<li>depending on the index obviously
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Usage::
+<ul>
+<li>a roam render component that displays the name of the  pages which are publicly shared
+<ul>
+<li>{{roam/render: <pre><code>(ns developer-doc.rd.datoms
+  (:require 
+   [roam.datascript :as rd]))
+
+(defn main []
+  (let [page-ents (map (comp rd/entity :e) (rd/datoms :aevt :page/permissions))]
+    [:div
+     [:h2 &quot;Shared pages&quot;]
+     [:ol
+       (for [page-ent page-ents]
+         [:li (str (:node/title page-ent) &quot;: &quot; (:page/permissions page-ent))])]]))</code></pre>}}
+<ul>
+<li><pre><code>(ns developer-doc.rd.datoms
+  (:require 
+   [roam.datascript :as rd]))
+
+(defn main []
+  (let [page-ents (map (comp rd/entity :e) (rd/datoms :aevt :page/permissions))]
+    [:div
+     [:h2 &quot;Shared pages&quot;]
+     [:ol
+       (for [page-ent page-ents]
+         [:li (str (:node/title page-ent) &quot;: &quot; (:page/permissions page-ent))])]]))</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roam.datascript.reactive</code>
+<ul>
+<li><code>q</code>
+<ul>
+<li>same as roam.datascript/q but returns a reagent reaction with the result of the query. 
+<ul>
+<li>The value of the reaction will be automatically updated whenever a change is detected
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>pull</code>
+<ul>
+<li>same as roam.datascript/pull but but returns a reagent reaction which will be updated every time that the value of conn changes
+</li>
+</ul>
+</li>
+<li><code>f-entity</code>
+<ul>
+<li>Description::
+<ul>
+<li>Returns a reagent reaction which holds the result of <code>(apply f (rd/entity eid) args)</code>
+</li>
+</ul>
+</li>
+<li>arguments:: <code>[f eid &amp; args]</code>
+<ul>
+<li>f
+</li>
+<li>eid
+</li>
+<li>args
+</li>
+</ul>
+</li>
+<li>Usage::
+<ul>
+<li>a roam render component that displays the text of a block reactively (reactively - updates automatically when block updates)
+<ul>
+<li>{{roam/render: <pre><code>(ns developer-doc.rdr.f-entity.2
+  (:require 
+   [roam.datascript.reactive :as rdr]))
+
+(defn main []
+  (let [block-uid      &quot;pXh1FJfIX&quot;
+        block-str-atom (rdr/f-entity
+                        :block/string ;;f
+                        [:block/uid block-uid] ;;eid
+                       )]
+    [:div 
+     [:h3 
+      (str &quot;Reactive display of block with :block/uid: &quot; block-uid)]
+     [:ul
+      [:li @block-str-atom]]]))</code></pre>}}
+<ul>
+<li><pre><code>(ns developer-doc.rdr.f-entity.2
+  (:require 
+   [roam.datascript.reactive :as rdr]))
+
+(defn main []
+  (let [block-uid      &quot;pXh1FJfIX&quot;
+        block-str-atom (rdr/f-entity
+                        :block/string ;;f
+                        [:block/uid block-uid] ;;eid
+                       )]
+    [:div 
+     [:h3 
+      (str &quot;Reactive display of block with :block/uid: &quot; block-uid)]
+     [:ul
+      [:li @block-str-atom]]]))</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>a roam render component that displays back refs of a block (reactively - updates automatically when block updates)
+<ul>
+<li>{{roam/render: <pre><code>(ns developer-doc.rdr.f-entity.2
+  (:require 
+   [roam.datascript.reactive :as rdr]))
+
+(defn get-backref-page-string [ent]
+  (mapv (juxt (comp :node/title :block/page) :block/string) (:block/_refs ent)))
+
+(defn main []
+  (let [block-uid      &quot;11-26-2021&quot;
+        backrefs-atom  (rdr/f-entity
+                        get-backref-page-string ;;f
+                        [:block/uid block-uid] ;;eid
+                       )]
+    [:div 
+     [:h3 
+      (str &quot;Reactive display of back refs of block with :block/uid: &quot; block-uid)]
+     [:ul
+      (for [[page-title block-string] @backrefs-atom]
+        [:li (str page-title &quot;: &quot; block-string)])
+      ]]))</code></pre>}}
+<ul>
+<li><pre><code>(ns developer-doc.rdr.f-entity.2
+  (:require 
+   [roam.datascript.reactive :as rdr]))
+
+(defn get-backref-page-string [ent]
+  (mapv (juxt (comp :node/title :block/page) :block/string) (:block/_refs ent)))
+
+(defn main []
+  (let [block-uid      &quot;11-26-2021&quot;
+        backrefs-atom  (rdr/f-entity
+                        get-backref-page-string ;;f
+                        [:block/uid block-uid] ;;eid
+                       )]
+    [:div 
+     [:h3 
+      (str &quot;Reactive display of back refs of block with :block/uid: &quot; block-uid)]
+     [:ul
+      (for [[page-title block-string] @backrefs-atom]
+        [:li (str page-title &quot;: &quot; block-string)])
+      ]]))</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>datoms</code>
+<ul>
+<li>same as roam.datascript/datoms but returns a reagent reaction with the result. 
+<ul>
+<li>The value of the reaction will be automatically updated whenever a change is detected
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roam.util</code>
+<ul>
+<li>Aside from <code>parse</code> these are equivalent to those in roamAlphaAPI.util
+</li>
+<li><code>generate-uid</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(roam.util/generate-uid)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>page-title-&gt;date</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(roam.util/page-title-&gt;date &quot;August 1st, 2022&quot;)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>date-&gt;page-title</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(roam.util/date-&gt;page-title (new js/Date))</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>date-&gt;page-uid</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(roam.util/date-&gt;page-uid (new js/Date))</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>parse</code>
+<ul>
+<li>Description:: 
+<ul>
+<li>Takes a Roam markdown style string as input and returns a reagent component of how it would look like when in a block 
+</li>
+</ul>
+</li>
+<li>arguments:: <code>[s]</code>
+<ul>
+<li>s
+<ul>
+<li>markdown string 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li>Displaying strings with Roam's markdown parser
+<ul>
+<li>Code::
+<ul>
+<li><pre><code>(ns dev-docs.parse-example
+  (:require [roam.util :refer [parse]]))
+
+(defn main []
+  [parse &quot;**apple** __banana__ [[test-parse]]&quot;])</code></pre>
+</li>
+</ul>
+</li>
+<li>Output::
+<ul>
+<li><code>{{[[roam/render]]: ((uUxqZ4Bwb))}}</code>
+</li>
+<li>{{<a href="/developer-documentation/roam-render">roam/render</a>: <pre><code>(ns dev-docs.parse-example
+  (:require [roam.util :refer [parse]]))
+
+(defn main []
+  [parse &quot;**apple** __banana__ [[test-parse]]&quot;])</code></pre>}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>useful in <a href="/developer-documentation/roam-render">roam/render</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roam.ui.main-window</code>
+<ul>
+<li>Functions in this namespace are equivalent to those in roamAlphaAPI.ui.mainWindow
+</li>
+<li><code>open-page</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(main-window/open-page {:page {:uid &quot;ljs1l3kj4&quot;}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>open-block</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(main-window/open-block {:page {:uid &quot;ljs1l3kj4&quot;}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>open-daily-notes</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(main-window/open-daily-notes)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>get-open-page-or-block-uid</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(main-window/get-open-page-or-block-uid)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>focus-first-block</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(main-window/focus-first-block)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roam.ui.left-sidebar</code>
+<ul>
+<li>Functions in this namespace are equivalent to those in roamAlphaAPI.ui.leftSidebar
+</li>
+<li><code>open</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(left-sidebar/open)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>close</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(left-sidebar/close)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roam.ui.right-sidebar</code>
+<ul>
+<li>Functions in this namespace are equivalent to those in roamAlphaAPI.ui.rightSidebar
+</li>
+<li><code>open</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(right-sidebar/open)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>close</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(right-sidebar/close)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>get-windows</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(right-sidebar/get-windows)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>add-window</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(right-sidebar/add-window
+  {:window {:type &quot;block&quot; :block-uid &quot;1fasdfef&quot;}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>remove-window</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(right-sidebar/remove-window
+  {:window {:type &quot;block&quot; :block-uid &quot;1fasdfef&quot;}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>expand-window</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(right-sidebar/expand-window
+  {:window {:type &quot;block&quot; :block-uid &quot;1fasdfef&quot;}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>collapse-window</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(right-sidebar/collapse-window
+  {:window {:type &quot;block&quot; :block-uid &quot;1fasdfef&quot;}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>pin-window</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(right-sidebar/pin-window
+  {:window {:type &quot;block&quot; :block-uid &quot;1fasdfef&quot;}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>unpin-window</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(right-sidebar/unpin-window
+  {:window {:type &quot;block&quot; :block-uid &quot;1fasdfef&quot;}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roam.ui.filters</code>
+<ul>
+<li>Functions in this namespace are equivalent to those in roamAlphaAPI.ui.filters
+</li>
+<li><code>add-global-filter</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(filters/add-global-filter
+  {:title &quot;test&quot;
+   :type &quot;includes&quot;})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>remove-global-filter</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(filters/remove-global-filter
+  {:title &quot;test&quot;
+   :type &quot;includes&quot;})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>get-global-filters</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(filters/get-global-filters)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>get-page-filters</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(filters/get-page-filters
+  {:page {:title &quot;test&quot;}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>get-page-linked-refs-filter</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(filters/get-pagelinked-refs-filters
+  {:page {:title &quot;test&quot;}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>get-sidebar-window-filters</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(filters/get-sidebar-window-filters
+  {:window {:block-uid &quot;sdl3kefj&quot;
+            :type &quot;outline&quot;}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>set-page-filters</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(filters/set-page-filters
+  {:page {:title &quot;test&quot;}
+   :filters {:includes [&quot;March 11th, 2022&quot;]}})
+
+;; clears filters
+(filters/set-page-filters
+  {:page {:title &quot;test&quot;}
+   :filters {}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>set-page-linked-refs-filters</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(filters/set-page-linked-refs-filters
+  {:page {:title &quot;test&quot;}
+   :filters {:includes [&quot;March 11th, 2022&quot;]}})
+
+;; clears filters
+(filters/set-page-linked-refs-filters
+  {:page {:title &quot;test&quot;}
+   :filters {}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>set-sidebar-window-filters</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(filters/set-sidebar-window-filters
+  {:window {:block-uid &quot;sdl3kefj&quot;
+            :type &quot;outline&quot;}
+   :filters {:includes [&quot;March 11th, 2022&quot;]}})
+
+;; clears filters
+(filters/set-sidebar-window-filters
+  {:window {:block-uid &quot;sdl3kefj&quot;
+            :type &quot;outline&quot;}
+   :filters {}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roam.ui.block-context-menu</code>
+<ul>
+<li>Functions in this namespace are equivalent to those in roamAlphaAPI.ui.blockContextMenu
+</li>
+<li><code>add-command</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(block-context-menu/add-command
+  {:label &quot;test&quot;
+   :callback (fn []
+               (prn &quot;hey!&quot;))})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>remove-command</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(block-context-menu/remove-command
+  {:label &quot;test&quot;})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roam.ui.individual-multiselect</code>
+<ul>
+<li>Functions in this namespace are equivalent to those in roamAlpahAPI.ui.individualMultiselect
+</li>
+<li><code>get-selected-uids</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(get-selected-uids)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roam.ui.ms-context-menu</code>
+<ul>
+<li>Functions in this namespace are equivalent to those in roamAlpahAPI.ui.msContextMenu
+</li>
+<li><code>add-command</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(add-command
+  {:label &quot;test&quot;
+   :callback (fn []
+               (prn &quot;hey!&quot;))})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>remove-command</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(remove-command
+  {:label &quot;test&quot;})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roam.ui.command-palette</code>
+<ul>
+<li>Functions in this namespace are equivalent to those in roamAlphaAPI.ui.commandPalette
+</li>
+<li><code>add-command</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(add-command
+  {:label &quot;test&quot;
+   :callback (fn []
+               (prn &quot;hello world!&quot;))})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>remove-command</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(remove-command
+  {:label &quot;test&quot;})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roam.graph</code>
+<ul>
+<li><code>name</code> #def
+<ul>
+<li>The name of the current graph
+</li>
+</ul>
+</li>
+<li><code>type</code> #def
+<ul>
+<li><code>&quot;hosted&quot;</code> or <code>&quot;offline&quot;</code>
+</li>
+</ul>
+</li>
+<li><code>is-encrypted?</code> #def
+<ul>
+<li>Whether the graph is encrypted or not
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roam.platform</code>
+<ul>
+<li><code>is-desktop?</code> #def
+<ul>
+<li>true if client is Roam Desktop App
+</li>
+</ul>
+</li>
+<li><code>is-mobile-app?</code> #def
+<ul>
+<li>true if client is Roam Mobile App
+</li>
+</ul>
+</li>
+<li><code>is-mobile?</code> #def
+<ul>
+<li>Note that this is only a check on the screen size
+<ul>
+<li>just uses a media query <code>max-width: 450px</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>is-ios?</code> #def
+<ul>
+<li>true if client is iphone, ipad or ipod
+</li>
+</ul>
+</li>
+<li><code>is-pc?</code> #def
+<ul>
+<li>true if client is a PC 
+</li>
+<li>useful if you want to have different shortcuts on PC vs Mac 
+</li>
+</ul>
+</li>
+<li><code>is-touch-device</code> #def
+<ul>
+<li>true if client is a touch device
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roam.katex</code>
+<ul>
+<li><code>inline</code>
+<ul>
+<li>Description::
+<ul>
+<li>Takes a string and renders it with <a href="https://katex.org/">katex</a> as an inline level element
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>[katex/inline &quot;1 + 2&quot;]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>block</code>
+<ul>
+<li>Description::
+<ul>
+<li>Takes a string and renders it with <a href="https://katex.org/">katex</a> as a block level element
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>[katex/block &quot;1 + 2&quot;]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roam.user</code>
+<ul>
+<li>Functions in this namespace are equivalent to those in roamAlphaAPI.data.user
+</li>
+<li><code>upsert</code>
+</li>
+</ul>
+</li>
+<li><code>roam.block</code>
+<ul>
+<li>Functions in this namespace are equivalent to those in roamAlphaAPI.data.block
+<ul>
+<li>Example of conversion from <pre><code>window
+  .roamAlphaAPI
+  .createBlock(
+	{&quot;location&quot;: 
+		{&quot;parent-uid&quot;: &quot;01-21-2021&quot;, 
+		 &quot;order&quot;: 0}, 
+	 &quot;block&quot;: 
+		{&quot;string&quot;: &quot;test&quot;}})</code></pre> to use in clojure
+<ul>
+<li>{{<a href="/developer-documentation/roam-render">roam/render</a>: <pre><code>(ns dev-doc.roam.block.2
+  (:require [roam.block :as block]))
+
+(defn main []
+  [:button
+   {:on-click
+    (fn [] (-&gt; (block/create {:location {:parent-uid &quot;06-14-2022&quot;
+                                         :order      0}
+                              :block    {:string     &quot;test&quot;}})
+               (.then #(js/console.log &quot;done&quot;))
+               (.catch #(js/console.log &quot;failed&quot; %))))}
+   &quot;Click me to create the block&quot;])</code></pre>}}
+<ul>
+<li><pre><code>(ns dev-doc.roam.block.2
+  (:require [roam.block :as block]))
+
+(defn main []
+  [:button
+   {:on-click
+    (fn [] (-&gt; (block/create {:location {:parent-uid &quot;06-14-2022&quot;
+                                         :order      0}
+                              :block    {:string     &quot;test&quot;}})
+               (.then #(js/console.log &quot;done&quot;))
+               (.catch #(js/console.log &quot;failed&quot; %))))}
+   &quot;Click me to create the block&quot;])</code></pre>
+</li>
+</ul>
+</li>
+<li>Test
+<ul>
+<li>go to December 5th, 2021
+</li>
+<li>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>create</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(roam.block/create
+  {:location {:parent-uid &quot;asdlkjfe&quot;
+              :order &quot;first&quot;}
+   :block {:string &quot;hello world&quot;}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>move</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(roam.block/move
+  {:location {:parent-uid &quot;asdlkjfe&quot;
+              :order &quot;last&quot;}
+   :block {:uid &quot;f8cXfDIRn&quot;}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>update</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(roam.block/update
+  {:block {:uid &quot;f8cXfDIRn&quot;
+           :string &quot;foo&quot;}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>delete</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(roam.block/delete
+  {:block {:uid &quot;f8cXfDIRn}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>reorder-blocks</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(reorder-blocks
+  {:location {:parent-uid &quot;hisjslk&quot;}
+   :blocks [&quot;QCE0cNNNL&quot; &quot;IATKcVmWE&quot; &quot;nC22orMO4&quot;]})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roam.page</code>
+<ul>
+<li>Functions in this namespace are equivalent to those in roamAlphaAPI.data.page
+</li>
+<li><code>create</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(roam.page/create
+  {:page {:title &quot;test me!&quot;}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>update</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(roam.page/update
+  {:page {:uid &quot;asdflele&quot;
+          :title &quot;test me!&quot;}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>delete</code>
+<ul>
+<li>Example::
+<ul>
+<li><pre><code>(roam.page/delete
+  {:page {:uid &quot;asdflele&quot;}})</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>External Libraries
+<ul>
+<li>Reagent
+<ul>
+<li>version used: <code>reagent/reagent   {:mvn/version &quot;1.1.0&quot;}</code>
+</li>
+<li><code>reagent.core</code>
+<ul>
+<li><a href="https://cljdoc.org/d/reagent/reagent/1.1.0/api/reagent.core">reagent.core docs</a>
+</li>
+<li>exposed vars
+<ul>
+<li>{{roam/render: <pre><code>(ns ns-vars-lister
+  (:require [reagent.core]))
+
+(defn main [{:keys [block-uid]} ns-name]
+  (let [ns-symbol (symbol ns-name)]
+    [:div [:div
+           [:h3 &quot;public vars of ns: &quot; (pr-str ns-symbol)]
+           [:div (map
+                  (fn [n] [:div (pr-str n)])
+                  (-&gt;&gt; (ns-publics ns-symbol)
+                       (seq)
+                       (sort)))]]]))</code></pre> &quot;reagent.core&quot;}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>reagent.dom</code>
+<ul>
+<li><a href="https://cljdoc.org/d/reagent/reagent/1.1.0/api/reagent.dom">reagent.dom docs</a>
+</li>
+<li>exposed vars
+<ul>
+<li>{{<a href="/developer-documentation/roam-render">roam/render</a>: <pre><code>(ns ns-vars-lister
+  (:require [reagent.core]))
+
+(defn main [{:keys [block-uid]} ns-name]
+  (let [ns-symbol (symbol ns-name)]
+    [:div [:div
+           [:h3 &quot;public vars of ns: &quot; (pr-str ns-symbol)]
+           [:div (map
+                  (fn [n] [:div (pr-str n)])
+                  (-&gt;&gt; (ns-publics ns-symbol)
+                       (seq)
+                       (sort)))]]]))</code></pre> &quot;reagent.dom&quot;}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>datascript.core</code>
+<ul>
+<li>you will most likely want to use <code>roam.datascript</code> or <code>roam.datascript.reactive</code>
+</li>
+<li><a href="https://cljdoc.org/d/datascript/datascript/1.3.9/doc/readme">datascript.core docs</a> 
+</li>
+<li>exposed vars: 
+<ul>
+<li>{{<a href="/developer-documentation/roam-render">roam/render</a>: <pre><code>(ns ns-vars-lister
+  (:require [reagent.core]))
+
+(defn main [{:keys [block-uid]} ns-name]
+  (let [ns-symbol (symbol ns-name)]
+    [:div [:div
+           [:h3 &quot;public vars of ns: &quot; (pr-str ns-symbol)]
+           [:div (map
+                  (fn [n] [:div (pr-str n)])
+                  (-&gt;&gt; (ns-publics ns-symbol)
+                       (seq)
+                       (sort)))]]]))</code></pre> &quot;datascript.core&quot;}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>instaparse.core</code>
+<ul>
+<li><a href="https://cljdoc.org/d/instaparse/instaparse/1.4.10/api/instaparse.core">instaparse.core docs</a>
+</li>
+<li>exposed vars
+<ul>
+<li>{{<a href="/developer-documentation/roam-render">roam/render</a>: <pre><code>(ns ns-vars-lister
+  (:require [reagent.core]))
+
+(defn main [{:keys [block-uid]} ns-name]
+  (let [ns-symbol (symbol ns-name)]
+    [:div [:div
+           [:h3 &quot;public vars of ns: &quot; (pr-str ns-symbol)]
+           [:div (map
+                  (fn [n] [:div (pr-str n)])
+                  (-&gt;&gt; (ns-publics ns-symbol)
+                       (seq)
+                       (sort)))]]]))</code></pre> &quot;instaparse.core&quot;}}
+</li>
+</ul>
+</li>
+<li>Example
+<ul>
+<li><code>instaparse.core</code> readme example
+<ul>
+<li>Code::
+<ul>
+<li><pre><code>(ns developer-documentation.test-instaparse.1
+  (:require 
+   [reagent.core :as r]
+   [roam.block :as block]
+   [blueprintjs.core :as bp-core]
+   [cljs.pprint :refer [pprint]]
+   [instaparse.core :as insta]))
+
+(def as-and-bs
+  (insta/parser
+    &quot;S = AB*
+     AB = A B
+     A = 'a'+
+     B = 'b'+&quot;))
+
+(defn main [{:keys [block-uid]}]
+  [:button 
+   {:on-click 
+    #(pprint (as-and-bs &quot;aaaaabbbaaaabb&quot;))} &quot;Click me!&quot;])</code></pre>
+</li>
+</ul>
+</li>
+<li>Output::
+<ul>
+<li><code>{{[[roam/render]]: ((6DXyUOHhH))}}</code>
+</li>
+<li>{{<a href="/developer-documentation/roam-render">roam/render</a>: <pre><code>(ns developer-documentation.test-instaparse.1
+  (:require 
+   [reagent.core :as r]
+   [roam.block :as block]
+   [blueprintjs.core :as bp-core]
+   [cljs.pprint :refer [pprint]]
+   [instaparse.core :as insta]))
+
+(def as-and-bs
+  (insta/parser
+    &quot;S = AB*
+     AB = A B
+     A = 'a'+
+     B = 'b'+&quot;))
+
+(defn main [{:keys [block-uid]}]
+  [:button 
+   {:on-click 
+    #(pprint (as-and-bs &quot;aaaaabbbaaaabb&quot;))} &quot;Click me!&quot;])</code></pre>}} (check console after clicking)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>blueprintjs.core</code>
+<ul>
+<li>everything in <a href="https://blueprintjs.com/docs/#core">@blueprintjs/core docs</a>
+</li>
+<li><strong>Note:</strong> Since this is a ReactJS library, the classes need some treatment before they can be used.  
+<ul>
+<li>For most cases, you just have to use <a href="https://github.com/reagent-project/reagent/blob/master/doc/InteropWithReact.md#creating-reagent-components-from-react-components">reagent/adapt-react-class</a>. See the example below
+</li>
+<li>For more detail: read through <a href="https://github.com/reagent-project/reagent/blob/master/doc/InteropWithReact.md">Reagent Docs/InteropWithReact.md</a>
+</li>
+</ul>
+</li>
+<li>Example
+<ul>
+<li>Click me template using <code>blueprintjs.core</code>
+<ul>
+<li>Code::
+<ul>
+<li><pre><code>(ns dev-docs.test-blueprint.1
+  (:require 
+   [reagent.core :as r]
+   [roam.block :as block]
+   [blueprintjs.core :as bp-core]))
+
+(defonce bp3-button (r/adapt-react-class bp-core/Button))
+
+(defn main [{:keys [block-uid]}]
+  [bp3-button 
+   {:large true
+    :disabled true
+    :icon &quot;history&quot;
+    :on-click 
+    #(block/update 
+      {:block {:uid block-uid 
+               :string &quot;Hello world!&quot;}})} 
+   &quot;Click me!&quot;])</code></pre>
+</li>
+</ul>
+</li>
+<li>Output::
+<ul>
+<li><code>{{[[roam/render]]: ((O1iyYWZsW))}}</code>
+</li>
+<li>{{<a href="/developer-documentation/roam-render">roam/render</a>: <pre><code>(ns dev-docs.test-blueprint.1
+  (:require 
+   [reagent.core :as r]
+   [roam.block :as block]
+   [blueprintjs.core :as bp-core]))
+
+(defonce bp3-button (r/adapt-react-class bp-core/Button))
+
+(defn main [{:keys [block-uid]}]
+  [bp3-button 
+   {:large true
+    :disabled true
+    :icon &quot;history&quot;
+    :on-click 
+    #(block/update 
+      {:block {:uid block-uid 
+               :string &quot;Hello world!&quot;}})} 
+   &quot;Click me!&quot;])</code></pre>}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Promesa
+<ul>
+<li>version used: <code>funcool/promesa  {:mvn/version &quot;6.0.0&quot;}</code>
+</li>
+<li><a href="https://cljdoc.org/d/funcool/promesa/6.0.0/doc/user-guide">docs</a>
+</li>
+<li><code>promesa.core</code>
+<ul>
+<li>exposed vars
+<ul>
+<li>{{<a href="/developer-documentation/roam-render">roam/render</a>: <pre><code>(ns ns-vars-lister
+  (:require [reagent.core]))
+
+(defn main [{:keys [block-uid]} ns-name]
+  (let [ns-symbol (symbol ns-name)]
+    [:div [:div
+           [:h3 &quot;public vars of ns: &quot; (pr-str ns-symbol)]
+           [:div (map
+                  (fn [n] [:div (pr-str n)])
+                  (-&gt;&gt; (ns-publics ns-symbol)
+                       (seq)
+                       (sort)))]]]))</code></pre> &quot;promesa.core&quot;}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>promesa.protocols</code>
+<ul>
+<li>exposed vars
+<ul>
+<li>{{<a href="/developer-documentation/roam-render">roam/render</a>: <pre><code>(ns ns-vars-lister
+  (:require [reagent.core]))
+
+(defn main [{:keys [block-uid]} ns-name]
+  (let [ns-symbol (symbol ns-name)]
+    [:div [:div
+           [:h3 &quot;public vars of ns: &quot; (pr-str ns-symbol)]
+           [:div (map
+                  (fn [n] [:div (pr-str n)])
+                  (-&gt;&gt; (ns-publics ns-symbol)
+                       (seq)
+                       (sort)))]]]))</code></pre> &quot;promesa.protocols&quot;}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>applied-science.js-interop</code>
+<ul>
+<li>version used: <code>applied-science/js-interop  {:mvn/version &quot;0.3.3&quot;}</code>
+</li>
+<li><a href="https://github.com/applied-science/js-interop">docs</a>
+</li>
+<li>exposed vars
+<ul>
+<li>{{<a href="/developer-documentation/roam-render">roam/render</a>: <pre><code>(ns ns-vars-lister
+  (:require [reagent.core]))
+
+(defn main [{:keys [block-uid]} ns-name]
+  (let [ns-symbol (symbol ns-name)]
+    [:div [:div
+           [:h3 &quot;public vars of ns: &quot; (pr-str ns-symbol)]
+           [:div (map
+                  (fn [n] [:div (pr-str n)])
+                  (-&gt;&gt; (ns-publics ns-symbol)
+                       (seq)
+                       (sort)))]]]))</code></pre> &quot;applied-science.js-interop&quot;}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="roam-clojurescript-api.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/KemkOiDE_">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

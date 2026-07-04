@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roam Depot/Extension API — Roam Research Docs</title>
+<meta name="description" content="Work in progress, for now see https://github.com/panterarocks49/settings-panel-example/blob/main/extension.js for an example of how to use i">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/roam-depot-extension-api">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Roam Depot/Extension API — Roam Research Docs">
+<meta property="og:description" content="Work in progress, for now see https://github.com/panterarocks49/settings-panel-example/blob/main/extension.js for an example of how to use i">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/roam-depot-extension-api">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>Roam Depot/Extension API</h1>
+<ul>
+<li>Work in progress, for now see https://github.com/panterarocks49/settings-panel-example/blob/main/extension.js for an example of how to use it
+</li>
+<li>Roam handles removing dom elements / settings set with the extension API
+</li>
+<li><strong>methods</strong>
+<ul>
+<li><code>extensionAPI</code>
+<ul>
+<li><code>.settings</code>
+<ul>
+<li>Settings are scoped to your extension, there is no risk of it conflicting with another extension
+<ul>
+<li>They are persisted across devices as well
+</li>
+</ul>
+</li>
+<li><code>.set</code>
+<ul>
+<li>key
+</li>
+<li>value
+</li>
+</ul>
+</li>
+<li><code>.get</code>
+<ul>
+<li>key
+</li>
+</ul>
+</li>
+<li><code>.getAll</code>
+</li>
+<li><code>.panel</code>
+<ul>
+<li><code>.create</code>
+<ul>
+<li>config
+</li>
+<li><strong>Note regarding &quot;id&quot; in a setting</strong>: they must be non-empty strings and can't contain &quot;.&quot;, &quot;#&quot;, &quot;$&quot;, &quot;[&quot;, or &quot;]&quot;
+</li>
+<li>Example::
+<ul>
+<li><pre><code>function reactButton() {
+    // Declare a new state variable, which we'll call &quot;count&quot;
+    const [count, setCount] = React.useState(0);
+
+    return (
+        React.createElement(
+            &quot;button&quot;,
+            {className: &quot;bp3-button&quot;,
+             onClick: () =&gt; setCount(count + 1)},
+            &quot;my button &quot; + count
+        )
+    );
+}
+
+// actions that are predefined save there state automatically (except button) underneath the id provided for the action
+// custom actions can save state with extensionAPI.settings.set / get / getAll
+const panelConfig = {
+    tabTitle: &quot;Test Ext 1&quot;,
+    settings: [
+        {id:          &quot;button-setting&quot;,
+         className:   &quot;ext-settings-panel-button-setting&quot;,
+         name:        &quot;Button test&quot;,
+         description: &quot;tests the button&quot;,
+         action:      {type:    &quot;button&quot;,
+                       onClick: (evt) =&gt; { console.log(&quot;Button clicked!&quot;); },
+                       content: &quot;Button&quot;}},
+        {id:          &quot;switch-setting&quot;,
+         name:        &quot;Switch Test&quot;,
+         description: React.createElement(&quot;a&quot;, {href: &quot;https:roamresearch.com&quot;}, &quot;Show off react components in the description&quot;),
+         action:      {type:     &quot;switch&quot;,
+                       onChange: (evt) =&gt; { console.log(&quot;Switch!&quot;, evt); }}},
+        {id:     &quot;input-setting&quot;,
+         name:   &quot;Input test&quot;,
+         action: {type:        &quot;input&quot;,
+                  placeholder: &quot;placeholder&quot;,
+                  onChange:    (evt) =&gt; { console.log(&quot;Input Changed!&quot;, evt); }}},
+        {id:     &quot;select-setting&quot;,
+         name:   &quot;Select test&quot;,
+         action: {type:     &quot;select&quot;,
+                  items:    [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;],
+                  onChange: (evt) =&gt; { console.log(&quot;Select Changed!&quot;, evt); }}},
+        {id:     &quot;reactComponent-setting&quot;,
+         name:   &quot;reactComponent test&quot;,
+         action: {type:     &quot;reactComponent&quot;,
+                  component: reactButton}}
+    ]
+};</code></pre>
+</li>
+<li>For an example config see https://github.com/panterarocks49/settings-panel-example/blob/main/extension.js
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>.ui</code>
+<ul>
+<li><code>.commandPalette</code>
+<ul>
+<li><code>.addCommand</code>
+<ul>
+<li>same as window.roamAlphaAPI.ui.commandPalette.addCommand (please follow the link for documentation)
+<ul>
+<li>only difference is: when you use this version from extensionAPI, the commands are associated with your extension and so you have convenient grouping (in for example the Hotkeys window)
+</li>
+</ul>
+</li>
+<li>Migration Guide from roamAlphaAPI.ui.commandPalette.addCommand to extensionAPI's version
+<ul>
+<li>Loom video: <br>
+{{video: https://www.loom.com/share/f51a889a8e444ceb8c8eab15654d2650}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>.removeCommand</code>
+<ul>
+<li>same as window.roamAlphaAPI.ui.commandPalette.removeCommand (please follow the link for documentation)
+<ul>
+<li>in contrast to the roamAlphaAPI's version, you do not need to call this on <code>onunload</code> - if you call via extensionAPI, will be cleaned automatically on unload
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Changelog</strong>:
+<ul>
+<li>February 14th, 2023
+<ul>
+<li><a href="/developer-documentation/roam-depot-extension-api">Roam Depot/Extension API</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="roam-depot-extension-api.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/y31lhjIqU">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

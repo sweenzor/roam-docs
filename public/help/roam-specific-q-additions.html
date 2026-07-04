@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roam-specific :q additions — Roam Research Docs</title>
+<meta name="description" content="If you're a dev (or even if not!), you can use our very flexible query features to do the kinds of specialized queries you want">
+<link rel="canonical" href="https://roamdocs.fyi/help/roam-specific-q-additions">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Roam-specific :q additions — Roam Research Docs">
+<meta property="og:description" content="If you're a dev (or even if not!), you can use our very flexible query features to do the kinds of specialized queries you want">
+<meta property="og:url" content="https://roamdocs.fyi/help/roam-specific-q-additions">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Roam-specific :q additions</h1>
+<ul>
+<li>If you're a dev (or even if not!), you can use our very flexible query features to do the kinds of specialized queries you want
+</li>
+<li><strong>Ways to use it</strong>
+<ul>
+<li>use our <code>:q</code> query blocks feature inside Roam
+<ul>
+<li>Teaser into the revamped <code>:q</code>
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FCDgZUSitGM.gif?alt=media&amp;token=a36140c6-3719-460d-ace1-13d2f06e9aee" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>you can checkout examples in <a href="/help/examples-of-q-query-blocks">Examples of :q query blocks</a>
+</li>
+</ul>
+</li>
+<li>via our frontend API: <a href="https://roamresearch.com/#/app/developer-documentation/page/SI3FNt3EQ">window.roamAlphaAPI.data.q</a>
+</li>
+<li>via our backend API: <a href="https://roamresearch.com/#/app/developer-documentation/page/vbEj2bZql">/api/graph/{graph-name}/q</a>
+</li>
+<li>All but the backend API can use the additions we have detailed below<br>
+Also note that below we will talk about and have examples for <code>:q</code> primarily but 
+</li>
+</ul>
+</li>
+<li><strong>Custom symbols</strong>
+<ul>
+<li>Description:: new special words/symbols are available to represent dates which you can use directly in the <code>:where</code> clause
+<ul>
+<li>Some examples:
+<ul>
+<li>Example:: get current page and how many backrefs it has (this uses <code>current/page-title</code> )
+<ul>
+<li>the query
+<ul>
+<li><pre><code>[:find ?p (count ?b)
+  :where
+  [?p :node/title current/page-title]
+  [?b :block/refs ?p]]</code></pre>
+</li>
+<li>:q <pre><code>[:find ?p (count ?b)
+  :where
+  [?p :node/title current/page-title]
+  [?b :block/refs ?p]]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example:: get additions to changelog in current calendar month (this uses the special symbols <code>ms/this-month-start</code> and <code>ms/this-month-end</code> )
+<ul>
+<li>How this works:
+<ul>
+<li>to minimize the number of results, we're also nesting results under parent results
+</li>
+<li>we're also sorting via <code>?t</code> to get recent results at top (you can hide this column and keep sorting!)
+</li>
+</ul>
+</li>
+<li>the query
+<ul>
+<li><pre><code>[:find ?b ?t
+  :where
+  [?changelog-p :node/title &quot;Change Log&quot;]
+  [?b :block/page ?changelog-p]
+  [?b :create/time ?t]
+  [(&lt;= ms/this-month-start ?t ms/this-month-end)]]</code></pre>
+</li>
+<li>:q <pre><code>[:find ?b ?t
+  :where
+  [?changelog-p :node/title &quot;Change Log&quot;]
+  [?b :block/page ?changelog-p]
+  [?b :create/time ?t]
+  [(&lt;= ms/this-month-start ?t ms/this-month-end)]]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Reference:: the special symbols available in <code>:q</code>
+<ul>
+<li><code>current</code> 
+<ul>
+<li><strong>Usage notes:</strong> Specify the location of the query or the block/page open on the main window
+</li>
+<li><code>current/block-id</code>
+<ul>
+<li>returns the :db/id for the block which has the <code>:q</code> query
+<ul>
+<li>It can be used directly in the first place in a where clause
+<ul>
+<li>for example <code>?e</code> in <code>[?e ?a ?v]</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>current/page-id</code>
+<ul>
+<li>returns the :db/id for the page whose child block has the <code>:q</code>
+<ul>
+<li>It can be used directly in the first place in a where clause
+<ul>
+<li>for example <code>?e</code> in <code>[?e ?a ?v]</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>current/page-title</code>
+<ul>
+<li>returns the title of the page where the <code>:q</code> exists
+</li>
+</ul>
+</li>
+<li><code>current/block-uid</code>
+<ul>
+<li>returns the :block/uid for the block which has the <code>:q</code> query
+</li>
+</ul>
+</li>
+<li><code>current/page-uid</code>
+<ul>
+<li>returns the :block/uid for the page whose child block has the <code>:q</code>
+</li>
+</ul>
+</li>
+<li><code>current/main-window-page-title</code> <strong>NEW ✨</strong>
+<ul>
+<li>Returns the :node/title for the page open in the main window. If you're zoomed into a block, we get it's parent page's node/title
+</li>
+<li>can be useful for queries you open in the sidebar. The query gets refreshed when page open on the left side (main window changes)
+</li>
+</ul>
+</li>
+<li><code>current/main-window-page-uid</code> <strong>NEW ✨</strong>
+<ul>
+<li>Returns the :block/uid for the page in the main window. If you're zoomed into a block, we get it's parent page's block/uid
+</li>
+<li>can be useful for queries you open in the sidebar. The query gets refreshed when page open on the left side (main window changes)
+</li>
+</ul>
+</li>
+<li><code>current/main-window-page-id</code> <strong>NEW ✨</strong>
+<ul>
+<li>returns the :db/id for the page in the main window. If you're zoomed into a block, we get it's parent page's :db/id
+<ul>
+<li>It can be used directly in the first place in a where clause
+<ul>
+<li>for example <code>?e</code> in <code>[?e ?a ?v]</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>can be useful for queries you open in the sidebar. The query gets refreshed when page open on the left side (main window changes)
+</li>
+</ul>
+</li>
+<li><code>current/main-window-block-uid</code> <strong>NEW ✨</strong>
+<ul>
+<li>returns the :block/uid for the zoomed in block (or page!) open in the main window
+</li>
+<li>can be useful for queries you open in the sidebar. The query gets refreshed when page open on the left side (main window changes)
+</li>
+</ul>
+</li>
+<li><code>current/main-window-block-id</code> <strong>NEW ✨</strong>
+<ul>
+<li>returns the :db/id for the zoomed in block (or page!) open in the main window
+<ul>
+<li>It can be used directly in the first place in a where clause
+<ul>
+<li>for example <code>?e</code> in <code>[?e ?a ?v]</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>can be useful for queries you open in the sidebar. The query gets refreshed when page open on the left side (main window changes)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>ms</code> 
+<ul>
+<li><strong>Usage notes: </strong> These return time in milliseconds. Primarily for use with  attributes like  <code>:create/time</code>/<code>:edit/time</code> 
+<ul>
+<li>for use with 
+<ul>
+<li>attributes like  <code>:create/time</code>/<code>:edit/time</code> 
+</li>
+<li>or rules <code>(created-between ?t1 ?t2 ?b)</code>/<code>(edited-between ?t1 ?t2 ?b)</code>)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>ms/today-start</code>
+<ul>
+<li>equivalent to <code>:ms/+0D-start</code>
+</li>
+</ul>
+</li>
+<li><code>ms/today-end</code>
+<ul>
+<li>equivalent to <code>:ms/+0D-end</code>
+</li>
+</ul>
+</li>
+<li><code>ms/this-week-start</code>
+<ul>
+<li>equivalent to <code>:ms/+0W-start</code>
+</li>
+</ul>
+</li>
+<li><code>ms/this-week-end</code>
+<ul>
+<li>equivalent to <code>:ms/+0W-end</code>
+</li>
+</ul>
+</li>
+<li><code>ms/last-week-start</code>
+<ul>
+<li>equivalent to <code>:ms/-1W-start</code>
+</li>
+</ul>
+</li>
+<li><code>ms/last-week-end</code>
+<ul>
+<li>equivalent to <code>:ms/-1W-end</code>
+</li>
+</ul>
+</li>
+<li><code>ms/next-week-start</code>
+<ul>
+<li>equivalent to <code>:ms/+1W-start</code>
+</li>
+</ul>
+</li>
+<li><code>ms/next-week-end</code>
+<ul>
+<li>equivalent to <code>:ms/+1W-end</code>
+</li>
+</ul>
+</li>
+<li><code>ms/this-month-start</code>
+</li>
+<li><code>ms/this-month-end</code>
+</li>
+<li><code>ms/this-quarter-start</code>
+</li>
+<li><code>ms/this-quarter-end</code>
+</li>
+<li><code>ms/last-quarter-start</code>
+<ul>
+<li>equivalent to <code>:ms/-1Q-start</code>
+</li>
+</ul>
+</li>
+<li><code>ms/this-year-start</code>
+</li>
+<li><code>ms/this-year-end</code>
+</li>
+<li><code>ms/+1D-end</code>
+</li>
+<li><code>ms/-5D-start</code>
+</li>
+<li><code>ms/+1D-start</code>
+</li>
+<li><code>ms/+1D-end</code>
+</li>
+<li><code>ms/+1W-end</code>
+<ul>
+<li>not equal to <code>ms/+7D-end</code>
+</li>
+<li>notably not the same as <code>:ms/+7d-end</code>
+</li>
+<li>is actually the end of next week
+</li>
+</ul>
+</li>
+<li><code>ms/+1M-start</code>
+<ul>
+<li>next month's start millisecond
+<ul>
+<li>might be 31 days later or even 1 day later
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>ms/+1Q-start</code>
+<ul>
+<li>next quarter's start millisecond
+<ul>
+<li>might be 90 days later or even 1 day later
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>ms/+1Q-end</code>
+</li>
+<li><code>ms/+0Y-start</code>
+<ul>
+<li>not equal to <code>ms/+365D-start</code>
+</li>
+<li>first millisecond of Jan 1 for this year
+</li>
+</ul>
+</li>
+<li><code>ms/+0Y-end</code>
+<ul>
+<li>last millisecond of Dec 31 for this year
+</li>
+</ul>
+</li>
+<li><code>ms/=2025-01-01-start</code>
+</li>
+<li><code>ms/=2025-12-31-end</code>
+</li>
+</ul>
+</li>
+<li><code>dnp</code>
+<ul>
+<li><strong>Usage notes:</strong> These resolve to page title (i.e. <code>:node/title</code>) for the relevant daily note page
+</li>
+<li><code>dnp/today</code>
+</li>
+<li><code>dnp/yesterday</code>
+</li>
+<li><code>dnp/tomorrow</code>
+</li>
+<li><code>dnp/-1D</code>
+</li>
+<li><code>dnp/+1D</code>
+</li>
+<li><code>dnp/this-week-start</code>
+</li>
+<li><code>dnp/this-week-end</code>
+</li>
+<li><code>dnp/this-month-start</code>
+</li>
+<li><code>dnp/this-quarter-start</code>
+</li>
+<li><code>dnp/this-year-end</code>
+</li>
+<li><code>dnp/=2025-01-01</code>
+<ul>
+<li>resolves to &quot;January 1st, 2025&quot;
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Supported inbuilt rules</strong>
+<ul>
+<li>Description::
+<ul>
+<li>Rules are packaged logic which can be used to more easily do common operations
+<ul>
+<li>more technical detail:
+<ul>
+<li>Datomic Rules reference: https://docs.datomic.com/query/query-data-reference.html#rules
+</li>
+<li>what we're doing for :q inbuilt rules is providing a set of rules that we find useful when writing queries
+<ul>
+<li>Right now, we do not support custom rules/ability to pass your own rules
+</li>
+<li>If you have the idea for a rule you think will be useful, please let us know!
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>An example:
+<ul>
+<li>Example:: query to get backrefs of a page (in this example: Quality of Life Improvements) created by [a specific user](Baibhav Bista) in the current calendar year ((This uses the rules <code>(refs-page ?page-title ?b)</code>, <code>(created-by ?user-name ?block)</code>, and <code>(created-between ?t1 ?t2 ?b)</code>))
+<ul>
+<li>the query
+<ul>
+<li><pre><code>[:find ?b ?t
+  :where
+  [?b :block/uid ?uid]
+  (refs-page &quot;Quality of Life Improvements&quot; ?b)
+  (created-by &quot;Baibhav Bista&quot; ?b)
+  [?b :create/time ?t]
+  (created-between ms/this-year-start ms/this-year-end ?b)]</code></pre>
+</li>
+</ul>
+</li>
+<li>in action ...
+<ul>
+<li>:q <pre><code>[:find ?b ?t
+  :where
+  [?b :block/uid ?uid]
+  (refs-page &quot;Quality of Life Improvements&quot; ?b)
+  (created-by &quot;Baibhav Bista&quot; ?b)
+  [?b :create/time ?t]
+  (created-between ms/this-year-start ms/this-year-end ?b)]</code></pre>
+</li>
+</ul>
+</li>
+<li>How this works:
+<ul>
+<li>this uses the rules <code>(refs-page ?page-title ?b)</code>, <code>(created-by ?user-name ?block)</code>, and <code>(created-between ?t1 ?t2 ?b)</code>
+</li>
+<li>After getting the query, using the UI, we're also sorting in descending order of <code>?t</code>
+<ul>
+<li>(so that latest is at the top)
+</li>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fw3X0QeKFNz.png?alt=media&amp;token=4bdfd9a3-a247-487e-90bf-ce3bb5e8ba0f" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Reference:</strong> The rules:
+<ul>
+<li><code>(created-by ?user-name ?block)</code>
+</li>
+<li><code>(edited-by ?user-name ?block)</code>
+</li>
+<li><code>(by ?user-name ?block)</code>
+</li>
+<li><code>(refs-page ?page-title ?b)</code>
+</li>
+<li><code>(block-or-parent-refs-page ?page-title ?b)</code>
+</li>
+<li><code>(created-between ?t1 ?t2 ?b)</code>
+</li>
+<li><code>(edited-between ?t1 ?t2 ?b)</code>
+</li>
+<li><code>(in-dnp-between ?start-dnp ?end-dnp ?b)</code> <strong>NEW ✨</strong>
+</li>
+<li><code>(refs-dnp-between ?start-dnp ?end-dnp ?b)</code> <strong>NEW ✨</strong>
+</li>
+<li><code>(in-or-refs-dnp-between ?start-dnp ?end-dnp ?b)</code> <strong>NEW ✨</strong>
+</li>
+<li><code>(in-dnp ?dnp ?b)</code> <strong>NEW ✨</strong>
+</li>
+<li><code>(refs-dnp ?dnp ?b)</code> <strong>NEW ✨</strong>
+</li>
+<li><code>(in-or-refs-dnp ?dnp ?b)</code> <strong>NEW ✨</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>---
+<ul>
+<li><strong>NEW ✨</strong>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="roam-specific-q-additions.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/wfWcXeem-">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

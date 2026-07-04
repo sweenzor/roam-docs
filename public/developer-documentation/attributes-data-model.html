@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attributes Data Model — Roam Research Docs</title>
+<meta name="description" content="Introduction: it's a hypergraph">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/attributes-data-model">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Attributes Data Model — Roam Research Docs">
+<meta property="og:description" content="Introduction: it's a hypergraph">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/attributes-data-model">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>Attributes Data Model</h1>
+<ul>
+<li><strong>Introduction: it's a hypergraph</strong>
+<ul>
+<li>Roam's graph is made of nodes — <em>pages</em> (named nodes) and <em>blocks</em> (outline content nodes with stable ids). <code>[[links]]</code> and <code>((refs))</code> connect them, but that is an <em>untyped</em> graph. Attributes (written <code>Name:: value</code>) add <em>typed relationships</em> on top.
+</li>
+<li>What makes it a <em>hypergraph</em> rather than a plain labeled graph: <strong>a relationship is itself a node.</strong> Each <code>Name:: value</code> assertion is anchored to a real block, the attribute name is a real page, and the value can be another entity that carries its own attributes — so edges are addressable, can be annotated, and can serve as endpoints of further edges.
+</li>
+<li>Concretely, an attribute is modeled as a triple <code>[entity attribute value]</code>, and each of those three positions records both <em>what it points to</em> and <em>where it came from</em> — which is what lets relationships be reified and chained.
+</li>
+</ul>
+</li>
+<li>**The triple: <code>[e a v]</code>**
+<ul>
+<li>Every attribute assertion is stored as a 3-tuple (internally a &quot;roam datom&quot;): <code>[e-map a-map v-map]</code> = entity, attribute, value.
+</li>
+<li><strong>e</strong> — the thing being described (normally the parent page/block).
+</li>
+<li><strong>a</strong> — the attribute; always a <em>page</em>, since <code>Name::</code> resolves to a <code>[[Name]]</code> page.
+</li>
+<li><strong>v</strong> — the value.
+</li>
+</ul>
+</li>
+<li>**Each position is a <code>{:source :value}</code> map (an &quot;sv-map&quot;)**
+<ul>
+<li>The three positions are not bare ids. Each is a map <code>{:source &lt;node&gt; :value &lt;node-or-string&gt;}</code>.
+</li>
+<li><code>:source</code> is always a node reference — the provenance, i.e. <em>which block wrote this part of the relationship</em>. This is what reifies the edge: the relationship knows the concrete block it lives in, so it can be re-derived when that block changes, and pointed at by other relationships.
+</li>
+<li><code>:value</code> is the logical target. For <strong>e</strong> it is the entity, for <strong>a</strong> it is the attribute page. For <strong>v</strong> only, it may also be a plain <strong>string</strong>. (Only the value position can be a string; entity and attribute positions are always node refs.)
+</li>
+</ul>
+</li>
+<li>**Where the triples live: <code>:entity/attrs</code>**
+<ul>
+<li>The full set of triples is stored under <code>:entity/attrs</code> on <strong>the entity being described</strong> — i.e. on the node that appears as the <strong>e</strong> <code>:value</code>, <em>not</em> on the attribute block. It is a set: <code>#{ [e a v] [e a v] ... }</code>.
+</li>
+<li>So to read &quot;what does <code>[[Project Apollo]]</code> assert&quot;, you pull <code>:entity/attrs</code> off the Apollo page.
+</li>
+</ul>
+</li>
+<li>**The reverse index: <code>:attrs/lookup</code>**
+<ul>
+<li><code>:entity/attrs</code> is a nested blob, which Datascript cannot index by content. So alongside it, each entity carries a flat, many-cardinality ref <code>:attrs/lookup</code> listing every node mentioned anywhere in <code>:entity/attrs</code>.
+</li>
+<li>Its reverse, <code>:attrs/_lookup</code>, is the workhorse for queries. To find every entity with a <code>Status</code> attribute: walk <code>:attrs/_lookup</code> backwards from the <code>[[Status]]</code> page to candidate entities, then check their <code>:entity/attrs</code> for triples whose <strong>a</strong> <code>:value</code> is <code>[[Status]]</code>. The same trick answers &quot;everything <code>[[Jane Doe]]</code> is a value of&quot;.
+</li>
+</ul>
+</li>
+<li><strong>Why not just use Datascript's native attributes?</strong>
+<ul>
+<li>Datascript is itself an EAV store, so why not store each <code>Name:: value</code> as a plain datom <code>[entity :SomeAttr value]</code>? Native datoms can't carry what Roam attributes need:
+</li>
+<li><strong>It's a hypergraph — the edge has to be something you can point to.</strong> A native datom <code>[e a v]</code> is just a fact; there's no entity for the relationship itself to reference or hang more attributes on. Roam anchors every assertion to a real block, so the edge <em>is</em> an addressable node — a Datascript attribute gives you no such handle.
+</li>
+<li><strong>Attribute names must be entities, not keywords.</strong> A native attribute is a schema keyword (<code>:Status</code>) you can't link to, rename, give backlinks, or attach its own attributes to. Roam attributes *are* pages (so the <strong>a</strong> <code>:value</code> is always a page).
+</li>
+<li><strong>Value type and cardinality can't be per-instance.</strong> Datascript fixes <code>:db/valueType</code> and cardinality in the schema up front; a Roam attribute's value is a string, a ref, one or many — decided per instance by what the user typed.
+</li>
+<li><strong>Native datoms have no provenance.</strong> <code>[e a v]</code> doesn't record *which block authored it* — and the <code>:source</code> on every position is what lets us recompute and retract exactly the triples a block contributes when its text changes. Datascript's only per-datom metadata is the transaction entity, the wrong granularity.
+</li>
+<li><strong>It avoids schema explosion.</strong> Otherwise every user-coined name becomes a distinct runtime schema keyword — thousands per graph. The set-on-entity approach keeps the schema fixed and stores attribute identity as data (page refs).
+</li>
+</ul>
+</li>
+<li><strong>Worked example</strong>
+<ul>
+<li>Outline (uids in parens):
+<ul>
+<li><pre><code>Project Apollo (page-apollo)
+  Status:: Active (blk-status)
+  Owner:: [[Jane Doe]] (blk-owner)
+  Tags::(blk-tags)
+    [[urgent]] (blk-tag1)
+    [[backend]] (blk-tag2)</code></pre>
+</li>
+</ul>
+</li>
+<li>The <code>:entity/attrs</code> stored on <code>Project Apollo</code> (page-apollo):
+<ul>
+<li><pre><code>#{;; Project Apollo --Status--&gt; &quot;Active&quot;  (inline text becomes a string)
+  [{:source [:block/uid &quot;page-apollo&quot;] :value [:block/uid &quot;page-apollo&quot;]}
+   {:source [:block/uid &quot;blk-status&quot;] :value [:block/uid &quot;page-status&quot;]}
+   {:source [:block/uid &quot;blk-status&quot;] :value &quot;Active&quot;}]
+
+  ;; Project Apollo --Owner--&gt; [[Jane Doe]]  (inline ref becomes a node)
+  [{:source [:block/uid &quot;page-apollo&quot;] :value [:block/uid &quot;page-apollo&quot;]}
+   {:source [:block/uid &quot;blk-owner&quot;] :value [:block/uid &quot;page-owner&quot;]}
+   {:source [:block/uid &quot;blk-owner&quot;] :value [:block/uid &quot;page-jane&quot;]}]
+
+  ;; Project Apollo --Tags--&gt; [[urgent]]  (child block becomes a node)
+  [{:source [:block/uid &quot;page-apollo&quot;] :value [:block/uid &quot;page-apollo&quot;]}
+   {:source [:block/uid &quot;blk-tags&quot;] :value [:block/uid &quot;page-tags&quot;]}
+   {:source [:block/uid &quot;blk-tag1&quot;] :value [:block/uid &quot;page-urgent&quot;]}]
+
+  ;; Project Apollo --Tags--&gt; [[backend]]
+  [{:source [:block/uid &quot;page-apollo&quot;] :value [:block/uid &quot;page-apollo&quot;]}
+   {:source [:block/uid &quot;blk-tags&quot;] :value [:block/uid &quot;page-tags&quot;]}
+   {:source [:block/uid &quot;blk-tag2&quot;] :value [:block/uid &quot;page-backend&quot;]}]}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>Its <code>:attrs/lookup</code> is the flat, de-duplicated index of everything referenced:
+<ul>
+<li><pre><code>[{:block/uid &quot;page-apollo&quot;}
+ {:block/uid &quot;blk-status&quot;}
+ {:block/uid &quot;page-status&quot;}
+ {:block/uid &quot;blk-owner&quot;}
+ {:block/uid &quot;page-owner&quot;}
+ {:block/uid &quot;page-jane&quot;}
+ {:block/uid &quot;blk-tags&quot;}
+ {:block/uid &quot;page-tags&quot;}
+ {:block/uid &quot;blk-tag1&quot;}
+ {:block/uid &quot;page-urgent&quot;}
+ {:block/uid &quot;blk-tag2&quot;}
+ {:block/uid &quot;page-backend&quot;}]
+</code></pre>
+</li>
+</ul>
+</li>
+<li>so <code>[[Status]]</code>'s <code>:attrs/_lookup</code> includes <code>page-apollo</code>, and you can find Apollo from Status.
+</li>
+</ul>
+</li>
+<li><strong>Value semantics (a gotcha worth knowing)</strong>
+<ul>
+<li>How a value is represented depends on <em>where you write it</em>:
+</li>
+<li><strong>Inline text</strong> (<code>Status:: Active</code>) → the v <code>:value</code> is the literal <strong>string</strong> <code>&quot;Active&quot;</code>.
+</li>
+<li><strong>Inline ref</strong> (<code>Owner:: [[Jane Doe]]</code>) → the v <code>:value</code> is the referenced <strong>node</strong>.
+</li>
+<li><strong>Child block</strong> → each child yields its own triple; a <code>[[ref]]</code> child resolves to the referenced page, while a <em>plain-text</em> child resolves to <strong>that child block's own node</strong> (a block ref), not a string.
+</li>
+<li>Attribute names also only resolve refs <strong>one level deep</strong> (<code>[[hello [[world]]]]</code> picks up <code>hello</code>, not the nested <code>world</code>).
+</li>
+</ul>
+</li>
+<li><strong>Back to the hypergraph, concretely</strong>
+<ul>
+<li>Because the relationship is anchored to a real block (<code>blk-owner</code>), you can hang attributes <em>on the edge itself</em> (e.g. <code>Role:: Lead</code> and <code>Since:: 2024</code> nested under <code>Owner:: [[Jane Doe]]</code>).
+</li>
+<li>Those produce their own triples whose <strong>e</strong> is <code>blk-owner</code> — i.e. the <em>ownership relationship</em> is now an entity with its own <code>:entity/attrs</code>. Combined with the <code>:attrs/_lookup</code> index, that is everything you need to traverse: from any node, find the relationships it participates in (forward via <code>:entity/attrs</code>, backward via <code>:attrs/_lookup</code>), and each relationship is itself a node you can keep walking from.
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="attributes-data-model.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/9Oq-xwoLX">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

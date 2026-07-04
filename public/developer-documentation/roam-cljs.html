@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>roam/cljs — Roam Research Docs</title>
+<meta name="description" content="Getting Started">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/roam-cljs">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="roam/cljs — Roam Research Docs">
+<meta property="og:description" content="Getting Started">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/roam-cljs">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>roam/cljs</h1>
+<ul>
+<li><strong>Getting Started</strong>
+<ul>
+<li>Equivalent to <a href="/developer-documentation/roam-js">roam/js</a> but language of choice is clojurescript
+</li>
+<li>roam/cljs is a way to customize your Roam experience with clojurescript. 
+</li>
+<li>To use roam/cljs create a block with <code>{{[[roam/cljs]]}}</code> in it, then indent underneath and create a clojure code block
+<ul>
+<li>Like this
+</li>
+<li>{{<a href="/developer-documentation/roam-cljs">roam/cljs</a>}}
+<ul>
+<li><pre><code>(prn &quot;hello world&quot;)</code></pre>
+</li>
+</ul>
+</li>
+<li>Then, click &quot;Yes, I know what I'm doing&quot; to run the code block, open your browsers developer console to see the logged text
+<ul>
+<li>Clicking this only enables the clojurescript to run for you, it will not run for any other users on the graph without them also agreeing to run the javascript
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>roam/cljs blocks that are enabled <strong>run automatically run on startup</strong>
+<ul>
+<li>The order of operations is 
+<ul>
+<li><code>Roam Depot extensions -&gt; roam/js (or roam/cljs) -&gt; roam/render components</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>You have access to the [[Clojurescript API], <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> in the window object, as well as a list of <a href="/developer-documentation/available-libraries">Available Libraries</a> Roam exports to the window.
+<ul>
+<li>The <a href="/developer-documentation/roam-clojurescript-api">Roam Clojurescript API</a> is mostly a copy of the <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> but with a few additions
+</li>
+</ul>
+</li>
+<li>roam/cljs is most useful for developing a small script you expect to only run for yourself, if you want to distribute your extension, we recommend you develop a <a href="/developer-documentation/roam-depot-extensions">Roam Depot/Extensions</a>, which is similar, but has a different development process.
+<ul>
+<li>It can also be useful to use roam/cljs to create &quot;common&quot; namespaces for use in <a href="/developer-documentation/roam-render">roam/render</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Examples</strong>
+<ul>
+<li>A script that changes a graph's homepage to be a different page than daily notes
+<ul>
+<li>{{<a href="/developer-documentation/roam-cljs">roam/cljs</a>}}
+<ul>
+<li><pre><code>(ns examples.custom-homepage
+  (:require
+   [clojure.string :as str]
+   [roam.main-window :as main-window]))
+
+(defn on-home-page? []
+  (-&gt; (str/split js/window.location.hash &quot;/&quot;)
+      (get 3)
+      (= nil)))
+
+(when (on-home-page?)
+  (main-window/open-page {:page {:title &quot;Developer Hub&quot;}}))</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Requiring code from other roam/cljs blocks
+<ul>
+<li>First click run on the example, <code>examples.custom-homepage</code>, above. The namespaces do not autoload 
+</li>
+<li>{{<a href="/developer-documentation/roam-cljs">roam/cljs</a>}}
+<ul>
+<li><pre><code>(ns examples.internal-require
+  (:require
+   [examples.custom-homepage :as ch]))
+
+(prn (ch/on-home-page?))</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>{{TODO}} More Examples
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="roam-cljs.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/Tk5jSgvLX">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

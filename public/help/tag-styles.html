@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tag Styles — Roam Research Docs</title>
+<meta name="description" content="Links and tags whose name begins with a . add a css class to the roam block that they are on">
+<link rel="canonical" href="https://roamdocs.fyi/help/tag-styles">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Tag Styles — Roam Research Docs">
+<meta property="og:description" content="Links and tags whose name begins with a . add a css class to the roam block that they are on">
+<meta property="og:url" content="https://roamdocs.fyi/help/tag-styles">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Tag Styles</h1>
+<ul>
+<li>Links and tags whose name begins with a <code>.</code> add a css class to the roam block that they are on
+<ul>
+<li>This can be useful for Use Cases  like
+<ul>
+<li>visually organizing your day if you track your time
+<ul>
+<li>Try it out
+<ul>
+<li>{{<a href="/help/roam-css">roam/css</a>}}
+<ul>
+<li><pre><code>.morning-routine {
+ background-image: 
+    linear-gradient(
+      hsla(4,90%,58%,0.42),
+      hsl(45,100%,51%, 0.6)
+    ); 
+}
+
+.break {
+   background-color: #607D8B59;
+}
+
+.increased-emotional-energy {
+  border-right: 4px solid green;
+}
+
+.decreased-emotional-energy {
+    border-right: 4px solid red;
+}
+
+.ramp-up {
+  border-right: 4px solid;
+  border-image: 
+    linear-gradient(
+      to top, 
+      green, 
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example Top Level of your Daily Note 
+<ul>
+<li>Log
+<ul>
+<li>06:00 - 7:00 #.morning-routine
+</li>
+<li>7:00 - 8:00 Great writing #.increased-emotional-energy
+</li>
+<li>8:00 - 8:30 Frustrating Meeting #.decreased-emotional-energy
+</li>
+<li>8:30 - 9:30 #.break
+</li>
+<li>9:30 - 10:00 Getting back in zone #.ramp-up 
+</li>
+</ul>
+</li>
+<li>What you'll see if you hit turn on the <a href="/help/roam-css">roam/css</a> here  <img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fkb6T9fa4hH.png?alt=media&amp;token=5fa2ddf7-7370-4868-b31b-2961e51b147c" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Taken to the max, they can pretty dramatically change the layout of particular your blocks in your graph
+<ul>
+<li>{{embed-path: We decided to include some of the most useful <a href="/help/roam-css">roam/css</a> <a href="/help/tag-styles">Tag Styles</a> we've developed for ourselves, you may find helpful/inspiring .rm-E  .rm-g  and .rm-hide}}
+</li>
+</ul>
+</li>
+<li>Roam ships with these CSS libraries built in, so you can play with classes from them right away
+<ul>
+<li>TailwindCSS
+<ul>
+<li>Blue background, white text with <code>#.bg-blue-500 #.text-white</code> #.bg-blue-500 #.text-white 
+</li>
+<li>#.text-xl larger text with <code>#.text-xl</code>
+</li>
+</ul>
+</li>
+<li>Blueprint 
+<ul>
+<li>Card is probably the most useful by itself <code>#.bp3-card</code> #.bp3-card
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="tag-styles.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/CAYGhv3Ex">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roam Append API — Roam Research Docs</title>
+<meta name="description" content="Recommended order for going through this document:">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/roam-append-api">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Roam Append API — Roam Research Docs">
+<meta property="og:description" content="Recommended order for going through this document:">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/roam-append-api">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>Roam Append API</h1>
+<h4>Recommended order for going through this document:</h4>
+<ul>
+<li>(A choose your own adventure, if you will)
+</li>
+<li><strong>If you are new to our APIs</strong>
+<ul>
+<li>first, ensure that this is the one you want to use: Q:: When would you use this Append API vs other Roam APIs?
+</li>
+<li>then go through the description: <strong>Description:</strong>
+</li>
+<li>then go through <strong>Getting Started:</strong> for hitting the ground running
+</li>
+<li>next steps would be <strong>Examples</strong> or the actual <strong>API Reference</strong>
+</li>
+</ul>
+</li>
+<li><strong>If you have used the <a href="/developer-documentation/roam-backend-api-beta">Roam Backend API (Beta)</a> before</strong>
+<ul>
+<li>first go through Q:: How is this Append API different from the regular <a href="/developer-documentation/roam-backend-api-beta">Roam Backend API (Beta)</a>?
+</li>
+<li>then go through <strong>Getting Started:</strong> for hitting the ground running
+</li>
+<li>next steps would be <strong>Examples</strong> or the actual <strong>API Reference</strong>
+</li>
+</ul>
+</li>
+<li><strong>If you used this Append API when it was in Alpha stage</strong>
+<ul>
+<li>Please checkout the changelog: <strong>Change Log:</strong> (with special attention to ones below)
+<ul>
+<li>In particular, you want to make sure your code works wrt below:
+<ul>
+<li>works with change to response.body
+<ul>
+<li>changed the format of error messages. Previously the <code>response.body</code> used to contain only the error message, now it is a map of the format <code>{message: error-message-str}</code>
+</li>
+</ul>
+</li>
+<li>handles all possible response error codes properly
+<ul>
+<li>ERRORs
+<ul>
+<li>(for every return code other than 200 OK, <code>response.body</code> will have a &quot;message&quot; key clarifying what the error)
+</li>
+<li>400 BAD REQUEST #important
+<ul>
+<li>Some examples
+<ul>
+<li>invalid graph name
+</li>
+<li>location not present in location.page
+</li>
+<li>If request.data is not valid JSON for example
+<ul>
+<li>in this case, you might not get an error.message, but just a cryptic HTML response 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>401 UNAUTHORIZED #important
+<ul>
+<li>authentication failure
+</li>
+<li>roam-graph-token passed is not valid
+</li>
+<li>Please checkout <strong>Authentication</strong>
+</li>
+</ul>
+</li>
+<li>403 FORBIDDEN #important
+<ul>
+<li>authorization failure
+</li>
+<li>If the token does not have append/edit access to the graph
+<ul>
+<li>Some common cases
+<ul>
+<li>if the token only has read permission
+</li>
+<li>if the token has been revoked
+</li>
+<li>typo when getting the token from user
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>405 METHOD NOT ALLOWED
+<ul>
+<li>only POST method allowed in request
+</li>
+</ul>
+</li>
+<li>413 CONTENT TOO LARGE #important
+<ul>
+<li>200 KB limit
+</li>
+</ul>
+</li>
+<li>429 TOO MANY REQUESTS #important
+<ul>
+<li>if hit the limits
+<ul>
+<li>will also have response header <code>retry-after</code> which mentions how many seconds to wait for before next request
+</li>
+<li>If you regularly hit the limits, do email us 
+</li>
+<li>More info
+<ul>
+<li>LIMITS
+<ul>
+<li>Size Limits
+<ul>
+<li><strong>200 KB</strong> = Per-request size limit for request.body.append-data = 
+<ul>
+<li>Payload for a <code>req</code> = <code>count(JSON.stringify(req.body.append-data))</code>
+</li>
+<li>If you exceed the limits, the response will have a status code 413 CONTENT TOO LARGE
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Rate limits
+<ul>
+<li><strong>30 requests</strong> <strong>per minute</strong> per api token
+</li>
+<li><strong>20 MB</strong> sum of append-data size <strong>per hour</strong> per api token
+<ul>
+<li>same calculation: Payload for a <code>req</code> = <code>count(JSON.stringify(req.body.append-data))</code>
+</li>
+</ul>
+</li>
+<li>If you exceed the limits, the response will have a status code 429 TOO MANY REQUESTS
+<ul>
+<li>will also have response header <code>retry-after</code> which mentions how many seconds to wait for before next request
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>500 INTERNAL SERVER ERROR #important
+<ul>
+<li>Errors which should not be happening. Please contact us at support@roamresearch.com if you run into this
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4><strong>Table of Contents</strong></h4>
+<ul>
+<li><strong>Description:</strong>
+</li>
+<li><strong>Getting Started:</strong>
+</li>
+<li><strong>Authentication</strong>
+</li>
+<li><strong>API Reference</strong>
+</li>
+<li><strong>Examples</strong>
+</li>
+<li><strong>Change Log:</strong>
+</li>
+<li><strong>FAQ</strong>
+</li>
+</ul>
+<h4><strong>Description:</strong></h4>
+<ul>
+<li>These are the docs for the Roam Append API
+<ul>
+<li>The main use case for this API is adding stuff to your Roam graph. This works for all hosted Roam graphs - i.e. for both unencrypted and encrypted graphs
+</li>
+</ul>
+</li>
+<li>Q:: When would you use this Append API vs other Roam APIs?
+<ul>
+<li>Use <a href="/developer-documentation/roam-backend-api-beta">Roam Backend API (Beta)</a> 
+<ul>
+<li>IF you need to do reads and edits (and not just additions/appends)
+</li>
+<li>IF you do NOT need to support encrypted graphs (the backend API cannot work with encrypted graphs)
+</li>
+</ul>
+</li>
+<li>Use [Append API](<a href="/developer-documentation/roam-append-api">Roam Append API</a>) 
+<ul>
+<li>IF you need to support BOTH unencrypted &amp; encrypted graphs
+</li>
+<li>IF you want an easy-to-use API optimized for capture
+</li>
+<li>IF you do not need read functionality
+</li>
+</ul>
+</li>
+<li>Use <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> (our client side API) 
+<ul>
+<li>If you're building a Roam Depot extension or writing <a href="/developer-documentation/roam-js">roam/js</a> scripts for yourself 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If you have used our regular Backend API, you might want to read the following FAQ to get a sense of the differences: Q:: How is this Append API different from the regular <a href="/developer-documentation/roam-backend-api-beta">Roam Backend API (Beta)</a>?
+</li>
+<li><strong>Minimal example using cURL</strong>
+<ul>
+<li><pre><code>curl -X POST &quot;https://append-api.roamresearch.com/api/graph/MY-GRAPH/append-blocks&quot; \
+    -H  &quot;Authorization: Bearer YOUR_ROAM_GRAPH_TOKEN&quot; \
+    -H  &quot;Content-Type: application/json&quot; \
+    -d '{&quot;location&quot;: {&quot;page&quot;: {&quot;title&quot;: &quot;Append API Captures&quot;}, &quot;nest-under&quot;: {&quot;string&quot;: &quot;Captures from [[CURL]]&quot;}}, &quot;append-data&quot;: [{&quot;string&quot;: &quot;a new capture&quot;, &quot;children&quot;: [{&quot;string&quot;: &quot;child block of capture&quot;}]}]}'</code></pre>
+<ul>
+<li>would capture the following, creating the <code>page</code> and <code>nest-under</code> capture group if they did not exist already 
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FYKKEr4C8XK.png?alt=media&amp;token=07822238-9284-4f53-b8d2-ce7511196b8d" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Explaining <code>nest-under</code> below
+<ul>
+<li>After the earlier CURL, if we then do the following curl request, 
+<ul>
+<li><pre><code>curl -X POST &quot;https://append-api.roamresearch.com/api/graph/MY-GRAPH/append-blocks&quot; \
+    -H  &quot;Authorization: Bearer YOUR_ROAM_GRAPH_TOKEN&quot; \
+    -H  &quot;Content-Type: application/json&quot; \
+    -d '{&quot;location&quot;: {&quot;page&quot;: {&quot;title&quot;: &quot;Append API Captures&quot;}, &quot;nest-under&quot;: {&quot;string&quot;: &quot;Captures from [[CURL]]&quot;}}, &quot;append-data&quot;: [{&quot;string&quot;: &quot;second capture&quot;}]}'</code></pre>
+</li>
+</ul>
+</li>
+<li>we get the following result
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FJfoU8ZVbf3.png?alt=media&amp;token=c04adb40-fd20-421a-a944-c7e59c95c546" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>Note that the &quot;Captures from cURL&quot; block was reused
+</li>
+<li>The idea is that you can use this to have &quot;Capture blocks&quot; in your pages to keep things clean/uncluttered
+<ul>
+<li>Very useful for daily notes pages, for example, consider a page like below
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2Fsm8kxglqXZ.png?alt=media&amp;token=02955030-9842-4cda-ba0b-4917602d213f" alt="" loading="lazy">
+</li>
+<li>To create this, different services can use the following nest-under strings
+<ul>
+<li><code>&quot;Raycast extension capture&quot;</code>
+</li>
+<li><code>&quot;Captures from [[Zapier]]&quot;</code>
+</li>
+<li><code>&quot;{{[[TODO]]}} TODOs from Slack bot (be sure to go handle these)&quot;</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Some characteristics of the API</strong>
+<ul>
+<li>Will create the page or the nest-under block if it does not exist yet
+<ul>
+<li>If the page has multiple top level blocks with the nest-under string, then it appends as a child of the bottom most matching block
+</li>
+</ul>
+</li>
+<li>Appends will happen in-order
+<ul>
+<li>If you append &quot;A&quot; first (and get a 200 OK back) and then append a &quot;B&quot; in the same place, you can be sure that they are handled in that order
+</li>
+</ul>
+</li>
+<li>Appended blocks will get the edit/time and create/time of the time the request to the Append API was made (not the time the client handled the sync)
+</li>
+<li>Exactly-once write
+<ul>
+<li>You do not have to worry about a single capture being appended multiple times (even if user has multiple clients open). 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Please report any issues in the #developers channel in the Roam Slack or via email to [support@roamrsearch.com](mailto:support@roamresearch.com)
+</li>
+</ul>
+<h4><strong>Getting Started:</strong></h4>
+<ul>
+<li>First, you have to get your credentials from <strong>Settings</strong> &gt; <strong>Graph</strong> tab
+<ul>
+<li>You can get your &quot;Graph name&quot; from this tab
+</li>
+<li>Then in the &quot;API tokens&quot; section, click on the green <code>+ New API Token</code> button
+<ul>
+<li>Do note that you need to be the owner/admin of the graph in order to create API tokens
+</li>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2F9RqhCNoxe2.png?alt=media&amp;token=91659d43-4b3c-4ca0-a2e4-8954ae77d401" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>After clicking the button, please enter a clear description of expected usage. Also, for access scope, you need to select &quot;append-only access&quot;
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FSeF3Dgj2MU.png?alt=media&amp;token=d68781a4-d742-42dd-ae2b-c092f0704da8" alt="" loading="lazy">
+</li>
+<li>Alternatively, you can select &quot;read &amp; edit access&quot; too. This works because that role/permission is a superset of the append-only permission
+</li>
+</ul>
+</li>
+<li>In the next screen, click on the &quot;Clipboard&quot; icon 📋 to copy the token to your clipboard. It will start with &quot;roam-graph-token-&quot;
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FV2_LPeVbUg.png?alt=media&amp;token=87fd850a-f31f-4a6d-ae67-4f41cf185754" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>After getting credentials, you're almost done
+<ul>
+<li>Copy the command below
+<ul>
+<li><pre><code>curl -X POST &quot;https://append-api.roamresearch.com/api/graph/MY-GRAPH/append-blocks&quot; \
+    -H  &quot;Authorization: Bearer YOUR_ROAM_GRAPH_TOKEN&quot; \
+    -H  &quot;Content-Type: application/json&quot; \
+    -d '{&quot;location&quot;: {&quot;page&quot;: {&quot;title&quot;: &quot;Append API Captures&quot;}, &quot;nest-under&quot;: {&quot;string&quot;: &quot;Captures from [[CURL]]&quot;}}, &quot;append-data&quot;: [{&quot;string&quot;: &quot;a new capture&quot;, &quot;children&quot;: [{&quot;string&quot;: &quot;child block of capture&quot;}]}]}'</code></pre> *
+</li>
+</ul>
+</li>
+<li>Replace <code>MY-GRAPH</code> with your graph name and <code>YOUR_ROAM_GRAPH_TOKEN</code> with the API token you copied to the clipboard
+</li>
+<li>Finally, run the command in your shell/terminal. In your graph, if you then search for it, you should find a new page &quot;Append API Captures&quot; which looks like the following
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2F1ZR9BZ-jZD.png?alt=media&amp;token=ebf38ba0-68cc-40bd-9896-25539e4ecb65" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4><strong>Authentication</strong></h4>
+<ul>
+<li>The getting started section has the basics of auth. Please start with that
+</li>
+<li>More details below
+<ul>
+<li>Let's first start with the differences from Backend API
+<ul>
+<li>Append API expects a token with an &quot;Append-only&quot; role 
+<ul>
+<li>token with an &quot;Append-only&quot; role
+<ul>
+<li>These tokens cannot read your graph nor can they modify existing blocks in your graph
+<ul>
+<li>This is very often a desired characteristic: say you want to connect your Roam graph to a service so that you can send data in, but do not want the service from being able to access your Roam graph data 
+</li>
+</ul>
+</li>
+<li>so, these tokens cannot be used with the <a href="/developer-documentation/roam-backend-api-beta">Roam Backend API (Beta)</a>
+</li>
+<li>You can create these tokens via <strong>Settings</strong> &gt; <strong>Graph</strong> &gt; <strong>API Tokens</strong> &gt; &quot;<strong>New API Token</strong>&quot; button. Then you can select a role of &quot;append-only access&quot;
+<ul>
+<li>In non-encrypted graphs, you can now create append-only tokens in addition to the &quot;read-only&quot; and &quot;read&amp;edit&quot; tokens that you can use in <a href="/developer-documentation/roam-backend-api-beta">Roam Backend API (Beta)</a> 
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FSeF3Dgj2MU.png?alt=media&amp;token=d68781a4-d742-42dd-ae2b-c092f0704da8" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>In encrypted graphs, the only tokens you can create are append-only-tokens
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2F7FaKvDIYOo.png?alt=media&amp;token=d70c0d27-5ad1-475c-9c97-c9639223c25e" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Caveat: you can also use tokens with &quot;read+edit access&quot; in the Append API
+<ul>
+<li>since read+edit role is a superset of the append role
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Now, the things common with <strong>Authentication</strong> in <a href="/developer-documentation/roam-backend-api-beta">Roam Backend API (Beta)</a>:
+<ul>
+<li>Requests to the API use graph specific tokens for authentication
+</li>
+<li>You can only get/create these if you own the graph i.e. if you're the admin of the graph
+</li>
+<li>These start with <code>roam-graph-token-</code>
+</li>
+<li>You can create and edit roam-graph-tokens from a new section &quot;API tokens&quot; in the &quot;Graph&quot; tab in the Settings
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2FkqaM1ePPbV.png?alt=media&amp;token=e113f2b5-4fbe-4b75-8d30-a114a6aa0f8d" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>How to pass the tokens in the request?
+<ul>
+<li>pass them in the <code>X-Authorization</code> header
+<ul>
+<li>you can use the <code>Authorization</code> header too (would be more secure) but you have to make sure that your code/library handles redirect properly and passes the authorization header when redirect has been followed (and the latter is generally not default behavior for most network libraries) 
+</li>
+</ul>
+</li>
+<li>Make sure they're prefixed with a <code>Bearer </code>
+</li>
+<li>An example
+<ul>
+<li><code>Bearer roam-graph-token-t_OjqgIAH1JZphzP4HxjJNad55lLFKpsqIM7x3bW</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4><strong>API Reference</strong></h4>
+<ul>
+<li><strong>Endpoint base url:</strong> https://append-api.roamresearch.com/
+</li>
+<li><strong>API routes</strong>
+<ul>
+<li><code>/api/graph/{graph-name}/append-blocks</code> (POST) <mark>IMPORTANT</mark>
+<ul>
+<li>Description:: A route using which you can append blocks (possibly nested multiple times) to a specified page or  nest-under block under a specified page
+</li>
+<li>Authentication:: For authentication, be sure to follow How to pass the tokens in the request?
+</li>
+<li>Parameters::
+<ul>
+<li><code>location</code> <strong>required</strong>
+<ul>
+<li>we require one - either page or block. <br>
+nest-under is optional and can be used with either
+</li>
+<li><code>page</code> <strong>required</strong> 
+<ul>
+<li>Description:: The page in the roam graph that you want to append to
+<ul>
+<li>The page is created if it does not exist already
+</li>
+</ul>
+</li>
+<li><code>title</code> <strong>required</strong>
+<ul>
+<li>Type::
+<ul>
+<li>String
+</li>
+<li>or
+</li>
+<li>a map of the form <code>{&quot;daily-note-page&quot;: &quot;MM-DD-YYYY&quot;}</code>. *
+<ul>
+<li><strong>(Use this for Daily Notes Pages)</strong>
+</li>
+<li>example: <br>
+&quot;location&quot;: {&quot;page&quot;: {&quot;title&quot;: <strong>{&quot;daily-note-page&quot;: &quot;07-29-2023&quot;}</strong>} }
+</li>
+<li>Q:: Why do you want to use this format for appending to daily note pages (DNP)?
+<ul>
+<li>Otherwise, you have to pass the exact correct title for the daily notes page. <br>
+If you send a wrong DNP title (say &quot;June 29, 2023&quot; instead of &quot;June 29<strong>th</strong>, 2023&quot;), then a new non daily note page will be created, and your blocks will not show up in the daily log (will instead show up in the new non-DNP page)
+</li>
+</ul>
+</li>
+<li>Q:: You might also be wondering why you cannot just pass in &quot;today&quot;, &quot;tomorrow&quot; here. 
+<ul>
+<li>Answer is two fold (see below)
+<ul>
+<li>First, the roam graph may already have a page with that title
+</li>
+<li>Second and more importantly, <strong>timezones</strong>
+<ul>
+<li>It is very likely that the user is on a different timezone than our servers, so, a mapping from today to a DNP title on our side could add the data to the incorrect DNP (maybe tomorrow, maybe yesterday)
+<ul>
+<li>So, how do you deal with it?
+<ul>
+<li>first, if you're not adding to DNPs, you don't need to worry
+</li>
+<li>Second, if what you're building works on the user's device, then just get the local date locally , get the month, day and year and use the format <code>{&quot;daily-note-page&quot;: &quot;MM-DD-YYYY&quot;}</code>
+</li>
+<li>Third, if you're a server application and you want to get this right, you might want to ask the user for what their local timezone is. Then, in your server, get the epoch time, convert it to a date object with user's provided local timezone, then get the month, day and year and use the format <code>{&quot;daily-note-page&quot;: &quot;MM-DD-YYYY&quot;}</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>block</code> (alternative to page)
+<ul>
+<li>Description:: the block in the Roam graph you want to append child blocks to
+<ul>
+<li>For most cases, if possible, <strong>we recommend you use page instead of this</strong>. We believe page used along with nest-under would be good enough for 95% of use cases
+<ul>
+<li>some reasons why you might not want to use <code>location.block.uid</code> below
+<ul>
+<li>In case page does not exist, we create the page. In case block does not exist, we add the capture to a Daily notes page under a block with text <code>Append API Captures attempted under non-existent blocks:</code>
+<ul>
+<li>Knowing which daily note page to add to is not foolproof (due to timezones). For encrypted graphs, we can use the local timezone, but in the case of unencrypted graphs, since these captures are handled on the backend, we are using the US Central timezone i.e. <code>America/Chicago</code>. This means that the captures may appear in yesterday/tomorrow's daily note page (from the POV of the user)
+</li>
+</ul>
+</li>
+<li>You might be think to create a block via the append API and then capture underneath it later via passing <code>location.block.uid</code>. If you do so, please be advised that this is fragile
+<ul>
+<li>first, the block uid you pass for new append-data blocks might not end up being the final uid of the block . This can happen if the uid you pass in collides with the uid of an existing block in the graph
+<ul>
+<li>For more info, please look into the warning here: 
+<ul>
+<li><code>uid</code> <strong>optional</strong>
+<ul>
+<li>Caution:: Be very careful when using this. You CANNOT later depend on the uid you pass to this. That is because, in the case a uid is already in the roam graph, we use a newly generated random uid instead 
+<ul>
+<li>In most cases, we recommend you NOT to use this. A new random block uid will be created for your new blocks as normal
+</li>
+<li>Use this only for internal block references  i.e. block references to blocks from within the same append-api capture request
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>More importantly, since this happens asynchronously, you (as the dev) would not know that there was a collision!
+</li>
+</ul>
+</li>
+<li> then later captures would get added underneath a different block
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>uid</code>
+<ul>
+<li>the block uid for the block to add the append api capture blocks underneath
+</li>
+<li>If a block with given uid does not exist in the graph, the capture will get added to the Daily Notes Page under a block saying &quot;Append API Captures attempted under non-existent blocks:&quot; 
+</li>
+<li>Type:: 
+<ul>
+<li>string
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>nest-under</code> <strong>optional</strong>
+<ul>
+<li>Description:: Optional parameter. Use this to append inside of a top level child block in a page
+<ul>
+<li>A pretty convenient way to have different &quot;capture target&quot;s in a page
+<ul>
+<li>Very useful for daily notes pages, for example, consider a page like below
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2Fsm8kxglqXZ.png?alt=media&amp;token=02955030-9842-4cda-ba0b-4917602d213f" alt="" loading="lazy">
+</li>
+<li>To create this, different services can use the following nest-under strings
+<ul>
+<li><code>&quot;Raycast extension capture&quot;</code>
+</li>
+<li><code>&quot;Captures from [[Zapier]]&quot;</code>
+</li>
+<li><code>&quot;{{[[TODO]]}} TODOs from Slack bot (be sure to go handle these)&quot;</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>string</code>
+<ul>
+<li>Type::
+<ul>
+<li>String
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>append-data</code> <strong>required</strong>
+<ul>
+<li>needs to be an array of blocks to be appended, cannot be empty
+</li>
+<li>Every block needs to have a 'string' value. Optionally they can have 'uid', 'heading', 'text-align', 'open', 'children-view-type' and an array of possibly nested child blocks - 'children'.
+</li>
+<li><strong>value needs to be an array of blocks</strong>
+<ul>
+<li>for each block
+<ul>
+<li><code>string</code> <strong>required</strong>
+<ul>
+<li><code>string</code>
+<ul>
+<li>Text content of the block.
+</li>
+<li><em>string</em>
+</li>
+</ul>
+</li>
+<li>From April 11th, 2025, this also supports nested markdown strings: For this, make sure the string starts with a &quot;- &quot; 
+<ul>
+<li>and also make sure the block has no children
+</li>
+<li>More info in our tweet:
+<ul>
+<li>https://x.com/RoamResearch/status/1910658366575178199
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>children</code> <strong>optional</strong>
+<ul>
+<li>an array of possibly further nested child blocks. See [examples](Examples::)
+</li>
+</ul>
+</li>
+<li><code>heading</code> <strong>optional</strong>
+<ul>
+<li>Heading styling of the block
+</li>
+<li><em>integer</em>
+<ul>
+<li><code>0</code> (no heading styling)
+</li>
+<li><code>1</code>
+</li>
+<li><code>2</code>
+</li>
+<li><code>3</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>text-align</code> <strong>optional</strong>
+<ul>
+<li><code>text-align</code>
+<ul>
+<li>The block's alignment
+</li>
+<li><em>string</em>
+<ul>
+<li><code>left</code> 
+</li>
+<li><code>center</code> 
+</li>
+<li><code>right</code>
+</li>
+<li><code>justify</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>open</code> <strong>optional</strong>
+<ul>
+<li><code>open</code>
+<ul>
+<li>Collapse state of the block.
+</li>
+<li><em>boolean</em>
+</li>
+<li><code>true</code> by default (if not passed)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>children-view-type</code> <strong>optional</strong>
+<ul>
+<li><code>children-view-type</code>
+<ul>
+<li>Block view type of children blocks
+</li>
+<li><em>string</em>
+<ul>
+<li><code>bullet</code> 
+</li>
+<li><code>numbered</code> 
+</li>
+<li><code>document</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>uid</code> <strong>optional</strong>
+<ul>
+<li>Caution:: Be very careful when using this. You CANNOT later depend on the uid you pass to this. That is because, in the case a uid is already in the roam graph, we use a newly generated random uid instead 
+<ul>
+<li>In most cases, we recommend you NOT to use this. A new random block uid will be created for your new blocks as normal
+</li>
+<li>Use this only for internal block references  i.e. block references to blocks from within the same append-api capture request
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Please checkout the <strong>Examples</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Size &amp; rate limits are documented here: LIMITS
+<ul>
+<li>If you hit them, you will get error codes 413 CONTENT TOO LARGE #important or 429 TOO MANY REQUESTS #important
+</li>
+</ul>
+</li>
+<li><strong>What does response look like?</strong> (with <strong>HTTP status codes</strong>)
+<ul>
+<li>Returns::
+<ul>
+<li>(If you're building an integration, be sure to implement at least the response codes below)
+</li>
+<li>200 OK #important
+<ul>
+<li>An important difference between this API and the regular <a href="/developer-documentation/roam-backend-api-beta">Roam Backend API (Beta)</a> is what a 200 OK response means
+<ul>
+<li>In the Backend API, when you get a 200 OK response, say on a create block write request, you know that that create has happened
+</li>
+<li>However, in the Append API, a 200 OK means that the append data that you sent has been verified and saved in Roam's servers, and it might be applied almost immediately (in the case of unencrypted graphs generally) or the next time a full Roam client is opened by the user (in the case of encrypted graphs)
+</li>
+</ul>
+</li>
+<li>the response.data will look like <code>{captureSuccessful: true}</code>
+</li>
+</ul>
+</li>
+<li>ERRORs
+<ul>
+<li>(for every return code other than 200 OK, <code>response.body</code> will have a &quot;message&quot; key clarifying what the error)
+</li>
+<li>400 BAD REQUEST #important
+<ul>
+<li>Some examples
+<ul>
+<li>invalid graph name
+</li>
+<li>location not present in location.page
+</li>
+<li>If request.data is not valid JSON for example
+<ul>
+<li>in this case, you might not get an error.message, but just a cryptic HTML response 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>401 UNAUTHORIZED #important
+<ul>
+<li>authentication failure
+</li>
+<li>roam-graph-token passed is not valid
+</li>
+<li>Please checkout <strong>Authentication</strong>
+</li>
+</ul>
+</li>
+<li>403 FORBIDDEN #important
+<ul>
+<li>authorization failure
+</li>
+<li>If the token does not have append/edit access to the graph
+<ul>
+<li>Some common cases
+<ul>
+<li>if the token only has read permission
+</li>
+<li>if the token has been revoked
+</li>
+<li>typo when getting the token from user
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>405 METHOD NOT ALLOWED
+<ul>
+<li>only POST method allowed in request
+</li>
+</ul>
+</li>
+<li>413 CONTENT TOO LARGE #important
+<ul>
+<li>200 KB limit
+</li>
+</ul>
+</li>
+<li>429 TOO MANY REQUESTS #important
+<ul>
+<li>if hit the limits
+<ul>
+<li>will also have response header <code>retry-after</code> which mentions how many seconds to wait for before next request
+</li>
+<li>If you regularly hit the limits, do email us 
+</li>
+<li>More info
+<ul>
+<li>LIMITS
+<ul>
+<li>Size Limits
+<ul>
+<li><strong>200 KB</strong> = Per-request size limit for request.body.append-data = 
+<ul>
+<li>Payload for a <code>req</code> = <code>count(JSON.stringify(req.body.append-data))</code>
+</li>
+<li>If you exceed the limits, the response will have a status code 413 CONTENT TOO LARGE
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Rate limits
+<ul>
+<li><strong>30 requests</strong> <strong>per minute</strong> per api token
+</li>
+<li><strong>20 MB</strong> sum of append-data size <strong>per hour</strong> per api token
+<ul>
+<li>same calculation: Payload for a <code>req</code> = <code>count(JSON.stringify(req.body.append-data))</code>
+</li>
+</ul>
+</li>
+<li>If you exceed the limits, the response will have a status code 429 TOO MANY REQUESTS
+<ul>
+<li>will also have response header <code>retry-after</code> which mentions how many seconds to wait for before next request
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>500 INTERNAL SERVER ERROR #important
+<ul>
+<li>Errors which should not be happening. Please contact us at support@roamresearch.com if you run into this
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4><strong>Examples</strong></h4>
+<ul>
+<li>The &quot;Hello world&quot; example (<strong>start here!</strong>)
+<ul>
+<li><strong>Minimal example using cURL</strong>
+<ul>
+<li><pre><code>curl -X POST &quot;https://append-api.roamresearch.com/api/graph/MY-GRAPH/append-blocks&quot; \
+    -H  &quot;Authorization: Bearer YOUR_ROAM_GRAPH_TOKEN&quot; \
+    -H  &quot;Content-Type: application/json&quot; \
+    -d '{&quot;location&quot;: {&quot;page&quot;: {&quot;title&quot;: &quot;Append API Captures&quot;}, &quot;nest-under&quot;: {&quot;string&quot;: &quot;Captures from [[CURL]]&quot;}}, &quot;append-data&quot;: [{&quot;string&quot;: &quot;a new capture&quot;, &quot;children&quot;: [{&quot;string&quot;: &quot;child block of capture&quot;}]}]}'</code></pre>
+<ul>
+<li>would capture the following, creating the <code>page</code> and <code>nest-under</code> capture group if they did not exist already 
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FYKKEr4C8XK.png?alt=media&amp;token=07822238-9284-4f53-b8d2-ce7511196b8d" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Explaining <code>nest-under</code> below
+<ul>
+<li>After the earlier CURL, if we then do the following curl request, 
+<ul>
+<li><pre><code>curl -X POST &quot;https://append-api.roamresearch.com/api/graph/MY-GRAPH/append-blocks&quot; \
+    -H  &quot;Authorization: Bearer YOUR_ROAM_GRAPH_TOKEN&quot; \
+    -H  &quot;Content-Type: application/json&quot; \
+    -d '{&quot;location&quot;: {&quot;page&quot;: {&quot;title&quot;: &quot;Append API Captures&quot;}, &quot;nest-under&quot;: {&quot;string&quot;: &quot;Captures from [[CURL]]&quot;}}, &quot;append-data&quot;: [{&quot;string&quot;: &quot;second capture&quot;}]}'</code></pre>
+</li>
+</ul>
+</li>
+<li>we get the following result
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FJfoU8ZVbf3.png?alt=media&amp;token=c04adb40-fd20-421a-a944-c7e59c95c546" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>Note that the &quot;Captures from cURL&quot; block was reused
+</li>
+<li>The idea is that you can use this to have &quot;Capture blocks&quot; in your pages to keep things clean/uncluttered
+<ul>
+<li>Very useful for daily notes pages, for example, consider a page like below
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2Fsm8kxglqXZ.png?alt=media&amp;token=02955030-9842-4cda-ba0b-4917602d213f" alt="" loading="lazy">
+</li>
+<li>To create this, different services can use the following nest-under strings
+<ul>
+<li><code>&quot;Raycast extension capture&quot;</code>
+</li>
+<li><code>&quot;Captures from [[Zapier]]&quot;</code>
+</li>
+<li><code>&quot;{{[[TODO]]}} TODOs from Slack bot (be sure to go handle these)&quot;</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>(For the requests below this point, for readability purposes, we will show the pretty-formatted JSON)
+</li>
+</ul>
+</li>
+<li>An example with multiple nested blocks being created
+<ul>
+<li>POST request to &quot;https://append-api.roamresearch.com/api/graph/MY-GRAPH/append-blocks&quot;
+</li>
+<li>Authorization: Bearer YOUR_ROAM_GRAPH_TOKEN
+</li>
+<li>Content-Type: application/json
+</li>
+<li>request data
+<ul>
+<li><pre><code>{
+    &quot;location&quot;: {
+        &quot;page&quot;: {
+            &quot;title&quot;: &quot;May 18th, 2024&quot;
+        },
+        &quot;nest-under&quot;: {
+            &quot;string&quot;: &quot;Captures from [[Zapier]]&quot;
+        }
+    },
+    &quot;append-data&quot;: [
+        {
+            &quot;string&quot;: &quot;Hey I am a block with children&quot;,
+            &quot;open&quot;: false,
+            &quot;children-view-type&quot;: &quot;document&quot;,
+            &quot;children&quot;: [
+                {
+                    &quot;string&quot;: &quot;hey I am a child block&quot;,
+                    &quot;open&quot;: false,
+                    &quot;children&quot;: [
+                        {
+                            &quot;string&quot;: &quot;nested two layers deep&quot;
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            &quot;string&quot;: &quot;I am a second block getting added&quot;
+        }
+    ]
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>Output Screenshot
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FzBj3HjSO7e.png?alt=media&amp;token=a6fdab1b-165c-47c9-993e-ede69e34a8a0" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example for capture to daily notes #important
+<ul>
+<li>We captured to daily note in An example with multiple nested blocks being created too, but the problem was that we had to explicitly enter the full page title &quot;May 18th, 2024&quot;
+<ul>
+<li>If we had made a typo, then it would've added the blocks to the typo-d page (say &quot;May 18, 2024&quot;), and would not show up in the actual daily note page &quot;May 18th, 2024&quot;
+</li>
+<li>Please read below to get the complete rationale
+<ul>
+<li>Q:: Why do you want to use this format for appending to daily note pages (DNP)?
+</li>
+<li>Q:: You might also be wondering why you cannot just pass in &quot;today&quot;, &quot;tomorrow&quot; here. 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The solution is to pass a map of the form <code>{&quot;daily-note-page&quot;: &quot;MM-DD-YYYY&quot;}</code>. * as location.page.title
+</li>
+<li>POST &quot;https://append-api.roamresearch.com/api/graph/MY-GRAPH/append-blocks&quot;
+</li>
+<li>Authorization: Bearer YOUR_ROAM_GRAPH_TOKEN
+</li>
+<li>Content-Type: application/json
+</li>
+<li>request data
+<ul>
+<li>(the main difference from the earlier example is that we pass <code>{&quot;daily-note-page&quot;: &quot;05-18-2024&quot;}</code> in <code>location.page.title</code> instead of passing in &quot;May 18th, 2024&quot;)
+</li>
+<li><pre><code>{
+    &quot;location&quot;: {
+        &quot;page&quot;: {
+            &quot;title&quot;: {&quot;daily-note-page&quot;: &quot;05-18-2024&quot;}
+        },
+        &quot;nest-under&quot;: {
+            &quot;string&quot;: &quot;Captures from [[Zapier]]&quot;
+        }
+    },
+    &quot;append-data&quot;: [
+        {
+            &quot;string&quot;: &quot;Hey I am a block with children&quot;,
+            &quot;open&quot;: false,
+            &quot;children-view-type&quot;: &quot;document&quot;,
+            &quot;children&quot;: [
+                {
+                    &quot;string&quot;: &quot;hey I am a child block&quot;,
+                    &quot;open&quot;: false,
+                    &quot;children&quot;: [
+                        {
+                            &quot;string&quot;: &quot;nested two layers deep&quot;
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            &quot;string&quot;: &quot;I am a second block getting added&quot;
+        }
+    ]
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>
+</li>
+</ul>
+</li>
+<li>Example for capturing as child of an existing block
+<ul>
+<li>Before capturing using block as location, please read the disclaimer/recommendation below
+<ul>
+<li>For most cases, if possible, <strong>we recommend you use page instead of this</strong>. We believe page used along with nest-under would be good enough for 95% of use cases
+<ul>
+<li>some reasons why you might not want to use <code>location.block.uid</code> below
+<ul>
+<li>In case page does not exist, we create the page. In case block does not exist, we add the capture to a Daily notes page under a block with text <code>Append API Captures attempted under non-existent blocks:</code>
+<ul>
+<li>Knowing which daily note page to add to is not foolproof (due to timezones). For encrypted graphs, we can use the local timezone, but in the case of unencrypted graphs, since these captures are handled on the backend, we are using the US Central timezone i.e. <code>America/Chicago</code>. This means that the captures may appear in yesterday/tomorrow's daily note page (from the POV of the user)
+</li>
+</ul>
+</li>
+<li>You might be think to create a block via the append API and then capture underneath it later via passing <code>location.block.uid</code>. If you do so, please be advised that this is fragile
+<ul>
+<li>first, the block uid you pass for new append-data blocks might not end up being the final uid of the block . This can happen if the uid you pass in collides with the uid of an existing block in the graph
+<ul>
+<li>For more info, please look into the warning here: 
+<ul>
+<li><code>uid</code> <strong>optional</strong>
+<ul>
+<li>Caution:: Be very careful when using this. You CANNOT later depend on the uid you pass to this. That is because, in the case a uid is already in the roam graph, we use a newly generated random uid instead 
+<ul>
+<li>In most cases, we recommend you NOT to use this. A new random block uid will be created for your new blocks as normal
+</li>
+<li>Use this only for internal block references  i.e. block references to blocks from within the same append-api capture request
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>More importantly, since this happens asynchronously, you (as the dev) would not know that there was a collision!
+</li>
+</ul>
+</li>
+<li> then later captures would get added underneath a different block
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>POST &quot;https://append-api.roamresearch.com/api/graph/MY-GRAPH/append-blocks&quot;
+</li>
+<li>Authorization: Bearer YOUR_ROAM_GRAPH_TOKEN
+</li>
+<li>Content-Type: application/json
+</li>
+<li>request data
+<ul>
+<li><pre><code>{
+    &quot;location&quot;: {
+        &quot;block&quot;: {
+            &quot;uid&quot;: &quot;f-gVYZHz4&quot;
+        },
+        &quot;nest-under&quot;: {
+            &quot;string&quot;: &quot;Captures from [[Append API]]&quot;
+        }
+    },
+    &quot;append-data&quot;: [
+        {
+            &quot;string&quot;: &quot;Hey I am a block with children&quot;
+        }
+    ]
+}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4><strong>Change Log:</strong></h4>
+<ul>
+<li>(move this to the top of the page later)
+</li>
+<li>April 11th, 2025
+<ul>
+<li><code>string</code> argument for any block in append-data now also accepts a nested markdown string!
+<ul>
+<li>From April 11th, 2025, this also supports nested markdown strings: For this, make sure the string starts with a &quot;- &quot; 
+<ul>
+<li>and also make sure the block has no children
+</li>
+<li>More info in our tweet:
+<ul>
+<li>https://x.com/RoamResearch/status/1910658366575178199
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>October 26th, 2024
+<ul>
+<li>Made a small change to the Append API: if <code>open</code> value is not passed, it is now <code>true</code> by default
+<ul>
+<li>Change made to match the behavior in the <a href="/developer-documentation/roam-backend-api-beta">Roam Backend API (Beta)</a> &amp; the frontend <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a>
+</li>
+<li>turns out that we had not mentioned any default value in the docs
+<ul>
+<li>So, hopefully noone was depending on this value being different
+</li>
+<li>If you were depending on this, and if we slightly broke your stuff, super sorry! 😅
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>May 21st, 2024
+<ul>
+<li>In the case of a successful capture i.e. 200 OK #important, now **the response.data will look like <code>{captureSuccessful: true}</code>** (previously was <code>null</code>)
+</li>
+</ul>
+</li>
+<li>May 17th, 2024
+<ul>
+<li>Added ability to pass a block as a capture location for append API.
+<ul>
+<li>you can now pass location.block.uid instead of location.page.title
+</li>
+<li>You probably want to just use location.page.title with maybe a location.nest-under.string though
+<ul>
+<li>Explanation below
+<ul>
+<li>For most cases, if possible, <strong>we recommend you use page instead of this</strong>. We believe page used along with nest-under would be good enough for 95% of use cases
+<ul>
+<li>some reasons why you might not want to use <code>location.block.uid</code> below
+<ul>
+<li>In case page does not exist, we create the page. In case block does not exist, we add the capture to a Daily notes page under a block with text <code>Append API Captures attempted under non-existent blocks:</code>
+<ul>
+<li>Knowing which daily note page to add to is not foolproof (due to timezones). For encrypted graphs, we can use the local timezone, but in the case of unencrypted graphs, since these captures are handled on the backend, we are using the US Central timezone i.e. <code>America/Chicago</code>. This means that the captures may appear in yesterday/tomorrow's daily note page (from the POV of the user)
+</li>
+</ul>
+</li>
+<li>You might be think to create a block via the append API and then capture underneath it later via passing <code>location.block.uid</code>. If you do so, please be advised that this is fragile
+<ul>
+<li>first, the block uid you pass for new append-data blocks might not end up being the final uid of the block . This can happen if the uid you pass in collides with the uid of an existing block in the graph
+<ul>
+<li>For more info, please look into the warning here: 
+<ul>
+<li><code>uid</code> <strong>optional</strong>
+<ul>
+<li>Caution:: Be very careful when using this. You CANNOT later depend on the uid you pass to this. That is because, in the case a uid is already in the roam graph, we use a newly generated random uid instead 
+<ul>
+<li>In most cases, we recommend you NOT to use this. A new random block uid will be created for your new blocks as normal
+</li>
+<li>Use this only for internal block references  i.e. block references to blocks from within the same append-api capture request
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>More importantly, since this happens asynchronously, you (as the dev) would not know that there was a collision!
+</li>
+</ul>
+</li>
+<li> then later captures would get added underneath a different block
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>May 1st, 2024
+<ul>
+<li>changed the format of error messages. Previously the <code>response.body</code> used to contain only the error message, now it is a map of the format <code>{message: error-message-str}</code>
+</li>
+<li>documented and supporting following error codes. Please make sure you handle all of these
+<ul>
+<li>ERRORs
+<ul>
+<li>(for every return code other than 200 OK, <code>response.body</code> will have a &quot;message&quot; key clarifying what the error)
+</li>
+<li>400 BAD REQUEST #important
+<ul>
+<li>Some examples
+<ul>
+<li>invalid graph name
+</li>
+<li>location not present in location.page
+</li>
+<li>If request.data is not valid JSON for example
+<ul>
+<li>in this case, you might not get an error.message, but just a cryptic HTML response 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>401 UNAUTHORIZED #important
+<ul>
+<li>authentication failure
+</li>
+<li>roam-graph-token passed is not valid
+</li>
+<li>Please checkout <strong>Authentication</strong>
+</li>
+</ul>
+</li>
+<li>403 FORBIDDEN #important
+<ul>
+<li>authorization failure
+</li>
+<li>If the token does not have append/edit access to the graph
+<ul>
+<li>Some common cases
+<ul>
+<li>if the token only has read permission
+</li>
+<li>if the token has been revoked
+</li>
+<li>typo when getting the token from user
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>405 METHOD NOT ALLOWED
+<ul>
+<li>only POST method allowed in request
+</li>
+</ul>
+</li>
+<li>413 CONTENT TOO LARGE #important
+<ul>
+<li>200 KB limit
+</li>
+</ul>
+</li>
+<li>429 TOO MANY REQUESTS #important
+<ul>
+<li>if hit the limits
+<ul>
+<li>will also have response header <code>retry-after</code> which mentions how many seconds to wait for before next request
+</li>
+<li>If you regularly hit the limits, do email us 
+</li>
+<li>More info
+<ul>
+<li>LIMITS
+<ul>
+<li>Size Limits
+<ul>
+<li><strong>200 KB</strong> = Per-request size limit for request.body.append-data = 
+<ul>
+<li>Payload for a <code>req</code> = <code>count(JSON.stringify(req.body.append-data))</code>
+</li>
+<li>If you exceed the limits, the response will have a status code 413 CONTENT TOO LARGE
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Rate limits
+<ul>
+<li><strong>30 requests</strong> <strong>per minute</strong> per api token
+</li>
+<li><strong>20 MB</strong> sum of append-data size <strong>per hour</strong> per api token
+<ul>
+<li>same calculation: Payload for a <code>req</code> = <code>count(JSON.stringify(req.body.append-data))</code>
+</li>
+</ul>
+</li>
+<li>If you exceed the limits, the response will have a status code 429 TOO MANY REQUESTS
+<ul>
+<li>will also have response header <code>retry-after</code> which mentions how many seconds to wait for before next request
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>500 INTERNAL SERVER ERROR #important
+<ul>
+<li>Errors which should not be happening. Please contact us at support@roamresearch.com if you run into this
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4><strong>FAQ</strong></h4>
+<ul>
+<li>Q:: How is this Append API different from the regular <a href="/developer-documentation/roam-backend-api-beta">Roam Backend API (Beta)</a>?
+<ul>
+<li>This new API <strong>also works with encrypted graphs</strong> while the Backend API does not (i.e. Append API supports all hosted graphs while Backend API only works with unencrypted hosted graphs)
+</li>
+<li>Append API expects a token with an &quot;Append-only&quot; role ~~~~
+<ul>
+<li>Append API expects a token with an &quot;Append-only&quot; role 
+<ul>
+<li>token with an &quot;Append-only&quot; role
+<ul>
+<li>These tokens cannot read your graph nor can they modify existing blocks in your graph
+<ul>
+<li>This is very often a desired characteristic: say you want to connect your Roam graph to a service so that you can send data in, but do not want the service from being able to access your Roam graph data 
+</li>
+</ul>
+</li>
+<li>so, these tokens cannot be used with the <a href="/developer-documentation/roam-backend-api-beta">Roam Backend API (Beta)</a>
+</li>
+<li>You can create these tokens via <strong>Settings</strong> &gt; <strong>Graph</strong> &gt; <strong>API Tokens</strong> &gt; &quot;<strong>New API Token</strong>&quot; button. Then you can select a role of &quot;append-only access&quot;
+<ul>
+<li>In non-encrypted graphs, you can now create append-only tokens in addition to the &quot;read-only&quot; and &quot;read&amp;edit&quot; tokens that you can use in <a href="/developer-documentation/roam-backend-api-beta">Roam Backend API (Beta)</a> 
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FSeF3Dgj2MU.png?alt=media&amp;token=d68781a4-d742-42dd-ae2b-c092f0704da8" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>In encrypted graphs, the only tokens you can create are append-only-tokens
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2F7FaKvDIYOo.png?alt=media&amp;token=d70c0d27-5ad1-475c-9c97-c9639223c25e" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Caveat: you can also use tokens with &quot;read+edit access&quot; in the Append API
+<ul>
+<li>since read+edit role is a superset of the append role
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The domain is <code>append-api.roamresearch.com</code> (as opposed to the <code>api.roamresearch.com</code> for the Backend API)
+</li>
+<li>An important difference between this API and the regular <a href="/developer-documentation/roam-backend-api-beta">Roam Backend API (Beta)</a> is what a 200 OK response means
+<ul>
+<li>In the Backend API, when you get a 200 OK response, say on a create block write request, you know that that create has happened
+</li>
+<li>However, in the Append API, a 200 OK means that the append data that you sent has been verified and saved in Roam's servers, and it might be applied almost immediately (in the case of unencrypted graphs generally) or the next time a full Roam client is opened by the user (in the case of encrypted graphs)
+</li>
+</ul>
+</li>
+<li>LIMITS
+<ul>
+<li>Size Limits
+<ul>
+<li><strong>200 KB</strong> = Per-request size limit for request.body.append-data = 
+<ul>
+<li>Payload for a <code>req</code> = <code>count(JSON.stringify(req.body.append-data))</code>
+</li>
+<li>If you exceed the limits, the response will have a status code 413 CONTENT TOO LARGE
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Rate limits
+<ul>
+<li><strong>30 requests</strong> <strong>per minute</strong> per api token
+</li>
+<li><strong>20 MB</strong> sum of append-data size <strong>per hour</strong> per api token
+<ul>
+<li>same calculation: Payload for a <code>req</code> = <code>count(JSON.stringify(req.body.append-data))</code>
+</li>
+</ul>
+</li>
+<li>If you exceed the limits, the response will have a status code 429 TOO MANY REQUESTS
+<ul>
+<li>will also have response header <code>retry-after</code> which mentions how many seconds to wait for before next request
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Q:: When would you use this Append API vs other Roam APIs?
+</li>
+</ul>
+<p><a href="roam-append-api.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/eb8OVhaFC">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

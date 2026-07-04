@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encrypted Graphs — Roam Research Docs</title>
+<meta name="description" content="Limitations of encrypted graphs">
+<link rel="canonical" href="https://roamdocs.fyi/help/encrypted-graphs">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Encrypted Graphs — Roam Research Docs">
+<meta property="og:description" content="Limitations of encrypted graphs">
+<meta property="og:url" content="https://roamdocs.fyi/help/encrypted-graphs">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Encrypted Graphs</h1>
+<h3>Limitations of encrypted graphs</h3>
+<h4>Warning #.bg-red-200</h4>
+<ul>
+<li>If you forget your password for an encrypted graph
+<ul>
+<li><strong>We cannot retrieve or reset it, and we cannot recover your encrypted notes</strong>
+</li>
+</ul>
+</li>
+<li><a href="/help/roam-depot">Roam Depot</a> and roam/js extensions running in an encrypted graph will have access to the unencrypted data
+<ul>
+<li>If you want to be sure your notes are secure <strong>do not use</strong> roam/js extensions that you did not write yourself
+</li>
+<li>Roam Depot extensions undergo a review process which includes a security review, so they should be okay for most purposes. 
+<ul>
+<li>If the data is very critical, you may want to not use any Roam Depot extensions either
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Quick Capture is disabled
+</li>
+<li>Existing graphs cannot be encrypted
+<ul>
+<li>We recommend creating a new encrypted graph and importing the existing graph, then delete the existing graph
+</li>
+</ul>
+</li>
+<li>Backups and <a href="/help/export">Export</a>s of the graph are <strong>not encrypted</strong>
+<ul>
+<li>Backups and exports currently do not contain the unencrypted images and media files
+<ul>
+<li>We hope to add this in the future
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Offline Graphs on the desktop app do not encrypt the images / media files you upload
+<ul>
+<li>The media files are stored on your computer, unencrypted
+</li>
+</ul>
+</li>
+<li>You can still share an encrypted graph with someone else, but they need the password used to encrypt it to access the graph
+<ul>
+<li>In the future we hope to release the ability to have multiple password to a graph
+</li>
+</ul>
+</li>
+<li>Load times of encrypted graphs may be longer than non encrypted
+</li>
+<li>Future features, such as a backend API, may not be available for encrypted graphs
+<ul>
+<li>We designed it with the backend API in mind, but likely many of the features of it will not be possible for encrypted graphs
+</li>
+</ul>
+</li>
+<li>More Info
+<ul>
+<li>Images and media files are encrypted only on hosted graphs
+<ul>
+<li>This may effect the load time of them
+</li>
+<li>Offline Graphs on the desktop app do not encrypt the images / media files you upload
+</li>
+</ul>
+</li>
+<li>Roam only encrypts blocks, pages, and media files
+<ul>
+<li>Some metadata about your graph is not encrypted
+<ul>
+<li>For example whether block text is centered or a heading is not encrypted, but the actual content of the block is
+</li>
+</ul>
+</li>
+<li>Developer
+<ul>
+<li>These keys are encrypted
+<ul>
+<li><code>:user/display-name :user/email :create/email :edit/email :node/title :block/string :user/uid :user/photo-url :entity/attrs :block/props :ent/emojis :user/settings</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>How do I change my password?
+<ul>
+<li>In the settings panel
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FZwq0lx1Ply.png?alt=media&amp;token=f9b59eb8-6d4e-47e8-a95d-c351a4451ca5" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>How do I create an encrypted graph?
+<ul>
+<li>{{video: https://www.loom.com/share/5f7cea684d154559a16d0167cd53f93b}}
+</li>
+</ul>
+</li>
+<li>How can I verify that my graph is encrypted?
+<ul>
+<li>{{video: https://www.loom.com/share/338bd42b80b647aaa0bed3082c53dccd}}
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="encrypted-graphs.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/DTR1FMubL">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

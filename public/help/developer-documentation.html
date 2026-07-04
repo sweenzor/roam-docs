@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Documentation — Roam Research Docs</title>
+<meta name="description" content="If you're a developer who'd like to build extensions for Roam or connect stuff to Roam, please checkout our developer-documentation graph: h">
+<link rel="canonical" href="https://roamdocs.fyi/help/developer-documentation">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Developer Documentation — Roam Research Docs">
+<meta property="og:description" content="If you're a developer who'd like to build extensions for Roam or connect stuff to Roam, please checkout our developer-documentation graph: h">
+<meta property="og:url" content="https://roamdocs.fyi/help/developer-documentation">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Developer Documentation</h1>
+<ul>
+<li>If you're a developer who'd like to build extensions for Roam or connect stuff to Roam, please checkout our <code>developer-documentation</code> graph: https://roamresearch.com/#/app/developer-documentation
+<ul>
+<li><strong>Some starting points</strong>
+<ul>
+<li>Roam Alpha API: https://roamresearch.com/#/app/developer-documentation/page/tIaOPdXCj
+<ul>
+<li>This is the API that frontend Roam extensions use
+<ul>
+<li>If you're writing a <a href="/help/roam-depot">Roam Depot</a> [extension](Roam Depot Extensions), in addition to the <code>roamAlphaAPI</code>, you can also use the <code>extensionAPI</code> (<a href="https://roamresearch.com/#/app/developer-documentation/page/y31lhjIqU">linked here</a>)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Roam Backend API: https://roamresearch.com/#/app/developer-documentation/page/W4Po8pcHQ
+<ul>
+<li>A REST API for your roam graph
+</li>
+<li>You can use this API to read or write to your Roam graph via your own code or a variety of services
+</li>
+<li>Some examples of things that use the Roam Backend API
+<ul>
+<li><strong>[Speak to Roam](<a href="/help/apple-shortcuts-speak-to-roam">Apple Shortcuts/Speak to Roam</a>)</strong> Apple Shortcut (speak and send transcript to your Roam graph)
+<ul>
+<li>An Apple Shortcut which allows you to speak and send the transcript to your Roam graph (works on iPhone, iPad, Mac and even on an Apple Watch )
+<ul>
+<li>And it’s free! (though you do have to enter an OpenAI key 😅)
+</li>
+</ul>
+</li>
+<li>Latest version: <strong>v1.2.0: </strong> https://www.icloud.com/shortcuts/9280597747c543eab39dd65d4aebd992
+<ul>
+<li>Features
+<ul>
+<li>Uses the OpenAI Whisper API to transcribe a voice recording
+</li>
+<li>Optionally post-process the transcript via an OpenAI GPT4 API call (prompt is customizable)
+</li>
+<li>If recording has been made and then something fails, then save the recording to “iCloud Drive/Shortcuts/SpeakToRoam/FailedRecordings/” folder and show a proper error message to the user
+</li>
+</ul>
+</li>
+<li>Loom videos
+<ul>
+<li>(these are for an older version but should be generally correct)
+</li>
+<li>The demo video: https://www.loom.com/share/76ebb8a30b1043b3a566f4077054ea73Longer 
+</li>
+<li>Set up guide video: https://www.loom.com/share/9bdbf2495e1f4a049d3d7354594a9808
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>the Raycast extension
+<ul>
+<li><strong>New and Updated Raycast extension for Roam!!</strong>
+<ul>
+<li>MacOS users, watch the demo video below to get a sense of the power of having your Roam graph (or graphs 😉) at your fingertips:
+<ul>
+<li>{{video: https://www.loom.com/share/3fa11c532cb44822a047caecc638e47f}}
+</li>
+</ul>
+</li>
+<li>Features::
+<ul>
+<li>Search across all your installed graphs or in one specific graph
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FtIlPw_oQ-a.png?alt=media&amp;token=3c666344-8de3-4595-8947-55a216095a2e" alt="" loading="lazy">
+</li>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fv3emRcKcRu.png?alt=media&amp;token=59421ab9-6b29-4b13-b3ee-10ca03ed503d" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>Quick capture notes to your Roam graph without leaving your keyboard
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fj8GEmEGAx8.png?alt=media&amp;token=f65dc849-dfa1-4ce3-b820-659036a49151" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>View a random block from your roam graph
+</li>
+<li>Easily create Raycast quicklinks to open Roam graphs or specific pages in the graph even faster<br>
+... and more features baking in the oven!
+</li>
+</ul>
+</li>
+<li>Getting Started Guide
+<ul>
+<li>Install Raycast from https://raycast.com
+</li>
+<li>Then install the Roam Extension from: https://raycast.com/roamresearch/roam-research
+</li>
+<li>Follow the loom video below to add a graph
+<ul>
+<li>{{video: https://www.loom.com/share/31ada35f7c8b4f44a2ba537b15237854}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If you run into any issues, drop us a message at support@roamresearch.com or via Intercom and we will get on it immediately.  
+</li>
+<li>Big thanks to hyc for their work on the initial version of this extension 🙏
+</li>
+<li>P.S. Users of the older versions of the Raycast extension will need to add their graph(s) again. Sorry for the inconvenience, this should only be a one time thing
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Roam Append API: https://roamresearch.com/#/app/developer-documentation/page/eb8OVhaFC
+<ul>
+<li>difference from the Backend API is that this can be used by <a href="/help/encrypted-graphs">Encrypted Graphs</a> too
+</li>
+<li>Other convenience features for writes/captures
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="developer-documentation.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/2gI6JTUbb">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

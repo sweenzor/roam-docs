@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Callouts — Roam Research Docs</title>
+<meta name="description" content="Callouts are styled Blockquotes with a type-specific icon and color.">
+<link rel="canonical" href="https://roamdocs.fyi/help/callouts">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Callouts — Roam Research Docs">
+<meta property="og:description" content="Callouts are styled Blockquotes with a type-specific icon and color.">
+<meta property="og:url" content="https://roamdocs.fyi/help/callouts">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Callouts</h1>
+<ul>
+<li>Callouts are styled Blockquotes with a type-specific icon and color. 
+</li>
+<li>Start any block with <code>[[&gt;]] [[!NOTE]]</code> to create one (or <code>&gt; [!NOTE]</code>).
+</li>
+<li>You can also use the <strong>/Callout</strong> slash command to quickly insert one. 
+</li>
+<li>Click the callout's icon to change its type.
+</li>
+<li><strong>Types</strong>
+<ul>
+<li>&gt; !NOTE This is a basic note callout<br>
+Notes are great for highlighting general information you want to draw attention to.
+</li>
+<li>&gt; !INFO Informational callout with an info icon<br>
+Use these for additional context or background details.
+</li>
+<li>&gt; !SUMMARY A summary or abstract callout<br>
+Perfect for executive summaries, TLDRs, or condensed overviews.
+<ul>
+<li>Aliases: <code>abstract</code>, <code>tldr</code>
+</li>
+</ul>
+</li>
+<li>&gt; !TIP Helpful tip — try using callouts for emphasis!<br>
+Combine callouts with <strong>bold</strong>, *italic*, and <code>code</code> formatting in both the title and body.
+<ul>
+<li>Aliases: <code>hint</code>, <code>important</code>
+</li>
+</ul>
+</li>
+<li>&gt; !SUCCESS Operation completed successfully<br>
+All 47 tests passed. The deployment to staging is live.
+<ul>
+<li>Aliases: <code>check</code>, <code>done</code>
+</li>
+</ul>
+</li>
+<li>&gt; !QUESTION How do callouts work in Roam?<br>
+The first line after <code>[[!TYPE]]</code> is the title. Add body text on the next line with <strong>Shift+Enter</strong>.
+<ul>
+<li>Aliases: <code>help</code>, <code>faq</code>
+</li>
+</ul>
+</li>
+<li>&gt; !WARNING Be careful when editing shared pages<br>
+Other users may be viewing or editing at the same time.
+<ul>
+<li>Aliases: <code>caution</code>, <code>attention</code>
+</li>
+</ul>
+</li>
+<li>&gt; !FAILURE Build failed due to missing dependencies<br>
+Run <code>npm install</code> and check that all peer dependencies are satisfied.
+<ul>
+<li>Aliases: <code>fail</code>, <code>missing</code>
+</li>
+</ul>
+</li>
+<li>&gt; !DANGER Do NOT delete this page — critical data<br>
+This page contains production configuration values referenced by multiple systems.
+<ul>
+<li>Alias: <code>error</code>
+</li>
+</ul>
+</li>
+<li>&gt; !BUG Found a rendering issue on mobile viewports<br>
+The sidebar overlaps the main content when screen width is below 768px.
+</li>
+<li>&gt; !EXAMPLE Here's how you format a callout<br>
+Use <code>[[&gt;]] [[!TYPE]] Title</code> on the first line. Add body text with Shift+Enter.
+</li>
+<li>&gt; !QUOTE &quot;The best way to predict the future is to invent it.&quot;<br>
+— Alan Kay, 1971
+<ul>
+<li>Alias: <code>cite</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Foldable Callouts</strong>
+<ul>
+<li>Add <code>+</code> or <code>-</code> after the type (e.g. <code>[[!TIP]]+</code>) to make it foldable. <code>+</code> starts expanded, <code>-</code> starts collapsed. Click the header to toggle.
+</li>
+<li>&gt; !TIP+ Click to collapse this tip<br>
+This body is visible by default because of the <code>+</code> marker. It hides when you click the header.
+</li>
+<li>&gt; !WARNING- Hidden by default — click to expand<br>
+This body starts collapsed because of the <code>-</code> marker. Click the header to reveal it.
+</li>
+</ul>
+</li>
+<li><strong>Headings + Callouts</strong>
+<ul>
+<li>Callouts work inside heading blocks. The title scales with the heading size while the body stays regular size.
+</li>
+<li><strong>&gt; !WARNING Heading callout<br>
+Body text stays regular size.</strong>
+</li>
+</ul>
+</li>
+<li><strong>Custom Types &amp; CSS</strong>
+<ul>
+<li>Unrecognized types fall back to &quot;note&quot; styling but get a <code>.rm-callout--{type}</code> CSS class for custom styling. Each callout exposes <code>--callout-color</code> and <code>--callout-bg</code> custom properties — override these to restyle any type or define your own.
+</li>
+<li>Turn on the css below to enable the custom types
+</li>
+<li>{{<a href="/help/roam-css">roam/css</a>}}
+<ul>
+<li><pre><code>/* Override an existing callout type's colors */
+/* .rm-callout--warning {
+  --callout-color: #a371f7;
+} */
+
+/* Custom type with emoji icon */
+.rm-callout--recipe {
+  --callout-color: #f778ba;
+}
+.rm-callout--recipe .rm-callout__icon::before {
+  content: &quot;🍪&quot;;
+  font-family: initial;
+}
+
+/* Custom type with SVG icon from URL (inherits callout color) */
+.rm-callout--security {
+  --callout-color: #e5534b;
+}
+.rm-callout--security .rm-callout__icon::before {
+  content: &quot;&quot;;
+}
+.rm-callout--security .rm-callout__icon {
+  width: 1em;
+  height: 1em;
+  background: currentColor;
+  -webkit-mask-image: url(&quot;https://unpkg.com/lucide-static@latest/icons/shield-alert.svg&quot;);
+  mask-image: url(&quot;https://unpkg.com/lucide-static@latest/icons/shield-alert.svg&quot;);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+/* Override background separately if needed */
+/* .rm-callout--recipe {
+  --callout-bg: rgba(247, 120, 186, 0.2);
+} */
+</code></pre>
+</li>
+</ul>
+</li>
+<li>&gt; [!recipe] Grandma's cookies
+</li>
+<li>&gt; [!security] Security alert
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="callouts.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/e6ZjyPUL8">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

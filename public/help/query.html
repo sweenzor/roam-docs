@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Query — Roam Research Docs</title>
+<meta name="description" content=".--">
+<link rel="canonical" href="https://roamdocs.fyi/help/query">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Query — Roam Research Docs">
+<meta property="og:description" content=".--">
+<meta property="og:url" content="https://roamdocs.fyi/help/query">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Query</h1>
+<ul>
+<li>.--
+<ul>
+<li><strong><strong>Types of queries</strong></strong>
+<ul>
+<li><strong><strong>and</strong></strong>
+<ul>
+<li>Find all blocks matching multiple conditions – i.e. blocks or their parents containing multiple page or block references.
+</li>
+<li>`{{query: {and: page A page B }}}<br>
+{{query: {and: articles ((block)) }}}<br>
+{{query: {and: Tyler Cowen ((block)) econ }}}<br>
+`
+</li>
+</ul>
+</li>
+<li><strong><strong>or</strong></strong>
+<ul>
+<li>Find all blocks matching any of a number of conditions – i.e. blocks or their parents containing any of the selected page or block references.<br>
+
+</li>
+<li>`{{query: {or: page A page B }}}<br>
+{{query: {or: Zen Buddhism }}}<br>
+{{query: {or: Utah Idaho Montana }}}<br>
+`
+</li>
+</ul>
+</li>
+<li><strong><strong>not</strong></strong>
+<ul>
+<li>Exclude blocks matching any of the page or block references selected.
+</li>
+<li>`{{query: {and: page A {not: page B }}}}<br>
+{{query: {and: Slate Star Codex {not: psychiatry }}}}`
+</li>
+</ul>
+</li>
+<li><strong><strong>between</strong></strong>
+<ul>
+<li>Finds all blocks on daily pages and blocks mentioning a date between two days. <mark><strong>This only works on Daily Notes page</strong></mark>.
+</li>
+<li>You can use the following as a shorthand: today, tomorrow, yesterday, last week, next week, last month, and next month. 
+</li>
+<li>`{{query: {between: January 1st, 2021 today }}<br>
+{{query: {and: mistakes {between: January 1st, 2020 December 31st, 2020 }}}}<br>
+{{query: {and: TODO {between: last week today }}}}`
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Community Videos::</strong>
+<ul>
+<li><strong>Query syntax and logic: how to ask Roam questions with queries by Robert Haisfield</strong>
+<ul>
+<li>{{video: https://www.youtube.com/watch?v=LJZBGJOzhUY&amp;t=20s&amp;ab_channel=RobertHaisfield}}
+</li>
+</ul>
+</li>
+<li><strong>How Queries Work in Roam Research by R.J. Nestor</strong>
+<ul>
+<li>{{video: https://www.youtube.com/watch?v=lBmklV0n8D0}}
+</li>
+</ul>
+</li>
+<li><strong>Roam Research Search Queries by David Perell</strong>
+<ul>
+<li>{{video: https://www.youtube.com/watch?v=HoccqyiHvPw}}
+</li>
+</ul>
+</li>
+<li><strong>Insight Hunting with Queries in Roam by Cortex Futura</strong>
+<ul>
+<li>{{video: https://www.youtube.com/watch?v=gLAlQGM_l1Q}}
+</li>
+</ul>
+</li>
+<li><strong>Roam Research Query Tutorial: Pending Tasks for Task Management and Task Dashboard Using Queries by The Upgraded Brain</strong>
+<ul>
+<li>{{video: https://www.youtube.com/watch?v=Kg5omIyWu8s}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Articles::</strong>
+<ul>
+<li><strong><a href="https://roamhacks.com/how-to-query-roam/">How to query in Roam</a> by Roamhacks</strong>
+</li>
+<li><strong><a href="https://www.roamstack.com/roam-queries-primer/">Searching Roam With Queries: A Primer</a> by RoamStack</strong>
+</li>
+</ul>
+</li>
+<li><strong>Key Commands::</strong>
+<ul>
+<li><code>/query</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="query.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/Gx35Ef0-S">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

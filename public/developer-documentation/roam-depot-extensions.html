@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roam Depot/Extensions — Roam Research Docs</title>
+<meta name="description" content="Introduction">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/roam-depot-extensions">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Roam Depot/Extensions — Roam Research Docs">
+<meta property="og:description" content="Introduction">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/roam-depot-extensions">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>Roam Depot/Extensions</h1>
+<ul>
+<li><strong>Introduction</strong>
+<ul>
+<li>Your extension's code runs alongside Roam's code, the same as <a href="/developer-documentation/roam-js">roam/js</a>, with full access to the dom and the <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a>, and a new <a href="/developer-documentation/roam-depot-extension-api">Roam Depot/Extension API</a>
+</li>
+<li>Every update to your extension will be submitted and reviewed for security by Roam's team through the <a href="https://github.com/Roam-Research/roam-depot">github repo</a>
+</li>
+<li>In an effort to support authors and encourage ongoing maintenance of extensions, Roam is dedicating a portion of our revenue to extension authors.
+<ul>
+<li>The amount and way we distribute funds is subject to change
+</li>
+<li>If you are interested in receiving payouts, sign up with stripe in extension settings and add your account ID to your extension's metadata
+<ul>
+<li><strong>Please complete the process in full and make sure your account is enabled submitting an extension with the account attached. We can only send funds if your account is fully filled out. You can contact Josh on slack if you do not know if your account is enabled or not.</strong>
+<ul>
+<li>We should be able to support authors in all of the countries listed in https://stripe.com/docs/connect/cross-border-payouts (not the preview ones yet, but if you are in one of those contact us first and we can try to get it working).
+</li>
+</ul>
+</li>
+<li>Legally, if you make more than $600 per year from Roam and live in the US, you are expected to pay taxes on it and can ask Roam for a 1099 form
+</li>
+</ul>
+</li>
+<li>Paid extensions do not exist yet, but in the future we hope to add them. You may implement your own payment system for an extension, but this will disqualify you from payouts from Roam
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Code Guidelines</strong>
+<ul>
+<li>Your extension should export as default a map with <code>onload</code> and <code>onunload</code> functions
+<ul>
+<li>All state setup in <code>onload</code> should be removed in <code>onunload</code>.
+</li>
+<li><code>onload</code> receives an object with the <a href="/developer-documentation/roam-depot-extension-api">Roam Depot/Extension API</a> in it
+</li>
+<li><pre><code>export default {
+  onload: ({extensionAPI}) =&gt; {},
+  onunload: () =&gt; {}
+};</code></pre>
+</li>
+</ul>
+</li>
+<li>Roam APIs
+<ul>
+<li>You'll have access to two different APIs for development, the <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> and the <a href="/developer-documentation/roam-depot-extension-api">Roam Depot/Extension API</a>
+<ul>
+<li>Why two?
+<ul>
+<li>The <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> was developed before the existence of Roam Depot, and modifying that to fit the needs of Roam Depot would break existing <a href="/developer-documentation/roam-js">roam/js</a> extensions
+<ul>
+<li>Particularly, for Roam Depot, we can pre-fill functions with information about your extension and automatically remove components when your extension is uninstalled
+</li>
+</ul>
+</li>
+<li>Eventually, everything will be duplicated inside of the <a href="/developer-documentation/roam-depot-extension-api">Roam Depot/Extension API</a> for ease of use
+</li>
+</ul>
+</li>
+<li>Please read the documentation for these, there is likely already a method for what you need and if there isn't let us know in the #developers channel on slack
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>User Interface
+<ul>
+<li>Extensions should prefer using <a href="https://blueprintjs.com/docs/versions/3/">blueprintjs</a> components to match Roam's style
+</li>
+</ul>
+</li>
+<li>Styles
+<ul>
+<li>Extensions should prefix css classes with a unique identifier such that it won't conflict with roam or other extensions.
+<ul>
+<li>Example::
+<ul>
+<li>Roam uses <code>rm-</code> in front of all our css classes, <code>rm-modal</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The majority of tailwind css is included with Roam
+</li>
+</ul>
+</li>
+<li>Dependencies
+<ul>
+<li>Your dependencies will be scrutinized heavily, some general guidelines
+<ul>
+<li>If you can do it without a dependency, do not use a dependency
+</li>
+<li>Only use trustworthy dependencies, extensions will be rejected if our team decides one of your dependencies is untrustworthy
+</li>
+</ul>
+</li>
+<li>Roam exports a number of dependencies for extensions to use. Extensions must use these instead of bundling their own version or a library similar to one of these.
+<ul>
+<li>Your bundler may support <code>import</code> from the window object to make it easier to import global dependencies
+<ul>
+<li><a href="https://github.com/dvargas92495/roamjs-scripts/blob/main/src/index.ts#L122-L126">webpack example</a>
+</li>
+</ul>
+</li>
+<li>Alternatively, you access them from the window object
+</li>
+<li>Sync dependencies
+<ul>
+<li>Dependencies bundled with Roam core will be provided on the window object
+</li>
+<li>{{table}}
+<ul>
+<li><strong>Package Name</strong>
+<ul>
+<li><strong>Version</strong>
+<ul>
+<li><strong>Global Var</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>react</code>
+<ul>
+<li><code>18.2.0</code>
+<ul>
+<li><code>window.React</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>react-dom</code>
+<ul>
+<li><code>18.2.0</code>
+<ul>
+<li><code>window.ReactDOM</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>@blueprintjs/core</code>
+<ul>
+<li><code>^3.50.4</code>
+<ul>
+<li><code>window.Blueprint.Core</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>@blueprintjs/select</code>
+<ul>
+<li><code>^3.18.6</code>
+<ul>
+<li><code>window.Blueprint.Select</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>@blueprintjs/datetime</code>
+<ul>
+<li><code>^3.23.14</code>
+<ul>
+<li><code>window.Blueprint.DateTime</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>chrono-node</code>
+<ul>
+<li><code>^2.3.2</code>
+<ul>
+<li><code>window.ChronoNode</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>idb</code>
+<ul>
+<li><code> 7.1.1</code>
+<ul>
+<li><code>window.idb</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>nanoid</code>
+<ul>
+<li><code>^2.0.4</code>
+<ul>
+<li><code>window.Nanoid</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>file-saver</code>
+<ul>
+<li><code>^2.0.2</code>
+<ul>
+<li><code>window.FileSaver</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>crypto-js</code>
+<ul>
+<li><code>^3.1.9-1</code>
+<ul>
+<li><code>window.CryptoJS</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>tslib</code>
+<ul>
+<li><code>2.2.0</code>
+<ul>
+<li><code>TSLib</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Async dependencies
+<ul>
+<li>Some of Roam's dependencies are loaded only when a user uses them, your extension should do the same thing
+<ul>
+<li>We understand dynamically loading is pretty difficult for a beginner, if that is you, you can ask us for help or for an exception to this rule
+</li>
+</ul>
+</li>
+<li>{{table}}
+<ul>
+<li><strong>Package Name</strong>
+<ul>
+<li><strong>Version</strong>
+<ul>
+<li><strong>Global Var</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>marked-react</code>
+<ul>
+<li><code>^1.1.2</code>
+<ul>
+<li><code>RoamLazy.MarkedReact</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>marked</code>
+<ul>
+<li><code>4.3.0</code>
+<ul>
+<li><code>RoamLazy.Marked</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>jszip</code>
+<ul>
+<li><code>^3.10.0</code>
+<ul>
+<li><code>RoamLazy.JSZip</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>cytoscape</code>
+<ul>
+<li><code>^3.7.2</code>
+<ul>
+<li><code>RoamLazy.Cytoscape</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>insect.js</code>
+<ul>
+<li><code>5.6.0</code>
+<ul>
+<li><code>RoamLazy.Insect</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Offline
+<ul>
+<li>Extensions will run offline, your extension doesn't have to work offline but it should be aware it could be running without network connection and handle that accordingly
+</li>
+</ul>
+</li>
+<li>Allowed languages
+<ul>
+<li>Typescript, Javascript, or Clojurescript
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Local Development</strong>
+<ul>
+<li>To develop locally, you'll have to use this url <a href="https://relemma-git-roam-app-store.roamresearch.com/">https://relemma-git-roam-app-store.roamresearch.com</a> (until we launch)
+</li>
+<li>Visit a graph, open up settings, and go to the extensions tab
+</li>
+<li>Then click enable developer mode
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FHwNXRGTwD-.png?alt=media&amp;token=23259c21-321c-4687-b2aa-0ce974b23290" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>Then load extension
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FCxT8jRodC9.png?alt=media&amp;token=dfb0e961-33d1-449d-b39c-724474b92aa9" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>and choose the folder on your computer which contains <code>extension.js</code> / <code>extension.css</code>
+</li>
+<li>To reload the extension you can use the key command <code>control-d control-r</code>, which will call your extension's <code>unload</code> function, load the new code, and call <code>onload</code>
+<ul>
+<li>Note that this key command reloads all loaded developer extensions
+<ul>
+<li>You can also reload extensions from the extensions tab in settings
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If your state isn't properly removed in <code>unload</code> then you can reload the page and hit <code>control-d control-r</code> to completely clear the state
+</li>
+</ul>
+</li>
+<li><strong>Submitting an extension</strong>
+<ul>
+<li>Create a github repo for your extension
+</li>
+<li>Inside your repository
+<ul>
+<li>Provide
+<ul>
+<li>README.md (required)
+<ul>
+<li>This will be displayed to users inside of Roam, include any relevant long description for your extension
+</li>
+</ul>
+</li>
+<li>extension.js (required)
+</li>
+<li>extension.css (optional)
+</li>
+<li>CHANGELOG.md (optional)
+</li>
+</ul>
+</li>
+<li>If your extension bundles dependencies and requires a build step
+<ul>
+<li>Provide a <code>build.sh</code> file
+</li>
+<li>The <code>build.sh</code> file will be invoked before looking for extension.js (required) or extension.css (optional)
+</li>
+<li>The environment it’ll be invoked in is ubuntu-20.04 from Github Actions. Consult <a href="https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-Readme.md">this</a> to see what is available. (npm and yarn are available)
+</li>
+<li>If your build script requires anything extra (e.g. libraries from NPM), it should download them as a part of build.sh execution.
+</li>
+</ul>
+</li>
+<li>If not and your extension is a simple javascript file, then you can write all of your code in extension.js (required)
+</li>
+</ul>
+</li>
+<li>Fork https://github.com/Roam-Research/roam-depot
+<ul>
+<li>Create metadata file in extensions/&lt;your username&gt;/&lt;your repo&gt;.json
+</li>
+<li>Example
+<ul>
+<li><code>extensions/tonsky/roam-calculator.json</code>
+</li>
+<li>with the following content
+</li>
+<li><pre><code>{
+  &quot;name&quot;: &quot;Test Extension 1&quot;,
+  &quot;short_description&quot;: &quot;Prints 'Test message 1'&quot;,
+  &quot;author&quot;: &quot;Nikita Prokopov&quot;,
+  &quot;tags&quot;: [&quot;print&quot;, &quot;test&quot;], //optional
+  &quot;source_url&quot;: &quot;https://github.com/tonsky/roam-calculator&quot;,
+  &quot;source_repo&quot;: &quot;https://github.com/tonsky/roam-calculator.git&quot;,
+  &quot;source_commit&quot;: &quot;d5ecd16363975b2e7a097d46e5f411c95e16682d&quot;,
+  &quot;stripe_account&quot;: &quot;acct_1LGASrQVCl6NYjck&quot; // optional only include if you want to be eligible for payouts from Roam
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>Then make a Pull Request with this change. After it’s merged, your extension will be published in the Roam Marketplace.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Updating an extension</strong>
+<ul>
+<li>Every update to your extension will be reviewed, submitting it is the same as <strong>Submitting an extension</strong>
+</li>
+<li>Just update your extension's metadata file in your fork of https://github.com/Roam-Research/roam-depot with a new commit hash
+<ul>
+<li>You may also change other values of your metadata file
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Load remote developer extensions from URL or using &quot;PR-shorthand&quot; format</strong>
+<ul>
+<li>Motivation::
+<ul>
+<li>Make it easier to test extensions
+<ul>
+<li>using this, can easily test on mobile. Can also give links for testers / beta users to test
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Two accepted formats
+<ul>
+<li>&quot;PR-shorthand&quot; format
+<ul>
+<li>You can get the PR-shorthand for your PR from a comment which is auto-generated on the PR at creation/update.
+</li>
+<li>For example: <code>digitalmaster+roam-memo+668</code> is the PR-shorthand for PR 668, and is mentioned in this github comment on the PR: https://github.com/Roam-Research/roam-depot/pull/668#issuecomment-1524315888
+</li>
+<li>---
+<ul>
+<li><code>username + “+” + extension-id + “+” + pr-number</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>URL
+<ul>
+<li>URL to root path where adding <code>README.md</code> and <code>extension.js</code> to the url leads to the required files
+</li>
+<li>Example: <code>https://roam-excalidraw-depot.pages.dev/</code>
+<ul>
+<li>just a test extension I was working on before upgrading native excalidraw. So, I would recommend not using this version of excalidraw. Use <code>/excalidraw</code> instead
+</li>
+</ul>
+</li>
+<li>Things to keep in mind:
+<ul>
+<li>the extension files have to be publicly accessible when the file names (i.e. &quot;extension.js&quot;, &quot;README.md&quot;, &quot;extension.css&quot;, &quot;CHANGELOG.md&quot;) are added to the end of the passed URL. (only the first 2 are compulsory)
+</li>
+<li>One common mistake is to forget the prefix in URLs like <code>https://</code>
+</li>
+</ul>
+</li>
+<li>We expect URLs will be useful if you want to
+<ul>
+<li>During development, test extension on mobile
+<ul>
+<li>using a local server like https://www.npmjs.com/package/serve to serve your files on your local network
+</li>
+<li>note that to load the changed files, you either have to reload Roam or go to Settings&gt;Roam Depot&gt;Developer Extensions and click on reload button
+</li>
+</ul>
+</li>
+<li>Have a URL with the latest update of your extension
+<ul>
+<li>(you could then share it with beta-testers)
+<ul>
+<li>An important point is that since developer extensions are local to the client, this is not a replacement for actual &quot;production&quot; extensions. Please only use it for testing
+</li>
+</ul>
+</li>
+<li>a guide which might come in handy: 
+<ul>
+<li>A guide for how to deploy extension automatically when pushed to <code>main</code> branch in your github repo (in case you want a persistent link or don't want to have to create a <a href="https://github.com/Roam-Research/roam-depot/pulls">PR in roam-depot</a> before further testing)
+<ul>
+<li><strong>Option 1:</strong> If you're creating a new extension, just fork this template repository by Matt Vogel https://github.com/8bitgentleman/roam-depot-extension-template and then go to repo settings &gt; Pages and then the Actions tab in order to setup 
+</li>
+<li><strong>Option 2:</strong> If you already have an extension, you can copy the <a href="https://github.com/8bitgentleman/roam-depot-extension-template/blob/main/.github/workflows/deploy.yml">.github/workflows/deploy.yml</a> file to your own github repository (make sure to have the same path) and then go to repo settings &gt; Pages and then the Actions tab in order to setup 
+</li>
+<li>Short Loom video guiding through both of the above options
+<ul>
+<li>{{video: https://www.loom.com/share/4785e95fe5454684a48683402da5ea09}}
+</li>
+</ul>
+</li>
+<li>---
+<ul>
+<li>Loom video guiding through entire process (might only be relevant if you want to learn how github actions works in this case)
+<ul>
+<li>https://www.loom.com/share/ac50ccf34f924a95bf6be4ca74ab85d7 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Properties
+<ul>
+<li>Remote Dev Extensions <strong>are auto started</strong> similar to production extensions
+</li>
+<li>Remote Dev Extensions <strong>are NOT cached</strong> (unlike production Roam Depot extensions). They are downloaded again every time you open Roam or press refresh
+</li>
+<li>Remote Dev Extensions <strong>are NOT synced across different devices</strong>
+</li>
+</ul>
+</li>
+<li>Loom video
+<ul>
+<li>{{video: https://www.loom.com/share/d6ec8341b17e4959b9604957e7212556}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Tutorials</strong>
+<ul>
+<li>Simple walkthrough of porting a <a href="/developer-documentation/roam-js">roam/js</a> extension to Roam Depot, without any git knowledge
+<ul>
+<li>{{video: https://www.loom.com/share/4027806b92d54e539db272ebf7efffec}}
+</li>
+</ul>
+</li>
+<li>More complicated example of porting <a href="https://github.com/panterarocks49/autotag">Auto Tag</a> <a href="/developer-documentation/roam-js">roam/js</a> to Roam Depot
+<ul>
+<li>Sorry this one is pretty long!
+</li>
+<li>In the video we
+<ul>
+<li>Set up npm and webpack
+</li>
+<li>port inlined libraries to npm requires
+</li>
+<li>port settings from being changed in a code block to the new settings panel
+</li>
+</ul>
+</li>
+<li>{{video: https://www.loom.com/share/d54eea88013c4d0e8d55cc6dc49e9479}}
+<ul>
+<li>Video got cut off at the end, but only things left were to finish NLP dates and submit
+<ul>
+<li>Submission you can see in Simple walkthrough of porting a <a href="/developer-documentation/roam-js">roam/js</a> extension to Roam Depot, without any git knowledge
+</li>
+</ul>
+</li>
+<li>repository https://github.com/panterarocks49/autotag
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Examples</strong>
+<ul>
+<li><a href="https://github.com/panterarocks49/roam-extension-bitcoin-price">Bitcoin Price Tracker</a>
+<ul>
+<li>Simple example, with no build process
+</li>
+</ul>
+</li>
+<li><a href="https://github.com/panterarocks49/autotag">Auto Tag</a>
+<ul>
+<li>Simple example, with a build process
+</li>
+</ul>
+</li>
+<li><a href="https://github.com/dvargas92495/roamjs-query-builder">Roamjs Query Builder</a>
+<ul>
+<li>Complicated example, with a complex build process
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="roam-depot-extensions.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/5BB8h4I7b">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mermaid Diagrams — Roam Research Docs</title>
+<meta name="description" content="An embedded version of MermaidJS, create mermaid diagrams inside of Roam!">
+<link rel="canonical" href="https://roamdocs.fyi/help/mermaid-diagrams">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Mermaid Diagrams — Roam Research Docs">
+<meta property="og:description" content="An embedded version of MermaidJS, create mermaid diagrams inside of Roam!">
+<meta property="og:url" content="https://roamdocs.fyi/help/mermaid-diagrams">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Mermaid Diagrams</h1>
+<ul>
+<li>An embedded version of MermaidJS, create mermaid diagrams inside of Roam!
+<ul>
+<li>To read more about Mermaid syntax see https://mermaid.js.org/intro/
+</li>
+</ul>
+</li>
+<li>To create a mermaid diagram
+<ul>
+<li>type <code>/mermaid</code> and select it from the dropdown or copy and paste <code>{{mermaid}}</code> into a new block
+</li>
+<li>It will look like below
+</li>
+<li>{{mermaid}}
+</li>
+</ul>
+</li>
+<li>Examples::
+<ul>
+<li>Flowchart
+<ul>
+<li>{{mermaid}}
+<ul>
+<li>flowchart TB
+<ul>
+<li>A --&gt; C
+</li>
+<li>A --&gt; D
+</li>
+<li>B --&gt; C
+</li>
+<li>B --&gt; D
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Sequence Diagram
+<ul>
+<li>{{mermaid}}
+<ul>
+<li>sequenceDiagram
+<ul>
+<li>Alice-&gt;&gt;John: Hello John, how are you?
+</li>
+<li>John--&gt;&gt;Alice: Great!
+</li>
+<li>Alice-)John: See you later!
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Gantt Chart
+<ul>
+<li>{{mermaid}}
+<ul>
+<li>gantt<br>
+    dateFormat  YYYY-MM-DD<br>
+    title       Adding GANTT diagram functionality to mermaid<br>
+    excludes    weekends<br>
+    %% (<code>excludes</code> accepts specific dates in YYYY-MM-DD format, days of the week (&quot;sunday&quot;) or &quot;weekends&quot;, but not the word &quot;weekdays&quot;.)<br>
+<br>
+    section A section<br>
+    Completed task            :done,    des1, 2014-01-06,2014-01-08<br>
+    Active task               :active,  des2, 2014-01-09, 3d<br>
+    Future task               :         des3, after des2, 5d<br>
+    Future task2              :         des4, after des3, 5d<br>
+<br>
+    section Critical tasks<br>
+    Completed task in the critical line :crit, done, 2014-01-06,24h<br>
+    Implement parser and jison          :crit, done, after des1, 2d<br>
+    Create tests for parser             :crit, active, 3d<br>
+    Future task in critical line        :crit, 5d<br>
+    Create tests for renderer           :2d<br>
+    Add to mermaid                      :until isadded<br>
+    Functionality added                 :milestone, isadded, 2014-01-25, 0d<br>
+<br>
+    section Documentation<br>
+    Describe gantt syntax               :active, a1, after des1, 3d<br>
+    Add gantt diagram to demo page      :after a1  , 20h<br>
+    Add another diagram to demo page    :doc1, after a1  , 48h<br>
+<br>
+    section Last section<br>
+    Describe gantt syntax               :after doc1, 3d<br>
+    Add gantt diagram to demo page      :20h<br>
+    Add another diagram to demo page    :48h
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Themes::
+<ul>
+<li>You can set the theme for an individual diagram like this
+<ul>
+<li><code>%%{init: {&quot;theme&quot;: &quot;forest&quot;}}%%</code>
+</li>
+<li>{{mermaid}}
+<ul>
+<li>%%{init: {&quot;theme&quot;: &quot;forest&quot;}}%%<br>
+stateDiagram-v2<br>
+   direction LR<br>
+   state [OPEN] {<br>
+     IDEA --&gt; DRAFT<br>
+     DRAFT --&gt; PENDING<br>
+     PENDING --&gt; APPROVED<br>
+     PENDING --&gt; REJECTED<br>
+     PENDING --&gt; DRAFT<br>
+     APPROVED --&gt; ACTIVE<br>
+     ACTIVE --&gt; INACTIVE<br>
+     INACTIVE --&gt; ACTIVE<br>
+     INACTIVE --&gt; DRAFT<br>
+     ACTIVE --&gt; DRAFT<br>
+     INACTIVE --&gt; RETIRED<br>
+     RETIRED --&gt; DRAFT<br>
+   }<br>
+   state [CLOSED] {<br>
+     REJECTED<br>
+     RETIRED<br>
+  }<br>
+  state [What] {<br>
+     TEST<br>
+     HEY<br>
+  }
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>You can set the default theme with custom css
+<ul>
+<li>{{<a href="/help/roam-css">roam/css</a>}}
+<ul>
+<li><pre><code>:root {
+  --mermaidjs-theme: dark;
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>You will have to reload the page after applying this for it to take affect
+</li>
+<li>See the <a href="https://mermaid.js.org/config/theming.html#available-themes">docs for possible themes</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Roam Team Videos::
+<ul>
+<li>Mermaid diagrams combined with version control in Roam Research by Conor White-Sullivan
+<ul>
+<li>{{video: https://www.youtube.com/watch?v=UF22iK8fX-A&amp;t}}<br>
+#<a href="/help/version-control">Version Control</a> | #<a href="/help/diagram">Diagram</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="mermaid-diagrams.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/nzZgnkbII">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

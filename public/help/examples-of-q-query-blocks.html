@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Examples of :q query blocks — Roam Research Docs</title>
+<meta name="description" content=":q queries can be used to display the results of datomic/datascript queries in your Roam graph">
+<link rel="canonical" href="https://roamdocs.fyi/help/examples-of-q-query-blocks">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Examples of :q query blocks — Roam Research Docs">
+<meta property="og:description" content=":q queries can be used to display the results of datomic/datascript queries in your Roam graph">
+<meta property="og:url" content="https://roamdocs.fyi/help/examples-of-q-query-blocks">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Examples of :q query blocks</h1>
+<ul>
+<li><code>:q</code> queries can be used to display the results of datomic/datascript queries in your Roam graph
+<ul>
+<li>If you're technically inclined (or prompt an AI to do it well), you can use these to very flexibly query any condition in your graph
+</li>
+<li>Resources::
+<ul>
+<li>Query Reference Resource: https://docs.datomic.com/query/query-data-reference.html
+<ul>
+<li><strong>Tip:</strong> If your variable name contains &quot;uid&quot;, then in the table, shows block view or page view
+</li>
+</ul>
+</li>
+<li>Here's a very useful blog article on getting started with roam-flavored datascript queries: https://www.zsolt.blog/2021/01/Roam-Data-Structure-Query.html
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Video going through this feature and the demos below:
+<ul>
+<li>original video
+<ul>
+<li>{{video: https://www.loom.com/share/b384798d37904947afefe9059c71035e}}
+</li>
+</ul>
+</li>
+<li>video with quality of life improvements from March 28th, 2025
+<ul>
+<li>{{video: https://www.loom.com/share/a3e5f8126d924b3eb95c7c11209eceee}}
+</li>
+</ul>
+</li>
+<li>video with QOL improvements from March 31st, 2026
+<ul>
+<li>{{video: https://www.loom.com/share/f62d4893563143ae84cdae3640af6eb8}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Examples</h2>
+<h4>Getting started example</h4>
+<ul>
+<li>:q <br>
+&quot;Number of pages in the graph&quot;<br>
+[:find (count ?page) . :where [?page :node/title _]]
+</li>
+</ul>
+<h4>Some other small examples</h4>
+<ul>
+<li>(small = returning a single value, which is shown inline)
+</li>
+<li>:q <br>
+&quot;Number of code blocks in the graph&quot; <br>
+[:find (count ?b) . <br>
+     :where [?b :block/string ?s]<br>
+                  [(clojure.string/starts-with? ?s &quot;<code></code>`&quot;)]]
+</li>
+<li>:q<br>
+&quot;Number of TODOs in the graph:&quot;<br>
+[:find (count ?b) . :where [?todo-page :node/title &quot;TODO&quot;] [?b :block/refs ?todo-page]]
+</li>
+<li>equivalent queries to the above, but without the title:
+<ul>
+<li>:q <br>
+[:find (count ?page) . :where [?page :node/title ?page-title]]
+</li>
+<li>:q <br>
+[:find (count ?b) . <br>
+     :where [?b :block/string ?s]<br>
+                  [(clojure.string/starts-with? ?s &quot;<code></code>`&quot;)]]
+</li>
+<li>:q<br>
+[:find (count ?b) . :where [?todo-page :node/title &quot;TODO&quot;] [?b :block/refs ?todo-page]]
+</li>
+</ul>
+</li>
+<li>Here's an interesting query: 
+<ul>
+<li>:q &quot;5 random pages in the graph&quot;<br>
+[:find (sample 5 ?class_title) .<br>
+    :where<br>
+    [?a_class_page :node/title ?class_title]<br>
+    [?a_class_page :block/uid ?class_page_uid]]
+</li>
+</ul>
+</li>
+</ul>
+<h4>Some table examples </h4>
+<ul>
+<li>(we show as a table when the query returns a number of &quot;columns&quot; and a number of data)
+<ul>
+<li>Technically, we show as table <a href="https://docs.datomic.com/query/query-data-reference.html#find-specs">when the find spec denotes a relation</a>. This will look something like <code>:find ?a ?b</code> in the query
+</li>
+</ul>
+</li>
+<li>
+</li>
+<li>:q &quot;All Roam pages with 'API' in their title, their first blocks&quot;<br>
+[:find ?page-title ?page-uid ?first-block-uid (count ?block)<br>
+ :where <br>
+[?page :node/title ?page-title]<br>
+[?page :block/uid ?page-uid]<br>
+[(clojure.string/includes? ?page-title &quot;API&quot;)]<br>
+[?page :block/children ?block]<br>
+[?block :block/order 0]<br>
+[?block :block/uid ?first-block-uid]]
+</li>
+<li> 
+</li>
+<li>:q &quot;All Roam pages with 'API' in their title, sorted so that recently created at top&quot;<br>
+[:find ?page-uid ?create-time<br>
+ :where <br>
+[?page :node/title ?page-title]<br>
+[?page :block/uid ?page-uid]<br>
+[?page :create/time ?create-time]<br>
+[(clojure.string/includes? ?page-title &quot;API&quot;)]]
+</li>
+<li> 
+</li>
+<li>A more involved example: <strong>All Readwise highlight pages</strong>
+<ul>
+<li>the q
+<ul>
+<li>:q &quot;All Readwise Highlight Pages, sorted so that recently created at top&quot;<br>
+[:find ?page-uid ?first-child-uid ?page-create-time<br>
+ :where <br>
+[?page :node/title ?page-title]<br>
+;; hack: readwise default template all page titles contain &quot;(highlights)&quot; string<br>
+[(clojure.string/includes? ?page-title &quot;(highlights)&quot;)]<br>
+[?page :block/uid ?page-uid]<br>
+[?page :create/time ?page-create-time]<br>
+[?page :block/children ?b]<br>
+[?b :block/order 0]<br>
+[?b :block/uid ?first-child-uid]]
+</li>
+</ul>
+</li>
+<li>no such pages in this graph sadly, please check our video for a demo:
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FCDgZUSitGM.gif?alt=media&amp;token=a36140c6-3719-460d-ace1-13d2f06e9aee" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> 
+</li>
+<li>Example:: q getting children of a block and parsing out number
+<ul>
+<li>sample data (student + roll number)
+<ul>
+<li>Alice 1
+</li>
+<li>Bob 2
+</li>
+<li>Claire 3
+</li>
+<li>Herbert 43
+</li>
+<li>Andy 78
+</li>
+</ul>
+</li>
+<li>the query
+<ul>
+<li><pre><code>[:find ?e ?s
+ :where
+ [?parent :block/uid &quot;CQjUT-rQD&quot;]
+ [?parent :block/children ?e]
+ [?e :block/string ?s]]</code></pre>
+</li>
+<li>:q <pre><code>[:find ?e ?s
+ :where
+ [?parent :block/uid &quot;CQjUT-rQD&quot;]
+ [?parent :block/children ?e]
+ [?e :block/string ?s]]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> 
+</li>
+<li>Example:: get 4 random pages in the graph
+<ul>
+<li><code>:q &quot;Pages in the graph&quot; [:find ?p :where [?p :node/title]]</code>
+</li>
+<li>:q &quot;Pages in the graph&quot; [:find ?p :where [?p :node/title]]
+</li>
+<li>GIF
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F3tX-_cHQeW.gif?alt=media&amp;token=d10ee7af-80d0-4d26-9583-4f349de23633" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> 
+</li>
+<li>Example:: get current page and how many backrefs it has (this uses <code>current/page-title</code> )
+<ul>
+<li>the query
+<ul>
+<li><pre><code>[:find ?p (count ?b)
+  :where
+  [?p :node/title current/page-title]
+  [?b :block/refs ?p]]</code></pre>
+</li>
+<li>:q <pre><code>[:find ?p (count ?b)
+  :where
+  [?p :node/title current/page-title]
+  [?b :block/refs ?p]]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> 
+</li>
+<li>Example:: get additions to changelog in current calendar month (this uses the special symbols <code>ms/this-month-start</code> and <code>ms/this-month-end</code> )
+<ul>
+<li>How this works:
+<ul>
+<li>to minimize the number of results, we're also nesting results under parent results
+</li>
+<li>we're also sorting via <code>?t</code> to get recent results at top (you can hide this column and keep sorting!)
+</li>
+</ul>
+</li>
+<li>the query
+<ul>
+<li><pre><code>[:find ?b ?t
+  :where
+  [?changelog-p :node/title &quot;Change Log&quot;]
+  [?b :block/page ?changelog-p]
+  [?b :create/time ?t]
+  [(&lt;= ms/this-month-start ?t ms/this-month-end)]]</code></pre>
+</li>
+<li>:q <pre><code>[:find ?b ?t
+  :where
+  [?changelog-p :node/title &quot;Change Log&quot;]
+  [?b :block/page ?changelog-p]
+  [?b :create/time ?t]
+  [(&lt;= ms/this-month-start ?t ms/this-month-end)]]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>  
+</li>
+<li>Example:: query to get backrefs of a page (in this example: Quality of Life Improvements) created by [a specific user](Baibhav Bista) in the current calendar year ((This uses the rules <code>(refs-page ?page-title ?b)</code>, <code>(created-by ?user-name ?block)</code>, and <code>(created-between ?t1 ?t2 ?b)</code>))
+<ul>
+<li>the query
+<ul>
+<li><pre><code>[:find ?b ?t
+  :where
+  [?b :block/uid ?uid]
+  (refs-page &quot;Quality of Life Improvements&quot; ?b)
+  (created-by &quot;Baibhav Bista&quot; ?b)
+  [?b :create/time ?t]
+  (created-between ms/this-year-start ms/this-year-end ?b)]</code></pre>
+</li>
+</ul>
+</li>
+<li>in action ...
+<ul>
+<li>:q <pre><code>[:find ?b ?t
+  :where
+  [?b :block/uid ?uid]
+  (refs-page &quot;Quality of Life Improvements&quot; ?b)
+  (created-by &quot;Baibhav Bista&quot; ?b)
+  [?b :create/time ?t]
+  (created-between ms/this-year-start ms/this-year-end ?b)]</code></pre>
+</li>
+</ul>
+</li>
+<li>How this works:
+<ul>
+<li>this uses the rules <code>(refs-page ?page-title ?b)</code>, <code>(created-by ?user-name ?block)</code>, and <code>(created-between ?t1 ?t2 ?b)</code>
+</li>
+<li>After getting the query, using the UI, we're also sorting in descending order of <code>?t</code>
+<ul>
+<li>(so that latest is at the top)
+</li>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fw3X0QeKFNz.png?alt=media&amp;token=4bdfd9a3-a247-487e-90bf-ce3bb5e8ba0f" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> 
+</li>
+<li>Examples of queries our new <code>in-dnp-between</code>, <code>refs-dnp-between</code>, <code>in-or-refs-dnp-between</code> enable <a href="/help/examples-of-q-query-blocks">Examples of :q query blocks</a>
+<ul>
+<li>(this roam graph does not have much content in daily note pages, so below queries will probably be empty, please copy and test in your own graphs)
+</li>
+<li>DNP blocks this month with create time
+<ul>
+<li><code>(in-dnp-between dnp/this-month-start dnp/this-month-end ?b)</code>
+<ul>
+<li>:q &quot;DNP blocks this month with create time&quot;<br>
+[:find ?b ?t<br>
+ :where<br>
+ (in-dnp-between dnp/this-month-start dnp/this-month-end ?b)<br>
+ [?b :create/time ?t]]
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TODOs from last week's daily notes or reffing those DNPs
+<ul>
+<li><code>(in-or-refs-dnp-between dnp/last-week-start dnp/last-week-end ?b)</code>
+<ul>
+<li>:q &quot;TODOs from last week's daily notes or reffing those DNPs&quot;<br>
+[:find ?b<br>
+ :where<br>
+ (in-or-refs-dnp-between dnp/last-week-start dnp/last-week-end ?b)<br>
+ (refs-page &quot;TODO&quot; ?b)]
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Blocks referencing this week, written by particular user &quot;Baibhav Bista&quot;
+<ul>
+<li><code>(refs-dnp-between dnp/this-week-start dnp/this-week-end ?b)</code>
+<ul>
+<li>:q &quot;Blocks referencing this week, written by Baibhav&quot;<br>
+[:find ?b<br>
+ :where<br>
+ (refs-dnp-between dnp/this-week-start dnp/this-week-end ?b)<br>
+ (created-by &quot;Baibhav Bista&quot; ?b)<br>
+ [?b :create/time ?t]]
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Blocks referencing this week, written by particular user &quot;Baibhav Bista&quot; (also filter out blocks already in those DNPs)
+<ul>
+<li>`(refs-dnp-between dnp/this-week-start dnp/this-week-end ?b)<br>
+(not (in-dnp-between dnp/this-week-start dnp/this-week-end ?b))`
+<ul>
+<li>:q &quot;Blocks referencing this week, written by Baibhav&quot;<br>
+[:find ?b<br>
+ :where<br>
+ (refs-dnp-between dnp/this-week-start dnp/this-week-end ?b)<br>
+ (not (in-dnp-between dnp/this-week-start dnp/this-week-end ?b))<br>
+ (created-by &quot;Baibhav Bista&quot; ?b)<br>
+ [?b :create/time ?t]]
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> 
+</li>
+<li>One random old reference of the currently open page
+<ul>
+<li>I manually clicked on ... then <br>
+set sorting to be random<br>
+set rows per column to a 1
+</li>
+<li>To test it out, open the query below on the sidebar (shift click) and then go to a page with a lot of references like video
+</li>
+<li>:q &quot;One random old reference to open page&quot; <br>
+[:find ?uid ?t <br>
+:where <br>
+(refs-page current/main-window-page-title ?b) <br>
+[?b :create/time ?t]<br>
+[?b :block/uid ?uid]<br>
+[(&lt; ?t ms/-365D-start)]]
+</li>
+</ul>
+</li>
+<li> 
+</li>
+<li>
+</li>
+</ul>
+<p><a href="examples-of-q-query-blocks.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/VAfN5cYiP">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

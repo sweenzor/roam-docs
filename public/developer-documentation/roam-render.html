@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>roam/render — Roam Research Docs</title>
+<meta name="description" content="Getting Started">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/roam-render">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="roam/render — Roam Research Docs">
+<meta property="og:description" content="Getting Started">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/roam-render">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>roam/render</h1>
+<ul>
+<li><strong>Getting Started</strong>
+<ul>
+<li>roam/render is a way to write custom inline components like Roam's <code>{{}}</code>
+</li>
+<li>roam/render components can be written in clojurescript, JavaScript, or jsx
+<ul>
+<li>currently clojurescript has the best support
+</li>
+</ul>
+</li>
+<li>To use roam/render, create a clojure (or js or jsx) code block, copy a reference to the block, create a new bock and type <code>{{roam/render: ((&lt;block-reference&gt;))}}</code>.
+<ul>
+<li>like this
+</li>
+<li><pre><code>(defn hello-world []
+  [:div
+   {:style {:color &quot;blue&quot;}}
+   &quot;hello world&quot;])</code></pre>
+</li>
+<li><code>{{roam/render: ((uD2gB7Qvh))}}</code>
+</li>
+<li>{{roam/render: <pre><code>(defn hello-world []
+  [:div
+   {:style {:color &quot;blue&quot;}}
+   &quot;hello world&quot;])</code></pre>}}
+<ul>
+<li>If you haven't enabled custom components yet, click the link above to turn it on in settings
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In clojurescript, you have access to the <a href="/developer-documentation/roam-clojurescript-api">Roam Clojurescript API</a> as well as the <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> (although the clojurescript API is mostly a copy / paste of the roam alpha)
+<ul>
+<li>You can also use <a href="/developer-documentation/available-libraries">Available Libraries</a> from the window object, some of these are wrapped in a namespace like blueprint for ease of use, but you may use the others by just getting them from the window object
+</li>
+</ul>
+</li>
+<li>In js and jsx, you will only have access to the <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> and <a href="/developer-documentation/available-libraries">Available Libraries</a>
+</li>
+<li>The best way to get started is to try out a few of our <strong>Examples</strong> below, and read up on the API pages to see the functions available to you.
+</li>
+<li>Don't hesitate to <a href="/developer-documentation/contact-us">Contact Us</a> with any questions or Feature Requests you have
+</li>
+</ul>
+</li>
+<li><strong>Resources</strong>
+<ul>
+<li><a href="/developer-documentation/roam-clojurescript-api">Roam Clojurescript API</a>
+</li>
+<li><a href="https://www.zsolt.blog/2021/02/a-closer-look-at-roamrender.html">A closer look at roam/render</a> by Zsolt Viczian #Community #Article
+</li>
+<li><a href="https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md">Creating Reagent Components</a>
+</li>
+</ul>
+</li>
+<li><strong>Examples</strong>
+<ul>
+<li>clojurescript
+<ul>
+<li>Hello World
+<ul>
+<li>Code::
+<ul>
+<li><pre><code>(ns dev-docs.hello-world)
+
+(defn main []
+  [:h1 &quot;Hello world from CLJS&quot;])</code></pre>
+</li>
+</ul>
+</li>
+<li>Output::
+<ul>
+<li><code>{{roam/render: ((ltUELYamK))}}</code>
+</li>
+<li>{{roam/render: <pre><code>(ns dev-docs.hello-world)
+
+(defn main []
+  [:h1 &quot;Hello world from CLJS&quot;])</code></pre>}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Argument Parsing #Important Note
+<ul>
+<li>Code::
+<ul>
+<li><pre><code>(defn main-args-1 [{:keys [block-uid]} &amp; args]
+  [:div
+   [:h1 (str block-uid &quot;: args: &quot;)]
+   [:ul
+    (for [arg args]
+      [:li (pr-str arg)])]])</code></pre>
+</li>
+</ul>
+</li>
+<li>Output::
+<ul>
+<li>{{roam/render: <pre><code>(defn main-args-1 [{:keys [block-uid]} &amp; args]
+  [:div
+   [:h1 (str block-uid &quot;: args: &quot;)]
+   [:ul
+    (for [arg args]
+      [:li (pr-str arg)])]])</code></pre> &quot;arg-1&quot; 2 test args test block args}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Displaying strings with Roam's markdown parser
+<ul>
+<li>Code::
+<ul>
+<li><pre><code>(ns dev-docs.parse-example
+  (:require [roam.util :refer [parse]]))
+
+(defn main []
+  [parse &quot;**apple** __banana__ [[test-parse]]&quot;])</code></pre>
+</li>
+</ul>
+</li>
+<li>Output::
+<ul>
+<li><code>{{[[roam/render]]: ((uUxqZ4Bwb))}}</code>
+</li>
+<li>{{<a href="/developer-documentation/roam-render">roam/render</a>: <pre><code>(ns dev-docs.parse-example
+  (:require [roam.util :refer [parse]]))
+
+(defn main []
+  [parse &quot;**apple** __banana__ [[test-parse]]&quot;])</code></pre>}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Rendering latex equations and splitting code files into multiple blocks #Important Note
+<ul>
+<li>Description::
+<ul>
+<li>Code for a roam/render component does not have to live inside a single block. Roam will look for sibling code blocks to the block referenced, concatenate those together and evaluate everything. 
+<ul>
+<li><strong>Only sibling blocks are part of the same file, not children blocks</strong>
+</li>
+</ul>
+</li>
+<li>The block that you referenced will be the function that is run in the roam/render component
+</li>
+<li>You can even intersperse the components between the code blocks. This is particularly useful for explorable explanation style tutorials
+</li>
+</ul>
+</li>
+<li><pre><code>(ns katex-example
+  (:require
+   [reagent.core :as r]
+   [roam.katex :as katex]))</code></pre>
+</li>
+<li><pre><code>(defn inline-example []
+  (let [*val (r/atom &quot;&quot;)]
+    (fn []
+      [:div
+       [:input
+        {:value @*val
+         :on-change #(reset! *val (.. % -target -value))}]
+       [:div
+        &quot;Inline katex: &quot;
+        [katex/inline
+        @*val]]])))</code></pre>
+</li>
+<li><code>{{roam/render: ((ydU0Dpoq_))}}</code>
+</li>
+<li>{{roam/render: <pre><code>(defn inline-example []
+  (let [*val (r/atom &quot;&quot;)]
+    (fn []
+      [:div
+       [:input
+        {:value @*val
+         :on-change #(reset! *val (.. % -target -value))}]
+       [:div
+        &quot;Inline katex: &quot;
+        [katex/inline
+        @*val]]])))</code></pre>}}
+</li>
+<li><pre><code>(defn block-example []
+  (let [*val (r/atom &quot;&quot;)]
+    (fn []
+      [:div
+       [:input
+        {:value @*val
+         :on-change #(reset! *val (.. % -target -value))}]
+       [:div
+        &quot;Block katex: &quot;
+        [katex/block
+        @*val]]])))</code></pre>
+</li>
+<li><code>{{roam/render: ((cF6Xzv0bd))}}</code>
+</li>
+<li>{{roam/render: <pre><code>(defn block-example []
+  (let [*val (r/atom &quot;&quot;)]
+    (fn []
+      [:div
+       [:input
+        {:value @*val
+         :on-change #(reset! *val (.. % -target -value))}]
+       [:div
+        &quot;Block katex: &quot;
+        [katex/block
+        @*val]]])))</code></pre>}}
+</li>
+</ul>
+</li>
+<li>Get all blocks on a page that reference another page #Important Note
+<ul>
+<li>Description::
+<ul>
+<li><code>roam.datascript.reactive</code> is identical to <code>roam.datascript</code> except that every function returns a reagent reactions, which updates when the result of the query or pull changes.
+</li>
+<li>Take note of the use of <code>r/with-let</code> below. Any time you use <code>r/atom</code> or any function from <code>roam.datascript.reactive</code> you should define it inside of a <a href="https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#form-2--a-function-returning-a-function">form 2 or form 3 component</a>
+<ul>
+<li>Not using form 2 or form 3 components can lead to unnecessary rerenders and even infinite loops!
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Code::
+<ul>
+<li><pre><code>(ns dev-docs.get-page-blocks-with-tag
+  (:require
+   [roam.datascript.reactive :as dr]
+   [roam.util :as u]
+   [roam.ui.main-window :as main-window]
+   [reagent.core :as r]))</code></pre>
+</li>
+<li><pre><code>(defn track-blocks-with-tag-on-page [tag-uid page-uid]
+  (dr/q
+    '[:find (pull ?page-block [:block/uid :block/string])
+      :in $ ?tag-uid ?page-uid
+      :where
+      [?tag-e :block/uid ?tag-uid]
+      [?page-e :block/uid ?page-uid]
+      [?page-block :block/page ?page-e]
+      [?page-block :block/refs ?tag-e]]
+    tag-uid
+    page-uid))</code></pre>
+</li>
+<li><pre><code>(defn main [{:keys [block-uid]} [_ tag-uid] [_ page-uid]]
+  (r/with-let [*blocks (track-blocks-with-tag-on-page tag-uid page-uid)]
+    (into [:ul]
+      (keep (fn [[{:keys [block/string block/uid]}]]
+              (when (not= uid block-uid)
+                [:li
+                 {:style {:cursor &quot;pointer&quot;}
+                  :on-click (fn []
+                              (main-window/open-block
+                                {:block {:uid uid}}))}
+                 [u/parse string]])))
+      @*blocks)))</code></pre>
+</li>
+</ul>
+</li>
+<li>Output::
+<ul>
+<li><code>{{roam/render: ((o5wWBZxdg))}}</code>
+</li>
+<li>{{roam/render: Code:: Important Note <a href="/developer-documentation/roam-render">roam/render</a>}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>List public vars of a namespace using <a href="https://clojuredocs.org/clojure.core/ns-publics">ns-publics</a>
+<ul>
+<li>Description::
+<ul>
+<li><code>ns-publics</code> can be useful when trying to figure out what a namespace exports. In this example we pass in a <code>ns-name</code> and display all of the functions / vars in a namespace
+</li>
+</ul>
+</li>
+<li>Code::
+<ul>
+<li><pre><code>(ns ns-vars-lister
+  (:require [reagent.core]))
+
+(defn main [{:keys [block-uid]} ns-name]
+  (let [ns-symbol (symbol ns-name)]
+    [:div [:div
+           [:h3 &quot;public vars of ns: &quot; (pr-str ns-symbol)]
+           [:div (map
+                  (fn [n] [:div (pr-str n)])
+                  (-&gt;&gt; (ns-publics ns-symbol)
+                       (seq)
+                       (sort)))]]]))</code></pre>
+</li>
+</ul>
+</li>
+<li>Output::
+<ul>
+<li><code>{{roam/render: ((r47yvGHoi)) &quot;reagent.core&quot;}}</code>
+</li>
+<li>{{roam/render: <pre><code>(ns ns-vars-lister
+  (:require [reagent.core]))
+
+(defn main [{:keys [block-uid]} ns-name]
+  (let [ns-symbol (symbol ns-name)]
+    [:div [:div
+           [:h3 &quot;public vars of ns: &quot; (pr-str ns-symbol)]
+           [:div (map
+                  (fn [n] [:div (pr-str n)])
+                  (-&gt;&gt; (ns-publics ns-symbol)
+                       (seq)
+                       (sort)))]]]))</code></pre> &quot;reagent.core&quot;}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>instaparse.core</code> readme example
+<ul>
+<li>Code::
+<ul>
+<li><pre><code>(ns developer-documentation.test-instaparse.1
+  (:require 
+   [reagent.core :as r]
+   [roam.block :as block]
+   [blueprintjs.core :as bp-core]
+   [cljs.pprint :refer [pprint]]
+   [instaparse.core :as insta]))
+
+(def as-and-bs
+  (insta/parser
+    &quot;S = AB*
+     AB = A B
+     A = 'a'+
+     B = 'b'+&quot;))
+
+(defn main [{:keys [block-uid]}]
+  [:button 
+   {:on-click 
+    #(pprint (as-and-bs &quot;aaaaabbbaaaabb&quot;))} &quot;Click me!&quot;])</code></pre>
+</li>
+</ul>
+</li>
+<li>Output::
+<ul>
+<li><code>{{[[roam/render]]: ((6DXyUOHhH))}}</code>
+</li>
+<li>{{<a href="/developer-documentation/roam-render">roam/render</a>: <pre><code>(ns developer-documentation.test-instaparse.1
+  (:require 
+   [reagent.core :as r]
+   [roam.block :as block]
+   [blueprintjs.core :as bp-core]
+   [cljs.pprint :refer [pprint]]
+   [instaparse.core :as insta]))
+
+(def as-and-bs
+  (insta/parser
+    &quot;S = AB*
+     AB = A B
+     A = 'a'+
+     B = 'b'+&quot;))
+
+(defn main [{:keys [block-uid]}]
+  [:button 
+   {:on-click 
+    #(pprint (as-and-bs &quot;aaaaabbbaaaabb&quot;))} &quot;Click me!&quot;])</code></pre>}} (check console after clicking)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Click me template using <code>blueprintjs.core</code>
+<ul>
+<li>Code::
+<ul>
+<li><pre><code>(ns dev-docs.test-blueprint.1
+  (:require 
+   [reagent.core :as r]
+   [roam.block :as block]
+   [blueprintjs.core :as bp-core]))
+
+(defonce bp3-button (r/adapt-react-class bp-core/Button))
+
+(defn main [{:keys [block-uid]}]
+  [bp3-button 
+   {:large true
+    :disabled true
+    :icon &quot;history&quot;
+    :on-click 
+    #(block/update 
+      {:block {:uid block-uid 
+               :string &quot;Hello world!&quot;}})} 
+   &quot;Click me!&quot;])</code></pre>
+</li>
+</ul>
+</li>
+<li>Output::
+<ul>
+<li><code>{{[[roam/render]]: ((O1iyYWZsW))}}</code>
+</li>
+<li>{{<a href="/developer-documentation/roam-render">roam/render</a>: <pre><code>(ns dev-docs.test-blueprint.1
+  (:require 
+   [reagent.core :as r]
+   [roam.block :as block]
+   [blueprintjs.core :as bp-core]))
+
+(defonce bp3-button (r/adapt-react-class bp-core/Button))
+
+(defn main [{:keys [block-uid]}]
+  [bp3-button 
+   {:large true
+    :disabled true
+    :icon &quot;history&quot;
+    :on-click 
+    #(block/update 
+      {:block {:uid block-uid 
+               :string &quot;Hello world!&quot;}})} 
+   &quot;Click me!&quot;])</code></pre>}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Load modules and css from npm #experimental
+<ul>
+<li>You can load any package from npm simply by requiring it.
+<ul>
+<li>Unfortunately many packages will not work because they will load their own version of React
+</li>
+<li>Some common errors when this happens are
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FSiIri1B_CW.png?alt=media&amp;token=b5ba8288-16bb-49f8-b8aa-4a6a6634875c" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>{{[[roam/render]]: ((Hcuh0h3ys))}}</code>
+</li>
+<li>{{<a href="/developer-documentation/roam-render">roam/render</a>: <pre><code>(ns render-examples.confetti
+  (:require
+   [reagent.core :as r]
+   ;; require any package from npm
+   [&quot;canvas-confetti&quot; :as confetti]
+   ;; require a specific version of a package
+   [&quot;react-awesome-button@6.5.0&quot; :refer [AwesomeButton]]
+   ;; require css for an npm package
+   [&quot;react-awesome-button@6.5.0/dist/styles.css&quot;]
+   ;; alternatively you could use CDN of your choice by providing a full URL
+   ;; internally we use esm.sh to load npm packages
+   #_[&quot;https://cdn.skypack.dev/react-awesome-button@6.5.0/dist/styles.css&quot;]))
+
+(def awesome-button (r/adapt-react-class AwesomeButton))
+
+(defn main []
+  [:div
+   [awesome-button
+    {:type &quot;primary&quot;
+     ;; be careful, some packages export default, which is not auto processed by cljs as it is in js
+     ;; when in doubt, print out what your var is
+     :onPress #(confetti/default)}
+    &quot;Fun!&quot;]])</code></pre>}}
+<ul>
+<li><pre><code>(ns render-examples.confetti
+  (:require
+   [reagent.core :as r]
+   ;; require any package from npm
+   [&quot;canvas-confetti&quot; :as confetti]
+   ;; require a specific version of a package
+   [&quot;react-awesome-button@6.5.0&quot; :refer [AwesomeButton]]
+   ;; require css for an npm package
+   [&quot;react-awesome-button@6.5.0/dist/styles.css&quot;]
+   ;; alternatively you could use CDN of your choice by providing a full URL
+   ;; internally we use esm.sh to load npm packages
+   #_[&quot;https://cdn.skypack.dev/react-awesome-button@6.5.0/dist/styles.css&quot;]))
+
+(def awesome-button (r/adapt-react-class AwesomeButton))
+
+(defn main []
+  [:div
+   [awesome-button
+    {:type &quot;primary&quot;
+     ;; be careful, some packages export default, which is not auto processed by cljs as it is in js
+     ;; when in doubt, print out what your var is
+     :onPress #(confetti/default)}
+    &quot;Fun!&quot;]])</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>jsx
+<ul>
+<li>Hello World
+<ul>
+<li>Code::
+<ul>
+<li><pre><code>function main2 () {
+  return &lt;h1&gt;Hello world from JSX&lt;/h1&gt;
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>Output::
+<ul>
+<li><code>{{roam/render: ((hlu_MicTh))}}</code>
+</li>
+<li>{{roam/render: <pre><code>function main2 () {
+  return &lt;h1&gt;Hello world from JSX&lt;/h1&gt;
+}</code></pre>}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Argument Parsing
+<ul>
+<li>Code::
+<ul>
+<li><pre><code>function mainArgs3({args}) {
+  let block, actualArgs;
+  [block, ...actualArgs] = args;
+  const listArgs = actualArgs.map(
+    (arg) =&gt; &lt;li&gt;{arg.toString()}&lt;/li&gt;
+  );
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;
+        {block[&quot;block-uid&quot;]}: args:
+      &lt;/h1&gt;
+      &lt;ul&gt;{listArgs}&lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>Output::
+<ul>
+<li>{{roam/render: <pre><code>function mainArgs3({args}) {
+  let block, actualArgs;
+  [block, ...actualArgs] = args;
+  const listArgs = actualArgs.map(
+    (arg) =&gt; &lt;li&gt;{arg.toString()}&lt;/li&gt;
+  );
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;
+        {block[&quot;block-uid&quot;]}: args:
+      &lt;/h1&gt;
+      &lt;ul&gt;{listArgs}&lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>  &quot;arg-1&quot; 2 test args test block args}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>JavaScript
+<ul>
+<li>It's a better idea to just use jsx instead of raw javascript unless you run into some bug. Jsx examples will work with javascript if you convert the jsx syntax to create element
+</li>
+<li>Hello World
+<ul>
+<li>Code::
+<ul>
+<li><pre><code>function main1() {
+  return React.createElement('h1', {}, 'Hello world from JS');
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>Output::
+<ul>
+<li><code>{{roam/render: ((qfcNnWG7J))}}</code>
+</li>
+<li>{{roam/render: <pre><code>function main1() {
+  return React.createElement('h1', {}, 'Hello world from JS');
+}</code></pre>}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Argument Parsing
+<ul>
+<li>Code::
+<ul>
+<li><pre><code>function mainArgs2({args}) {
+  let block, actualArgs;
+  [block, ...actualArgs] = args;
+  console.log(block, actualArgs)
+  return React.createElement('div', {}, &quot;Hello&quot;);
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>Output::
+<ul>
+<li><code>{{roam/render: ((zJX0nWRLX)) &quot;arg-1&quot; 2 [[test args]] ((7lN0hyokF))}}</code>
+</li>
+<li>{{roam/render: <pre><code>function mainArgs2({args}) {
+  let block, actualArgs;
+  [block, ...actualArgs] = args;
+  console.log(block, actualArgs)
+  return React.createElement('div', {}, &quot;Hello&quot;);
+}</code></pre> &quot;arg-1&quot; 2 test args test block args}}
+<ul>
+<li>just did a console log here. Check the JSX example for a better example
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>FAQ</strong>
+<ul>
+<li><strong>How to pass arguments into components?</strong>
+<ul>
+<li>When you build anything but the simplest roam/render components, you run into the need to be able to take arguments. Similarly, it is a common use case that you need to know where (which block) your component is situated. 
+</li>
+<li>The first argument to your component is always a context map
+<ul>
+<li>Currently this map only contains the <code>block-uid</code> of the block the component is rendered inside of (not the uid of the code block!)
+</li>
+<li><code>{:block-uid &quot;KjccJWpBM&quot;}</code> (clojure) or <code>{&quot;block-uid&quot;: &quot;KjccJWpBM&quot;}</code> (js)
+</li>
+</ul>
+</li>
+<li>To pass in additional arguments, add them after the code block uid, like this
+<ul>
+<li><code>{{roam/render: ((KjccJWpBM)) &quot;arg-1&quot; 2}}</code>
+</li>
+<li>This render component would run the code in the block with block-uid <code>KjccJWpBM</code> and pass the arguments &quot;arg-1&quot; and 2
+<ul>
+<li>Roam automatically parses these into a string and a number (This is done with the <code>cljs.reader</code>)
+</li>
+</ul>
+</li>
+<li>These all would be automatically passed into the last function in the code block. Specifically, the function would receive the following arguments
+<ul>
+<li><code>{:block-uid &quot;KjccJWpBM&quot;}</code> (clojure) or <code>{&quot;block-uid&quot;: &quot;KjccJWpBM&quot;}</code> (js)
+</li>
+<li><code>&quot;arg-1&quot;</code>
+</li>
+<li><code>2</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Roam will automatically parse and resolve page and block references passed in
+<ul>
+<li><code>{{roam/render: ((KjccJWpBM)) [[test args]] ((7lN0hyokF))}}</code>
+</li>
+<li>Args
+<ul>
+<li><code>{:block-uid &quot;KjccJWpBM&quot;}</code> (clojure) or <code>{&quot;block-uid&quot;: &quot;KjccJWpBM&quot;}</code> (js)
+</li>
+<li><code>[:block/uid &quot;MFSo6yX_Q&quot;]</code> (clojure) or <code>['uid', 'MFSo6yX_Q']</code> (js)
+</li>
+<li><code>[:block/uid &quot;7lN0hyokF&quot;]</code> or <code>['uid', '7lN0hyokF']</code> (js)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Examples
+<ul>
+<li>clojurescript
+<ul>
+<li>Argument Parsing #Important Note
+<ul>
+<li>Code::
+<ul>
+<li><pre><code>(defn main-args-1 [{:keys [block-uid]} &amp; args]
+  [:div
+   [:h1 (str block-uid &quot;: args: &quot;)]
+   [:ul
+    (for [arg args]
+      [:li (pr-str arg)])]])</code></pre>
+</li>
+</ul>
+</li>
+<li>Output::
+<ul>
+<li>{{roam/render: <pre><code>(defn main-args-1 [{:keys [block-uid]} &amp; args]
+  [:div
+   [:h1 (str block-uid &quot;: args: &quot;)]
+   [:ul
+    (for [arg args]
+      [:li (pr-str arg)])]])</code></pre> &quot;arg-1&quot; 2 test args test block args}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>JS
+<ul>
+<li>Argument Parsing
+<ul>
+<li>Code::
+<ul>
+<li><pre><code>function mainArgs2({args}) {
+  let block, actualArgs;
+  [block, ...actualArgs] = args;
+  console.log(block, actualArgs)
+  return React.createElement('div', {}, &quot;Hello&quot;);
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>Output::
+<ul>
+<li><code>{{roam/render: ((zJX0nWRLX)) &quot;arg-1&quot; 2 [[test args]] ((7lN0hyokF))}}</code>
+</li>
+<li>{{roam/render: <pre><code>function mainArgs2({args}) {
+  let block, actualArgs;
+  [block, ...actualArgs] = args;
+  console.log(block, actualArgs)
+  return React.createElement('div', {}, &quot;Hello&quot;);
+}</code></pre> &quot;arg-1&quot; 2 test args test block args}}
+<ul>
+<li>just did a console log here. Check the JSX example for a better example
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>JSX
+<ul>
+<li>Argument Parsing
+<ul>
+<li>Code::
+<ul>
+<li><pre><code>function mainArgs3({args}) {
+  let block, actualArgs;
+  [block, ...actualArgs] = args;
+  const listArgs = actualArgs.map(
+    (arg) =&gt; &lt;li&gt;{arg.toString()}&lt;/li&gt;
+  );
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;
+        {block[&quot;block-uid&quot;]}: args:
+      &lt;/h1&gt;
+      &lt;ul&gt;{listArgs}&lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>Output::
+<ul>
+<li>{{roam/render: <pre><code>function mainArgs3({args}) {
+  let block, actualArgs;
+  [block, ...actualArgs] = args;
+  const listArgs = actualArgs.map(
+    (arg) =&gt; &lt;li&gt;{arg.toString()}&lt;/li&gt;
+  );
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;
+        {block[&quot;block-uid&quot;]}: args:
+      &lt;/h1&gt;
+      &lt;ul&gt;{listArgs}&lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>  &quot;arg-1&quot; 2 test args test block args}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>How are the code blocks evaluated?</strong>
+<ul>
+<li>In clojurescript we use SCI to parse and evaluate files
+</li>
+<li>jsx is converted to js with babel and then evaluated the same as js
+</li>
+<li>JavaScript is evaluated with <code>eval</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="roam-render.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/7l31uEMqA">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

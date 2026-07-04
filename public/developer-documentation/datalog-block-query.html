@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>datalog-block-query — Roam Research Docs</title>
+<meta name="description" content="Older Loom videos">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/datalog-block-query">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="datalog-block-query — Roam Research Docs">
+<meta property="og:description" content="Older Loom videos">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/datalog-block-query">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>datalog-block-query</h1>
+<ul>
+<li>Older Loom videos
+<ul>
+<li>Demo 1
+<ul>
+<li>{{video: https://www.loom.com/share/4c8e47aeb7b3481f8dae22f4718abe06}}
+</li>
+</ul>
+</li>
+<li>Motivating example
+<ul>
+<li>{{video: https://www.loom.com/share/54af60339efc47c598f1dd07b2262b92}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>January 12th, 2022
+<ul>
+<li>Loom video: {{video: https://www.loom.com/share/89387c67013844138d4bd6e39832515b}}
+</li>
+<li>The new things
+<ul>
+<li>refresh button
+<ul>
+<li>Just to be clear, the thing refreshes automatically during loading of the component. you only need to refresh if you keep it open (in the sidebar or something) and want to rerun the query again
+</li>
+<li>not made completely reactive since datascript queries are less performant than <code>{{queries}}</code> (which we've tuned)
+</li>
+</ul>
+</li>
+<li>rules
+<ul>
+<li>how they look like in the query
+<ul>
+<li>:in $ %
+</li>
+</ul>
+</li>
+<li>How rules are specified as arguments
+<ul>
+<li>rules:: <br>
+<pre><code>[[(rule-a ?a ?b)
+  ...]
+ [(rule-b ?a ?b)
+  ...]
+ ...]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>{{queries}}</code> as input
+<ul>
+<li>{{query: {and: Adam Krivka <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a>}}}
+</li>
+<li>How the above query would be specified as argument
+<ul>
+<li>query-&gt;uids:: {and: Adam Krivka <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a>}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>block refs as query
+<ul>
+<li>same pattern as roam/render
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Base query
+<ul>
+<li>{{query: {and: Adam Krivka <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a>}}}
+</li>
+</ul>
+</li>
+<li>Test data
+<ul>
+<li><strong> Adam Krivka has written a bunch of stuff you can consult for <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a></strong>
+</li>
+</ul>
+</li>
+<li>rules + <code>{{queries}}</code> as input 
+<ul>
+<li>Here we're using datalog to filter the outputs of the Base query
+</li>
+<li>{{datalog-block-query: <br>
+[:find [?uid ...]<br>
+ :in $ % [?uid ...]<br>
+ :where<br>
+ [?block :block/uid ?uid]<br>
+ (created-by ?block &quot;Baibhav Bista&quot;)]<br>
+}}
+<ul>
+<li>rules::<br>
+<pre><code>[
+ ;; rule that checks if a block was created by user with given name
+ [(created-by ?block ?user-page-title)
+  [?user-page :node/title ?user-page-title]
+  [?user :user/display-page ?user-page]
+  [?block :create/user ?user]]
+ 
+ ;; an example of an OR using rules
+ [(created-by-either ?block ?user-page-title-1 ?user-page-title-2)
+  (created-by ?block ?user-page-title-1)]
+ [(created-by-either ?block ?user-page-title-1 ?user-page-title-2)
+  (created-by ?block ?user-page-title-2)]
+]</code></pre>
+</li>
+<li>query-&gt;uids:: {and: Adam Krivka <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a>}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>block refs as query
+<ul>
+<li>Here we're using a pattern similar to <a href="/developer-documentation/roam-render">roam/render</a> i.e. passing a block ref as argument to datalog-block-query
+<ul>
+<li>the arguments will then be the children of the block being reffed 
+</li>
+</ul>
+</li>
+<li>{{datalog-block-query: <pre><code>[:find [?uid ...]
+ :in $ % [?uid ...]
+ :where
+ [?block :block/uid ?uid]
+ (created-by ?block &quot;Baibhav Bista&quot;)]</code></pre>}}
+</li>
+<li>the block being reffed
+<ul>
+<li><pre><code>[:find [?uid ...]
+ :in $ % [?uid ...]
+ :where
+ [?block :block/uid ?uid]
+ (created-by ?block &quot;Baibhav Bista&quot;)]</code></pre>
+<ul>
+<li>rules::<br>
+<pre><code>[[(created-by ?block ?user-page-title)
+  [?user-page :node/title ?user-page-title]
+  [?user :user/display-page ?user-page]
+  [?block :create/user ?user]]
+ [(created-by-either ?block ?user-page-title-1 ?user-page-title-2)
+  (created-by ?block ?user-page-title-1)]
+ [(created-by-either ?block ?user-page-title-1 ?user-page-title-2)
+  (created-by ?block ?user-page-title-2)]]</code></pre>
+</li>
+<li>query-&gt;uids:: {and: <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a>}
+</li>
+<li>result-transform::<br>
+<pre><code>(fn [block-ents]
+  (-&gt;&gt;
+    block-ents
+    (group-by #(count (:block/_refs %)))))</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="datalog-block-query.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/CDPYVl-PE">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

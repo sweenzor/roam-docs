@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Available Libraries — Roam Research Docs</title>
+<meta name="description" content="Roam exports a number of dependencies that we use internally for extensions, roam/js and roam/render to use">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/available-libraries">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Available Libraries — Roam Research Docs">
+<meta property="og:description" content="Roam exports a number of dependencies that we use internally for extensions, roam/js and roam/render to use">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/available-libraries">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>Available Libraries</h1>
+<ul>
+<li>Roam exports a number of dependencies that we use internally for extensions, roam/js and roam/render to use
+</li>
+<li>Sync dependencies
+<ul>
+<li>Dependencies bundled with Roam core will be provided on the window object
+</li>
+<li>{{table}}
+<ul>
+<li><strong>Package Name</strong>
+<ul>
+<li><strong>Version</strong>
+<ul>
+<li><strong>Global Var</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>react</code>
+<ul>
+<li><code>18.2.0</code>
+<ul>
+<li><code>window.React</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>react-dom</code>
+<ul>
+<li><code>18.2.0</code>
+<ul>
+<li><code>window.ReactDOM</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>@blueprintjs/core</code>
+<ul>
+<li><code>^3.50.4</code>
+<ul>
+<li><code>window.Blueprint.Core</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>@blueprintjs/select</code>
+<ul>
+<li><code>^3.18.6</code>
+<ul>
+<li><code>window.Blueprint.Select</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>@blueprintjs/datetime</code>
+<ul>
+<li><code>^3.23.14</code>
+<ul>
+<li><code>window.Blueprint.DateTime</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>chrono-node</code>
+<ul>
+<li><code>^2.3.2</code>
+<ul>
+<li><code>window.ChronoNode</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>idb</code>
+<ul>
+<li><code> 7.1.1</code>
+<ul>
+<li><code>window.idb</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>nanoid</code>
+<ul>
+<li><code>^2.0.4</code>
+<ul>
+<li><code>window.Nanoid</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>file-saver</code>
+<ul>
+<li><code>^2.0.2</code>
+<ul>
+<li><code>window.FileSaver</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>crypto-js</code>
+<ul>
+<li><code>^3.1.9-1</code>
+<ul>
+<li><code>window.CryptoJS</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>tslib</code>
+<ul>
+<li><code>2.2.0</code>
+<ul>
+<li><code>TSLib</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Async dependencies
+<ul>
+<li>Some of Roam's dependencies are loaded only when a user uses them, your extension should do the same thing
+<ul>
+<li>We understand dynamically loading is pretty difficult for a beginner, if that is you, you can ask us for help or for an exception to this rule
+</li>
+</ul>
+</li>
+<li>{{table}}
+<ul>
+<li><strong>Package Name</strong>
+<ul>
+<li><strong>Version</strong>
+<ul>
+<li><strong>Global Var</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>marked-react</code>
+<ul>
+<li><code>^1.1.2</code>
+<ul>
+<li><code>RoamLazy.MarkedReact</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>marked</code>
+<ul>
+<li><code>4.3.0</code>
+<ul>
+<li><code>RoamLazy.Marked</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>jszip</code>
+<ul>
+<li><code>^3.10.0</code>
+<ul>
+<li><code>RoamLazy.JSZip</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>cytoscape</code>
+<ul>
+<li><code>^3.7.2</code>
+<ul>
+<li><code>RoamLazy.Cytoscape</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>insect.js</code>
+<ul>
+<li><code>5.6.0</code>
+<ul>
+<li><code>RoamLazy.Insect</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="available-libraries.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/YTrHVFXHD">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

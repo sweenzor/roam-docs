@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Hub — Roam Research Docs</title>
+<meta name="description" content="Our different APIs and which one you should use">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/developer-hub">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Developer Hub — Roam Research Docs">
+<meta property="og:description" content="Our different APIs and which one you should use">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/developer-hub">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>Developer Hub</h1>
+<ul>
+<li>Our different APIs and which one you should use
+<ul>
+<li>Q:: When would you use this Append API vs other Roam APIs?
+<ul>
+<li>Use <a href="/developer-documentation/roam-backend-api-beta">Roam Backend API (Beta)</a> 
+<ul>
+<li>IF you need to do reads and edits (and not just additions/appends)
+</li>
+<li>IF you do NOT need to support encrypted graphs (the backend API cannot work with encrypted graphs)
+</li>
+</ul>
+</li>
+<li>Use [Append API](<a href="/developer-documentation/roam-append-api">Roam Append API</a>) 
+<ul>
+<li>IF you need to support BOTH unencrypted &amp; encrypted graphs
+</li>
+<li>IF you want an easy-to-use API optimized for capture
+</li>
+<li>IF you do not need read functionality
+</li>
+</ul>
+</li>
+<li>Use <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> (our client side API) 
+<ul>
+<li>If you're building a Roam Depot extension or writing <a href="/developer-documentation/roam-js">roam/js</a> scripts for yourself 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a></h3>
+<ul>
+<li>Front-end API for read/write operations
+</li>
+</ul>
+<h3><a href="/developer-documentation/roam-backend-api-beta">Roam Backend API (Beta)</a></h3>
+<ul>
+<li>Access your Roam data over http! A read/write API for Roam data
+</li>
+</ul>
+<h3><a href="/developer-documentation/roam-depot-extensions">Roam Depot/Extensions</a></h3>
+<ul>
+<li>How to write and submit Roam Depot extensions
+</li>
+</ul>
+<h3><a href="/developer-documentation/roam-css">roam/css</a></h3>
+<ul>
+<li>Style your graph with custom CSS
+</li>
+</ul>
+<h3><a href="/developer-documentation/roam-js">roam/js</a> and <a href="/developer-documentation/roam-cljs">roam/cljs</a></h3>
+<ul>
+<li>Write and run JavaScript/Clojurescript in your graph
+</li>
+</ul>
+<h3><a href="/developer-documentation/roam-clojurescript-api">Roam Clojurescript API</a></h3>
+<ul>
+<li>Front-end API for read/write operations, mostly a copy of <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> for clojurescript with some additions for <a href="/developer-documentation/roam-render">roam/render</a>
+</li>
+</ul>
+<h3><a href="/developer-documentation/roam-render">roam/render</a></h3>
+<ul>
+<li>Render custom inline components in your graph
+</li>
+</ul>
+<h2>If you have any questions don't hesitate to reach out! <a href="https://join.slack.com/t/roamresearch/shared_invite/zt-21yynf99v-39t09XesqSiIsz_1VFmwtA">Join our slack</a> and head over to the #developers channel</h2>
+<p><a href="developer-hub.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/49715b-M2">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

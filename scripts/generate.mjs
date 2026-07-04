@@ -4,10 +4,11 @@
 //   public/llms-full.txt         — every graph's full export concatenated
 //   public/<graph>/llms-full.txt — one full markdown export per graph
 //   public/<graph>/<slug>.md     — one markdown file per page of each graph
+//   public/<graph>/<slug>.html   — HTML twin of each page, served at /<graph>/<slug>
 //   public/types/…               — TypeScript definitions (copied from types/)
 //   public/examples/…            — copy-pasteable examples (copied from examples/)
 //   public/index.html, 404.html  — landing and error pages
-//   public/_redirects            — legacy-URL redirects (Cloudflare Pages)
+//   public/sitemap.xml, robots.txt, _redirects — search-engine + Pages plumbing
 // The graphs to publish are listed in graphs.json at the repo root; the graph
 // name is the first URL path segment. Also checks that every introspected API
 // function appears in the .d.ts, and updates data/api-history.json in place
@@ -24,6 +25,44 @@ const BASE = (process.env.BASE_URL || 'https://roamdocs.fyi').replace(/\/$/, '')
 const REPO_URL = 'https://github.com/sweenzor/roam-docs';
 
 const GRAPH_CONFIGS = JSON.parse(fs.readFileSync(path.join(ROOT, 'graphs.json'), 'utf8'));
+
+// ---------------------------------------------------------------------------
+// Shared HTML shell (landing page + the SEO-facing .html twin of every page)
+const SITE_NAME = 'Roam Research Docs';
+const escHtml = (s) =>
+  String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const CSS = `
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+`;
+const htmlShell = ({ title, description, canonicalPath, body }) => `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${escHtml(title)}</title>
+<meta name="description" content="${escHtml(description)}">
+<link rel="canonical" href="${BASE}${canonicalPath}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="${SITE_NAME}">
+<meta property="og:title" content="${escHtml(title)}">
+<meta property="og:description" content="${escHtml(description)}">
+<meta property="og:url" content="${BASE}${canonicalPath}">
+<meta name="twitter:card" content="summary">
+<style>${CSS}</style>
+</head>
+<body>
+${body}
+</body>
+</html>
+`;
 
 const surface = JSON.parse(fs.readFileSync(path.join(DATA, 'api-surface.json'), 'utf8'));
 const API_VERSION = surface.roamAlphaAPI.apiVersion?.value || '?';
@@ -150,6 +189,97 @@ function processGraph(cfg) {
       return key(z[':block/uid']).localeCompare(key(a[':block/uid']));
     });
 
+  // ---- HTML rendering (the SEO-facing twin of each markdown page) ----
+  // Keys are HTML-escaped because [[wiki-links]] are matched in escaped prose.
+  const titleToSlug = new Map(
+    ordered.map((p) => [escHtml(p[':node/title']), slug(p[':node/title'])])
+  );
+
+  // Roam inline markup → HTML; operates on already-escaped prose.
+  const inlineHtml = (prose) =>
+    prose
+      .replace(/!\[([^\]]*)\]\((https?:[^)\s]+)\)/g, '<img src="$2" alt="$1" loading="lazy">')
+      .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, '<a href="$2">$1</a>')
+      .replace(/\[\[([^\[\]]+)\]\]/g, (m, t) => {
+        const s = titleToSlug.get(t);
+        return s ? `<a href="/${outDir}/${s}">${t}</a>` : t;
+      })
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/__([^_]+)__/g, '<em>$1</em>')
+      .replace(/\^\^([^^]+)\^\^/g, '<mark>$1</mark>')
+      .replace(/~~([^~]+)~~/g, '<s>$1</s>');
+
+  const blockHtml = (s) =>
+    s
+      .split(/(```[\s\S]*?```)/)
+      .map((seg, i) => {
+        if (i % 2) {
+          const m = seg.match(/^```\w*\n?([\s\S]*?)```$/);
+          return `<pre><code>${escHtml(m ? m[1] : seg)}</code></pre>`;
+        }
+        return seg
+          .split(/(`[^`\n]*`)/)
+          .map((t, j) =>
+            j % 2
+              ? `<code>${escHtml(t.slice(1, -1))}</code>`
+              : inlineHtml(escHtml(t)).replace(/\n/g, '<br>\n')
+          )
+          .join('');
+      })
+      .join('');
+
+  function renderPageHtml(page) {
+    const out = [];
+    let open = false;
+    const closeList = () => {
+      if (open) {
+        out.push('</ul>');
+        open = false;
+      }
+    };
+    const nested = (block) => {
+      const raw = block[':block/string'] || '';
+      const em = raw.trim().match(new RegExp(`^${EMBED_RE.source}$`));
+      if (em && uidMap.get(em[1])) return nested(uidMap.get(em[1]));
+      const body = blockHtml(resolveText(raw));
+      out.push(`<li>${block[':block/heading'] >= 1 ? `<strong>${body}</strong>` : body}`);
+      const children = kids(block);
+      if (children.length) {
+        out.push('<ul>');
+        children.forEach(nested);
+        out.push('</ul>');
+      }
+      out.push('</li>');
+    };
+    const top = (block) => {
+      const raw = block[':block/string'] || '';
+      const em = raw.trim().match(new RegExp(`^${EMBED_RE.source}$`));
+      if (em && uidMap.get(em[1])) return top(uidMap.get(em[1]));
+      const heading = block[':block/heading'];
+      if (heading >= 1 && heading <= 3) {
+        closeList();
+        out.push(`<h${heading + 1}>${blockHtml(resolveText(raw))}</h${heading + 1}>`);
+        kids(block).forEach(top);
+        return;
+      }
+      if (!open) {
+        out.push('<ul>');
+        open = true;
+      }
+      out.push(`<li>${blockHtml(resolveText(raw))}`);
+      const children = kids(block);
+      if (children.length) {
+        out.push('<ul>');
+        children.forEach(nested);
+        out.push('</ul>');
+      }
+      out.push('</li>');
+    };
+    kids(page).forEach(top);
+    closeList();
+    return out.join('\n');
+  }
+
   // ---- write per-page markdown ----
   fs.mkdirSync(path.join(PUBLIC, outDir), { recursive: true });
   const pageMeta = [];
@@ -158,18 +288,30 @@ function processGraph(cfg) {
     const s = slug(title);
     fs.writeFileSync(path.join(PUBLIC, outDir, `${s}.md`), renderPage(p));
     const firstBlock = kids(p)[0];
-    pageMeta.push({
-      title,
-      slug: s,
-      blocks: countBlocks(p),
-      first: resolveText(firstBlock?.[':block/string'] || '')
-        .replace(/\{\{[^}]*\}\}/g, ' ')
-        .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
-        .replace(/[*`#]|\[\[|\]\]/g, '')
-        .replace(/\s+/g, ' ')
-        .trim()
-        .slice(0, 140),
-    });
+    const first = resolveText(firstBlock?.[':block/string'] || '')
+      .replace(/\{\{[^}]*\}\}/g, ' ')
+      .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+      .replace(/[*`#]|\[\[|\]\]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .slice(0, 140);
+    pageMeta.push({ title, slug: s, blocks: countBlocks(p), first });
+    // HTML twin at /<graph>/<slug> (Pages serves <slug>.html there) — the
+    // search-engine-facing version; the .md stays for agents.
+    fs.writeFileSync(
+      path.join(PUBLIC, outDir, `${s}.html`),
+      htmlShell({
+        title: `${title} — ${SITE_NAME}`,
+        description: first || `${title}, from Roam Research's ${cfg.name} graph.`,
+        canonicalPath: `/${outDir}/${s}`,
+        body: [
+          `<p><a href="/">${SITE_NAME}</a> · ${escHtml(cfg.title)}</p>`,
+          `<h1>${escHtml(title)}</h1>`,
+          renderPageHtml(p),
+          `<p><a href="${s}.md">markdown version</a> · <a href="https://roamresearch.com/#/app/${cfg.name}/page/${p[':block/uid']}">view in Roam Research</a> · exported ${graph.exportedAt.slice(0, 10)}</p>`,
+        ].join('\n'),
+      })
+    );
   }
 
   let releaseNotes = null;
@@ -536,11 +678,10 @@ for (const g of graphs) {
 // ---------------------------------------------------------------------------
 // Landing page
 {
-  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
   const pageList = (g) =>
     [
       ...g.pageMeta.map(
-        (m) => `  <li><a href="/${g.cfg.name}/${m.slug}.md">${esc(m.title)}</a></li>`
+        (m) => `  <li><a href="/${g.cfg.name}/${m.slug}">${escHtml(m.title)}</a></li>`
       ),
       ...(g.releaseNotes
         ? [`  <li><a href="/${g.cfg.name}/release-notes.md">Release notes</a></li>`]
@@ -553,24 +694,7 @@ for (const g of graphs) {
     graphLinks.length > 1
       ? `${graphLinks.slice(0, -1).join(', ')} and ${graphLinks.at(-1)}`
       : graphLinks[0];
-  const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Machine-friendly mirror of public Roam Research documentation graphs: llms.txt, full markdown exports, and TypeScript definitions for window.roamAlphaAPI.">
-<title>Roam Research Docs — llms.txt mirror</title>
-<style>
-  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
-  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
-  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
-  li { margin: .3em 0; }
-  summary { cursor: pointer; }
-  summary h2 { display: inline; }
-</style>
-</head>
-<body>
-<h1>Roam Research Docs</h1>
+  const body = `<h1>Roam Research Docs</h1>
 <p>A machine-friendly mirror of the public Roam Research graphs
 ${prose},
 regenerated on a schedule. Point your AI coding tool here.</p>
@@ -580,7 +704,7 @@ regenerated on a schedule. Point your AI coding tool here.</p>
 ${graphs
   .map(
     (g) =>
-      `      <li>graph <code>${g.cfg.name}</code> (${esc(g.cfg.title)}): <a href="/${g.cfg.name}/llms-full.txt"><code>llms-full.txt</code></a> — every page in one file</li>`
+      `      <li>graph <code>${g.cfg.name}</code> (${escHtml(g.cfg.title)}): <a href="/${g.cfg.name}/llms-full.txt"><code>llms-full.txt</code></a> — every page in one file</li>`
   )
   .join('\n')}
       <li>everything: <a href="/llms-full.txt"><code>llms-full.txt</code></a> — all graphs in one file</li>
@@ -590,18 +714,24 @@ ${graphs
 ${graphs
   .map(
     (g) => `<details>
-<summary><h2>${esc(g.cfg.title)}</h2></summary>
+<summary><h2>${escHtml(g.cfg.title)}</h2></summary>
 <ul>
 ${pageList(g)}
 </ul>
 </details>`
   )
   .join('\n')}
-<p>Last export: ${exportedAt} · <a href="${REPO_URL}">source on GitHub</a></p>
-</body>
-</html>
-`;
-  fs.writeFileSync(path.join(PUBLIC, 'index.html'), html);
+<p>Last export: ${exportedAt} · <a href="${REPO_URL}">source on GitHub</a></p>`;
+  fs.writeFileSync(
+    path.join(PUBLIC, 'index.html'),
+    htmlShell({
+      title: 'Roam Research Docs — llms.txt mirror',
+      description:
+        'Machine-friendly mirror of public Roam Research documentation graphs: llms.txt, full markdown exports, and TypeScript definitions for window.roamAlphaAPI.',
+      canonicalPath: '/',
+      body,
+    })
+  );
 
   // With a 404.html present, Pages returns real 404s instead of serving
   // index.html as an SPA fallback for unknown paths.
@@ -623,6 +753,31 @@ ${pageList(g)}
   fs.writeFileSync(
     path.join(PUBLIC, '_redirects'),
     ['/docs/* /developer-documentation/:splat 301', ''].join('\n')
+  );
+}
+
+// ---------------------------------------------------------------------------
+// sitemap.xml + robots.txt — the sitemap lists the HTML pages (the surface for
+// search engines); the .md/.txt surface stays for agents and is left out.
+{
+  const day = exportedAt.slice(0, 10);
+  const urls = [
+    `${BASE}/`,
+    ...graphs.flatMap((g) => g.pageMeta.map((m) => `${BASE}/${g.cfg.name}/${m.slug}`)),
+  ];
+  fs.writeFileSync(
+    path.join(PUBLIC, 'sitemap.xml'),
+    [
+      '<?xml version="1.0" encoding="UTF-8"?>',
+      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+      ...urls.map((u) => `  <url><loc>${u}</loc><lastmod>${day}</lastmod></url>`),
+      '</urlset>',
+      '',
+    ].join('\n')
+  );
+  fs.writeFileSync(
+    path.join(PUBLIC, 'robots.txt'),
+    `User-agent: *\nAllow: /\n\nSitemap: ${BASE}/sitemap.xml\n`
   );
 }
 

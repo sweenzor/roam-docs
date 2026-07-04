@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON Schema — Roam Research Docs</title>
+<meta name="description" content="Description">
+<link rel="canonical" href="https://roamdocs.fyi/help/json-schema">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="JSON Schema — Roam Research Docs">
+<meta property="og:description" content="Description">
+<meta property="og:url" content="https://roamdocs.fyi/help/json-schema">
+<meta name="twitter:card" content="summary">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  li { margin: .3em 0; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>JSON Schema</h1>
+<ul>
+<li><strong>Description</strong>
+<ul>
+<li>A schema for JSON import into Roam. A file being uploaded must be an array of pages. Keys not defined in the schema will be ignored.
+</li>
+</ul>
+</li>
+<li><strong>Objects</strong>
+<ul>
+<li>Page
+<ul>
+<li>description:: An object representing a page. The only required key is the title
+</li>
+<li>keys::
+<ul>
+<li>title
+</li>
+<li>children
+</li>
+<li>create-time
+</li>
+<li>edit-time
+</li>
+<li>edit-user
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Block
+<ul>
+<li>description:: An object representing a block. The only required key is the string
+</li>
+<li>keys::
+<ul>
+<li>string
+</li>
+<li>uid
+</li>
+<li>children
+</li>
+<li>create-time
+</li>
+<li>edit-time
+</li>
+<li>edit-user
+</li>
+<li>heading
+</li>
+<li>text-align
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Keys</strong>
+<ul>
+<li>title
+<ul>
+<li>description:: The title of a page. The string is unique across a user's database. If importing a title that is already used, it will merge with the already existing content.
+</li>
+<li>type:: string
+</li>
+</ul>
+</li>
+<li>string
+<ul>
+<li>description:: The string of a block
+</li>
+<li>type:: string
+</li>
+</ul>
+</li>
+<li>uid
+<ul>
+<li>description:: The unique identifier of a block. Use this if you want to preserve block references. If the unique identifier conflicts with other uid's in the database or the import, the import will fail. Be careful using this attribute. Standard Roam uid's are 9 characters, but can be any length. Roam uses naniod.js to generate these
+</li>
+<li>type:: string
+</li>
+</ul>
+</li>
+<li>children
+<ul>
+<li>description:: An array of blocks, the order is implicit from the order of the array
+</li>
+<li>type:: array of Blocks
+</li>
+</ul>
+</li>
+<li>create-time
+<ul>
+<li>description:: The time the object was created, measured in ms since unix epoch. If not supplied, the create-time of the object will be filled in by either the edit-time, or now.
+</li>
+<li>type:: integer
+<ul>
+<li>Epoch time in milliseconds (13-digit numbers)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>edit-time
+<ul>
+<li>description:: The time the object was last edited, measured in ms since unix epoch. If not supplied, the edit-time of the object will be filled in by either the create-time, or now.
+</li>
+<li>type:: integer
+</li>
+</ul>
+</li>
+<li>edit-user
+<ul>
+<li>description:: The user who last edited the object. 
+</li>
+<li>type:: json object of the format <code>{&quot;:user/uid&quot; &quot;ROAM-USER-UID&quot;}</code>
+</li>
+</ul>
+</li>
+<li>heading
+<ul>
+<li>description:: Determines what heading tag to wrap the block in, default is no heading (0)
+</li>
+<li>type:: integer, 0 | 1 | 2 | 3
+<ul>
+<li>For level of heading, 0 being no heading (the default) 1 heading h1, etc
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>text-align
+<ul>
+<li>description:: The text-align style for a block
+</li>
+<li>type:: string, &quot;left&quot; | &quot;center&quot; | &quot;right&quot; | &quot;justify&quot;
+<ul>
+<li>By default is left (as determined by the browser defaults)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Example</strong>
+<ul>
+<li><pre><code>[{:title        &quot;December 10th 2018&quot;
+  :create-email &quot;josh@roamresearch.com&quot;
+  :create-time  1576025237000
+  :children     [{:string   &quot;[[Meeting]] with [[Tim]]&quot;
+                  :children [{:string &quot;Meeting went well&quot;}]}
+                 {:string &quot;[[Call]] with [[John]]&quot;}]}
+ {:title    &quot;December 11th 2018&quot;}]</code></pre>
+</li>
+<li>More (better) examples can be found by exporting roam to json
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="json-schema.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/Nxz8u0vXU">view in Roam Research</a> · exported 2026-07-03</p>
+</body>
+</html>

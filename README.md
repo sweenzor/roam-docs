@@ -19,8 +19,10 @@ The graph name is the first URL path segment:
 | `/llms.txt` | [llms.txt](https://llmstxt.org) index of everything on the site |
 | `/llms-full.txt` | Every graph's full export concatenated into one file |
 | `/<graph>/llms-full.txt` | Full markdown export of one graph (smaller than the root file) |
-| `/<graph>/<page>.md` | One markdown file per page of each graph |
+| `/<graph>/<page>` | HTML version of each page — titles, descriptions, internal links; the surface for humans and search engines |
+| `/<graph>/<page>.md` | Markdown version of the same page — the surface for agents |
 | `/<graph>/release-notes.md` | Dated daily-note updates from that graph, when it has any |
+| `/sitemap.xml`, `/robots.txt` | Search-engine plumbing; the sitemap lists the HTML pages |
 | `/types/roam-alpha-api.d.ts` | TypeScript definitions for `window.roamAlphaAPI` — coverage verified against live introspection, including functions missing from the official docs (e.g. `depot.getInstalledExtensions`) |
 | `/examples/*` | Short copy-pasteable examples (queries, writes, extension skeleton, Backend API) |
 
