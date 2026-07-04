@@ -42,7 +42,7 @@ const CSS = `
   summary { cursor: pointer; }
   summary h2 { display: inline; }
 `;
-const htmlShell = ({ title, description, canonicalPath, body }) => `<!DOCTYPE html>
+const htmlShell = ({ title, description, canonicalPath, body, jsonLd }) => `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -56,13 +56,18 @@ const htmlShell = ({ title, description, canonicalPath, body }) => `<!DOCTYPE ht
 <meta property="og:description" content="${escHtml(description)}">
 <meta property="og:url" content="${BASE}${canonicalPath}">
 <meta name="twitter:card" content="summary">
-<style>${CSS}</style>
+${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>\n` : ''}<style>${CSS}</style>
 </head>
 <body>
 ${body}
 </body>
 </html>
 `;
+
+// IndexNow key — public by design: the protocol verifies site ownership by
+// serving this same value at /indexnow.txt (the refresh workflow pings
+// IndexNow with changed page URLs after each content commit).
+const INDEXNOW_KEY = 'ef1d42f2d44cc04ad2d2194606a796b0';
 
 const surface = JSON.parse(fs.readFileSync(path.join(DATA, 'api-surface.json'), 'utf8'));
 const API_VERSION = surface.roamAlphaAPI.apiVersion?.value || '?';
@@ -304,6 +309,14 @@ function processGraph(cfg) {
         title: `${title} — ${SITE_NAME}`,
         description: first || `${title}, from Roam Research's ${cfg.name} graph.`,
         canonicalPath: `/${outDir}/${s}`,
+        jsonLd: {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: SITE_NAME, item: `${BASE}/` },
+            { '@type': 'ListItem', position: 2, name: title, item: `${BASE}/${outDir}/${s}` },
+          ],
+        },
         body: [
           `<p><a href="/">${SITE_NAME}</a> · ${escHtml(cfg.title)}</p>`,
           `<h1>${escHtml(title)}</h1>`,
@@ -730,6 +743,7 @@ ${pageList(g)}
         'Machine-friendly mirror of public Roam Research documentation graphs: llms.txt, full markdown exports, and TypeScript definitions for window.roamAlphaAPI.',
       canonicalPath: '/',
       body,
+      jsonLd: { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE_NAME, url: `${BASE}/` },
     })
   );
 
@@ -779,6 +793,7 @@ ${pageList(g)}
     path.join(PUBLIC, 'robots.txt'),
     `User-agent: *\nAllow: /\n\nSitemap: ${BASE}/sitemap.xml\n`
   );
+  fs.writeFileSync(path.join(PUBLIC, 'indexnow.txt'), INDEXNOW_KEY);
 }
 
 console.log(

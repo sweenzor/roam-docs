@@ -36,6 +36,7 @@ jobs:
         run: node generate.mjs
 
       - name: Commit & push if content changed
+        id: commit
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config user.name 'github-actions[bot]'
@@ -47,4 +48,23 @@ jobs:
           else
             git commit -m 'chore: refresh docs from Roam graphs'
             git push
+            echo 'pushed=true' >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Ping IndexNow with changed pages
+        if: steps.commit.outputs.pushed == 'true'
+        run: |
+          KEY=$(cat public/indexnow.txt)
+          URLS=$(git diff --name-only HEAD~1 HEAD -- public | node -e "
+            const files = require('fs').readFileSync(0, 'utf8').split('\n').filter(Boolean);
+            const urls = files
+              .filter((f) => f.endsWith('.html') && !f.endsWith('404.html'))
+              .map((f) => 'https://roamdocs.fyi' + (f === 'public/index.html' ? '/' : f.replace(/^public/, '').replace(/\.html\$/, '')));
+            console.log(JSON.stringify(urls));
+          ")
+          if [ "$URLS" = "[]" ]; then echo 'No HTML page changes — skipping IndexNow.'; exit 0; fi
+          echo "Pinging IndexNow with $(echo "$URLS" | tr ',' '\n' | wc -l) URL(s)..."
+          curl -sS -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            -d "{\"host\":\"roamdocs.fyi\",\"key\":\"$KEY\",\"keyLocation\":\"https://roamdocs.fyi/indexnow.txt\",\"urlList\":$URLS}" \
+            -w '\nIndexNow HTTP %{http_code}\n'
