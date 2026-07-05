@@ -56,6 +56,7 @@ const htmlShell = ({ title, description, canonicalPath, body, jsonLd }) => `<!DO
 <meta property="og:description" content="${escHtml(description)}">
 <meta property="og:url" content="${BASE}${canonicalPath}">
 <meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
 ${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>\n` : ''}<style>${CSS}</style>
 </head>
 <body>
@@ -367,7 +368,7 @@ const graphs = GRAPH_CONFIGS.map((cfg) => processGraph(cfg));
 // All graphs export in one pipeline run; the first one's timestamp stands for the batch.
 const exportedAt = graphs[0].graph.exportedAt;
 
-// ---- copy types/ and examples/ ----
+// ---- copy types/, examples/, and the favicon ----
 for (const dir of ['types', 'examples']) {
   const src = path.join(ROOT, dir);
   if (!fs.existsSync(src)) continue;
@@ -375,6 +376,8 @@ for (const dir of ['types', 'examples']) {
   for (const f of fs.readdirSync(src))
     fs.copyFileSync(path.join(src, f), path.join(PUBLIC, dir, f));
 }
+// Roam Research's favicon (from roamresearch.com/favicon.ico).
+fs.copyFileSync(path.join(ROOT, 'favicon.ico'), path.join(PUBLIC, 'favicon.ico'));
 
 // ---- .d.ts coverage check ----
 const dtsPath = path.join(ROOT, 'types', 'roam-alpha-api.d.ts');
