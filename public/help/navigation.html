@@ -24,7 +24,10 @@
   ul { list-style: none; margin: .2em 0; padding: 0; }
   li { position: relative; padding-left: 1.5em; margin: .3em 0; }
   li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
-  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: .49em; }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
   .crumbs { font-size: .85em; opacity: .75; }
   .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
   summary { cursor: pointer; }
