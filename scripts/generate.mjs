@@ -321,7 +321,9 @@ function processGraph(cfg) {
           `<p><a href="/">${SITE_NAME}</a> · ${escHtml(cfg.title)}</p>`,
           `<h1>${escHtml(title)}</h1>`,
           renderPageHtml(p),
-          `<p><a href="${s}.md">markdown version</a> · <a href="https://roamresearch.com/#/app/${cfg.name}/page/${p[':block/uid']}">view in Roam Research</a> · exported ${graph.exportedAt.slice(0, 10)}</p>`,
+          // No volatile dates here: a changing footer would make every daily
+          // refresh commit all pages and over-report to IndexNow.
+          `<p><a href="${s}.md">markdown version</a> · <a href="https://roamresearch.com/#/app/${cfg.name}/page/${p[':block/uid']}">view in Roam Research</a></p>`,
         ].join('\n'),
       })
     );
@@ -774,7 +776,7 @@ ${pageList(g)}
 // sitemap.xml + robots.txt — the sitemap lists the HTML pages (the surface for
 // search engines); the .md/.txt surface stays for agents and is left out.
 {
-  const day = exportedAt.slice(0, 10);
+  // No <lastmod>: it would churn on every export and force daily no-op commits.
   const urls = [
     `${BASE}/`,
     ...graphs.flatMap((g) => g.pageMeta.map((m) => `${BASE}/${g.cfg.name}/${m.slug}`)),
@@ -784,7 +786,7 @@ ${pageList(g)}
     [
       '<?xml version="1.0" encoding="UTF-8"?>',
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-      ...urls.map((u) => `  <url><loc>${u}</loc><lastmod>${day}</lastmod></url>`),
+      ...urls.map((u) => `  <url><loc>${u}</loc></url>`),
       '</urlset>',
       '',
     ].join('\n')
