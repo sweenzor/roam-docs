@@ -21,14 +21,20 @@
   pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
   pre code { background: none; padding: 0; }
   img { max-width: 100%; }
-  li { margin: .3em 0; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: .49em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
   summary { cursor: pointer; }
   summary h2 { display: inline; }
 </style>
 </head>
 <body>
-<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
 <h1>Sharing</h1>
+<p class="meta"><a href="sharing.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/vh3S6FSr1">view in Roam Research</a></p>
 <h4>Sharing graph as read-only</h4>
 <ul>
 <li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fks9BpYNOVI.gif?alt=media&amp;token=5fabb1d0-1981-4a47-a2e0-f2d397b2c3b0" alt="" loading="lazy">
@@ -49,6 +55,5 @@
 <li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FrdZtxdwzbn.gif?alt=media&amp;token=d46dd91e-4963-4dca-bb5f-82f7975e1b6b" alt="" loading="lazy">
 </li>
 </ul>
-<p><a href="sharing.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/vh3S6FSr1">view in Roam Research</a></p>
 </body>
 </html>

@@ -21,14 +21,20 @@
   pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
   pre code { background: none; padding: 0; }
   img { max-width: 100%; }
-  li { margin: .3em 0; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: .49em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
   summary { cursor: pointer; }
   summary h2 { display: inline; }
 </style>
 </head>
 <body>
-<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
 <h1>Zapier Integration</h1>
+<p class="meta"><a href="zapier-integration.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/rQV5KEoFk">view in Roam Research</a></p>
 <ul>
 <li><a href="https://zapier.com/apps/roam-research/integrations">Zapier</a> lets you connect Roam Research to 6,000+ other web services. Automated connections called Zaps, set up in minutes with no coding, can automate your day-to-day tasks and build workflows between apps that otherwise wouldn't be possible.
 </li>
@@ -212,6 +218,5 @@
 </ul>
 </li>
 </ul>
-<p><a href="zapier-integration.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/rQV5KEoFk">view in Roam Research</a></p>
 </body>
 </html>

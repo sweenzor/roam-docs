@@ -21,14 +21,20 @@
   pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
   pre code { background: none; padding: 0; }
   img { max-width: 100%; }
-  li { margin: .3em 0; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: .49em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
   summary { cursor: pointer; }
   summary h2 { display: inline; }
 </style>
 </head>
 <body>
-<p><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Developer documentation</p>
 <h1>Roam Backend API (Beta)</h1>
+<p class="meta"><a href="roam-backend-api-beta.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/W4Po8pcHQ">view in Roam Research</a></p>
 <h4><strong>Description</strong></h4>
 <ul>
 <li>If you want to capture to both unencrypted &amp; encrypted graphs, please checkout our Append API docs instead: <a href="/developer-documentation/roam-append-api">Roam Append API</a>
@@ -2605,6 +2611,5 @@ This means that out of the <code>n</code> actions in a batch action request, the
 <li>---
 </li>
 </ul>
-<p><a href="roam-backend-api-beta.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/W4Po8pcHQ">view in Roam Research</a></p>
 </body>
 </html>

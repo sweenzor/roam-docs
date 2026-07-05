@@ -38,7 +38,12 @@ const CSS = `
   pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
   pre code { background: none; padding: 0; }
   img { max-width: 100%; }
-  li { margin: .3em 0; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: .49em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
   summary { cursor: pointer; }
   summary h2 { display: inline; }
 `;
@@ -220,8 +225,10 @@ function processGraph(cfg) {
       .split(/(```[\s\S]*?```)/)
       .map((seg, i) => {
         if (i % 2) {
-          const m = seg.match(/^```\w*\n?([\s\S]*?)```$/);
-          return `<pre><code>${escHtml(m ? m[1] : seg)}</code></pre>`;
+          // Info string may be multi-word (Roam uses "plain text" etc.) — the
+          // whole first line after the opening fence is the language label.
+          const m = seg.match(/^```[^\n]*\n([\s\S]*?)```$/);
+          return `<pre><code>${escHtml(m ? m[1] : seg.replace(/^```|```$/g, ''))}</code></pre>`;
         }
         return seg
           .split(/(`[^`\n]*`)/)
@@ -319,12 +326,12 @@ function processGraph(cfg) {
           ],
         },
         body: [
-          `<p><a href="/">${SITE_NAME}</a> · ${escHtml(cfg.title)}</p>`,
+          `<p class="crumbs"><a href="/">${SITE_NAME}</a> · ${escHtml(cfg.title)}</p>`,
           `<h1>${escHtml(title)}</h1>`,
-          renderPageHtml(p),
-          // No volatile dates here: a changing footer would make every daily
+          // No volatile dates here: a changing line would make every daily
           // refresh commit all pages and over-report to IndexNow.
-          `<p><a href="${s}.md">markdown version</a> · <a href="https://roamresearch.com/#/app/${cfg.name}/page/${p[':block/uid']}">view in Roam Research</a></p>`,
+          `<p class="meta"><a href="${s}.md">markdown version</a> · <a href="https://roamresearch.com/#/app/${cfg.name}/page/${p[':block/uid']}">view in Roam Research</a></p>`,
+          renderPageHtml(p),
         ].join('\n'),
       })
     );

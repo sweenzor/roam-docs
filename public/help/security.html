@@ -21,14 +21,20 @@
   pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
   pre code { background: none; padding: 0; }
   img { max-width: 100%; }
-  li { margin: .3em 0; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: .49em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
   summary { cursor: pointer; }
   summary h2 { display: inline; }
 </style>
 </head>
 <body>
-<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
 <h1>Security</h1>
+<p class="meta"><a href="security.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/Dz5EfmkDa">view in Roam Research</a></p>
 <h2><a href="https://github.com/Roam-Research/issues/security/policy">Security Policy</a></h2>
 <ul>
 <li>Security is core to our values, and we value the input of security researchers acting in good-faith to help us maintain a high standard for the security and privacy for our users. This includes encouraging responsible vulnerability research and disclosure. This policy sets out our definition of good-faith in the context of finding and reporting vulnerabilities, as well as what you can expect from us in return.
@@ -110,6 +116,5 @@
 </li>
 </ul>
 <h2><a href="https://github.com/Roam-Research/issues/security/advisories">Security Advisories</a></h2>
-<p><a href="security.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/Dz5EfmkDa">view in Roam Research</a></p>
 </body>
 </html>

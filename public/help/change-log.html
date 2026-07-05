@@ -21,14 +21,20 @@
   pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
   pre code { background: none; padding: 0; }
   img { max-width: 100%; }
-  li { margin: .3em 0; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: .49em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
   summary { cursor: pointer; }
   summary h2 { display: inline; }
 </style>
 </head>
 <body>
-<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
 <h1>Change Log</h1>
+<p class="meta"><a href="change-log.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/Ec97klr7x">view in Roam Research</a></p>
 <h3>[Updating Roam](<a href="/help/updating-roam">Updating Roam</a>)</h3>
 <h3><strong>New Changes</strong></h3>
 <ul>
@@ -636,8 +642,7 @@
 <ul>
 <li>Add a <code>Type::</code> attribute as a top-level block on the page, with one or more <code>#TypeName</code> references:
 </li>
-<li><pre><code> text
-- Type:: #Project
+<li><pre><code>- Type:: #Project
 - Status:: Doing
 - Priority:: P1
 - Due:: [[April 30th, 2026]]
@@ -2269,8 +2274,7 @@ set rows per column to a 1
 <ul>
 <li>The exported markdown looks like this:
 </li>
-<li><pre><code> text
-# Page Title- first block on the page
+<li><pre><code># Page Title- first block on the page
   - nested child block
 - second block
 
@@ -3532,8 +3536,7 @@ You can tweak the title, tags, and metadata before it lands in your Roam graph.
 <ul>
 <li>You can customise sizing/alignment by overriding these variables (e.g. in your theme CSS):
 </li>
-<li><pre><code> text
-:root {
+<li><pre><code>:root {
   --bb-bullet-size: 14px;
   --bb-bullet-font-size: 12px;
   --bb-bullet-translate-y: 0px;
@@ -3962,8 +3965,7 @@ You can tweak the title, tags, and metadata before it lands in your Roam graph.
 </li>
 <li><strong>Formato do bloco principal</strong>:
 </li>
-<li><pre><code> text
-[[January 2nd, 2025]] Task title #ProjectName
+<li><pre><code>[[January 2nd, 2025]] Task title #ProjectName
   todoist-id:: [123456789](https://todoist.com/showTask?id=123456789)
   todoist-due:: January 2nd, 2025
   todoist-desc:: Optional description
@@ -4126,8 +4128,7 @@ You can tweak the title, tags, and metadata before it lands in your Roam graph.
 <ul>
 <li>Each daily page follows this structure (sections are omitted when empty):
 </li>
-<li><pre><code> text
-#ouraring [[November 29th, 2025]]
+<li><pre><code>#ouraring [[November 29th, 2025]]
   Sleep
     Score: 85
     Bedtime: 22:30 – 06:45
@@ -4373,15 +4374,13 @@ You can tweak the title, tags, and metadata before it lands in your Roam graph.
 </li>
 <li><strong>🔹 Child Block Style</strong>
 <ul>
-<li><pre><code> text
-{{[[TODO]]}} Write weekly newsletter
+<li><pre><code>{{[[TODO]]}} Write weekly newsletter
   - BT_attrRepeat:: every Friday
   - BT_attrDue:: [[2025-11-07]]</code></pre>
 </li>
 <li>When completed:
 </li>
-<li><pre><code> text
-{{[[DONE]]}} Write weekly newsletter
+<li><pre><code>{{[[DONE]]}} Write weekly newsletter
   - BT_attrRepeat:: every Friday
   - BT_attrDue:: [[2025-11-07]]- completed:: [[2025-10-31]]</code></pre>
 </li>
@@ -4399,8 +4398,7 @@ You can tweak the title, tags, and metadata before it lands in your Roam graph.
 <ul>
 <li>Better Tasks also understands the following optional child-block attributes (names configurable in settings; defaults shown):
 </li>
-<li><pre><code> text
-- BT_attrProject:: [[Website Refresh]]- BT_attrWaitingFor:: [[Finance Team]]- BT_attrContext:: @computer, #office
+<li><pre><code>- BT_attrProject:: [[Website Refresh]]- BT_attrWaitingFor:: [[Finance Team]]- BT_attrContext:: @computer, #office
 - BT_attrPriority:: high
 - BT_attrEnergy:: medium</code></pre>
 </li>
@@ -5222,15 +5220,13 @@ You can tweak the title, tags, and metadata before it lands in your Roam graph.
 </li>
 <li>Open your terminal and run the following command. You should see a response from the Ollama server.
 </li>
-<li><pre><code> text
-curl http://localhost:11434/</code></pre>
+<li><pre><code>curl http://localhost:11434/</code></pre>
 </li>
 <li>2. List Your Installed Models
 </li>
 <li>Verify which models you have available locally.
 </li>
-<li><pre><code> text
-ollama list
+<li><pre><code>ollama list
 # or via the API
 curl http://localhost:11434/api/tags</code></pre>
 </li>
@@ -5246,8 +5242,7 @@ curl http://localhost:11434/api/tags</code></pre>
 </li>
 <li>Download and run the setup script:
 </li>
-<li><pre><code> text
-# Option 1: Download from public URL
+<li><pre><code># Option 1: Download from public URL
 curl -fsSL https://public.qcrao.com/rr-copilot/setup_ollama_cors.sh | bash</code></pre>
 </li>
 <li>This script will:
@@ -5264,14 +5259,12 @@ curl -fsSL https://public.qcrao.com/rr-copilot/setup_ollama_cors.sh | bash</code
 </li>
 <li>To test if CORS is working correctly:
 </li>
-<li><pre><code> text
-# Download and run the test script
+<li><pre><code># Download and run the test script
 curl -fsSL https://public.qcrao.com/rr-copilot/test_ollama_cors.sh | bash</code></pre>
 </li>
 <li>To remove the CORS configuration later:
 </li>
-<li><pre><code> text
-# Download and run the cleanup script
+<li><pre><code># Download and run the cleanup script
 curl -fsSL https://public.qcrao.com/rr-copilot/cleanup_ollama_cors.sh | bash</code></pre>
 </li>
 </ul>
@@ -6217,8 +6210,7 @@ curl -fsSL https://public.qcrao.com/rr-copilot/cleanup_ollama_cors.sh | bash</co
 <ul>
 <li>{{mermaid}}
 <ul>
-<li><pre><code> text
-quadrantChart
+<li><pre><code>quadrantChart
     title Reach and engagement of campaigns
     x-axis Low Reach --&gt; High Reach
     y-axis Low Engagement --&gt; High Engagement
@@ -13223,8 +13215,7 @@ THEN &gt; Socrates is Mortal
 <ul>
 <li>Write your kroki code in a code/regular block, for instance,
 <ul>
-<li><pre><code> text
-graph TD
+<li><pre><code>graph TD
   A[ Anyone ] --&gt;|Can help | B( Go to github.com/yuzutech/kroki )
   B --&gt; C{ How to contribute? }
   C --&gt; D[ Reporting bugs ]
@@ -13239,8 +13230,7 @@ graph TD
 <ul>
 <li>so for instance, <code>{{[[kroki]]: mermaid:((13fZ8yxDr))}}</code> will produce:
 <ul>
-<li>{{kroki: mermaid:<pre><code> text
-graph TD
+<li>{{kroki: mermaid:<pre><code>graph TD
   A[ Anyone ] --&gt;|Can help | B( Go to github.com/yuzutech/kroki )
   B --&gt; C{ How to contribute? }
   C --&gt; D[ Reporting bugs ]
@@ -13951,6 +13941,5 @@ graph TD
 </ul>
 </li>
 </ul>
-<p><a href="change-log.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/Ec97klr7x">view in Roam Research</a></p>
 </body>
 </html>

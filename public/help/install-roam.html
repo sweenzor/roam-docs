@@ -21,14 +21,20 @@
   pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
   pre code { background: none; padding: 0; }
   img { max-width: 100%; }
-  li { margin: .3em 0; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: .49em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
   summary { cursor: pointer; }
   summary h2 { display: inline; }
 </style>
 </head>
 <body>
-<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
 <h1>Install Roam</h1>
+<p class="meta"><a href="install-roam.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/BM0yG_cbU">view in Roam Research</a></p>
 <h4><strong>Does Roam have a mobile app? Can I install it on my machine?</strong></h4>
 <ul>
 <li>Not yet, however Roam is available now as a webapp which gives you full access to your Roam and functions in a similar way to an app available through the appstore.
@@ -60,6 +66,5 @@
 <li>More on this: https://www.roamtips.com/home/roam-research-app-mac-windows
 </li>
 </ul>
-<p><a href="install-roam.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/BM0yG_cbU">view in Roam Research</a></p>
 </body>
 </html>

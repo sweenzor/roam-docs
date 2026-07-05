@@ -21,14 +21,20 @@
   pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
   pre code { background: none; padding: 0; }
   img { max-width: 100%; }
-  li { margin: .3em 0; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: .49em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
   summary { cursor: pointer; }
   summary h2 { display: inline; }
 </style>
 </head>
 <body>
-<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
 <h1>Privacy Policy</h1>
+<p class="meta"><a href="privacy-policy.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/bnQcAUM0i">view in Roam Research</a></p>
 <h4><strong>TLDR: </strong>Roam does not own your data, nor do we sell it to others or use it for advertising. We will never read or access your private notes without written or verbal consent - unless compelled by law enforcement.</h4>
 <ul>
 <li>As a quick reminder, here is our policy on User Content as per the <a href="/help/terms-and-conditions">Terms and Conditions</a>:
@@ -206,6 +212,5 @@
 <li>8.1.Some data available on Roam is protected by copyright laws and may contain material proprietary to Roam Research, Inc. This data or any of its components may not be reproduced, republished, distributed, transmitted, displayed, broadcasted, or otherwise disseminated or exploited in any manner without the express prior written permission of Roam Research, Inc. The receipt or possession of this data or any of its components does not convey any rights to reproduce, disclose, or distribute its contents, or to manufacture, use, or sell anything that it may describe, in whole or in part. If consent to use specific data is granted, a link to the current version of that data on the Roam website must be included for reference and sourcing. If you have questions about the use or reproduction of data available on Roam’s sites, please contact us.
 </li>
 </ul>
-<p><a href="privacy-policy.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/bnQcAUM0i">view in Roam Research</a></p>
 </body>
 </html>

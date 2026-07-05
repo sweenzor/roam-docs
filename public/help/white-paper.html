@@ -21,14 +21,20 @@
   pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
   pre code { background: none; padding: 0; }
   img { max-width: 100%; }
-  li { margin: .3em 0; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: .49em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
   summary { cursor: pointer; }
   summary h2 { display: inline; }
 </style>
 </head>
 <body>
-<p><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
 <h1>White Paper</h1>
+<p class="meta"><a href="white-paper.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/dZ72V0Ig6">view in Roam Research</a></p>
 <ul>
 <li><strong>Abstract</strong>. Roam is an online workspace for organizing and evaluating knowledge. The system is built on a directed graph, which frees it from the constraints of the classic file tree. Users can remix and connect ideas in multiple overlapping hierarchies, with each unit of information becoming a node in a dynamic network. Any given node can occupy multiple positions simultaneously, convey information through defined relationships, and populate changes throughout the graph. With weightings assigned to the strength of relationships between nodes, Roam also becomes a tool for Bayesian inference and decision making. The ultimate goal is to extend the system to collaborative reasoning, allowing groups to build shared mental maps and make faster and better-informed decisions.
 </li>
@@ -390,6 +396,5 @@
 </ul>
 </li>
 </ul>
-<p><a href="white-paper.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/dZ72V0Ig6">view in Roam Research</a></p>
 </body>
 </html>
