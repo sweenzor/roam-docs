@@ -4,6 +4,9 @@
 
 ### **New Changes**
 
+- [[July 6th, 2026]]
+  - [[Bug Fixes]]
+    - Fixed move blocks and tab to respect filters applied
 - [[July 2nd, 2026]]
   - [[Quality of Life Improvements]]
     - Added copy blocks and delete blocks to the single block multi select menu
