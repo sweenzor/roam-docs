@@ -4,6 +4,9 @@
 
 ### **New Changes**
 
+- [[July 7th, 2026]]
+  - [[Quality of Life Improvements]]
+    - Added fullscreen view for [[Mermaid Diagrams]]
 - [[July 6th, 2026]]
   - [[Bug Fixes]]
     - Fixed move blocks and tab to respect filters applied
