@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-07-08T07:49:01.838Z",
+ "exportedAt": "2026-07-09T09:00:50.208Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -61153,6 +61153,10 @@
   {
    ":node/title": "Adam Křivka",
    ":block/uid": "5DUsed3II"
+  },
+  {
+   ":node/title": "agentic",
+   ":block/uid": "9gfh-kl9G"
   },
   {
    ":node/title": "June 4th, 2020",

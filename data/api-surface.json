@@ -854,13 +854,7 @@
     "ai": {
      "kind": "namespace",
      "children": {
-      "getPage": {
-       "kind": "function",
-       "jsLength": 1,
-       "cljsArities": [],
-       "variadic": false
-      },
-      "getBlock": {
+      "getComments": {
        "kind": "function",
        "jsLength": 1,
        "cljsArities": [],
@@ -872,13 +866,13 @@
        "cljsArities": [],
        "variadic": false
       },
-      "roamQuery": {
+      "getBlock": {
        "kind": "function",
        "jsLength": 1,
        "cljsArities": [],
        "variadic": false
       },
-      "search": {
+      "roamQuery": {
        "kind": "function",
        "jsLength": 1,
        "cljsArities": [],
@@ -896,7 +890,19 @@
        "cljsArities": [],
        "variadic": false
       },
-      "getComments": {
+      "getPage": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "search": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "suggestLinks": {
        "kind": "function",
        "jsLength": 1,
        "cljsArities": [],

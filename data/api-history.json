@@ -12,6 +12,7 @@
   "data.ai.roamQuery",
   "data.ai.search",
   "data.ai.searchTemplates",
+  "data.ai.suggestLinks",
   "data.async.fast.q",
   "data.async.pull",
   "data.async.pull_many",
@@ -137,6 +138,15 @@
    "apiVersion": "1.1.2",
    "baseline": true,
    "total": 129
+  },
+  {
+   "date": "2026-07-09",
+   "apiVersion": "1.1.2",
+   "added": [
+    "data.ai.suggestLinks"
+   ],
+   "removed": [],
+   "total": 130
   }
  ]
 }
