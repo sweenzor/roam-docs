@@ -872,6 +872,12 @@
        "cljsArities": [],
        "variadic": false
       },
+      "semanticSearch": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
       "roamQuery": {
        "kind": "function",
        "jsLength": 1,
@@ -1002,7 +1008,7 @@
   },
   "apiVersion": {
    "kind": "string",
-   "value": "1.1.2"
+   "value": "1.1.3"
   }
  }
 }

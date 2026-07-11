@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-07-09T09:00:50.208Z",
+ "exportedAt": "2026-07-11T07:27:19.384Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -15079,7 +15079,7 @@
        ":block/uid": "z7nDW4FYi",
        ":block/string": "[[2021]]",
        ":block/heading": 3,
-       ":block/order": 42
+       ":block/order": 43
       },
       {
        ":block/refs": [
@@ -18242,7 +18242,7 @@
        ":block/uid": "oEUzBpPVt",
        ":block/string": "[[2022]]",
        ":block/heading": 3,
-       ":block/order": 41
+       ":block/order": 42
       },
       {
        ":block/refs": [
@@ -22829,7 +22829,7 @@
        ":block/uid": "3DcyG9fYJ",
        ":block/string": "[[2023]]",
        ":block/heading": 3,
-       ":block/order": 40
+       ":block/order": 41
       },
       {
        ":block/refs": [
@@ -28667,7 +28667,7 @@
        ":block/uid": "N8o9mOFxV",
        ":block/string": "[[2024]]",
        ":block/heading": 3,
-       ":block/order": 39
+       ":block/order": 40
       },
       {
        ":block/refs": [
@@ -28755,7 +28755,7 @@
        ],
        ":block/uid": "mbBXOyRr4",
        ":block/string": "[[January 7th, 2026]]",
-       ":block/order": 37
+       ":block/order": 38
       },
       {
        ":block/refs": [
@@ -29602,7 +29602,7 @@
        ],
        ":block/uid": "D4sWwAFQH",
        ":block/string": "[[January 12th, 2026]]",
-       ":block/order": 36
+       ":block/order": 37
       },
       {
        ":block/refs": [
@@ -30020,7 +30020,7 @@
        ],
        ":block/uid": "fZnJ8SpjV",
        ":block/string": "[[January 16th, 2026]]",
-       ":block/order": 35
+       ":block/order": 36
       },
       {
        ":block/refs": [
@@ -39159,7 +39159,7 @@
        ":block/uid": "e3HyGxGmz",
        ":block/string": "[[2025]]",
        ":block/heading": 3,
-       ":block/order": 38
+       ":block/order": 39
       },
       {
        ":block/refs": [
@@ -39386,7 +39386,7 @@
        ],
        ":block/uid": "DQLXBkLqB",
        ":block/string": "[[January 30th, 2026]]",
-       ":block/order": 34
+       ":block/order": 35
       },
       {
        ":block/refs": [
@@ -39692,7 +39692,7 @@
        ],
        ":block/uid": "faBrrXpMf",
        ":block/string": "[[February 10th, 2026]]",
-       ":block/order": 33
+       ":block/order": 34
       },
       {
        ":block/refs": [
@@ -39749,7 +39749,7 @@
        ],
        ":block/uid": "HGdio9-X1",
        ":block/string": "[[February 11th, 2026]]",
-       ":block/order": 32
+       ":block/order": 33
       },
       {
        ":block/refs": [
@@ -39909,7 +39909,7 @@
        ],
        ":block/uid": "3YbHyvMVu",
        ":block/string": "[[February 18th, 2026]]",
-       ":block/order": 31
+       ":block/order": 32
       },
       {
        ":block/refs": [
@@ -39999,7 +39999,7 @@
        ],
        ":block/uid": "l1CEHstpS",
        ":block/string": "[[February 19th, 2026]]",
-       ":block/order": 30
+       ":block/order": 31
       },
       {
        ":block/refs": [
@@ -40057,7 +40057,7 @@
        ],
        ":block/uid": "w7XCOWrmV",
        ":block/string": "[[February 22nd, 2026]]",
-       ":block/order": 29
+       ":block/order": 30
       },
       {
        ":block/refs": [
@@ -40150,7 +40150,7 @@
        ],
        ":block/uid": "lq5IvpQ7J",
        ":block/string": "[[February 25th, 2026]]",
-       ":block/order": 28
+       ":block/order": 29
       },
       {
        ":block/refs": [
@@ -40948,7 +40948,7 @@
        ],
        ":block/uid": "ipU_NCoCx",
        ":block/string": "[[February 26th, 2026]]",
-       ":block/order": 27
+       ":block/order": 28
       },
       {
        ":block/refs": [
@@ -40996,7 +40996,7 @@
        ],
        ":block/uid": "WO-6A7VX9",
        ":block/string": "[[February 27th, 2026]]",
-       ":block/order": 26
+       ":block/order": 27
       },
       {
        ":block/refs": [
@@ -41131,7 +41131,7 @@
        ],
        ":block/uid": "AHy3mUokJ",
        ":block/string": "[[March 9th, 2026]]",
-       ":block/order": 25
+       ":block/order": 26
       },
       {
        ":block/refs": [
@@ -41301,7 +41301,7 @@
        ],
        ":block/uid": "-R8L5nZLD",
        ":block/string": "[[March 11th, 2026]]",
-       ":block/order": 24
+       ":block/order": 25
       },
       {
        ":block/refs": [
@@ -41425,7 +41425,7 @@
        ],
        ":block/uid": "e5HOoYOYK",
        ":block/string": "[[March 24th, 2026]]",
-       ":block/order": 23
+       ":block/order": 24
       },
       {
        ":block/refs": [
@@ -41464,7 +41464,7 @@
        ],
        ":block/uid": "hP0WzVCb3",
        ":block/string": "[[March 30th, 2026]]",
-       ":block/order": 22
+       ":block/order": 23
       },
       {
        ":block/refs": [
@@ -41963,7 +41963,7 @@
        ],
        ":block/uid": "kYfXB-KfD",
        ":block/string": "[[March 31st, 2026]]",
-       ":block/order": 21
+       ":block/order": 22
       },
       {
        ":block/refs": [
@@ -42027,7 +42027,7 @@
        ],
        ":block/uid": "hy237MoSG",
        ":block/string": "[[April 10th, 2026]]",
-       ":block/order": 20
+       ":block/order": 21
       },
       {
        ":block/refs": [
@@ -42249,7 +42249,7 @@
        ],
        ":block/uid": "Ld3WwhXAJ",
        ":block/string": "[[April 14th, 2026]]",
-       ":block/order": 19
+       ":block/order": 20
       },
       {
        ":block/refs": [
@@ -42300,7 +42300,7 @@
        ],
        ":block/uid": "FX03un0yx",
        ":block/string": "[[April 15th, 2026]]",
-       ":block/order": 18
+       ":block/order": 19
       },
       {
        ":block/refs": [
@@ -42349,7 +42349,7 @@
        ],
        ":block/uid": "Tdxn9p6T-",
        ":block/string": "[[April 17th, 2026]]",
-       ":block/order": 17
+       ":block/order": 18
       },
       {
        ":block/refs": [
@@ -44029,7 +44029,7 @@
        ],
        ":block/uid": "yYmOmnffK",
        ":block/string": "[[April 27th, 2026]]",
-       ":block/order": 16
+       ":block/order": 17
       },
       {
        ":block/refs": [
@@ -44109,7 +44109,7 @@
        ],
        ":block/uid": "E8B5FpUqb",
        ":block/string": "[[May 1st, 2026]]",
-       ":block/order": 15
+       ":block/order": 16
       },
       {
        ":block/refs": [
@@ -44293,7 +44293,7 @@
        ],
        ":block/uid": "_bXQOG7-W",
        ":block/string": "[[May 4th, 2026]]",
-       ":block/order": 14
+       ":block/order": 15
       },
       {
        ":block/refs": [
@@ -44392,7 +44392,7 @@
        ],
        ":block/uid": "77u8rD3tN",
        ":block/string": "[[May 5th, 2026]]",
-       ":block/order": 13
+       ":block/order": 14
       },
       {
        ":block/refs": [
@@ -44455,7 +44455,7 @@
        ],
        ":block/uid": "4jefQzlrL",
        ":block/string": "[[May 15th, 2026]]",
-       ":block/order": 12
+       ":block/order": 13
       },
       {
        ":block/refs": [
@@ -44511,7 +44511,7 @@
        ],
        ":block/uid": "yCa6IFyF-",
        ":block/string": "[[May 21st, 2026]]",
-       ":block/order": 11
+       ":block/order": 12
       },
       {
        ":block/refs": [
@@ -44552,7 +44552,7 @@
        ],
        ":block/uid": "s1JCTlMYp",
        ":block/string": "[[May 28th, 2026]]",
-       ":block/order": 10
+       ":block/order": 11
       },
       {
        ":block/refs": [
@@ -44594,7 +44594,7 @@
        ],
        ":block/uid": "GtQy1iARj",
        ":block/string": "[[June 1st, 2026]]",
-       ":block/order": 9
+       ":block/order": 10
       },
       {
        ":block/refs": [
@@ -44721,7 +44721,7 @@
        ],
        ":block/uid": "FfZFcIMVi",
        ":block/string": "[[June 2nd, 2026]]",
-       ":block/order": 8
+       ":block/order": 9
       },
       {
        ":block/refs": [
@@ -44757,7 +44757,7 @@
        ],
        ":block/uid": "o0biga_ls",
        ":block/string": "[[June 9th, 2026]]",
-       ":block/order": 7
+       ":block/order": 8
       },
       {
        ":block/refs": [
@@ -44786,7 +44786,7 @@
        ],
        ":block/uid": "1oHVhjf1j",
        ":block/string": "[[June 10th, 2026]]",
-       ":block/order": 6
+       ":block/order": 7
       },
       {
        ":block/refs": [
@@ -44825,7 +44825,7 @@
        ],
        ":block/uid": "jlW42mQ3s",
        ":block/string": "[[June 11th, 2026]]",
-       ":block/order": 5
+       ":block/order": 6
       },
       {
        ":block/refs": [
@@ -45372,7 +45372,7 @@
        ],
        ":block/uid": "Wp3IwehIi",
        ":block/string": "[[June 13th, 2026]]",
-       ":block/order": 4
+       ":block/order": 5
       },
       {
        ":block/refs": [
@@ -45513,7 +45513,7 @@
        ],
        ":block/uid": "T7MyhAu_Z",
        ":block/string": "[[June 30th, 2026]]",
-       ":block/order": 3
+       ":block/order": 4
       },
       {
        ":block/refs": [
@@ -45569,7 +45569,7 @@
        ],
        ":block/uid": "MdrAuMqaU",
        ":block/string": "[[July 2nd, 2026]]",
-       ":block/order": 2
+       ":block/order": 3
       },
       {
        ":block/refs": [
@@ -45598,7 +45598,7 @@
        ],
        ":block/uid": "MUux5EgdX",
        ":block/string": "[[July 6th, 2026]]",
-       ":block/order": 1
+       ":block/order": 2
       },
       {
        ":block/refs": [
@@ -45632,6 +45632,185 @@
        ],
        ":block/uid": "Omo5TNL1L",
        ":block/string": "[[July 7th, 2026]]",
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "07-10-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "TpA4naC1T"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "j8bSDhKkc",
+             ":block/string": "Map your located Roam pages and blocks. Give any page or block a `Location::` attribute with a text address and reference it under a `{{[[atlas]]}}` block. Atlas geocodes each one, caches the coordinates back into your graph, and pins it on an interactive map.",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "1-YXPeiYX",
+             ":block/string": "![An Atlas map with pins across Tokyo and an open pin popup showing a place's name and address](https://raw.githubusercontent.com/wireframe/roam-atlas/main/docs/images/map.png)[🔗](https://raw.githubusercontent.com/wireframe/roam-atlas/main/docs/images/map.png)",
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "YFbk3HOIG",
+               ":block/string": "Automatic geocoding. Write a plain-text address in a `Location::` attribute and Atlas looks up the coordinates for you, so you never type latitude and longitude by hand.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "gR1kOxoCL",
+               ":block/string": "Geocoded once, then cached. Atlas writes a `Coordinates::` attribute back to the page or block, so later renders read the cache instead of the network.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "4_CvZnJ0x",
+               ":block/string": "Live updating. Add, remove, or edit a reference and the map re-pins and re-fits itself right away.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "5iOVosqja",
+               ":block/string": "Pages, blocks, and tags. Pin `[[pages]]`, `#tags`, or `((block references))`, and each can carry its own location.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "LWrqax6v8",
+               ":block/string": "Click to read, click to open. A pin's popup shows the node's text and address; click the heading to open the page or block (shift-click sends it to the right sidebar).",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "6t3IHrY46",
+               ":block/string": "Resizable. Drag the map's bottom edge to change its height.",
+               ":block/order": 5
+              },
+              {
+               ":block/uid": "jvxxuMNUR",
+               ":block/string": "Full-screen mode. One button fills the window with the map; Esc brings it back.",
+               ":block/order": 6
+              },
+              {
+               ":block/uid": "B2oTICBjV",
+               ":block/string": "No account or API key. Free OpenStreetMap tiles and the free Nominatim geocoder, with nothing to sign up for.",
+               ":block/order": 7
+              },
+              {
+               ":block/uid": "CPhjKPUFr",
+               ":block/string": "Missing locations don't break it. A place Atlas can't geocode is noted in the corner instead of blanking the map.",
+               ":block/order": 8
+              }
+             ],
+             ":block/uid": "il-zXgxl9",
+             ":block/string": "Highlights",
+             ":block/heading": 2,
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "JfbKIVIQv",
+               ":block/string": "1. Give a page or block a location. Add a `Location::` attribute with a text address:",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "NZcLOzTmL",
+               ":block/string": "```plain text\n[[Ferry Building]]\n  Location:: Ferry Building, San Francisco, CA```",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "XpXualNWD",
+               ":block/string": "A block works the same way — put `Location::` as a child of the block. The first time Atlas geocodes a place, it writes a `Coordinates::` attribute back onto the same page or block, so every later render reads the cached pair instead of hitting the network again.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "1m1SOTq3B",
+               ":block/string": "![A located page showing its Location attribute and the Coordinates Atlas wrote back](https://raw.githubusercontent.com/wireframe/roam-atlas/main/docs/images/located-page.png)[🔗](https://raw.githubusercontent.com/wireframe/roam-atlas/main/docs/images/located-page.png)",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "9QZw9D2RU",
+               ":block/string": "2. Reference the places under a map. Type `{{[[atlas]]}}` (or the bare `{{atlas}}`) in a block and add page or block references as children:",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "qpHRk8KV5",
+               ":block/string": "```plain text\n{{[[atlas]]}}\n  - [[Ferry Building]]\n  - [[Golden Gate Park]]\n  - ((abc123))```",
+               ":block/order": 5
+              },
+              {
+               ":block/uid": "_fx0i6Rfp",
+               ":block/string": "![An atlas block with four page references listed as children](https://raw.githubusercontent.com/wireframe/roam-atlas/main/docs/images/references.png)[🔗](https://raw.githubusercontent.com/wireframe/roam-atlas/main/docs/images/references.png)",
+               ":block/order": 6
+              },
+              {
+               ":block/uid": "d5vXxETmb",
+               ":block/string": "The map auto-fits to show every pin and re-renders as you add or remove references. A reference it can't place — no `Location::`, or an address the geocoder doesn't recognize — is listed in a small corner note, so one missing location never blanks the map.",
+               ":block/order": 7
+              },
+              {
+               ":block/uid": "Hfnve33BI",
+               ":block/string": "3. Read and open a pin. Click a pin to open its popup: the page or block's text, plus its address when one is set. Click the popup heading to jump to that page or block (shift-click opens it in the right sidebar). Drag the map's bottom edge to resize it, or use the ⛶ button in the corner for a full-screen view (Esc exits).",
+               ":block/order": 8
+              }
+             ],
+             ":block/uid": "C1KzthGMe",
+             ":block/string": "Usage",
+             ":block/heading": 2,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "UCqHtHbQr",
+               ":block/string": "Atlas needs no account and no API key. Map tiles come from OpenStreetMap (rendered by CARTO), and addresses are geocoded by the free Nominatim service. Because Atlas caches each place's coordinates in your graph (see step 1), it queries Nominatim only once per location, which keeps it comfortably within that service's usage limits.",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "QYmhAjkQL",
+             ":block/string": "How it works",
+             ":block/heading": 2,
+             ":block/order": 4
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "uiJHIJalL",
+               ":block/string": "This is a clean-room reimplementation. The [RoamJS Mapbox extension](https://github.com/RoamJS/mapbox) (which uses `{{maps}}`) was used only as a behavioral reference for how a `{{...}}` button component renders inside Roam.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "4Io4Omk0W",
+               ":block/string": "See [`docs/plans/2026-07-05-roam-atlas-design.md`](https://github.com/wireframe/roam-atlas/blob/main/docs/plans/2026-07-05-roam-atlas-design.md) for the full design, and [`docs/backlog.md`](https://github.com/wireframe/roam-atlas/blob/main/docs/backlog.md) for planned enhancements and future development ideas.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "nooXT6ABr",
+             ":block/string": "Reference implementation",
+             ":block/heading": 2,
+             ":block/order": 5
+            }
+           ],
+           ":block/uid": "i8SSpBogx",
+           ":block/string": "Roam Atlas",
+           ":block/heading": 1,
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "hqYy1Py5p",
+         ":block/string": "[[Roam Depot Extensions]]",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "6kZb0aiyX",
+       ":block/string": "[[July 10th, 2026]]",
        ":block/order": 0
       }
      ],
@@ -61261,6 +61440,10 @@
   {
    ":node/title": "mentions",
    ":block/uid": "Qr4wevjYq"
+  },
+  {
+   ":node/title": "July 10th, 2026",
+   ":block/uid": "07-10-2026"
   },
   {
    ":node/title": ".rm-hide",

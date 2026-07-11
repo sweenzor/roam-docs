@@ -2,11 +2,11 @@
 
 > Markdown mirror of public Roam Research graphs (developer-documentation, help),
 > refreshed automatically, plus live-introspected TypeScript definitions for
-> window.roamAlphaAPI (v1.1.2) and copy-pasteable examples. Sources of truth: the
+> window.roamAlphaAPI (v1.1.3) and copy-pasteable examples. Sources of truth: the
 > public graphs and a running Roam Research session; regenerated on a schedule.
 > Source & contributions: https://github.com/sweenzor/roam-docs
 
-Last export: 2026-07-09T08:56:21.916Z
+Last export: 2026-07-11T07:22:51.866Z
 
 ## Developer documentation
 
@@ -28,7 +28,7 @@ Last export: 2026-07-09T08:56:21.916Z
 
 ## API reference
 
-- [roam-alpha-api.d.ts](https://roamdocs.fyi/types/roam-alpha-api.d.ts): TypeScript definitions for window.roamAlphaAPI — all 130 live-introspected functions (1 newly-discovered functions not yet typed — see the llms-full.txt function inventory appendix)
+- [roam-alpha-api.d.ts](https://roamdocs.fyi/types/roam-alpha-api.d.ts): TypeScript definitions for window.roamAlphaAPI — all 131 live-introspected functions (1 newly-discovered functions not yet typed — see the llms-full.txt function inventory appendix)
 
 ## Examples
 

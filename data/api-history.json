@@ -1,5 +1,5 @@
 {
- "apiVersion": "1.1.2",
+ "apiVersion": "1.1.3",
  "functions": [
   "createBlock",
   "createPage",
@@ -12,6 +12,7 @@
   "data.ai.roamQuery",
   "data.ai.search",
   "data.ai.searchTemplates",
+  "data.ai.semanticSearch",
   "data.ai.suggestLinks",
   "data.async.fast.q",
   "data.async.pull",
@@ -147,6 +148,15 @@
    ],
    "removed": [],
    "total": 130
+  },
+  {
+   "date": "2026-07-11",
+   "apiVersion": "1.1.3",
+   "added": [
+    "data.ai.semanticSearch"
+   ],
+   "removed": [],
+   "total": 131
   }
  ]
 }

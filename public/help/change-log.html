@@ -41,6 +41,84 @@
 <h3>[Updating Roam](<a href="/help/updating-roam">Updating Roam</a>)</h3>
 <h3><strong>New Changes</strong></h3>
 <ul>
+<li>July 10th, 2026
+<ul>
+<li>Roam Depot Extensions
+<ul>
+<li><strong>Roam Atlas</strong>
+<ul>
+<li>Map your located Roam pages and blocks. Give any page or block a <code>Location::</code> attribute with a text address and reference it under a <code>{{[[atlas]]}}</code> block. Atlas geocodes each one, caches the coordinates back into your graph, and pins it on an interactive map.
+</li>
+<li><img src="https://raw.githubusercontent.com/wireframe/roam-atlas/main/docs/images/map.png" alt="An Atlas map with pins across Tokyo and an open pin popup showing a place's name and address" loading="lazy"><a href="https://raw.githubusercontent.com/wireframe/roam-atlas/main/docs/images/map.png">🔗</a>
+</li>
+<li><strong>Highlights</strong>
+<ul>
+<li>Automatic geocoding. Write a plain-text address in a <code>Location::</code> attribute and Atlas looks up the coordinates for you, so you never type latitude and longitude by hand.
+</li>
+<li>Geocoded once, then cached. Atlas writes a <code>Coordinates::</code> attribute back to the page or block, so later renders read the cache instead of the network.
+</li>
+<li>Live updating. Add, remove, or edit a reference and the map re-pins and re-fits itself right away.
+</li>
+<li>Pages, blocks, and tags. Pin <code>[[pages]]</code>, <code>#tags</code>, or <code>((block references))</code>, and each can carry its own location.
+</li>
+<li>Click to read, click to open. A pin's popup shows the node's text and address; click the heading to open the page or block (shift-click sends it to the right sidebar).
+</li>
+<li>Resizable. Drag the map's bottom edge to change its height.
+</li>
+<li>Full-screen mode. One button fills the window with the map; Esc brings it back.
+</li>
+<li>No account or API key. Free OpenStreetMap tiles and the free Nominatim geocoder, with nothing to sign up for.
+</li>
+<li>Missing locations don't break it. A place Atlas can't geocode is noted in the corner instead of blanking the map.
+</li>
+</ul>
+</li>
+<li><strong>Usage</strong>
+<ul>
+<li>1. Give a page or block a location. Add a <code>Location::</code> attribute with a text address:
+</li>
+<li><pre><code>[[Ferry Building]]
+  Location:: Ferry Building, San Francisco, CA</code></pre>
+</li>
+<li>A block works the same way — put <code>Location::</code> as a child of the block. The first time Atlas geocodes a place, it writes a <code>Coordinates::</code> attribute back onto the same page or block, so every later render reads the cached pair instead of hitting the network again.
+</li>
+<li><img src="https://raw.githubusercontent.com/wireframe/roam-atlas/main/docs/images/located-page.png" alt="A located page showing its Location attribute and the Coordinates Atlas wrote back" loading="lazy"><a href="https://raw.githubusercontent.com/wireframe/roam-atlas/main/docs/images/located-page.png">🔗</a>
+</li>
+<li>2. Reference the places under a map. Type <code>{{[[atlas]]}}</code> (or the bare <code>{{atlas}}</code>) in a block and add page or block references as children:
+</li>
+<li><pre><code>{{[[atlas]]}}
+  - [[Ferry Building]]
+  - [[Golden Gate Park]]
+  - ((abc123))</code></pre>
+</li>
+<li><img src="https://raw.githubusercontent.com/wireframe/roam-atlas/main/docs/images/references.png" alt="An atlas block with four page references listed as children" loading="lazy"><a href="https://raw.githubusercontent.com/wireframe/roam-atlas/main/docs/images/references.png">🔗</a>
+</li>
+<li>The map auto-fits to show every pin and re-renders as you add or remove references. A reference it can't place — no <code>Location::</code>, or an address the geocoder doesn't recognize — is listed in a small corner note, so one missing location never blanks the map.
+</li>
+<li>3. Read and open a pin. Click a pin to open its popup: the page or block's text, plus its address when one is set. Click the popup heading to jump to that page or block (shift-click opens it in the right sidebar). Drag the map's bottom edge to resize it, or use the ⛶ button in the corner for a full-screen view (Esc exits).
+</li>
+</ul>
+</li>
+<li><strong>How it works</strong>
+<ul>
+<li>Atlas needs no account and no API key. Map tiles come from OpenStreetMap (rendered by CARTO), and addresses are geocoded by the free Nominatim service. Because Atlas caches each place's coordinates in your graph (see step 1), it queries Nominatim only once per location, which keeps it comfortably within that service's usage limits.
+</li>
+</ul>
+</li>
+<li><strong>Reference implementation</strong>
+<ul>
+<li>This is a clean-room reimplementation. The <a href="https://github.com/RoamJS/mapbox">RoamJS Mapbox extension</a> (which uses <code>{{maps}}</code>) was used only as a behavioral reference for how a <code>{{...}}</code> button component renders inside Roam.
+</li>
+<li>See [<code>docs/plans/2026-07-05-roam-atlas-design.md</code>](https://github.com/wireframe/roam-atlas/blob/main/docs/plans/2026-07-05-roam-atlas-design.md) for the full design, and [<code>docs/backlog.md</code>](https://github.com/wireframe/roam-atlas/blob/main/docs/backlog.md) for planned enhancements and future development ideas.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>July 7th, 2026
 <ul>
 <li>Quality of Life Improvements
