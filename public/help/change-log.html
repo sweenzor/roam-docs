@@ -41,6 +41,72 @@
 <h3>[Updating Roam](<a href="/help/updating-roam">Updating Roam</a>)</h3>
 <h3><strong>New Changes</strong></h3>
 <ul>
+<li>July 13th, 2026
+<ul>
+<li>Roam Depot Extensions
+<ul>
+<li><strong>Related Notes</strong>
+<ul>
+<li>&gt; Find notes you forgot you wrote.
+</li>
+<li>Automatic related-note discovery for <a href="https://roamresearch.com/">Roam Research</a>: as you browse, a panel surfaces semantically similar pages and blocks. Powered by Roam's native semantic engine — no API key, no extra servers, works with a local Ollama endpoint.
+</li>
+<li><img src="https://raw.githubusercontent.com/qcrao/roam-related-notes/main/assets/related-notes-panel.png" alt="The Related Notes panel automatically surfacing semantically related pages and blocks while you browse" loading="lazy"><a href="https://raw.githubusercontent.com/qcrao/roam-related-notes/main/assets/related-notes-panel.png">🔗</a>
+</li>
+<li><strong>Features</strong>
+<ul>
+<li>Related Notes panel — as you browse, a floating panel automatically surfaces semantically similar pages and blocks (grouped by page, so one long note never floods the list). Toggle with <code>Ctrl+Shift+R</code>; drag to move, resize from the corner.
+</li>
+<li>Fallback mode — if the semantic engine isn't enabled on your graph, the panel still works using literal matching, with a hint on how to turn the engine on.
+</li>
+</ul>
+</li>
+<li><strong>How it works</strong>
+<ul>
+<li>To find related notes, the extension builds a query from the page title and the first 10 direct children of the current page (or of the zoomed-in block), truncated to the first 600 characters, and runs it through Roam's semantic search. So relevance is based on how a note <em>starts</em> — content deep inside a very long page doesn't influence the suggestions. Results are re-grouped by page, with at most one entry per page and an expandable &quot;N hits on this page&quot; row.
+</li>
+</ul>
+</li>
+<li><strong>Enabling the semantic engine</strong>
+<ul>
+<li>Roam Settings → Graph → Experimental: Semantic search embeddings:
+<ul>
+<li>Default (Voyage AI) — easiest; note that Roam sends your graph contents to Voyage AI in plain text.
+</li>
+<li>Custom (Ollama / OpenAI-compatible) — privacy-friendly: bring your own endpoint, contents stay on the route you configure.
+</li>
+</ul>
+</li>
+<li>This extension itself makes zero external requests — it only calls Roam's built-in APIs. Embedding routing is entirely controlled by your Roam settings above.
+</li>
+</ul>
+</li>
+<li><strong>Privacy</strong>
+<ul>
+<li>This extension makes zero external requests and collects zero telemetry. It only calls Roam's built-in APIs.
+</li>
+<li>Strictly read-only — it never modifies your notes.
+</li>
+<li>What Roam's semantic engine itself does (verified by inspecting network traffic and local storage):
+<ul>
+<li>When you enable embeddings, your graph's text is sent — through Roam's own proxy — to the embedding provider you chose (Voyage AI by default, or your own Ollama/OpenAI-compatible endpoint).
+</li>
+<li>Each panel refresh sends the query text described in <em>How it works</em> plus the top candidate snippets to the same provider for embedding and reranking.
+</li>
+<li>The vector index itself stays on your machine (a per-graph SQLite database with 512-dim int8 vectors, stored in the browser's private file system).
+</li>
+</ul>
+</li>
+<li>Practical advice: keep embeddings off for graphs containing secrets; this extension automatically falls back to local literal matching there.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>July 10th, 2026
 <ul>
 <li>Roam Depot Extensions
