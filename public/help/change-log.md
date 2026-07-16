@@ -4,6 +4,10 @@
 
 ### **New Changes**
 
+- [[July 15th, 2026]]
+  - [[Bug Fixes]]
+    - Fixed a rare bug where two different PDFs could sometimes share the same highlights
+    - Fixed the desktop app setting "Ask before quitting" from stopping mac from restarting
 - [[July 13th, 2026]]
   - [[Roam Depot Extensions]]
     - **Related Notes**
