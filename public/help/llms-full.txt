@@ -2,7 +2,7 @@
 
 > Complete markdown export of the public Roam Research graph "help"
 > (https://roamresearch.com/#/app/help). Roam Research's official help graph: the product's user documentation.
-> Exported 2026-07-16T07:39:24.994Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
+> Exported 2026-07-17T07:37:01.375Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
 > Also on this site: Developer documentation — https://roamdocs.fyi/developer-documentation/llms-full.txt
 
 ## Table of contents
@@ -18,6 +18,7 @@
 - Diagram
 - Roam-specific :q additions
 - Themes
+- Semantic search (Experimental)
 - Block References
 - What You Can't Say
 - Formatting
@@ -31,8 +32,8 @@
 - Block Context Menu
 - Features
 - Pipedream Workflows
-- TODO/DONE
 - Blocks
+- TODO/DONE
 - Graphs and Settings
 - Search
 - Callouts
@@ -41,8 +42,8 @@
 - Zapier Integration
 - Mermaid Diagrams
 - Security
-- / Commands
 - Right Sidebar
+- / Commands
 - Courses
 - Query
 - Updating Roam
@@ -61,68 +62,69 @@
 - Daily Notes
 - Pomodoro timer
 - Hosted Graph
+- Better search (Experimental)
 - Community
-- Precise Links
 - Beginner's Guide
+- Precise Links
 - Extensions
 - Audio Player
 - Templates
 - Roam Help
 - roam/css
-- Miscellaneous
 - Notable Graphs
-- Calculator
 - Project Management
+- Personal CRM
+- Miscellaneous
+- Calculator
 - News and Press
 - Table
-- Personal CRM
 - Upload Files
 - Video Embed
 - Install Roam
 - Workflows
+- Images
+- Journaling
 - Mentions
 - Longform writing
-- Images
 - Research
-- Journaling
 - Export
-- Meeting notes
-- Long Videos
 - Studying
 - Attributes
+- Meeting notes
+- Long Videos
 - Date picker
 - Bidirectional linking
-- Code Block
 - Page References
+- Code Block
 - Sharing
 - Spanish
-- Word count
 - Scripture Study
+- Word count
 - Console Logs
 - Cancelling your membership during your free trial
 - Block Search
-- Character count
 - Current time
-- Why Roam?
 - Adding soft line breaks in a block
 - Roam Depot
+- Character count
+- Why Roam?
 - Chinese
-- Wiki
-- Kids
 - Left Sidebar
 - Version Control
 - Import
+- Wiki
+- Kids
 - Slider
+- Encrypted Block
+- Numbered List Extension
 - Today
 - Russian
 - Tomorrow
-- Encrypted Block
-- Numbered List Extension
+- Korean
+- Key Commands
 - Tags
 - Roam Slack
 - Alexander Rink
-- Korean
-- Key Commands
 - Latex
 - Linked References
 - Release notes (daily-note updates)
@@ -9194,6 +9196,131 @@
 
 ---
 
+# Semantic search (Experimental)
+
+### What is semantic search?
+
+- Roam's regular search matches the **words** you type. Semantic search matches **meaning** — it can find your notes about __insomnia__ when you search for "trouble sleeping", even though they don't share a single word.
+- It runs as an optional mode inside Roam's search. Once an admin sets it up, it's available to everyone on the graph.
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F3-tfMWb6w5.png?alt=media&token=11fe169e-6c75-40a0-a824-990561adc54d)
+
+### How it works
+
+- Once enabled, Roam indexes your graph in the background:
+  - Each page is split into small chunks of your outline, with the page title and parent blocks included so each chunk carries its context.
+  - Each chunk — and every page title — is turned into an **embedding**: a numeric fingerprint of its meaning, computed by the embedding model you choose during setup.
+  - The fingerprints are stored in a search index that Roam keeps up to date as you write.
+- The index keeps itself current. When you edit a page, only the parts that changed are re-embedded. The settings panel shows a live status: "Indexing… 128 pages remaining", then "Up to date".
+- When you search in semantic mode, your query gets the same fingerprint treatment. Roam finds the chunks and page titles closest in meaning, blends them with the normal keyword results, and shows you the best of both.
+- The embedding model can run wherever you choose: Roam's default (Voyage AI), or — via the Custom option — a hosted API you have a key for or a local server on your own machine.
+
+### Why you might want it
+
+- **You remember the idea, not the words.** Notes from years ago rarely use the phrasing you'd reach for today.
+- **Your vocabulary drifts.** Old notes say one thing, new notes say another — semantic search bridges terms that mean the same thing.
+- **Resurfacing.** Related notes you'd forgotten about show up next to the thing you were actually looking for.
+- **Better AI assistance.** AI assistants connected to your graph (through Roam's MCP integration) get a semantic search tool too, so they can find relevant context by meaning when answering your questions.
+
+### How to use it
+
+- First set it up, then click into the search bar and click the button at its right edge (tooltip: "Open advanced search") to open [[Advanced Search]]
+- Click the filter icon, enable the **Semantic** chip, then type your query.
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FOh14ziRzJG.png?alt=media&token=13108c93-9a2d-4e5e-9b7f-fd59bd240997)
+- The chip stays on for your later searches until you turn it off (it resets when you reload Roam).
+- Semantic mode is also available in the sidebar search and in inline `{{search}}` components — look for the same Semantic chip.
+- Semantic results can be combined with search filters like daily notes or edit time.
+
+### Setting it up
+
+- You need to be an **admin** of the graph.
+- Open **Settings → Graph → Experimental: Semantic search**.
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fk1MFsLBXDW.png?alt=media&token=d6c537b1-3089-42c1-aa4f-7640b2542066)
+- The setting is a three-way choice — **Off**, **Default**, or **Custom**. Picking either provider enables semantic search for everyone on this graph.
+
+#### Option 1 — Default: Roam (Voyage AI)
+
+- The easy zero-setup option — available when the graph has an admin with an active paid subscription.
+- Roam computes embeddings using [Voyage AI](https://www.voyageai.com/): select **Default — Roam (Voyage AI)** and click **Save**.
+- **What happens to your data**
+  - Your graph's text is sent in plain text through Roam's servers to Voyage AI, used to compute embeddings, and **not retained** — Voyage doesn't store your content or train on it (see [their privacy policy](https://www.voyageai.com/privacy)).
+  - Separately from Voyage, Roam's own servers may hold a cached copy for up to 24 hours so unchanged text doesn't have to be re-sent.
+  - **If your graph is encrypted, note that embedding still requires the unencrypted text.**
+- After saving, the status line counts down ("Indexing… N pages remaining") and flips to "Up to date" when your whole graph is searchable.
+
+#### Option 2 — Custom: bring your own endpoint
+
+- For full control over where your text goes, select **Custom — Ollama / OpenAI-compatible endpoint**.
+- Your graph contents are sent only to the endpoint you configure — a hosted API you have a key for, or a local server on your own machine (Ollama, LM Studio). This is also the only option for offline graphs — the Default option runs through Roam's servers, which offline graphs never talk to.
+- **Setting up for a team?** With a `localhost` endpoint, every graph member needs that same server on their own machine — see **A note on local endpoints and collaborators**
+- The form fields:
+  - **Endpoint URL** — any OpenAI-compatible `/embeddings` endpoint.
+  - **Model** — the embedding model name your endpoint expects.
+  - **API key** — only if your endpoint needs one. Keys are stored **on this device only** and never synced — collaborators enter their own key on their own device.
+  - **Dimensions** — optional. Leave blank to use the model's native vector size (must be 1024 or smaller). If your model lets you choose, 512 is a good balance of quality and speed.
+  - **Rerank URL** — optional. Reranking is a second pass where a more accurate (but slower) model re-sorts the top results before you see them. Point this at a Cohere-style `/rerank` endpoint, for example `https://api.cohere.com/v2/rerank`. Leave blank to skip and use default ranking.
+  - **Rerank model** — the reranking model name your endpoint expects, for example `rerank-v3.5` for Cohere.
+  - **Rerank API key** — only if your rerank endpoint needs one. Stored on this device only, like the embedding key.
+- Clicking **Save** first tests your endpoint with a live embedding — any problem shows up right there — and then indexing starts.
+- Switching to a different model later discards the index and rebuilds it under the new model.
+- Turning embeddings **Off** keeps the index on disk, so re-enabling doesn't start from scratch.
+- **Custom setup — a remote API**
+  - Works with any embeddings API that speaks the OpenAI format: enter its `/embeddings` URL, the model name, and your API key.
+  - Pick an embedding model that produces vectors of 1024 dimensions or fewer, or one that lets you choose the size (set **Dimensions** to 512 in that case).
+  - Requests to non-local endpoints are routed through Roam's CORS proxy — browsers can't call most APIs directly.
+- **Custom setup — Ollama (local and free)**
+  - The embedding model runs on your machine — no third-party service is involved.
+  - **Step 1:** Install Ollama and download an embedding model
+    - Install [Ollama](https://ollama.com).
+    - In a terminal, run: `ollama pull nomic-embed-text`
+  - **Step 2:** Allow Roam to talk to Ollama
+    - Ollama only answers requests from origins it trusts, so without this step Roam's test fails with "Embedding test failed — Failed to fetch".
+    - **Mac:** run this command in Terminal: `launchctl setenv OLLAMA_ORIGINS "https://roamresearch.com"`
+      - Then **quit Ollama from the menu bar icon and open it again** — Ollama only reads this setting when it starts.
+      - If the error comes back after you reboot your computer, run the command and restart Ollama once more.
+    - **Windows:** add an environment variable `OLLAMA_ORIGINS` with the value `https://roamresearch.com` (Settings → search "environment variables").
+      - Then quit and reopen Ollama.
+  - **Step 3:** Fill in Roam's settings form
+    - Endpoint URL: `http://localhost:11434/v1/embeddings`
+    - Model: `nomic-embed-text`
+    - API key and Dimensions: leave blank
+    - Click **Save**.
+  - If the test fails with "model not found", the model isn't downloaded yet — run `ollama pull nomic-embed-text` again.
+  - **Reranking with Ollama:** Ollama doesn't offer a rerank endpoint, so leave the rerank fields blank — semantic search works well without them. If you want reranking, use a hosted service like Cohere, or run a local reranker — see **Custom setup — a local reranker (llama.cpp)**
+- **Custom setup — LM Studio (local and free)**
+  - **Step 1:** Install LM Studio and download an embedding model
+    - Install [LM Studio](https://lmstudio.ai).
+    - In the model catalog, search for and download `nomic-embed-text`.
+  - **Step 2:** Start the local server
+    - Open the **Developer** tab and start the server.
+    - In the server settings, turn **Enable CORS** on — without it Roam's requests are blocked, for the same reason as with Ollama.
+  - **Step 3:** Fill in Roam's settings form
+    - Endpoint URL: `http://localhost:1234/v1/embeddings`
+    - Model: the model's identifier exactly as LM Studio shows it (e.g. `text-embedding-nomic-embed-text-v1.5`)
+    - API key and Dimensions: leave blank
+    - Click **Save**.
+  - **Reranking with LM Studio:** LM Studio doesn't offer a rerank endpoint, so leave the rerank fields blank — semantic search works well without them. If you want reranking, use a hosted service like Cohere, or run a local reranker — see **Custom setup — a local reranker (llama.cpp)**
+- **Custom setup — a local reranker (llama.cpp)**
+  - Ollama and LM Studio don't serve reranking models, but you can add fully local reranking alongside either of them with **llama.cpp**'s built-in server.
+  - **Step 1:** Install llama.cpp
+    - **Mac:** run `brew install llama.cpp` in Terminal.
+    - **Windows / Linux:** download a build from the [llama.cpp releases page](https://github.com/ggml-org/llama.cpp/releases).
+  - **Step 2:** Start the reranking server
+    - Run: `llama-server -hf gpustack/bge-reranker-v2-m3-GGUF:Q8_0 --rerank --port 8012 -c 8192 -b 8192 -ub 8192`
+    - The first run downloads the model (about 600 MB) before it starts serving.
+    - The three flags at the end raise the size of block it can handle to the model's maximum (8,192 tokens) — without them, even modestly long blocks fail the rerank pass with a 500 error.
+  - **Step 3:** Fill in the rerank fields in Roam's settings form
+    - Rerank URL: `http://localhost:8012/v1/rerank`
+    - Rerank model: `bge-reranker-v2-m3`
+    - Rerank API key: leave blank
+    - Click **Save**.
+  - No permissions step this time — unlike Ollama, llama.cpp's server accepts requests from any app out of the box.
+  - The reranker is only called at search time. If it isn't running when you search, semantic search still works — Roam just skips the rerank pass. You'll need to start `llama-server` again after a reboot.
+  - **A known limitation:** if a search turns up a block longer than the model's 8,192-token limit, the rerank pass fails for that search with a 500 error in the console. This is harmless — Roam falls back to its normal ordering for that search — but you may occasionally spot the error if you have very long blocks in your graph.
+- **A note on local endpoints and collaborators**
+  - The endpoint configuration is shared with the whole graph, but each member's device builds its own index. If your endpoint is `localhost`, every member needs that same server running on their own machine with the same model. A remote API avoids this — though each member must save the API key on their own device — and the Voyage default needs no per-device setup at all.
+
+---
+
 # Block References
 
 - One of Roam's most powerful, flagship features
@@ -10395,6 +10522,83 @@
 
 ---
 
+# Blocks
+
+- **Each bullet you see is a __block__, and we write them inside pages like this one.**
+  - We create new blocks by pressing `Enter`; and nest them using `Tab` (press`Shift+Tab` to unindent)-
+    - This creates __children blocks__, which we can expand, collapse, and focus. 
+    - [Indenting]([[Indentation]]) provides structure. We can scan pages with ease and find related blocks. 
+- You can press `Shift+⬇` in a block to select it, and click and drag the bullet to move blocks around.
+- One of Roam's most powerful features is [[Block References]].
+
+### Team GIFs::
+
+#### Creating a block
+
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F4KKGac0myW.gif?alt=media&token=23236602-27d8-4e00-aa2a-259a5d1562f3)
+- Key Commands::
+  - Be on a block and press `enter`
+
+#### Indenting and outdenting
+
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FOMLRPp1fPc.gif?alt=media&token=72fc6367-48f3-4b02-b740-f5baa7178973)
+- Key Commands::
+  - `Tab` to indent
+  - `Tab+enter` to outdent
+
+#### Collapsing and expanding
+
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FC5HT7C2C1X.gif?alt=media&token=d5193776-200a-4dcc-9957-13543c7bc213)
+
+#### Multibar
+
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Fj9ezPYAzrK.gif?alt=media&token=d159ce29-2c07-4a68-aa4c-52b75b632904)
+
+#### Deleting a block
+
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FJMqg0xNnlb.gif?alt=media&token=f0665abb-06f0-4d1d-97fe-2c65bea1699c)
+- Key Commands::
+  - `Esc+backspace`
+
+#### Selecting multiple blocks
+
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F_gqm2vZh9H.gif?alt=media&token=01a5a243-47cc-4e45-ad82-5668e3808fd3)
+
+#### Selecting blocks and then copying block refs
+
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Fl44WdD6W-a.gif?alt=media&token=6dab5147-938c-4a3b-af1a-21f808024ed5)
+- Key Commands::
+  - `Cmd+shift+c` on Mac
+  - `Ctrl+shift+c` on Windows
+
+#### Moving blocks
+
+- **Drag and drop**
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FbzKfwa_bqQ.gif?alt=media&token=227b9e1c-a42e-4e34-b2d0-840084b2040f)
+- **Keyboard shortcut**
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FpVFK4Mz-u5.gif?alt=media&token=cebec529-95d9-41b8-8613-48ad41cf0067)
+  - Key Commands::
+    - `cmd+shift+up` and `cmd+shift+down` on Mac
+    - `alt+shift+up` + `alt+shift+down` on Windows
+
+### Articles::
+
+#### [What is a block in Roam Research (and what are block embeds)?](https://www.roamtips.com/home/what-is-block-roam-research) by [[Roam Tips]]
+
+### Community Videos::
+
+#### What makes Blocks in Roam Research different by [[Cortex Futura]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=6VmtiDYjy_k}}
+  #[[Blocks]] | #[[Block References]]
+
+#### Blocks in Roam Research: Part One - What Makes Them Unique by [[Lisa-Marie Cabrelli]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=hGzTuIPXv7I}}
+  #[[Blocks]] | #[[Block References]]
+
+---
+
 # TODO/DONE
 
 - TODOs are the core of [task management]([[Task Management]]). We have been using them in our bullet journals, task apps, and now... Roam.
@@ -10474,83 +10678,6 @@
 - Cycle through TODO/DONE state:
   - `cmd+return` for macOS
   - `ctrl+enter` for Windows
-
----
-
-# Blocks
-
-- **Each bullet you see is a __block__, and we write them inside pages like this one.**
-  - We create new blocks by pressing `Enter`; and nest them using `Tab` (press`Shift+Tab` to unindent)-
-    - This creates __children blocks__, which we can expand, collapse, and focus. 
-    - [Indenting]([[Indentation]]) provides structure. We can scan pages with ease and find related blocks. 
-- You can press `Shift+⬇` in a block to select it, and click and drag the bullet to move blocks around.
-- One of Roam's most powerful features is [[Block References]].
-
-### Team GIFs::
-
-#### Creating a block
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F4KKGac0myW.gif?alt=media&token=23236602-27d8-4e00-aa2a-259a5d1562f3)
-- Key Commands::
-  - Be on a block and press `enter`
-
-#### Indenting and outdenting
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FOMLRPp1fPc.gif?alt=media&token=72fc6367-48f3-4b02-b740-f5baa7178973)
-- Key Commands::
-  - `Tab` to indent
-  - `Tab+enter` to outdent
-
-#### Collapsing and expanding
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FC5HT7C2C1X.gif?alt=media&token=d5193776-200a-4dcc-9957-13543c7bc213)
-
-#### Multibar
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Fj9ezPYAzrK.gif?alt=media&token=d159ce29-2c07-4a68-aa4c-52b75b632904)
-
-#### Deleting a block
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FJMqg0xNnlb.gif?alt=media&token=f0665abb-06f0-4d1d-97fe-2c65bea1699c)
-- Key Commands::
-  - `Esc+backspace`
-
-#### Selecting multiple blocks
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F_gqm2vZh9H.gif?alt=media&token=01a5a243-47cc-4e45-ad82-5668e3808fd3)
-
-#### Selecting blocks and then copying block refs
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Fl44WdD6W-a.gif?alt=media&token=6dab5147-938c-4a3b-af1a-21f808024ed5)
-- Key Commands::
-  - `Cmd+shift+c` on Mac
-  - `Ctrl+shift+c` on Windows
-
-#### Moving blocks
-
-- **Drag and drop**
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FbzKfwa_bqQ.gif?alt=media&token=227b9e1c-a42e-4e34-b2d0-840084b2040f)
-- **Keyboard shortcut**
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FpVFK4Mz-u5.gif?alt=media&token=cebec529-95d9-41b8-8613-48ad41cf0067)
-  - Key Commands::
-    - `cmd+shift+up` and `cmd+shift+down` on Mac
-    - `alt+shift+up` + `alt+shift+down` on Windows
-
-### Articles::
-
-#### [What is a block in Roam Research (and what are block embeds)?](https://www.roamtips.com/home/what-is-block-roam-research) by [[Roam Tips]]
-
-### Community Videos::
-
-#### What makes Blocks in Roam Research different by [[Cortex Futura]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=6VmtiDYjy_k}}
-  #[[Blocks]] | #[[Block References]]
-
-#### Blocks in Roam Research: Part One - What Makes Them Unique by [[Lisa-Marie Cabrelli]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=hGzTuIPXv7I}}
-  #[[Blocks]] | #[[Block References]]
 
 ---
 
@@ -11119,47 +11246,6 @@
 
 ---
 
-# / Commands
-
-- The / Commands give you access to a variety of functions in Roam
-  - Key Commands:: 
-    - To access / Commands, type `/` + `any of the below keyword` + `enter` (in any block) to access each feature 
-  - Team GIFs::
-    - ![An example of accessing the TODO function via / Commands](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FoebmqUA8lT.gif?alt=media&token=0567d373-7f43-4934-9d92-c5f5030b6e42)
-
-- #.--rm-grid 
-  - ****Functions****
-    - [[TODO]]
-    - [[Page References]]
-    - [[Block References]]
-    - [[Block Embed]]
-    - [[Table]]
-    - [[Diagram]]
-    - [[Upload Files]]
-    - [[Templates]]
-    - [[Video Embed]]
-    - [[Calculator]]
-    - [[Mentions]]
-    - [[Word count]]
-    - [[Character count]]
-    - [[Query]]
-  - ****Time****
-    - [[Current time]]
-    - [[Today]]
-    - [[Tomorrow]]
-    - [[Date picker]]
-    - [[Pomodoro timer]]
-  - **[Formatting]([[Formatting]])**
-    - [[Links]]
-    - [[Code Block]]
-    - [[Inline Code]]
-    - [[Bold]]
-    - [[Italics]]
-    - [[KaTeX]]
-    - [[Strikethrough]]
-
----
-
 # Right Sidebar
 
 - Roam Team Videos::
@@ -11199,6 +11285,47 @@
 - Key Commands::
   - `Shift+click` on the page you want to open in the Right Sidebar
   - `Ctrl+Shift+O` to open link under cursor
+
+---
+
+# / Commands
+
+- The / Commands give you access to a variety of functions in Roam
+  - Key Commands:: 
+    - To access / Commands, type `/` + `any of the below keyword` + `enter` (in any block) to access each feature 
+  - Team GIFs::
+    - ![An example of accessing the TODO function via / Commands](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FoebmqUA8lT.gif?alt=media&token=0567d373-7f43-4934-9d92-c5f5030b6e42)
+
+- #.--rm-grid 
+  - ****Functions****
+    - [[TODO]]
+    - [[Page References]]
+    - [[Block References]]
+    - [[Block Embed]]
+    - [[Table]]
+    - [[Diagram]]
+    - [[Upload Files]]
+    - [[Templates]]
+    - [[Video Embed]]
+    - [[Calculator]]
+    - [[Mentions]]
+    - [[Word count]]
+    - [[Character count]]
+    - [[Query]]
+  - ****Time****
+    - [[Current time]]
+    - [[Today]]
+    - [[Tomorrow]]
+    - [[Date picker]]
+    - [[Pomodoro timer]]
+  - **[Formatting]([[Formatting]])**
+    - [[Links]]
+    - [[Code Block]]
+    - [[Inline Code]]
+    - [[Bold]]
+    - [[Italics]]
+    - [[KaTeX]]
+    - [[Strikethrough]]
 
 ---
 
@@ -12307,6 +12434,32 @@ by [[Drew Coffman]]
 
 ---
 
+# Better search (Experimental)
+
+### What is it?
+
+- A new search engine for Roam, currently opt-in while it's experimental.
+- It's a **personal** setting: turning it on changes how search works for you, not for everyone on the graph.
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F2dBwqEBmaB.png?alt=media&token=37f82236-48d4-4a8e-a22c-0cb8c35431b4)
+
+### What's better
+
+- **It's faster**, especially on large graphs.
+- **Block references are searchable.** A block that embeds another block with `(( ))` now matches searches for the referenced text — the old search only saw the raw reference, not what it says.
+- **Smarter ranking.** Results are ordered by how directly they match: exact page titles first, then titles and blocks containing your words as a phrase, then those containing all your words anywhere.
+- **It finds ideas spread across nearby blocks.** In an outline, one thought often spans several blocks. When no single block contains all your search words but a small neighborhood of blocks does, that group matches too — so you find the passage even though no block has the full phrase.
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FIbcwJXIPwF.png?alt=media&token=734a5256-bf82-4632-84e0-dc694ab666ae)
+- **It unlocks search filters.** With it on, keyword searches in [[Advanced Search]] support filters like daily notes and edit time.
+
+### How to turn it on
+
+- Open **Settings → User → Experimental: Better search** and flip the switch.
+- Each person on a graph chooses for themselves.
+- The toggle is temporary — it will go away once the new engine becomes Roam's default search.
+- Looking for meaning-based search on top of this? See [[Semantic search (Experimental)]].
+
+---
+
 # Community
 
 - [[Roam Slack]]
@@ -12325,26 +12478,6 @@ by [[Drew Coffman]]
   - Get specialized 1:1 help to master Roam from one of our vetted coaches
 - [Notable Graphs]([[Notable Graphs]])
   - A list of public graphs available to browse or contribute to
-
----
-
-# Precise Links
-
-- Example
-  - say I have a collection of statements like these
-    - Socrates is a Man
-      - certainty:: {{[[slider]]}}
-    - Socrates is Mortal
-      - certainty:: {{[[slider]]}}
-    - All Men are Mortal
-      - certainty:: {{[[slider]]}}
-  - Then I can reference those statements into a compound statement like this
-    - If Socrates is a Man and All Men are Mortal then Socrates is Mortal
-      - certainty:: {{[[slider]]}}
-      - 
-  - I will then see that statement whenever I visit one of the blocks that is referenced within it
-    - like this
-      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fv8%2Fhelp%2FbGuVgwv7eo?alt=media&token=5cc08cb5-9668-4812-9084-38cd9cd816cf)
 
 ---
 
@@ -12379,6 +12512,26 @@ by [[Drew Coffman]]
 - {{[[video]]: https://www.youtube.com/watch?v=syKAar8ZD-U}}
 
 - #[[Daily Notes]] | #[[Bidirectional linking]] | #[[Linked References]] #[[Book]] | #[[Sidebar]] | #[[Tags]] | #[[Evergreen Notes]] | #[[Block References]] | #[[Templates]] | #[[Query]]
+
+---
+
+# Precise Links
+
+- Example
+  - say I have a collection of statements like these
+    - Socrates is a Man
+      - certainty:: {{[[slider]]}}
+    - Socrates is Mortal
+      - certainty:: {{[[slider]]}}
+    - All Men are Mortal
+      - certainty:: {{[[slider]]}}
+  - Then I can reference those statements into a compound statement like this
+    - If Socrates is a Man and All Men are Mortal then Socrates is Mortal
+      - certainty:: {{[[slider]]}}
+      - 
+  - I will then see that statement whenever I visit one of the blocks that is referenced within it
+    - like this
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fv8%2Fhelp%2FbGuVgwv7eo?alt=media&token=5cc08cb5-9668-4812-9084-38cd9cd816cf)
 
 ---
 
@@ -12478,7 +12631,7 @@ by [[Drew Coffman]]
 
 - ---
 
-## 🚧 [Developer Hub](https://roamresearch.com/#/app/developer-documentation/page/49715b-M2) 🚧
+## [Developer Hub](https://roamresearch.com/#/app/developer-documentation/page/49715b-M2)
 
 - ---
 
@@ -12521,30 +12674,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Miscellaneous
-
-### [[Wiki]]
-
-### [[Scripture Study]]
-
-### [[Language Learning]]
-
-### [[Hacking and Coding]]
-
-### Roam Research for [[Kids]]
-
-### International Languages
-
-- [[Chinese]]
-- [[Korean]]
-- [[Russian]]
-- [[Spanish]]
-- [[German]]
-- [[Japanese]]
-- [[Turkish]]
-
----
-
 # Notable Graphs
 
 ## Directory
@@ -12576,29 +12705,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Calculator
-
-- Calculates basic arithmetic. 
-  - `{{calc: 4 + 5 }}`
-    - {{calc: 4 + 5}}
-- If a block reference is used an argument, it will search for a number in that block and use that – e.g.
-  - three in “My 3 apples” or
-  - five in "his 5 amazon stocks"
-  - `{{calc: ((block)) + ((block)) * 2 }}`
-    - {{calc: three in “My 3 apples” or + five in "his 5 amazon stocks" * 2}}
-
-### Community Videos::
-
-#### [Roam Research: Using the Calculator](https://www.youtube.com/watch?v=kxWykFHUtNo) - [[Les Kristofs]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=kxWykFHUtNo}}
-
-### Roam Team Videos::
-
-- https://twitter.com/i/status/1209449973902802944
-
----
-
 # Project Management
 
 ### Community Videos::
@@ -12627,6 +12733,84 @@ by [[Drew Coffman]]
 
 - #[[Page References]] | #[[Query]] | #[[Block References]] | #[[Replace With]] |  #[[text and alias]] | #[[TODO/DONE]]
 - 
+
+---
+
+# Personal CRM
+
+### Community Videos::
+
+#### Roam: The Best Personal CRM Ever by [[Nat Eliason]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=cRDgrdlfYdE&ab_channel=NatEliason}}
+  #[[Page References]] | #[[Sidebar]] | #[[Linked References]] | #[[Attributes]]
+
+#### Mini CRM in Roam Research: Logging Meeting Notes by [[R.J. Nestor]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=CnakhkONQ_g&ab_channel=R.J.Nestor}}
+  #[[Page References]] | #[[Sidebar]] | #[[Daily Notes]] | #[[Tags]] | #[[Indentation]] | #[[Linked References]] | #[[Filter]] | #[[Attributes]] 
+
+### Articles::
+
+#### [Using Roam Research as a Customer Relationship Manager](https://thesweetsetup.com/using-roam-research-as-a-customer-relationship-manager/) by [[Josh Ginter]]
+
+- #[[Page References]] | #[[Attributes]] | #[[Templates]] | #[[Daily Notes]] #[[Current time]] | #[[Task Management]] | #[[Calculator]] | #[[Pomodoro timer]] | #[[Kanban]] 
+
+#### [Use Roam Research as a Personal CRM - Nicolo S's pro tip about Roam Research | YourStack](https://yourstack.com/pro-tips/340-use-roam-research-as-a-personal-crm) by [[Nicolo S]]
+
+- #[[Attributes]] | #[[Page References]]
+
+#### [Roam Research: Why I Love It and How I Use It](https://www.nateliason.com/blog/roam#crm) by [[Nat Eliason]]
+
+- #[[Attributes]] | #[[Page References]] | #[[Linked References]]
+- 
+
+---
+
+# Miscellaneous
+
+### [[Wiki]]
+
+### [[Scripture Study]]
+
+### [[Language Learning]]
+
+### [[Hacking and Coding]]
+
+### Roam Research for [[Kids]]
+
+### International Languages
+
+- [[Chinese]]
+- [[Korean]]
+- [[Russian]]
+- [[Spanish]]
+- [[German]]
+- [[Japanese]]
+- [[Turkish]]
+
+---
+
+# Calculator
+
+- Calculates basic arithmetic. 
+  - `{{calc: 4 + 5 }}`
+    - {{calc: 4 + 5}}
+- If a block reference is used an argument, it will search for a number in that block and use that – e.g.
+  - three in “My 3 apples” or
+  - five in "his 5 amazon stocks"
+  - `{{calc: ((block)) + ((block)) * 2 }}`
+    - {{calc: three in “My 3 apples” or + five in "his 5 amazon stocks" * 2}}
+
+### Community Videos::
+
+#### [Roam Research: Using the Calculator](https://www.youtube.com/watch?v=kxWykFHUtNo) - [[Les Kristofs]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=kxWykFHUtNo}}
+
+### Roam Team Videos::
+
+- https://twitter.com/i/status/1209449973902802944
 
 ---
 
@@ -12684,37 +12868,6 @@ by [[Drew Coffman]]
 - {{[[video]]: https://www.youtube.com/watch?v=J_hH5vH2DTo}}
   #[[Table]]
 - [[.--]]
-
----
-
-# Personal CRM
-
-### Community Videos::
-
-#### Roam: The Best Personal CRM Ever by [[Nat Eliason]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=cRDgrdlfYdE&ab_channel=NatEliason}}
-  #[[Page References]] | #[[Sidebar]] | #[[Linked References]] | #[[Attributes]]
-
-#### Mini CRM in Roam Research: Logging Meeting Notes by [[R.J. Nestor]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=CnakhkONQ_g&ab_channel=R.J.Nestor}}
-  #[[Page References]] | #[[Sidebar]] | #[[Daily Notes]] | #[[Tags]] | #[[Indentation]] | #[[Linked References]] | #[[Filter]] | #[[Attributes]] 
-
-### Articles::
-
-#### [Using Roam Research as a Customer Relationship Manager](https://thesweetsetup.com/using-roam-research-as-a-customer-relationship-manager/) by [[Josh Ginter]]
-
-- #[[Page References]] | #[[Attributes]] | #[[Templates]] | #[[Daily Notes]] #[[Current time]] | #[[Task Management]] | #[[Calculator]] | #[[Pomodoro timer]] | #[[Kanban]] 
-
-#### [Use Roam Research as a Personal CRM - Nicolo S's pro tip about Roam Research | YourStack](https://yourstack.com/pro-tips/340-use-roam-research-as-a-personal-crm) by [[Nicolo S]]
-
-- #[[Attributes]] | #[[Page References]]
-
-#### [Roam Research: Why I Love It and How I Use It](https://www.nateliason.com/blog/roam#crm) by [[Nat Eliason]]
-
-- #[[Attributes]] | #[[Page References]] | #[[Linked References]]
-- 
 
 ---
 
@@ -12798,6 +12951,50 @@ by [[Drew Coffman]]
 
 ---
 
+# Images
+
+- You can include images on Roam in these two ways
+  - Pull from the internet (nothing gets stored, so if original link is broken, you lose the [image](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FE5b-pBgXuQ.png?alt=media&token=b29c9beb-f9f3-44c7-88db-42a6b2b32289))
+    - ![image](https://res-1.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco/kop5qscevpniah2rbsfb)
+  - Upload from your local computer (the image gets uploaded to our server)
+    - Team GIFs::
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Fp8y1UIR1C0.gif?alt=media&token=b7b763f2-b5f6-4e37-a015-0053dc0bf63c)
+        - `/upload` to upload from your local computer
+          #[[Key Commands]]
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fk6NvrFcN0y.gif?alt=media&token=2983eb2f-ccd4-4d0c-beed-a386bfc5a614)
+        - Highlight a word, press `Cmd+k or Ctrl+k`, paste the image link
+          #[[Key Commands]]
+- Key Commands::
+  - `![image](yourimageurl.com)` to pull from the internt
+
+---
+
+# Journaling
+
+### Articles::
+
+#### [How to Keep a Journal in Roam Research](https://markmcelroy.com/how-to-keep-a-journal-in-roam-research/) by [[Mark McElroy]]
+
+- #[[Daily Notes]] | #[[Page References]] | #[[Slider]]
+
+#### [How to use Roam Research for Interstitial Journaling](https://www.cortexfutura.com/interstitial-journaling-roam-research/) by [[Cortex Futura]]
+
+- #[[Daily Notes]] | #[[Current time]] | #[[Page References]]
+
+#### [Atomic Journaling - Expanding Thoughts](https://brandontoner.substack.com/p/atomic-journaling) by [[Brandon Toner]]
+
+- #[[Daily Notes]] | #[[Templates]] | #[[Block References]]
+
+#### [Interstitial journaling: combining notes, to-do & time tracking](https://nesslabs.com/interstitial-journaling) by [[Anne-Laure Le Cunff]]
+
+- #[[Daily Notes]] | #[[Current time]] | #[[Task Management]] | #[[Page References]]
+
+#### [The Power of Roaman Journaling](https://www.roambrain.com/the-power-of-roaman-journaling/) by [[Tracy Winchell]]
+
+- #[[Templates]] | #[[Daily Notes]] | #[[Current time]] | #[[Block Embed]]
+
+---
+
 # Mentions
 
 - Mentions help you pull information (i.e., References) right on any [[Blocks]], without you having to open extra windows or sidebars to access them
@@ -12833,24 +13030,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Images
-
-- You can include images on Roam in these two ways
-  - Pull from the internet (nothing gets stored, so if original link is broken, you lose the [image](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FE5b-pBgXuQ.png?alt=media&token=b29c9beb-f9f3-44c7-88db-42a6b2b32289))
-    - ![image](https://res-1.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco/kop5qscevpniah2rbsfb)
-  - Upload from your local computer (the image gets uploaded to our server)
-    - Team GIFs::
-      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Fp8y1UIR1C0.gif?alt=media&token=b7b763f2-b5f6-4e37-a015-0053dc0bf63c)
-        - `/upload` to upload from your local computer
-          #[[Key Commands]]
-      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fk6NvrFcN0y.gif?alt=media&token=2983eb2f-ccd4-4d0c-beed-a386bfc5a614)
-        - Highlight a word, press `Cmd+k or Ctrl+k`, paste the image link
-          #[[Key Commands]]
-- Key Commands::
-  - `![image](yourimageurl.com)` to pull from the internt
-
----
-
 # Research
 
 ### Roam Team Videos::
@@ -12880,32 +13059,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Journaling
-
-### Articles::
-
-#### [How to Keep a Journal in Roam Research](https://markmcelroy.com/how-to-keep-a-journal-in-roam-research/) by [[Mark McElroy]]
-
-- #[[Daily Notes]] | #[[Page References]] | #[[Slider]]
-
-#### [How to use Roam Research for Interstitial Journaling](https://www.cortexfutura.com/interstitial-journaling-roam-research/) by [[Cortex Futura]]
-
-- #[[Daily Notes]] | #[[Current time]] | #[[Page References]]
-
-#### [Atomic Journaling - Expanding Thoughts](https://brandontoner.substack.com/p/atomic-journaling) by [[Brandon Toner]]
-
-- #[[Daily Notes]] | #[[Templates]] | #[[Block References]]
-
-#### [Interstitial journaling: combining notes, to-do & time tracking](https://nesslabs.com/interstitial-journaling) by [[Anne-Laure Le Cunff]]
-
-- #[[Daily Notes]] | #[[Current time]] | #[[Task Management]] | #[[Page References]]
-
-#### [The Power of Roaman Journaling](https://www.roambrain.com/the-power-of-roaman-journaling/) by [[Tracy Winchell]]
-
-- #[[Templates]] | #[[Daily Notes]] | #[[Current time]] | #[[Block Embed]]
-
----
-
 # Export
 
 #### [[Markdown]] Export
@@ -12927,6 +13080,46 @@ by [[Drew Coffman]]
 #### Auto Backups
 
 - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FE-1xkkvU6W.gif?alt=media&token=c94c84b4-a93b-471f-8f05-8b7632671cae)
+
+---
+
+# Studying
+
+- Community Videos::
+  - **Roam Research: Notetaking Session for School by [[J M]]**
+    - {{[[video]]: https://www.youtube.com/watch?v=ZOWk76FhwEU&feature=youtu.be&ab_channel=JM}}
+      #[[Page References]] | #[[Indentation]] | #[[Right Sidebar]] 
+  - **Roam for Students | How to Take Notes in a Lecture by [[Shu Omi]]**
+    - {{[[video]]: https://www.youtube.com/watch?v=nWgXBGDP3nI&ab_channel=ShuOmi}}
+      #[[Page References]] | #[[Indentation]]
+  - **How I use Roam Research for Lecture Notes (for college students) by [[Abhinav Kejriwal]]**
+    - {{[[video]]: https://www.youtube.com/watch?v=gBYwBNY3pNc&ab_channel=AbhinavKejriwal}}
+      #[[Page References]] | #[[Sidebar]] | #[[Block References]]
+
+### Articles::
+
+#### [How I Used Roam Research to Study for Medical School](https://toolsforgrowth.substack.com/p/how-i-used-roam-research-to-study)
+
+- #[[Daily Notes]] | #[[Page References]] | #[[Indentation]] | #[[Linked References]]
+
+---
+
+# Attributes
+
+- Community Videos::
+  - Roam Basics Part 3: Attributes and Use of / by [[Dr Alex Popadich]]
+    - {{[[video]]: https://www.youtube.com/watch?v=uO1zMII3gWs}}
+      #[[/ Commands]] | #[[Attributes]]
+  - Using Template Pages in Roam (Metadata) by [[Dalton Mabery]]
+    - {{[[video]]: https://www.youtube.com/watch?v=FkIzSeXydZ4}}
+      #[[Templates]] | #[[Attributes]] | #[[Sidebar]]
+  - Task Management, Roam Research: Dealing with Dates by [[R.J. Nestor]]
+    - {{[[video]]: https://www.youtube.com/watch?v=MyDpU4Shwcw}}
+      #[[Filter]] | #[[Linked References]] | #[[Attributes]] 
+  - An in-depth look at Attributes in [[Roam Research]] + BONUS by [[m4rrc0]]
+    - {{[[video]]: https://www.youtube.com/watch?v=uWXm85VFOQs}}
+      #[[Attributes]]
+  - 
 
 ---
 
@@ -12980,46 +13173,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Studying
-
-- Community Videos::
-  - **Roam Research: Notetaking Session for School by [[J M]]**
-    - {{[[video]]: https://www.youtube.com/watch?v=ZOWk76FhwEU&feature=youtu.be&ab_channel=JM}}
-      #[[Page References]] | #[[Indentation]] | #[[Right Sidebar]] 
-  - **Roam for Students | How to Take Notes in a Lecture by [[Shu Omi]]**
-    - {{[[video]]: https://www.youtube.com/watch?v=nWgXBGDP3nI&ab_channel=ShuOmi}}
-      #[[Page References]] | #[[Indentation]]
-  - **How I use Roam Research for Lecture Notes (for college students) by [[Abhinav Kejriwal]]**
-    - {{[[video]]: https://www.youtube.com/watch?v=gBYwBNY3pNc&ab_channel=AbhinavKejriwal}}
-      #[[Page References]] | #[[Sidebar]] | #[[Block References]]
-
-### Articles::
-
-#### [How I Used Roam Research to Study for Medical School](https://toolsforgrowth.substack.com/p/how-i-used-roam-research-to-study)
-
-- #[[Daily Notes]] | #[[Page References]] | #[[Indentation]] | #[[Linked References]]
-
----
-
-# Attributes
-
-- Community Videos::
-  - Roam Basics Part 3: Attributes and Use of / by [[Dr Alex Popadich]]
-    - {{[[video]]: https://www.youtube.com/watch?v=uO1zMII3gWs}}
-      #[[/ Commands]] | #[[Attributes]]
-  - Using Template Pages in Roam (Metadata) by [[Dalton Mabery]]
-    - {{[[video]]: https://www.youtube.com/watch?v=FkIzSeXydZ4}}
-      #[[Templates]] | #[[Attributes]] | #[[Sidebar]]
-  - Task Management, Roam Research: Dealing with Dates by [[R.J. Nestor]]
-    - {{[[video]]: https://www.youtube.com/watch?v=MyDpU4Shwcw}}
-      #[[Filter]] | #[[Linked References]] | #[[Attributes]] 
-  - An in-depth look at Attributes in [[Roam Research]] + BONUS by [[m4rrc0]]
-    - {{[[video]]: https://www.youtube.com/watch?v=uWXm85VFOQs}}
-      #[[Attributes]]
-  - 
-
----
-
 # Date picker
 
 - Date picker helps you pick a date's page by showing you a calendar
@@ -13049,6 +13202,20 @@ by [[Drew Coffman]]
   - `[[` to find or create [[Page References]]
   - `cmd+u` (macOS) / `ctrl+u` (PC) to [[Find or create page]]
   - `#` to find or create [[Page References]] as a [tag]([[Tags]])
+
+---
+
+# Page References
+
+- Page references are links to [[Pages]] in your graph
+- You can reference an existing page by typing `[[`, which will open a dropdown menu with reference it in place or reference an existing page
+  - All references to a page that have been linked through this method will appear in that pages [[Linked References]]
+  - You can transform any mention of a page to a page reference by opening up the [[Unlinked References]] underneath where you can see and link all the mentions of a page that haven't been linked yet
+- Roam Team Videos::
+  - {{[[video]]: https://www.youtube.com/watch?v=v9s3pusI1JQ}}
+  - {{[[video]]: https://www.youtube.com/watch?v=lHkMq3aqDtw&ab_channel=ConorWhite-Sullivan}}
+- Community Videos::
+- Articles::
 
 ---
 
@@ -13092,20 +13259,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Page References
-
-- Page references are links to [[Pages]] in your graph
-- You can reference an existing page by typing `[[`, which will open a dropdown menu with reference it in place or reference an existing page
-  - All references to a page that have been linked through this method will appear in that pages [[Linked References]]
-  - You can transform any mention of a page to a page reference by opening up the [[Unlinked References]] underneath where you can see and link all the mentions of a page that haven't been linked yet
-- Roam Team Videos::
-  - {{[[video]]: https://www.youtube.com/watch?v=v9s3pusI1JQ}}
-  - {{[[video]]: https://www.youtube.com/watch?v=lHkMq3aqDtw&ab_channel=ConorWhite-Sullivan}}
-- Community Videos::
-- Articles::
-
----
-
 # Sharing
 
 #### Sharing graph as read-only
@@ -13145,19 +13298,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Word count
-
-- Word count counts the number of words in a block, for example
-  - The below child block has 115 words
-    - Roam is an online workspace for organizing and evaluating knowledge. The system is built on a directed graph, which frees it from the constraints of the classic file tree. Users can remix and connect ideas in multiple overlapping hierarchies, with each unit of information becoming a node in a dynamic network. Any given node can occupy multiple positions simultaneously, convey information through defined relationships, and populate changes throughout the graph. With weightings assigned to the strength of relationships between nodes, Roam also becomes a tool for Bayesian inference and decision making. The ultimate goal is to extend the system to collaborative reasoning, allowing groups to build shared mental maps and make faster and better-informed decisions. {{[[word-count]]}}
-  - The below child block has 0 words
-    - {{word-count}}
-- You can also go to ALL PAGES on your [[Left Sidebar]] and view the pages with the most to least word count, or vice versa 
-- Key Commands::
-  - `/word`
-
----
-
 # Scripture Study
 
 ### Community Videos::
@@ -13176,6 +13316,19 @@ by [[Drew Coffman]]
 #### [Processing sermon and Bible notes using Roam](https://www.roambrain.com/processing-sermon-and-bible-notes-using-roam/) by [[Mickey Mellen]]
 
 - #[[Page References]] | #[[Linked References]] | #[[Graph Overview]] | #[[Block References]] | #[[Sidebar]]
+
+---
+
+# Word count
+
+- Word count counts the number of words in a block, for example
+  - The below child block has 115 words
+    - Roam is an online workspace for organizing and evaluating knowledge. The system is built on a directed graph, which frees it from the constraints of the classic file tree. Users can remix and connect ideas in multiple overlapping hierarchies, with each unit of information becoming a node in a dynamic network. Any given node can occupy multiple positions simultaneously, convey information through defined relationships, and populate changes throughout the graph. With weightings assigned to the strength of relationships between nodes, Roam also becomes a tool for Bayesian inference and decision making. The ultimate goal is to extend the system to collaborative reasoning, allowing groups to build shared mental maps and make faster and better-informed decisions. {{[[word-count]]}}
+  - The below child block has 0 words
+    - {{word-count}}
+- You can also go to ALL PAGES on your [[Left Sidebar]] and view the pages with the most to least word count, or vice versa 
+- Key Commands::
+  - `/word`
 
 ---
 
@@ -13218,18 +13371,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Character count
-
-- Character count counts the number of characters in a block, for example
-  - The below child block has 768 characters
-    - Roam is an online workspace for organizing and evaluating knowledge. The system is built on a directed graph, which frees it from the constraints of the classic file tree. Users can remix and connect ideas in multiple overlapping hierarchies, with each unit of information becoming a node in a dynamic network. Any given node can occupy multiple positions simultaneously, convey information through defined relationships, and populate changes throughout the graph. With weightings assigned to the strength of relationships between nodes, Roam also becomes a tool for Bayesian inference and decision making. The ultimate goal is to extend the system to collaborative reasoning, allowing groups to build shared mental maps and make faster and better-informed decisions. {{character-count}}
-  - The below child block has no characters
-    - {{character-count}}
-- Key Commands::
-  - `/character`
-
----
-
 # Current time
 
 - Current time displays the current time in your time zone, it's great for tracking time while writing daily logs 
@@ -13240,19 +13381,6 @@ by [[Drew Coffman]]
       #[[TODO/DONE]] | #[[Daily Notes]] | #[[Filter]] | #[[Linked References]] | #[[Block Embed]] | #[[Current time]] | #[[Block References]]
 - Key Commands::
   - `/time`
-
----
-
-# Why Roam?
-
-- This thread of threads on Twitter answers the question of "Why Roam?" pretty well, if not succinctly 😉
-- https://twitter.com/Conaw/status/1198399750032232449?s=20a
-- *Conor mentions the old help graph in this thread. If you are searching for the white paper, he mentioned, find it in this graph [here]([[White Paper]]).
-- 
-- Community Videos::
-  - **Exploring Networked Thought: The Story of Roam Research by [[Futurism]]**
-    - {{[[video]]: https://www.youtube.com/watch?v=EqyJweIHaeg}}
-      #[[Bidirectional linking]]
 
 ---
 
@@ -13280,6 +13408,31 @@ by [[Drew Coffman]]
 
 ---
 
+# Character count
+
+- Character count counts the number of characters in a block, for example
+  - The below child block has 768 characters
+    - Roam is an online workspace for organizing and evaluating knowledge. The system is built on a directed graph, which frees it from the constraints of the classic file tree. Users can remix and connect ideas in multiple overlapping hierarchies, with each unit of information becoming a node in a dynamic network. Any given node can occupy multiple positions simultaneously, convey information through defined relationships, and populate changes throughout the graph. With weightings assigned to the strength of relationships between nodes, Roam also becomes a tool for Bayesian inference and decision making. The ultimate goal is to extend the system to collaborative reasoning, allowing groups to build shared mental maps and make faster and better-informed decisions. {{character-count}}
+  - The below child block has no characters
+    - {{character-count}}
+- Key Commands::
+  - `/character`
+
+---
+
+# Why Roam?
+
+- This thread of threads on Twitter answers the question of "Why Roam?" pretty well, if not succinctly 😉
+- https://twitter.com/Conaw/status/1198399750032232449?s=20a
+- *Conor mentions the old help graph in this thread. If you are searching for the white paper, he mentioned, find it in this graph [here]([[White Paper]]).
+- 
+- Community Videos::
+  - **Exploring Networked Thought: The Story of Roam Research by [[Futurism]]**
+    - {{[[video]]: https://www.youtube.com/watch?v=EqyJweIHaeg}}
+      #[[Bidirectional linking]]
+
+---
+
 # Chinese
 
 - Community Videos::
@@ -13292,40 +13445,6 @@ by [[Drew Coffman]]
   - **Roam教學:第一集(Otter.ai與otter2roam的運用) by [[曹建雄]]**
     - {{[[video]]: https://www.youtube.com/watch?v=W2CkfWkxluo}}
       #[[Upload Files]] | #[[Audio Player]] | #[[Video Embed]] | #[[otter2roam]]
-
----
-
-# Wiki
-
-### Community Videos::
-
-#### Creating a Life Wiki in Roam by [[Shu Omi]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=PrEuEgxZMQw}}
-  #[[Graph]] | #[[Diagram]]
-
-### Articles::
-
-#### [Building a Personal Wikipedia with Roam Research](https://thalein.medium.com/building-a-personal-wikipedia-with-roam-research-b26b489b9e4b) by [[Tim de Rooij]] 
-
-- #[[Attributes]] | #[[Block References]] | #[[Linked References]]
-
----
-
-# Kids
-
-### Community Videos::
-
-#### Roam Research for Kids by [[Les Kristofs]]
-
-- {{[[youtube]]: https://www.youtube.com/watch?v=PMJL2cvmeeQ&list=PLS7Ix7BP1Vuoi3Hl46nUnDHukb52xQWx2}}
-  #[[Daily Notes]] | #[[Page References]] | #[[Bidirectional linking]] | #[[Task Management]] | #[[Table]] | #[[Current time]] | #[[Right Sidebar]] | #[[Templates]] | #[[Block References]] | #[[Tags]] 
-
-### Articles::
-
-#### [Let the Kids Roam](https://www.roambrain.com/let-the-kids-roam/) by [[Les Kristofs]]
-
-- #[[Pomodoro timer]] | #[[KaTeX]] | #[[Calculator]] | #[[Task Management]] | #[[Upload Files]] | #[[Page References]]
 
 ---
 
@@ -13372,6 +13491,40 @@ by [[Drew Coffman]]
 
 ---
 
+# Wiki
+
+### Community Videos::
+
+#### Creating a Life Wiki in Roam by [[Shu Omi]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=PrEuEgxZMQw}}
+  #[[Graph]] | #[[Diagram]]
+
+### Articles::
+
+#### [Building a Personal Wikipedia with Roam Research](https://thalein.medium.com/building-a-personal-wikipedia-with-roam-research-b26b489b9e4b) by [[Tim de Rooij]] 
+
+- #[[Attributes]] | #[[Block References]] | #[[Linked References]]
+
+---
+
+# Kids
+
+### Community Videos::
+
+#### Roam Research for Kids by [[Les Kristofs]]
+
+- {{[[youtube]]: https://www.youtube.com/watch?v=PMJL2cvmeeQ&list=PLS7Ix7BP1Vuoi3Hl46nUnDHukb52xQWx2}}
+  #[[Daily Notes]] | #[[Page References]] | #[[Bidirectional linking]] | #[[Task Management]] | #[[Table]] | #[[Current time]] | #[[Right Sidebar]] | #[[Templates]] | #[[Block References]] | #[[Tags]] 
+
+### Articles::
+
+#### [Let the Kids Roam](https://www.roambrain.com/let-the-kids-roam/) by [[Les Kristofs]]
+
+- #[[Pomodoro timer]] | #[[KaTeX]] | #[[Calculator]] | #[[Task Management]] | #[[Upload Files]] | #[[Page References]]
+
+---
+
 # Slider
 
 - Sliders are good for representing data on a scale, and are especially useful for polls on [[Multiplayer]] graphs!
@@ -13379,6 +13532,28 @@ by [[Drew Coffman]]
   - {{[[slider]]}}
 - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FqaRPRyZuKx.gif?alt=media&token=3a89f74b-4888-4b79-9efa-35d27e88fd23)
   - Other users can click on the slider to give their rating as well
+
+---
+
+# Encrypted Block
+
+- Encrypted block creates encrypted text that can only be unlocked with a secret password
+  - Try clicking on the encrypted block below, and enter the passphrase `hello`
+  - {{encrypt:U2FsdGVkX19S1e0ybaJH2keLGMifvVhqsBlVINdMpvPegcL01PWU6gjltQgbMGwzLoZWQdzrejJ8tJFNKIjNAUfBZ2o4d5XVpZRhDyICt8DoDCbPD65ATX9HHfM4Oa72zxv5jKUESYe0xku/Yqj3Lg==}}
+
+### Roam Team Videos::
+
+- https://twitter.com/i/status/1226658292333568003
+
+---
+
+# Numbered List Extension
+
+- Thank you for installing the Numbered List extension for Roam Research. This page has been automatically generated to allow creation of a SmartBlock to allow you to refresh your numbered lists after you move things around and re-order them.
+- Below the horizontal line is the Refresh Numbered List SmartBlock. Please don't change it unless you know what you are doing!
+- ---
+- #SmartBlock Refresh Numbered List
+  - <%REFRESHNUMBEREDLIST%>
 
 ---
 
@@ -13415,59 +13590,6 @@ by [[Drew Coffman]]
   - A variable result: {{[[query]]: {and: [[today]] [[tomorrow]] {not: [[query]]}}}}
 - Key Commands::
   - `/tomorrow`
-
----
-
-# Encrypted Block
-
-- Encrypted block creates encrypted text that can only be unlocked with a secret password
-  - Try clicking on the encrypted block below, and enter the passphrase `hello`
-  - {{encrypt:U2FsdGVkX19S1e0ybaJH2keLGMifvVhqsBlVINdMpvPegcL01PWU6gjltQgbMGwzLoZWQdzrejJ8tJFNKIjNAUfBZ2o4d5XVpZRhDyICt8DoDCbPD65ATX9HHfM4Oa72zxv5jKUESYe0xku/Yqj3Lg==}}
-
-### Roam Team Videos::
-
-- https://twitter.com/i/status/1226658292333568003
-
----
-
-# Numbered List Extension
-
-- Thank you for installing the Numbered List extension for Roam Research. This page has been automatically generated to allow creation of a SmartBlock to allow you to refresh your numbered lists after you move things around and re-order them.
-- Below the horizontal line is the Refresh Numbered List SmartBlock. Please don't change it unless you know what you are doing!
-- ---
-- #SmartBlock Refresh Numbered List
-  - <%REFRESHNUMBEREDLIST%>
-
----
-
-# Tags
-
-- Tags are just [[Page References]] that are styled a bit differently (light grey font color) so that the tag is not as prominent
-  - Usually used at the end of blocks or at the beginning, whereas normally [[Page References]] are used alone as parent block or inline as part of a sentence
-- Key Commands::
-  - `#` to find or create [[Page References]] as a [tag]([[Tags]])
-
----
-
-# Roam Slack
-
-## We have a thriving community on Slack! 
-
-## Join via [this link](https://join.slack.com/t/roamresearch/shared_invite/zt-1x2y9jkx1-KkSjlsWeTdfXy5H8hMB7tg)
-
-### We've got a curated graph of content of important things, accessible [here](https://roamresearch.com/#/app/roam-slack)
-
-#### If you'd like access to the archive, fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSc8SpE4UOr2UynEqk-2Ob9TZECQaYGNO6XksphxqVPH2HosmQ/viewform)
-
-
----
-
-# Alexander Rink
-
-- [[Roam Depot Extensions]]
-  - [Roam Studio](https://github.com/rcvd/RoamStudio)
-    - Discover a wide range of themes for Roam Research that are beautiful and highly customizable, with various options and modules to choose from.
-  - [Magic Tags](https://github.com/rcvd/magic-tags)
 
 ---
 
@@ -13809,6 +13931,37 @@ by [[Drew Coffman]]
       					:key-command          [key-command-view function]
    					    :markdown-key-command [markdown-key-command-view function])))]))]]]))))```}}
 - 
+
+---
+
+# Tags
+
+- Tags are just [[Page References]] that are styled a bit differently (light grey font color) so that the tag is not as prominent
+  - Usually used at the end of blocks or at the beginning, whereas normally [[Page References]] are used alone as parent block or inline as part of a sentence
+- Key Commands::
+  - `#` to find or create [[Page References]] as a [tag]([[Tags]])
+
+---
+
+# Roam Slack
+
+## We have a thriving community on Slack! 
+
+## Join via [this link](https://join.slack.com/t/roamresearch/shared_invite/zt-1x2y9jkx1-KkSjlsWeTdfXy5H8hMB7tg)
+
+### We've got a curated graph of content of important things, accessible [here](https://roamresearch.com/#/app/roam-slack)
+
+#### If you'd like access to the archive, fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSc8SpE4UOr2UynEqk-2Ob9TZECQaYGNO6XksphxqVPH2HosmQ/viewform)
+
+
+---
+
+# Alexander Rink
+
+- [[Roam Depot Extensions]]
+  - [Roam Studio](https://github.com/rcvd/RoamStudio)
+    - Discover a wide range of themes for Roam Research that are beautiful and highly customizable, with various options and modules to choose from.
+  - [Magic Tags](https://github.com/rcvd/magic-tags)
 
 ---
 

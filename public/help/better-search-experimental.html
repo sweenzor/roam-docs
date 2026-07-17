@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Better search (Experimental) — Roam Research Docs</title>
+<meta name="description" content="What is it?">
+<link rel="canonical" href="https://roamdocs.fyi/help/better-search-experimental">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Better search (Experimental) — Roam Research Docs">
+<meta property="og:description" content="What is it?">
+<meta property="og:url" content="https://roamdocs.fyi/help/better-search-experimental">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"Better search (Experimental)","item":"https://roamdocs.fyi/help/better-search-experimental"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Better search (Experimental)</h1>
+<p class="meta"><a href="better-search-experimental.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/FaYFv-i2D">view in Roam Research</a></p>
+<h3>What is it?</h3>
+<ul>
+<li>A new search engine for Roam, currently opt-in while it's experimental.
+</li>
+<li>It's a <strong>personal</strong> setting: turning it on changes how search works for you, not for everyone on the graph.
+</li>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F2dBwqEBmaB.png?alt=media&amp;token=37f82236-48d4-4a8e-a22c-0cb8c35431b4" alt="" loading="lazy">
+</li>
+</ul>
+<h3>What's better</h3>
+<ul>
+<li><strong>It's faster</strong>, especially on large graphs.
+</li>
+<li><strong>Block references are searchable.</strong> A block that embeds another block with <code>(( ))</code> now matches searches for the referenced text — the old search only saw the raw reference, not what it says.
+</li>
+<li><strong>Smarter ranking.</strong> Results are ordered by how directly they match: exact page titles first, then titles and blocks containing your words as a phrase, then those containing all your words anywhere.
+</li>
+<li><strong>It finds ideas spread across nearby blocks.</strong> In an outline, one thought often spans several blocks. When no single block contains all your search words but a small neighborhood of blocks does, that group matches too — so you find the passage even though no block has the full phrase.
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FIbcwJXIPwF.png?alt=media&amp;token=734a5256-bf82-4632-84e0-dc694ab666ae" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li><strong>It unlocks search filters.</strong> With it on, keyword searches in Advanced Search support filters like daily notes and edit time.
+</li>
+</ul>
+<h3>How to turn it on</h3>
+<ul>
+<li>Open <strong>Settings → User → Experimental: Better search</strong> and flip the switch.
+</li>
+<li>Each person on a graph chooses for themselves.
+</li>
+<li>The toggle is temporary — it will go away once the new engine becomes Roam's default search.
+</li>
+<li>Looking for meaning-based search on top of this? See <a href="/help/semantic-search-experimental">Semantic search (Experimental)</a>.
+</li>
+</ul>
+</body>
+</html>

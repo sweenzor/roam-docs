@@ -13,8 +13,9 @@
   <url><loc>https://roamdocs.fyi/developer-documentation/roam-append-api</loc></url>
   <url><loc>https://roamdocs.fyi/developer-documentation/yet-to-release-updates</loc></url>
   <url><loc>https://roamdocs.fyi/developer-documentation/available-libraries</loc></url>
-  <url><loc>https://roamdocs.fyi/developer-documentation/contact-us</loc></url>
   <url><loc>https://roamdocs.fyi/developer-documentation/local-api</loc></url>
+  <url><loc>https://roamdocs.fyi/developer-documentation/contact-us</loc></url>
+  <url><loc>https://roamdocs.fyi/developer-documentation/roam-alpha-api-v2</loc></url>
   <url><loc>https://roamdocs.fyi/developer-documentation/roam-clojurescript-api</loc></url>
   <url><loc>https://roamdocs.fyi/developer-documentation/datomic-alpha-api</loc></url>
   <url><loc>https://roamdocs.fyi/developer-documentation/iframe-components</loc></url>
@@ -31,6 +32,7 @@
   <url><loc>https://roamdocs.fyi/help/diagram</loc></url>
   <url><loc>https://roamdocs.fyi/help/roam-specific-q-additions</loc></url>
   <url><loc>https://roamdocs.fyi/help/themes</loc></url>
+  <url><loc>https://roamdocs.fyi/help/semantic-search-experimental</loc></url>
   <url><loc>https://roamdocs.fyi/help/block-references</loc></url>
   <url><loc>https://roamdocs.fyi/help/what-you-can-t-say</loc></url>
   <url><loc>https://roamdocs.fyi/help/formatting</loc></url>
@@ -44,8 +46,8 @@
   <url><loc>https://roamdocs.fyi/help/block-context-menu</loc></url>
   <url><loc>https://roamdocs.fyi/help/features</loc></url>
   <url><loc>https://roamdocs.fyi/help/pipedream-workflows</loc></url>
-  <url><loc>https://roamdocs.fyi/help/todo-done</loc></url>
   <url><loc>https://roamdocs.fyi/help/blocks</loc></url>
+  <url><loc>https://roamdocs.fyi/help/todo-done</loc></url>
   <url><loc>https://roamdocs.fyi/help/graphs-and-settings</loc></url>
   <url><loc>https://roamdocs.fyi/help/search</loc></url>
   <url><loc>https://roamdocs.fyi/help/callouts</loc></url>
@@ -54,8 +56,8 @@
   <url><loc>https://roamdocs.fyi/help/zapier-integration</loc></url>
   <url><loc>https://roamdocs.fyi/help/mermaid-diagrams</loc></url>
   <url><loc>https://roamdocs.fyi/help/security</loc></url>
-  <url><loc>https://roamdocs.fyi/help/commands</loc></url>
   <url><loc>https://roamdocs.fyi/help/right-sidebar</loc></url>
+  <url><loc>https://roamdocs.fyi/help/commands</loc></url>
   <url><loc>https://roamdocs.fyi/help/courses</loc></url>
   <url><loc>https://roamdocs.fyi/help/query</loc></url>
   <url><loc>https://roamdocs.fyi/help/updating-roam</loc></url>
@@ -74,68 +76,69 @@
   <url><loc>https://roamdocs.fyi/help/daily-notes</loc></url>
   <url><loc>https://roamdocs.fyi/help/pomodoro-timer</loc></url>
   <url><loc>https://roamdocs.fyi/help/hosted-graph</loc></url>
+  <url><loc>https://roamdocs.fyi/help/better-search-experimental</loc></url>
   <url><loc>https://roamdocs.fyi/help/community</loc></url>
-  <url><loc>https://roamdocs.fyi/help/precise-links</loc></url>
   <url><loc>https://roamdocs.fyi/help/beginner-s-guide</loc></url>
+  <url><loc>https://roamdocs.fyi/help/precise-links</loc></url>
   <url><loc>https://roamdocs.fyi/help/extensions</loc></url>
   <url><loc>https://roamdocs.fyi/help/audio-player</loc></url>
   <url><loc>https://roamdocs.fyi/help/templates</loc></url>
   <url><loc>https://roamdocs.fyi/help/roam-help</loc></url>
   <url><loc>https://roamdocs.fyi/help/roam-css</loc></url>
-  <url><loc>https://roamdocs.fyi/help/miscellaneous</loc></url>
   <url><loc>https://roamdocs.fyi/help/notable-graphs</loc></url>
-  <url><loc>https://roamdocs.fyi/help/calculator</loc></url>
   <url><loc>https://roamdocs.fyi/help/project-management</loc></url>
+  <url><loc>https://roamdocs.fyi/help/personal-crm</loc></url>
+  <url><loc>https://roamdocs.fyi/help/miscellaneous</loc></url>
+  <url><loc>https://roamdocs.fyi/help/calculator</loc></url>
   <url><loc>https://roamdocs.fyi/help/news-and-press</loc></url>
   <url><loc>https://roamdocs.fyi/help/table</loc></url>
-  <url><loc>https://roamdocs.fyi/help/personal-crm</loc></url>
   <url><loc>https://roamdocs.fyi/help/upload-files</loc></url>
   <url><loc>https://roamdocs.fyi/help/video-embed</loc></url>
   <url><loc>https://roamdocs.fyi/help/install-roam</loc></url>
   <url><loc>https://roamdocs.fyi/help/workflows</loc></url>
+  <url><loc>https://roamdocs.fyi/help/images</loc></url>
+  <url><loc>https://roamdocs.fyi/help/journaling</loc></url>
   <url><loc>https://roamdocs.fyi/help/mentions</loc></url>
   <url><loc>https://roamdocs.fyi/help/longform-writing</loc></url>
-  <url><loc>https://roamdocs.fyi/help/images</loc></url>
   <url><loc>https://roamdocs.fyi/help/research</loc></url>
-  <url><loc>https://roamdocs.fyi/help/journaling</loc></url>
   <url><loc>https://roamdocs.fyi/help/export</loc></url>
-  <url><loc>https://roamdocs.fyi/help/meeting-notes</loc></url>
-  <url><loc>https://roamdocs.fyi/help/long-videos</loc></url>
   <url><loc>https://roamdocs.fyi/help/studying</loc></url>
   <url><loc>https://roamdocs.fyi/help/attributes</loc></url>
+  <url><loc>https://roamdocs.fyi/help/meeting-notes</loc></url>
+  <url><loc>https://roamdocs.fyi/help/long-videos</loc></url>
   <url><loc>https://roamdocs.fyi/help/date-picker</loc></url>
   <url><loc>https://roamdocs.fyi/help/bidirectional-linking</loc></url>
-  <url><loc>https://roamdocs.fyi/help/code-block</loc></url>
   <url><loc>https://roamdocs.fyi/help/page-references</loc></url>
+  <url><loc>https://roamdocs.fyi/help/code-block</loc></url>
   <url><loc>https://roamdocs.fyi/help/sharing</loc></url>
   <url><loc>https://roamdocs.fyi/help/spanish</loc></url>
-  <url><loc>https://roamdocs.fyi/help/word-count</loc></url>
   <url><loc>https://roamdocs.fyi/help/scripture-study</loc></url>
+  <url><loc>https://roamdocs.fyi/help/word-count</loc></url>
   <url><loc>https://roamdocs.fyi/help/console-logs</loc></url>
   <url><loc>https://roamdocs.fyi/help/cancelling-your-membership-during-your-free-trial</loc></url>
   <url><loc>https://roamdocs.fyi/help/block-search</loc></url>
-  <url><loc>https://roamdocs.fyi/help/character-count</loc></url>
   <url><loc>https://roamdocs.fyi/help/current-time</loc></url>
-  <url><loc>https://roamdocs.fyi/help/why-roam</loc></url>
   <url><loc>https://roamdocs.fyi/help/adding-soft-line-breaks-in-a-block</loc></url>
   <url><loc>https://roamdocs.fyi/help/roam-depot</loc></url>
+  <url><loc>https://roamdocs.fyi/help/character-count</loc></url>
+  <url><loc>https://roamdocs.fyi/help/why-roam</loc></url>
   <url><loc>https://roamdocs.fyi/help/chinese</loc></url>
-  <url><loc>https://roamdocs.fyi/help/wiki</loc></url>
-  <url><loc>https://roamdocs.fyi/help/kids</loc></url>
   <url><loc>https://roamdocs.fyi/help/left-sidebar</loc></url>
   <url><loc>https://roamdocs.fyi/help/version-control</loc></url>
   <url><loc>https://roamdocs.fyi/help/import</loc></url>
+  <url><loc>https://roamdocs.fyi/help/wiki</loc></url>
+  <url><loc>https://roamdocs.fyi/help/kids</loc></url>
   <url><loc>https://roamdocs.fyi/help/slider</loc></url>
+  <url><loc>https://roamdocs.fyi/help/encrypted-block</loc></url>
+  <url><loc>https://roamdocs.fyi/help/numbered-list-extension</loc></url>
   <url><loc>https://roamdocs.fyi/help/today</loc></url>
   <url><loc>https://roamdocs.fyi/help/russian</loc></url>
   <url><loc>https://roamdocs.fyi/help/tomorrow</loc></url>
-  <url><loc>https://roamdocs.fyi/help/encrypted-block</loc></url>
-  <url><loc>https://roamdocs.fyi/help/numbered-list-extension</loc></url>
+  <url><loc>https://roamdocs.fyi/help/korean</loc></url>
+  <url><loc>https://roamdocs.fyi/help/key-commands</loc></url>
   <url><loc>https://roamdocs.fyi/help/tags</loc></url>
   <url><loc>https://roamdocs.fyi/help/roam-slack</loc></url>
   <url><loc>https://roamdocs.fyi/help/alexander-rink</loc></url>
-  <url><loc>https://roamdocs.fyi/help/korean</loc></url>
-  <url><loc>https://roamdocs.fyi/help/key-commands</loc></url>
   <url><loc>https://roamdocs.fyi/help/latex</loc></url>
   <url><loc>https://roamdocs.fyi/help/linked-references</loc></url>
 </urlset>

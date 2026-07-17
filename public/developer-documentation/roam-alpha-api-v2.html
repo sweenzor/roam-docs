@@ -1,0 +1,3648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roam Alpha API v2 — Roam Research Docs</title>
+<meta name="description" content="Draft restructuring of Roam Alpha API, written for both humans and AI. Method content verified against the source (July 2026). Historical ch">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/roam-alpha-api-v2">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Roam Alpha API v2 — Roam Research Docs">
+<meta property="og:description" content="Draft restructuring of Roam Alpha API, written for both humans and AI. Method content verified against the source (July 2026). Historical ch">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/roam-alpha-api-v2">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"Roam Alpha API v2","item":"https://roamdocs.fyi/developer-documentation/roam-alpha-api-v2"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>Roam Alpha API v2</h1>
+<p class="meta"><a href="roam-alpha-api-v2.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/OiE7WUknO">view in Roam Research</a></p>
+<ul>
+<li>Draft restructuring of <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a>, written for both humans and AI. Method content verified against the source (July 2026). Historical change log stays on the original page.
+</li>
+<li><strong>Getting Started</strong>
+<ul>
+<li>The Roam Alpha API is provided in the browser, letting you read and write data and drive the UI. It lives on the <code>window</code> object as <code>window.roamAlphaAPI</code> and is available from <a href="/developer-documentation/roam-js">roam/js</a> code blocks, Roam Depot extensions, and the browser console.
+</li>
+<li>For the ClojureScript version of this API, see the Reference section of <a href="/developer-documentation/roam-cljs">roam/cljs</a>.
+</li>
+</ul>
+</li>
+<li><strong>Conventions</strong>
+<ul>
+<li>Most functions take a single object argument. Keys are kebab-case strings, and boolean keys often end in <code>?</code> — quote them in JS: <code>{&quot;parent-uid&quot;: &quot;abc&quot;, &quot;zoom-path?&quot;: true}</code>. Exceptions: <code>data.roamQuery</code> uses camelCase keys, and a few functions take positional arguments (<code>data.addPullWatch</code>, <code>data.page.addShortcut</code>, <code>ui.mainWindow.registerComponent</code>, everything in <code>util</code>).
+</li>
+<li>Write functions return a Promise that resolves to <code>null</code> once Roam has applied the operation — after the triggering event and all of its descendant events are handled. Chain dependent writes with <code>await</code>; no <code>setTimeout</code> hacks needed.
+<ul>
+<li>The promise resolves before React re-renders, so if you manipulate the DOM right after a write you may still need a very small timeout.
+</li>
+<li>Failures reject the promise — use <code>.catch()</code>, or <code>try</code>/<code>catch</code> with <code>await</code>.
+</li>
+</ul>
+</li>
+<li>Read functions are synchronous unless a method's <code>Returns::</code> says otherwise (<code>data.roamQuery</code>, <code>ui.mainWindow.getOpenView</code>, and <code>ui.mainWindow.getOpenPageOrBlockUid</code> return promises). Prefer the promise-returning <code>data.async.*</code> variants in new code — the synchronous reads will eventually be deprecated.
+</li>
+<li>Rate limit: rate-limited functions (all writes, plus a number of UI functions) share a budget of 1500 calls per 60 seconds; exceeding it throws.
+</li>
+<li><code>q</code>, <code>pull</code>, <code>pull_many</code> and their variants time out after 20 seconds, throwing <code>Query and/or pull expression took too long to run.</code> — <code>pull</code> and <code>pull_many</code> accept an options argument to override the timeout.
+</li>
+<li>uids
+<ul>
+<li>Block and page uids are random 9-character strings — see <code>util.generateUID</code>.
+</li>
+<li>Daily note pages use the date as their uid, in <code>MM-DD-YYYY</code> format (e.g. <code>07-16-2026</code> for July 16th, 2026) — see <code>util.dateToPageUid</code>.
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.apiVersion</code> is a string property (e.g. &quot;1.1.3&quot;) — use it for feature detection.
+</li>
+<li>sidebar <code>window</code> argument
+<ul>
+<li>The shared shape used by the <code>ui.rightSidebar</code> window functions and <code>ui.filters.getSidebarWindowFilters</code>/<code>setSidebarWindowFilters</code>:
+</li>
+<li><code>type</code> (string, required) — one of &quot;block&quot; | &quot;outline&quot; | &quot;mentions&quot; | &quot;graph&quot; | &quot;search-query&quot;
+</li>
+<li><code>block-uid</code> (string, required for every type except &quot;search-query&quot;) — uid of the block or page the window shows
+</li>
+<li><code>search-query-str</code> (string, required when <code>type</code> is &quot;search-query&quot;, in place of <code>block-uid</code>) — the search query
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Reference</strong>
+<ul>
+<li><code>roamAlphaAPI.data</code> — queries and reads, plus the write API for blocks, pages, and users
+<ul>
+<li><code>roamAlphaAPI.data.q</code>
+<ul>
+<li>Description::
+<ul>
+<li>Query the graph with Datomic-flavored datalog. Synchronous.
+</li>
+<li>See the <a href="https://docs.datomic.com/on-prem/query/query.html">datomic docs</a> for the query syntax, <a href="http://www.learndatalogtoday.org">learndatalogtoday.org</a> to learn it, and the <a href="https://github.com/tonsky/datascript/tree/master/test/datascript/test">datascript tests</a> for good examples.
+</li>
+<li>Legacy alias: <code>roamAlphaAPI.q</code> (older top-level name; prefer this namespaced path)
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>query</code> (string, required) — the datalog query
+</li>
+<li><code>...args</code> (optional) — additional inputs, bound to the query's <code>:in</code> clauses (the database itself is passed implicitly)
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Array of result tuples
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>// all block uids and strings in the graph
+window.roamAlphaAPI.data.q(
+  `[:find ?b ?s
+    :where
+    [?e :block/uid ?b]
+    [?e :block/string ?s]]`);
+// =&gt; [[&quot;y3LFc4rFd&quot;, &quot;some block text&quot;], [&quot;09sbCUlgt&quot;, &quot;another block&quot;], ...]
+
+// with an :in argument
+window.roamAlphaAPI.data.q(
+  `[:find ?s
+    :in $ ?uid
+    :where
+    [?e :block/uid ?uid]
+    [?e :block/string ?s]]`,
+  &quot;abc123xyz&quot;);
+// =&gt; [[&quot;the block's text&quot;]]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.pull</code>
+<ul>
+<li>Description::
+<ul>
+<li>Declaratively fetch a (possibly nested) selection of attributes for one entity. Synchronous.
+</li>
+<li>See the <a href="https://docs.datomic.com/on-prem/query/pull.html">datomic pull docs</a> — Roam uses <a href="https://github.com/tonsky/datascript">datascript</a> internally, which supports the majority of datomic syntax. In the JS API the pattern is a string rather than clojure data.
+</li>
+<li>Legacy alias: <code>roamAlphaAPI.pull</code> (older top-level name; prefer this namespaced path)
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>pattern</code> (string, required) — pull pattern, e.g. &quot;[*]&quot; or &quot;[:block/string {:block/children ...}]&quot;
+</li>
+<li><code>eid</code> (required) — one of:
+<ul>
+<li>a <code>:db/id</code> integer, e.g. <code>24</code>
+</li>
+<li>a lookup ref as a string, e.g. <code>&quot;[:node/title \&quot;hello world\&quot;]&quot;</code>
+</li>
+<li>a lookup ref as a 2-element array, e.g. <code>[&quot;:block/uid&quot;, &quot;xyz&quot;]</code>
+</li>
+</ul>
+</li>
+<li><code>opts</code> (object, optional) — <code>{timeout: &lt;ms&gt;}</code> overrides the default 20-second timeout
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Object of the pulled attributes
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>// all attributes of this block
+window.roamAlphaAPI.data.pull(&quot;[*]&quot;, [&quot;:block/uid&quot;, &quot;xyz&quot;])
+// =&gt;
+{&quot;:block/uid&quot;: &quot;xyz&quot;,
+ &quot;:block/string&quot;: &quot;the block's text&quot;,
+ &quot;:block/order&quot;: 0,
+ &quot;:block/open&quot;: true,
+ &quot;:create/time&quot;: 1610031973159,
+ &quot;:edit/time&quot;: 1610031974560,
+ &quot;:block/children&quot;: [{&quot;:db/id&quot;: 1234}],
+ &quot;:db/id&quot;: 1041}
+
+// this block's string and all of its descendants
+window.roamAlphaAPI.data.pull(&quot;[:block/string {:block/children ...}]&quot;, &quot;[:block/uid \&quot;xyz\&quot;]&quot;)
+// =&gt;
+{&quot;:block/string&quot;: &quot;the block's text&quot;,
+ &quot;:block/children&quot;: [{&quot;:block/string&quot;: &quot;child text&quot;}]}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.pull_many</code>
+<ul>
+<li>Description::
+<ul>
+<li>Same as <code>data.pull</code>, but for many entities at once — faster than pulling in a loop. Synchronous.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>pattern</code> (string, required) — same as <code>data.pull</code>'s <code>pattern</code>
+</li>
+<li><code>eids</code> (array, required) — array of eids, each in any of the forms <code>data.pull</code>'s <code>eid</code> accepts
+</li>
+<li><code>opts</code> (object, optional) — <code>{timeout: &lt;ms&gt;}</code> overrides the default 20-second timeout
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Array of pulled objects
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>roamAlphaAPI.data.pull_many(&quot;[*]&quot;,
+  [[&quot;:block/uid&quot;, &quot;_fM7pkQEa&quot;], [&quot;:block/uid&quot;, &quot;kZHsZniZs&quot;]]);
+// =&gt;
+[{&quot;:block/uid&quot;: &quot;_fM7pkQEa&quot;,
+  &quot;:block/string&quot;: &quot;first block&quot;,
+  ...},
+ {&quot;:block/uid&quot;: &quot;kZHsZniZs&quot;,
+  &quot;:block/string&quot;: &quot;second block&quot;,
+  ...}]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.fast.q</code>
+<ul>
+<li>Description::
+<ul>
+<li>Same signature as <code>data.q</code>, using an experimental clojurescript→javascript conversion that makes read access roughly 33% faster.
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>A cljs object wrapped in a JS <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy">Proxy</a>. Treat it as <strong>read only</strong>; it may not print to the console correctly.
+</li>
+<li>Key access includes the full namespaced key: <code>obj[&quot;:block/string&quot;]</code>. If you rename a key in the pull (<code>[:block/string :as &quot;string&quot;]</code>), access it as <code>obj.string</code>.
+</li>
+<li>For the internals and trade-offs, see https://blog.wsscode.com/alternative-to-clj-js/
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.data.fast.q(
+  `[:find ?b ?s
+    :where
+    [?e :block/uid ?b]
+    [?e :block/string ?s]]`);
+// =&gt; proxy-wrapped results — index like a regular array, treat as read only</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.backend.q</code>
+<ul>
+<li>Description::
+<ul>
+<li>Same signature as <code>data.q</code>, but runs the query on the backend, off the main thread — useful for expensive queries.
+</li>
+<li>Falls back to running locally when the graph's backend is unavailable (encrypted graphs, offline graphs).
+</li>
+<li><strong>Warning</strong>: the backend can be a few changes behind the frontend while local changes are still syncing.
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to the query results
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.data.backend.q(
+  `[:find ?b ?s
+    :where
+    [?e :block/uid ?b]
+    [?e :block/string ?s]]`);
+// =&gt; [[&quot;y3LFc4rFd&quot;, &quot;some block text&quot;], ...]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.async</code>
+<ul>
+<li>Description::
+<ul>
+<li>Promise-returning versions of the read functions, with the same parameters as their synchronous peers: <code>q</code>, <code>pull</code>, <code>pull_many</code>, <code>search</code>, <code>semanticSearch</code>, <code>fast.q</code>.
+</li>
+<li>Eventually Roam will migrate to the async API and deprecate the synchronous reads — <strong>prefer these when building new extensions</strong>.
+</li>
+<li><code>async.search</code> uses the indexed search worker when available, transparently falling back to the standard search — same parameters and return shape as <code>data.search</code>, wrapped in a promise.
+</li>
+<li><code>async.semanticSearch</code> is async-only and documented below.
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.data.async.q(
+  `[:find ?s
+    :where [?e :block/string ?s]]`)
+// =&gt; [[&quot;some block text&quot;], ...]
+
+await roamAlphaAPI.data.async.pull(&quot;[*]&quot;, [&quot;:block/uid&quot;, &quot;xyz&quot;])
+// =&gt; {&quot;:block/uid&quot;: &quot;xyz&quot;, &quot;:block/string&quot;: &quot;the block's text&quot;, ...}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.search</code>
+<ul>
+<li>Description::
+<ul>
+<li>Search pages and blocks by text — the same algorithm as the &quot;Find or Create Page&quot; search in the UI. Synchronous.
+</li>
+<li>Results are ranked by relevance: (0) page title exactly matches query, (1) page title contains query as substring, (2) page title contains all query words, (3) block contains query as substring, (4) block contains all query words. Ranks 2 and 4 apply to multi-word queries only.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>search-str</code> (string, required) — the search query
+</li>
+<li><code>search-blocks</code> (boolean, optional, default true) — include block results
+</li>
+<li><code>search-pages</code> (boolean, optional, default true) — include page results
+</li>
+<li><code>hide-code-blocks</code> (boolean, optional, default false) — exclude code blocks from results
+</li>
+<li><code>limit</code> (number, optional, default 300, max 1000) — maximum number of results
+</li>
+<li><code>pull</code> (string | array, optional, default <code>[:block/string :node/title :block/uid]</code>) — pull pattern for the returned fields
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Array of results matching the pull pattern
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>roamAlphaAPI.data.search({&quot;search-str&quot;: &quot;my query&quot;})
+// =&gt;
+[{&quot;:node/title&quot;: &quot;My Query Notes&quot;,
+  &quot;:block/uid&quot;: &quot;aBc123xYz&quot;},
+ {&quot;:block/string&quot;: &quot;a block mentioning my query&quot;,
+  &quot;:block/uid&quot;: &quot;dEf456uVw&quot;},
+ ...]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.semanticSearchEnabled</code>
+<ul>
+<li>Description::
+<ul>
+<li>Whether semantic search is currently usable for this graph — <code>true</code> when embeddings are enabled <strong>and</strong> a user is signed in. Synchronous.
+</li>
+<li>Check this before calling <code>data.async.semanticSearch</code>, which throws when semantic search isn't available.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>boolean
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>roamAlphaAPI.data.semanticSearchEnabled()
+// =&gt; true</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.async.semanticSearch</code>
+<ul>
+<li>Description::
+<ul>
+<li>Hybrid semantic + keyword search powered by &quot;better search&quot; (embeddings + keyword index), ranked by relevance.
+</li>
+<li>Requires embeddings to be enabled and a signed-in user — throws when unavailable, so check <code>data.semanticSearchEnabled()</code> first. While embeddings are still indexing, it returns partial results rather than throwing.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>search-str</code> (string, required) — the search query
+</li>
+<li><code>k</code> (number, optional, default 25, max 200) — number of results (also the search pool size)
+</li>
+<li><code>search-blocks</code> (boolean, optional, default true) — include block results
+</li>
+<li><code>search-pages</code> (boolean, optional, default true) — include page results
+</li>
+<li><code>hide-code-blocks</code> (boolean, optional, default: the user's hide-code-blocks setting) — exclude code blocks
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to an array of hit records <code>{type, uid, topUids}</code>:
+<ul>
+<li><code>type</code> — &quot;chunk&quot;, &quot;block&quot;, or &quot;page&quot;
+</li>
+<li><code>uid</code> — the hit's primary block uid (the first of <code>topUids</code>)
+</li>
+<li><code>topUids</code> — the hit's top-level block uids
+</li>
+</ul>
+</li>
+<li>Array order is the relevance ranking — there is no per-hit score, since results mix semantic and keyword matches.
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.data.async.semanticSearch({&quot;search-str&quot;: &quot;my query&quot;})
+// =&gt;
+[{type: &quot;chunk&quot;,
+  uid: &quot;aBc123xYz&quot;,
+  topUids: [&quot;aBc123xYz&quot;, &quot;dEf456uVw&quot;]},
+ {type: &quot;page&quot;,
+  uid: &quot;gHi789jKl&quot;,
+  topUids: [&quot;gHi789jKl&quot;]},
+ ...]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.roamQuery</code>
+<ul>
+<li>Description::
+<ul>
+<li>Execute a Roam query — the same syntax used in <code>{{[[query]]: ...}}</code> blocks — and return matching blocks/pages.
+</li>
+<li>Two modes: pass the <code>uid</code> of an existing query block to use its stored settings, or pass a <code>query</code> string directly with optional display settings.
+</li>
+<li>Note: unlike the rest of <code>roamAlphaAPI</code>, the parameters are camelCase.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>uid</code> (string) — block uid of an existing query block; uses that block's stored display settings
+</li>
+<li><code>query</code> (string, required if no <code>uid</code>) — a query string, e.g. &quot;{and: project active}&quot;
+</li>
+<li><code>groupByPage</code> (boolean, optional, default false) — group results by page (query mode only)
+</li>
+<li><code>nestUnderParent</code> (boolean, optional, default false) — collapse child matches under their parent (query mode only)
+</li>
+<li><code>sort</code> (string, optional; query mode only) — with <code>groupByPage</code>: &quot;page-most-recent&quot; (default) | &quot;page-title&quot; | &quot;page-created-date&quot; | &quot;daily-note&quot;; without: &quot;created-date&quot; (default) | &quot;edited-date&quot; | &quot;daily-note-date&quot;
+</li>
+<li><code>sortOrder</code> (string, optional, default &quot;desc&quot;) — &quot;asc&quot; or &quot;desc&quot; (query mode only)
+</li>
+<li><code>offset</code> (integer, optional, default 0) — number of results to skip
+</li>
+<li><code>limit</code> (integer | null, optional, default 20) — maximum results; pass null for all
+</li>
+<li><code>pull</code> (string, optional, default &quot;[:block/string :node/title :block/uid]&quot;) — pull pattern for the results
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>{total: &lt;number&gt;, results: &lt;array of pulled results&gt;}</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.data.roamQuery({query: &quot;{and: [[project]] [[active]]}&quot;})
+// =&gt; {total: 42, results: [{&quot;:block/string&quot;: &quot;...&quot;, &quot;:block/uid&quot;: &quot;aBc123xYz&quot;}, ...]}
+
+// run an existing query block with its stored settings
+await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
+// =&gt; {total: 7, results: [...]}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.addPullWatch</code>
+<ul>
+<li>Description::
+<ul>
+<li>Watch a pull pattern on an entity: the callback fires after changes are recorded, with the before and after state. Changes are debounced (~100ms). Takes positional arguments.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>pattern</code> (string, required) — the pull pattern to watch
+</li>
+<li><code>entity-id</code> (string, required) — the entity to watch, e.g. <code>'[:block/uid &quot;02-21-2021&quot;]'</code>
+</li>
+<li><code>callback</code> (function, required) — called with <code>(before, after)</code> pull results
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code> once the watch is registered
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.data.addPullWatch(
+  &quot;[:block/children :block/string {:block/children ...}]&quot;,
+  '[:block/uid &quot;02-21-2021&quot;]',
+  (before, after) =&gt; { console.log(&quot;before&quot;, before, &quot;after&quot;, after); })
+// resolves to null; the callback later fires with the before/after pull results</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.removePullWatch</code>
+<ul>
+<li>Description::
+<ul>
+<li>Remove pull watches. With all three arguments, removes only the watch with that callback; without <code>callback</code>, removes every watch for that pattern + entity; <strong>with no arguments at all, removes all pull watches</strong>. Takes positional arguments.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>pattern</code> (string, optional) — the same value passed to <code>addPullWatch</code>
+</li>
+<li><code>entity-id</code> (string, optional) — the same value passed to <code>addPullWatch</code>
+</li>
+<li><code>callback</code> (function, optional) — the callback to remove
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.data.removePullWatch(
+  &quot;[:block/children :block/string {:block/children ...}]&quot;,
+  '[:block/uid &quot;02-21-2021&quot;]',
+  myCallbackFn)
+// resolves to null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.undo</code>
+<ul>
+<li>Description::
+<ul>
+<li>Undo the latest change made in this session — the same operation as the Undo command (<code>cmd-z</code>).
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.data.undo()
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.redo</code>
+<ul>
+<li>Description::
+<ul>
+<li>Redo the last undone change — the same operation as the Redo command (<code>cmd-shift-z</code>).
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.data.redo()
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.ai</code>
+<ul>
+<li>Description::
+<ul>
+<li>Internal namespace backing Roam's MCP server tools (<code>getPage</code>, <code>getBlock</code>, <code>getBacklinks</code>, <code>roamQuery</code>, <code>search</code>, <code>semanticSearch</code>, <code>suggestLinks</code>, <code>searchTemplates</code>, <code>getGraphGuidelines</code>, <code>getComments</code>). Not a stable public surface — breaking changes land without notice; don't build on it.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.block</code>
+<ul>
+<li><code>roamAlphaAPI.data.block.create</code>
+<ul>
+<li>Description::
+<ul>
+<li>Create a new block at a location.
+</li>
+<li>Legacy alias: <code>roamAlphaAPI.createBlock</code> (older top-level name; prefer this namespaced path)
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>location</code> (object, required)
+<ul>
+<li><code>parent-uid</code> (string, required) — uid of the parent block or page
+</li>
+<li><code>order</code> (number | &quot;first&quot; | &quot;last&quot;, required) — position among the parent's children, 0-indexed
+</li>
+</ul>
+</li>
+<li><code>block</code> (object, required)
+<ul>
+<li><code>string</code> (string, required) — text content of the block
+</li>
+<li><code>uid</code> (string, optional) — autogenerated if omitted; pass one (see <code>util.generateUID</code>) only when you need to know it ahead of time
+</li>
+<li><code>open</code> (boolean, optional, default true) — collapse state
+</li>
+<li><code>heading</code> (integer, optional) — heading styling, 0 (none) to 3
+</li>
+<li><code>text-align</code> (string, optional) — &quot;left&quot; | &quot;center&quot; | &quot;right&quot; | &quot;justify&quot;
+</li>
+<li><code>children-view-type</code> (string, optional) — view type of the block's children: &quot;bullet&quot; | &quot;numbered&quot; | &quot;document&quot;
+</li>
+<li><code>block-view-type</code> (string, optional) — view type of the block itself: &quot;outline&quot; | &quot;horizontal-outline&quot; | &quot;popout&quot; | &quot;tabs&quot; | &quot;comment&quot; | &quot;side&quot; | &quot;vertical&quot;
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>; rejects if <code>parent-uid</code> doesn't exist or <code>uid</code> is already taken
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.data.block.create(
+  {&quot;location&quot;: {&quot;parent-uid&quot;: &quot;01-21-2021&quot;, &quot;order&quot;: 0},
+   &quot;block&quot;: {&quot;string&quot;: &quot;test&quot;}})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.block.update</code>
+<ul>
+<li>Description::
+<ul>
+<li>Update a block's text and/or display properties. Only the keys you pass are changed.
+</li>
+<li>Legacy alias: <code>roamAlphaAPI.updateBlock</code> (older top-level name; prefer this namespaced path)
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>block</code> (object, required)
+<ul>
+<li><code>uid</code> (string, required) — block to update
+</li>
+<li><code>string</code> (string, optional) — new text content
+</li>
+<li><code>open</code>, <code>heading</code>, <code>text-align</code>, <code>children-view-type</code>, <code>block-view-type</code> — all optional, same values as in <code>data.block.create</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.data.block.update(
+  {&quot;block&quot;: {&quot;uid&quot;: &quot;f8cXfDIRn&quot;, &quot;string&quot;: &quot;Love&quot;}})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.block.move</code>
+<ul>
+<li>Description::
+<ul>
+<li>Move a block (together with its children) to a new location.
+</li>
+<li>Legacy alias: <code>roamAlphaAPI.moveBlock</code> (older top-level name; prefer this namespaced path)
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>block</code> (object, required)
+<ul>
+<li><code>uid</code> (string, required) — block to move
+</li>
+</ul>
+</li>
+<li><code>location</code> (object, required)
+<ul>
+<li><code>parent-uid</code> (string, required) — uid of the new parent block or page
+</li>
+<li><code>order</code> (number | &quot;first&quot; | &quot;last&quot;, required) — position among the new parent's children
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>; rejects if the block or <code>parent-uid</code> doesn't exist
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.data.block.move(
+  {&quot;location&quot;: {&quot;parent-uid&quot;: &quot;01-21-2021&quot;, &quot;order&quot;: 0},
+   &quot;block&quot;: {&quot;uid&quot;: &quot;f8cXfDIRn&quot;}})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.block.delete</code>
+<ul>
+<li>Description::
+<ul>
+<li>Delete a block and all of its children; the order of the remaining siblings is recalculated.
+</li>
+<li>Legacy alias: <code>roamAlphaAPI.deleteBlock</code> (older top-level name; prefer this namespaced path)
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>block</code> (object, required)
+<ul>
+<li><code>uid</code> (string, required) — block to delete
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.data.block.delete(
+  {&quot;block&quot;: {&quot;uid&quot;: &quot;f8cXfDIRn&quot;}})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.block.reorderBlocks</code>
+<ul>
+<li>Description::
+<ul>
+<li>Reorder the direct children of a block. Pass <strong>all</strong> current children of <code>parent-uid</code> — no other blocks, no duplicates — in the desired order.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>location</code> (object, required)
+<ul>
+<li><code>parent-uid</code> (string, required)
+</li>
+</ul>
+</li>
+<li><code>blocks</code> (array of strings, required) — every child uid of <code>parent-uid</code>, listed in the new order
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.data.block.reorderBlocks(
+  {location: {&quot;parent-uid&quot;: &quot;ihu5eUofL&quot;},
+   blocks: [&quot;QCE0cNNNL&quot;, &quot;IATKcVmWE&quot;, &quot;nC22orMO4&quot;]})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.block.fromMarkdown</code>
+<ul>
+<li>Description::
+<ul>
+<li>Parse a markdown string into blocks and insert them at a location. Uses the same parser as file import: nested lists become nested blocks; headings, code blocks, bold, italic, links, etc. are supported.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>location</code> (object, required)
+<ul>
+<li><code>parent-uid</code> (string, required)
+</li>
+<li><code>order</code> (number | &quot;first&quot; | &quot;last&quot;, required)
+</li>
+</ul>
+</li>
+<li><code>markdown-string</code> (string, required) — the markdown content to parse into blocks
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>{uids: [...]}</code> — the uids of the top-level blocks created
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.data.block.fromMarkdown({
+  location: {&quot;parent-uid&quot;: &quot;4VuwigG1O&quot;, &quot;order&quot;: &quot;first&quot;},
+  &quot;markdown-string&quot;: &quot;# Hello\n\n- Item 1\n- Item 2\n  - Nested&quot;})
+// =&gt; {uids: [&quot;aBc123xYz&quot;, &quot;dEf456uVw&quot;, &quot;gHi789jKl&quot;]}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.block.addComment</code>
+<ul>
+<li>Description::
+<ul>
+<li>Add a comment to a block. Pass either a single plain-text reply or markdown that is parsed into multiple sibling reply blocks.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>block-uid</code> (string, required) — block to comment on
+</li>
+<li><code>reply-string</code> (string) — plain text for a single reply block (use this <strong>or</strong> <code>reply-markdown</code>, not both)
+</li>
+<li><code>reply-markdown</code> (string) — markdown parsed into multiple sibling reply blocks
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>// single reply
+await window.roamAlphaAPI.data.block.addComment(
+  {&quot;block-uid&quot;: &quot;abc123&quot;, &quot;reply-string&quot;: &quot;This is a comment&quot;})
+// =&gt; null
+
+// markdown reply (parsed into siblings)
+await window.roamAlphaAPI.data.block.addComment(
+  {&quot;block-uid&quot;: &quot;abc123&quot;, &quot;reply-markdown&quot;: &quot;First block\n- Nested child&quot;})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.page</code>
+<ul>
+<li><code>roamAlphaAPI.data.page.create</code>
+<ul>
+<li>Description::
+<ul>
+<li>Create a new page. A title in daily-note format (<code>January 21st, 2021</code>) creates that daily note if it doesn't exist yet.
+</li>
+<li>Legacy alias: <code>roamAlphaAPI.createPage</code> (older top-level name; prefer this namespaced path)
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>page</code> (object, required)
+<ul>
+<li><code>title</code> (string, required)
+</li>
+<li><code>uid</code> (string, optional) — autogenerated if omitted; in normal operation you shouldn't pass one
+</li>
+<li><code>children-view-type</code> (string, optional) — &quot;bullet&quot; | &quot;numbered&quot; | &quot;document&quot;
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>; rejects if a page with the given <code>title</code> or <code>uid</code> already exists
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.data.page.create({page: {title: &quot;My New Page&quot;}})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.page.fromMarkdown</code>
+<ul>
+<li>Description::
+<ul>
+<li>Create a new page and populate it with blocks parsed from a markdown string (same parser as file import). A daily-note title creates that daily note if it doesn't exist yet.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>page</code> (object, required) — same keys as <code>data.page.create</code>
+</li>
+<li><code>markdown-string</code> (string, required) — the markdown content to parse into blocks
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>{uid: &lt;page-uid&gt;}</code>; rejects if a page with the given title already exists
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.data.page.fromMarkdown({
+  page: {title: &quot;My New Page&quot;},
+  &quot;markdown-string&quot;: &quot;# Heading\n\n- Item 1\n- Item 2&quot;})
+// =&gt; {uid: &quot;mK9pQ2rTw&quot;}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.page.update</code>
+<ul>
+<li>Description::
+<ul>
+<li>Update a page's title and/or children-view-type. Only the keys you pass are changed.
+</li>
+<li>Legacy alias: <code>roamAlphaAPI.updatePage</code> (older top-level name; prefer this namespaced path)
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>page</code> (object, required)
+<ul>
+<li><code>uid</code> (string, required)
+</li>
+<li><code>title</code> (string, optional) — new title
+</li>
+<li><code>children-view-type</code> (string, optional) — &quot;bullet&quot; | &quot;numbered&quot; | &quot;document&quot;
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>; rejects when renaming to a title that already exists in the graph
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.data.page.update(
+  {page: {uid: &quot;RZVuh3aZN&quot;, title: &quot;New Title&quot;}})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.page.delete</code>
+<ul>
+<li>Description::
+<ul>
+<li>Delete a page and all of its blocks.
+</li>
+<li>Legacy alias: <code>roamAlphaAPI.deletePage</code> (older top-level name; prefer this namespaced path)
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>page</code> (object, required)
+<ul>
+<li><code>uid</code> (string, required)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.data.page.delete({page: {uid: &quot;RZVuh3aZN&quot;}})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.page.addShortcut</code>
+<ul>
+<li>Description::
+<ul>
+<li>Add a page to the left-sidebar shortcuts, or move it if it's already there. Takes positional arguments.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>uid</code> (string, required) — page uid
+</li>
+<li><code>index</code> (number, optional) — position in the shortcut list; defaults to the end (capped to the valid range)
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.data.page.addShortcut(&quot;12-11-2025&quot;);
+await roamAlphaAPI.data.page.addShortcut(&quot;12-11-2025&quot;, 4);
+// each =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.page.removeShortcut</code>
+<ul>
+<li>Description::
+<ul>
+<li>Remove a page from the left-sidebar shortcuts. Takes a positional argument.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>uid</code> (string, required) — page uid
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.data.page.removeShortcut(&quot;12-11-2025&quot;)
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.data.user</code>
+<ul>
+<li><code>roamAlphaAPI.data.user.upsert</code>
+<ul>
+<li>Description::
+<ul>
+<li>Create and/or update a user entity.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>user-uid</code> (string, required)
+</li>
+<li><code>display-name</code> (string, optional)
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.data.user.upsert(
+  {&quot;user-uid&quot;: &quot;BBG4fFwolaVlT5FZQdzAI7P40aB3&quot;,
+   &quot;display-name&quot;: &quot;Josh&quot;})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui</code> — everything that drives the interface: focus, windows, sidebars, filters, menus, and custom components
+<ul>
+<li><code>roamAlphaAPI.ui.getFocusedBlock</code>
+<ul>
+<li>Description::
+<ul>
+<li>Metadata about the currently focused block, or <code>null</code> if none. Synchronous.
+</li>
+<li>More robust than CSS selectors — works even from a <code>ui.commandPalette</code> callback, after the block has lost focus in the DOM.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li><pre><code>{&quot;block-uid&quot;: &quot;YnatnbZzF&quot;,
+ &quot;window-id&quot;: &quot;BBG4fFwolaVlT5FZQdzAI7P40aB3-body-outline-04-15-2021&quot;}</code></pre>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.getFocusedBlock()
+// =&gt;
+{&quot;block-uid&quot;: &quot;YnatnbZzF&quot;,
+ &quot;window-id&quot;: &quot;BBG4fFwolaVlT5FZQdzAI7P40aB3-body-outline-04-15-2021&quot;}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.setBlockFocusAndSelection</code>
+<ul>
+<li>Description::
+<ul>
+<li>Focus a block in a specific window, and optionally set the cursor position or selection.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>location</code> (object, optional; defaults to the currently focused block) — same shape as <code>ui.getFocusedBlock</code>'s return value
+<ul>
+<li><code>block-uid</code> (string, required)
+</li>
+<li><code>window-id</code> (string, required) — a window id from <code>ui.rightSidebar.getWindows</code>, or the string &quot;main-window&quot;
+</li>
+</ul>
+</li>
+<li><code>selection</code> (object, optional; without it the cursor is placed at the end of the string)
+<ul>
+<li><code>start</code> (integer, required) — 0-indexed
+</li>
+<li><code>end</code> (integer, optional) — with <code>end</code>, start–end becomes a selection; without it, the cursor is placed before the <code>start</code>-th character. If <code>end</code> is less than <code>start</code>, both are treated as the value of <code>end</code>.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.setBlockFocusAndSelection(
+  {location: window.roamAlphaAPI.ui.getFocusedBlock(),
+   selection: {start: 3, end: 7}})
+// resolves to null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.mainWindow</code>
+<ul>
+<li><code>roamAlphaAPI.ui.mainWindow.openBlock</code>
+<ul>
+<li>Description::
+<ul>
+<li>Zoom into a block in the main window. Passing a page's uid opens the page — e.g. <code>{block: {uid: &quot;10-16-2021&quot;}}</code> opens that daily note.
+</li>
+<li>If no block or page with that uid exists, nothing happens — the promise still resolves.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>block</code> (object, required)
+<ul>
+<li><code>uid</code> (string, required)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.ui.mainWindow.openBlock({block: {uid: &quot;v9eHoHwqS&quot;}})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.mainWindow.openPage</code>
+<ul>
+<li>Description::
+<ul>
+<li>Open a page in the main window, by title or uid. If the page doesn't exist, nothing happens — the promise still resolves.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>page</code> (object, required) — one of:
+<ul>
+<li><code>title</code> (string)
+</li>
+<li><code>uid</code> (string)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.ui.mainWindow.openPage({page: {title: &quot;test-new&quot;}})
+await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid: &quot;RZVuh3aZN&quot;}})
+// each =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.mainWindow.openDailyNotes</code>
+<ul>
+<li>Description::
+<ul>
+<li>Open the daily notes log in the main window.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.ui.mainWindow.openDailyNotes()
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.mainWindow.focusFirstBlock</code>
+<ul>
+<li>Description::
+<ul>
+<li>Focus the first block in the main window.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.ui.mainWindow.focusFirstBlock()
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.mainWindow.getOpenPageOrBlockUid</code>
+<ul>
+<li>Description::
+<ul>
+<li>The uid of the page or block currently open in the main window.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to the uid string, or <code>null</code> when no page/block is open (e.g. the daily notes log)
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await window.roamAlphaAPI.ui.mainWindow.getOpenPageOrBlockUid()
+// =&gt; &quot;Vfht187T1&quot; (or null on the daily notes log)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.mainWindow.getOpenView</code>
+<ul>
+<li>Description::
+<ul>
+<li>Describes what is currently displayed in the main window.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to one of:
+</li>
+<li><pre><code>// page
+{type: &quot;outline&quot;,
+ uid: &quot;Vfht187T1&quot;,
+ title: &quot;My Page Title&quot;}
+
+// zoomed into a block
+{type: &quot;outline&quot;,
+ uid: &quot;abc123xyz&quot;,
+ &quot;block-string&quot;: &quot;Some block content&quot;}
+
+// daily notes
+{type: &quot;log&quot;}
+
+// graph view
+{type: &quot;graph&quot;}
+
+// diagram
+{type: &quot;diagram&quot;,
+ uid: &quot;diagram-uid&quot;}
+
+// PDF viewer
+{type: &quot;pdf&quot;,
+ uid: &quot;pdf-block-uid&quot;}
+
+// all pages search
+{type: &quot;search&quot;}
+
+// custom component, see registerComponent
+{type: &quot;custom&quot;,
+ id: &quot;component-id&quot;,
+ args: []}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.mainWindow.registerComponent</code>
+<ul>
+<li>Description::
+<ul>
+<li>Register a custom main-window view: a React component that can be opened as a full main-window view. Takes positional arguments.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>id</code> (string, required) — identifier for the component
+</li>
+<li><code>component</code> (React component, required)
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li><code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.mainWindow.unregisterComponent</code>
+<ul>
+<li>Description::
+<ul>
+<li>Unregister a custom main-window view. Takes a positional argument.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>id</code> (string, required)
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li><code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.mainWindow.openComponent</code>
+<ul>
+<li>Description::
+<ul>
+<li>Open a registered custom component in the main window. Takes positional arguments. Extra arguments are passed to the component and reported by <code>getOpenView</code> as <code>args</code>.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>id</code> (string, required)
+</li>
+<li><code>...args</code> (optional) — arguments for the component
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li><code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.mainWindow.closeComponent</code>
+<ul>
+<li>Description::
+<ul>
+<li>Close the open custom component. Takes a positional argument.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>id</code> (string, required)
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li><code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.leftSidebar</code>
+<ul>
+<li><code>roamAlphaAPI.ui.leftSidebar.open</code>
+<ul>
+<li>Description::
+<ul>
+<li>Make the left sidebar visible.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.leftSidebar.close</code>
+<ul>
+<li>Description::
+<ul>
+<li>Hide the left sidebar.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.rightSidebar</code>
+<ul>
+<li><code>roamAlphaAPI.ui.rightSidebar.open</code>
+<ul>
+<li>Description::
+<ul>
+<li>Make the right sidebar visible.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.rightSidebar.close</code>
+<ul>
+<li>Description::
+<ul>
+<li>Hide the right sidebar, keeping its open windows.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.rightSidebar.getWindows</code>
+<ul>
+<li>Description::
+<ul>
+<li>All open sidebar windows. Synchronous.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Array of window objects with keys:
+<ul>
+<li><code>type</code> — &quot;block&quot; | &quot;outline&quot; | &quot;mentions&quot; | &quot;graph&quot; | &quot;search-query&quot;
+</li>
+<li><code>window-id</code> (string) — usable with e.g. <code>ui.setBlockFocusAndSelection</code>
+</li>
+<li><code>order</code> (number), <code>collapsed?</code>, <code>pinned?</code>, <code>pinned-to-top?</code> (booleans)
+</li>
+<li>the window's target, depending on <code>type</code>: <code>block-uid</code> (plus <code>block-string</code>), <code>page-uid</code> (plus <code>title</code>), <code>mentions-uid</code>, or <code>search-query-str</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.rightSidebar.getWindows()
+// =&gt;
+[{type: &quot;outline&quot;,
+  &quot;window-id&quot;: &quot;...&quot;,
+  &quot;page-uid&quot;: &quot;mK9pQ2rTw&quot;,
+  title: &quot;My Page&quot;,
+  order: 0,
+  &quot;collapsed?&quot;: false,
+  &quot;pinned?&quot;: false,
+  &quot;pinned-to-top?&quot;: false},
+ {type: &quot;block&quot;,
+  &quot;window-id&quot;: &quot;...&quot;,
+  &quot;block-uid&quot;: &quot;aBc123xYz&quot;,
+  &quot;block-string&quot;: &quot;some block text&quot;,
+  order: 1,
+  &quot;collapsed?&quot;: true,
+  &quot;pinned?&quot;: false,
+  &quot;pinned-to-top?&quot;: false}]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.rightSidebar.addWindow</code>
+<ul>
+<li>Description::
+<ul>
+<li>Add a window to the right sidebar. If the sidebar is closed, opens it.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>window</code> (object, required) — see sidebar <code>window</code> argument, plus:
+<ul>
+<li><code>order</code> (number, optional) — position in the sidebar; if not specified, the new window is added at the top
+</li>
+<li><code>class</code> (string | array of strings, optional) — CSS class(es) added to the window's element
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>// a block
+window.roamAlphaAPI.ui.rightSidebar
+  .addWindow({window: {type: &quot;block&quot;, &quot;block-uid&quot;: &quot;1fP8LY5ED&quot;}})
+
+// a page outline
+window.roamAlphaAPI.ui.rightSidebar
+  .addWindow({window: {type: &quot;outline&quot;, &quot;block-uid&quot;: &quot;cArVJL_vg&quot;}})
+
+// linked references of a block or page
+window.roamAlphaAPI.ui.rightSidebar
+  .addWindow({window: {type: &quot;mentions&quot;, &quot;block-uid&quot;: &quot;vutDCPD8G&quot;}})
+
+// a window that searches for &quot;API&quot;
+window.roamAlphaAPI.ui.rightSidebar
+  .addWindow({window: {type: &quot;search-query&quot;, &quot;search-query-str&quot;: &quot;API&quot;}})
+
+// each resolves to null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.rightSidebar.removeWindow</code>
+<ul>
+<li>Description::
+<ul>
+<li>Remove a window from the right sidebar. Removing a pinned window unpins and removes it — it will not come back on reload, and no confirmation dialog is shown for API calls (the UI shows one when the user closes a pinned window).
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>window</code> (object, required) — see sidebar <code>window</code> argument
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.rightSidebar
+  .removeWindow({window: {type: &quot;block&quot;, &quot;block-uid&quot;: &quot;1fP8LY5ED&quot;}})
+// resolves to null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.rightSidebar.expandWindow</code>
+<ul>
+<li>Description::
+<ul>
+<li>Expand a collapsed sidebar window.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>window</code> (object, required) — see sidebar <code>window</code> argument
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.rightSidebar.collapseWindow</code>
+<ul>
+<li>Description::
+<ul>
+<li>Collapse a sidebar window.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>window</code> (object, required) — see sidebar <code>window</code> argument
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.rightSidebar.pinWindow</code>
+<ul>
+<li>Description::
+<ul>
+<li>Pin a sidebar window; optionally pin it to the top of the sidebar.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>window</code> (object, required) — see sidebar <code>window</code> argument
+</li>
+<li><code>pin-to-top?</code> (boolean, optional) — <code>true</code> pins the window to the top: the pin turns red, new windows are added below it, and a previously top-pinned window is unpinned. When omitted, the pin-to-top state is left unchanged.
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.rightSidebar.unpinWindow</code>
+<ul>
+<li>Description::
+<ul>
+<li>Unpin a sidebar window.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>window</code> (object, required) — see sidebar <code>window</code> argument
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.rightSidebar.setWindowOrder</code>
+<ul>
+<li>Description::
+<ul>
+<li>Move a sidebar window to a specific position.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>window</code> (object, required) — see sidebar <code>window</code> argument, plus:
+<ul>
+<li><code>order</code> (number, required) — new position, <code>0</code> to <code>n</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.filters</code>
+<ul>
+<li>Description::
+<ul>
+<li>Filters are per-user. The get functions are synchronous; the set functions return promises. Filters have the shape <code>{&quot;includes&quot;: [...page titles], &quot;removes&quot;: [...page titles]}</code>.
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.filters.addGlobalFilter</code>
+<ul>
+<li>Description::
+<ul>
+<li>Add a global filter — like clicking the globe icon on a link in the filter dialog.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>title</code> (string, required) — page title
+</li>
+<li><code>type</code> (string, required) — &quot;includes&quot; | &quot;removes&quot;
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.filters.removeGlobalFilter</code>
+<ul>
+<li>Description::
+<ul>
+<li>Remove a global filter.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>title</code> (string, required) — page title
+</li>
+<li><code>type</code> (string, required) — &quot;includes&quot; | &quot;removes&quot;
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.filters.getGlobalFilters</code>
+<ul>
+<li>Description::
+<ul>
+<li>The global filters currently in place. Synchronous.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li><code>{&quot;includes&quot;: [...], &quot;removes&quot;: [...]}</code> — lists of page titles
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.filters.getPageFilters</code>
+<ul>
+<li>Description::
+<ul>
+<li>The current user's filters for a page. Synchronous.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>page</code> (object, required) — one of:
+<ul>
+<li><code>title</code> (string)
+</li>
+<li><code>uid</code> (string)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li><code>{&quot;includes&quot;: [...], &quot;removes&quot;: [...]}</code> — lists of page titles
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.filters.getPageFilters({page: {title: &quot;test&quot;}})
+// =&gt; {&quot;includes&quot;: [&quot;March 11th, 2022&quot;], &quot;removes&quot;: []}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.filters.setPageFilters</code>
+<ul>
+<li>Description::
+<ul>
+<li>Set a page's filters for the current user. Pass <code>{}</code> as <code>filters</code> to clear them.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>page</code> (object, required) — one of <code>title</code> | <code>uid</code>
+</li>
+<li><code>filters</code> (object, required)
+<ul>
+<li><code>includes</code> (array of page titles, optional)
+</li>
+<li><code>removes</code> (array of page titles, optional)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.filters.setPageFilters(
+  {page: {title: &quot;test&quot;},
+   filters: {includes: [&quot;March 11th, 2022&quot;]}})
+
+// clear the filters
+window.roamAlphaAPI.ui.filters.setPageFilters(
+  {page: {title: &quot;test&quot;}, filters: {}})
+
+// each resolves to null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.filters.getPageLinkedRefsFilters</code>
+<ul>
+<li>Description::
+<ul>
+<li>The current user's filters on a page's linked references (mentions). Synchronous.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>page</code> (object, required) — one of <code>title</code> | <code>uid</code>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li><code>{&quot;includes&quot;: [...], &quot;removes&quot;: [...]}</code> — lists of page titles
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.filters.setPageLinkedRefsFilters</code>
+<ul>
+<li>Description::
+<ul>
+<li>Set the filters on a page's linked references (mentions) for the current user. Pass <code>{}</code> as <code>filters</code> to clear them.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>page</code> (object, required) — one of <code>title</code> | <code>uid</code>
+</li>
+<li><code>filters</code> (object, required) — <code>includes</code> / <code>removes</code> arrays of page titles
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.filters.setPageLinkedRefsFilters(
+  {page: {title: &quot;test&quot;},
+   filters: {includes: [&quot;Author&quot;]}})
+// resolves to null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.filters.getSidebarWindowFilters</code>
+<ul>
+<li>Description::
+<ul>
+<li>The filters on a right-sidebar window. Synchronous.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>window</code> (object, required) — see sidebar <code>window</code> argument; &quot;search-query&quot; windows don't support filters
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li><code>{&quot;includes&quot;: [...], &quot;removes&quot;: [...]}</code> — lists of page titles
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.filters.getSidebarWindowFilters(
+  {window: {&quot;block-uid&quot;: &quot;WYlc2nIO9&quot;, type: &quot;outline&quot;}})
+// =&gt; {&quot;includes&quot;: [&quot;Author&quot;], &quot;removes&quot;: []}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.filters.setSidebarWindowFilters</code>
+<ul>
+<li>Description::
+<ul>
+<li>Set the filters on a right-sidebar window. Pass <code>{}</code> as <code>filters</code> to clear them.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>window</code> (object, required) — see sidebar <code>window</code> argument; &quot;search-query&quot; windows don't support filters
+</li>
+<li><code>filters</code> (object, required) — <code>includes</code> / <code>removes</code> arrays of page titles
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.filters.setSidebarWindowFilters(
+  {window: {&quot;block-uid&quot;: &quot;WYlc2nIO9&quot;, type: &quot;outline&quot;},
+   filters: {includes: [&quot;Author&quot;]}})
+// resolves to null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.commandPalette</code>
+<ul>
+<li><code>roamAlphaAPI.ui.commandPalette.addCommand</code>
+<ul>
+<li>Description::
+<ul>
+<li>Add a command to the Command Palette (<code>cmd-p</code>). Calling again with the same <code>label</code> updates the existing command instead of adding a second one.
+</li>
+<li>Users can assign their own hotkey to any command in Settings → Hotkeys.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>label</code> (string, required) — text shown in the Command Palette. Prefix it with your plugin name for global uniqueness, e.g. &quot;RoamRS: Start review session&quot;
+</li>
+<li><code>callback</code> (function, required) — called with no arguments when the user runs the command
+</li>
+<li><code>disable-hotkey</code> (boolean, optional) — don't allow a hotkey for this command
+</li>
+<li><code>default-hotkey</code> (string | array of strings, optional) — <strong>most commands should NOT set this</strong>. Without it (and unless <code>disable-hotkey</code> is set), no hotkey is preassigned but the user can add one in Settings → Hotkeys.
+<ul>
+<li>A hotkey string looks like &quot;super-shift-d&quot; — at least one modifier plus a key.
+</li>
+<li>An array of strings (max 5) defines a multi-step hotkey, e.g. <code>[&quot;ctrl-c&quot;, &quot;ctrl-m&quot;]</code> (like the native &quot;go to next block&quot;).
+</li>
+<li>Modifiers (&quot;defmod&quot; is the OS default modifier — <code>cmd</code> on macOS, <code>ctrl</code> elsewhere):
+<ul>
+<li>{{table}}
+<ul>
+<li><strong>modifier-str</strong>
+<ul>
+<li><strong>Windows/Linux</strong>
+<ul>
+<li><strong>macOS</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&quot;shift&quot;
+<ul>
+<li>shift
+<ul>
+<li>shift
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&quot;ctrl&quot;
+<ul>
+<li>ctrl
+<ul>
+<li>ctrl
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&quot;alt&quot;
+<ul>
+<li>alt
+<ul>
+<li>option
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&quot;super&quot;
+<ul>
+<li>win
+<ul>
+<li>cmd
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&quot;defmod&quot;
+<ul>
+<li>ctrl
+<ul>
+<li>cmd
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.commandPalette.addCommand(
+  {label: &quot;hi&quot;,
+   callback: () =&gt; console.log(&quot;Hello World!&quot;)})
+
+// with a default hotkey — in most cases you do NOT want this;
+// the user can customize it in Settings → Hotkeys
+window.roamAlphaAPI.ui.commandPalette.addCommand(
+  {label: &quot;example1&quot;,
+   callback: () =&gt; console.log(&quot;Hello World!&quot;),
+   &quot;default-hotkey&quot;: &quot;ctrl-cmd-l&quot;})
+
+// each resolves to null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.commandPalette.removeCommand</code>
+<ul>
+<li>Description::
+<ul>
+<li>Remove a command with the given <code>label</code> from the Command Palette.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>label</code> (string, required) — the label passed to <code>addCommand</code>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.commandPalette.removeCommand({label: &quot;hi&quot;})
+// resolves to null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.slashCommand</code>
+<ul>
+<li><code>roamAlphaAPI.ui.slashCommand.addCommand</code>
+<ul>
+<li>Description::
+<ul>
+<li>Add a command to the <code>/</code> slash menu. Calling again with the same <code>label</code> updates the existing command.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>label</code> (string, required) — text shown in the slash menu
+</li>
+<li><code>display-conditional</code> (function, optional) — called with the context object (without <code>indexes</code>); return <code>true</code> to show the command
+</li>
+<li><code>callback</code> (function, required) — called with the context object when the user selects the command. Return a string to insert at the current location, or <code>null</code> to handle insertion yourself (the typed search string is not removed).
+</li>
+<li>context object:
+<ul>
+<li><pre><code>{&quot;block-uid&quot;: &quot;YnatnbZzF&quot;,
+ &quot;window-id&quot;: &quot;BBG4fFwolaVlT5FZQdzAI7P40aB3-body-outline-04-15-2021&quot;,
+ indexes: [1, 10]}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li><code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.slashCommand.addCommand({
+  label: &quot;Quick Test&quot;,
+  callback: (context) =&gt; &quot;It works! 🎉&quot;
+});
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.slashCommand.removeCommand</code>
+<ul>
+<li>Description::
+<ul>
+<li>Remove a command with the given <code>label</code> from the slash menu.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>label</code> (string, required) — the label passed to <code>addCommand</code>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li><code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.blockContextMenu</code>
+<ul>
+<li>Description::
+<ul>
+<li>The menu shown when right-clicking a block's bullet. Custom commands are nested under the <strong>Plugins</strong> menu item. Calling <code>addCommand</code> again with the same <code>label</code> updates the existing command.
+</li>
+<li>Five other context menus share this same <code>addCommand</code>/<code>removeCommand</code> API and are documented below by their differences: <code>pageContextMenu</code>, <code>pageRefContextMenu</code>, <code>blockRefContextMenu</code>, <code>pageLinkContextMenu</code>, <code>msContextMenu</code>.
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.blockContextMenu.addCommand</code>
+<ul>
+<li>Parameters::
+<ul>
+<li><code>label</code> (string, required) — text shown in the menu. Prefix it with your plugin name for global uniqueness, e.g. &quot;RoamRS: Start review session&quot;
+</li>
+<li><code>display-conditional</code> (function, optional) — called with the block context every time the menu opens; return <code>true</code> to include the command for that block
+</li>
+<li><code>callback</code> (function, required) — called with the block context when the user selects the command
+</li>
+<li>block context:
+<ul>
+<li><pre><code>{&quot;block-string&quot;: &quot;Todos&quot;,
+ &quot;block-uid&quot;: &quot;YnatnbZzF&quot;,
+ heading: null,
+ &quot;page-uid&quot;: &quot;04-15-2021&quot;,
+ &quot;read-only?&quot;: false,
+ &quot;window-id&quot;: &quot;BBG4fFwolaVlT5FZQdzAI7P40aB3-body-outline-04-15-2021&quot;}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>roamAlphaAPI.ui.blockContextMenu.addCommand(
+  {label: &quot;Debug: Console Log&quot;,
+   &quot;display-conditional&quot;: (e) =&gt; e[&quot;block-string&quot;].includes(&quot;Test Block&quot;),
+   callback: (e) =&gt; console.log(e)})
+// resolves to null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.blockContextMenu.removeCommand</code>
+<ul>
+<li>Description::
+<ul>
+<li>Remove a command with the given <code>label</code>.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>label</code> (string, required)
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.pageContextMenu</code>
+<ul>
+<li>Description::
+<ul>
+<li>Right-clicking a page title. Same <code>addCommand</code>/<code>removeCommand</code> API as <code>ui.blockContextMenu</code>, but both return <code>null</code> (synchronous).
+</li>
+<li>context passed to <code>display-conditional</code> and <code>callback</code>:
+<ul>
+<li><pre><code>{&quot;page-uid&quot;: &quot;YnatnbZzF&quot;,
+ &quot;page-title&quot;: &quot;title&quot;,
+ &quot;window-id&quot;: &quot;BBG4fFwolaVlT5FZQdzAI7P40aB3-body-outline-04-15-2021&quot;}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>roamAlphaAPI.ui.pageContextMenu.addCommand(
+  {label: &quot;Debug: Console Log&quot;, callback: (e) =&gt; console.log(e)})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.pageRefContextMenu</code>
+<ul>
+<li>Description::
+<ul>
+<li>Right-clicking a page reference inside a block. Same API as <code>ui.blockContextMenu</code>; <code>addCommand</code>/<code>removeCommand</code> return <code>null</code> (synchronous).
+</li>
+<li>context passed to <code>display-conditional</code> and <code>callback</code>:
+<ul>
+<li><pre><code>{&quot;ref-uid&quot;: &quot;YnatnbZzF&quot;,
+ &quot;block-uid&quot;: &quot;xyz&quot;,       // containing block
+ &quot;window-id&quot;: &quot;BBG4fFwolaVlT5FZQdzAI7P40aB3-body-outline-04-15-2021&quot;,
+ indexes: [0, 9],          // outer indexes in the block string
+ type: &quot;attribute&quot;}</code></pre>
+</li>
+</ul>
+</li>
+<li><code>type</code> values:
+<ul>
+<li>&quot;page-ref&quot; — <code>[[test]]</code>
+</li>
+<li>&quot;attribute&quot; — <code>test::</code>
+</li>
+<li>&quot;tag&quot; — <code>#test</code>
+</li>
+<li>&quot;multitag&quot; — <code>#[[Test]]</code>
+</li>
+<li>&quot;inline-link&quot; — <code>[t]([[Test]])</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.blockRefContextMenu</code>
+<ul>
+<li>Description::
+<ul>
+<li>Clicking a block reference. Same API as <code>ui.blockContextMenu</code>; <code>addCommand</code>/<code>removeCommand</code> return <code>null</code> (synchronous).
+</li>
+<li>context passed to <code>display-conditional</code> and <code>callback</code>:
+<ul>
+<li><pre><code>{&quot;ref-uid&quot;: &quot;YnatnbZzF&quot;,
+ &quot;block-uid&quot;: &quot;abc123xyz&quot;, // containing block
+ &quot;window-id&quot;: &quot;BBG4fFwolaVlT5FZQdzAI7P40aB3-body-outline-04-15-2021&quot;,
+ indexes: [0, 9]}          // outer indexes in the block string</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.pageLinkContextMenu</code>
+<ul>
+<li>Description::
+<ul>
+<li>Page links that are neither a page title nor inside a block — currently that's linked references and query results when grouped by page. Same API as <code>ui.blockContextMenu</code>; <code>addCommand</code>/<code>removeCommand</code> return <code>null</code> (synchronous).
+</li>
+<li>context passed to <code>display-conditional</code> and <code>callback</code>:
+<ul>
+<li><pre><code>{&quot;page-uid&quot;: &quot;YnatnbZzF&quot;,
+ &quot;page-title&quot;: &quot;title&quot;}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.msContextMenu</code>
+<ul>
+<li>Description::
+<ul>
+<li>The context menu shown when multiple blocks are selected (multiselect). Same API as <code>ui.blockContextMenu</code>; <code>addCommand</code>/<code>removeCommand</code> return <code>null</code> (synchronous).
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.msContextMenu.addCommand(
+  {label: &quot;test&quot;, callback: () =&gt; { console.log(&quot;hey&quot;) }})
+
+window.roamAlphaAPI.ui.msContextMenu.removeCommand({label: &quot;test&quot;})
+
+// each =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.multiselect</code>
+<ul>
+<li><code>roamAlphaAPI.ui.multiselect.getSelected</code>
+<ul>
+<li>Description::
+<ul>
+<li>The blocks currently drag-selected (highlighted) in the main window. Synchronous.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Array of <code>{&quot;block-uid&quot;, &quot;window-id&quot;}</code> objects; empty array if nothing is selected
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.multiselect.getSelected()
+// =&gt; [{&quot;block-uid&quot;: &quot;Vfht187T1&quot;, &quot;window-id&quot;: &quot;main-window&quot;},
+//     {&quot;block-uid&quot;: &quot;abc123xyz&quot;, &quot;window-id&quot;: &quot;main-window&quot;}]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.individualMultiselect</code>
+<ul>
+<li><code>roamAlphaAPI.ui.individualMultiselect.getSelectedUids</code>
+<ul>
+<li>Description::
+<ul>
+<li>The uids currently selected with individual multiselect (checkbox selection, usually triggered by <code>cmd-m</code>). Synchronous.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Array of block uids
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.individualMultiselect.getSelectedUids()
+// =&gt; [&quot;Vfht187T1&quot;, &quot;abc123xyz&quot;]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.graphView</code>
+<ul>
+<li>Description::
+<ul>
+<li>The page-level graph views are rendered with Cytoscape; the callbacks expose the Cytoscape object to enable plugins, alternative UIs, and other experimentation.
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.graphView.addCallback</code>
+<ul>
+<li>Description::
+<ul>
+<li>Register a callback that fires whenever a graph view loads. Does <strong>not</strong> fire for the new whole-graph overview — see <code>graphView.wholeGraph</code> below.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>label</code> (string, required) — used to upsert or remove the callback
+</li>
+<li><code>callback</code> (function, required) — called with <code>{cytoscape, elements, type}</code>:
+<ul>
+<li><code>cytoscape</code> — the Cytoscape graph object
+</li>
+<li><code>elements</code> — array of the nodes and edges in the graph
+</li>
+<li><code>type</code> — &quot;page&quot; | &quot;all-pages&quot;
+</li>
+<li><pre><code>{cytoscape: Core {_private: {…}},
+ elements: [
+   {id: &quot;eTCpkG-HI&quot;, name: &quot;B&quot;, weight: 7},
+   {id: &quot;05-04-2021&quot;, name: &quot;May 4th, 2021&quot;, weight: 10},
+   {id: &quot;eTCpkG-HI-FrW4nHLat&quot;, source: &quot;eTCpkG-HI&quot;, target: &quot;FrW4nHLat&quot;}
+ ],
+ type: &quot;page&quot;}</code></pre>
+</li>
+</ul>
+</li>
+<li><code>type</code> (string, optional) — only trigger for &quot;page&quot; or &quot;all-pages&quot; graph views; if omitted, triggers for both
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.graphView.removeCallback</code>
+<ul>
+<li>Description::
+<ul>
+<li>Remove a callback with the given <code>label</code>.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>label</code> (string, required)
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.graphView.wholeGraph</code>
+<ul>
+<li>Description::
+<ul>
+<li>API for the whole-graph overview (the old <code>graphView.addCallback</code> does not fire for it). Synchronous functions.
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.graphView.wholeGraph.setMode</code>
+<ul>
+<li>Description::
+<ul>
+<li>Set the overview mode. Positional argument: &quot;Whole Graph&quot; | &quot;Explore&quot;.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.graphView.wholeGraph.setExplorePages</code>
+<ul>
+<li>Description::
+<ul>
+<li>Set the pages shown in Explore mode. Positional argument: array of page titles.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.graphView.wholeGraph.getExplorePages</code>
+<ul>
+<li>Returns::
+<ul>
+<li>Array of the page titles currently explored
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.graphView.wholeGraph.addCallback</code>
+<ul>
+<li>Description::
+<ul>
+<li>Register a callback for when the whole-graph view loads.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>label</code> (string, required)
+</li>
+<li><code>callback</code> (function, required)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.graphView.wholeGraph.removeCallback</code>
+<ul>
+<li>Description::
+<ul>
+<li>Remove a callback with the given <code>label</code>.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>label</code> (string, required)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>roamAlphaAPI.ui.graphView.wholeGraph.addCallback({
+  label: &quot;test&quot;,
+  callback: (x) =&gt; console.log(x)})
+
+roamAlphaAPI.ui.graphView.wholeGraph.removeCallback({label: &quot;test&quot;});
+
+roamAlphaAPI.ui.graphView.wholeGraph.setExplorePages([&quot;a&quot;]);
+roamAlphaAPI.ui.graphView.wholeGraph.getExplorePages();
+// =&gt; [&quot;a&quot;]
+
+roamAlphaAPI.ui.graphView.wholeGraph.setMode(&quot;Whole Graph&quot;);
+roamAlphaAPI.ui.graphView.wholeGraph.setMode(&quot;Explore&quot;);</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.components</code>
+<ul>
+<li>Description::
+<ul>
+<li>Mount Roam-rendered React components into your own DOM nodes. Unmount them with <code>unmountNode</code>.
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.components.renderBlock</code>
+<ul>
+<li>Description::
+<ul>
+<li>Mount a component rendering a block with its children (editable) into a DOM node.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>uid</code> (string, required) — block to display
+</li>
+<li><code>el</code> (DOM node, required) — where to mount the component
+</li>
+<li><code>open?</code> (boolean, optional) — <code>true</code> forces the block open (children shown), <code>false</code> forces it closed; omitted = whatever the block's open state is in the graph
+</li>
+<li><code>zoom-path?</code> (boolean, optional) — show the zoom path above the block (similar to how linked references look)
+</li>
+<li><code>zoom-start-after-uid</code> (string, optional; only valid with <code>zoom-path?</code>) — the path is compacted to a clickable <code>...</code> for everything before this uid
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>const newNode = document.createElement(&quot;div&quot;);
+const wrap = document.getElementById(&quot;right-sidebar&quot;);
+wrap.insertBefore(newNode, wrap.firstChild);
+
+window.roamAlphaAPI.ui.components.renderBlock(
+  {uid: &quot;6-P4ZEbIY&quot;,
+   el: newNode,
+   &quot;open?&quot;: false,
+   &quot;zoom-path?&quot;: true,
+   &quot;zoom-start-after-uid&quot;: &quot;ImSvJvm1_&quot;})
+// resolves to null once mounted</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.components.renderPage</code>
+<ul>
+<li>Description::
+<ul>
+<li>Mount a component rendering a page with its children (editable) into a DOM node. Interchangeable with <code>renderBlock</code> unless you need <code>zoom-path?</code> (block-only) or <code>hide-mentions?</code> (page-only).
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>uid</code> (string, required) — page to display
+</li>
+<li><code>el</code> (DOM node, required)
+</li>
+<li><code>hide-mentions?</code> (boolean, optional) — hide the linked references at the bottom of the page
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.components.renderSearch</code>
+<ul>
+<li>Description::
+<ul>
+<li>Mount search results (pages first, then blocks — the same results as the <code>cmd-u</code> search) into a DOM node. Also available as the <code>{{[[search]]: query}}</code> component. CSS classes: <code>rm-search-query</code>, plus the existing <code>rm-query</code>.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>search-query-str</code> (string, required) — the search query
+</li>
+<li><code>el</code> (DOM node, required)
+</li>
+<li><code>closed?</code> (boolean, optional, default false) — collapse the view
+</li>
+<li><code>group-by-page?</code> (boolean, optional, default false) — group results by page
+</li>
+<li><code>hide-paths?</code> (boolean, optional, default false) — hide block paths in results
+</li>
+<li><code>config-changed-callback</code> (function, optional) — called with the new config when the user changes the view's configuration
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>const newNode = document.createElement(&quot;div&quot;);
+const wrap = document.getElementById(&quot;right-sidebar&quot;);
+wrap.insertBefore(newNode, wrap.firstChild);
+
+window.roamAlphaAPI.ui.components.renderSearch(
+  {&quot;search-query-str&quot;: &quot;Bret Victor&quot;,
+   el: newNode,
+   &quot;group-by-page?&quot;: false,
+   &quot;config-changed-callback&quot;: (config) =&gt; console.log(&quot;new config&quot;, config)})
+// resolves to null once mounted</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.components.renderString</code>
+<ul>
+<li>Description::
+<ul>
+<li>Mount a component rendering a string of Roam-flavored markdown — anything a block string can contain: page links, block refs, formatting, components.
+</li>
+<li>Avoid rendering <code>[[Page Title]]</code> links for pages that don't exist — those links won't work.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>string</code> (string, required) — the string to render
+</li>
+<li><code>el</code> (DOM node, required)
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.components.renderString(
+  {el: newNode,
+   string: &quot;Hello via [[Roam Alpha API]]'s `renderString` — supports ((abc123xyz)) refs too&quot;})
+// resolves to null once mounted</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.components.unmountNode</code>
+<ul>
+<li>Description::
+<ul>
+<li>Unmount a previously mounted React component from a DOM node.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>el</code> (DOM node, required) — the node the component was mounted in
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.react</code>
+<ul>
+<li>Description::
+<ul>
+<li>React components for declarative JSX use — equivalents of <code>ui.components</code>. Note the props are camelCase, unlike the kebab-case keys of <code>ui.components</code>.
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.react.Block</code>
+<ul>
+<li>Description::
+<ul>
+<li>Renders a block with its children (editable).
+</li>
+</ul>
+</li>
+<li>Props::
+<ul>
+<li><code>uid</code> (string, required) — block to display
+</li>
+<li><code>open</code> (boolean, optional) — force open/closed; omitted = the block's open state in the graph
+</li>
+<li><code>zoomPath</code> (boolean, optional) — show the zoom path
+</li>
+<li><code>zoomStartAfterUid</code> (string, optional; only valid with <code>zoomPath</code>) — compact the path to <code>...</code> before this uid
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>const { Block } = window.roamAlphaAPI.ui.react;
+
+&lt;Block uid=&quot;6-P4ZEbIY&quot; /&gt;
+&lt;Block uid=&quot;6-P4ZEbIY&quot; open={false} /&gt;
+&lt;Block uid=&quot;6-P4ZEbIY&quot; zoomPath={true} zoomStartAfterUid=&quot;ImSvJvm1_&quot; /&gt;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.react.Page</code>
+<ul>
+<li>Description::
+<ul>
+<li>Renders a page (editable).
+</li>
+</ul>
+</li>
+<li>Props::
+<ul>
+<li><code>uid</code> (string) / <code>title</code> (string) — one of the two is required
+</li>
+<li><code>hideMentions</code> (boolean, optional) — hide the linked references section at the bottom
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>const { Page } = window.roamAlphaAPI.ui.react;
+
+&lt;Page uid=&quot;page-uid-123&quot; /&gt;
+&lt;Page title=&quot;My Page&quot; hideMentions={true} /&gt;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.react.Search</code>
+<ul>
+<li>Description::
+<ul>
+<li>Renders search results for a query.
+</li>
+</ul>
+</li>
+<li>Props::
+<ul>
+<li><code>searchQueryStr</code> (string, required) — the search query
+</li>
+<li><code>closed</code> (boolean, optional) — collapse the view
+</li>
+<li><code>groupByPage</code> (boolean, optional) — group results by their page
+</li>
+<li><code>hidePaths</code> (boolean, optional) — hide block paths in results
+</li>
+<li><code>onConfigChange</code> (function, optional) — called with the new config object when the user changes grouping etc.
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>const { Search } = window.roamAlphaAPI.ui.react;
+
+&lt;Search searchQueryStr=&quot;Bret Victor&quot; groupByPage={true}
+        onConfigChange={(config) =&gt; console.log(config)} /&gt;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.react.BlockString</code>
+<ul>
+<li>Description::
+<ul>
+<li>Renders a Roam-markdown string — <code>[[page links]]</code>, <code>((block refs))</code>, formatting. The rendered content is <strong>not</strong> editable.
+</li>
+</ul>
+</li>
+<li>Props::
+<ul>
+<li><code>string</code> (string, required) — the Roam-markdown string to render
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>const { BlockString } = window.roamAlphaAPI.ui.react;
+
+&lt;BlockString string=&quot;Hello [[World]]&quot; /&gt;
+&lt;BlockString string=&quot;This is **bold** and __italic__&quot; /&gt;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.callout</code>
+<ul>
+<li><code>roamAlphaAPI.ui.callout.addType</code>
+<ul>
+<li>Description::
+<ul>
+<li>Register a custom callout type so it appears in the callout picker menu (shown when clicking a callout block's icon) and can be used in <code>[!type]</code> syntax.
+</li>
+<li>Icon and color come entirely from CSS: style <code>.rm-callout--{type}</code> for the color and <code>.rm-callout--{type} .rm-callout__icon</code> for the icon. A built-in default icon shows until your CSS loads.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>type</code> (string, required) — the string used in the <code>[!type]</code> callout syntax
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li><code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.callout.addType({type: &quot;recipe&quot;})
+// =&gt; null</code></pre>
+</li>
+<li>Then provide CSS via <code>roam/css</code> or an extension stylesheet:
+<ul>
+<li><pre><code>.rm-callout--recipe {
+  --callout-color: #f778ba;
+}
+.rm-callout--recipe .rm-callout__icon::before {
+  content: &quot;🍪&quot;;
+  font-family: initial;
+}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.ui.callout.removeType</code>
+<ul>
+<li>Description::
+<ul>
+<li>Remove a previously registered custom callout type from the picker menu.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>type</code> (string, required) — the type string to remove
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li><code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.callout.removeType({type: &quot;recipe&quot;})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.util</code> — uid and daily-note date helpers. All synchronous, all taking positional arguments.
+<ul>
+<li><code>roamAlphaAPI.util.generateUID</code>
+<ul>
+<li>Description::
+<ul>
+<li>Generate a Roam block uid — a random string of length nine.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>string
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.util.generateUID()
+// =&gt; &quot;aB3xK9mP2&quot;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.util.pageTitleToDate</code>
+<ul>
+<li>Description::
+<ul>
+<li>Convert a daily note page title to a date.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>title</code> (string, required) — a daily note title like &quot;June 16th, 2022&quot;
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>, or <code>null</code> for anything that isn't a daily note title
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.util.dateToPageTitle</code>
+<ul>
+<li>Description::
+<ul>
+<li>Convert a date to a daily note page title (&quot;June 16th, 2022&quot;).
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>date</code> (Date, required) — a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">JavaScript Date</a>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>string
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.util.dateToPageUid</code>
+<ul>
+<li>Description::
+<ul>
+<li>Convert a date to a daily note page uid (&quot;06-16-2022&quot;). Use this instead of <code>generateUID</code> when programmatically creating a daily note page and you need its uid ahead of time.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>date</code> (Date, required) — a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">JavaScript Date</a>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>string
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.file</code> — upload, fetch, and delete files hosted on Roam
+<ul>
+<li><code>roamAlphaAPI.file.upload</code>
+<ul>
+<li>Description::
+<ul>
+<li>Upload a file to Roam.
+</li>
+<li>Also exists as the legacy alias <code>roamAlphaAPI.util.uploadFile</code> — prefer this version; the old one won't be removed.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>file</code> (File, required) — a <a href="https://developer.mozilla.org/en-US/docs/Web/API/File">File object</a>
+</li>
+<li><code>toast</code> (object, optional)
+<ul>
+<li><code>hide</code> (boolean, optional, default false) — hide the upload toast
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to a firebase download url (string)
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.file.upload({file: new File([&quot;&quot;], &quot;test&quot;), toast: {hide: true}})
+// =&gt; &quot;https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fmy-graph%2FaB3xK9mP2.png?alt=media&amp;token=...&quot;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.file.get</code>
+<ul>
+<li>Description::
+<ul>
+<li>Fetch a file hosted on Roam. You could also <code>fetch</code> the url yourself, but <code>get</code> handles decryption on encrypted graphs and restores the original file name and type metadata.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>url</code> (string, required) — a firebase storage url, obtained from <code>file.upload</code> or from a block
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to a <a href="https://developer.mozilla.org/en-US/docs/Web/API/File">File object</a>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.file.get({url: &quot;https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/...&quot;})
+// =&gt; File {name: &quot;GVfB6XBcMR.pdf&quot;, type: &quot;application/pdf&quot;, size: 183424, ...}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.file.delete</code>
+<ul>
+<li>Description::
+<ul>
+<li>Delete a file hosted on Roam.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>url</code> (string, required) — a firebase storage url, obtained from <code>file.upload</code> or from a block
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Promise resolving to <code>undefined</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.user</code> — info about the current user
+<ul>
+<li><code>roamAlphaAPI.user.uid</code>
+<ul>
+<li>Description::
+<ul>
+<li>The current user's uid. Synchronous. Use it with <code>data.pull</code> to get the user's display page and other metadata.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>string, or <code>null</code> when not signed in
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>roamAlphaAPI.user.uid()
+// =&gt; &quot;BBG4fFwolaVlT5FZQdzAI7P40aB3&quot; (or null when signed out)
+
+// pull all info about the current user
+roamAlphaAPI.data.pull(&quot;[*]&quot;, [&quot;:user/uid&quot;, window.roamAlphaAPI.user.uid()]);
+// =&gt; {&quot;:user/uid&quot;: &quot;BBG4fFwolaVlT5FZQdzAI7P40aB3&quot;, &quot;:user/display-name&quot;: &quot;Josh&quot;, ...}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.user.isAdmin</code>
+<ul>
+<li>Description::
+<ul>
+<li>Whether the current user is an admin of this graph (the graph owner). Synchronous.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>boolean
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.graph</code> — properties (not functions) describing the current graph
+<ul>
+<li><code>roamAlphaAPI.graph.name</code> — the name of the current graph (string)
+</li>
+<li><code>roamAlphaAPI.graph.type</code> — &quot;hosted&quot; or &quot;offline&quot; (string)
+</li>
+<li><code>roamAlphaAPI.graph.isEncrypted</code> — whether the graph is encrypted (boolean)
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.platform</code> — boolean properties (not functions) describing the client
+<ul>
+<li><code>roamAlphaAPI.platform.isDesktop</code> — <code>true</code> in the Roam Desktop App
+</li>
+<li><code>roamAlphaAPI.platform.isMobileApp</code> — <code>true</code> in the Roam Mobile App
+</li>
+<li><code>roamAlphaAPI.platform.isMobile</code> — <code>true</code> on small screens; purely a screen-size check (media query <code>max-width: 450px</code>)
+</li>
+<li><code>roamAlphaAPI.platform.isIOS</code> — <code>true</code> on iPhone, iPad, or iPod
+</li>
+<li><code>roamAlphaAPI.platform.isPC</code> — <code>true</code> on a PC; useful for offering different shortcuts on PC vs Mac
+</li>
+<li><code>roamAlphaAPI.platform.isTouchDevice</code> — <code>true</code> on touch devices
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.depot</code> — installed Roam Depot extensions
+<ul>
+<li><code>roamAlphaAPI.depot.getInstalledExtensions</code>
+<ul>
+<li>Description::
+<ul>
+<li>A map of the extensions currently installed through Roam Depot or dev mode. Synchronous.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Returns::
+<ul>
+<li>Object of <code>{ext-id: ext-map}</code>; <code>version</code> is &quot;DEV&quot; for developer-loaded extensions
+</li>
+<li><pre><code>{&quot;ccc+ccc-roam-pdf-2&quot;:
+  {id: &quot;ccc+ccc-roam-pdf-2&quot;,
+   name: &quot;Roam PDF Highlighter 2&quot;,
+   enabled: false,
+   version: &quot;1&quot;},
+ ...}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.constants</code> — useful constants
+<ul>
+<li><code>roamAlphaAPI.constants.corsAnywhereProxyUrl</code>
+<ul>
+<li>Description::
+<ul>
+<li>The url of a <a href="https://github.com/Rob--W/cors-anywhere">CORS-anywhere proxy</a> hosted by the Roam team — useful when your extension queries an external API with CORS restrictions.
+</li>
+<li>Instead of fetching <code>url</code> directly, fetch <code></code>${roamAlphaAPI.constants.corsAnywhereProxyUrl}/${url}<code></code>.
+</li>
+<li>To prevent misuse, the proxy only works for requests originating from <code>https://roamresearch.com</code>.
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>let urlToFetch = &quot;https://google.com&quot;
+
+await fetch(`${roamAlphaAPI.constants.corsAnywhereProxyUrl}/${urlToFetch}`)
+  .then(a =&gt; a.text())
+// =&gt; &quot;&lt;!doctype html&gt;&lt;html ...&gt;&quot; (the fetched page's body as text)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Resources</strong>
+<ul>
+<li><a href="https://www.putyourleftfoot.in/introduction-to-the-roam-alpha-api">Introduction to the Roam Alpha API</a> by Put Your Left Foot In #Community #Article
+</li>
+<li><a href="https://www.zsolt.blog/2021/01/Roam-Data-Structure-Query.html">Deep Dive Into Roam's Data Structure - Why Roam is Much More Than a Note Taking App</a> by Zsolt Viczian #Community #Article
+</li>
+<li><a href="https://davidbieber.com/snippets/2020-12-22-datalog-queries-for-roam-research/">Datalog Queries for Roam Research</a> by David Bieber #Community #Article
+</li>
+<li><a href="https://davidbieber.com/snippets/2021-02-12-javascript-functions-for-inserting-blocks-in-roam/">JavaScript Functions for Inserting Blocks in Roam</a> by David Bieber #Community #Article
+</li>
+<li><a href="https://davidbieber.com/snippets/2021-01-04-more-datalog-queries-for-roam/">More Datalog Queries for Roam</a> by David Bieber #Community #Article
+</li>
+<li><a href="https://davidbieber.com/snippets/2020-12-28-publishing-blog-posts-from-roam-research-quickly-and-automatically/">Publishing Blog Posts from Roam Research Quickly and Automatically</a> by David Bieber #Community #Article
+</li>
+</ul>
+</li>
+<li><strong>Examples</strong>
+<ul>
+<li><a href="https://github.com/dvargas92495/roam-js-extensions">RoamJS Extensions</a> from David Vargas #Open Source #JavaScript #TypeScript #roam/js — a suite of tools to extend popular workflows in Roam
+</li>
+<li><a href="https://github.com/roamhacker/roam42">Roam42</a> from RoamHacker, now maintained by David Vargas #Open Source #JavaScript #roam/js — a collection of power user tools for Roam
+</li>
+<li><a href="https://github.com/aidam38/roamsr">roam/sr</a> from Adam Krivka #Open Source #JavaScript #TypeScript #roam/js — spaced repetition in Roam
+</li>
+<li><a href="https://github.com/aidam38/pyroam">pyroam</a> from Adam Krivka #Open Source #JavaScript #TypeScript #roam/js — Python notebooks in Roam
+</li>
+<li><a href="https://roamresearch.com/#/app/roam-depot-developers/page/1hRLj21Rg">LittleScripts</a> from Adam Krivka #Open Source #JavaScript #roam/js — suite of small Roam scripts
+</li>
+<li><a href="https://github.com/houshuang/roam-inter">roam-inter</a> from Stian Haklev #Open Source #JavaScript #roam/js — cross-graph referencing prototype
+</li>
+<li><a href="https://github.com/roam-unofficial/roam-toolkit">roam-toolkit</a> from Vlad Sitalo #Open Source #JavaScript #TypeScript #Browser Extension — a Chrome and Firefox extension toolkit to extend Roam
+</li>
+<li><a href="https://github.com/chronologos/Fabricius">Fabricius</a> from Ian Tay #Open Source #Python #Integration — an Anki plugin that bidirectionally syncs with Roam
+</li>
+</ul>
+</li>
+<li><strong>Change Log</strong>
+<ul>
+<li>See <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> for the full historical change log.
+</li>
+</ul>
+</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semantic search (Experimental) — Roam Research Docs</title>
+<meta name="description" content="What is semantic search?">
+<link rel="canonical" href="https://roamdocs.fyi/help/semantic-search-experimental">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Semantic search (Experimental) — Roam Research Docs">
+<meta property="og:description" content="What is semantic search?">
+<meta property="og:url" content="https://roamdocs.fyi/help/semantic-search-experimental">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"Semantic search (Experimental)","item":"https://roamdocs.fyi/help/semantic-search-experimental"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Semantic search (Experimental)</h1>
+<p class="meta"><a href="semantic-search-experimental.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/CslZS1zBh">view in Roam Research</a></p>
+<h3>What is semantic search?</h3>
+<ul>
+<li>Roam's regular search matches the <strong>words</strong> you type. Semantic search matches <strong>meaning</strong> — it can find your notes about <em>insomnia</em> when you search for &quot;trouble sleeping&quot;, even though they don't share a single word.
+</li>
+<li>It runs as an optional mode inside Roam's search. Once an admin sets it up, it's available to everyone on the graph.
+</li>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F3-tfMWb6w5.png?alt=media&amp;token=11fe169e-6c75-40a0-a824-990561adc54d" alt="" loading="lazy">
+</li>
+</ul>
+<h3>How it works</h3>
+<ul>
+<li>Once enabled, Roam indexes your graph in the background:
+<ul>
+<li>Each page is split into small chunks of your outline, with the page title and parent blocks included so each chunk carries its context.
+</li>
+<li>Each chunk — and every page title — is turned into an <strong>embedding</strong>: a numeric fingerprint of its meaning, computed by the embedding model you choose during setup.
+</li>
+<li>The fingerprints are stored in a search index that Roam keeps up to date as you write.
+</li>
+</ul>
+</li>
+<li>The index keeps itself current. When you edit a page, only the parts that changed are re-embedded. The settings panel shows a live status: &quot;Indexing… 128 pages remaining&quot;, then &quot;Up to date&quot;.
+</li>
+<li>When you search in semantic mode, your query gets the same fingerprint treatment. Roam finds the chunks and page titles closest in meaning, blends them with the normal keyword results, and shows you the best of both.
+</li>
+<li>The embedding model can run wherever you choose: Roam's default (Voyage AI), or — via the Custom option — a hosted API you have a key for or a local server on your own machine.
+</li>
+</ul>
+<h3>Why you might want it</h3>
+<ul>
+<li><strong>You remember the idea, not the words.</strong> Notes from years ago rarely use the phrasing you'd reach for today.
+</li>
+<li><strong>Your vocabulary drifts.</strong> Old notes say one thing, new notes say another — semantic search bridges terms that mean the same thing.
+</li>
+<li><strong>Resurfacing.</strong> Related notes you'd forgotten about show up next to the thing you were actually looking for.
+</li>
+<li><strong>Better AI assistance.</strong> AI assistants connected to your graph (through Roam's MCP integration) get a semantic search tool too, so they can find relevant context by meaning when answering your questions.
+</li>
+</ul>
+<h3>How to use it</h3>
+<ul>
+<li>First set it up, then click into the search bar and click the button at its right edge (tooltip: &quot;Open advanced search&quot;) to open Advanced Search
+</li>
+<li>Click the filter icon, enable the <strong>Semantic</strong> chip, then type your query.
+</li>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FOh14ziRzJG.png?alt=media&amp;token=13108c93-9a2d-4e5e-9b7f-fd59bd240997" alt="" loading="lazy">
+</li>
+<li>The chip stays on for your later searches until you turn it off (it resets when you reload Roam).
+</li>
+<li>Semantic mode is also available in the sidebar search and in inline <code>{{search}}</code> components — look for the same Semantic chip.
+</li>
+<li>Semantic results can be combined with search filters like daily notes or edit time.
+</li>
+</ul>
+<h3>Setting it up</h3>
+<ul>
+<li>You need to be an <strong>admin</strong> of the graph.
+</li>
+<li>Open <strong>Settings → Graph → Experimental: Semantic search</strong>.
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fk1MFsLBXDW.png?alt=media&amp;token=d6c537b1-3089-42c1-aa4f-7640b2542066" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>The setting is a three-way choice — <strong>Off</strong>, <strong>Default</strong>, or <strong>Custom</strong>. Picking either provider enables semantic search for everyone on this graph.
+</li>
+</ul>
+<h4>Option 1 — Default: Roam (Voyage AI)</h4>
+<ul>
+<li>The easy zero-setup option — available when the graph has an admin with an active paid subscription.
+</li>
+<li>Roam computes embeddings using <a href="https://www.voyageai.com/">Voyage AI</a>: select <strong>Default — Roam (Voyage AI)</strong> and click <strong>Save</strong>.
+</li>
+<li><strong>What happens to your data</strong>
+<ul>
+<li>Your graph's text is sent in plain text through Roam's servers to Voyage AI, used to compute embeddings, and <strong>not retained</strong> — Voyage doesn't store your content or train on it (see <a href="https://www.voyageai.com/privacy">their privacy policy</a>).
+</li>
+<li>Separately from Voyage, Roam's own servers may hold a cached copy for up to 24 hours so unchanged text doesn't have to be re-sent.
+</li>
+<li><strong>If your graph is encrypted, note that embedding still requires the unencrypted text.</strong>
+</li>
+</ul>
+</li>
+<li>After saving, the status line counts down (&quot;Indexing… N pages remaining&quot;) and flips to &quot;Up to date&quot; when your whole graph is searchable.
+</li>
+</ul>
+<h4>Option 2 — Custom: bring your own endpoint</h4>
+<ul>
+<li>For full control over where your text goes, select <strong>Custom — Ollama / OpenAI-compatible endpoint</strong>.
+</li>
+<li>Your graph contents are sent only to the endpoint you configure — a hosted API you have a key for, or a local server on your own machine (Ollama, LM Studio). This is also the only option for offline graphs — the Default option runs through Roam's servers, which offline graphs never talk to.
+</li>
+<li><strong>Setting up for a team?</strong> With a <code>localhost</code> endpoint, every graph member needs that same server on their own machine — see <strong>A note on local endpoints and collaborators</strong>
+</li>
+<li>The form fields:
+<ul>
+<li><strong>Endpoint URL</strong> — any OpenAI-compatible <code>/embeddings</code> endpoint.
+</li>
+<li><strong>Model</strong> — the embedding model name your endpoint expects.
+</li>
+<li><strong>API key</strong> — only if your endpoint needs one. Keys are stored <strong>on this device only</strong> and never synced — collaborators enter their own key on their own device.
+</li>
+<li><strong>Dimensions</strong> — optional. Leave blank to use the model's native vector size (must be 1024 or smaller). If your model lets you choose, 512 is a good balance of quality and speed.
+</li>
+<li><strong>Rerank URL</strong> — optional. Reranking is a second pass where a more accurate (but slower) model re-sorts the top results before you see them. Point this at a Cohere-style <code>/rerank</code> endpoint, for example <code>https://api.cohere.com/v2/rerank</code>. Leave blank to skip and use default ranking.
+</li>
+<li><strong>Rerank model</strong> — the reranking model name your endpoint expects, for example <code>rerank-v3.5</code> for Cohere.
+</li>
+<li><strong>Rerank API key</strong> — only if your rerank endpoint needs one. Stored on this device only, like the embedding key.
+</li>
+</ul>
+</li>
+<li>Clicking <strong>Save</strong> first tests your endpoint with a live embedding — any problem shows up right there — and then indexing starts.
+</li>
+<li>Switching to a different model later discards the index and rebuilds it under the new model.
+</li>
+<li>Turning embeddings <strong>Off</strong> keeps the index on disk, so re-enabling doesn't start from scratch.
+</li>
+<li><strong>Custom setup — a remote API</strong>
+<ul>
+<li>Works with any embeddings API that speaks the OpenAI format: enter its <code>/embeddings</code> URL, the model name, and your API key.
+</li>
+<li>Pick an embedding model that produces vectors of 1024 dimensions or fewer, or one that lets you choose the size (set <strong>Dimensions</strong> to 512 in that case).
+</li>
+<li>Requests to non-local endpoints are routed through Roam's CORS proxy — browsers can't call most APIs directly.
+</li>
+</ul>
+</li>
+<li><strong>Custom setup — Ollama (local and free)</strong>
+<ul>
+<li>The embedding model runs on your machine — no third-party service is involved.
+</li>
+<li><strong>Step 1:</strong> Install Ollama and download an embedding model
+<ul>
+<li>Install <a href="https://ollama.com">Ollama</a>.
+</li>
+<li>In a terminal, run: <code>ollama pull nomic-embed-text</code>
+</li>
+</ul>
+</li>
+<li><strong>Step 2:</strong> Allow Roam to talk to Ollama
+<ul>
+<li>Ollama only answers requests from origins it trusts, so without this step Roam's test fails with &quot;Embedding test failed — Failed to fetch&quot;.
+</li>
+<li><strong>Mac:</strong> run this command in Terminal: <code>launchctl setenv OLLAMA_ORIGINS &quot;https://roamresearch.com&quot;</code>
+<ul>
+<li>Then <strong>quit Ollama from the menu bar icon and open it again</strong> — Ollama only reads this setting when it starts.
+</li>
+<li>If the error comes back after you reboot your computer, run the command and restart Ollama once more.
+</li>
+</ul>
+</li>
+<li><strong>Windows:</strong> add an environment variable <code>OLLAMA_ORIGINS</code> with the value <code>https://roamresearch.com</code> (Settings → search &quot;environment variables&quot;).
+<ul>
+<li>Then quit and reopen Ollama.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Step 3:</strong> Fill in Roam's settings form
+<ul>
+<li>Endpoint URL: <code>http://localhost:11434/v1/embeddings</code>
+</li>
+<li>Model: <code>nomic-embed-text</code>
+</li>
+<li>API key and Dimensions: leave blank
+</li>
+<li>Click <strong>Save</strong>.
+</li>
+</ul>
+</li>
+<li>If the test fails with &quot;model not found&quot;, the model isn't downloaded yet — run <code>ollama pull nomic-embed-text</code> again.
+</li>
+<li><strong>Reranking with Ollama:</strong> Ollama doesn't offer a rerank endpoint, so leave the rerank fields blank — semantic search works well without them. If you want reranking, use a hosted service like Cohere, or run a local reranker — see <strong>Custom setup — a local reranker (llama.cpp)</strong>
+</li>
+</ul>
+</li>
+<li><strong>Custom setup — LM Studio (local and free)</strong>
+<ul>
+<li><strong>Step 1:</strong> Install LM Studio and download an embedding model
+<ul>
+<li>Install <a href="https://lmstudio.ai">LM Studio</a>.
+</li>
+<li>In the model catalog, search for and download <code>nomic-embed-text</code>.
+</li>
+</ul>
+</li>
+<li><strong>Step 2:</strong> Start the local server
+<ul>
+<li>Open the <strong>Developer</strong> tab and start the server.
+</li>
+<li>In the server settings, turn <strong>Enable CORS</strong> on — without it Roam's requests are blocked, for the same reason as with Ollama.
+</li>
+</ul>
+</li>
+<li><strong>Step 3:</strong> Fill in Roam's settings form
+<ul>
+<li>Endpoint URL: <code>http://localhost:1234/v1/embeddings</code>
+</li>
+<li>Model: the model's identifier exactly as LM Studio shows it (e.g. <code>text-embedding-nomic-embed-text-v1.5</code>)
+</li>
+<li>API key and Dimensions: leave blank
+</li>
+<li>Click <strong>Save</strong>.
+</li>
+</ul>
+</li>
+<li><strong>Reranking with LM Studio:</strong> LM Studio doesn't offer a rerank endpoint, so leave the rerank fields blank — semantic search works well without them. If you want reranking, use a hosted service like Cohere, or run a local reranker — see <strong>Custom setup — a local reranker (llama.cpp)</strong>
+</li>
+</ul>
+</li>
+<li><strong>Custom setup — a local reranker (llama.cpp)</strong>
+<ul>
+<li>Ollama and LM Studio don't serve reranking models, but you can add fully local reranking alongside either of them with <strong>llama.cpp</strong>'s built-in server.
+</li>
+<li><strong>Step 1:</strong> Install llama.cpp
+<ul>
+<li><strong>Mac:</strong> run <code>brew install llama.cpp</code> in Terminal.
+</li>
+<li><strong>Windows / Linux:</strong> download a build from the <a href="https://github.com/ggml-org/llama.cpp/releases">llama.cpp releases page</a>.
+</li>
+</ul>
+</li>
+<li><strong>Step 2:</strong> Start the reranking server
+<ul>
+<li>Run: <code>llama-server -hf gpustack/bge-reranker-v2-m3-GGUF:Q8_0 --rerank --port 8012 -c 8192 -b 8192 -ub 8192</code>
+</li>
+<li>The first run downloads the model (about 600 MB) before it starts serving.
+</li>
+<li>The three flags at the end raise the size of block it can handle to the model's maximum (8,192 tokens) — without them, even modestly long blocks fail the rerank pass with a 500 error.
+</li>
+</ul>
+</li>
+<li><strong>Step 3:</strong> Fill in the rerank fields in Roam's settings form
+<ul>
+<li>Rerank URL: <code>http://localhost:8012/v1/rerank</code>
+</li>
+<li>Rerank model: <code>bge-reranker-v2-m3</code>
+</li>
+<li>Rerank API key: leave blank
+</li>
+<li>Click <strong>Save</strong>.
+</li>
+</ul>
+</li>
+<li>No permissions step this time — unlike Ollama, llama.cpp's server accepts requests from any app out of the box.
+</li>
+<li>The reranker is only called at search time. If it isn't running when you search, semantic search still works — Roam just skips the rerank pass. You'll need to start <code>llama-server</code> again after a reboot.
+</li>
+<li><strong>A known limitation:</strong> if a search turns up a block longer than the model's 8,192-token limit, the rerank pass fails for that search with a 500 error in the console. This is harmless — Roam falls back to its normal ordering for that search — but you may occasionally spot the error if you have very long blocks in your graph.
+</li>
+</ul>
+</li>
+<li><strong>A note on local endpoints and collaborators</strong>
+<ul>
+<li>The endpoint configuration is shared with the whole graph, but each member's device builds its own index. If your endpoint is <code>localhost</code>, every member needs that same server running on their own machine with the same model. A remote API avoids this — though each member must save the API key on their own device — and the Voyage default needs no per-device setup at all.
+</li>
+</ul>
+</li>
+</ul>
+</body>
+</html>
