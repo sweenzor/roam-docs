@@ -18,4 +18,4 @@
 
 #### Auto Backups
 
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FE-1xkkvU6W.gif?alt=media&token=c94c84b4-a93b-471f-8f05-8b7632671cae)
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FplYu5iGvfU.gif?alt=media&token=73faa617-813e-4050-8c3e-22e7ae206c6f)

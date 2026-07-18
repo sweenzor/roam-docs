@@ -1,81 +1,35 @@
 # Search
 
-## [[Find or create page]]
+### [[Find or create page]] Search (the search bar)
 
-### Team GIFs::
+- Press `Cmd-u` / `Ctrl-u` (or click the search bar) to find or create pages and blocks.
+- Before you type anything, it shows your recent items.
+- Results show reference counts and the path to each block, with your search terms highlighted.
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FPJsdGpBAhr.gif?alt=media&token=8d9a79c4-a75c-40be-9743-17f6f8c2723b)
+- `Enter` opens a result, and `Shift-Enter` opens it in the right sidebar. If nothing matches your exact text, the top row offers **New page:** to create it.
+- For filters, a preview pane, and semantic search, continue into [[Advanced Search]]: the button at the right edge of the search bar, or `Ctrl-o` straight from the dropdown.
 
-#### Find page via "Find or Create Page"
+### Searching and referencing while you write (inline)
 
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Flh-IodNlTT.gif?alt=media&token=8d5ddd1c-c4cc-4912-bcc5-318d395462a9)
+- Type `[[` to search page titles and create [[Page References]]. Exact title matches sort first.
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FlTe7piN5SS.gif?alt=media&token=ff2d39f6-8a02-4639-8dfb-7aecd7133d09)
+- Type `#` to search and create #Tags.
+- Type `((` to search blocks and create [[Block References]]. It also matches a block's UID, so you can paste one in directly.
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FB23UR71Fdi.gif?alt=media&token=23f0a82e-a50b-4dd3-ac46-43db6a6e272b)
+- Type `::` to search and create [[Attributes]].
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FdWLYZDaOuS.gif?alt=media&token=eaa1a854-cc7c-4231-a2ba-5cd74e35389b)
+- In any of these, `Ctrl-o` opens a preview of the selected result before you commit to it.
 
-#### Create page via "Find or Create Page"
+### More ways to search
 
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F7OlfaF5_J5.gif?alt=media&token=3cae6d14-d8f8-4134-b885-f1cc50edbdce)
+- **[[Advanced Search]]**: the full search view, with a results list, preview pane, and filters.
+- **[[Global search]]**: (`Cmd-Shift-u` / `Ctrl-Shift-u`): search across all of your graphs at once.
+- **[[All Pages]]**: a sortable list of every page in your graph. Sort by title, word count, mentions, or when pages were created or last edited.
+- **[[Better search (Experimental)]]**: the new search engine. Faster on large graphs, and block references become searchable.
+- **[[Semantic search (Experimental)]]**: meaning-based search, once embeddings are enabled for your graph.
+- **[[Advanced Block Reference Search]]**: (`Ctrl-Shift-9`): find a block by drilling down through its outline, level by level, and drop a reference to it where you're writing.
 
-#### Key Commands::
+### Good to know
 
-- Toggle focus: `ctrl+u` on PC, `cmd+u` on mcOS
-
-## [[Page References]]
-
-### Team GIFs::
-
-#### Inline page reference search
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FvXYh30XhU-.gif?alt=media&token=9975042f-300c-4b27-81c4-e07ce0ae6196)
-
-#### Search All Pages
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F1A-BZ0Xz2j.gif?alt=media&token=74a62ead-57bc-401c-ba4f-032fb14c4369)
-
-### Key Commands::
-
-- Inline page reference search `[[]]`
-
-## [[Block References]]
-
-### Team GIFs::
-
-#### Inline block reference search
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FkPLiIKpIT6.gif?alt=media&token=49267272-6e36-4d8e-bbbc-ab041a78312b)
-
-### Key Commands::
-
-- Inline block reference search: `(())`
-
-## [[Block Search]]
-
-### Team GIFs::
-
-#### Advanced block reference search
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FKFCQb6TOho.gif?alt=media&token=e6f60942-0f69-40eb-a592-fe7136e21b38)
-
-### Key Commands::
-
-- Toggle advanced block reference search: `ctrl+shift+9`
-
-### Community Videos::
-
-#### Top 10 Roam Shortcuts for Beginners by [[Zack Fan]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=hWeU14NAgyw}}
-  #[[Right Sidebar]] | #[[Graph Overview]] | #[[Block Search]] | #[[Find or create page]] | #[[Navigation]]
-
-## [[Tags]]
-
-### Team GIFs::
-
-- Inline tag search
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FNeS2jRFQBv.gif?alt=media&token=274ea456-90e1-4fc6-8221-01c520a7acc8)
-
-### Key Commands::
-
-- Inline tag search: `#`
-
-### Articles::
-
-#### [The two types of search in Roam and seven ways to search](https://roamstack.com/searching-in-roam/) by [[RoamStack]]
-
-- #[[Search]] | #[[Block Search]] | #[[Reference]]
+- Search ignores accents: "café" and "cafe" find each other.
+- You can hide code blocks from search results, as well as change other search settings, in **Settings → Preferences → Search**.

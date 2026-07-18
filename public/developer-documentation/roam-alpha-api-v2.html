@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Roam Alpha API v2 — Roam Research Docs</title>
-<meta name="description" content="Draft restructuring of Roam Alpha API, written for both humans and AI. Method content verified against the source (July 2026). Historical ch">
+<meta name="description" content="Getting Started">
 <link rel="canonical" href="https://roamdocs.fyi/developer-documentation/roam-alpha-api-v2">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Roam Research Docs">
 <meta property="og:title" content="Roam Alpha API v2 — Roam Research Docs">
-<meta property="og:description" content="Draft restructuring of Roam Alpha API, written for both humans and AI. Method content verified against the source (July 2026). Historical ch">
+<meta property="og:description" content="Getting Started">
 <meta property="og:url" content="https://roamdocs.fyi/developer-documentation/roam-alpha-api-v2">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/favicon.ico">
@@ -39,11 +39,9 @@
 <h1>Roam Alpha API v2</h1>
 <p class="meta"><a href="roam-alpha-api-v2.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/OiE7WUknO">view in Roam Research</a></p>
 <ul>
-<li>Draft restructuring of <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a>, written for both humans and AI. Method content verified against the source (July 2026). Historical change log stays on the original page.
-</li>
 <li><strong>Getting Started</strong>
 <ul>
-<li>The Roam Alpha API is provided in the browser, letting you read and write data and drive the UI. It lives on the <code>window</code> object as <code>window.roamAlphaAPI</code> and is available from <a href="/developer-documentation/roam-js">roam/js</a> code blocks, Roam Depot extensions, and the browser console.
+<li>The Roam Alpha API is provided in the browser, letting you read and write data and drive the UI. It lives on the <code>window</code> object as <code>window.roamAlphaAPI</code> and is available from <a href="/developer-documentation/roam-js">roam/js</a>/<a href="/developer-documentation/roam-cljs">roam/cljs</a> code blocks, Roam Depot extensions, <a href="/developer-documentation/roam-render">roam/render</a>, and the browser console.
 </li>
 <li>For the ClojureScript version of this API, see the Reference section of <a href="/developer-documentation/roam-cljs">roam/cljs</a>.
 </li>
@@ -51,9 +49,9 @@
 </li>
 <li><strong>Conventions</strong>
 <ul>
-<li>Most functions take a single object argument. Keys are kebab-case strings, and boolean keys often end in <code>?</code> — quote them in JS: <code>{&quot;parent-uid&quot;: &quot;abc&quot;, &quot;zoom-path?&quot;: true}</code>. Exceptions: <code>data.roamQuery</code> uses camelCase keys, and a few functions take positional arguments (<code>data.addPullWatch</code>, <code>data.page.addShortcut</code>, <code>ui.mainWindow.registerComponent</code>, everything in <code>util</code>).
+<li>Most functions take a single object argument. Keys are kebab-case strings, and boolean keys often end in <code>?</code> — quote them in JS: <code>{&quot;parent-uid&quot;: &quot;abc&quot;, &quot;zoom-path?&quot;: true}</code>. Exceptions: <code>data.roamQuery</code> uses camelCase keys, and some functions take positional arguments (<code>data.addPullWatch</code>/<code>removePullWatch</code>, <code>data.page.addShortcut</code>/<code>removeShortcut</code>, the <code>ui.mainWindow</code> component functions, <code>ui.graphView.wholeGraph.*</code>, and everything in <code>util</code> — each such method says so in its own block).
 </li>
-<li>Write functions return a Promise that resolves to <code>null</code> once Roam has applied the operation — after the triggering event and all of its descendant events are handled. Chain dependent writes with <code>await</code>; no <code>setTimeout</code> hacks needed.
+<li>Write functions return a Promise that (usually) resolves to <code>null</code> once Roam has applied the operation — after the triggering event and all of its descendant events are handled. Chain dependent writes with <code>await</code>; no <code>setTimeout</code> hacks needed.
 <ul>
 <li>The promise resolves before React re-renders, so if you manipulate the DOM right after a write you may still need a very small timeout.
 </li>
@@ -61,17 +59,19 @@
 </li>
 </ul>
 </li>
-<li>Read functions are synchronous unless a method's <code>Returns::</code> says otherwise (<code>data.roamQuery</code>, <code>ui.mainWindow.getOpenView</code>, and <code>ui.mainWindow.getOpenPageOrBlockUid</code> return promises). Prefer the promise-returning <code>data.async.*</code> variants in new code — the synchronous reads will eventually be deprecated.
+<li>Read functions are synchronous unless a method's <code>Return::</code> says otherwise (<code>data.roamQuery</code>, <code>ui.mainWindow.getOpenView</code>, and <code>ui.mainWindow.getOpenPageOrBlockUid</code> return promises). Prefer the promise-returning <code>data.async.*</code> variants in new code — the synchronous reads will eventually be deprecated.
 </li>
-<li>Rate limit: rate-limited functions (all writes, plus a number of UI functions) share a budget of 1500 calls per 60 seconds; exceeding it throws.
+<li>Rate limit: rate-limited functions (all writes, plus a number of UI functions) share a budget of 1500 calls per 60 seconds; exceeding it throws. This is to protect your graph from runaway loops. If you are adding a lot of data at once, prefer creating from markdown.
 </li>
-<li><code>q</code>, <code>pull</code>, <code>pull_many</code> and their variants time out after 20 seconds, throwing <code>Query and/or pull expression took too long to run.</code> — <code>pull</code> and <code>pull_many</code> accept an options argument to override the timeout.
+<li><code>q</code>, <code>pull</code>, <code>pull_many</code> and their variants time out after 20 seconds, throwing <code>Query and/or pull expression took too long to run.</code> Override it by passing <code>{timeout: &lt;ms&gt;}</code> as <code>pull</code>/<code>pull_many</code>'s options argument, or by including a <code>:timeout &lt;ms&gt;</code> clause in the query for <code>q</code>.
 </li>
 <li>uids
 <ul>
 <li>Block and page uids are random 9-character strings — see <code>util.generateUID</code>.
 </li>
 <li>Daily note pages use the date as their uid, in <code>MM-DD-YYYY</code> format (e.g. <code>07-16-2026</code> for July 16th, 2026) — see <code>util.dateToPageUid</code>.
+</li>
+<li>uids can technically be any length and they don't have to be random, but some extensions might rely on it being 9 chars
 </li>
 </ul>
 </li>
@@ -105,6 +105,8 @@
 </li>
 <li>Legacy alias: <code>roamAlphaAPI.q</code> (older top-level name; prefer this namespaced path)
 </li>
+<li>Times out after 20 seconds by default; include a <code>:timeout &lt;ms&gt;</code> clause in the query to override.
+</li>
 </ul>
 </li>
 <li>Parameters::
@@ -115,7 +117,7 @@
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Array of result tuples
 </li>
@@ -175,7 +177,7 @@ window.roamAlphaAPI.data.q(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Object of the pulled attributes
 </li>
@@ -223,7 +225,7 @@ window.roamAlphaAPI.data.pull(&quot;[:block/string {:block/children ...}]&quot;,
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Array of pulled objects
 </li>
@@ -253,7 +255,7 @@ window.roamAlphaAPI.data.pull(&quot;[:block/string {:block/children ...}]&quot;,
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>A cljs object wrapped in a JS <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy">Proxy</a>. Treat it as <strong>read only</strong>; it may not print to the console correctly.
 </li>
@@ -288,7 +290,7 @@ window.roamAlphaAPI.data.pull(&quot;[:block/string {:block/children ...}]&quot;,
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to the query results
 </li>
@@ -347,13 +349,13 @@ await roamAlphaAPI.data.async.pull(&quot;[*]&quot;, [&quot;:block/uid&quot;, &qu
 </li>
 <li>Parameters::
 <ul>
-<li><code>search-str</code> (string, required) — the search query
+<li><code>search-str</code> (string, required) — the search query (<code>search-string</code> is accepted as an alias)
 </li>
 <li><code>search-blocks</code> (boolean, optional, default true) — include block results
 </li>
 <li><code>search-pages</code> (boolean, optional, default true) — include page results
 </li>
-<li><code>hide-code-blocks</code> (boolean, optional, default false) — exclude code blocks from results
+<li><code>hide-code-blocks</code> (boolean, optional, default: the user's hide-code-blocks setting) — exclude code blocks from results
 </li>
 <li><code>limit</code> (number, optional, default 300, max 1000) — maximum number of results
 </li>
@@ -361,7 +363,7 @@ await roamAlphaAPI.data.async.pull(&quot;[*]&quot;, [&quot;:block/uid&quot;, &qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Array of results matching the pull pattern
 </li>
@@ -397,7 +399,7 @@ await roamAlphaAPI.data.async.pull(&quot;[*]&quot;, [&quot;:block/uid&quot;, &qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>boolean
 </li>
@@ -424,7 +426,7 @@ await roamAlphaAPI.data.async.pull(&quot;[*]&quot;, [&quot;:block/uid&quot;, &qu
 </li>
 <li>Parameters::
 <ul>
-<li><code>search-str</code> (string, required) — the search query
+<li><code>search-str</code> (string, required) — the search query (<code>search-string</code> is accepted as an alias)
 </li>
 <li><code>k</code> (number, optional, default 25, max 200) — number of results (also the search pool size)
 </li>
@@ -436,7 +438,7 @@ await roamAlphaAPI.data.async.pull(&quot;[*]&quot;, [&quot;:block/uid&quot;, &qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to an array of hit records <code>{type, uid, topUids}</code>:
 <ul>
@@ -486,7 +488,7 @@ await roamAlphaAPI.data.async.pull(&quot;[*]&quot;, [&quot;:block/uid&quot;, &qu
 </li>
 <li><code>query</code> (string, required if no <code>uid</code>) — a query string, e.g. &quot;{and: project active}&quot;
 </li>
-<li><code>groupByPage</code> (boolean, optional, default false) — group results by page (query mode only)
+<li><code>groupByPage</code> (boolean, optional, default true) — group results by page (query mode only)
 </li>
 <li><code>nestUnderParent</code> (boolean, optional, default false) — collapse child matches under their parent (query mode only)
 </li>
@@ -502,7 +504,7 @@ await roamAlphaAPI.data.async.pull(&quot;[*]&quot;, [&quot;:block/uid&quot;, &qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>{total: &lt;number&gt;, results: &lt;array of pulled results&gt;}</code>
 </li>
@@ -539,7 +541,7 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code> once the watch is registered
 </li>
@@ -575,9 +577,9 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
-<li>Promise resolving to <code>null</code>
+<li>Promise resolving to <code>null</code> (the two-argument form resolves to <code>true</code>)
 </li>
 </ul>
 </li>
@@ -607,16 +609,9 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
-</li>
-</ul>
-</li>
-<li>Example::
-<ul>
-<li><pre><code>await window.roamAlphaAPI.data.undo()
-// =&gt; null</code></pre>
 </li>
 </ul>
 </li>
@@ -636,16 +631,9 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
-</li>
-</ul>
-</li>
-<li>Example::
-<ul>
-<li><pre><code>await window.roamAlphaAPI.data.redo()
-// =&gt; null</code></pre>
 </li>
 </ul>
 </li>
@@ -703,7 +691,7 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>; rejects if <code>parent-uid</code> doesn't exist or <code>uid</code> is already taken
 </li>
@@ -744,7 +732,7 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -788,7 +776,7 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>; rejects if the block or <code>parent-uid</code> doesn't exist
 </li>
@@ -825,7 +813,7 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -861,7 +849,7 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -900,7 +888,7 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>{uids: [...]}</code> — the uids of the top-level blocks created
 </li>
@@ -933,11 +921,15 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 </li>
 <li><code>reply-markdown</code> (string) — markdown parsed into multiple sibling reply blocks
 </li>
+<li><code>reply-uid</code> (string, optional) — uid for the created reply block; autogenerated if omitted
+</li>
+<li><code>open-comment</code> (boolean, optional, default false) — open the block's comments in the sidebar after adding the reply
+</li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
-<li>Promise resolving to <code>null</code>
+<li>Promise resolving to <code>{uids: [...], parentUid: &quot;...&quot;}</code> — uids of the created reply block(s) and the uid of the comments block they live under
 </li>
 </ul>
 </li>
@@ -946,12 +938,12 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 <li><pre><code>// single reply
 await window.roamAlphaAPI.data.block.addComment(
   {&quot;block-uid&quot;: &quot;abc123&quot;, &quot;reply-string&quot;: &quot;This is a comment&quot;})
-// =&gt; null
+// =&gt; {uids: [&quot;aBc123xYz&quot;], parentUid: &quot;dEf456uVw&quot;}
 
 // markdown reply (parsed into siblings)
 await window.roamAlphaAPI.data.block.addComment(
   {&quot;block-uid&quot;: &quot;abc123&quot;, &quot;reply-markdown&quot;: &quot;First block\n- Nested child&quot;})
-// =&gt; null</code></pre>
+// =&gt; {uids: [&quot;gHi789jKl&quot;], parentUid: &quot;dEf456uVw&quot;}</code></pre>
 </li>
 </ul>
 </li>
@@ -985,7 +977,7 @@ await window.roamAlphaAPI.data.block.addComment(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>; rejects if a page with the given <code>title</code> or <code>uid</code> already exists
 </li>
@@ -1016,7 +1008,7 @@ await window.roamAlphaAPI.data.block.addComment(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>{uid: &lt;page-uid&gt;}</code>; rejects if a page with the given title already exists
 </li>
@@ -1057,7 +1049,7 @@ await window.roamAlphaAPI.data.block.addComment(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>; rejects when renaming to a title that already exists in the graph
 </li>
@@ -1093,7 +1085,7 @@ await window.roamAlphaAPI.data.block.addComment(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -1124,7 +1116,7 @@ await window.roamAlphaAPI.data.block.addComment(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -1154,7 +1146,7 @@ await roamAlphaAPI.data.page.addShortcut(&quot;12-11-2025&quot;, 4);
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -1187,9 +1179,11 @@ await roamAlphaAPI.data.page.addShortcut(&quot;12-11-2025&quot;, 4);
 </li>
 <li><code>display-name</code> (string, optional)
 </li>
+<li><code>photo-url</code> (string, optional) — url of the user's photo
+</li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -1228,7 +1222,7 @@ await roamAlphaAPI.data.page.addShortcut(&quot;12-11-2025&quot;, 4);
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li><pre><code>{&quot;block-uid&quot;: &quot;YnatnbZzF&quot;,
  &quot;window-id&quot;: &quot;BBG4fFwolaVlT5FZQdzAI7P40aB3-body-outline-04-15-2021&quot;}</code></pre>
@@ -1274,7 +1268,7 @@ await roamAlphaAPI.data.page.addShortcut(&quot;12-11-2025&quot;, 4);
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -1313,7 +1307,7 @@ await roamAlphaAPI.data.page.addShortcut(&quot;12-11-2025&quot;, 4);
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -1348,7 +1342,7 @@ await roamAlphaAPI.data.page.addShortcut(&quot;12-11-2025&quot;, 4);
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -1378,16 +1372,9 @@ await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid: &quot;RZVuh3aZN&qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
-</li>
-</ul>
-</li>
-<li>Example::
-<ul>
-<li><pre><code>await window.roamAlphaAPI.ui.mainWindow.openDailyNotes()
-// =&gt; null</code></pre>
 </li>
 </ul>
 </li>
@@ -1407,16 +1394,9 @@ await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid: &quot;RZVuh3aZN&qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
-</li>
-</ul>
-</li>
-<li>Example::
-<ul>
-<li><pre><code>await window.roamAlphaAPI.ui.mainWindow.focusFirstBlock()
-// =&gt; null</code></pre>
 </li>
 </ul>
 </li>
@@ -1436,7 +1416,7 @@ await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid: &quot;RZVuh3aZN&qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to the uid string, or <code>null</code> when no page/block is open (e.g. the daily notes log)
 </li>
@@ -1465,7 +1445,7 @@ await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid: &quot;RZVuh3aZN&qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to one of:
 </li>
@@ -1480,7 +1460,8 @@ await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid: &quot;RZVuh3aZN&qu
  &quot;block-string&quot;: &quot;Some block content&quot;}
 
 // daily notes
-{type: &quot;log&quot;}
+{type: &quot;log&quot;,
+ uids: [&quot;07-17-2026&quot;, &quot;07-16-2026&quot;]}
 
 // graph view
 {type: &quot;graph&quot;}
@@ -1491,7 +1472,8 @@ await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid: &quot;RZVuh3aZN&qu
 
 // PDF viewer
 {type: &quot;pdf&quot;,
- uid: &quot;pdf-block-uid&quot;}
+ uid: &quot;pdf-block-uid&quot;,
+ url: &quot;https://firebasestorage.googleapis.com/...&quot;}
 
 // all pages search
 {type: &quot;search&quot;}
@@ -1521,9 +1503,17 @@ await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid: &quot;RZVuh3aZN&qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
-<li><code>null</code>
+<li>Synchronous; the return value is internal state — treat it as void
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>const MyView = () =&gt; React.createElement(&quot;h1&quot;, null, &quot;Hello from my view&quot;);
+window.roamAlphaAPI.ui.mainWindow.registerComponent(&quot;my-view&quot;, MyView)
+// (return value is not meaningful)</code></pre>
 </li>
 </ul>
 </li>
@@ -1543,9 +1533,16 @@ await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid: &quot;RZVuh3aZN&qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
-<li><code>null</code>
+<li>Synchronous; the return value is internal state — treat it as void
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.mainWindow.unregisterComponent(&quot;my-view&quot;)
+// (return value is not meaningful)</code></pre>
 </li>
 </ul>
 </li>
@@ -1567,9 +1564,17 @@ await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid: &quot;RZVuh3aZN&qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
-<li><code>null</code>
+<li>Synchronous; the return value is internal state — treat it as void
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.mainWindow.openComponent(&quot;my-view&quot;, &quot;arg1&quot;, 42)
+// getOpenView() now reports
+// {type: &quot;custom&quot;, id: &quot;my-view&quot;, args: [&quot;arg1&quot;, 42]}</code></pre>
 </li>
 </ul>
 </li>
@@ -1589,9 +1594,16 @@ await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid: &quot;RZVuh3aZN&qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
-<li><code>null</code>
+<li>Synchronous; the return value is internal state — treat it as void
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.mainWindow.closeComponent(&quot;my-view&quot;)
+// (return value is not meaningful)</code></pre>
 </li>
 </ul>
 </li>
@@ -1615,7 +1627,7 @@ await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid: &quot;RZVuh3aZN&qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -1637,7 +1649,7 @@ await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid: &quot;RZVuh3aZN&qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -1663,7 +1675,7 @@ await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid: &quot;RZVuh3aZN&qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -1685,7 +1697,7 @@ await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid: &quot;RZVuh3aZN&qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -1707,7 +1719,7 @@ await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid: &quot;RZVuh3aZN&qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Array of window objects with keys:
 <ul>
@@ -1768,7 +1780,7 @@ await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid: &quot;RZVuh3aZN&qu
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -1812,7 +1824,7 @@ window.roamAlphaAPI.ui.rightSidebar
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -1842,9 +1854,17 @@ window.roamAlphaAPI.ui.rightSidebar
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.rightSidebar
+  .expandWindow({window: {type: &quot;outline&quot;, &quot;block-uid&quot;: &quot;cArVJL_vg&quot;}})
+// resolves to null</code></pre>
 </li>
 </ul>
 </li>
@@ -1864,9 +1884,17 @@ window.roamAlphaAPI.ui.rightSidebar
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.rightSidebar
+  .collapseWindow({window: {type: &quot;outline&quot;, &quot;block-uid&quot;: &quot;cArVJL_vg&quot;}})
+// resolves to null</code></pre>
 </li>
 </ul>
 </li>
@@ -1888,9 +1916,23 @@ window.roamAlphaAPI.ui.rightSidebar
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.rightSidebar
+  .pinWindow({window: {type: &quot;block&quot;, &quot;block-uid&quot;: &quot;1fP8LY5ED&quot;}})
+
+// pin to the top of the sidebar
+window.roamAlphaAPI.ui.rightSidebar
+  .pinWindow({window: {type: &quot;block&quot;, &quot;block-uid&quot;: &quot;1fP8LY5ED&quot;},
+              &quot;pin-to-top?&quot;: true})
+
+// each resolves to null</code></pre>
 </li>
 </ul>
 </li>
@@ -1910,9 +1952,17 @@ window.roamAlphaAPI.ui.rightSidebar
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.rightSidebar
+  .unpinWindow({window: {type: &quot;block&quot;, &quot;block-uid&quot;: &quot;1fP8LY5ED&quot;}})
+// resolves to null</code></pre>
 </li>
 </ul>
 </li>
@@ -1936,9 +1986,17 @@ window.roamAlphaAPI.ui.rightSidebar
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.rightSidebar
+  .setWindowOrder({window: {type: &quot;block&quot;, &quot;block-uid&quot;: &quot;1fP8LY5ED&quot;, order: 0}})
+// resolves to null</code></pre>
 </li>
 </ul>
 </li>
@@ -1970,9 +2028,17 @@ window.roamAlphaAPI.ui.rightSidebar
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.filters
+  .addGlobalFilter({title: &quot;TODO&quot;, type: &quot;removes&quot;})
+// resolves to null</code></pre>
 </li>
 </ul>
 </li>
@@ -1994,9 +2060,17 @@ window.roamAlphaAPI.ui.rightSidebar
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.filters
+  .removeGlobalFilter({title: &quot;TODO&quot;, type: &quot;removes&quot;})
+// resolves to null</code></pre>
 </li>
 </ul>
 </li>
@@ -2016,9 +2090,16 @@ window.roamAlphaAPI.ui.rightSidebar
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li><code>{&quot;includes&quot;: [...], &quot;removes&quot;: [...]}</code> — lists of page titles
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.filters.getGlobalFilters()
+// =&gt; {&quot;includes&quot;: [], &quot;removes&quot;: [&quot;TODO&quot;]}</code></pre>
 </li>
 </ul>
 </li>
@@ -2044,7 +2125,7 @@ window.roamAlphaAPI.ui.rightSidebar
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li><code>{&quot;includes&quot;: [...], &quot;removes&quot;: [...]}</code> — lists of page titles
 </li>
@@ -2081,7 +2162,7 @@ window.roamAlphaAPI.ui.rightSidebar
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -2117,9 +2198,16 @@ window.roamAlphaAPI.ui.filters.setPageFilters(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li><code>{&quot;includes&quot;: [...], &quot;removes&quot;: [...]}</code> — lists of page titles
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.filters.getPageLinkedRefsFilters({page: {title: &quot;test&quot;}})
+// =&gt; {&quot;includes&quot;: [&quot;Author&quot;], &quot;removes&quot;: []}</code></pre>
 </li>
 </ul>
 </li>
@@ -2141,7 +2229,7 @@ window.roamAlphaAPI.ui.filters.setPageFilters(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -2172,7 +2260,7 @@ window.roamAlphaAPI.ui.filters.setPageFilters(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li><code>{&quot;includes&quot;: [...], &quot;removes&quot;: [...]}</code> — lists of page titles
 </li>
@@ -2204,7 +2292,7 @@ window.roamAlphaAPI.ui.filters.setPageFilters(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -2321,7 +2409,7 @@ window.roamAlphaAPI.ui.filters.setPageFilters(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -2360,7 +2448,7 @@ window.roamAlphaAPI.ui.commandPalette.addCommand(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -2405,7 +2493,7 @@ window.roamAlphaAPI.ui.commandPalette.addCommand(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li><code>null</code>
 </li>
@@ -2437,9 +2525,16 @@ window.roamAlphaAPI.ui.commandPalette.addCommand(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li><code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.slashCommand.removeCommand({label: &quot;Quick Test&quot;})
+// =&gt; null</code></pre>
 </li>
 </ul>
 </li>
@@ -2480,7 +2575,7 @@ window.roamAlphaAPI.ui.commandPalette.addCommand(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -2512,9 +2607,16 @@ window.roamAlphaAPI.ui.commandPalette.addCommand(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>roamAlphaAPI.ui.blockContextMenu.removeCommand({label: &quot;Debug: Console Log&quot;})
+// resolves to null</code></pre>
 </li>
 </ul>
 </li>
@@ -2580,6 +2682,14 @@ window.roamAlphaAPI.ui.commandPalette.addCommand(
 </li>
 </ul>
 </li>
+<li>Example::
+<ul>
+<li><pre><code>roamAlphaAPI.ui.pageRefContextMenu.addCommand(
+  {label: &quot;Debug: Console Log&quot;, callback: (e) =&gt; console.log(e)})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><code>roamAlphaAPI.ui.blockRefContextMenu</code>
@@ -2599,6 +2709,14 @@ window.roamAlphaAPI.ui.commandPalette.addCommand(
 </li>
 </ul>
 </li>
+<li>Example::
+<ul>
+<li><pre><code>roamAlphaAPI.ui.blockRefContextMenu.addCommand(
+  {label: &quot;Debug: Console Log&quot;, callback: (e) =&gt; console.log(e)})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><code>roamAlphaAPI.ui.pageLinkContextMenu</code>
@@ -2613,6 +2731,14 @@ window.roamAlphaAPI.ui.commandPalette.addCommand(
  &quot;page-title&quot;: &quot;title&quot;}</code></pre>
 </li>
 </ul>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>roamAlphaAPI.ui.pageLinkContextMenu.addCommand(
+  {label: &quot;Debug: Console Log&quot;, callback: (e) =&gt; console.log(e)})
+// =&gt; null</code></pre>
 </li>
 </ul>
 </li>
@@ -2655,7 +2781,7 @@ window.roamAlphaAPI.ui.msContextMenu.removeCommand({label: &quot;test&quot;})
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Array of <code>{&quot;block-uid&quot;, &quot;window-id&quot;}</code> objects; empty array if nothing is selected
 </li>
@@ -2689,7 +2815,7 @@ window.roamAlphaAPI.ui.msContextMenu.removeCommand({label: &quot;test&quot;})
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Array of block uids
 </li>
@@ -2748,9 +2874,19 @@ window.roamAlphaAPI.ui.msContextMenu.removeCommand({label: &quot;test&quot;})
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
-<li>Promise resolving to <code>null</code>
+<li><code>null</code> (synchronous)
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>roamAlphaAPI.ui.graphView.addCallback({
+  label: &quot;my-extension: graph loaded&quot;,
+  type: &quot;page&quot;,
+  callback: ({cytoscape, elements, type}) =&gt; console.log(type, elements)})
+// =&gt; null</code></pre>
 </li>
 </ul>
 </li>
@@ -2770,9 +2906,16 @@ window.roamAlphaAPI.ui.msContextMenu.removeCommand({label: &quot;test&quot;})
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
-<li>Promise resolving to <code>null</code>
+<li><code>null</code> (synchronous)
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>roamAlphaAPI.ui.graphView.removeCallback({label: &quot;my-extension: graph loaded&quot;})
+// =&gt; null</code></pre>
 </li>
 </ul>
 </li>
@@ -2808,7 +2951,7 @@ window.roamAlphaAPI.ui.msContextMenu.removeCommand({label: &quot;test&quot;})
 </li>
 <li><code>roamAlphaAPI.ui.graphView.wholeGraph.getExplorePages</code>
 <ul>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Array of the page titles currently explored
 </li>
@@ -2901,7 +3044,7 @@ roamAlphaAPI.ui.graphView.wholeGraph.setMode(&quot;Explore&quot;);</code></pre>
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -2943,9 +3086,22 @@ window.roamAlphaAPI.ui.components.renderBlock(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>const newNode = document.createElement(&quot;div&quot;);
+document.body.appendChild(newNode);
+
+window.roamAlphaAPI.ui.components.renderPage(
+  {uid: &quot;mK9pQ2rTw&quot;,
+   el: newNode,
+   &quot;hide-mentions?&quot;: true})
+// resolves to null once mounted</code></pre>
 </li>
 </ul>
 </li>
@@ -2975,7 +3131,7 @@ window.roamAlphaAPI.ui.components.renderBlock(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -3016,7 +3172,7 @@ window.roamAlphaAPI.ui.components.renderSearch(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
 </li>
@@ -3047,9 +3203,16 @@ window.roamAlphaAPI.ui.components.renderSearch(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.components.unmountNode({el: newNode})
+// resolves to null</code></pre>
 </li>
 </ul>
 </li>
@@ -3202,7 +3365,7 @@ window.roamAlphaAPI.ui.components.renderSearch(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li><code>null</code>
 </li>
@@ -3243,7 +3406,7 @@ window.roamAlphaAPI.ui.components.renderSearch(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li><code>null</code>
 </li>
@@ -3278,7 +3441,7 @@ window.roamAlphaAPI.ui.components.renderSearch(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>string
 </li>
@@ -3307,9 +3470,19 @@ window.roamAlphaAPI.ui.components.renderSearch(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>, or <code>null</code> for anything that isn't a daily note title
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>roamAlphaAPI.util.pageTitleToDate(&quot;June 16th, 2022&quot;)
+// =&gt; Date Thu Jun 16 2022 00:00:00
+
+roamAlphaAPI.util.pageTitleToDate(&quot;not a daily note title&quot;)
+// =&gt; null</code></pre>
 </li>
 </ul>
 </li>
@@ -3329,9 +3502,16 @@ window.roamAlphaAPI.ui.components.renderSearch(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>string
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>roamAlphaAPI.util.dateToPageTitle(new Date(2022, 5, 16))
+// =&gt; &quot;June 16th, 2022&quot;</code></pre>
 </li>
 </ul>
 </li>
@@ -3351,9 +3531,16 @@ window.roamAlphaAPI.ui.components.renderSearch(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>string
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>roamAlphaAPI.util.dateToPageUid(new Date(2022, 5, 16))
+// =&gt; &quot;06-16-2022&quot;</code></pre>
 </li>
 </ul>
 </li>
@@ -3385,16 +3572,19 @@ window.roamAlphaAPI.ui.components.renderSearch(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
-<li>Promise resolving to a firebase download url (string)
+<li>Promise resolving to a Roam block string embedding the file — <code>![](url)</code> for images, <code>{{[[pdf]]: url}}</code> / <code>{{[[audio]]: url}}</code> / <code>{{[[video]]: url}}</code> for those media types — or the bare download url (string) for other file types
 </li>
 </ul>
 </li>
 <li>Example::
 <ul>
-<li><pre><code>await roamAlphaAPI.file.upload({file: new File([&quot;&quot;], &quot;test&quot;), toast: {hide: true}})
-// =&gt; &quot;https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fmy-graph%2FaB3xK9mP2.png?alt=media&amp;token=...&quot;</code></pre>
+<li><pre><code>await roamAlphaAPI.file.upload({file: myImageFile, toast: {hide: true}})
+// =&gt; &quot;![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fmy-graph%2FaB3xK9mP2.png?alt=media&amp;token=...)&quot;
+
+await roamAlphaAPI.file.upload({file: new File([&quot;&quot;], &quot;notes.txt&quot;)})
+// =&gt; &quot;https://firebasestorage.googleapis.com/...&quot; (bare url — not a recognized media type)</code></pre>
 </li>
 </ul>
 </li>
@@ -3412,11 +3602,13 @@ window.roamAlphaAPI.ui.components.renderSearch(
 <ul>
 <li><code>url</code> (string, required) — a firebase storage url, obtained from <code>file.upload</code> or from a block
 </li>
+<li><code>format</code> (string, optional) — pass &quot;base64&quot; to resolve with <code>{base64, filename, mimetype}</code> instead of a File object
+</li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
-<li>Promise resolving to a <a href="https://developer.mozilla.org/en-US/docs/Web/API/File">File object</a>
+<li>Promise resolving to a <a href="https://developer.mozilla.org/en-US/docs/Web/API/File">File object</a> — or, with <code>format: &quot;base64&quot;</code>, to <code>{base64, filename, mimetype}</code>
 </li>
 </ul>
 </li>
@@ -3443,9 +3635,16 @@ window.roamAlphaAPI.ui.components.renderSearch(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Promise resolving to <code>undefined</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.file.delete({url: &quot;https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/...&quot;})
+// =&gt; undefined</code></pre>
 </li>
 </ul>
 </li>
@@ -3469,7 +3668,7 @@ window.roamAlphaAPI.ui.components.renderSearch(
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>string, or <code>null</code> when not signed in
 </li>
@@ -3502,7 +3701,7 @@ roamAlphaAPI.data.pull(&quot;[*]&quot;, [&quot;:user/uid&quot;, window.roamAlpha
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>boolean
 </li>
@@ -3554,7 +3753,7 @@ roamAlphaAPI.data.pull(&quot;[*]&quot;, [&quot;:user/uid&quot;, window.roamAlpha
 </li>
 </ul>
 </li>
-<li>Returns::
+<li>Return::
 <ul>
 <li>Object of <code>{ext-id: ext-map}</code>; <code>version</code> is &quot;DEV&quot; for developer-loaded extensions
 </li>
@@ -3562,8 +3761,38 @@ roamAlphaAPI.data.pull(&quot;[*]&quot;, [&quot;:user/uid&quot;, window.roamAlpha
   {id: &quot;ccc+ccc-roam-pdf-2&quot;,
    name: &quot;Roam PDF Highlighter 2&quot;,
    enabled: false,
+   adminEnabled: true,
    version: &quot;1&quot;},
  ...}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.depot.reloadDeveloperExtensions</code>
+<ul>
+<li>Description::
+<ul>
+<li>Reload all developer-mode extensions — the same operation as the &quot;Reload developer extensions&quot; command (<code>ctrl-d ctrl-r</code>).
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to a summary of the reloaded developer extensions
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.depot.reloadDeveloperExtensions()
+// =&gt; {reloaded: [{id: &quot;dev-extension-id&quot;, name: &quot;My Dev Extension&quot;}]}</code></pre>
 </li>
 </ul>
 </li>

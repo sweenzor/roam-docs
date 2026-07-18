@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Table — Roam Research Docs</title>
-<meta name="description" content=".--">
+<meta name="description" content="Tables display blocks as a grid you can edit in place: click into cells, sort columns, resize, and paste to and from spreadsheets.">
 <link rel="canonical" href="https://roamdocs.fyi/help/table">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Roam Research Docs">
 <meta property="og:title" content="Table — Roam Research Docs">
-<meta property="og:description" content=".--">
+<meta property="og:description" content="Tables display blocks as a grid you can edit in place: click into cells, sort columns, resize, and paste to and from spreadsheets.">
 <meta property="og:url" content="https://roamdocs.fyi/help/table">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/favicon.ico">
@@ -39,34 +39,101 @@
 <h1>Table</h1>
 <p class="meta"><a href="table.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/ZOxNKU481">view in Roam Research</a></p>
 <ul>
-<li>.--
+<li>Tables display blocks as a grid you can edit in place: click into cells, sort columns, resize, and paste to and from spreadsheets.
+</li>
+<li>Every cell is a real Roam block, so cells can contain page links, block references, and formatting. They show up in search and linked references like any other block.
+</li>
+<li>This one is live: click into a cell, or try sorting the <strong>Price</strong> column from its pill. (Reading this on the help graph? Your edits here aren't saved, so play freely.)
+</li>
+<li>{{table}}
+<ul>
+<li>Item
+<ul>
+<li>Price
+<ul>
+<li>Last ordered
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Coffee
+<ul>
+<li>$4.50
+<ul>
+<li>March 3rd, 2026
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tea
+<ul>
+<li>$3.25
+<ul>
+<li>June 12th, 2026
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Croissant
+<ul>
+<li>$2.75
+<ul>
+<li>January 8th, 2026
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Creating a table</h3>
+<ul>
+<li>Type <code>/table</code> in a block, or write <code>{{[[table]]}}</code> yourself.
+</li>
+<li>A brand-new table asks for its size first. Pick rows and columns, hit <strong>Create table</strong>, and you get a grid ready to fill in:
 </li>
 <li>{{table}}
 </li>
-</ul>
-<h3>Articles::</h3>
-<ul>
-<li><a href="https://web.archive.org/web/20201109133038/https://www.roamtips.com/home/create-tables-roam-research">How to build a table in Roam Research</a> - Roam Tips and Hacks 
+<li>Click any empty cell and start typing. Roam creates the blocks for you as the table grows.
+</li>
+<li>Under the hood, the grid is built from the blocks nested beneath the table block: each direct child starts a row, and each level of nesting is the next column. Existing nested-list tables render just as they always have.
 </li>
 </ul>
-<h3>Community Videos::</h3>
-<h4>How to Set Goals Using Tables in Roam Research by Shu Omi</h4>
+<h3>Editing cells</h3>
 <ul>
-<li>{{video: https://www.youtube.com/watch?v=CPk5RSnlpDA}}
+<li>Click a cell to edit it. A cell edits like a normal block, including <code>[[links]]</code> and <code>((block refs))</code>.
+</li>
+<li>Drag across cells, or hold <code>Shift</code> with the arrow keys, to select a range.
+</li>
+<li>With a selection: arrow keys move, <code>Enter</code> or just typing edits the focused cell, <code>Tab</code> / <code>Shift-Tab</code> step through cells, and <code>Backspace</code> clears contents.
+</li>
+<li>Copy or cut a selection (<code>Cmd-c</code> / <code>Cmd-x</code>) and paste it into a spreadsheet. Pasting a grid of spreadsheet cells into a table fills it in, creating cells as needed.
 </li>
 </ul>
-<h4>Roam Research: Tables by Les Kristofs</h4>
+<h3>Rows and columns</h3>
 <ul>
-<li>{{video: https://www.youtube.com/watch?v=nZHlz6RUleE}}
+<li>Hover over a column and click its pill to open the column menu: <strong>Header column</strong>, <strong>Sort</strong>, <strong>Insert left / right</strong>, <strong>Clear contents</strong>, and <strong>Delete</strong>.
+</li>
+<li>Rows have the same pill menu: <strong>Header row</strong>, <strong>Insert above / below</strong>, <strong>Clear contents</strong>, and <strong>Delete</strong>.
+</li>
+<li>Drag a column's edge to resize it, and drag a row or column by its pill to move it.
 </li>
 </ul>
-<h3>Roam Team Videos::</h3>
-<h4>Tables with Complex Cells (no audio) by Conor White-Sullivan</h4>
+<h3>Sorting</h3>
 <ul>
-<li>{{video: https://www.youtube.com/watch?v=J_hH5vH2DTo}}<br>
-#<a href="/help/table">Table</a>
+<li>Sort a column ascending or descending from its column menu.
 </li>
-<li>.--
+<li>Sorting understands numbers (including <code>$</code>, <code>%</code>, and thousands separators), dates, and plain text.
+</li>
+<li>The header row stays put; the rest of the rows are reordered.
+</li>
+<li>Sorting reorders the actual blocks, so the new order is what everyone sees. It's not a per-person view.
+</li>
+<li>If edits later knock the table out of order, the column offers <strong>Re-sort</strong>; <strong>Remove sort</strong> stops tracking it.
 </li>
 </ul>
 </body>

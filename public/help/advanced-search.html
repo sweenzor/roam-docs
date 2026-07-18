@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Search — Roam Research Docs</title>
+<meta name="description" content="Advanced Search is Roam's full search view: a bigger version of the search bar, with a results list, a preview pane, and filters (if Better ">
+<link rel="canonical" href="https://roamdocs.fyi/help/advanced-search">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Advanced Search — Roam Research Docs">
+<meta property="og:description" content="Advanced Search is Roam's full search view: a bigger version of the search bar, with a results list, a preview pane, and filters (if Better ">
+<meta property="og:url" content="https://roamdocs.fyi/help/advanced-search">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"Advanced Search","item":"https://roamdocs.fyi/help/advanced-search"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Advanced Search</h1>
+<p class="meta"><a href="advanced-search.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/KynqP-rxw">view in Roam Research</a></p>
+<ul>
+<li>Advanced Search is Roam's full search view: a bigger version of the search bar, with a results list, a preview pane, and filters (if <a href="/help/better-search-experimental">Better search (Experimental)</a> is turned on).
+</li>
+<li>Use it when the quick dropdown isn't enough: skimming lots of results, previewing before you jump, or narrowing a search down.
+</li>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FrMGnfn1xGF.png?alt=media&amp;token=220739ea-785a-4d2e-8413-8fd13551a12d" alt="" loading="lazy">
+</li>
+</ul>
+<h3>How to open it</h3>
+<ul>
+<li>Click into the search bar (or press <code>Cmd-u</code> / <code>Ctrl-u</code>), then click the <strong>Open advanced search</strong> button at the right edge of the input.
+</li>
+<li>Anything you've already typed carries over.
+</li>
+<li>Or open the <a href="/help/command-palette">Command Palette</a> (<code>Cmd-p</code> / <code>Ctrl-p</code>) and search for <strong>Open advanced search</strong>.
+</li>
+<li>You can also set your own hotkey for it in <strong>Settings → Hotkeys</strong>.
+</li>
+</ul>
+<h3>Working with results</h3>
+<ul>
+<li>With an empty search box, you'll see your recent items.
+</li>
+<li>Results show reference counts and the path to each block, with your search terms highlighted.
+</li>
+<li><code>Enter</code> or click opens a result; <code>Shift-Enter</code> or shift-click opens it in the right sidebar.
+</li>
+<li>Toggle the <strong>preview pane</strong> with <code>Ctrl-o</code> or the Preview button in the footer. It shows the selected result without leaving your search.
+</li>
+<li>If nothing matches the exact title you typed, the top row offers <strong>New page:</strong> to create it.
+</li>
+</ul>
+<h3>Filters (with <a href="/help/better-search-experimental">Better search (Experimental)</a> enabled)</h3>
+<ul>
+<li>Click <strong>+ Filter</strong> to narrow a search:
+<ul>
+<li><strong>Daily notes</strong>: only daily notes, or exclude them.
+</li>
+<li><strong>Search in</strong>: page titles only, or blocks only.
+</li>
+<li><strong>Date</strong>: edited today, in the last 7 or 30 days, or in a custom date range.
+</li>
+</ul>
+</li>
+<li>Filters apply to keyword searches when <a href="/help/better-search-experimental">Better search (Experimental)</a> is on, and always apply in semantic mode.
+</li>
+<li><strong>Semantic</strong>: when <a href="/help/semantic-search-experimental">Semantic search (Experimental)</a> is enabled for your graph, the Semantic chip switches to meaning-based search. Toggle it with <code>Cmd-s</code> / <code>Ctrl-s</code>.
+</li>
+</ul>
+<h3>Keep a search open in the sidebar</h3>
+<ul>
+<li>Press <code>Alt-Enter</code> (or shift-click the <strong>Open advanced search</strong> button in the search bar) to open your search as a window in the right sidebar.
+</li>
+<li>The sidebar search stays put while you work, and your filters and semantic mode carry over with it.
+</li>
+</ul>
+</body>
+</html>

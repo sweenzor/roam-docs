@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File Manager — Roam Research Docs</title>
+<meta name="description" content="Every image, audio file, PDF, and other file you upload is stored with your graph. The File Manager shows them all in one place.">
+<link rel="canonical" href="https://roamdocs.fyi/help/file-manager">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="File Manager — Roam Research Docs">
+<meta property="og:description" content="Every image, audio file, PDF, and other file you upload is stored with your graph. The File Manager shows them all in one place.">
+<meta property="og:url" content="https://roamdocs.fyi/help/file-manager">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"File Manager","item":"https://roamdocs.fyi/help/file-manager"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>File Manager</h1>
+<p class="meta"><a href="file-manager.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/cjMloyF5c">view in Roam Research</a></p>
+<ul>
+<li>Every image, audio file, PDF, and other file you upload is stored with your graph. The File Manager shows them all in one place.
+</li>
+<li>Open it from <strong>Settings → Attachments</strong>, or run <strong>File manager</strong> from the <a href="/help/command-palette">Command Palette</a>.
+</li>
+<li>See <a href="/help/upload-files">Upload Files</a> for how files get into your graph in the first place.
+</li>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FEF_GYhClkb.png?alt=media&amp;token=7c4b29dd-0be5-4350-8fde-0c165c521d59" alt="" loading="lazy">
+</li>
+</ul>
+<h3>What you can do</h3>
+<ul>
+<li>Browse every upload in a grid, newest first.
+</li>
+<li>Download a file. This works in encrypted graphs too.
+</li>
+<li>Delete a file permanently. Before you confirm, Roam shows you <strong>where the file is used</strong>: every block and PDF page that references it, or that it appears nowhere in your graph.
+</li>
+</ul>
+<h3>Moving attachments between graphs</h3>
+<ul>
+<li><strong>Export attachments</strong> saves your graph's files to a folder, along with a manifest file.
+</li>
+<li><strong>Import attachments</strong> loads them into another graph from that folder, so when you restore a graph from a backup, its files can come along.
+</li>
+<li>Both live in <strong>Settings → Data &amp; Backups</strong>, and as <a href="/help/command-palette">Command Palette</a> commands.
+</li>
+<li>Exporting to the same folder again skips files that are already there, so you won't get duplicates.
+</li>
+<li>Importing and exporting need the desktop app, Chrome, or Edge (they use folder access other browsers don't support).
+</li>
+</ul>
+<h3>Good to know</h3>
+<ul>
+<li>Deleting a block doesn't delete the file that was uploaded in it. The upload stays in your graph's storage.
+<ul>
+<li>There's no way to search for those leftover files yet. But when you delete a file, the reference check tells you whether anything still shows it before you confirm.
+</li>
+</ul>
+</li>
+<li>Deleting is permanent. Any block that still embedded the file will no longer be able to show it.
+</li>
+</ul>
+</body>
+</html>

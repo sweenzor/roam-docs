@@ -636,6 +636,12 @@
      "jsLength": 0,
      "cljsArities": [],
      "variadic": false
+    },
+    "reloadDeveloperExtensions": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
     }
    }
   },

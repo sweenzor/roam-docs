@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zen Mode — Roam Research Docs</title>
+<meta name="description" content="Zen Mode (or Focus Mode) strips the interface down to just what you're writing. One command hides everything else, and toggling it again put">
+<link rel="canonical" href="https://roamdocs.fyi/help/zen-mode">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Zen Mode — Roam Research Docs">
+<meta property="og:description" content="Zen Mode (or Focus Mode) strips the interface down to just what you're writing. One command hides everything else, and toggling it again put">
+<meta property="og:url" content="https://roamdocs.fyi/help/zen-mode">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"Zen Mode","item":"https://roamdocs.fyi/help/zen-mode"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Zen Mode</h1>
+<p class="meta"><a href="zen-mode.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/CarpUZGOf">view in Roam Research</a></p>
+<ul>
+<li>Zen Mode (or Focus Mode) strips the interface down to just what you're writing. One command hides everything else, and toggling it again puts it all back the way it was.
+</li>
+<li>Toggle it with <code>Cmd-k</code> then <code>z</code> (PC: <code>Ctrl-k</code> then <code>z</code>), or run <strong>Toggle Zen Mode</strong> from the <a href="/help/command-palette">Command Palette</a>.
+</li>
+<li>While you're in Zen Mode, that command stays pinned to the top of the palette, so the way out is always one <code>Cmd-p</code> away.
+</li>
+</ul>
+<h4><a href="/help/zen-mode">Zen Mode</a></h4>
+<ul>
+<li><strong>Zen Mode (or Focus mode)</strong> allows you to focus on just the current page or block by hiding all unnecessary UI elements
+<ul>
+<li>What happens when you trigger Zen Mode?
+<ul>
+<li>hides the left and right sidebars
+</li>
+<li>hides the topbar ( a minimal topbar is visible on hover )
+<ul>
+<li>a minimal topbar is visible on hover
+<ul>
+<li>only has
+<ul>
+<li>sync dot
+</li>
+<li>help button
+</li>
+<li>navigation arrow buttons (in desktop app)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>hides the search bar (you need to use the hotkey to trigger when in this mode)
+</li>
+<li>and, in Desktop App, switches to full screen (removing menu bar too)
+</li>
+</ul>
+</li>
+<li>When you get out of Zen Mode, it brings everything back to how it was before
+</li>
+</ul>
+</li>
+<li><strong>Demo</strong>
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F-gPHx_5hvn.gif?alt=media&amp;token=15319200-d502-43c8-b7b2-1b14486eb5f5" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li><strong>How to use?</strong>
+<ul>
+<li>You can trigger Zen Mode by opening the command palette (<code>cmd-p</code> or <code>ctrl-p</code>) and then triggering the command <strong>&quot;Toggle Zen Mode&quot;</strong>
+<ul>
+<li>To quit Zen mode, you just trigger that command again
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Some useful shortcuts for navigating when in Zen Mode:</strong>
+<ul>
+<li>Search: <code>cmd-u</code> or <code>ctrl-u</code>
+</li>
+<li>Go to daily notes: <code>ctrl-shift-d</code> or <code>alt-d</code>
+</li>
+</ul>
+</li>
+<li><strong>Huge thanks</strong> to Mark Lavercombe for his extension <a href="https://github.com/mlava/focus-mode">Focus Mode</a> which was a major source of inspiration for this feature
+<ul>
+<li>We liked it so much that we decided to make it native 😁
+</li>
+<li>If you want more customizability than the native feature provides (like say, you want to not hide right sidebar, or keep search intact), do play around with his extension!
+</li>
+</ul>
+</li>
+</ul>
+</body>
+</html>

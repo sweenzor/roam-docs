@@ -16,6 +16,5 @@
 - [[Korean]]
 - [[Russian]]
 - [[Spanish]]
-- [[German]]
 - [[Japanese]]
 - [[Turkish]]

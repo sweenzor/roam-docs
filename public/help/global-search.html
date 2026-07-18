@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global search — Roam Research Docs</title>
+<meta name="description" content="Global search finds pages and blocks across all of your graphs at once, not just the one you have open.">
+<link rel="canonical" href="https://roamdocs.fyi/help/global-search">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Global search — Roam Research Docs">
+<meta property="og:description" content="Global search finds pages and blocks across all of your graphs at once, not just the one you have open.">
+<meta property="og:url" content="https://roamdocs.fyi/help/global-search">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"Global search","item":"https://roamdocs.fyi/help/global-search"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Global search</h1>
+<p class="meta"><a href="global-search.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/sP6PZIgfW">view in Roam Research</a></p>
+<ul>
+<li>Global search finds pages and blocks across <strong>all of your graphs</strong> at once, not just the one you have open.
+</li>
+<li>It covers your hosted graphs, plus the graph you're currently in, even if that one is a local graph.
+</li>
+</ul>
+<h3>How to use it</h3>
+<ul>
+<li>Press <code>Cmd-Shift-u</code> / <code>Ctrl-Shift-u</code> anywhere, or run <strong>Global search</strong> from the <a href="/help/command-palette">Command Palette</a>.
+</li>
+<li>If you have text selected when you press the hotkey, that text becomes your search.
+</li>
+<li>Start typing to search every graph at once, or pick one graph to search just that one.
+</li>
+<li>Use the arrow keys to move through results. The selected result shows a detail panel with its path, children, backlinks, and edit history.
+</li>
+<li><code>Esc</code> steps back from a single graph's results to all graphs, and closes the search from there.
+</li>
+<li>Open a result and Roam takes you straight to it in its graph.
+</li>
+</ul>
+<h3>Good to know</h3>
+<ul>
+<li>Each graph returns its top 100 matches. To go deeper, use <strong>Open search results in graph</strong>, which continues the same search inside that graph.
+</li>
+<li><a href="/help/encrypted-graphs">Encrypted Graphs</a> are the exception: Roam's servers can't read them, so an encrypted graph is only searched while it's the graph you have open.
+</li>
+<li>A local graph lives only on the device where you created it, so it's likewise only searched while it's the one open.
+</li>
+<li>Searching your other graphs needs an internet connection; the graph you're in is searched right on your device.
+</li>
+</ul>
+</body>
+</html>

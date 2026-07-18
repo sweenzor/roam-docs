@@ -220,7 +220,7 @@
         - Oura: Open Oura page opens the canonical store page.
         - Slash commands: `/oura today`, `/oura yesterday`, `/oura sleep`, and `/oura callout`.
 - [[June 1st, 2026]]
-  - [[Bug Fixes]] #PDF
+  - [[Bug Fixes]] #pdf
     - Fixed merging PDF pages into other non PDF pages
     - Fixed displaying annotations on rotated PDFs
     - Fixed double clicking to select a word, or triple clicking to select an entire line for most PDFs, although some may still have trouble
@@ -1394,7 +1394,7 @@
     - Fixed an issue where changing the padding of `.rm-block-text` css class caused the arrow keys to stop working
 - [[December 15th, 2025]]
   - [[Bug Fixes]]
-    - Fixed broken references to [[PDF]] and [[Video]] uploads as well as some broken references created from the mobile app
+    - Fixed broken references to [[pdf]] and [[Video]] uploads as well as some broken references created from the mobile app
       - This requires a graph upgrade, which might take some time to run as we scan the graph for broken references
     - Fixed Korean typed `가[` inserting `가[가[]` (duplicating the character)
     - Fixed Safari breaking Chinese composition sometimes resulting in the wrong characters to be inserted
@@ -1897,7 +1897,7 @@
     - Fixed [[Mac]] performance issues with macos 26 (liquid glass)
 - [[November 11th, 2025]]
   - [[Bug Fixes]]
-    - [[PDF]]
+    - [[pdf]]
       - Fixed encrypted graphs not working full screen
       - Fixed encrypted graphs area highlight failing to upload image
       - Fixed clicking highlights inside of diagrams to open the PDF
@@ -2008,10 +2008,10 @@
     - import / export hotkeys
 - [[October 1st, 2025]]
   - [[Bug Fixes]]
-    - Fix displaying [[dropbox]] files in the new [[PDF]] viewer and annotator
+    - Fix displaying [[dropbox]] files in the new [[pdf]] viewer and annotator
 - [[September 30th, 2025]]
   - **[[New Features]]  🚀**
-    - [[PDF]] viewer and annotator
+    - [[pdf]] viewer and annotator
       - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FfXRflkCrp8.png?alt=media&token=4e376ecd-39e6-4af5-a06d-ed8b59905876)
       - Click and drag to select and highlight text or hold `alt` and click and drag to select an area
 - [[September 16th, 2025]]
@@ -3074,7 +3074,7 @@
     - More details in the [[Zapier Integration]] page
 - [[September 11th, 2024]]
   - [[Mobile Native View]]
-    - Fixed copy and paste issues caused by the last release on [[android]]
+    - Fixed copy and paste issues caused by the last release on [[Android]]
 - [[September 9th, 2024]]
   - Small [[Quality of Life Improvements]]
     - Better [[File Manager]]
@@ -3100,7 +3100,7 @@
     - Fixed calendar not matching the theme
 - [[August 30th, 2024]]
   - [[Mobile Native View]]
-    - Fix issue with last release on samsung [[android]] 14 which broke quick capture and the regular view
+    - Fix issue with last release on samsung [[Android]] 14 which broke quick capture and the regular view
 - [[August 29th, 2024]]
   - [[Mobile Native View]]
     - Drag and drop multiple blocks at once, scroll when at the edge of the screen when dragging and many more small fixes to DnD
@@ -3487,9 +3487,9 @@
       - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FQxHeHLMzdd.png?alt=media&token=16d7136d-77e6-4e4b-8359-4a856a153e36)
   - Updated our underlying code editor (codemirror) to the latest and remove the active line highlight
 - [[March 28th, 2024]]
-  - [[mobile]] [[iOS]] and [[android]] [[Bug Fixes]] #[[Mobile Native View]]
-    - Fixed paste not working at all on [[android]] (still needs more work of formatting paste from external source but Roam to Roam paste works now)
-    - Fixed sharing multiple photos / files at once on [[android]]
+  - [[mobile]] [[iOS]] and [[Android]] [[Bug Fixes]] #[[Mobile Native View]]
+    - Fixed paste not working at all on [[Android]] (still needs more work of formatting paste from external source but Roam to Roam paste works now)
+    - Fixed sharing multiple photos / files at once on [[Android]]
     - Fixed issue where history could display empty history items
     - Fixed issue where references page could be missing data
     - Fixed font size changing when phone's accessibility setting font size is changed
@@ -3936,7 +3936,7 @@
           - You can also set a hotkey for it
         - Block views are still experimental and many parts of Roam don't work seamlessly with them yet
 - [[April 13th, 2023]]
-  - **[[Excalidraw]] update**
+  - **[[excalidraw]] update**
     - Excalidraw is a virtual hand-drawn style whiteboard. We've now upgraded to the latest version (v0.14)
     - You can create a drawing via the slash menu: `/excalidraw`
     - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F-JEizrN2ki.png?alt=media&token=4b2242fc-7063-4889-8985-26f906ca50c0)
@@ -4084,7 +4084,7 @@
 - [[February 17th, 2023]]
   - **[[Bug Fixes]] 🛠**
     - Fixed the screen jump that happens when clicking into a block in the [[mobile]] app
-      - Requires:: [[iOS]] 15.5 or greater (or [[android]])
+      - Requires:: [[iOS]] 15.5 or greater (or [[Android]])
       - **Before**
         - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2FXcnjD59K61.MOV?alt=media&token=f2a52be0-21d8-4b59-b797-3985af297e4e}}
       - **After**
@@ -4096,7 +4096,7 @@
         - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2Fu9q9wrvDQ6.MOV?alt=media&token=9e71a37f-9c0b-45c5-af8d-6c2f8dc4452e}}
     - Fixed issues of mobile bar misbehaving
       - for example, in some devices, it would float way up and then slowly float down. In others, it would get obscured. The behavior should be much better now across the board
-      - Requires:: [[iOS]] 15.5 or greater (or [[android]])
+      - Requires:: [[iOS]] 15.5 or greater (or [[Android]])
   - **[[Quality of Life Improvements]] ✨**
     - Filter [[queries]] by the author of blocks with `{by: [[user's display page]]}`
       - You can find a user's display page title by hovering over a block they created
@@ -4147,7 +4147,7 @@
       - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FbibqCXYQLm.gif?alt=media&token=0c4f7e85-8b2c-418a-8017-1b42154ed0d9)
   - **[[Bug Fixes]] 🛠**
     - [[mobile]] [[iOS]] Fix sync issues that would sometimes appear when reinstating app from background
-      - [[android]] version did not have this issue but will be receiving an update as well in the next few days
+      - [[Android]] version did not have this issue but will be receiving an update as well in the next few days
   - **[[New Features]] 🚀**
     - Open search in sidebar (alt-enter or opt-enter)
       - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F5_JZnrFS-l.mp4?alt=media&token=b6bfe09e-14f3-42af-be58-02bb6a2fffbc}}
@@ -4208,7 +4208,7 @@
     - Fix Chinese language showing the incorrect word count in all pages
 - [[January 24th, 2023]]
   - **[[Bug Fixes]] 🛠**
-    - Fix drag and drop on [[android]]
+    - Fix drag and drop on [[Android]]
 
 #### [[2022]]
 
@@ -4472,7 +4472,7 @@
       - Fixed tab, shift-tab, backspace, and arrow keys on ipad with an external keyboard
       - Fixed sign in flash on app restart
       - Fixed saving the last used graph across app restarts
-    - [[android]]
+    - [[Android]]
       - Fixed back gesture
       - Added native Google and Apple sign in
       - Added sign out

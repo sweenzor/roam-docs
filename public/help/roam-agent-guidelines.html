@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>roam/agent guidelines — Roam Research Docs</title>
+<meta name="description" content="Guidelines for AI agents working on this graph, Roam's public help documentation. Real users read every word. Follow these for every read an">
+<link rel="canonical" href="https://roamdocs.fyi/help/roam-agent-guidelines">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="roam/agent guidelines — Roam Research Docs">
+<meta property="og:description" content="Guidelines for AI agents working on this graph, Roam's public help documentation. Real users read every word. Follow these for every read an">
+<meta property="og:url" content="https://roamdocs.fyi/help/roam-agent-guidelines">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"roam/agent guidelines","item":"https://roamdocs.fyi/help/roam-agent-guidelines"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>roam/agent guidelines</h1>
+<p class="meta"><a href="roam-agent-guidelines.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/eDaFOvCTw">view in Roam Research</a></p>
+<ul>
+<li>Guidelines for AI agents working on this graph, Roam's <strong>public help documentation</strong>. Real users read every word. Follow these for every read and write.
+</li>
+</ul>
+<h3>Process</h3>
+<ul>
+<li>Work page by page. A human reviews everything: write, then let them edit and cull.
+</li>
+<li>When rewriting an existing page, append new sections at the bottom and let the human delete the old content. Never delete or reword content you didn't write unless asked.
+</li>
+<li>Re-read a page before editing it; it may have changed since you last saw it.
+</li>
+<li>When replacing old content, every fact the old version conveyed must be either carried forward or deliberately dropped as wrong. Say which.
+</li>
+<li>Verify every claim against the product's source code before writing it. Never document from memory, and never trust the old docs' claims without checking.
+</li>
+<li>If you have access to the relemma codebase: the full audit and fix plan lives at <code>generated-docs/help-graph-audit-2026-07.md</code>. Read it before starting doc work, and check items off there as they land.
+</li>
+</ul>
+<h3>Page structure</h3>
+<ul>
+<li>No &quot;What is it?&quot; section. The intro is 2-3 plain bullets directly under the page title (the title is the question). Then sections like <strong>How to use it</strong> and <strong>Good to know</strong>.
+</li>
+<li>One idea per block. Separate blocks are good.
+</li>
+<li>Steps: a title block with one action per child bullet. Never pack several actions into one block.
+</li>
+<li>Group by topic: don't interleave two topics (e.g. browsing shortcuts vs changing them) in one run of bullets.
+</li>
+<li>One home per fact: don't say the same thing twice in different phrasings.
+</li>
+</ul>
+<h3>Formatting patterns</h3>
+<ul>
+<li>Hotkeys: the command name as a bold parent block, with <code>Mac:</code> and <code>PC:</code> sub-bullets when the keys differ. When the keys are the same on both platforms, one block with the keys inline.
+</li>
+<li>Syntax references (query clauses and similar): the syntax in code as the parent block, the explanation nested underneath.
+</li>
+<li>Tips go in callouts: <code>[[&gt;]] [[!TIP]]</code>.
+</li>
+<li>Keep example syntax inside backticks so <code>[[links]]</code> in examples don't create real pages. If a stray page gets created, delete it.
+</li>
+<li>When an example needs an outline shape, write it as real nested blocks, with each example line's text in a code span.
+</li>
+</ul>
+<h3>Links</h3>
+<ul>
+<li>Link mentions of other help pages, but don't over-link. No links on incidental words (Mac, PC), and avoid linking to empty pages.
+</li>
+<li>Alias links so names read naturally, e.g. <code>[TODO]([[TODO/DONE]])</code> renders as the command name while linking the right page.
+</li>
+<li>Every new page ships with at least one natural inbound link. Nothing orphaned.
+</li>
+<li>Prefer a plain <code>[[Page Title]]</code> link where the page comes up, reshaping the sentence to fit the title (&quot;A <a href="/help/hosted-graph">Hosted Graph</a> is synchronized…&quot;) over appending &quot;see <a href="/help/hosted-graph">Hosted Graph</a>&quot; at the end. Use a markdown alias (<code>[TODO]([[TODO/DONE]])</code>) only when the visible text must differ from the page title, like command names.
+</li>
+</ul>
+<h3>Media</h3>
+<ul>
+<li>Prefer <strong>live components over screenshots</strong>: a real <code>{{[[table]]}}</code> or <code>{{[[query]]}}</code> the reader can poke at beats an image. Tell public readers their edits aren't saved, so they can play freely.
+</li>
+<li>For screenshots and GIFs, leave placeholder blocks for a human to record: <code>📷 **Screenshot:** __what it should show__</code>. Use GIFs sparingly: at most one per page, only for genuinely multi-step interactions.
+</li>
+<li>Reuse images and videos that already exist in this graph (Change Log entries are a good source). Put the file link or video component directly on the page.
+</li>
+</ul>
+<h3>Language &amp; accuracy</h3>
+<ul>
+<li>Plain, simple language. Explain mechanisms so a non-programmer can follow: &quot;nested blocks inherit references&quot;, not implementation jargon.
+</li>
+<li>Skip implementation details that confuse more than they help (e.g. desktop-shell updates vs web-app updates).
+</li>
+<li>No false, unverifiable, or aspirational claims. If the product can't do something, say so plainly.
+</li>
+<li>Page titles match the product's own terminology.
+</li>
+<li>No em-dashes (—). Use commas, colons, parentheses, a new sentence, or a separate block instead.
+</li>
+</ul>
+</body>
+</html>

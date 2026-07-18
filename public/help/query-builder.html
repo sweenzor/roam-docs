@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Query Builder — Roam Research Docs</title>
+<meta name="description" content="The Query Builder is a visual editor for Query blocks: build and refine a query with menus and pickers instead of writing the syntax by hand">
+<link rel="canonical" href="https://roamdocs.fyi/help/query-builder">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Query Builder — Roam Research Docs">
+<meta property="og:description" content="The Query Builder is a visual editor for Query blocks: build and refine a query with menus and pickers instead of writing the syntax by hand">
+<meta property="og:url" content="https://roamdocs.fyi/help/query-builder">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"Query Builder","item":"https://roamdocs.fyi/help/query-builder"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Query Builder</h1>
+<p class="meta"><a href="query-builder.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/9QptO5HQh">view in Roam Research</a></p>
+<ul>
+<li>The Query Builder is a visual editor for <a href="/help/query">Query</a> blocks: build and refine a query with menus and pickers instead of writing the syntax by hand.
+</li>
+<li>It reads and writes the real query syntax in your block, so you can flip between building visually and editing the text whenever you like.
+</li>
+<li>Here's a live one: click the wrench button next to the query's title to open the builder and poke around. (Reading this on the help graph? Your edits aren't saved, so play freely.)
+</li>
+<li>{{query: {and: <a href="/help/block-references">Block References</a> {not: <a href="/help/change-log">Change Log</a>}}}}
+</li>
+</ul>
+<h3>Opening the builder</h3>
+<ul>
+<li>Every query block has a wrench button beside its title. Click it to show or hide the builder.
+</li>
+<li>A brand-new query (type <code>/query</code> in a block) opens with the builder already showing.
+</li>
+<li>The builder sits right above the query's live results, so you can watch the matches change as you edit.
+</li>
+</ul>
+<h3>Building a query</h3>
+<ul>
+<li>A query is a stack of clauses. Click <strong>Add clause</strong> to add one, and click an existing clause's name to switch its type or delete it.
+</li>
+<li>Clause types: <code>[[page]]</code> and <code>((block))</code> references, the combinators <strong>and</strong>, <strong>or</strong>, and <strong>not</strong>, full-text <strong>search</strong>, <strong>between</strong> for date ranges (including relative dates), <strong>daily notes</strong>, and <strong>by</strong> / <strong>created by</strong> / <strong>edited by</strong> to filter by author.
+</li>
+<li>Each clause type brings the right picker with it: page search, block search, free text, user search, or a date picker.
+</li>
+<li>For what these clauses mean and the underlying syntax, see <a href="/help/query">Query</a>.
+</li>
+</ul>
+</body>
+</html>

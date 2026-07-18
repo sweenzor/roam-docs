@@ -1,20 +1,20 @@
 # Roam Alpha API v2
 
-- Draft restructuring of [[Roam Alpha API]], written for both humans and AI. Method content verified against the source (July 2026). Historical change log stays on the original page.
 - **Getting Started**
-  - The Roam Alpha API is provided in the browser, letting you read and write data and drive the UI. It lives on the `window` object as `window.roamAlphaAPI` and is available from [[roam/js]] code blocks, Roam Depot extensions, and the browser console.
+  - The Roam Alpha API is provided in the browser, letting you read and write data and drive the UI. It lives on the `window` object as `window.roamAlphaAPI` and is available from [[roam/js]]/[[roam/cljs]] code blocks, Roam Depot extensions, [[roam/render]], and the browser console.
   - For the ClojureScript version of this API, see the Reference section of [[roam/cljs]].
 - **Conventions**
-  - Most functions take a single object argument. Keys are kebab-case strings, and boolean keys often end in `?` — quote them in JS: `{"parent-uid": "abc", "zoom-path?": true}`. Exceptions: `data.roamQuery` uses camelCase keys, and a few functions take positional arguments (`data.addPullWatch`, `data.page.addShortcut`, `ui.mainWindow.registerComponent`, everything in `util`).
-  - Write functions return a Promise that resolves to `null` once Roam has applied the operation — after the triggering event and all of its descendant events are handled. Chain dependent writes with `await`; no `setTimeout` hacks needed.
+  - Most functions take a single object argument. Keys are kebab-case strings, and boolean keys often end in `?` — quote them in JS: `{"parent-uid": "abc", "zoom-path?": true}`. Exceptions: `data.roamQuery` uses camelCase keys, and some functions take positional arguments (`data.addPullWatch`/`removePullWatch`, `data.page.addShortcut`/`removeShortcut`, the `ui.mainWindow` component functions, `ui.graphView.wholeGraph.*`, and everything in `util` — each such method says so in its own block).
+  - Write functions return a Promise that (usually) resolves to `null` once Roam has applied the operation — after the triggering event and all of its descendant events are handled. Chain dependent writes with `await`; no `setTimeout` hacks needed.
     - The promise resolves before React re-renders, so if you manipulate the DOM right after a write you may still need a very small timeout.
     - Failures reject the promise — use `.catch()`, or `try`/`catch` with `await`.
-  - Read functions are synchronous unless a method's `Returns::` says otherwise (`data.roamQuery`, `ui.mainWindow.getOpenView`, and `ui.mainWindow.getOpenPageOrBlockUid` return promises). Prefer the promise-returning `data.async.*` variants in new code — the synchronous reads will eventually be deprecated.
-  - Rate limit: rate-limited functions (all writes, plus a number of UI functions) share a budget of 1500 calls per 60 seconds; exceeding it throws.
-  - `q`, `pull`, `pull_many` and their variants time out after 20 seconds, throwing `Query and/or pull expression took too long to run.` — `pull` and `pull_many` accept an options argument to override the timeout.
+  - Read functions are synchronous unless a method's `Return::` says otherwise (`data.roamQuery`, `ui.mainWindow.getOpenView`, and `ui.mainWindow.getOpenPageOrBlockUid` return promises). Prefer the promise-returning `data.async.*` variants in new code — the synchronous reads will eventually be deprecated.
+  - Rate limit: rate-limited functions (all writes, plus a number of UI functions) share a budget of 1500 calls per 60 seconds; exceeding it throws. This is to protect your graph from runaway loops. If you are adding a lot of data at once, prefer creating from markdown.
+  - `q`, `pull`, `pull_many` and their variants time out after 20 seconds, throwing `Query and/or pull expression took too long to run.` Override it by passing `{timeout: <ms>}` as `pull`/`pull_many`'s options argument, or by including a `:timeout <ms>` clause in the query for `q`.
   - uids
     - Block and page uids are random 9-character strings — see `util.generateUID`.
     - Daily note pages use the date as their uid, in `MM-DD-YYYY` format (e.g. `07-16-2026` for July 16th, 2026) — see `util.dateToPageUid`.
+    - uids can technically be any length and they don't have to be random, but some extensions might rely on it being 9 chars
   - `roamAlphaAPI.apiVersion` is a string property (e.g. "1.1.3") — use it for feature detection.
   - sidebar `window` argument
     - The shared shape used by the `ui.rightSidebar` window functions and `ui.filters.getSidebarWindowFilters`/`setSidebarWindowFilters`:
@@ -28,10 +28,11 @@
         - Query the graph with Datomic-flavored datalog. Synchronous.
         - See the [datomic docs](https://docs.datomic.com/on-prem/query/query.html) for the query syntax, [learndatalogtoday.org](http://www.learndatalogtoday.org) to learn it, and the [datascript tests](https://github.com/tonsky/datascript/tree/master/test/datascript/test) for good examples.
         - Legacy alias: `roamAlphaAPI.q` (older top-level name; prefer this namespaced path)
+        - Times out after 20 seconds by default; include a `:timeout <ms>` clause in the query to override.
       - Parameters::
         - `query` (string, required) — the datalog query
         - `...args` (optional) — additional inputs, bound to the query's `:in` clauses (the database itself is passed implicitly)
-      - Returns::
+      - Return::
         - Array of result tuples
       - Example::
         - ```javascript
@@ -64,7 +65,7 @@
           - a lookup ref as a string, e.g. `"[:node/title \"hello world\"]"`
           - a lookup ref as a 2-element array, e.g. `[":block/uid", "xyz"]`
         - `opts` (object, optional) — `{timeout: <ms>}` overrides the default 20-second timeout
-      - Returns::
+      - Return::
         - Object of the pulled attributes
       - Example::
         - ```javascript
@@ -92,7 +93,7 @@
         - `pattern` (string, required) — same as `data.pull`'s `pattern`
         - `eids` (array, required) — array of eids, each in any of the forms `data.pull`'s `eid` accepts
         - `opts` (object, optional) — `{timeout: <ms>}` overrides the default 20-second timeout
-      - Returns::
+      - Return::
         - Array of pulled objects
       - Example::
         - ```javascript
@@ -108,7 +109,7 @@
     - `roamAlphaAPI.data.fast.q`
       - Description::
         - Same signature as `data.q`, using an experimental clojurescript→javascript conversion that makes read access roughly 33% faster.
-      - Returns::
+      - Return::
         - A cljs object wrapped in a JS [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy). Treat it as **read only**; it may not print to the console correctly.
         - Key access includes the full namespaced key: `obj[":block/string"]`. If you rename a key in the pull (`[:block/string :as "string"]`), access it as `obj.string`.
         - For the internals and trade-offs, see https://blog.wsscode.com/alternative-to-clj-js/
@@ -125,7 +126,7 @@
         - Same signature as `data.q`, but runs the query on the backend, off the main thread — useful for expensive queries.
         - Falls back to running locally when the graph's backend is unavailable (encrypted graphs, offline graphs).
         - **Warning**: the backend can be a few changes behind the frontend while local changes are still syncing.
-      - Returns::
+      - Return::
         - Promise resolving to the query results
       - Example::
         - ```javascript
@@ -155,13 +156,13 @@
         - Search pages and blocks by text — the same algorithm as the "Find or Create Page" search in the UI. Synchronous.
         - Results are ranked by relevance: (0) page title exactly matches query, (1) page title contains query as substring, (2) page title contains all query words, (3) block contains query as substring, (4) block contains all query words. Ranks 2 and 4 apply to multi-word queries only.
       - Parameters::
-        - `search-str` (string, required) — the search query
+        - `search-str` (string, required) — the search query (`search-string` is accepted as an alias)
         - `search-blocks` (boolean, optional, default true) — include block results
         - `search-pages` (boolean, optional, default true) — include page results
-        - `hide-code-blocks` (boolean, optional, default false) — exclude code blocks from results
+        - `hide-code-blocks` (boolean, optional, default: the user's hide-code-blocks setting) — exclude code blocks from results
         - `limit` (number, optional, default 300, max 1000) — maximum number of results
         - `pull` (string | array, optional, default `[:block/string :node/title :block/uid]`) — pull pattern for the returned fields
-      - Returns::
+      - Return::
         - Array of results matching the pull pattern
       - Example::
         - ```javascript
@@ -178,7 +179,7 @@
         - Check this before calling `data.async.semanticSearch`, which throws when semantic search isn't available.
       - Parameters::
         - None
-      - Returns::
+      - Return::
         - boolean
       - Example::
         - ```javascript
@@ -189,12 +190,12 @@
         - Hybrid semantic + keyword search powered by "better search" (embeddings + keyword index), ranked by relevance.
         - Requires embeddings to be enabled and a signed-in user — throws when unavailable, so check `data.semanticSearchEnabled()` first. While embeddings are still indexing, it returns partial results rather than throwing.
       - Parameters::
-        - `search-str` (string, required) — the search query
+        - `search-str` (string, required) — the search query (`search-string` is accepted as an alias)
         - `k` (number, optional, default 25, max 200) — number of results (also the search pool size)
         - `search-blocks` (boolean, optional, default true) — include block results
         - `search-pages` (boolean, optional, default true) — include page results
         - `hide-code-blocks` (boolean, optional, default: the user's hide-code-blocks setting) — exclude code blocks
-      - Returns::
+      - Return::
         - Promise resolving to an array of hit records `{type, uid, topUids}`:
           - `type` — "chunk", "block", or "page"
           - `uid` — the hit's primary block uid (the first of `topUids`)
@@ -219,14 +220,14 @@
       - Parameters::
         - `uid` (string) — block uid of an existing query block; uses that block's stored display settings
         - `query` (string, required if no `uid`) — a query string, e.g. "{and: [[project]] [[active]]}"
-        - `groupByPage` (boolean, optional, default false) — group results by page (query mode only)
+        - `groupByPage` (boolean, optional, default true) — group results by page (query mode only)
         - `nestUnderParent` (boolean, optional, default false) — collapse child matches under their parent (query mode only)
         - `sort` (string, optional; query mode only) — with `groupByPage`: "page-most-recent" (default) | "page-title" | "page-created-date" | "daily-note"; without: "created-date" (default) | "edited-date" | "daily-note-date"
         - `sortOrder` (string, optional, default "desc") — "asc" or "desc" (query mode only)
         - `offset` (integer, optional, default 0) — number of results to skip
         - `limit` (integer | null, optional, default 20) — maximum results; pass null for all
         - `pull` (string, optional, default "[:block/string :node/title :block/uid]") — pull pattern for the results
-      - Returns::
+      - Return::
         - Promise resolving to `{total: <number>, results: <array of pulled results>}`
       - Example::
         - ```javascript
@@ -243,7 +244,7 @@
         - `pattern` (string, required) — the pull pattern to watch
         - `entity-id` (string, required) — the entity to watch, e.g. `'[:block/uid "02-21-2021"]'`
         - `callback` (function, required) — called with `(before, after)` pull results
-      - Returns::
+      - Return::
         - Promise resolving to `null` once the watch is registered
       - Example::
         - ```javascript
@@ -259,8 +260,8 @@
         - `pattern` (string, optional) — the same value passed to `addPullWatch`
         - `entity-id` (string, optional) — the same value passed to `addPullWatch`
         - `callback` (function, optional) — the callback to remove
-      - Returns::
-        - Promise resolving to `null`
+      - Return::
+        - Promise resolving to `null` (the two-argument form resolves to `true`)
       - Example::
         - ```javascript
           window.roamAlphaAPI.data.removePullWatch(
@@ -273,23 +274,15 @@
         - Undo the latest change made in this session — the same operation as the Undo command (`cmd-z`).
       - Parameters::
         - None
-      - Returns::
+      - Return::
         - Promise resolving to `null`
-      - Example::
-        - ```javascript
-          await window.roamAlphaAPI.data.undo()
-          // => null```
     - `roamAlphaAPI.data.redo`
       - Description::
         - Redo the last undone change — the same operation as the Redo command (`cmd-shift-z`).
       - Parameters::
         - None
-      - Returns::
+      - Return::
         - Promise resolving to `null`
-      - Example::
-        - ```javascript
-          await window.roamAlphaAPI.data.redo()
-          // => null```
     - `roamAlphaAPI.data.ai`
       - Description::
         - Internal namespace backing Roam's MCP server tools (`getPage`, `getBlock`, `getBacklinks`, `roamQuery`, `search`, `semanticSearch`, `suggestLinks`, `searchTemplates`, `getGraphGuidelines`, `getComments`). Not a stable public surface — breaking changes land without notice; don't build on it.
@@ -310,7 +303,7 @@
             - `text-align` (string, optional) — "left" | "center" | "right" | "justify"
             - `children-view-type` (string, optional) — view type of the block's children: "bullet" | "numbered" | "document"
             - `block-view-type` (string, optional) — view type of the block itself: "outline" | "horizontal-outline" | "popout" | "tabs" | "comment" | "side" | "vertical"
-        - Returns::
+        - Return::
           - Promise resolving to `null`; rejects if `parent-uid` doesn't exist or `uid` is already taken
         - Example::
           - ```javascript
@@ -327,7 +320,7 @@
             - `uid` (string, required) — block to update
             - `string` (string, optional) — new text content
             - `open`, `heading`, `text-align`, `children-view-type`, `block-view-type` — all optional, same values as in `data.block.create`
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -344,7 +337,7 @@
           - `location` (object, required)
             - `parent-uid` (string, required) — uid of the new parent block or page
             - `order` (number | "first" | "last", required) — position among the new parent's children
-        - Returns::
+        - Return::
           - Promise resolving to `null`; rejects if the block or `parent-uid` doesn't exist
         - Example::
           - ```javascript
@@ -359,7 +352,7 @@
         - Parameters::
           - `block` (object, required)
             - `uid` (string, required) — block to delete
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -373,7 +366,7 @@
           - `location` (object, required)
             - `parent-uid` (string, required)
           - `blocks` (array of strings, required) — every child uid of `parent-uid`, listed in the new order
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -389,7 +382,7 @@
             - `parent-uid` (string, required)
             - `order` (number | "first" | "last", required)
           - `markdown-string` (string, required) — the markdown content to parse into blocks
-        - Returns::
+        - Return::
           - Promise resolving to `{uids: [...]}` — the uids of the top-level blocks created
         - Example::
           - ```javascript
@@ -404,19 +397,21 @@
           - `block-uid` (string, required) — block to comment on
           - `reply-string` (string) — plain text for a single reply block (use this **or** `reply-markdown`, not both)
           - `reply-markdown` (string) — markdown parsed into multiple sibling reply blocks
-        - Returns::
-          - Promise resolving to `null`
+          - `reply-uid` (string, optional) — uid for the created reply block; autogenerated if omitted
+          - `open-comment` (boolean, optional, default false) — open the block's comments in the sidebar after adding the reply
+        - Return::
+          - Promise resolving to `{uids: [...], parentUid: "..."}` — uids of the created reply block(s) and the uid of the comments block they live under
         - Example::
           - ```javascript
             // single reply
             await window.roamAlphaAPI.data.block.addComment(
               {"block-uid": "abc123", "reply-string": "This is a comment"})
-            // => null
+            // => {uids: ["aBc123xYz"], parentUid: "dEf456uVw"}
 
             // markdown reply (parsed into siblings)
             await window.roamAlphaAPI.data.block.addComment(
               {"block-uid": "abc123", "reply-markdown": "First block\n- Nested child"})
-            // => null```
+            // => {uids: ["gHi789jKl"], parentUid: "dEf456uVw"}```
     - `roamAlphaAPI.data.page`
       - `roamAlphaAPI.data.page.create`
         - Description::
@@ -427,7 +422,7 @@
             - `title` (string, required)
             - `uid` (string, optional) — autogenerated if omitted; in normal operation you shouldn't pass one
             - `children-view-type` (string, optional) — "bullet" | "numbered" | "document"
-        - Returns::
+        - Return::
           - Promise resolving to `null`; rejects if a page with the given `title` or `uid` already exists
         - Example::
           - ```javascript
@@ -439,7 +434,7 @@
         - Parameters::
           - `page` (object, required) — same keys as `data.page.create`
           - `markdown-string` (string, required) — the markdown content to parse into blocks
-        - Returns::
+        - Return::
           - Promise resolving to `{uid: <page-uid>}`; rejects if a page with the given title already exists
         - Example::
           - ```javascript
@@ -456,7 +451,7 @@
             - `uid` (string, required)
             - `title` (string, optional) — new title
             - `children-view-type` (string, optional) — "bullet" | "numbered" | "document"
-        - Returns::
+        - Return::
           - Promise resolving to `null`; rejects when renaming to a title that already exists in the graph
         - Example::
           - ```javascript
@@ -470,7 +465,7 @@
         - Parameters::
           - `page` (object, required)
             - `uid` (string, required)
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -482,7 +477,7 @@
         - Parameters::
           - `uid` (string, required) — page uid
           - `index` (number, optional) — position in the shortcut list; defaults to the end (capped to the valid range)
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -494,7 +489,7 @@
           - Remove a page from the left-sidebar shortcuts. Takes a positional argument.
         - Parameters::
           - `uid` (string, required) — page uid
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -507,7 +502,8 @@
         - Parameters::
           - `user-uid` (string, required)
           - `display-name` (string, optional)
-        - Returns::
+          - `photo-url` (string, optional) — url of the user's photo
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -522,7 +518,7 @@
         - More robust than CSS selectors — works even from a `ui.commandPalette` callback, after the block has lost focus in the DOM.
       - Parameters::
         - None
-      - Returns::
+      - Return::
         - ```javascript
           {"block-uid": "YnatnbZzF",
            "window-id": "BBG4fFwolaVlT5FZQdzAI7P40aB3-body-outline-04-15-2021"}```
@@ -542,7 +538,7 @@
         - `selection` (object, optional; without it the cursor is placed at the end of the string)
           - `start` (integer, required) — 0-indexed
           - `end` (integer, optional) — with `end`, start–end becomes a selection; without it, the cursor is placed before the `start`-th character. If `end` is less than `start`, both are treated as the value of `end`.
-      - Returns::
+      - Return::
         - Promise resolving to `null`
       - Example::
         - ```javascript
@@ -558,7 +554,7 @@
         - Parameters::
           - `block` (object, required)
             - `uid` (string, required)
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -571,7 +567,7 @@
           - `page` (object, required) — one of:
             - `title` (string)
             - `uid` (string)
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -583,29 +579,21 @@
           - Open the daily notes log in the main window.
         - Parameters::
           - None
-        - Returns::
+        - Return::
           - Promise resolving to `null`
-        - Example::
-          - ```javascript
-            await window.roamAlphaAPI.ui.mainWindow.openDailyNotes()
-            // => null```
       - `roamAlphaAPI.ui.mainWindow.focusFirstBlock`
         - Description::
           - Focus the first block in the main window.
         - Parameters::
           - None
-        - Returns::
+        - Return::
           - Promise resolving to `null`
-        - Example::
-          - ```javascript
-            await window.roamAlphaAPI.ui.mainWindow.focusFirstBlock()
-            // => null```
       - `roamAlphaAPI.ui.mainWindow.getOpenPageOrBlockUid`
         - Description::
           - The uid of the page or block currently open in the main window.
         - Parameters::
           - None
-        - Returns::
+        - Return::
           - Promise resolving to the uid string, or `null` when no page/block is open (e.g. the daily notes log)
         - Example::
           - ```javascript
@@ -616,7 +604,7 @@
           - Describes what is currently displayed in the main window.
         - Parameters::
           - None
-        - Returns::
+        - Return::
           - Promise resolving to one of:
           - ```javascript
             // page
@@ -630,7 +618,8 @@
              "block-string": "Some block content"}
 
             // daily notes
-            {type: "log"}
+            {type: "log",
+             uids: ["07-17-2026", "07-16-2026"]}
 
             // graph view
             {type: "graph"}
@@ -641,7 +630,8 @@
 
             // PDF viewer
             {type: "pdf",
-             uid: "pdf-block-uid"}
+             uid: "pdf-block-uid",
+             url: "https://firebasestorage.googleapis.com/..."}
 
             // all pages search
             {type: "search"}
@@ -656,44 +646,62 @@
         - Parameters::
           - `id` (string, required) — identifier for the component
           - `component` (React component, required)
-        - Returns::
-          - `null`
+        - Return::
+          - Synchronous; the return value is internal state — treat it as void
+        - Example::
+          - ```javascript
+            const MyView = () => React.createElement("h1", null, "Hello from my view");
+            window.roamAlphaAPI.ui.mainWindow.registerComponent("my-view", MyView)
+            // (return value is not meaningful)```
       - `roamAlphaAPI.ui.mainWindow.unregisterComponent`
         - Description::
           - Unregister a custom main-window view. Takes a positional argument.
         - Parameters::
           - `id` (string, required)
-        - Returns::
-          - `null`
+        - Return::
+          - Synchronous; the return value is internal state — treat it as void
+        - Example::
+          - ```javascript
+            window.roamAlphaAPI.ui.mainWindow.unregisterComponent("my-view")
+            // (return value is not meaningful)```
       - `roamAlphaAPI.ui.mainWindow.openComponent`
         - Description::
           - Open a registered custom component in the main window. Takes positional arguments. Extra arguments are passed to the component and reported by `getOpenView` as `args`.
         - Parameters::
           - `id` (string, required)
           - `...args` (optional) — arguments for the component
-        - Returns::
-          - `null`
+        - Return::
+          - Synchronous; the return value is internal state — treat it as void
+        - Example::
+          - ```javascript
+            window.roamAlphaAPI.ui.mainWindow.openComponent("my-view", "arg1", 42)
+            // getOpenView() now reports
+            // {type: "custom", id: "my-view", args: ["arg1", 42]}```
       - `roamAlphaAPI.ui.mainWindow.closeComponent`
         - Description::
           - Close the open custom component. Takes a positional argument.
         - Parameters::
           - `id` (string, required)
-        - Returns::
-          - `null`
+        - Return::
+          - Synchronous; the return value is internal state — treat it as void
+        - Example::
+          - ```javascript
+            window.roamAlphaAPI.ui.mainWindow.closeComponent("my-view")
+            // (return value is not meaningful)```
     - `roamAlphaAPI.ui.leftSidebar`
       - `roamAlphaAPI.ui.leftSidebar.open`
         - Description::
           - Make the left sidebar visible.
         - Parameters::
           - None
-        - Returns::
+        - Return::
           - Promise resolving to `null`
       - `roamAlphaAPI.ui.leftSidebar.close`
         - Description::
           - Hide the left sidebar.
         - Parameters::
           - None
-        - Returns::
+        - Return::
           - Promise resolving to `null`
     - `roamAlphaAPI.ui.rightSidebar`
       - `roamAlphaAPI.ui.rightSidebar.open`
@@ -701,21 +709,21 @@
           - Make the right sidebar visible.
         - Parameters::
           - None
-        - Returns::
+        - Return::
           - Promise resolving to `null`
       - `roamAlphaAPI.ui.rightSidebar.close`
         - Description::
           - Hide the right sidebar, keeping its open windows.
         - Parameters::
           - None
-        - Returns::
+        - Return::
           - Promise resolving to `null`
       - `roamAlphaAPI.ui.rightSidebar.getWindows`
         - Description::
           - All open sidebar windows. Synchronous.
         - Parameters::
           - None
-        - Returns::
+        - Return::
           - Array of window objects with keys:
             - `type` — "block" | "outline" | "mentions" | "graph" | "search-query"
             - `window-id` (string) — usable with e.g. `ui.setBlockFocusAndSelection`
@@ -748,7 +756,7 @@
           - `window` (object, required) — see sidebar `window` argument, plus:
             - `order` (number, optional) — position in the sidebar; if not specified, the new window is added at the top
             - `class` (string | array of strings, optional) — CSS class(es) added to the window's element
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -774,7 +782,7 @@
           - Remove a window from the right sidebar. Removing a pinned window unpins and removes it — it will not come back on reload, and no confirmation dialog is shown for API calls (the UI shows one when the user closes a pinned window).
         - Parameters::
           - `window` (object, required) — see sidebar `window` argument
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -786,38 +794,69 @@
           - Expand a collapsed sidebar window.
         - Parameters::
           - `window` (object, required) — see sidebar `window` argument
-        - Returns::
+        - Return::
           - Promise resolving to `null`
+        - Example::
+          - ```javascript
+            window.roamAlphaAPI.ui.rightSidebar
+              .expandWindow({window: {type: "outline", "block-uid": "cArVJL_vg"}})
+            // resolves to null```
       - `roamAlphaAPI.ui.rightSidebar.collapseWindow`
         - Description::
           - Collapse a sidebar window.
         - Parameters::
           - `window` (object, required) — see sidebar `window` argument
-        - Returns::
+        - Return::
           - Promise resolving to `null`
+        - Example::
+          - ```javascript
+            window.roamAlphaAPI.ui.rightSidebar
+              .collapseWindow({window: {type: "outline", "block-uid": "cArVJL_vg"}})
+            // resolves to null```
       - `roamAlphaAPI.ui.rightSidebar.pinWindow`
         - Description::
           - Pin a sidebar window; optionally pin it to the top of the sidebar.
         - Parameters::
           - `window` (object, required) — see sidebar `window` argument
           - `pin-to-top?` (boolean, optional) — `true` pins the window to the top: the pin turns red, new windows are added below it, and a previously top-pinned window is unpinned. When omitted, the pin-to-top state is left unchanged.
-        - Returns::
+        - Return::
           - Promise resolving to `null`
+        - Example::
+          - ```javascript
+            window.roamAlphaAPI.ui.rightSidebar
+              .pinWindow({window: {type: "block", "block-uid": "1fP8LY5ED"}})
+
+            // pin to the top of the sidebar
+            window.roamAlphaAPI.ui.rightSidebar
+              .pinWindow({window: {type: "block", "block-uid": "1fP8LY5ED"},
+                          "pin-to-top?": true})
+
+            // each resolves to null```
       - `roamAlphaAPI.ui.rightSidebar.unpinWindow`
         - Description::
           - Unpin a sidebar window.
         - Parameters::
           - `window` (object, required) — see sidebar `window` argument
-        - Returns::
+        - Return::
           - Promise resolving to `null`
+        - Example::
+          - ```javascript
+            window.roamAlphaAPI.ui.rightSidebar
+              .unpinWindow({window: {type: "block", "block-uid": "1fP8LY5ED"}})
+            // resolves to null```
       - `roamAlphaAPI.ui.rightSidebar.setWindowOrder`
         - Description::
           - Move a sidebar window to a specific position.
         - Parameters::
           - `window` (object, required) — see sidebar `window` argument, plus:
             - `order` (number, required) — new position, `0` to `n`
-        - Returns::
+        - Return::
           - Promise resolving to `null`
+        - Example::
+          - ```javascript
+            window.roamAlphaAPI.ui.rightSidebar
+              .setWindowOrder({window: {type: "block", "block-uid": "1fP8LY5ED", order: 0}})
+            // resolves to null```
     - `roamAlphaAPI.ui.filters`
       - Description::
         - Filters are per-user. The get functions are synchronous; the set functions return promises. Filters have the shape `{"includes": [...page titles], "removes": [...page titles]}`.
@@ -827,23 +866,37 @@
         - Parameters::
           - `title` (string, required) — page title
           - `type` (string, required) — "includes" | "removes"
-        - Returns::
+        - Return::
           - Promise resolving to `null`
+        - Example::
+          - ```javascript
+            window.roamAlphaAPI.ui.filters
+              .addGlobalFilter({title: "TODO", type: "removes"})
+            // resolves to null```
       - `roamAlphaAPI.ui.filters.removeGlobalFilter`
         - Description::
           - Remove a global filter.
         - Parameters::
           - `title` (string, required) — page title
           - `type` (string, required) — "includes" | "removes"
-        - Returns::
+        - Return::
           - Promise resolving to `null`
+        - Example::
+          - ```javascript
+            window.roamAlphaAPI.ui.filters
+              .removeGlobalFilter({title: "TODO", type: "removes"})
+            // resolves to null```
       - `roamAlphaAPI.ui.filters.getGlobalFilters`
         - Description::
           - The global filters currently in place. Synchronous.
         - Parameters::
           - None
-        - Returns::
+        - Return::
           - `{"includes": [...], "removes": [...]}` — lists of page titles
+        - Example::
+          - ```javascript
+            window.roamAlphaAPI.ui.filters.getGlobalFilters()
+            // => {"includes": [], "removes": ["TODO"]}```
       - `roamAlphaAPI.ui.filters.getPageFilters`
         - Description::
           - The current user's filters for a page. Synchronous.
@@ -851,7 +904,7 @@
           - `page` (object, required) — one of:
             - `title` (string)
             - `uid` (string)
-        - Returns::
+        - Return::
           - `{"includes": [...], "removes": [...]}` — lists of page titles
         - Example::
           - ```javascript
@@ -865,7 +918,7 @@
           - `filters` (object, required)
             - `includes` (array of page titles, optional)
             - `removes` (array of page titles, optional)
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -883,15 +936,19 @@
           - The current user's filters on a page's linked references (mentions). Synchronous.
         - Parameters::
           - `page` (object, required) — one of `title` | `uid`
-        - Returns::
+        - Return::
           - `{"includes": [...], "removes": [...]}` — lists of page titles
+        - Example::
+          - ```javascript
+            window.roamAlphaAPI.ui.filters.getPageLinkedRefsFilters({page: {title: "test"}})
+            // => {"includes": ["Author"], "removes": []}```
       - `roamAlphaAPI.ui.filters.setPageLinkedRefsFilters`
         - Description::
           - Set the filters on a page's linked references (mentions) for the current user. Pass `{}` as `filters` to clear them.
         - Parameters::
           - `page` (object, required) — one of `title` | `uid`
           - `filters` (object, required) — `includes` / `removes` arrays of page titles
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -904,7 +961,7 @@
           - The filters on a right-sidebar window. Synchronous.
         - Parameters::
           - `window` (object, required) — see sidebar `window` argument; "search-query" windows don't support filters
-        - Returns::
+        - Return::
           - `{"includes": [...], "removes": [...]}` — lists of page titles
         - Example::
           - ```javascript
@@ -917,7 +974,7 @@
         - Parameters::
           - `window` (object, required) — see sidebar `window` argument; "search-query" windows don't support filters
           - `filters` (object, required) — `includes` / `removes` arrays of page titles
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -957,7 +1014,7 @@
                 - "defmod"
                   - ctrl
                     - cmd
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -978,7 +1035,7 @@
           - Remove a command with the given `label` from the Command Palette.
         - Parameters::
           - `label` (string, required) — the label passed to `addCommand`
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -997,7 +1054,7 @@
               {"block-uid": "YnatnbZzF",
                "window-id": "BBG4fFwolaVlT5FZQdzAI7P40aB3-body-outline-04-15-2021",
                indexes: [1, 10]}```
-        - Returns::
+        - Return::
           - `null`
         - Example::
           - ```javascript
@@ -1011,8 +1068,12 @@
           - Remove a command with the given `label` from the slash menu.
         - Parameters::
           - `label` (string, required) — the label passed to `addCommand`
-        - Returns::
+        - Return::
           - `null`
+        - Example::
+          - ```javascript
+            window.roamAlphaAPI.ui.slashCommand.removeCommand({label: "Quick Test"})
+            // => null```
     - `roamAlphaAPI.ui.blockContextMenu`
       - Description::
         - The menu shown when right-clicking a block's bullet. Custom commands are nested under the **Plugins** menu item. Calling `addCommand` again with the same `label` updates the existing command.
@@ -1030,7 +1091,7 @@
                "page-uid": "04-15-2021",
                "read-only?": false,
                "window-id": "BBG4fFwolaVlT5FZQdzAI7P40aB3-body-outline-04-15-2021"}```
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -1044,8 +1105,12 @@
           - Remove a command with the given `label`.
         - Parameters::
           - `label` (string, required)
-        - Returns::
+        - Return::
           - Promise resolving to `null`
+        - Example::
+          - ```javascript
+            roamAlphaAPI.ui.blockContextMenu.removeCommand({label: "Debug: Console Log"})
+            // resolves to null```
     - `roamAlphaAPI.ui.pageContextMenu`
       - Description::
         - Right-clicking a page title. Same `addCommand`/`removeCommand` API as `ui.blockContextMenu`, but both return `null` (synchronous).
@@ -1075,6 +1140,11 @@
           - "tag" — `#test`
           - "multitag" — `#[[Test]]`
           - "inline-link" — `[t]([[Test]])`
+      - Example::
+        - ```javascript
+          roamAlphaAPI.ui.pageRefContextMenu.addCommand(
+            {label: "Debug: Console Log", callback: (e) => console.log(e)})
+          // => null```
     - `roamAlphaAPI.ui.blockRefContextMenu`
       - Description::
         - Clicking a block reference. Same API as `ui.blockContextMenu`; `addCommand`/`removeCommand` return `null` (synchronous).
@@ -1084,6 +1154,11 @@
              "block-uid": "abc123xyz", // containing block
              "window-id": "BBG4fFwolaVlT5FZQdzAI7P40aB3-body-outline-04-15-2021",
              indexes: [0, 9]}          // outer indexes in the block string```
+      - Example::
+        - ```javascript
+          roamAlphaAPI.ui.blockRefContextMenu.addCommand(
+            {label: "Debug: Console Log", callback: (e) => console.log(e)})
+          // => null```
     - `roamAlphaAPI.ui.pageLinkContextMenu`
       - Description::
         - Page links that are neither a page title nor inside a block — currently that's linked references and query results when grouped by page. Same API as `ui.blockContextMenu`; `addCommand`/`removeCommand` return `null` (synchronous).
@@ -1091,6 +1166,11 @@
           - ```javascript
             {"page-uid": "YnatnbZzF",
              "page-title": "title"}```
+      - Example::
+        - ```javascript
+          roamAlphaAPI.ui.pageLinkContextMenu.addCommand(
+            {label: "Debug: Console Log", callback: (e) => console.log(e)})
+          // => null```
     - `roamAlphaAPI.ui.msContextMenu`
       - Description::
         - The context menu shown when multiple blocks are selected (multiselect). Same API as `ui.blockContextMenu`; `addCommand`/`removeCommand` return `null` (synchronous).
@@ -1108,7 +1188,7 @@
           - The blocks currently drag-selected (highlighted) in the main window. Synchronous.
         - Parameters::
           - None
-        - Returns::
+        - Return::
           - Array of `{"block-uid", "window-id"}` objects; empty array if nothing is selected
         - Example::
           - ```javascript
@@ -1121,7 +1201,7 @@
           - The uids currently selected with individual multiselect (checkbox selection, usually triggered by `cmd-m`). Synchronous.
         - Parameters::
           - None
-        - Returns::
+        - Return::
           - Array of block uids
         - Example::
           - ```javascript
@@ -1148,15 +1228,26 @@
                ],
                type: "page"}```
           - `type` (string, optional) — only trigger for "page" or "all-pages" graph views; if omitted, triggers for both
-        - Returns::
-          - Promise resolving to `null`
+        - Return::
+          - `null` (synchronous)
+        - Example::
+          - ```javascript
+            roamAlphaAPI.ui.graphView.addCallback({
+              label: "my-extension: graph loaded",
+              type: "page",
+              callback: ({cytoscape, elements, type}) => console.log(type, elements)})
+            // => null```
       - `roamAlphaAPI.ui.graphView.removeCallback`
         - Description::
           - Remove a callback with the given `label`.
         - Parameters::
           - `label` (string, required)
-        - Returns::
-          - Promise resolving to `null`
+        - Return::
+          - `null` (synchronous)
+        - Example::
+          - ```javascript
+            roamAlphaAPI.ui.graphView.removeCallback({label: "my-extension: graph loaded"})
+            // => null```
       - `roamAlphaAPI.ui.graphView.wholeGraph`
         - Description::
           - API for the whole-graph overview (the old `graphView.addCallback` does not fire for it). Synchronous functions.
@@ -1167,7 +1258,7 @@
           - Description::
             - Set the pages shown in Explore mode. Positional argument: array of page titles.
         - `roamAlphaAPI.ui.graphView.wholeGraph.getExplorePages`
-          - Returns::
+          - Return::
             - Array of the page titles currently explored
         - `roamAlphaAPI.ui.graphView.wholeGraph.addCallback`
           - Description::
@@ -1206,7 +1297,7 @@
           - `open?` (boolean, optional) — `true` forces the block open (children shown), `false` forces it closed; omitted = whatever the block's open state is in the graph
           - `zoom-path?` (boolean, optional) — show the zoom path above the block (similar to how linked references look)
           - `zoom-start-after-uid` (string, optional; only valid with `zoom-path?`) — the path is compacted to a clickable `...` for everything before this uid
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -1228,8 +1319,18 @@
           - `uid` (string, required) — page to display
           - `el` (DOM node, required)
           - `hide-mentions?` (boolean, optional) — hide the linked references at the bottom of the page
-        - Returns::
+        - Return::
           - Promise resolving to `null`
+        - Example::
+          - ```javascript
+            const newNode = document.createElement("div");
+            document.body.appendChild(newNode);
+
+            window.roamAlphaAPI.ui.components.renderPage(
+              {uid: "mK9pQ2rTw",
+               el: newNode,
+               "hide-mentions?": true})
+            // resolves to null once mounted```
       - `roamAlphaAPI.ui.components.renderSearch`
         - Description::
           - Mount search results (pages first, then blocks — the same results as the `cmd-u` search) into a DOM node. Also available as the `{{[[search]]: query}}` component. CSS classes: `rm-search-query`, plus the existing `rm-query`.
@@ -1240,7 +1341,7 @@
           - `group-by-page?` (boolean, optional, default false) — group results by page
           - `hide-paths?` (boolean, optional, default false) — hide block paths in results
           - `config-changed-callback` (function, optional) — called with the new config when the user changes the view's configuration
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -1261,7 +1362,7 @@
         - Parameters::
           - `string` (string, required) — the string to render
           - `el` (DOM node, required)
-        - Returns::
+        - Return::
           - Promise resolving to `null`
         - Example::
           - ```javascript
@@ -1274,8 +1375,12 @@
           - Unmount a previously mounted React component from a DOM node.
         - Parameters::
           - `el` (DOM node, required) — the node the component was mounted in
-        - Returns::
+        - Return::
           - Promise resolving to `null`
+        - Example::
+          - ```javascript
+            window.roamAlphaAPI.ui.components.unmountNode({el: newNode})
+            // resolves to null```
     - `roamAlphaAPI.ui.react`
       - Description::
         - React components for declarative JSX use — equivalents of `ui.components`. Note the props are camelCase, unlike the kebab-case keys of `ui.components`.
@@ -1339,7 +1444,7 @@
           - Icon and color come entirely from CSS: style `.rm-callout--{type}` for the color and `.rm-callout--{type} .rm-callout__icon` for the icon. A built-in default icon shows until your CSS loads.
         - Parameters::
           - `type` (string, required) — the string used in the `[!type]` callout syntax
-        - Returns::
+        - Return::
           - `null`
         - Example::
           - ```javascript
@@ -1359,7 +1464,7 @@
           - Remove a previously registered custom callout type from the picker menu.
         - Parameters::
           - `type` (string, required) — the type string to remove
-        - Returns::
+        - Return::
           - `null`
         - Example::
           - ```javascript
@@ -1371,7 +1476,7 @@
         - Generate a Roam block uid — a random string of length nine.
       - Parameters::
         - None
-      - Returns::
+      - Return::
         - string
       - Example::
         - ```javascript
@@ -1382,22 +1487,37 @@
         - Convert a daily note page title to a date.
       - Parameters::
         - `title` (string, required) — a daily note title like "June 16th, 2022"
-      - Returns::
+      - Return::
         - A [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), or `null` for anything that isn't a daily note title
+      - Example::
+        - ```javascript
+          roamAlphaAPI.util.pageTitleToDate("June 16th, 2022")
+          // => Date Thu Jun 16 2022 00:00:00
+
+          roamAlphaAPI.util.pageTitleToDate("not a daily note title")
+          // => null```
     - `roamAlphaAPI.util.dateToPageTitle`
       - Description::
         - Convert a date to a daily note page title ("June 16th, 2022").
       - Parameters::
         - `date` (Date, required) — a [JavaScript Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-      - Returns::
+      - Return::
         - string
+      - Example::
+        - ```javascript
+          roamAlphaAPI.util.dateToPageTitle(new Date(2022, 5, 16))
+          // => "June 16th, 2022"```
     - `roamAlphaAPI.util.dateToPageUid`
       - Description::
         - Convert a date to a daily note page uid ("06-16-2022"). Use this instead of `generateUID` when programmatically creating a daily note page and you need its uid ahead of time.
       - Parameters::
         - `date` (Date, required) — a [JavaScript Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-      - Returns::
+      - Return::
         - string
+      - Example::
+        - ```javascript
+          roamAlphaAPI.util.dateToPageUid(new Date(2022, 5, 16))
+          // => "06-16-2022"```
   - `roamAlphaAPI.file` — upload, fetch, and delete files hosted on Roam
     - `roamAlphaAPI.file.upload`
       - Description::
@@ -1407,19 +1527,23 @@
         - `file` (File, required) — a [File object](https://developer.mozilla.org/en-US/docs/Web/API/File)
         - `toast` (object, optional)
           - `hide` (boolean, optional, default false) — hide the upload toast
-      - Returns::
-        - Promise resolving to a firebase download url (string)
+      - Return::
+        - Promise resolving to a Roam block string embedding the file — `![](url)` for images, `{{[[pdf]]: url}}` / `{{[[audio]]: url}}` / `{{[[video]]: url}}` for those media types — or the bare download url (string) for other file types
       - Example::
         - ```javascript
-          await roamAlphaAPI.file.upload({file: new File([""], "test"), toast: {hide: true}})
-          // => "https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fmy-graph%2FaB3xK9mP2.png?alt=media&token=..."```
+          await roamAlphaAPI.file.upload({file: myImageFile, toast: {hide: true}})
+          // => "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fmy-graph%2FaB3xK9mP2.png?alt=media&token=...)"
+
+          await roamAlphaAPI.file.upload({file: new File([""], "notes.txt")})
+          // => "https://firebasestorage.googleapis.com/..." (bare url — not a recognized media type)```
     - `roamAlphaAPI.file.get`
       - Description::
         - Fetch a file hosted on Roam. You could also `fetch` the url yourself, but `get` handles decryption on encrypted graphs and restores the original file name and type metadata.
       - Parameters::
         - `url` (string, required) — a firebase storage url, obtained from `file.upload` or from a block
-      - Returns::
-        - Promise resolving to a [File object](https://developer.mozilla.org/en-US/docs/Web/API/File)
+        - `format` (string, optional) — pass "base64" to resolve with `{base64, filename, mimetype}` instead of a File object
+      - Return::
+        - Promise resolving to a [File object](https://developer.mozilla.org/en-US/docs/Web/API/File) — or, with `format: "base64"`, to `{base64, filename, mimetype}`
       - Example::
         - ```javascript
           await roamAlphaAPI.file.get({url: "https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/..."})
@@ -1429,15 +1553,19 @@
         - Delete a file hosted on Roam.
       - Parameters::
         - `url` (string, required) — a firebase storage url, obtained from `file.upload` or from a block
-      - Returns::
+      - Return::
         - Promise resolving to `undefined`
+      - Example::
+        - ```javascript
+          await roamAlphaAPI.file.delete({url: "https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/..."})
+          // => undefined```
   - `roamAlphaAPI.user` — info about the current user
     - `roamAlphaAPI.user.uid`
       - Description::
         - The current user's uid. Synchronous. Use it with `data.pull` to get the user's display page and other metadata.
       - Parameters::
         - None
-      - Returns::
+      - Return::
         - string, or `null` when not signed in
       - Example::
         - ```javascript
@@ -1452,7 +1580,7 @@
         - Whether the current user is an admin of this graph (the graph owner). Synchronous.
       - Parameters::
         - None
-      - Returns::
+      - Return::
         - boolean
   - `roamAlphaAPI.graph` — properties (not functions) describing the current graph
     - `roamAlphaAPI.graph.name` — the name of the current graph (string)
@@ -1471,15 +1599,27 @@
         - A map of the extensions currently installed through Roam Depot or dev mode. Synchronous.
       - Parameters::
         - None
-      - Returns::
+      - Return::
         - Object of `{ext-id: ext-map}`; `version` is "DEV" for developer-loaded extensions
         - ```javascript
           {"ccc+ccc-roam-pdf-2":
             {id: "ccc+ccc-roam-pdf-2",
              name: "Roam PDF Highlighter 2",
              enabled: false,
+             adminEnabled: true,
              version: "1"},
            ...}```
+    - `roamAlphaAPI.depot.reloadDeveloperExtensions`
+      - Description::
+        - Reload all developer-mode extensions — the same operation as the "Reload developer extensions" command (`ctrl-d ctrl-r`).
+      - Parameters::
+        - None
+      - Return::
+        - Promise resolving to a summary of the reloaded developer extensions
+      - Example::
+        - ```javascript
+          await roamAlphaAPI.depot.reloadDeveloperExtensions()
+          // => {reloaded: [{id: "dev-extension-id", name: "My Dev Extension"}]}```
   - `roamAlphaAPI.constants` — useful constants
     - `roamAlphaAPI.constants.corsAnywhereProxyUrl`
       - Description::

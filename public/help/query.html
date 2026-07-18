@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Query — Roam Research Docs</title>
-<meta name="description" content=".--">
+<meta name="description" content="A query block collects every block in your graph that matches conditions you give it: a saved search that lives right in your notes.">
 <link rel="canonical" href="https://roamdocs.fyi/help/query">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Roam Research Docs">
 <meta property="og:title" content="Query — Roam Research Docs">
-<meta property="og:description" content=".--">
+<meta property="og:description" content="A query block collects every block in your graph that matches conditions you give it: a saved search that lives right in your notes.">
 <meta property="og:url" content="https://roamdocs.fyi/help/query">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/favicon.ico">
@@ -39,105 +39,144 @@
 <h1>Query</h1>
 <p class="meta"><a href="query.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/Gx35Ef0-S">view in Roam Research</a></p>
 <ul>
-<li>.--
-<ul>
-<li><strong><strong>Types of queries</strong></strong>
-<ul>
-<li><strong><strong>and</strong></strong>
-<ul>
-<li>Find all blocks matching multiple conditions – i.e. blocks or their parents containing multiple page or block references.
+<li>A query block collects every block in your graph that matches conditions you give it: a saved search that lives right in your notes.
 </li>
-<li>`{{query: {and: page A page B }}}<br>
-{{query: {and: articles ((block)) }}}<br>
-{{query: {and: Tyler Cowen ((block)) econ }}}<br>
-`
+<li>Type <code>/query</code> in a block to create one. The <a href="/help/query-builder">Query Builder</a> opens so you can build it visually. This page covers the clauses underneath.
+</li>
+<li>Here's a live one under this block: every block that links to <a href="/help/templates">Templates</a>, minus the <a href="/help/change-log">Change Log</a>.
+<ul>
+<li>{{query: {and: <a href="/help/templates">Templates</a> {not: <a href="/help/change-log">Change Log</a>}}}}
 </li>
 </ul>
 </li>
-<li><strong><strong>or</strong></strong>
+</ul>
+<h3>How queries work</h3>
 <ul>
-<li>Find all blocks matching any of a number of conditions – i.e. blocks or their parents containing any of the selected page or block references.<br>
-
-</li>
-<li>`{{query: {or: page A page B }}}<br>
-{{query: {or: Zen Buddhism }}}<br>
-{{query: {or: Utah Idaho Montana }}}<br>
-`
+<li>A query is written inside the block, like:
+<ul>
+<li><code>{{[[query]]: {and: [[Project]] [[TODO]]}}}</code>
 </li>
 </ul>
 </li>
-<li><strong><strong>not</strong></strong>
+<li>Using a <code>[[page]]</code> or <code>((block ref))</code> as a condition matches everything that <strong>links to it</strong>.
+</li>
+<li>Nested blocks inherit references: a block counts as mentioning everything its parent blocks mention, and the page it lives on.
+</li>
+<li>That's how conditions combine: they don't all have to sit on the same block. A block matches when every condition is met somewhere along its path: the block itself, its parents, or its page.
 <ul>
-<li>Exclude blocks matching any of the page or block references selected.
-</li>
-<li>`{{query: {and: page A {not: page B }}}}<br>
-{{query: {and: Slate Star Codex {not: psychiatry }}}}`
-</li>
-</ul>
-</li>
-<li><strong><strong>between</strong></strong>
+<li>For example, <code>{and: [[Acme]] [[pricing]]}</code> matches the nested block here:
 <ul>
-<li>Finds all blocks on daily pages and blocks mentioning a date between two days. <mark><strong>This only works on Daily Notes page</strong></mark>.
-</li>
-<li>You can use the following as a shorthand: today, tomorrow, yesterday, last week, next week, last month, and next month. 
-</li>
-<li>`{{query: {between: January 1st, 2021 today }}<br>
-{{query: {and: mistakes {between: January 1st, 2020 December 31st, 2020 }}}}<br>
-{{query: {and: TODO {between: last week today }}}}`
+<li>Met with Acme today
+<ul>
+<li>Discussed pricing options
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>Community Videos::</strong>
+</ul>
+</li>
+<li>Until you name a query, its title shows the query string itself. Click the title and type to name it, or write it as <code>{{[[query]]: &quot;My title&quot; {and: ...}}}</code>.
+</li>
+<li>For meaning-heavy searches or things queries can't express, there's also the datalog query block: see <a href="/help/examples-of-q-query-blocks">Examples of :q query blocks</a> and <a href="/help/roam-specific-q-additions">Roam-specific :q additions</a>.
+</li>
+</ul>
+<h3>The clauses</h3>
 <ul>
-<li><strong>Query syntax and logic: how to ask Roam questions with queries by Robert Haisfield</strong>
+<li><code>{and: [[A]] [[B]]}</code>
+<ul>
+<li>Every condition must match.
+</li>
+</ul>
+</li>
+<li><code>{or: [[A]] [[B]]}</code>
+<ul>
+<li>Any one condition must match.
+</li>
+</ul>
+</li>
+<li><code>{not: [[A]]}</code>
+<ul>
+<li>Excludes matches; takes exactly one condition.
+</li>
+<li>Combine it like <code>{and: [[Project]] {not: [[Archived]]}}</code>.
+</li>
+</ul>
+</li>
+<li><code>{search: some text}</code>
+<ul>
+<li>Blocks whose text contains what you typed.
+</li>
+<li>Takes one piece of text; other clauses can't nest inside it.
+</li>
+</ul>
+</li>
+<li><code>{between: [[January 1st, 2026]] [[today]]}</code>
+<ul>
+<li>Matches daily notes in a date range: the pages themselves, blocks on them, and blocks mentioning any date in the range.
+</li>
+<li>Relative date pages work too: <code>[[today]]</code>, <code>[[yesterday]]</code>, <code>[[tomorrow]]</code>, <code>[[last week]]</code>, <code>[[next week]]</code>, <code>[[last month]]</code>, <code>[[next month]]</code>.
+</li>
+<li>Combine it: <code>{and: [[TODO]] {between: [[last week]] [[today]]}}</code> finds the past week's TODOs.
+</li>
+<li><code>between</code> only understands daily-note dates. It doesn't look at when blocks were created or edited.
+</li>
+</ul>
+</li>
+<li><code>{daily-notes:}</code>
+<ul>
+<li>Matches everything in your daily notes: the daily pages themselves, blocks on them, and blocks mentioning any date.
+</li>
+<li>Use it to scope a query to your daily notes, <code>{and: [[Project]] {daily-notes:}}</code>, or to keep them out: <code>{and: [[Project]] {not: {daily-notes:}}}</code>.
+</li>
+</ul>
+</li>
+<li><code>{by: [[Person]]}</code>, <code>{created-by: [[Person]]}</code>, <code>{edited-by: [[Person]]}</code>
+<ul>
+<li>Blocks by author. Use the person's display-name page.
+</li>
+</ul>
+</li>
+</ul>
+<h3>Displaying results</h3>
+<ul>
+<li>The <strong>options menu</strong> on each query offers <strong>Group by Page</strong>, <strong>Show Paths</strong>, sorting, and <strong>Nest under parent results</strong>.
+<ul>
+<li>Nest under parent results: when a block and its parent both match, show just the parent.
+</li>
+</ul>
+</li>
+<li>Queries don't re-run on their own. Click the <strong>refresh</strong> button to re-run one.
+</li>
+<li>Or turn on <strong>Reactive</strong> in the options menu to make a query update automatically as your graph changes. It's off by default to keep large graphs fast.
+</li>
+<li>The <strong>filter</strong> button narrows results by page, just like filtering <a href="/help/linked-references">Linked References</a>.
+</li>
+</ul>
+<h3>Community Videos::</h3>
+<h4>Query syntax and logic: how to ask Roam questions with queries by Robert Haisfield</h4>
 <ul>
 <li>{{video: https://www.youtube.com/watch?v=LJZBGJOzhUY&amp;t=20s&amp;ab_channel=RobertHaisfield}}
 </li>
 </ul>
-</li>
-<li><strong>How Queries Work in Roam Research by R.J. Nestor</strong>
+<h4>How Queries Work in Roam Research by R.J. Nestor</h4>
 <ul>
 <li>{{video: https://www.youtube.com/watch?v=lBmklV0n8D0}}
 </li>
 </ul>
-</li>
-<li><strong>Roam Research Search Queries by David Perell</strong>
+<h4>Roam Research Search Queries by David Perell</h4>
 <ul>
 <li>{{video: https://www.youtube.com/watch?v=HoccqyiHvPw}}
 </li>
 </ul>
-</li>
-<li><strong>Insight Hunting with Queries in Roam by Cortex Futura</strong>
+<h4>Insight Hunting with Queries in Roam by Cortex Futura</h4>
 <ul>
 <li>{{video: https://www.youtube.com/watch?v=gLAlQGM_l1Q}}
 </li>
 </ul>
-</li>
-<li><strong>Roam Research Query Tutorial: Pending Tasks for Task Management and Task Dashboard Using Queries by The Upgraded Brain</strong>
+<h4>Roam Research Query Tutorial: Pending Tasks for Task Management and Task Dashboard Using Queries by The Upgraded Brain</h4>
 <ul>
 <li>{{video: https://www.youtube.com/watch?v=Kg5omIyWu8s}}
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Articles::</strong>
-<ul>
-<li><strong><a href="https://roamhacks.com/how-to-query-roam/">How to query in Roam</a> by Roamhacks</strong>
-</li>
-<li><strong><a href="https://www.roamstack.com/roam-queries-primer/">Searching Roam With Queries: A Primer</a> by RoamStack</strong>
-</li>
-</ul>
-</li>
-<li><strong>Key Commands::</strong>
-<ul>
-<li><code>/query</code>
-</li>
-</ul>
-</li>
-</ul>
 </li>
 </ul>
 </body>

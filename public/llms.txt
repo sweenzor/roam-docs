@@ -6,7 +6,7 @@
 > public graphs and a running Roam Research session; regenerated on a schedule.
 > Source & contributions: https://github.com/sweenzor/roam-docs
 
-Last export: 2026-07-17T07:32:31.475Z
+Last export: 2026-07-18T07:13:50.357Z
 
 ## Developer documentation
 
@@ -28,7 +28,7 @@ Last export: 2026-07-17T07:32:31.475Z
 
 ## API reference
 
-- [roam-alpha-api.d.ts](https://roamdocs.fyi/types/roam-alpha-api.d.ts): TypeScript definitions for window.roamAlphaAPI — all 131 live-introspected functions (1 newly-discovered functions not yet typed — see the llms-full.txt function inventory appendix)
+- [roam-alpha-api.d.ts](https://roamdocs.fyi/types/roam-alpha-api.d.ts): TypeScript definitions for window.roamAlphaAPI — all 132 live-introspected functions (2 newly-discovered functions not yet typed — see the llms-full.txt function inventory appendix)
 
 ## Examples
 
@@ -42,6 +42,7 @@ Last export: 2026-07-17T07:32:31.475Z
 ## Help & user documentation
 
 - [Welcome to Roam](https://roamdocs.fyi/help/welcome-to-roam.md): Getting started ℹ️ (hint... shift-click the links in blue below 😉) .box
+- [Install Roam](https://roamdocs.fyi/help/install-roam.md): Install Roam Mobile (iOS and Android)
 - [Change Log](https://roamdocs.fyi/help/change-log.md): Updating Roam
 - [FAQ](https://roamdocs.fyi/help/faq.md): Account
 - [White Paper](https://roamdocs.fyi/help/white-paper.md): Abstract. Roam is an online workspace for organizing and evaluating knowledge. The system is built on a directed graph, which frees it from 
@@ -51,7 +52,7 @@ Last export: 2026-07-17T07:32:31.475Z
 
 ## Optional
 
-- [Roam Alpha API v2](https://roamdocs.fyi/developer-documentation/roam-alpha-api-v2.md): Draft restructuring of Roam Alpha API, written for both humans and AI. Method content verified against the source (July 2026). Historical ch
+- [Roam Alpha API v2](https://roamdocs.fyi/developer-documentation/roam-alpha-api-v2.md): Getting Started
 - [Roam Clojurescript API](https://roamdocs.fyi/developer-documentation/roam-clojurescript-api.md): Clojure Core Namespaces
 - [Datomic Alpha API](https://roamdocs.fyi/developer-documentation/datomic-alpha-api.md): Important Note: This is the documentation for the Depreciated (& inactive) Datomic API. We have a new API! see it here, Roam Backend API (Be
 - [iFrame Components](https://roamdocs.fyi/developer-documentation/iframe-components.md): Important Note: This is Depreciated, it still most likely works but we will not be continuing it's development
@@ -63,16 +64,18 @@ Last export: 2026-07-17T07:32:31.475Z
 - [Diagram](https://roamdocs.fyi/help/diagram.md): Diagrams are an extra dimension of the blocks in your graph. You can lay your thoughts out in a 2D infinite canvas, group and connect ideas.
 - [Roam-specific :q additions](https://roamdocs.fyi/help/roam-specific-q-additions.md): If you're a dev (or even if not!), you can use our very flexible query features to do the kinds of specialized queries you want
 - [Themes](https://roamdocs.fyi/help/themes.md): .--
-- [Semantic search (Experimental)](https://roamdocs.fyi/help/semantic-search-experimental.md): What is semantic search?
+- [Semantic search (Experimental)](https://roamdocs.fyi/help/semantic-search-experimental.md): Roam's regular search matches the words you type. Semantic search matches meaning: it can find your notes about __insomnia__ when you search
 - [Block References](https://roamdocs.fyi/help/block-references.md): One of Roam's most powerful, flagship features
 - [What You Can't Say](https://roamdocs.fyi/help/what-you-can-t-say.md): Essay Paul Graham
 - [Formatting](https://roamdocs.fyi/help/formatting.md): Bold
+- [Key Commands](https://roamdocs.fyi/help/key-commands.md): Roam is built to be driven from the keyboard. These are the commands worth learning first.
 - [Navigation](https://roamdocs.fyi/help/navigation.md): If you're used to clicking hyperlinks when browsing the web, you already know how to navigate in Roam! Click on any page reference or extern
 - [Beating the Averages](https://roamdocs.fyi/help/beating-the-averages.md): Paul Graham Essay
 - [Kanban](https://roamdocs.fyi/help/kanban.md): .--
 - [Coaching](https://roamdocs.fyi/help/coaching.md): Get specialized 1:1 help to master Roam from one of our vetted coaches
 - [JSON Schema](https://roamdocs.fyi/help/json-schema.md): Description
 - [Examples of :q query blocks](https://roamdocs.fyi/help/examples-of-q-query-blocks.md): :q queries can be used to display the results of datomic/datascript queries in your Roam graph
+- [Query](https://roamdocs.fyi/help/query.md): A query block collects every block in your graph that matches conditions you give it: a saved search that lives right in your notes.
 - [Apple Shortcuts/Speak to Roam](https://roamdocs.fyi/help/apple-shortcuts-speak-to-roam.md): An Official Capture Apple Shortcut, built by the Roam team!
 - [Block Context Menu](https://roamdocs.fyi/help/block-context-menu.md): The Block Context Menu is the menu that gets pulled up when you right click the circle bullets on any block, it brings up a list of common f
 - [Features](https://roamdocs.fyi/help/features.md): Fundamentals
@@ -80,52 +83,60 @@ Last export: 2026-07-17T07:32:31.475Z
 - [Blocks](https://roamdocs.fyi/help/blocks.md): Each bullet you see is a __block__, and we write them inside pages like this one.
 - [TODO/DONE](https://roamdocs.fyi/help/todo-done.md): TODOs are the core of task management. We have been using them in our bullet journals, task apps, and now... Roam.
 - [Graphs and Settings](https://roamdocs.fyi/help/graphs-and-settings.md): Team GIFs::
-- [Search](https://roamdocs.fyi/help/search.md): Find or create page
 - [Callouts](https://roamdocs.fyi/help/callouts.md): Callouts are styled Blockquotes with a type-specific icon and color.
 - [Why you can't say](https://roamdocs.fyi/help/why-you-can-t-say.md): Full Text
 - [Encrypted Graphs](https://roamdocs.fyi/help/encrypted-graphs.md): Limitations of encrypted graphs
 - [Zapier Integration](https://roamdocs.fyi/help/zapier-integration.md): Zapier lets you connect Roam Research to 6,000+ other web services. Automated connections called Zaps, set up in minutes with no coding, can
+- [Table](https://roamdocs.fyi/help/table.md): Tables display blocks as a grid you can edit in place: click into cells, sort columns, resize, and paste to and from spreadsheets.
 - [Mermaid Diagrams](https://roamdocs.fyi/help/mermaid-diagrams.md): An embedded version of MermaidJS, create mermaid diagrams inside of Roam!
 - [Security](https://roamdocs.fyi/help/security.md): Security Policy
 - [Right Sidebar](https://roamdocs.fyi/help/right-sidebar.md): Roam Team Videos::
 - [/ Commands](https://roamdocs.fyi/help/commands.md): The / Commands give you access to a variety of functions in Roam
+- [roam/agent guidelines](https://roamdocs.fyi/help/roam-agent-guidelines.md): Guidelines for AI agents working on this graph, Roam's public help documentation. Real users read every word. Follow these for every read an
 - [Courses](https://roamdocs.fyi/help/courses.md): Request to be featured
-- [Query](https://roamdocs.fyi/help/query.md): .--
 - [Updating Roam](https://roamdocs.fyi/help/updating-roam.md): How do I update Roam?
 - [Create API Tokens](https://roamdocs.fyi/help/create-api-tokens.md): (how to create Roam API tokens for a graph)
 - [Articles](https://roamdocs.fyi/help/articles.md): Request to be featured
 - [Developer Documentation](https://roamdocs.fyi/help/developer-documentation.md): If you're a developer who'd like to build extensions for Roam or connect stuff to Roam, please checkout our developer-documentation graph: h
+- [Search](https://roamdocs.fyi/help/search.md): Find or create page Search (the search bar)
+- [Advanced Search](https://roamdocs.fyi/help/advanced-search.md): Advanced Search is Roam's full search view: a bigger version of the search bar, with a results list, a preview pane, and filters (if Better 
 - [Tag Styles](https://roamdocs.fyi/help/tag-styles.md): Links and tags whose name begins with a . add a css class to the roam block that they are on
 - [Task Management](https://roamdocs.fyi/help/task-management.md): Community Videos::
-- [roam/render](https://roamdocs.fyi/help/roam-render.md)
+- [All Graphs Page](https://roamdocs.fyi/help/all-graphs-page.md): The All Graphs page lists every graph you have. It's Roam's home screen, and where new graphs get created.
 - [Filter](https://roamdocs.fyi/help/filter.md): .--
 - [Welcome to Roam v2](https://roamdocs.fyi/help/welcome-to-roam-v2.md): Quick Start
 - [Zettelkasten](https://roamdocs.fyi/help/zettelkasten.md): Roam Team Videos::
 - [Pages](https://roamdocs.fyi/help/pages.md): Team GIFs::
+- [roam/render](https://roamdocs.fyi/help/roam-render.md)
 - [Graph Overview](https://roamdocs.fyi/help/graph-overview.md): .--
-- [All Pages](https://roamdocs.fyi/help/all-pages.md): Delete pages
+- [File Manager](https://roamdocs.fyi/help/file-manager.md): Every image, audio file, PDF, and other file you upload is stored with your graph. The File Manager shows them all in one place.
+- [Advanced Block Reference Search](https://roamdocs.fyi/help/advanced-block-reference-search.md): A search that works the way your outline does: drill down toward a block level by level, then drop a ((block reference)) to it right where y
 - [Daily Notes](https://roamdocs.fyi/help/daily-notes.md): .--
+- [Graph History](https://roamdocs.fyi/help/graph-history.md): Graph History lets you open your graph exactly as it was at any past moment, all the way back to the day it was created.
 - [Pomodoro timer](https://roamdocs.fyi/help/pomodoro-timer.md): Creating a Pomodoro timer is incredibly easy! Here's how:
 - [Hosted Graph](https://roamdocs.fyi/help/hosted-graph.md): What does it mean?
-- [Better search (Experimental)](https://roamdocs.fyi/help/better-search-experimental.md): What is it?
+- [Command Palette](https://roamdocs.fyi/help/command-palette.md): One searchable list of just about everything Roam can do: open it, type a few letters, hit Enter.
 - [Community](https://roamdocs.fyi/help/community.md): Roam Slack
 - [Beginner's Guide](https://roamdocs.fyi/help/beginner-s-guide.md): A short but comprehensive guide
+- [Better search (Experimental)](https://roamdocs.fyi/help/better-search-experimental.md): A new search engine for Roam, currently opt-in while it's experimental.
+- [Customizable Hotkeys](https://roamdocs.fyi/help/customizable-hotkeys.md): Most of Roam's commands can be given hotkeys of your own (or have their defaults changed) in Settings → Hotkeys.
 - [Precise Links](https://roamdocs.fyi/help/precise-links.md): Example
 - [Extensions](https://roamdocs.fyi/help/extensions.md): CSS
 - [Audio Player](https://roamdocs.fyi/help/audio-player.md): You can upload and embed audio into Roam! Check out this interactive demo on Conor White-Sullivan describing Roam as Excel
 - [Templates](https://roamdocs.fyi/help/templates.md): Team GIFS::
+- [Global search](https://roamdocs.fyi/help/global-search.md): Global search finds pages and blocks across all of your graphs at once, not just the one you have open.
 - [Roam Help](https://roamdocs.fyi/help/roam-help.md): Welcome to Roam
 - [roam/css](https://roamdocs.fyi/help/roam-css.md): .rm-g
 - [Notable Graphs](https://roamdocs.fyi/help/notable-graphs.md): Directory
 - [Project Management](https://roamdocs.fyi/help/project-management.md): Community Videos::
+- [Query Builder](https://roamdocs.fyi/help/query-builder.md): The Query Builder is a visual editor for Query blocks: build and refine a query with menus and pickers instead of writing the syntax by hand
 - [Personal CRM](https://roamdocs.fyi/help/personal-crm.md): Community Videos::
-- [Miscellaneous](https://roamdocs.fyi/help/miscellaneous.md): Wiki
 - [Calculator](https://roamdocs.fyi/help/calculator.md): Calculates basic arithmetic.
 - [News and Press](https://roamdocs.fyi/help/news-and-press.md)
-- [Table](https://roamdocs.fyi/help/table.md): .--
+- [Miscellaneous](https://roamdocs.fyi/help/miscellaneous.md): Wiki
 - [Upload Files](https://roamdocs.fyi/help/upload-files.md): You can upload and embed files in Roam, including audio, PDFs, and images, so you can access files right on the spot
 - [Video Embed](https://roamdocs.fyi/help/video-embed.md): You can embed videos in Roam directly, without going to a separate page to access them
-- [Install Roam](https://roamdocs.fyi/help/install-roam.md): Does Roam have a mobile app? Can I install it on my machine?
+- [All Pages](https://roamdocs.fyi/help/all-pages.md): Every page in your graph in one sortable list, with columns for mentions, word count, and when each page was created and last updated.
 - [Workflows](https://roamdocs.fyi/help/workflows.md): Journaling
 - [Images](https://roamdocs.fyi/help/images.md): You can include images on Roam in these two ways
 - [Journaling](https://roamdocs.fyi/help/journaling.md): Articles::
@@ -133,6 +144,7 @@ Last export: 2026-07-17T07:32:31.475Z
 - [Longform writing](https://roamdocs.fyi/help/longform-writing.md): Community Videos::
 - [Research](https://roamdocs.fyi/help/research.md): Roam Team Videos::
 - [Export](https://roamdocs.fyi/help/export.md): Markdown Export
+- [Graph Homepage](https://roamdocs.fyi/help/graph-homepage.md): A graph can have a homepage: a page that opens automatically whenever the graph loads, instead of today's Daily Notes.
 - [Studying](https://roamdocs.fyi/help/studying.md): Community Videos::
 - [Attributes](https://roamdocs.fyi/help/attributes.md): Community Videos::
 - [Meeting notes](https://roamdocs.fyi/help/meeting-notes.md): Community Videos::
@@ -147,13 +159,13 @@ Last export: 2026-07-17T07:32:31.475Z
 - [Word count](https://roamdocs.fyi/help/word-count.md): Word count counts the number of words in a block, for example
 - [Console Logs](https://roamdocs.fyi/help/console-logs.md): To capture console logs
 - [Cancelling your membership during your free trial](https://roamdocs.fyi/help/cancelling-your-membership-during-your-free-trial.md): Sign In to your Roam account, with the email address you used at sign up:
-- [Block Search](https://roamdocs.fyi/help/block-search.md): Key Things to Know
 - [Current time](https://roamdocs.fyi/help/current-time.md): Current time displays the current time in your time zone, it's great for tracking time while writing daily logs
 - [Adding soft line breaks in a block](https://roamdocs.fyi/help/adding-soft-line-breaks-in-a-block.md): Each individual bullet point in a page in Roam is referred to as a block. When you press enter Roam creates a new block on the next line in 
 - [Roam Depot](https://roamdocs.fyi/help/roam-depot.md): Official Plugins
 - [Character count](https://roamdocs.fyi/help/character-count.md): Character count counts the number of characters in a block, for example
 - [Why Roam?](https://roamdocs.fyi/help/why-roam.md): This thread of threads on Twitter answers the question of "Why Roam?" pretty well, if not succinctly 😉
 - [Chinese](https://roamdocs.fyi/help/chinese.md): Community Videos::
+- [Roam Support](https://roamdocs.fyi/help/roam-support.md): You can always reach us by
 - [Left Sidebar](https://roamdocs.fyi/help/left-sidebar.md): Star/unstar pages
 - [Version Control](https://roamdocs.fyi/help/version-control.md): Version control helps you create different versions of of the same block, often used when you want to make multiple drafts of something
 - [Import](https://roamdocs.fyi/help/import.md): Importing JSON
@@ -166,10 +178,10 @@ Last export: 2026-07-17T07:32:31.475Z
 - [Russian](https://roamdocs.fyi/help/russian.md): Community Videos::
 - [Tomorrow](https://roamdocs.fyi/help/tomorrow.md): The "tomorrow" function auto generates tomorrow's daily notes page, it will either give you a static result, or a variable result ("tomorrow
 - [Korean](https://roamdocs.fyi/help/korean.md)
-- [Key Commands](https://roamdocs.fyi/help/key-commands.md): Turn key commands instruction on with custom components like this
 - [Tags](https://roamdocs.fyi/help/tags.md): Tags are just Page References that are styled a bit differently (light grey font color) so that the tag is not as prominent
 - [Roam Slack](https://roamdocs.fyi/help/roam-slack.md): We have a thriving community on Slack!
 - [Alexander Rink](https://roamdocs.fyi/help/alexander-rink.md): Roam Depot Extensions
+- [Zen Mode](https://roamdocs.fyi/help/zen-mode.md): Zen Mode (or Focus Mode) strips the interface down to just what you're writing. One command hides everything else, and toggling it again put
 - [Latex](https://roamdocs.fyi/help/latex.md): Description::
 - [Linked References](https://roamdocs.fyi/help/linked-references.md): Description::
 - [Help & user documentation release notes](https://roamdocs.fyi/help/release-notes.md): Dated daily-note updates (newest first)

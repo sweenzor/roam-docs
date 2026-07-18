@@ -75,12 +75,21 @@
 
 #### **How can I upgrade to a** [[Believer]] **plan?**
 
-- You have to cancel your original plan from the dashboard (from the "click here" link)
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FCorOr3Fd_d.png?alt=media&token=3ce5a03e-5ecc-49c9-9478-d641890934ed)
-- Then, follow the directions on the dashboard to upgrade
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F49IaMFvK7i.png?alt=media&token=b54a2af2-9d24-4dec-a4a1-54a1c5b6f4ac)
-- Here's a video walkthrough for upgrading to believer: 
-- {{[[video]]: https://www.loom.com/share/f28c077d47ce4d8396363e4bcae485b7}}
+- You can cancel your current subscription (**your notes will be intact**) and then pay for the Believer upgrade yourself - you can find the instructions on your billing page [here](https://roamresearch.com/#/billing). 
+- First, click on the 'Manage Subscription' button-
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F7ACw1ddipJ.png?alt=media&token=f22b0133-c350-4f71-ba57-a4709eb06819)
+- Then, cancel your subscription-
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F7bbLpaTmJN.png?alt=media&token=72b74bac-8a9a-4122-9a3a-767eae718c3c)
+- Then, go back to the [billing page](https://roamresearch.com/#/billing), and hit the 'click here' button to upgrade to the Believer plan. 
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F4bf9uyvJ5N.png?alt=media&token=b941256f-66fe-4d2a-af7f-8de8783979f7)
+- Alternatively, we can also upgrade the plan for you from here, so you won't have to cancel and upgrade. Just reach out [[Roam Support]]
+- Old
+  - You have to cancel your original plan from the dashboard (from the "click here" link)
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FCorOr3Fd_d.png?alt=media&token=3ce5a03e-5ecc-49c9-9478-d641890934ed)
+  - Then, follow the directions on the dashboard to upgrade
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F49IaMFvK7i.png?alt=media&token=b54a2af2-9d24-4dec-a4a1-54a1c5b6f4ac)
+  - Here's a video walkthrough for upgrading to believer: 
+  - {{[[video]]: https://www.loom.com/share/f28c077d47ce4d8396363e4bcae485b7}}
 
 #### **If I upgrade/cancel/pause my subscription, will I lose my data?**
 
@@ -93,16 +102,29 @@
 #### **How can I change my payment method?**
 
 - Here are the steps for changing your payment method:
-- Visit https://roamresearch.com/#/app then you'll see this
-- ![](https://attachment.freshdesk.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NjQwMDA1ODE0NDcsImRvbWFpbiI6InJvYW1yZXNlYXJjaC5mcmVzaGRlc2suY29tIiwiYWNjb3VudF9pZCI6MTQ1NDgzN30.PZG77Ig6dq6JEUz77wIxozwWwRtCly-jbXBthDs3kHc)
-- Click on the first link to cancel or update.
-- The next page will look something like this.
-- ![](https://attachment.freshdesk.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NjQwMDA1ODE0NDgsImRvbWFpbiI6InJvYW1yZXNlYXJjaC5mcmVzaGRlc2suY29tIiwiYWNjb3VudF9pZCI6MTQ1NDgzN30.G9zTjzD_5_LHb-92iAHYJHaROxtnGXzExRK9RFULI2I)
-- From here you can cancel, change, or renew your plan, along with the payment method.
+  - Visit our Billing page: https://roamresearch.com/#/billing
+  - At the top of the page, click on the '**Manage Subscription**' button
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F7ACw1ddipJ.png?alt=media&token=f22b0133-c350-4f71-ba57-a4709eb06819)
+  - This will open your billing page, where you'll be able to add another card
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F4bMpO0-gBR.png?alt=media&token=51c54f3b-2933-4c96-a8c1-b2a9ffc174bf)
+  - Besides, when you're on the [Graphs & Settings](https://roamresearch.com/#/app) page, you can access your billing page by clicking on your **Name/Email > Billing**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FL2Zx3FbPOx.gif?alt=media&token=6eb9b9da-3e90-43b3-82ec-8328e0c051e9)
 
 #### **Can I apply Roam Scholar pricing for the** [[Believer]] **plan?**
 
 - Unfortunately, we cannot offer Scholar prices for our Believer plan—it ends up being the same price per month as the Scholar's discount plan!
+
+#### **How can I add my company name, address, ZIP code, VAT no., etc. on the invoice?**
+
+- Yes. Please send [us]([[Roam Support]]) the details (eg. company name, address, zip code, VAT no. etc. ) you want to add to your invoices! We'll help you with that.​
+
+#### **Can I change my billing date?**
+
+- Yes. If you'd like your billing date moved to a different day of the month (for example, from the 24th to the 3rd of each month), contact our [support team]([[Roam Support]]) and we'll help you make the change.
+
+#### **Can I switch from an Annual plan to the Believer plan?**
+
+- Yes. If you recently upgraded to an annual plan and would like to switch to the Believer plan instead, contact our [support team]([[Roam Support]]) and we'll help you make the change, including applying any credit for the unused portion of your current subscription.
 
 ## [Features]([[Features]])
 
@@ -144,21 +166,11 @@
 
 #### **Does Roam have a mobile app? Can I install it on my machine?**
 
-- Not yet, however Roam is available now as a webapp which gives you full access to your Roam and functions in a similar way to an app available through the appstore.
-- Here's how to install Roam as a webapp on your **phone** or **tablet**:
-  - Go to chrome (or the other browser you use such as safari, firefox etc), then go to [http://www.roamresearch.com](http://www.roamresearch.com/), and it will ask you to sign in to your Roam account.
-  - Once you sign in you will see this screen below. And then click the prompt at the bottom that says 'Add Roam to homescreen', which will install Roam as a link on your tablet/phone.
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2FALLP4qNh6G.png?alt=media&token=83f0d3f8-9d42-4016-b83b-4c29816cb2a1)
-  - An alternative way to do this, if you go to [roamresearch.com](http://roamresearch.com/) and sign in, you should should see 'install full site' as a button on the top right of page, if you click this it will install Roam on your device.
-- Here's how to install Roam as a webapp on your **desktop**: 
-  - Go to Chrome, and open your Roam graph
-  - From Chrome's three-dot-menu, go to "More Tools", "Create Shortcut"
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2Fq2dKP-MzXc.gif?alt=media&token=801dbe63-be9d-4d89-84cf-0c2ab85e3066)
-- More on this: https://www.roamtips.com/home/roam-research-app-mac-windows
+- Yes! See [[Install Roam]]
 
 #### **What are the available formats for** [exporting]([[Export]]) **and backing up the data in my graph?**
 
-- Markdown, JSON and EDN
+- Markdown, JSON, EDN and MessagePack
 
 #### **How do I create new pages?**
 
@@ -186,11 +198,11 @@
 #### **How do I delete a** [page]([[Pages]])?
 
 - There are different ways to delete a page: 
-- From the [[All Pages]] view 
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FYqxqKorQI-.gif?alt=media&token=736383b1-77c5-43d0-afe0-1b9559750dad)
-- From the page itself
-  - Open the page you want to delete, then go to the three-dot-menu on the top-right corner and select "Delete".
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F8gbt5z9V4h.gif?alt=media&token=26079c72-954a-4683-a760-0fabb65a1ff6)
+  - From the [[All Pages]] view 
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FYqxqKorQI-.gif?alt=media&token=736383b1-77c5-43d0-afe0-1b9559750dad)
+  - From the page itself
+    - Open the page you want to delete, then go to the three-dot-menu on the top-right corner and select "Delete".
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F8gbt5z9V4h.gif?alt=media&token=26079c72-954a-4683-a760-0fabb65a1ff6)
 
 #### **Can I remove bullets from a** [page]([[Pages]])?
 
@@ -350,7 +362,7 @@
 
 - If you have nested blocks in a page, it's possible to collapse or expand all of your blocks in a page with a single click.
 - To do this, right mouse click on the title of the page. This will bring up a contextual menu that includes the options to expand or collapse all blocks.
-- ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/64001910098/original/NJ8FqnNUwLjfbrMkZK2R_SqEfBKnx37VgQ.gif?1597868449)
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FoT40qzNE__.gif?alt=media&token=6da9c6bc-376c-4b85-8394-d6713dca04d0)
 
 #### **Why can't I hear the** [[Pomodoro timer]] **bell sound?**
 

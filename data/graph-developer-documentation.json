@@ -1,6 +1,6 @@
 {
  "graph": "developer-documentation",
- "exportedAt": "2026-07-17T07:32:31.475Z",
+ "exportedAt": "2026-07-18T07:13:50.357Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -242,6 +242,10 @@
   {
    ":node/title": "May 9th, 2021",
    ":block/uid": "05-09-2021"
+  },
+  {
+   ":node/title": "Return",
+   ":block/uid": "w2TkzJeTV"
   },
   {
    ":node/title": "June 27th, 2022",
@@ -2395,26 +2399,22 @@
    ":node/title": "Roam Alpha API v2",
    ":block/children": [
     {
-     ":block/refs": [
-      {
-       ":block/uid": "tIaOPdXCj"
-      }
-     ],
-     ":block/uid": "Air2-thHo",
-     ":block/order": 0,
-     ":block/string": "Draft restructuring of [[Roam Alpha API]], written for both humans and AI. Method content verified against the source (July 2026). Historical change log stays on the original page."
-    },
-    {
      ":block/children": [
       {
        ":block/refs": [
         {
          ":block/uid": "QE0bxjUwk"
+        },
+        {
+         ":block/uid": "7l31uEMqA"
+        },
+        {
+         ":block/uid": "Tk5jSgvLX"
         }
        ],
        ":block/uid": "A98PMszJ6",
        ":block/order": 0,
-       ":block/string": "The Roam Alpha API is provided in the browser, letting you read and write data and drive the UI. It lives on the `window` object as `window.roamAlphaAPI` and is available from [[roam/js]] code blocks, Roam Depot extensions, and the browser console."
+       ":block/string": "The Roam Alpha API is provided in the browser, letting you read and write data and drive the UI. It lives on the `window` object as `window.roamAlphaAPI` and is available from [[roam/js]]/[[roam/cljs]] code blocks, Roam Depot extensions, [[roam/render]], and the browser console."
       },
       {
        ":block/refs": [
@@ -2428,7 +2428,7 @@
       }
      ],
      ":block/uid": "qR_-nGHzM",
-     ":block/order": 1,
+     ":block/order": 0,
      ":block/string": "**Getting Started**"
     },
     {
@@ -2436,7 +2436,7 @@
       {
        ":block/uid": "2nzjURVFq",
        ":block/order": 0,
-       ":block/string": "Most functions take a single object argument. Keys are kebab-case strings, and boolean keys often end in `?` — quote them in JS: `{\"parent-uid\": \"abc\", \"zoom-path?\": true}`. Exceptions: `data.roamQuery` uses camelCase keys, and a few functions take positional arguments (`data.addPullWatch`, `data.page.addShortcut`, `ui.mainWindow.registerComponent`, everything in `util`)."
+       ":block/string": "Most functions take a single object argument. Keys are kebab-case strings, and boolean keys often end in `?` — quote them in JS: `{\"parent-uid\": \"abc\", \"zoom-path?\": true}`. Exceptions: `data.roamQuery` uses camelCase keys, and some functions take positional arguments (`data.addPullWatch`/`removePullWatch`, `data.page.addShortcut`/`removeShortcut`, the `ui.mainWindow` component functions, `ui.graphView.wholeGraph.*`, and everything in `util` — each such method says so in its own block)."
       },
       {
        ":block/children": [
@@ -2453,22 +2453,22 @@
        ],
        ":block/uid": "vVcMj7Odr",
        ":block/order": 1,
-       ":block/string": "Write functions return a Promise that resolves to `null` once Roam has applied the operation — after the triggering event and all of its descendant events are handled. Chain dependent writes with `await`; no `setTimeout` hacks needed."
+       ":block/string": "Write functions return a Promise that (usually) resolves to `null` once Roam has applied the operation — after the triggering event and all of its descendant events are handled. Chain dependent writes with `await`; no `setTimeout` hacks needed."
       },
       {
        ":block/uid": "J7wHZTpOH",
        ":block/order": 2,
-       ":block/string": "Read functions are synchronous unless a method's `Returns::` says otherwise (`data.roamQuery`, `ui.mainWindow.getOpenView`, and `ui.mainWindow.getOpenPageOrBlockUid` return promises). Prefer the promise-returning `data.async.*` variants in new code — the synchronous reads will eventually be deprecated."
+       ":block/string": "Read functions are synchronous unless a method's `Return::` says otherwise (`data.roamQuery`, `ui.mainWindow.getOpenView`, and `ui.mainWindow.getOpenPageOrBlockUid` return promises). Prefer the promise-returning `data.async.*` variants in new code — the synchronous reads will eventually be deprecated."
       },
       {
        ":block/uid": "XAlgEx3NJ",
        ":block/order": 3,
-       ":block/string": "Rate limit: rate-limited functions (all writes, plus a number of UI functions) share a budget of 1500 calls per 60 seconds; exceeding it throws."
+       ":block/string": "Rate limit: rate-limited functions (all writes, plus a number of UI functions) share a budget of 1500 calls per 60 seconds; exceeding it throws. This is to protect your graph from runaway loops. If you are adding a lot of data at once, prefer creating from markdown."
       },
       {
        ":block/uid": "AZqdDKKEC",
        ":block/order": 4,
-       ":block/string": "`q`, `pull`, `pull_many` and their variants time out after 20 seconds, throwing `Query and/or pull expression took too long to run.` — `pull` and `pull_many` accept an options argument to override the timeout."
+       ":block/string": "`q`, `pull`, `pull_many` and their variants time out after 20 seconds, throwing `Query and/or pull expression took too long to run.` Override it by passing `{timeout: <ms>}` as `pull`/`pull_many`'s options argument, or by including a `:timeout <ms>` clause in the query for `q`."
       },
       {
        ":block/children": [
@@ -2481,6 +2481,11 @@
          ":block/uid": "kxTOzZfoI",
          ":block/order": 1,
          ":block/string": "Daily note pages use the date as their uid, in `MM-DD-YYYY` format (e.g. `07-16-2026` for July 16th, 2026) — see `util.dateToPageUid`."
+        },
+        {
+         ":block/uid": "MJwr2CdNN",
+         ":block/order": 2,
+         ":block/string": "uids can technically be any length and they don't have to be random, but some extensions might rely on it being 9 chars"
         }
        ],
        ":block/uid": "7Pp9LTZ52",
@@ -2521,7 +2526,7 @@
       }
      ],
      ":block/uid": "iR5PNIbyp",
-     ":block/order": 2,
+     ":block/order": 1,
      ":block/string": "**Conventions**"
     },
     {
@@ -2555,7 +2560,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -2567,7 +2572,7 @@
            ],
            ":block/uid": "JQQcgY2w9",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -2607,6 +2612,11 @@
              ":block/uid": "MsBEwWSFA",
              ":block/order": 2,
              ":block/string": "Legacy alias: `roamAlphaAPI.q` (older top-level name; prefer this namespaced path)"
+            },
+            {
+             ":block/uid": "IPLNmTImV",
+             ":block/order": 3,
+             ":block/string": "Times out after 20 seconds by default; include a `:timeout <ms>` clause in the query to override."
             }
            ],
            ":block/uid": "s2GDnBRtw",
@@ -2667,7 +2677,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -2679,7 +2689,7 @@
            ],
            ":block/uid": "ID8eWPycN",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -2762,7 +2772,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -2774,7 +2784,7 @@
            ],
            ":block/uid": "kwwIHX4Ut",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -2820,7 +2830,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -2842,7 +2852,7 @@
            ],
            ":block/uid": "J8pkEk9A2",
            ":block/order": 1,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -2888,7 +2898,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -2900,7 +2910,7 @@
            ],
            ":block/uid": "qX5CGPxZy",
            ":block/order": 1,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -3019,7 +3029,7 @@
             {
              ":block/uid": "4ewu_j5PL",
              ":block/order": 0,
-             ":block/string": "`search-str` (string, required) — the search query"
+             ":block/string": "`search-str` (string, required) — the search query (`search-string` is accepted as an alias)"
             },
             {
              ":block/uid": "oAWHTJDbv",
@@ -3034,7 +3044,7 @@
             {
              ":block/uid": "WK739ryiJ",
              ":block/order": 3,
-             ":block/string": "`hide-code-blocks` (boolean, optional, default false) — exclude code blocks from results"
+             ":block/string": "`hide-code-blocks` (boolean, optional, default: the user's hide-code-blocks setting) — exclude code blocks from results"
             },
             {
              ":block/uid": "G5vex6fc3",
@@ -3054,7 +3064,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -3066,7 +3076,7 @@
            ],
            ":block/uid": "qQWTUp1Ab",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -3134,7 +3144,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -3146,7 +3156,7 @@
            ],
            ":block/uid": "oixtlQtiL",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -3204,7 +3214,7 @@
             {
              ":block/uid": "GUPY0UoWD",
              ":block/order": 0,
-             ":block/string": "`search-str` (string, required) — the search query"
+             ":block/string": "`search-str` (string, required) — the search query (`search-string` is accepted as an alias)"
             },
             {
              ":block/uid": "SiEZLky-s",
@@ -3234,7 +3244,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -3268,7 +3278,7 @@
            ],
            ":block/uid": "dUB2SIU06",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -3344,7 +3354,7 @@
             {
              ":block/uid": "UINpA_U3F",
              ":block/order": 2,
-             ":block/string": "`groupByPage` (boolean, optional, default false) — group results by page (query mode only)"
+             ":block/string": "`groupByPage` (boolean, optional, default true) — group results by page (query mode only)"
             },
             {
              ":block/uid": "IEYlCM76j",
@@ -3384,7 +3394,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -3396,7 +3406,7 @@
            ],
            ":block/uid": "fvc3Rdsyy",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -3479,7 +3489,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -3491,7 +3501,7 @@
            ],
            ":block/uid": "EHx8oDzre",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -3564,19 +3574,19 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
             {
              ":block/uid": "I3jNbwS3R",
              ":block/order": 0,
-             ":block/string": "Promise resolving to `null`"
+             ":block/string": "Promise resolving to `null` (the two-argument form resolves to `true`)"
             }
            ],
            ":block/uid": "R9ZrnGQRQ",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -3639,7 +3649,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -3651,7 +3661,7 @@
            ],
            ":block/uid": "21rrVfMTB",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -3669,23 +3679,6 @@
            ":block/uid": "FkTul5nEb",
            ":block/order": 0,
            ":block/string": "Description::"
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "YSuAc1n3V"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/uid": "yaO17DUM_",
-             ":block/order": 0,
-             ":block/string": "```javascript\nawait window.roamAlphaAPI.data.undo()\n// => null```"
-            }
-           ],
-           ":block/uid": "cXwjLl2Fm",
-           ":block/order": 3,
-           ":block/string": "Example::"
           }
          ],
          ":block/uid": "_tO4S0lhO",
@@ -3714,7 +3707,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -3726,7 +3719,7 @@
            ],
            ":block/uid": "NqK-wGM09",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -3744,23 +3737,6 @@
            ":block/uid": "Io-71iyBr",
            ":block/order": 0,
            ":block/string": "Description::"
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "YSuAc1n3V"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/uid": "G85cCAaLS",
-             ":block/order": 0,
-             ":block/string": "```javascript\nawait window.roamAlphaAPI.data.redo()\n// => null```"
-            }
-           ],
-           ":block/uid": "WMSP4Et5p",
-           ":block/order": 3,
-           ":block/string": "Example::"
           }
          ],
          ":block/uid": "-LkUTBZ0S",
@@ -3869,7 +3845,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -3881,7 +3857,7 @@
              ],
              ":block/uid": "Q3B2ysSyD",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -3966,7 +3942,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -3978,7 +3954,7 @@
              ],
              ":block/uid": "euMw8H3wZ",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -4070,7 +4046,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -4082,7 +4058,7 @@
              ],
              ":block/uid": "0WPEKa-CC",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -4157,7 +4133,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -4169,7 +4145,7 @@
              ],
              ":block/uid": "sJ6IJUjaB",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -4249,7 +4225,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -4261,7 +4237,7 @@
              ],
              ":block/uid": "g1gUMSJlU",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -4341,7 +4317,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -4353,7 +4329,7 @@
              ],
              ":block/uid": "7F5Nf-hxN",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -4417,6 +4393,16 @@
                ":block/uid": "xvuVxSgSm",
                ":block/order": 2,
                ":block/string": "`reply-markdown` (string) — markdown parsed into multiple sibling reply blocks"
+              },
+              {
+               ":block/uid": "tXkTxd44i",
+               ":block/order": 3,
+               ":block/string": "`reply-uid` (string, optional) — uid for the created reply block; autogenerated if omitted"
+              },
+              {
+               ":block/uid": "U11UtvSb-",
+               ":block/order": 4,
+               ":block/string": "`open-comment` (boolean, optional, default false) — open the block's comments in the sidebar after adding the reply"
               }
              ],
              ":block/uid": "tNMLMU7SX",
@@ -4426,19 +4412,19 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
               {
                ":block/uid": "bxNStu8lm",
                ":block/order": 0,
-               ":block/string": "Promise resolving to `null`"
+               ":block/string": "Promise resolving to `{uids: [...], parentUid: \"...\"}` — uids of the created reply block(s) and the uid of the comments block they live under"
               }
              ],
              ":block/uid": "_beIy5WhG",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -4450,7 +4436,7 @@
               {
                ":block/uid": "qvnlUG0R1",
                ":block/order": 0,
-               ":block/string": "```javascript\n// single reply\nawait window.roamAlphaAPI.data.block.addComment(\n  {\"block-uid\": \"abc123\", \"reply-string\": \"This is a comment\"})\n// => null\n\n// markdown reply (parsed into siblings)\nawait window.roamAlphaAPI.data.block.addComment(\n  {\"block-uid\": \"abc123\", \"reply-markdown\": \"First block\\n- Nested child\"})\n// => null```"
+               ":block/string": "```javascript\n// single reply\nawait window.roamAlphaAPI.data.block.addComment(\n  {\"block-uid\": \"abc123\", \"reply-string\": \"This is a comment\"})\n// => {uids: [\"aBc123xYz\"], parentUid: \"dEf456uVw\"}\n\n// markdown reply (parsed into siblings)\nawait window.roamAlphaAPI.data.block.addComment(\n  {\"block-uid\": \"abc123\", \"reply-markdown\": \"First block\\n- Nested child\"})\n// => {uids: [\"gHi789jKl\"], parentUid: \"dEf456uVw\"}```"
               }
              ],
              ":block/uid": "kJ5EXRJ-2",
@@ -4525,7 +4511,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -4537,7 +4523,7 @@
              ],
              ":block/uid": "KfaDV9XHk",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -4610,7 +4596,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -4622,7 +4608,7 @@
              ],
              ":block/uid": "1XDP3RjfX",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -4702,7 +4688,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -4714,7 +4700,7 @@
              ],
              ":block/uid": "jiBI7EH99",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -4789,7 +4775,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -4801,7 +4787,7 @@
              ],
              ":block/uid": "zb4gCuLyf",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -4874,7 +4860,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -4886,7 +4872,7 @@
              ],
              ":block/uid": "KgzMwktWE",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -4949,7 +4935,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -4961,7 +4947,7 @@
              ],
              ":block/uid": "GHIF-OsCu",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -5027,6 +5013,11 @@
                ":block/uid": "43BqxPsAN",
                ":block/order": 1,
                ":block/string": "`display-name` (string, optional)"
+              },
+              {
+               ":block/uid": "ms2b7ki6D",
+               ":block/order": 2,
+               ":block/string": "`photo-url` (string, optional) — url of the user's photo"
               }
              ],
              ":block/uid": "kZXuTfE5j",
@@ -5036,7 +5027,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -5048,7 +5039,7 @@
              ],
              ":block/uid": "T-vehbTdV",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -5123,7 +5114,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -5135,7 +5126,7 @@
            ],
            ":block/uid": "7QARMcHFW",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -5232,7 +5223,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -5244,7 +5235,7 @@
            ],
            ":block/uid": "4cElfi27r",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -5316,7 +5307,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -5328,7 +5319,7 @@
              ],
              ":block/uid": "w4K74sOkG",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -5408,7 +5399,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -5420,7 +5411,7 @@
              ],
              ":block/uid": "TEJpG9qA5",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -5483,7 +5474,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -5495,7 +5486,7 @@
              ],
              ":block/uid": "EMyq2tqsC",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -5513,23 +5504,6 @@
              ":block/uid": "oM_iijXbC",
              ":block/order": 0,
              ":block/string": "Description::"
-            },
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "YSuAc1n3V"
-              }
-             ],
-             ":block/children": [
-              {
-               ":block/uid": "fk9Tapdyc",
-               ":block/order": 0,
-               ":block/string": "```javascript\nawait window.roamAlphaAPI.ui.mainWindow.openDailyNotes()\n// => null```"
-              }
-             ],
-             ":block/uid": "HSIZpQNNy",
-             ":block/order": 3,
-             ":block/string": "Example::"
             }
            ],
            ":block/uid": "hEpLuZUmU",
@@ -5558,7 +5532,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -5570,7 +5544,7 @@
              ],
              ":block/uid": "WhGs_kX1f",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -5588,23 +5562,6 @@
              ":block/uid": "QedP-Cs1J",
              ":block/order": 0,
              ":block/string": "Description::"
-            },
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "YSuAc1n3V"
-              }
-             ],
-             ":block/children": [
-              {
-               ":block/uid": "b4enXMp_U",
-               ":block/order": 0,
-               ":block/string": "```javascript\nawait window.roamAlphaAPI.ui.mainWindow.focusFirstBlock()\n// => null```"
-              }
-             ],
-             ":block/uid": "g7mYZt3-z",
-             ":block/order": 3,
-             ":block/string": "Example::"
             }
            ],
            ":block/uid": "r0AKZiWrw",
@@ -5633,7 +5590,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -5645,7 +5602,7 @@
              ],
              ":block/uid": "WLKDf_Km2",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -5708,7 +5665,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -5720,12 +5677,12 @@
               {
                ":block/uid": "obmSwQGsp",
                ":block/order": 1,
-               ":block/string": "```javascript\n// page\n{type: \"outline\",\n uid: \"Vfht187T1\",\n title: \"My Page Title\"}\n\n// zoomed into a block\n{type: \"outline\",\n uid: \"abc123xyz\",\n \"block-string\": \"Some block content\"}\n\n// daily notes\n{type: \"log\"}\n\n// graph view\n{type: \"graph\"}\n\n// diagram\n{type: \"diagram\",\n uid: \"diagram-uid\"}\n\n// PDF viewer\n{type: \"pdf\",\n uid: \"pdf-block-uid\"}\n\n// all pages search\n{type: \"search\"}\n\n// custom component, see registerComponent\n{type: \"custom\",\n id: \"component-id\",\n args: []}```"
+               ":block/string": "```javascript\n// page\n{type: \"outline\",\n uid: \"Vfht187T1\",\n title: \"My Page Title\"}\n\n// zoomed into a block\n{type: \"outline\",\n uid: \"abc123xyz\",\n \"block-string\": \"Some block content\"}\n\n// daily notes\n{type: \"log\",\n uids: [\"07-17-2026\", \"07-16-2026\"]}\n\n// graph view\n{type: \"graph\"}\n\n// diagram\n{type: \"diagram\",\n uid: \"diagram-uid\"}\n\n// PDF viewer\n{type: \"pdf\",\n uid: \"pdf-block-uid\",\n url: \"https://firebasestorage.googleapis.com/...\"}\n\n// all pages search\n{type: \"search\"}\n\n// custom component, see registerComponent\n{type: \"custom\",\n id: \"component-id\",\n args: []}```"
               }
              ],
              ":block/uid": "0nkiWY8TK",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -5776,19 +5733,19 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
               {
                ":block/uid": "qRmRImsKc",
                ":block/order": 0,
-               ":block/string": "`null`"
+               ":block/string": "Synchronous; the return value is internal state — treat it as void"
               }
              ],
              ":block/uid": "HIHYNTMQs",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -5806,6 +5763,23 @@
              ":block/uid": "TxrWkWbKu",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "4E3nxRVzH",
+               ":block/order": 0,
+               ":block/string": "```javascript\nconst MyView = () => React.createElement(\"h1\", null, \"Hello from my view\");\nwindow.roamAlphaAPI.ui.mainWindow.registerComponent(\"my-view\", MyView)\n// (return value is not meaningful)```"
+              }
+             ],
+             ":block/uid": "8xX5Sjmt0",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "ykSGnd8U3",
@@ -5834,19 +5808,19 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
               {
                ":block/uid": "8BEkgv1yl",
                ":block/order": 0,
-               ":block/string": "`null`"
+               ":block/string": "Synchronous; the return value is internal state — treat it as void"
               }
              ],
              ":block/uid": "JHj7S-JHl",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -5864,6 +5838,23 @@
              ":block/uid": "zmHZNT41l",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "6mRSGyaON",
+               ":block/order": 0,
+               ":block/string": "```javascript\nwindow.roamAlphaAPI.ui.mainWindow.unregisterComponent(\"my-view\")\n// (return value is not meaningful)```"
+              }
+             ],
+             ":block/uid": "oOr4dTtti",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "Oen0XB5wH",
@@ -5897,19 +5888,19 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
               {
                ":block/uid": "eqouWuOYx",
                ":block/order": 0,
-               ":block/string": "`null`"
+               ":block/string": "Synchronous; the return value is internal state — treat it as void"
               }
              ],
              ":block/uid": "xJyZ8Ph2L",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -5927,6 +5918,23 @@
              ":block/uid": "yV4Jgifwt",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "z5gXAiLm2",
+               ":block/order": 0,
+               ":block/string": "```javascript\nwindow.roamAlphaAPI.ui.mainWindow.openComponent(\"my-view\", \"arg1\", 42)\n// getOpenView() now reports\n// {type: \"custom\", id: \"my-view\", args: [\"arg1\", 42]}```"
+              }
+             ],
+             ":block/uid": "Np7kscbG3",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "7fuUnlble",
@@ -5955,19 +5963,19 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
               {
                ":block/uid": "4egNcPCxD",
                ":block/order": 0,
-               ":block/string": "`null`"
+               ":block/string": "Synchronous; the return value is internal state — treat it as void"
               }
              ],
              ":block/uid": "czuL2gcCt",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -5985,6 +5993,23 @@
              ":block/uid": "uJI_Yygyg",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "cThhbkekr",
+               ":block/order": 0,
+               ":block/string": "```javascript\nwindow.roamAlphaAPI.ui.mainWindow.closeComponent(\"my-view\")\n// (return value is not meaningful)```"
+              }
+             ],
+             ":block/uid": "PzqfFBwns",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "ytkgulBlm",
@@ -6020,7 +6045,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -6032,7 +6057,7 @@
              ],
              ":block/uid": "N-NnGy8ze",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -6078,7 +6103,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -6090,7 +6115,7 @@
              ],
              ":block/uid": "7rVaOSs4Y",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -6143,7 +6168,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -6155,7 +6180,7 @@
              ],
              ":block/uid": "MWl1GcWsb",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -6201,7 +6226,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -6213,7 +6238,7 @@
              ],
              ":block/uid": "7fhYICL5U",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -6259,7 +6284,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -6293,7 +6318,7 @@
              ],
              ":block/uid": "2JBDWmrhi",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -6373,7 +6398,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -6385,7 +6410,7 @@
              ],
              ":block/uid": "OrLzXCdwK",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -6453,7 +6478,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -6465,7 +6490,7 @@
              ],
              ":block/uid": "MbSpDR_NB",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -6533,7 +6558,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -6545,7 +6570,7 @@
              ],
              ":block/uid": "sm8nq0Uu2",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -6563,6 +6588,23 @@
              ":block/uid": "p_FULPtV2",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "-B60dFA1b",
+               ":block/order": 0,
+               ":block/string": "```javascript\nwindow.roamAlphaAPI.ui.rightSidebar\n  .expandWindow({window: {type: \"outline\", \"block-uid\": \"cArVJL_vg\"}})\n// resolves to null```"
+              }
+             ],
+             ":block/uid": "agdcK8Ubu",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "esF_b4Dzf",
@@ -6596,7 +6638,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -6608,7 +6650,7 @@
              ],
              ":block/uid": "VuaqmfksD",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -6626,6 +6668,23 @@
              ":block/uid": "kU-SCKKdG",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "fMxGxJOVI",
+               ":block/order": 0,
+               ":block/string": "```javascript\nwindow.roamAlphaAPI.ui.rightSidebar\n  .collapseWindow({window: {type: \"outline\", \"block-uid\": \"cArVJL_vg\"}})\n// resolves to null```"
+              }
+             ],
+             ":block/uid": "AgzUEN87p",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "Ulrgkf-5N",
@@ -6664,7 +6723,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -6676,7 +6735,7 @@
              ],
              ":block/uid": "Y5hWFzigy",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -6694,6 +6753,23 @@
              ":block/uid": "2OzWOWaN0",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "6Gnnt_XD6",
+               ":block/order": 0,
+               ":block/string": "```javascript\nwindow.roamAlphaAPI.ui.rightSidebar\n  .pinWindow({window: {type: \"block\", \"block-uid\": \"1fP8LY5ED\"}})\n\n// pin to the top of the sidebar\nwindow.roamAlphaAPI.ui.rightSidebar\n  .pinWindow({window: {type: \"block\", \"block-uid\": \"1fP8LY5ED\"},\n              \"pin-to-top?\": true})\n\n// each resolves to null```"
+              }
+             ],
+             ":block/uid": "8iSXyDnlF",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "S1GJJobXn",
@@ -6727,7 +6803,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -6739,7 +6815,7 @@
              ],
              ":block/uid": "0aRW8yUMC",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -6757,6 +6833,23 @@
              ":block/uid": "cga7YIjEb",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "yZeYEOrWW",
+               ":block/order": 0,
+               ":block/string": "```javascript\nwindow.roamAlphaAPI.ui.rightSidebar\n  .unpinWindow({window: {type: \"block\", \"block-uid\": \"1fP8LY5ED\"}})\n// resolves to null```"
+              }
+             ],
+             ":block/uid": "jwDwgNzGt",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "d-EWnOXVN",
@@ -6797,7 +6890,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -6809,7 +6902,7 @@
              ],
              ":block/uid": "6q8ZAGYjd",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -6827,6 +6920,23 @@
              ":block/uid": "MUhMQKIR5",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "fwp-wFz0X",
+               ":block/order": 0,
+               ":block/string": "```javascript\nwindow.roamAlphaAPI.ui.rightSidebar\n  .setWindowOrder({window: {type: \"block\", \"block-uid\": \"1fP8LY5ED\", order: 0}})\n// resolves to null```"
+              }
+             ],
+             ":block/uid": "w_4WKUE9f",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "FPWCKuQHY",
@@ -6867,7 +6977,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -6879,7 +6989,7 @@
              ],
              ":block/uid": "VG_zzw3zy",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -6897,6 +7007,23 @@
              ":block/uid": "sqPaspLWb",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "bLE8CGRuA",
+               ":block/order": 0,
+               ":block/string": "```javascript\nwindow.roamAlphaAPI.ui.filters\n  .addGlobalFilter({title: \"TODO\", type: \"removes\"})\n// resolves to null```"
+              }
+             ],
+             ":block/uid": "yCofVHCXQ",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "Wv5OeMaDs",
@@ -6930,7 +7057,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -6942,7 +7069,7 @@
              ],
              ":block/uid": "VlY18HUsN",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -6960,6 +7087,23 @@
              ":block/uid": "yvnAlaixj",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "BbO_HaVdT",
+               ":block/order": 0,
+               ":block/string": "```javascript\nwindow.roamAlphaAPI.ui.filters\n  .removeGlobalFilter({title: \"TODO\", type: \"removes\"})\n// resolves to null```"
+              }
+             ],
+             ":block/uid": "vIhGLmB2x",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "uf2NsuFwL",
@@ -6988,7 +7132,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -7000,7 +7144,7 @@
              ],
              ":block/uid": "eRm6-cj7X",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -7018,6 +7162,23 @@
              ":block/uid": "OoaUXnsfl",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "g9J77qH-f",
+               ":block/order": 0,
+               ":block/string": "```javascript\nwindow.roamAlphaAPI.ui.filters.getGlobalFilters()\n// => {\"includes\": [], \"removes\": [\"TODO\"]}```"
+              }
+             ],
+             ":block/uid": "167yBDkuo",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "PBxJ555US",
@@ -7058,7 +7219,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -7070,7 +7231,7 @@
              ],
              ":block/uid": "Kr8AQjwVI",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -7150,7 +7311,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -7162,7 +7323,7 @@
              ],
              ":block/uid": "ozfxtLVUv",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -7225,7 +7386,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -7237,7 +7398,7 @@
              ],
              ":block/uid": "wFbArzbOy",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -7255,6 +7416,23 @@
              ":block/uid": "Fuul3FHKm",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "ZfTdvlbjO",
+               ":block/order": 0,
+               ":block/string": "```javascript\nwindow.roamAlphaAPI.ui.filters.getPageLinkedRefsFilters({page: {title: \"test\"}})\n// => {\"includes\": [\"Author\"], \"removes\": []}```"
+              }
+             ],
+             ":block/uid": "ZCHrGGW-n",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "7zpYBVX79",
@@ -7288,7 +7466,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -7300,7 +7478,7 @@
              ],
              ":block/uid": "rwFw3KJU3",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -7368,7 +7546,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -7380,7 +7558,7 @@
              ],
              ":block/uid": "mgWRPfJTq",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -7453,7 +7631,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -7465,7 +7643,7 @@
              ],
              ":block/uid": "bsEwta9tp",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -7712,7 +7890,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -7724,7 +7902,7 @@
              ],
              ":block/uid": "dy8H1ds3g",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -7792,7 +7970,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -7804,7 +7982,7 @@
              ],
              ":block/uid": "QHbS79CId",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -7896,7 +8074,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -7908,7 +8086,7 @@
              ],
              ":block/uid": "RmzCy8M1S",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -7971,7 +8149,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -7983,7 +8161,7 @@
              ],
              ":block/uid": "VHcrCrygR",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -8001,6 +8179,23 @@
              ":block/uid": "-XV2kiWuI",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "4idMJ_aOM",
+               ":block/order": 0,
+               ":block/string": "```javascript\nwindow.roamAlphaAPI.ui.slashCommand.removeCommand({label: \"Quick Test\"})\n// => null```"
+              }
+             ],
+             ":block/uid": "Zs_7inf9g",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "YwcjMssfW",
@@ -8058,7 +8253,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -8070,7 +8265,7 @@
              ],
              ":block/uid": "g4BdOdGlh",
              ":block/order": 1,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -8116,7 +8311,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -8128,7 +8323,7 @@
              ],
              ":block/uid": "GawwVW6_9",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -8146,6 +8341,23 @@
              ":block/uid": "lTSQYqK74",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "mLS_Co1QL",
+               ":block/order": 0,
+               ":block/string": "```javascript\nroamAlphaAPI.ui.blockContextMenu.removeCommand({label: \"Debug: Console Log\"})\n// resolves to null```"
+              }
+             ],
+             ":block/uid": "7EbaAgYYv",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "1ZD5cBBJ1",
@@ -8294,6 +8506,23 @@
            ":block/uid": "6ORviju_S",
            ":block/order": 0,
            ":block/string": "Description::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "YSuAc1n3V"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "Z6ItahGTf",
+             ":block/order": 0,
+             ":block/string": "```javascript\nroamAlphaAPI.ui.pageRefContextMenu.addCommand(\n  {label: \"Debug: Console Log\", callback: (e) => console.log(e)})\n// => null```"
+            }
+           ],
+           ":block/uid": "GpYEfpI7o",
+           ":block/order": 1,
+           ":block/string": "Example::"
           }
          ],
          ":block/uid": "Ix60iGm7I",
@@ -8330,6 +8559,23 @@
            ":block/uid": "g8mxIOQWl",
            ":block/order": 0,
            ":block/string": "Description::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "YSuAc1n3V"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "q3Xuyhcuy",
+             ":block/order": 0,
+             ":block/string": "```javascript\nroamAlphaAPI.ui.blockRefContextMenu.addCommand(\n  {label: \"Debug: Console Log\", callback: (e) => console.log(e)})\n// => null```"
+            }
+           ],
+           ":block/uid": "SBwfCYL5B",
+           ":block/order": 1,
+           ":block/string": "Example::"
           }
          ],
          ":block/uid": "NDKHwXI7w",
@@ -8366,6 +8612,23 @@
            ":block/uid": "bs1Gg0txA",
            ":block/order": 0,
            ":block/string": "Description::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "YSuAc1n3V"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "DlRxKGA1_",
+             ":block/order": 0,
+             ":block/string": "```javascript\nroamAlphaAPI.ui.pageLinkContextMenu.addCommand(\n  {label: \"Debug: Console Log\", callback: (e) => console.log(e)})\n// => null```"
+            }
+           ],
+           ":block/uid": "5ysf0_AXY",
+           ":block/order": 1,
+           ":block/string": "Example::"
           }
          ],
          ":block/uid": "rYya5yaZV",
@@ -8437,7 +8700,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -8449,7 +8712,7 @@
              ],
              ":block/uid": "X5y548RiH",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -8519,7 +8782,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -8531,7 +8794,7 @@
              ],
              ":block/uid": "fT4yqxuoL",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -8638,19 +8901,19 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
               {
                ":block/uid": "7-0X7YKhb",
                ":block/order": 0,
-               ":block/string": "Promise resolving to `null`"
+               ":block/string": "`null` (synchronous)"
               }
              ],
              ":block/uid": "OMmWxbjz5",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -8668,6 +8931,23 @@
              ":block/uid": "zOZAiAV0w",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "gxvb_bhiK",
+               ":block/order": 0,
+               ":block/string": "```javascript\nroamAlphaAPI.ui.graphView.addCallback({\n  label: \"my-extension: graph loaded\",\n  type: \"page\",\n  callback: ({cytoscape, elements, type}) => console.log(type, elements)})\n// => null```"
+              }
+             ],
+             ":block/uid": "hpw0uw-GG",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "tgjfkKwpn",
@@ -8696,19 +8976,19 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
               {
                ":block/uid": "QjCMGmDY4",
                ":block/order": 0,
-               ":block/string": "Promise resolving to `null`"
+               ":block/string": "`null` (synchronous)"
               }
              ],
              ":block/uid": "37yv1nHZo",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -8726,6 +9006,23 @@
              ":block/uid": "kT2MlbPpj",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "teD64GE3n",
+               ":block/order": 0,
+               ":block/string": "```javascript\nroamAlphaAPI.ui.graphView.removeCallback({label: \"my-extension: graph loaded\"})\n// => null```"
+              }
+             ],
+             ":block/uid": "6epQpGnKh",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "YRgeEZNT0",
@@ -8787,7 +9084,7 @@
               {
                ":block/refs": [
                 {
-                 ":block/uid": "v_lb34BA_"
+                 ":block/uid": "w2TkzJeTV"
                 }
                ],
                ":block/children": [
@@ -8799,7 +9096,7 @@
                ],
                ":block/uid": "Sqv3B5830",
                ":block/order": 0,
-               ":block/string": "Returns::"
+               ":block/string": "Return::"
               }
              ],
              ":block/uid": "RnLLFsB-H",
@@ -9003,7 +9300,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -9015,7 +9312,7 @@
              ],
              ":block/uid": "AJ3E56Dt8",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -9088,7 +9385,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -9100,7 +9397,7 @@
              ],
              ":block/uid": "UzWO7_r26",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -9118,6 +9415,23 @@
              ":block/uid": "49Cr6qVf6",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "maFsAbFGQ",
+               ":block/order": 0,
+               ":block/string": "```javascript\nconst newNode = document.createElement(\"div\");\ndocument.body.appendChild(newNode);\n\nwindow.roamAlphaAPI.ui.components.renderPage(\n  {uid: \"mK9pQ2rTw\",\n   el: newNode,\n   \"hide-mentions?\": true})\n// resolves to null once mounted```"
+              }
+             ],
+             ":block/uid": "WhBsaOe4g",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "yEI__gzBl",
@@ -9171,7 +9485,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -9183,7 +9497,7 @@
              ],
              ":block/uid": "HdfntzI4V",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -9251,7 +9565,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -9263,7 +9577,7 @@
              ],
              ":block/uid": "uZgcX-_Ii",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -9331,7 +9645,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -9343,7 +9657,7 @@
              ],
              ":block/uid": "UOsyG6479",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -9361,6 +9675,23 @@
              ":block/uid": "pfxc3-L7D",
              ":block/order": 0,
              ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "-BeVzFpdY",
+               ":block/order": 0,
+               ":block/string": "```javascript\nwindow.roamAlphaAPI.ui.components.unmountNode({el: newNode})\n// resolves to null```"
+              }
+             ],
+             ":block/uid": "SXexrh6uI",
+             ":block/order": 3,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "R6TJVwT6l",
@@ -9709,7 +10040,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -9721,7 +10052,7 @@
              ],
              ":block/uid": "TuC44O_-g",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -9801,7 +10132,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "v_lb34BA_"
+               ":block/uid": "w2TkzJeTV"
               }
              ],
              ":block/children": [
@@ -9813,7 +10144,7 @@
              ],
              ":block/uid": "QezHrJpiY",
              ":block/order": 2,
-             ":block/string": "Returns::"
+             ":block/string": "Return::"
             },
             {
              ":block/refs": [
@@ -9888,7 +10219,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -9900,7 +10231,7 @@
            ],
            ":block/uid": "Jd48dzsOV",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -9963,7 +10294,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -9975,7 +10306,7 @@
            ],
            ":block/uid": "nEVSWtJuM",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -9993,6 +10324,23 @@
            ":block/uid": "kdBt6kwEA",
            ":block/order": 0,
            ":block/string": "Description::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "YSuAc1n3V"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "bkI2tYQ17",
+             ":block/order": 0,
+             ":block/string": "```javascript\nroamAlphaAPI.util.pageTitleToDate(\"June 16th, 2022\")\n// => Date Thu Jun 16 2022 00:00:00\n\nroamAlphaAPI.util.pageTitleToDate(\"not a daily note title\")\n// => null```"
+            }
+           ],
+           ":block/uid": "z2OFBzVCm",
+           ":block/order": 3,
+           ":block/string": "Example::"
           }
          ],
          ":block/uid": "IEgTKf1i8",
@@ -10021,7 +10369,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -10033,7 +10381,7 @@
            ],
            ":block/uid": "gTQaoeN6m",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -10051,6 +10399,23 @@
            ":block/uid": "g0wy0HhlV",
            ":block/order": 0,
            ":block/string": "Description::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "YSuAc1n3V"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "4mYc-x-SY",
+             ":block/order": 0,
+             ":block/string": "```javascript\nroamAlphaAPI.util.dateToPageTitle(new Date(2022, 5, 16))\n// => \"June 16th, 2022\"```"
+            }
+           ],
+           ":block/uid": "94X-7OvuY",
+           ":block/order": 3,
+           ":block/string": "Example::"
           }
          ],
          ":block/uid": "69UojsRXW",
@@ -10079,7 +10444,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -10091,7 +10456,7 @@
            ],
            ":block/uid": "Vl9zBlSzf",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -10109,6 +10474,23 @@
            ":block/uid": "nHmYoJYWF",
            ":block/order": 0,
            ":block/string": "Description::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "YSuAc1n3V"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "N9fiXr0qY",
+             ":block/order": 0,
+             ":block/string": "```javascript\nroamAlphaAPI.util.dateToPageUid(new Date(2022, 5, 16))\n// => \"06-16-2022\"```"
+            }
+           ],
+           ":block/uid": "fn9I34MaP",
+           ":block/order": 3,
+           ":block/string": "Example::"
           }
          ],
          ":block/uid": "LJYWLuY15",
@@ -10156,19 +10538,19 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
             {
              ":block/uid": "tEOB7CniP",
              ":block/order": 0,
-             ":block/string": "Promise resolving to a firebase download url (string)"
+             ":block/string": "Promise resolving to a Roam block string embedding the file — `![](url)` for images, `{{[[pdf]]: url}}` / `{{[[audio]]: url}}` / `{{[[video]]: url}}` for those media types — or the bare download url (string) for other file types"
             }
            ],
            ":block/uid": "Vvq9TMEI1",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -10180,7 +10562,7 @@
             {
              ":block/uid": "_id4DTJes",
              ":block/order": 0,
-             ":block/string": "```javascript\nawait roamAlphaAPI.file.upload({file: new File([\"\"], \"test\"), toast: {hide: true}})\n// => \"https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fmy-graph%2FaB3xK9mP2.png?alt=media&token=...\"```"
+             ":block/string": "```javascript\nawait roamAlphaAPI.file.upload({file: myImageFile, toast: {hide: true}})\n// => \"![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fmy-graph%2FaB3xK9mP2.png?alt=media&token=...)\"\n\nawait roamAlphaAPI.file.upload({file: new File([\"\"], \"notes.txt\")})\n// => \"https://firebasestorage.googleapis.com/...\" (bare url — not a recognized media type)```"
             }
            ],
            ":block/uid": "Q8PJy0_jO",
@@ -10227,6 +10609,11 @@
              ":block/uid": "jwDk9kHkx",
              ":block/order": 0,
              ":block/string": "`url` (string, required) — a firebase storage url, obtained from `file.upload` or from a block"
+            },
+            {
+             ":block/uid": "qKNeLwv2I",
+             ":block/order": 1,
+             ":block/string": "`format` (string, optional) — pass \"base64\" to resolve with `{base64, filename, mimetype}` instead of a File object"
             }
            ],
            ":block/uid": "xbGfyiGP5",
@@ -10236,19 +10623,19 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
             {
              ":block/uid": "dxhfJ5ltx",
              ":block/order": 0,
-             ":block/string": "Promise resolving to a [File object](https://developer.mozilla.org/en-US/docs/Web/API/File)"
+             ":block/string": "Promise resolving to a [File object](https://developer.mozilla.org/en-US/docs/Web/API/File) — or, with `format: \"base64\"`, to `{base64, filename, mimetype}`"
             }
            ],
            ":block/uid": "miLbgnTJ-",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -10311,7 +10698,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -10323,7 +10710,7 @@
            ],
            ":block/uid": "bAwZaTqlu",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -10341,6 +10728,23 @@
            ":block/uid": "loWE-VjG9",
            ":block/order": 0,
            ":block/string": "Description::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "YSuAc1n3V"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "ZEbAGF_qy",
+             ":block/order": 0,
+             ":block/string": "```javascript\nawait roamAlphaAPI.file.delete({url: \"https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/...\"})\n// => undefined```"
+            }
+           ],
+           ":block/uid": "EzSTluD0B",
+           ":block/order": 3,
+           ":block/string": "Example::"
           }
          ],
          ":block/uid": "I7uGmS9BF",
@@ -10376,7 +10780,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -10388,7 +10792,7 @@
            ],
            ":block/uid": "ZFnToUpJf",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -10451,7 +10855,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -10463,7 +10867,7 @@
            ],
            ":block/uid": "eHxMXWN9H",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -10575,7 +10979,7 @@
           {
            ":block/refs": [
             {
-             ":block/uid": "v_lb34BA_"
+             ":block/uid": "w2TkzJeTV"
             }
            ],
            ":block/children": [
@@ -10587,12 +10991,12 @@
             {
              ":block/uid": "2y5OA-H2p",
              ":block/order": 1,
-             ":block/string": "```javascript\n{\"ccc+ccc-roam-pdf-2\":\n  {id: \"ccc+ccc-roam-pdf-2\",\n   name: \"Roam PDF Highlighter 2\",\n   enabled: false,\n   version: \"1\"},\n ...}```"
+             ":block/string": "```javascript\n{\"ccc+ccc-roam-pdf-2\":\n  {id: \"ccc+ccc-roam-pdf-2\",\n   name: \"Roam PDF Highlighter 2\",\n   enabled: false,\n   adminEnabled: true,\n   version: \"1\"},\n ...}```"
             }
            ],
            ":block/uid": "6O0PeTCFg",
            ":block/order": 2,
-           ":block/string": "Returns::"
+           ":block/string": "Return::"
           },
           {
            ":block/refs": [
@@ -10615,6 +11019,81 @@
          ":block/uid": "deTPbx3ba",
          ":block/order": 0,
          ":block/string": "`roamAlphaAPI.depot.getInstalledExtensions`"
+        },
+        {
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "dSAi8APjS"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "ZzUX6faBs",
+             ":block/order": 0,
+             ":block/string": "Reload all developer-mode extensions — the same operation as the \"Reload developer extensions\" command (`ctrl-d ctrl-r`)."
+            }
+           ],
+           ":block/uid": "JZ5TvkNh5",
+           ":block/order": 0,
+           ":block/string": "Description::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "f4rqZkvUg"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "P6BrbogMe",
+             ":block/order": 0,
+             ":block/string": "None"
+            }
+           ],
+           ":block/uid": "wxcRlTIJ4",
+           ":block/order": 1,
+           ":block/string": "Parameters::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "w2TkzJeTV"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "0Kkc_PYmp",
+             ":block/order": 0,
+             ":block/string": "Promise resolving to a summary of the reloaded developer extensions"
+            }
+           ],
+           ":block/uid": "Z51HK-hXv",
+           ":block/order": 2,
+           ":block/string": "Return::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "YSuAc1n3V"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "tK8PpIlqB",
+             ":block/order": 0,
+             ":block/string": "```javascript\nawait roamAlphaAPI.depot.reloadDeveloperExtensions()\n// => {reloaded: [{id: \"dev-extension-id\", name: \"My Dev Extension\"}]}```"
+            }
+           ],
+           ":block/uid": "gbHIwcooM",
+           ":block/order": 3,
+           ":block/string": "Example::"
+          }
+         ],
+         ":block/uid": "zr-fTt5GP",
+         ":block/order": 1,
+         ":block/string": "`roamAlphaAPI.depot.reloadDeveloperExtensions`"
         }
        ],
        ":block/uid": "Rv9kIYaHH",
@@ -10681,7 +11160,7 @@
       }
      ],
      ":block/uid": "x6jDqoJTX",
-     ":block/order": 3,
+     ":block/order": 2,
      ":block/string": "**Reference**"
     },
     {
@@ -10784,7 +11263,7 @@
       }
      ],
      ":block/uid": "aVOWssmPo",
-     ":block/order": 4,
+     ":block/order": 3,
      ":block/string": "**Resources**"
     },
     {
@@ -10958,7 +11437,7 @@
       }
      ],
      ":block/uid": "Fg_O4SEU0",
-     ":block/order": 5,
+     ":block/order": 4,
      ":block/string": "**Examples**"
     },
     {
@@ -10975,7 +11454,7 @@
       }
      ],
      ":block/uid": "3D6_y7N4m",
-     ":block/order": 6,
+     ":block/order": 5,
      ":block/string": "**Change Log**"
     }
    ],

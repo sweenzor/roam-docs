@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Block Reference Search — Roam Research Docs</title>
+<meta name="description" content="A search that works the way your outline does: drill down toward a block level by level, then drop a ((block reference)) to it right where y">
+<link rel="canonical" href="https://roamdocs.fyi/help/advanced-block-reference-search">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Advanced Block Reference Search — Roam Research Docs">
+<meta property="og:description" content="A search that works the way your outline does: drill down toward a block level by level, then drop a ((block reference)) to it right where y">
+<meta property="og:url" content="https://roamdocs.fyi/help/advanced-block-reference-search">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"Advanced Block Reference Search","item":"https://roamdocs.fyi/help/advanced-block-reference-search"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Advanced Block Reference Search</h1>
+<p class="meta"><a href="advanced-block-reference-search.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/fnCHddC_o">view in Roam Research</a></p>
+<ul>
+<li>A search that works the way your outline does: drill down toward a block level by level, then drop a <code>((block reference))</code> to it right where you're writing.
+</li>
+<li>It shines when you know roughly <strong>where</strong> a block lives (which page, under which heading) but not its exact words.
+</li>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F_bqsuARgse.gif?alt=media&amp;token=15af504c-7bcb-4a59-9b04-b5e44db113de" alt="" loading="lazy">
+</li>
+</ul>
+<h3>How to use it</h3>
+<ul>
+<li>While writing in a block, press <code>Ctrl-Shift-9</code>, or run <strong>Advanced block reference search</strong> from the <a href="/help/command-palette">Command Palette</a>.
+</li>
+<li>Type to search, and press <code>Enter</code> or <code>Tab</code> to step into the highlighted result. Now you're searching inside just that part of your graph.
+</li>
+<li>Keep stepping in until you've reached the block you want.
+</li>
+<li>Then, with the search box empty, press <code>Enter</code>. The block reference is inserted where your cursor was.
+</li>
+<li>To back out a level, press <code>Backspace</code> on an empty search box, or <code>Shift-Tab</code>.
+</li>
+</ul>
+<h3>Creating as you go</h3>
+<ul>
+<li>You're not limited to blocks that already exist.
+</li>
+<li>If no page matches what you've typed, the last result offers <strong>Create new page:</strong>. Once you're inside a path, there's always a <strong>Create new block:</strong> option carrying your text.
+</li>
+<li>Select either one and it's created right where you've drilled to (a new block lands at the top of the block you're in), and you step into it like any other result.
+</li>
+<li>That means you can park a thought on another page without breaking flow: drill to where it belongs, type it, create it, and press <code>Enter</code>. The new block exists there, and a reference to it lands where you were writing.
+</li>
+</ul>
+<h3>Tips</h3>
+<ul>
+<li>The path you've drilled through so far is shown as a breadcrumb above the search box. It doubles as a map of where you are.
+</li>
+<li>You can drive it entirely with arrow keys: <code>→</code> at the end of your text steps in, <code>←</code> at the start steps out, <code>↑</code>/<code>↓</code> move through results.
+</li>
+</ul>
+</body>
+</html>

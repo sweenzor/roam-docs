@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Key Commands — Roam Research Docs</title>
-<meta name="description" content="Turn key commands instruction on with custom components like this">
+<meta name="description" content="Roam is built to be driven from the keyboard. These are the commands worth learning first.">
 <link rel="canonical" href="https://roamdocs.fyi/help/key-commands">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Roam Research Docs">
 <meta property="og:title" content="Key Commands — Roam Research Docs">
-<meta property="og:description" content="Turn key commands instruction on with custom components like this">
+<meta property="og:description" content="Roam is built to be driven from the keyboard. These are the commands worth learning first.">
 <meta property="og:url" content="https://roamdocs.fyi/help/key-commands">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/favicon.ico">
@@ -39,334 +39,215 @@
 <h1>Key Commands</h1>
 <p class="meta"><a href="key-commands.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/yzdfVWKFY">view in Roam Research</a></p>
 <ul>
-<li>Turn key commands instruction on with custom components like this
+<li>Roam is built to be driven from the keyboard. These are the commands worth learning first.
+</li>
+<li>This page is just the highlights. To browse every shortcut, use the <code>?</code> help icon in the top right, and the <a href="/help/command-palette">Command Palette</a> shows each command's keys next to its name.
+</li>
+<li>To change a hotkey (or give keys to a command that has none), head to <strong>Settings → Hotkeys</strong>. <a href="/help/customizable-hotkeys">Customizable Hotkeys</a> shows how.
 <ul>
-<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FCGJbyfjuGM.gif?alt=media&amp;token=8bcd4699-2548-43b1-844c-dc91d675ae9f" alt="" loading="lazy">
+<li>Running <strong>Edit Hotkey: [command name]</strong> from the <a href="/help/command-palette">Command Palette</a> jumps straight to that command's binding.
 </li>
 </ul>
 </li>
-<li>{{roam/render: <pre><code>(ns roam.keycommand
-  (:require
-   [clojure.string :as str]
-   [clojure.core :refer [println]]
-   [reagent.core :as r]
-   [roam.util :as u]))
-
-(defn includes? [s1 s2]
-  (when (and (string? s1)
-             (string? s2))
-    (str/includes? (str/upper-case s1) (str/upper-case s2))))
-
-(defn includes-strings? [s strings]
-  (every? #(includes? s %) strings))
-
-(def help-content
-  [{:category  &quot;The Basics&quot;
-    :id        0
-    :type      :key-command
-    :functions [{:name     &quot;Find or create new page&quot;
-                 :shortcut {:mac &quot;cmd+u&quot;
-                            :pc  &quot;ctrl+u&quot;}}
-                {:name     &quot;Bring up quick commands&quot;
-                 :shortcut {:mac &quot;/&quot;
-                            :pc  &quot;/&quot;}}
-                {:name     &quot;Reference or create new page&quot;
-                 :shortcut {:mac &quot;[[&quot;
-                            :pc  &quot;[[&quot;}}
-                {:name     &quot;Reference a block&quot;
-                 :shortcut {:mac &quot;((&quot;
-                            :pc  &quot;((&quot;}}
-                {:name     &quot;New block&quot;
-                 :shortcut {:mac &quot;return&quot;
-                            :pc  &quot;enter&quot;}}
-                {:name     &quot;Indent block&quot;
-                 :shortcut {:mac &quot;tab&quot;
-                            :pc  &quot;tab&quot;}}
-                {:name     &quot;Unindent block&quot;
-                 :shortcut {:mac &quot;shift+tab&quot;
-                            :pc  &quot;shift+tab&quot;}}]}
-   {:category  &quot;Formatting&quot;
-    :id        1
-    :type      :markdown-key-command
-    :functions [{:markdown &quot;**Bold**&quot;
-                 :shortcut {:mac &quot;cmd+b&quot;
-                            :pc  &quot;ctrl+b&quot;}}
-                {:markdown &quot;__Italics__&quot;
-                 :shortcut {:mac &quot;cmd+i&quot;
-                            :pc  &quot;ctrl+i&quot;}}
-                {:markdown &quot;~~Strikethrough~~&quot;
-                 :shortcut {:mac &quot;cmd+y&quot;
-                            :pc  &quot;ctrl+y&quot;}}
-                {:markdown &quot;^^Highlight^^&quot;
-                 :shortcut {:mac &quot;cmd+h&quot;
-                            :pc  &quot;ctrl+h&quot;}}
-                {:markdown &quot;[Link](/#/app/help)&quot;
-                 :shortcut {:mac &quot;cmd+k&quot;
-                            :pc  &quot;ctrl+k&quot;}}
-                {:markdown &quot;$$\\KaTeX$$&quot;
-                 :shortcut {:mac &quot;$$&quot;
-                            :pc  &quot;$$&quot;}}
-                {:markdown &quot;# Heading 1&quot;
-                 :shortcut {:mac &quot;cmd+opt+1&quot;
-                            :pc  &quot;ctrl+alt+1&quot;}}
-                {:markdown &quot;## Heading 2&quot;
-                 :shortcut {:mac &quot;cmd+opt+2&quot;
-                            :pc  &quot;ctrl+alt+2&quot;}}
-                {:markdown &quot;### Heading 3&quot;
-                 :shortcut {:mac &quot;cmd+opt+3&quot;
-                            :pc  &quot;ctrl+alt+3&quot;}}]}
-   {:category  &quot;Navigating&quot;
-    :id        2
-    :type      :key-command
-    :functions [{:name     &quot;Move cursor to next block&quot;
-                 :shortcut {:mac &quot;down&quot;
-                            :pc  &quot;down&quot;}}
-                {:name     &quot;Move cursor to previous block&quot;
-                 :shortcut {:mac &quot;up&quot;
-                            :pc  &quot;up&quot;}}
-                {:name     &quot;Go to Daily Notes page&quot;
-                 :shortcut {:mac &quot;ctrl+shift+d&quot;
-                            :pc  &quot;alt+d&quot;}}
-                {:name     &quot;Zoom in to current block&quot;
-                 :shortcut {:mac &quot;cmd+.&quot;
-                            :pc  &quot;alt+right&quot;}}
-                {:name     &quot;Zoom out to parent block&quot;
-                 :shortcut {:mac &quot;cmd+,&quot;
-                            :pc  &quot;alt+left&quot;}}
-                {:name     &quot;Go to next day\n(when on daily page)&quot;
-                 :shortcut {:mac &quot;ctrl+opt+n&quot;
-                            :pc  nil}}
-                {:name     &quot;Go to previous day\n(when on daily page)&quot;
-                 :shortcut {:mac &quot;ctrl+opt+p&quot;
-                            :pc  nil}}
-                {:name     &quot;Go to first block on page\n(when nothing is selected)&quot;
-                 :shortcut {:mac &quot;cmd+return&quot;
-                            :pc  &quot;ctrl+enter&quot;}}
-                {:name     &quot;Go to last block on page\n(when nothing is selected)&quot;
-                 :shortcut {:mac &quot;cmd+shift+return&quot;
-                            :pc  &quot;ctrl+shift+enter&quot;}}
-                {:name     &quot;Follow link under cursor&quot;
-                 :shortcut {:mac &quot;ctrl+o&quot;
-                            :pc  &quot;ctrl+o&quot;}}
-                {:name     &quot;Open link under cursor in sidebar&quot;
-                 :shortcut {:mac &quot;ctrl+shift+o&quot;
-                            :pc  &quot;ctrl+shift+o&quot;}}
-                {:name     &quot;Move cursor forward&quot;
-                 :shortcut {:mac &quot;ctrl+f&quot;
-                            :pc  nil}}
-                {:name     &quot;Move cursor backward&quot;
-                 :shortcut {:mac &quot;ctrl+b&quot;
-                            :pc  nil}}
-                {:name     &quot;Jump to start of block&quot;
-                 :shortcut {:mac &quot;ctrl+a&quot;
-                            :pc  &quot;ctrl-home&quot;}}
-                {:name     &quot;Jump to end of block&quot;
-                 :shortcut {:mac &quot;ctrl+e&quot;
-                            :pc  &quot;ctrl-end&quot;}}]}
-   {:category  &quot;Blocks&quot;
-    :id        3
-    :type      :key-command
-    :functions [{:name     &quot;Move block up&quot;
-                 :shortcut {:mac &quot;cmd+shift+up&quot;
-                            :pc  &quot;alt+shift+up&quot;}}
-                {:name     &quot;Move block down&quot;
-                 :shortcut {:mac &quot;cmd+shift+down&quot;
-                            :pc  &quot;alt+shift+down&quot;}}
-                {:name     &quot;New line within block&quot;
-                 :shortcut {:mac &quot;shift+return&quot;
-                            :pc  &quot;shift+enter&quot;}}
-                {:name     &quot;Expand block&quot;
-                 :shortcut {:mac &quot;cmd+down&quot;
-                            :pc  &quot;ctrl+down&quot;}}
-                {:name     &quot;Collapse block&quot;
-                 :shortcut {:mac &quot;cmd+up&quot;
-                            :pc  &quot;ctrl+up&quot;}}
-                {:name     &quot;Select current block and children&quot;
-                 :shortcut {:mac &quot;shift+up&quot;
-                            :pc  &quot;shift+up&quot;}}
-                {:name     &quot;Select block above\n(when block selected)&quot;
-                 :shortcut {:mac &quot;shift+up&quot;
-                            :pc  &quot;shift+up&quot;}}
-                {:name     &quot;Select block below\n(when block selected)&quot;
-                 :shortcut {:mac &quot;shift+down&quot;
-                            :pc  &quot;shift+down&quot;}}
-                {:name     &quot;Select all blocks on page&quot;
-                 :shortcut {:mac &quot;cmd+shift+a&quot;
-                            :pc  &quot;ctrl+shift+a&quot;}}
-                {:name     &quot;Copy block reference(s)\nof selected block(s)&quot;
-                 :shortcut {:mac &quot;cmd+shift+c&quot;
-                            :pc  &quot;ctrl+shift+c&quot;}}
-                {:name     &quot;Cycle TODO state of\n current / selected blocks&quot;
-                 :shortcut {:mac &quot;cmd+return&quot;
-                            :pc  &quot;ctrl+enter&quot;}}
-                {:name     &quot;Open block search&quot;
-                 :shortcut {:mac &quot;ctrl+shift+9&quot;
-                            :pc  &quot;ctrl+shift+9&quot;}}]}
-   {:category  &quot;Sidebar&quot;
-    :id        4
-    :type      :key-command
-    :functions [{:name     &quot;Toggle left sidebar visibility&quot;
-                 :shortcut {:mac &quot;cmd+\\&quot;
-                            :pc  &quot;ctrl+\\&quot;}}
-                {:name     &quot;Toggle right sidebar visibility&quot;
-                 :shortcut {:mac &quot;cmd+/&quot;
-                            :pc  &quot;ctrl+/&quot;}}
-                {:name     &quot;Open page in right sidebar&quot;
-                 :shortcut {:mac &quot;shift+click&quot;
-                            :pc  &quot;shift+click&quot;}}
-                {:name     &quot;Open mentions in right sidebar&quot;
-                 :shortcut {:mac &quot;cmd+shift+click&quot;
-                            :pc  &quot;ctrl+shift+click&quot;}}
-                {:name     &quot;Create page in sidebar\n(from search)&quot;
-                 :shortcut {:mac &quot;shift+return&quot;
-                            :pc  &quot;shift+enter&quot;}}
-                {:name     &quot;Open link in sidebar\n(when editing)&quot;
-                 :shortcut {:mac &quot;ctrl+shift+o&quot;
-                            :pc  &quot;ctrl+shift+o&quot;}}]}
-   {:category  &quot;Appearance&quot;
-    :id        5
-    :type      :key-command
-    :functions [{:name     &quot;Toggle display of\ndouble brackets&quot;
-                 :shortcut {:mac &quot;ctrl+c+b&quot;
-                            :pc  &quot;ctrl+c+b&quot;}}
-                {:name     &quot;Toggle display of\nall inline mentions&quot;
-                 :shortcut {:mac &quot;ctrl+c+r&quot;
-                            :pc  &quot;ctrl+c+r&quot;}}
-                {:name     &quot;Toggle all users' bullet colors&quot;
-                 :shortcut {:mac &quot;ctrl+c+s&quot;
-                            :pc  &quot;ctrl+c+s&quot;}}
-                {:name     &quot;Toggle other users' bullet colors&quot;
-                 :shortcut {:mac &quot;ctrl+c+c+s&quot;
-                            :pc  &quot;ctrl+c+c+s&quot;}}
-                {:name     &quot;Toggle block live preview&quot;
-                 :shortcut {:mac &quot;ctrl+c+p&quot;
-                            :pc  &quot;ctrl+c+p&quot;}}
-                {:name     &quot;Cycle namespace display&quot;
-                 :shortcut {:mac &quot;ctrl+c+l&quot;
-                            :pc  &quot;ctrl+c+l&quot;}}]}
-   {:category  &quot;Other&quot;
-    :id        6
-    :type      :key-command
-    :functions [{:name     &quot;Toggle help popup visibility&quot;
-                 :shortcut {:mac &quot;opt+shift+h&quot;
-                            :pc  &quot;alt-shift+h&quot;}}
-                {:name     &quot;Undo&quot;
-                 :shortcut {:mac &quot;cmd+z&quot;
-                            :pc  &quot;ctrl+z&quot;}}
-                {:name     &quot;Redo&quot;
-                 :shortcut {:mac &quot;cmd+shift+z&quot;
-                            :pc  &quot;ctrl+shift+z&quot;}}
-                {:name     &quot;Move character under cursor forward&quot;
-                 :shortcut {:mac &quot;ctrl+t&quot;
-                            :pc  nil}}]}])
-(def PC?
-  (when-not (nil? js/navigator)
-    (not (str/includes? js/navigator.userAgent &quot;Mac OS X&quot;))))
-
-(defn key-command-view
-  [{:keys [name shortcut]}]
-  (when (or (not PC?)
-            (and PC? (:pc shortcut)))
-    [:div.rm-help-function
-     [:div.rm-help-function__name
-      name]
-     [:span.rm-help-function__shortcut
-      [:code
-       (if PC?
-         (:pc shortcut)
-         (:mac shortcut))]]]))
-
-(defn markdown-key-command-view
-  [{:as   props
-        :keys [markdown shortcut]}]
-  (when (or (not PC?)
-            (and PC? (:pc shortcut)))
-    [:div.rm-help-markdown-function
-     [:div.rm-help-markdown-function__style
-      (cond
-        (str/starts-with? markdown &quot;###&quot;)
-        [:span.rm-level3 (subs markdown 4)]
-        (str/starts-with? markdown &quot;##&quot;)
-        [:span.rm-level2 (subs markdown 3)]
-        (str/starts-with? markdown &quot;#&quot;)
-        [:span.rm-level1 (subs markdown 2)]
-        :else
-        (u/parse markdown))]
-     [:span.rm-help-markdown-function__markdown
-      markdown]
-     [:span.rm-help-markdown-function__shortcut
-      (when shortcut
-        [:code
-         (if PC?
-           (:pc shortcut)
-           (:mac shortcut))])]]))
-
-(defn content [_]
-    (let [*query (r/atom &quot;&quot;)
-          *selected-category-id (r/atom nil)]
-      (fn [_]
-        (let [split-query      (str/split @*query #&quot;\s+&quot;)
-              filtered-content (-&gt;&gt; help-content
-                                (map (fn [category]
-                                       (assoc category
-                                              :functions
-                                              (filter
-                                                (fn [{:as   function
-                                                      :keys [name
-                                                             markdown
-                                                             title
-                                                             description
-                                                             shortcut]}]
-                                                  (or
-                                                    (includes-strings? name split-query)
-                                                    (includes-strings? markdown split-query)
-                                                    (includes-strings? (:pc shortcut) split-query)
-                                                    (includes-strings? (:mac shortcut) split-query)))
-                                                (:functions category)))))
-                                (filter #(&gt; (count (:functions %)) 0)))]
-        [:div.rm-help
-         [:div.rm-help-search.sticky
-          [:div.rm-help-search__icon-container
-           [:span.bp3-icon-large.bp3-icon-search]]
-          [:input.rm-help-search__input
-           {:placeholder &quot;Search all key commands&quot;
-            :value       @*query
-            :auto-focus  &quot;autofocus&quot;
-            :on-change   #(reset! *query (.. % -target -value))}]]
-         [:div.rm-help-results
-          [:div.rm-help__left-panel.sticky
-           [:div.rm-help-categories
-            (doall
-              (for [{:keys [category id]} filtered-content]
-                ^{:key (str &quot;category-&quot; category)}
-                [:div.rm-help-category-menu-item
-                 {:class    (when (= id @*selected-category-id)
-                              &quot;rm-help-category-menu-item--selected&quot;)
-                  :on-click #(let [function-group (.getElementById
-                                                    js/document
-                                                    (str &quot;rm-help-&quot; id))]
-                               (.scrollIntoView function-group)
-                               (reset! *selected-category-id id))}
-                 category]))]]
-          [:div.rm-help-functions
-           (doall
-             (for [{:keys [category functions id type]} filtered-content]
-               ^{:key (str &quot;title-&quot; category)}
-               [:div.rm-help-functions__category
-                {:id (str &quot;rm-help-&quot; id)}
-                [:div.rm-help-category__name
-                 category]
-                [:hr]
-                (doall
-                  (for [{:as   function
-                         :keys [name
-                                markdown]} functions]
-                    ^{:key (str &quot;function-&quot; (or name markdown))}
-                    (condp = type
-    					:key-command          [key-command-view function]
- 					    :markdown-key-command [markdown-key-command-view function])))]))]]]))))</code></pre>}}
+</ul>
+<h3>Writing and formatting</h3>
+<ul>
+<li><strong>Bold</strong>
+<ul>
+<li>Mac: <code>Cmd-b</code>
 </li>
-<li>
+<li>PC: <code>Ctrl-b</code>
+</li>
+</ul>
+</li>
+<li><strong>Italics</strong>
+<ul>
+<li>Mac: <code>Cmd-i</code>
+</li>
+<li>PC: <code>Ctrl-i</code>
+</li>
+</ul>
+</li>
+<li><strong>Highlight</strong>
+<ul>
+<li>Mac: <code>Cmd-h</code>
+</li>
+<li>PC: <code>Ctrl-h</code>
+</li>
+</ul>
+</li>
+<li><strong>Strikethrough</strong>
+<ul>
+<li>Mac: <code>Cmd-y</code>
+</li>
+<li>PC: <code>Win-y</code>
+</li>
+</ul>
+</li>
+<li><strong>Headings 1, 2, 3</strong> (<code>0</code> removes the heading)
+<ul>
+<li>Mac: <code>Cmd-Alt-1</code> / <code>Cmd-Alt-2</code> / <code>Cmd-Alt-3</code> / <code>Cmd-Alt-0</code>
+</li>
+<li>PC: <code>Ctrl-Alt-1</code> / <code>Ctrl-Alt-2</code> / <code>Ctrl-Alt-3</code> / <code>Ctrl-Alt-0</code>
+</li>
+</ul>
+</li>
+<li><strong>Toggle TODO/DONE</strong>
+<ul>
+<li>Mac: <code>Cmd-Enter</code>
+</li>
+<li>PC: <code>Ctrl-Enter</code>
+</li>
+</ul>
+</li>
+<li><strong>Insert markdown link</strong> (wraps the selected text)
+<ul>
+<li>Mac: <code>Cmd-k</code>
+</li>
+<li>PC: <code>Ctrl-k</code>
+</li>
+</ul>
+</li>
+<li><strong>Comment on current block</strong>
+<ul>
+<li>Mac: <code>Cmd-Alt-=</code>
+</li>
+<li>PC: <code>Ctrl-Alt-=</code>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Working with blocks</h3>
+<ul>
+<li><strong>Indent block</strong> <code>Tab</code>
+</li>
+<li><strong>Unindent block</strong> <code>Shift-Tab</code>
+</li>
+<li><strong>Move block up / down</strong>
+<ul>
+<li>Mac: <code>Cmd-Shift-↑</code> / <code>Cmd-Shift-↓</code>
+</li>
+<li>PC: <code>Alt-Shift-↑</code> / <code>Alt-Shift-↓</code>
+</li>
+</ul>
+</li>
+<li><strong>Collapse / expand children</strong>
+<ul>
+<li>Mac: <code>Cmd-↑</code> / <code>Cmd-↓</code>
+</li>
+<li>PC: <code>Ctrl-↑</code> / <code>Ctrl-↓</code>
+</li>
+</ul>
+</li>
+<li><strong>Zoom in / out of a block</strong>
+<ul>
+<li>Mac: <code>Cmd-.</code> / <code>Cmd-,</code>
+</li>
+<li>PC: <code>Alt-→</code> / <code>Alt-←</code>
+</li>
+</ul>
+</li>
+<li><strong>Copy [block ref](<a href="/help/block-references">Block References</a>)</strong>
+<ul>
+<li>Mac: <code>Cmd-Shift-c</code>
+</li>
+<li>PC: <code>Ctrl-Shift-c</code>
+</li>
+</ul>
+</li>
+<li><strong>Copy block embed</strong>
+<ul>
+<li>Mac: <code>Cmd-Shift-e</code>
+</li>
+<li>PC: <code>Ctrl-Shift-e</code>
+</li>
+</ul>
+</li>
+<li><strong>Follow the link under your cursor</strong> <code>Ctrl-o</code>
+</li>
+<li><strong>Open the link under your cursor in the sidebar</strong> <code>Ctrl-Shift-o</code>
+</li>
+</ul>
+<h3>Getting around</h3>
+<ul>
+<li><strong>Search</strong> (see Find or create page and <a href="/help/advanced-search">Advanced Search</a>)
+<ul>
+<li>Mac: <code>Cmd-u</code>
+</li>
+<li>PC: <code>Ctrl-u</code>
+</li>
+</ul>
+</li>
+<li><strong><a href="/help/command-palette">Command Palette</a></strong>
+<ul>
+<li>Mac: <code>Cmd-p</code>
+</li>
+<li>PC: <code>Ctrl-p</code>
+</li>
+</ul>
+</li>
+<li><strong><a href="/help/global-search">Global search</a></strong>
+<ul>
+<li>Mac: <code>Cmd-Shift-u</code>
+</li>
+<li>PC: <code>Ctrl-Shift-u</code>
+</li>
+</ul>
+</li>
+<li><strong>Open <a href="/help/daily-notes">Daily Notes</a></strong>
+<ul>
+<li>Mac: <code>Ctrl-Shift-d</code>
+</li>
+<li>PC: <code>Alt-d</code>
+</li>
+</ul>
+</li>
+<li><strong>Go to previous / next day</strong> <code>Ctrl-Alt-p</code> / <code>Ctrl-Alt-n</code>
+</li>
+<li><strong>Toggle <a href="/help/left-sidebar">Left Sidebar</a></strong>
+<ul>
+<li>Mac: <code>Cmd-\</code>
+</li>
+<li>PC: <code>Ctrl-\</code>
+</li>
+</ul>
+</li>
+<li><strong>Toggle <a href="/help/right-sidebar">Right Sidebar</a></strong>
+<ul>
+<li>Mac: <code>Cmd-/</code>
+</li>
+<li>PC: <code>Ctrl-/</code>
+</li>
+</ul>
+</li>
+<li><strong>Go to the last block on the page</strong>
+<ul>
+<li>Mac: <code>Cmd-Shift-Enter</code>
+</li>
+<li>PC: <code>Ctrl-Shift-Enter</code>
+</li>
+</ul>
+</li>
+<li><strong><a href="/help/zen-mode">Zen Mode</a></strong>
+<ul>
+<li>Mac: <code>Cmd-k</code> then <code>z</code>
+</li>
+<li>PC: <code>Ctrl-k</code> then <code>z</code>
+</li>
+</ul>
+</li>
+<li><strong>Help menu</strong> <code>Alt-Shift-h</code> (the same shortcut cheat sheet as the <code>?</code> help icon in the top right)
+</li>
+<li>Community Videos::
+<ul>
+<li>Top 10 Roam Shortcuts for Beginners by Zack Fan
+<ul>
+<li>{{video: https://www.youtube.com/watch?v=hWeU14NAgyw}}<br>
+#<a href="/help/right-sidebar">Right Sidebar</a> | #<a href="/help/graph-overview">Graph Overview</a> | #<a href="/help/advanced-block-reference-search">Advanced Block Reference Search</a> | #Find or create page | #<a href="/help/navigation">Navigation</a>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 </body>
