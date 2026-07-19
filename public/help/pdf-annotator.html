@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Annotator — Roam Research Docs</title>
+<meta name="description" content="Upload a PDF into any block and Roam becomes a reader and annotator: highlight passages, tag them, and hang notes off them.">
+<link rel="canonical" href="https://roamdocs.fyi/help/pdf-annotator">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="PDF Annotator — Roam Research Docs">
+<meta property="og:description" content="Upload a PDF into any block and Roam becomes a reader and annotator: highlight passages, tag them, and hang notes off them.">
+<meta property="og:url" content="https://roamdocs.fyi/help/pdf-annotator">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"PDF Annotator","item":"https://roamdocs.fyi/help/pdf-annotator"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>PDF Annotator</h1>
+<p class="meta"><a href="pdf-annotator.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/MZUW7F9hf">view in Roam Research</a></p>
+<ul>
+<li>Upload a PDF into any block and Roam becomes a reader and annotator: highlight passages, tag them, and hang notes off them.
+</li>
+<li>Every highlight is a regular Roam block. That means you can reference it anywhere, nest notes under it, and find it in search.
+</li>
+<li>Try it on this copy of Doug Engelbart's 1962 paper, <em>Augmenting Human Intellect</em>. Highlights you make here aren't saved, so feel free to experiment.
+</li>
+<li>{{pdf: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FlPT97cB08L.pdf?alt=media&amp;token=e19a2a18-3673-4f66-902f-f9c83e3f71fb}}
+</li>
+</ul>
+<h3>Reading a PDF</h3>
+<ul>
+<li>Type <code>/upload</code> in a block and pick the file. The PDF renders right there.
+</li>
+<li>Reading in a block gets cramped, so click the <strong>fullscreen</strong> button in the toolbar to expand the PDF to the whole main window. The same button collapses it back.
+</li>
+<li>The toolbar also has page navigation, zoom (with fit-to-page and fit-to-width), and search within the document.
+</li>
+</ul>
+<h3>Highlighting and taking notes</h3>
+<ul>
+<li>Select some text and click <strong>Create highlight</strong>. The same popup has note and tag buttons, which create the highlight with a note or tag already attached.
+</li>
+<li>Or turn on highlight mode from the toolbar, and every selection becomes a highlight automatically. There's a mode for text and one for areas.
+</li>
+<li>Hold <code>Alt</code> and drag to capture an area instead. Area highlights save a snapshot image of that region, which is how you clip figures and diagrams.
+</li>
+<li>Copy what a highlight holds with <code>Cmd-c</code> (text or image), or grab a reference to it with <code>Cmd-Shift-c</code> and drop it in your notes. Shift-click opens the highlight's block.
+</li>
+<li>Deleting a highlight warns you first if notes or references would be lost with it.
+</li>
+</ul>
+<h3>The PDF page</h3>
+<ul>
+<li>Behind every PDF is a page of its own, named after the file. Open it from the viewer's menu, or by shift-clicking a highlight's block reference.
+</li>
+<li>Your highlights and notes collect there, grouped under a <strong>Notes</strong> section per person.
+</li>
+<li>Roam recognizes a PDF by its contents, not its location. Upload the same file again, or embed it in several places, and they all share one PDF page and one set of annotations.
+</li>
+</ul>
+</body>
+</html>

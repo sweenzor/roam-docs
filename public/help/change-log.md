@@ -2008,10 +2008,10 @@
     - import / export hotkeys
 - [[October 1st, 2025]]
   - [[Bug Fixes]]
-    - Fix displaying [[dropbox]] files in the new [[pdf]] viewer and annotator
+    - Fix displaying [[dropbox]] files in the new [[pdf]] viewer and annotator #[[PDF Annotator]]
 - [[September 30th, 2025]]
   - **[[New Features]]  🚀**
-    - [[pdf]] viewer and annotator
+    - [[pdf]] viewer and annotator #[[PDF Annotator]]
       - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FfXRflkCrp8.png?alt=media&token=4e376ecd-39e6-4af5-a06d-ed8b59905876)
       - Click and drag to select and highlight text or hold `alt` and click and drag to select an area
 - [[September 16th, 2025]]

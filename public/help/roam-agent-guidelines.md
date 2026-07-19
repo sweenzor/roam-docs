@@ -47,3 +47,13 @@
 - No false, unverifiable, or aspirational claims. If the product can't do something, say so plainly.
 - Page titles match the product's own terminology.
 - No em-dashes (—). Use commas, colons, parentheses, a new sentence, or a separate block instead.
+- Tone: conversational and friendly. Write to "you", explain why things matter, keep the warmth.
+- But don't polish every bullet to the same rhythm. It's fine for a bullet to state a fact plainly and stop.
+- Explaining **why** is part of the job. Mechanisms, consequences, and non-obvious benefits belong in the docs ("sorting reorders the blocks for everyone" is exactly what to say). What to skip is restating a benefit the reader already got: "handy once the graphs pile up" adds nothing to "the search box filters your list".
+- Watch for other AI habits: three-item lists everywhere, and a charming aside on every page. Ration personality to about one moment per page, and vary list lengths.
+- No rhetorical-question asides ("Reading this on the help graph? Your edits aren't saved, so play freely."). Say it straight: "Edits here aren't saved."
+- Friendly means relaxed and natural, not clever. Write full sentences with a subject, attach the reason to the fact with "so" or "because", and prefer an invitation over a bare command.
+- The voice, by example. Three drafts of the same block:
+  - Too AI: "Try it on a classic: Doug Engelbart's 1962 __Augmenting Human Intellect__, the paper that imagined tools like this one. Select some text and make a highlight. (Reading this on the help graph? Your edits aren't saved, so play freely.)" The tells: a setup colon, a winking appositive, a rhetorical-question aside.
+  - Overcorrected: "Highlight something. Edits here aren't saved." Clipped imperatives read cold, even aggressive.
+  - Right: "Try it on this copy of Doug Engelbart's 1962 paper, __Augmenting Human Intellect__. Highlights you make here aren't saved, so feel free to experiment." Plain sentences, the interesting fact stated rather than sold, and the warmth comes from a natural invitation.

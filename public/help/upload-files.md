@@ -13,3 +13,4 @@
       #[[Upload Files]] | #[[/ Commands]]
 - Key Commands::
   - `/upload`
+- Uploaded PDFs get a full reader and annotation tools. See [[PDF Annotator]].

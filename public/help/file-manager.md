@@ -15,7 +15,8 @@
 
 - **Export attachments** saves your graph's files to a folder, along with a manifest file.
 - **Import attachments** loads them into another graph from that folder, so when you restore a graph from a backup, its files can come along.
-- Both live in **Settings → Data & Backups**, and as [[Command Palette]] commands.
+- This doubles as a bulk download of everything you've uploaded. It works on encrypted graphs too, decrypting each file as it saves.
+- Both live in **[[Settings]] → [[Data & Backups]]**, and as [[Command Palette]] commands.
 - Exporting to the same folder again skips files that are already there, so you won't get duplicates.
 - Importing and exporting need the desktop app, Chrome, or Edge (they use folder access other browsers don't support).
 

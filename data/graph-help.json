@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-07-18T07:18:22.083Z",
+ "exportedAt": "2026-07-19T07:43:29.850Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -56,6 +56,10 @@
   {
    ":node/title": "Options",
    ":block/uid": "HyqQw2IPF"
+  },
+  {
+   ":node/title": "h/yellow",
+   ":block/uid": "qn2UZ2hrS"
   },
   {
    ":node/title": "Websites",
@@ -4203,6 +4207,63 @@
   },
   {
    ":node/title": "Delete Account",
+   ":block/children": [
+    {
+     ":block/uid": "S5-xN8PQ9",
+     ":block/string": "You lose access immediately. Full deletion of your data may take up to 30 days.",
+     ":block/order": 1
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "FK4fiJVom"
+      }
+     ],
+     ":block/uid": "mLFNILI3O",
+     ":block/string": "Export your notes first: see [[Export]].",
+     ":block/order": 2
+    },
+    {
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "ezi38UFk6"
+        }
+       ],
+       ":block/uid": "YbYVqW1OK",
+       ":block/string": "Open [[Settings]] → **Account** → **Danger Zone** → **Delete my account**.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "_ZOBr0HjI",
+       ":block/string": "Type your email address to confirm, then click **I understand the consequences, delete my account**.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "Bp4Jh5whD",
+       ":block/string": "You can also delete your account from the mobile app's account settings.",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "6h7jjyNHF",
+     ":block/string": "How to delete your account",
+     ":block/heading": 2,
+     ":block/order": 3
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "qAb9LOnpE",
+       ":block/string": "Graphs that have other admins aren't deleted. Your access is removed instead, and the graph stays with them.",
+       ":block/order": 0
+      }
+     ],
+     ":block/uid": "SqoT8totC",
+     ":block/string": "Deleting your account deletes **every graph you're the only admin of, along with the files uploaded to them**.",
+     ":block/order": 0
+    }
+   ],
    ":block/uid": "fQyPj9yfg"
   },
   {
@@ -10250,6 +10311,10 @@
    ":block/uid": "02-07-2025"
   },
   {
+   ":node/title": "artifacts",
+   ":block/uid": "UmsnoKSLS"
+  },
+  {
    ":node/title": "July 11th, 2020",
    ":block/uid": "07-11-2020"
   },
@@ -12616,6 +12681,117 @@
    ":block/uid": "vcAjbWevV"
   },
   {
+   ":node/title": "Delete Graph",
+   ":block/children": [
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "FK4fiJVom"
+      },
+      {
+       ":block/uid": "0uhOdYn6b"
+      }
+     ],
+     ":block/uid": "2mOeRW2qA",
+     ":block/string": "Make a backup first with [[Export]], and use **Export attachments** in **[[Data & Backups]]** if you want copies of your uploaded files, because there is no undo.",
+     ":block/order": 1
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "cjMloyF5c"
+      }
+     ],
+     ":block/uid": "r7BJRFztg",
+     ":block/string": "Deleting a graph does **not** delete the files uploaded to it. If you want those gone too, delete them in the [[File Manager]] before deleting the graph.",
+     ":block/order": 2
+    },
+    {
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "ezi38UFk6"
+        }
+       ],
+       ":block/uid": "clOBRyIBY",
+       ":block/string": "Open [[Settings]] → **Graph** → **Delete this graph**. On shared graphs, only admins can do this.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "BYFm3Ljmn",
+       ":block/string": "Roam asks you to type the graph's name to confirm, then click **I understand the consequences, proceed with deletion**.",
+       ":block/order": 1
+      }
+     ],
+     ":block/uid": "F0-U3mQzl",
+     ":block/string": "How to delete a graph",
+     ":block/heading": 2,
+     ":block/order": 3
+    },
+    {
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "DTR1FMubL"
+        }
+       ],
+       ":block/uid": "ic8p8Tyes",
+       ":block/string": "Deleting an [encrypted graph]([[Encrypted Graphs]]) also loses every file uploaded to it, **even if you made a backup first**, because backups don't include the media files.",
+       ":block/order": 0
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "ezi38UFk6"
+        },
+        {
+         ":block/uid": "0uhOdYn6b"
+        }
+       ],
+       ":block/uid": "ki4_cXnBq",
+       ":block/string": "Save the files first with **Export attachments**, in [[Settings]] → **[[Data & Backups]]**.",
+       ":block/order": 1
+      }
+     ],
+     ":block/uid": "wv4rg5Ghu",
+     ":block/string": "Deleting an encrypted graph",
+     ":block/heading": 2,
+     ":block/order": 4
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "gyzKTKGqx",
+       ":block/string": "**Delete local cache**, in the same settings tab, is a different thing: it clears the graph's copy on your device, and any unsynced local changes are lost with it. A hosted graph re-downloads from the server afterwards.",
+       ":block/order": 0
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "q9X-gs35m"
+        }
+       ],
+       ":block/uid": "77gaw_-Ma",
+       ":block/string": "A [[Local Graph]] exists only in your browser, so deleting one removes it completely.",
+       ":block/order": 1
+      }
+     ],
+     ":block/uid": "OaKYsc8L8",
+     ":block/string": "Related",
+     ":block/heading": 2,
+     ":block/order": 5
+    },
+    {
+     ":block/uid": "2DO8P0gbJ",
+     ":block/string": "Deleting a graph is permanent. Once deleted, it cannot be recovered.",
+     ":block/order": 0
+    }
+   ],
+   ":block/uid": "tuUPIXAXL"
+  },
+  {
    ":node/title": "Joel Chan",
    ":block/uid": "O-roIdlT_"
   },
@@ -14959,6 +15135,101 @@
     }
    ],
    ":block/uid": "VAfN5cYiP"
+  },
+  {
+   ":node/title": "Roam Mobile",
+   ":block/children": [
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "BM0yG_cbU"
+      }
+     ],
+     ":block/uid": "yd94DPINv",
+     ":block/string": "Roam Mobile is the native app for iPhone, iPad, and Android. [[Install Roam]] has the store links.",
+     ":block/order": 0
+    },
+    {
+     ":block/uid": "4mwjJrKhH",
+     ":block/string": "Sign in with your Roam account and your graphs are there, in sync with everywhere else you use Roam.",
+     ":block/order": 1
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "BeaPD6P99",
+       ":block/string": "The app's native view is built for phones: it feels native, opens fast, and handles large graphs without trouble.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "AfQKMcdWk",
+       ":block/string": "You can edit in it, drag blocks around, react with emoji, and use queries, tables, sliders, block references, and callouts.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "6Qt4vTxBz",
+       ":block/string": "For things the native view doesn't cover yet, the app can open the full Roam web app.",
+       ":block/order": 2
+      },
+      {
+       ":block/uid": "HTKLTSBna",
+       ":block/string": "Encrypted graphs aren't available in the native view, because the servers it reads from can't decrypt them. They open in the web app view instead.",
+       ":block/order": 3
+      }
+     ],
+     ":block/uid": "a3uam4-7B",
+     ":block/string": "The native view",
+     ":block/heading": 2,
+     ":block/order": 2
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "4kxRY_pkc",
+       ":block/string": "Quick Capture is for getting a thought down fast: open the app, type, done.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "uBlza9y38",
+       ":block/string": "Captured notes land on your Daily Notes page the next time the graph syncs.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "a-t_SVIXz",
+       ":block/string": "The capture template is customizable in the app's settings, so captures can arrive pre-tagged and pre-structured.",
+       ":block/order": 2
+      },
+      {
+       ":block/uid": "rGqPAP4do",
+       ":block/string": "Encrypted graphs don't appear in Quick Capture's graph picker.",
+       ":block/order": 3
+      }
+     ],
+     ":block/uid": "4xzBuglFJ",
+     ":block/string": "Quick Capture",
+     ":block/heading": 2,
+     ":block/order": 3
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "N_wuKhRsq",
+       ":block/string": "Encrypted graphs can unlock with Face ID or your fingerprint instead of typing the password.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "I7-6X24rj",
+       ":block/string": "Links to Roam pages and blocks can open directly in the app.",
+       ":block/order": 1
+      }
+     ],
+     ":block/uid": "MQEasf-2d",
+     ":block/string": "Good to know",
+     ":block/heading": 2,
+     ":block/order": 4
+    }
+   ],
+   ":block/uid": "etKhTqzyg"
   },
   {
    ":node/title": "July 12th, 2021",
@@ -19421,10 +19692,13 @@
        ":block/refs": [
         {
          ":block/uid": "HsbZQeglE"
+        },
+        {
+         ":block/uid": "0uhOdYn6b"
         }
        ],
        ":block/uid": "kqLJFnF5M",
-       ":block/string": "History is a view, not an undo. To overwrite your whole graph with an older copy, that's [[Restore Graph]] in **Settings → Data & Backups**, a much blunter tool.",
+       ":block/string": "History is a view, not an undo. To overwrite your whole graph with an older copy, that's [[Restore Graph]] in **Settings → [[Data & Backups]]**, a much blunter tool.",
        ":block/order": 2
       }
      ],
@@ -21214,21 +21488,32 @@
        ":block/refs": [
         {
          ":block/uid": "D893VH8Ls"
+        },
+        {
+         ":block/uid": "ezi38UFk6"
+        },
+        {
+         ":block/uid": "0uhOdYn6b"
         }
        ],
        ":block/uid": "8gHrSpsYx",
-       ":block/string": "Both live in **Settings → Data & Backups**, and as [[Command Palette]] commands.",
-       ":block/order": 2
+       ":block/string": "Both live in **[[Settings]] → [[Data & Backups]]**, and as [[Command Palette]] commands.",
+       ":block/order": 3
       },
       {
        ":block/uid": "aqA3VCSxI",
        ":block/string": "Exporting to the same folder again skips files that are already there, so you won't get duplicates.",
-       ":block/order": 3
+       ":block/order": 4
       },
       {
        ":block/uid": "DkbgFM7We",
        ":block/string": "Importing and exporting need the desktop app, Chrome, or Edge (they use folder access other browsers don't support).",
-       ":block/order": 4
+       ":block/order": 5
+      },
+      {
+       ":block/uid": "z-MqlrIPY",
+       ":block/string": "This doubles as a bulk download of everything you've uploaded. It works on encrypted graphs too, decrypting each file as it saves.",
+       ":block/order": 2
       }
      ],
      ":block/uid": "mCjntOa1d",
@@ -27208,6 +27493,160 @@
    ":block/uid": "C9q-6Jm44"
   },
   {
+   ":node/title": "Settings",
+   ":block/children": [
+    {
+     ":block/uid": "BZLNSLeIS",
+     ":block/string": "The palette also has **Settings: [section name]** commands that jump straight to a specific section.",
+     ":block/order": 1
+    },
+    {
+     ":block/uid": "yosf1D485",
+     ":block/string": "Two kinds of settings live here. **Preferences** and **Hotkeys** are personal: they only change Roam for you. The rest belong to the graph, and on shared graphs most of them need admin rights.",
+     ":block/order": 2
+    },
+    {
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "FaYFv-i2D"
+        }
+       ],
+       ":block/uid": "oTpNuYNBi",
+       ":block/string": "**Preferences**: personal display and behavior settings, like brackets around page references, inline reference counts, bullet colors in shared graphs, and experimental toggles such as [[Better search (Experimental)]].",
+       ":block/order": 0
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "vh3S6FSr1"
+        }
+       ],
+       ":block/uid": "hwCQkMpLB",
+       ":block/string": "**[[Sharing]]**: invite people to the graph, set their roles, and control who can export or view history.",
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "cjMloyF5c"
+        }
+       ],
+       ":block/uid": "djvSvChmR",
+       ":block/string": "**Attachments**: every file uploaded to the graph, in the [[File Manager]].",
+       ":block/order": 2
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "ZQ8sXpP49"
+        }
+       ],
+       ":block/uid": "SAxO6QUU1",
+       ":block/string": "**Hotkeys**: view and change keyboard shortcuts. See [[Customizable Hotkeys]].",
+       ":block/order": 3
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "7lUbFA_9v"
+        },
+        {
+         ":block/uid": "CslZS1zBh"
+        },
+        {
+         ":block/uid": "mM6Z3yq_R"
+        },
+        {
+         ":block/uid": "tuUPIXAXL"
+        }
+       ],
+       ":block/uid": "PcxVrbjby",
+       ":block/string": "**Graph**: settings for the whole graph, including [[Graph History]], the [[Graph Homepage]], API tokens, graph size, automatic cleanup of empty daily notes, [[Semantic search (Experimental)]] embeddings, and [[Delete Graph]].",
+       ":block/order": 4
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "DTR1FMubL"
+        }
+       ],
+       ":block/uid": "7vMmtojP4",
+       ":block/string": "**Encryption**: change the password of an encrypted graph. This tab only appears on [[Encrypted Graphs]].",
+       ":block/order": 5
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "fQyPj9yfg"
+        }
+       ],
+       ":block/uid": "A8PPS2AVc",
+       ":block/string": "**Account**: your email, password, and [[Delete Account]].",
+       ":block/order": 6
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "HsbZQeglE"
+        },
+        {
+         ":block/uid": "0uhOdYn6b"
+        }
+       ],
+       ":block/uid": "LL_wrmxCW",
+       ":block/string": "**[[Data & Backups]]**: automatic backups, import and export, moving attachments between graphs, and [[Restore Graph]].",
+       ":block/order": 7
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "N8P6RYE7o"
+        }
+       ],
+       ":block/uid": "r29mr3TdV",
+       ":block/string": "**[[Roam Depot]]**: the extension marketplace and settings for your installed extensions.",
+       ":block/order": 8
+      }
+     ],
+     ":block/uid": "hU5_0bqY3",
+     ":block/string": "The tabs",
+     ":block/heading": 2,
+     ":block/order": 3
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "7DeZKSmfr",
+       ":block/string": "Installed extensions can add tabs of their own to the panel.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "PRqqPrTlW",
+       ":block/string": "Some sections only show for graph admins, so your panel may look shorter on a graph you don't own.",
+       ":block/order": 1
+      }
+     ],
+     ":block/uid": "O1fqLlPiy",
+     ":block/string": "Good to know",
+     ":block/heading": 2,
+     ":block/order": 4
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "D893VH8Ls"
+      }
+     ],
+     ":block/uid": "qaCBQGCu5",
+     ":block/string": "All of Roam's settings live in one panel. Open it from the **⋯** menu in the top right, or run **Open settings** from the [[Command Palette]].",
+     ":block/order": 0
+    }
+   ],
+   ":block/uid": "ezi38UFk6"
+  },
+  {
    ":node/title": "July 26th, 2021",
    ":block/uid": "07-26-2021"
   },
@@ -27451,6 +27890,152 @@
   },
   {
    ":node/title": "Roam Reader",
+   ":block/children": [
+    {
+     ":block/uid": "OAFye5I9h",
+     ":block/string": "The article stays in its original layout. Most reader apps strip the page down; Roam Reader leaves it intact and puts your notes in a sidebar next to it.",
+     ":block/order": 1
+    },
+    {
+     ":block/uid": "S00OHpVcX",
+     ":block/string": "It also keeps reading lists, so articles you mean to read have somewhere to go.",
+     ":block/order": 2
+    },
+    {
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "2h9V-FtAO"
+        }
+       ],
+       ":block/uid": "Q69flGFUK",
+       ":block/string": "{{[[video]]: https://www.youtube.com/watch?v=stJ7SGo6J9w}}",
+       ":block/order": 0
+      }
+     ],
+     ":block/uid": "rQGXtgmpw",
+     ":block/string": "There's an in-depth video tutorial if you'd rather watch this page than read it.",
+     ":block/order": 3
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "C9PbHbpMK",
+       ":block/string": "Install [Roam Reader from the Chrome Web Store](https://chromewebstore.google.com/detail/roam-reader/kghmbkhikifcnkjoakokkhdkfdhieonb) and pin it to your address bar.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "g1Axwq8PG",
+       ":block/string": "On any article, click the astrolabe icon and sign in with your Roam account.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "OnKowZV7C",
+       ":block/string": "Click it once more to choose which graph your reading lists and notes go to.",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "vwB50aTuz",
+     ":block/string": "Setting it up",
+     ":block/heading": 2,
+     ":block/order": 4
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "bFqgJqiYA",
+       ":block/string": "Click the astrolabe on an article, adjust the title and metadata, and add tags if you want them.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "XQzfL1gdH",
+       ":block/string": "Save it to **Inbox**, or straight to **Shortlist** or **Archive**.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "MD9VuCAzf",
+       ":block/string": "Reading lists can be filtered, and filters can be saved as views that sync to your graph. There's a query builder for more involved filters.",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "17lc8AGlg",
+     ":block/string": "Saving articles for later",
+     ":block/heading": 2,
+     ":block/order": 5
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "lUuzntKkn",
+       ":block/string": "Click the astrolabe and choose **Take Notes**. A sidebar opens beside the page, and your notes go under today's date.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "pk-asV3fC",
+       ":block/string": "To highlight, select text in the article and click the highlighter icon that appears. You can pick a color.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "0MZVqR6XL",
+       ":block/string": "Highlights are added to the sidebar automatically, in the order they appear in the article.",
+       ":block/order": 2
+      },
+      {
+       ":block/uid": "Xm39tUWAk",
+       ":block/string": "Indent the empty bullet beneath your latest highlight, and the highlights that follow will nest under it. An outline forms while you read.",
+       ":block/order": 3
+      },
+      {
+       ":block/uid": "chChZw-0r",
+       ":block/string": "The tag and comment icons on a highlight add a tag or a nested comment, with the formatting handled for you.",
+       ":block/order": 4
+      }
+     ],
+     ":block/uid": "DOHaNvDSJ",
+     ":block/string": "Reading and taking notes",
+     ":block/heading": 2,
+     ":block/order": 6
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "UxpbgAAQe",
+       ":block/string": "Saved articles first appear as single blocks on a **Reading List: Inbox** page, with their metadata nested underneath, so your graph doesn't fill up with pages you haven't read yet.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "PxTfE08cx",
+       ":block/string": "An article expands into a page of its own only when you start taking notes on it.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "7moFVq52b",
+       ":block/string": "The entry template and the title format are configurable in Roam Reader's settings. A namespace-based title keeps reading material grouped as it grows.",
+       ":block/order": 2
+      },
+      {
+       ":block/uid": "4lrHUiIwW",
+       ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FyaS6cu6ws7.png?alt=media&token=741acb39-f379-4bd8-a626-952266f5db58)",
+       ":block/order": 3
+      },
+      {
+       ":block/uid": "eJSyvVeYz",
+       ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FHjwIk8Hytr.png?alt=media&token=8d1fc169-8fb9-4ef4-8ad8-4c04efcf7162)",
+       ":block/order": 4
+      }
+     ],
+     ":block/uid": "pyAhAEhpL",
+     ":block/string": "How it lands in your graph",
+     ":block/heading": 2,
+     ":block/order": 7
+    },
+    {
+     ":block/uid": "dVwTCxik2",
+     ":block/string": "Roam Reader is a Chrome extension for reading on the web with Roam beside you: highlight, tag, and comment on an article, and your notes land in your graph.",
+     ":block/order": 0
+    }
+   ],
    ":block/uid": "dHA6GUxsg"
   },
   {
@@ -54402,6 +54987,9 @@
              ":block/refs": [
               {
                ":block/uid": "rHet0URfR"
+              },
+              {
+               ":block/uid": "MZUW7F9hf"
               }
              ],
              ":block/children": [
@@ -54417,7 +55005,7 @@
               }
              ],
              ":block/uid": "EwogkpQ8I",
-             ":block/string": "[[pdf]] viewer and annotator",
+             ":block/string": "[[pdf]] viewer and annotator #[[PDF Annotator]]",
              ":block/order": 0
             }
            ],
@@ -65612,6 +66200,16 @@
      ":block/uid": "jC_qCZfYL",
      ":block/string": "Key Commands::",
      ":block/order": 2
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "MZUW7F9hf"
+      }
+     ],
+     ":block/uid": "atEfncO3F",
+     ":block/string": "Uploaded PDFs get a full reader and annotation tools. See [[PDF Annotator]].",
+     ":block/order": 3
     }
    ],
    ":block/uid": "sxCOKwQ0U"
@@ -73228,6 +73826,56 @@
   },
   {
    ":node/title": "Desktop App",
+   ":block/children": [
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "BM0yG_cbU"
+      }
+     ],
+     ":block/uid": "KhIn9K3V4",
+     ":block/string": "The desktop app is the full Roam in a standalone window, for Mac, Windows, and Linux. [[Install Roam]] covers the download.",
+     ":block/order": 0
+    },
+    {
+     ":block/uid": "i_wbaNOqd",
+     ":block/string": "It's the same Roam as the browser version, plus a few things only an app can do.",
+     ":block/order": 1
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "xbkhwSJVF",
+       ":block/string": "`roam://` deep links open a specific graph, page, or block straight in the app, which makes Roam linkable from other tools.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "JbRbSggDj",
+       ":block/string": "The app is a thin shell around Roam, with a version number of its own. It keeps itself up to date automatically.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "206TSnRZg",
+       ":block/string": "Local API tokens, for connecting local AI tools to your graphs, only exist on desktop.",
+       ":block/order": 3
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "Qv91DliJE"
+        }
+       ],
+       ":block/uid": "OWNDe3ewy",
+       ":block/string": "The Roam inside it updates just like the web app does, so both stay current without you doing anything. [[Updating Roam]] has the details.",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "4Wz2EUP3i",
+     ":block/string": "What's different from the browser",
+     ":block/heading": 2,
+     ":block/order": 2
+    }
+   ],
    ":block/uid": "hyL5OPFah"
   },
   {
@@ -73484,6 +74132,10 @@
   {
    ":node/title": "March 11th, 2026",
    ":block/uid": "03-11-2026"
+  },
+  {
+   ":node/title": "July 19th, 2026",
+   ":block/uid": "07-19-2026"
   },
   {
    ":node/title": "April 17th, 2021",
@@ -76497,8 +77149,13 @@
      ],
      ":block/children": [
       {
+       ":block/refs": [
+        {
+         ":block/uid": "hyL5OPFah"
+        }
+       ],
        ":block/uid": "BRZe8CeLz",
-       ":block/string": "The desktop app is a standalone version of Roam with its own windows and `roam://` deeplinks.",
+       ":block/string": "The [[Desktop App]] is a standalone version of Roam with its own windows and `roam://` deeplinks.",
        ":block/order": 0
       },
       {
@@ -76528,8 +77185,13 @@
      ],
      ":block/children": [
       {
+       ":block/refs": [
+        {
+         ":block/uid": "etKhTqzyg"
+        }
+       ],
        ":block/uid": "Nf6fsBdY1",
-       ":block/string": "Sign in with your Roam account and your graphs will be there.",
+       ":block/string": "Sign in with your Roam account and your graphs will be there. [[Roam Mobile]] covers what the app can do.",
        ":block/order": 2
       },
       {
@@ -77179,6 +77841,116 @@
   {
    ":node/title": "September 30th, 2022",
    ":block/uid": "09-30-2022"
+  },
+  {
+   ":node/title": "PDF Annotator",
+   ":block/children": [
+    {
+     ":block/uid": "4ecM7bo8m",
+     ":block/string": "Every highlight is a regular Roam block. That means you can reference it anywhere, nest notes under it, and find it in search.",
+     ":block/order": 1
+    },
+    {
+     ":block/uid": "T9lsVxIfw",
+     ":block/string": "Try it on this copy of Doug Engelbart's 1962 paper, __Augmenting Human Intellect__. Highlights you make here aren't saved, so feel free to experiment.",
+     ":block/order": 2
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "rHet0URfR"
+      }
+     ],
+     ":block/uid": "GdQwoMsKN",
+     ":block/string": "{{[[pdf]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FlPT97cB08L.pdf?alt=media&token=e19a2a18-3673-4f66-902f-f9c83e3f71fb}}",
+     ":block/order": 3
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "s7Hfz1uXf",
+       ":block/string": "Type `/upload` in a block and pick the file. The PDF renders right there.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "B5TLuspV-",
+       ":block/string": "Reading in a block gets cramped, so click the **fullscreen** button in the toolbar to expand the PDF to the whole main window. The same button collapses it back.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "WfNJyLBo2",
+       ":block/string": "The toolbar also has page navigation, zoom (with fit-to-page and fit-to-width), and search within the document.",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "kvMWNrgSp",
+     ":block/string": "Reading a PDF",
+     ":block/heading": 2,
+     ":block/order": 4
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "oic2_yIWZ",
+       ":block/string": "Select some text and click **Create highlight**. The same popup has note and tag buttons, which create the highlight with a note or tag already attached.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "CFi8KESq8",
+       ":block/string": "Hold `Alt` and drag to capture an area instead. Area highlights save a snapshot image of that region, which is how you clip figures and diagrams.",
+       ":block/order": 2
+      },
+      {
+       ":block/uid": "FTediLOBE",
+       ":block/string": "Copy what a highlight holds with `Cmd-c` (text or image), or grab a reference to it with `Cmd-Shift-c` and drop it in your notes. Shift-click opens the highlight's block.",
+       ":block/order": 3
+      },
+      {
+       ":block/uid": "YkhKzgiKv",
+       ":block/string": "Deleting a highlight warns you first if notes or references would be lost with it.",
+       ":block/order": 4
+      },
+      {
+       ":block/uid": "HxU650Oql",
+       ":block/string": "Or turn on highlight mode from the toolbar, and every selection becomes a highlight automatically. There's a mode for text and one for areas.",
+       ":block/order": 1
+      }
+     ],
+     ":block/uid": "rRFh-ewu6",
+     ":block/string": "Highlighting and taking notes",
+     ":block/heading": 2,
+     ":block/order": 5
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "owhB_UzVj",
+       ":block/string": "Behind every PDF is a page of its own, named after the file. Open it from the viewer's menu, or by shift-clicking a highlight's block reference.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "IZcHaF6NY",
+       ":block/string": "Your highlights and notes collect there, grouped under a **Notes** section per person.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "G-Xrn9XHT",
+       ":block/string": "Roam recognizes a PDF by its contents, not its location. Upload the same file again, or embed it in several places, and they all share one PDF page and one set of annotations.",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "85Y_Tc7lL",
+     ":block/string": "The PDF page",
+     ":block/heading": 2,
+     ":block/order": 6
+    },
+    {
+     ":block/uid": "qaeuJOWCu",
+     ":block/string": "Upload a PDF into any block and Roam becomes a reader and annotator: highlight passages, tag them, and hang notes off them.",
+     ":block/order": 0
+    }
+   ],
+   ":block/uid": "MZUW7F9hf"
   },
   {
    ":node/title": "Today",
@@ -79390,6 +80162,10 @@
   {
    ":node/title": "January 29th, 2022",
    ":block/uid": "01-29-2022"
+  },
+  {
+   ":node/title": "Data & Backups",
+   ":block/uid": "0uhOdYn6b"
   },
   {
    ":node/title": ".rm-E",
@@ -81880,6 +82656,58 @@
        ":block/uid": "34NZsxc16",
        ":block/string": "No em-dashes (—). Use commas, colons, parentheses, a new sentence, or a separate block instead.",
        ":block/order": 4
+      },
+      {
+       ":block/uid": "jif_v7k7A",
+       ":block/string": "Tone: conversational and friendly. Write to \"you\", explain why things matter, keep the warmth.",
+       ":block/order": 5
+      },
+      {
+       ":block/uid": "P-eouKkvG",
+       ":block/string": "But don't polish every bullet to the same rhythm. It's fine for a bullet to state a fact plainly and stop.",
+       ":block/order": 6
+      },
+      {
+       ":block/uid": "RiSmaAFdz",
+       ":block/string": "Explaining **why** is part of the job. Mechanisms, consequences, and non-obvious benefits belong in the docs (\"sorting reorders the blocks for everyone\" is exactly what to say). What to skip is restating a benefit the reader already got: \"handy once the graphs pile up\" adds nothing to \"the search box filters your list\".",
+       ":block/order": 7
+      },
+      {
+       ":block/uid": "0ZqoIeWm9",
+       ":block/string": "Watch for other AI habits: three-item lists everywhere, and a charming aside on every page. Ration personality to about one moment per page, and vary list lengths.",
+       ":block/order": 8
+      },
+      {
+       ":block/uid": "eCMXDTQOC",
+       ":block/string": "No rhetorical-question asides (\"Reading this on the help graph? Your edits aren't saved, so play freely.\"). Say it straight: \"Edits here aren't saved.\"",
+       ":block/order": 9
+      },
+      {
+       ":block/uid": "YBcFn0-c_",
+       ":block/string": "Friendly means relaxed and natural, not clever. Write full sentences with a subject, attach the reason to the fact with \"so\" or \"because\", and prefer an invitation over a bare command.",
+       ":block/order": 10
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "kcws5Nd30",
+         ":block/string": "Too AI: \"Try it on a classic: Doug Engelbart's 1962 __Augmenting Human Intellect__, the paper that imagined tools like this one. Select some text and make a highlight. (Reading this on the help graph? Your edits aren't saved, so play freely.)\" The tells: a setup colon, a winking appositive, a rhetorical-question aside.",
+         ":block/order": 0
+        },
+        {
+         ":block/uid": "X4Hg4HQti",
+         ":block/string": "Overcorrected: \"Highlight something. Edits here aren't saved.\" Clipped imperatives read cold, even aggressive.",
+         ":block/order": 1
+        },
+        {
+         ":block/uid": "QX7UZQ2WY",
+         ":block/string": "Right: \"Try it on this copy of Doug Engelbart's 1962 paper, __Augmenting Human Intellect__. Highlights you make here aren't saved, so feel free to experiment.\" Plain sentences, the interesting fact stated rather than sold, and the warmth comes from a natural invitation.",
+         ":block/order": 2
+        }
+       ],
+       ":block/uid": "hHgJRYy7Y",
+       ":block/string": "The voice, by example. Three drafts of the same block:",
+       ":block/order": 11
       }
      ],
      ":block/uid": "KPMSpsn-X",
@@ -82267,6 +83095,89 @@
   {
    ":node/title": "R.J. Nestor",
    ":block/uid": "Fu7jG-iaF"
+  },
+  {
+   ":node/title": "Engelbart 1962 - Augmenting Human Intellect",
+   ":block/children": [
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "VWxX5q1VI"
+      }
+     ],
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "07-18-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "qn2UZ2hrS"
+          }
+         ],
+         ":block/uid": "auD6fK2bN",
+         ":block/string": "By \"augmenting human intellect\" we mean increasing the capability of a man to approach a complex problem situation, to gain comprehension to suit his particular needs, and to derive solutions to problems #h/yellow",
+         ":block/order": 0
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "qn2UZ2hrS"
+          },
+          {
+           ":block/uid": "UmsnoKSLS"
+          }
+         ],
+         ":block/uid": "HfREfEOgb",
+         ":block/string": "The system we want to improve can thus be visualized as a trained human being together with his artifacts, language, and methodology #h/yellow #artifacts",
+         ":block/order": 1
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "qn2UZ2hrS"
+          }
+         ],
+         ":block/uid": "JV1TkTyzh",
+         ":block/string": "...cooperative action of discrete agencies such that the total effect is greater than the sum of the two effects taken independently... #h/yellow",
+         ":block/order": 2
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "qn2UZ2hrS"
+          }
+         ],
+         ":block/uid": "TzckJY3gk",
+         ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F_QTo84iH_.png?alt=media&token=f8eee863-abe3-4039-8e36-0f6d8319b683) #h/yellow",
+         ":block/order": 3
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "qn2UZ2hrS"
+          }
+         ],
+         ":block/uid": "rK1yLc3nf",
+         ":block/string": "A memex is a device in which an individual stores all his books, records, and communications, and which is mechanized so that it may be consulted with exceeding speed and flexibility #h/yellow",
+         ":block/order": 4
+        }
+       ],
+       ":block/uid": "eYG3HuHfA",
+       ":block/string": "[[July 18th, 2026]]",
+       ":block/order": 0
+      }
+     ],
+     ":block/uid": "4YnU_lGIS",
+     ":block/string": "Notes by [[Joshua Brown]]",
+     ":block/order": 0
+    }
+   ],
+   ":block/uid": "X_AiPY3L7"
   },
   {
    ":node/title": "Solution",

@@ -22,4 +22,4 @@
 
 - Graph History is available on hosted graphs. Local graphs don't keep the server-side record it reads from.
 - Opening it from settings is for admins, and on shared graphs the **History viewable by** sharing setting controls who may look at the past.
-- History is a view, not an undo. To overwrite your whole graph with an older copy, that's [[Restore Graph]] in **Settings → Data & Backups**, a much blunter tool.
+- History is a view, not an undo. To overwrite your whole graph with an older copy, that's [[Restore Graph]] in **Settings → [[Data & Backups]]**, a much blunter tool.
