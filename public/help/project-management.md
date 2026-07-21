@@ -7,7 +7,7 @@
 - {{[[video]]: https://www.youtube.com/watch?v=NoNebWRn9ZQ&ab_channel=MickeyMellen}}
   #[[TODO/DONE]] | #[[Page References]] | #[[Daily Notes]] | #[[Linked References]] | #[[Date picker]] | #[[Filter]] 
 
-#### PARA in Roam Reserach, Managing projects and tasks by [[Praveen Anuraj]]
+#### PARA in Roam Research, Managing projects and tasks by [[Praveen Anuraj]]
 
 - {{[[video]]: https://www.youtube.com/watch?v=SQ71uG1q79g&ab_channel=PraveenAnuraj}}
   #[[Page References]] | #[[TODO/DONE]] | #[[Query]] | #[[Date picker]] 

@@ -2046,7 +2046,7 @@
     - Added a [[Filter]] option to include or exclude all daily notes pages
       - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FnwAFzuzoRs.png?alt=media&token=dcf61182-4670-4d57-b619-4579b11d0e59)
       - Similar to Added a [[Roam Query]] clause to filter on all daily notes at once
-    - [[Roam Query]] builder now appears __above__ the results, letting you watch updates live as you refine the query.
+    - [[Roam Query Builder]] now appears __above__ the results, letting you watch updates live as you refine the query.
       - We’ve also swapped the pen icon for a hammer to avoid confusion pen icons which usually focus the underlying block
     - Added a [[Roam Query]] clause to filter on all daily notes at once
       - This is equivalent to manually listing out all of the pages, e.i [[August 1, 2023]], [[August 2nd, 2023]], and so on
@@ -2128,7 +2128,7 @@
     - improved the way the inline auto complete (`(())`, `[[]]`, etc) work to better keep the active item in view
 - [[April 17th, 2025]]
   - [[Bug Fixes]]
-    - [[Query Builder]]
+    - [[Roam Query Builder]]
       - Change the editing icon to an eye when editing to be more clear and fix the tooltip to say "View Results"
       - Fixed a bug that caused pages created while the editor is open to not show up in auto complete
 - [[April 15th, 2025]]
@@ -2376,7 +2376,7 @@
     - Shift click opens version blocks in the sidebar
 - [[February 27th, 2025]]
   - [[New Features]]
-    - [[Query Builder]] For native Roam [[queries]]
+    - [[Roam Query Builder]] For native Roam [[queries]]
       - Click on the pen icon in the top right to edit an existing query or type `/query` to open a new one
       - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FjutKnCquhv.gif?alt=media&token=f177c6db-224d-4f15-b56e-452cb18351a7)
 - [[February 24th, 2025]]

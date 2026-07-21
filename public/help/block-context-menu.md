@@ -20,7 +20,7 @@
       - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FmVnuTJLLlq.gif?alt=media&token=528fd198-da64-4a21-80c2-8bd6007ba018)
     - Add version
       - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FHNrxPTA3gs.gif?alt=media&token=ad1b8585-b52f-4356-b1b8-1aa109c5f7e3)
-    - Delta (not really sure about this, added it in case it's needed)
+    - Delta
       - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F7vwTMYhLgA.gif?alt=media&token=3ac40f9a-f03b-4aef-a3f5-7e3e0f88800c)
     - View as Numbered list
       - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FXKIKHxUwZn.gif?alt=media&token=1290607c-b3e4-4ce2-a3bf-47afc371aaf9)

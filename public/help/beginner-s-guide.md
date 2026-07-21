@@ -24,8 +24,3 @@
 
 ## What [[Workflows]] can I use Roam for?
 
-#### What's So Great About Roam Research? by [[Nat Eliason]] 
-
-- {{[[video]]: https://www.youtube.com/watch?v=syKAar8ZD-U}}
-
-- #[[Daily Notes]] | #[[Bidirectional linking]] | #[[Linked References]] #[[Book]] | #[[Sidebar]] | #[[Tags]] | #[[Evergreen Notes]] | #[[Block References]] | #[[Templates]] | #[[Query]]

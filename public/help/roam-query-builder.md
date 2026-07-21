@@ -1,4 +1,4 @@
-# Query Builder
+# Roam Query Builder
 
 - The Query Builder is a visual editor for [[Query]] blocks: build and refine a query with menus and pickers instead of writing the syntax by hand.
 - It reads and writes the real query syntax in your block, so you can flip between building visually and editing the text whenever you like.

@@ -16,7 +16,5 @@
 
 #### Taking Notes on 1:1s by [[Conor White-Sullivan]]
 
-- {{[[video]]: https://www.youtube.com/watch?v=otoF_ane688&ab_channel=ConorWhite-Sullivan}} #[[Conor White-Sullivan]]
 - {{[[video]]: https://www.youtube.com/watch?v=otoF_ane688&ab_channel=ConorWhite-Sullivan}}
   #[[Current time]] | #[[Page References]] | #[[Right Sidebar]] | #[[Linked References]] | #[[Query]] | #[[TODO/DONE]] | #[[Block References]] 
-- 

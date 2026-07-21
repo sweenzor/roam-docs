@@ -21,8 +21,8 @@
 - You can still share an encrypted graph with someone else, but they need the password used to encrypt it to access the graph
   - In the future we hope to release the ability to have multiple password to a graph
 - Load times of encrypted graphs may be longer than non encrypted
-- Future features, such as a backend API, may not be available for encrypted graphs
-  - We designed it with the backend API in mind, but likely many of the features of it will not be possible for encrypted graphs
+- The [[Roam Backend API]] can't read an encrypted graph, but the [[Roam Append API]] works: you can capture into an encrypted graph with an append-only [API token]([[Create API Tokens]])
+  - The same rule applies to [[Roam MCP]]: connected AI tools can only append to today's daily note on an encrypted graph. For full AI access, the [[Local MCP]] on the desktop app works with the decrypted graph on your device
 - More Info
   - Images and media files are encrypted only on hosted graphs
     - This may effect the load time of them

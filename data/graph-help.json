@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-07-19T07:43:29.850Z",
+ "exportedAt": "2026-07-21T07:49:51.763Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -146,29 +146,6 @@
       {
        ":block/refs": [
         {
-         ":block/uid": "kuBpGaK7m"
-        }
-       ],
-       ":block/children": [
-        {
-         ":block/uid": "EfGcKqZQn",
-         ":block/string": "A very short and sweet 6-part course totalling less than 7 minutes total run time.",
-         ":block/order": 0
-        },
-        {
-         ":block/uid": "fdmqrmGSV",
-         ":block/string": "Mark guides you through the essentials of Roam in each 60-second episode.",
-         ":block/order": 1
-        }
-       ],
-       ":block/uid": "9i8Ltdq0d",
-       ":block/string": "[60 Seconds To Roam](https://www.youtube.com/playlist?list=PL86ba93-ysP_u1i2D44yI9c_tJ5YyTNK-) by [[Mark McElroy]]",
-       ":block/heading": 2,
-       ":block/order": 4
-      },
-      {
-       ":block/refs": [
-        {
          ":block/uid": "RkvokA4jz"
         }
        ],
@@ -221,27 +198,6 @@
          ":block/uid": "yRdiAEbPY",
          ":block/string": "Nat's first version of this course was officially endorsed by Roam and he's back again with an updated version, where he'll show you how to master the basics, build and organize your graph, manage projects and produce output, effortlessly.",
          ":block/order": 0
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "sB0yQf6IR"
-          }
-         ],
-         ":block/uid": "RrTlhKeJk",
-         ":block/string": "[Roam Essentials](https://nesslabs.com/roam-essentials) by [[Anne-Laure Le Cunff]] $49",
-         ":block/heading": 2,
-         ":block/order": 1
-        },
-        {
-         ":block/uid": "k9XusirW5",
-         ":block/string": "",
-         ":block/order": 3
-        },
-        {
-         ":block/uid": "jsCfIX3gh",
-         ":block/string": "Learn how to make the most out of Roam with real-life examples and powerful mental models. Nesslabs's Anne-Laure Le Cunff will guide you through the essentials with short videos and templates for a variety of workflows, helping you kickstart your Roam journey.",
-         ":block/order": 2
         }
        ],
        ":block/uid": "RWyt9Ndu4",
@@ -281,48 +237,43 @@
       {
        ":block/refs": [
         {
-         ":block/uid": "Z_19sks08"
+         ":block/uid": "X5u5tsBoT"
         }
        ],
        ":block/children": [
         {
-         ":block/refs": [
-          {
-           ":block/uid": "QOmefgeoj"
-          }
-         ],
-         ":block/uid": "-z1_SX8_u",
-         ":block/string": "Learn how to create, collect and organize magical, time-traveling, smart notes and help your dissertation or thesis write itself. After taking the Magical Academic Note-Taking course, you'll have the skills and process in place to write every day without hesitation. Complete this course and [writing]([[Writing]]) will be fun. Instead of dreading the page, you'll run to the page.",
-         ":block/order": 0
+         ":block/uid": "Wp4KynIF5",
+         ":block/string": "Offered with a freemium model with some free lessons and advanced paid lessons.  Features 10 micro-lessons that cover all the Roam essentials and then you jump write into a Roam workflows for producing written content faster.",
+         ":block/order": 1
         },
         {
-         ":block/refs": [
-          {
-           ":block/uid": "X5u5tsBoT"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/uid": "Wp4KynIF5",
-           ":block/string": "Offered with a freemium model with some free lessons and advanced paid lessons.  Features 10 micro-lessons that cover all the Roam essentials and then you jump write into a Roam workflows for producing written content faster.",
-           ":block/order": 1
-          },
-          {
-           ":block/uid": "rwaUgGNPG",
-           ":block/string": "Learn to setup your Roam from scratch with use-case driven 90-minute online course that focuses on the 20% of features that will get you 80% of the benefit.",
-           ":block/order": 0
-          }
-         ],
-         ":block/uid": "pgzJjpxKz",
-         ":block/string": "[Roam Untangled](https://www.jamoe.org/roam) by [[Jamie Miles]] $0-$89",
-         ":block/heading": 2,
-         ":block/order": 1
+         ":block/uid": "rwaUgGNPG",
+         ":block/string": "Learn to setup your Roam from scratch with use-case driven 90-minute online course that focuses on the 20% of features that will get you 80% of the benefit.",
+         ":block/order": 0
         }
        ],
-       ":block/uid": "zNbTQdDOd",
-       ":block/string": "[Magical Academic Note-Taking](https://roam-for-results.teachable.com/p/magical-academic-note-taking) by [[Lisa-Marie Cabrelli]] $129",
+       ":block/uid": "pgzJjpxKz",
+       ":block/string": "[Roam Untangled](https://www.jamoe.org/roam) by [[Jamie Miles]] $0-$89",
        ":block/heading": 2,
        ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "sB0yQf6IR"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/uid": "jsCfIX3gh",
+         ":block/string": "Learn how to make the most out of Roam with real-life examples and powerful mental models. Nesslabs's Anne-Laure Le Cunff will guide you through the essentials with short videos and templates for a variety of workflows, helping you kickstart your Roam journey.",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "RrTlhKeJk",
+       ":block/string": "[Roam Essentials](https://nesslabs.com/roam-essentials) by [[Anne-Laure Le Cunff]] $49",
+       ":block/heading": 2,
+       ":block/order": 4
       }
      ],
      ":block/uid": "SwoPuWuEK",
@@ -343,55 +294,226 @@
    ":node/title": "Sharing",
    ":block/children": [
     {
-     ":block/children": [
+     ":block/refs": [
       {
-       ":block/uid": "sKObR8hRn",
-       ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FEqKJeMhJdP.gif?alt=media&token=9cb021da-d509-496f-b10d-4e8c696f72a8)",
-       ":block/order": 0
+       ":block/uid": "ezi38UFk6"
       }
      ],
-     ":block/uid": "WcyW_NZcg",
-     ":block/string": "Sharing graph as publicly editable",
-     ":block/heading": 3,
+     ":block/uid": "UELnv5ZSZ",
+     ":block/string": "The controls live in [[Settings]] under the **Sharing** tab. Only the graph's admin (the person who created it) sees the tab and can change these settings.",
      ":block/order": 1
     },
     {
-     ":block/children": [
+     ":block/refs": [
       {
-       ":block/uid": "Pub04SZ1p",
-       ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FJKD9mM0cwC.gif?alt=media&token=2a28d233-3de1-4667-8c07-5f1dcff7b670)",
-       ":block/order": 0
+       ":block/uid": "q9X-gs35m"
       }
      ],
-     ":block/uid": "o72ciMkam",
-     ":block/string": "Sharing graph with specific editors",
-     ":block/heading": 3,
+     ":block/uid": "pgfd2KIIM",
+     ":block/string": "[[Local Graph]]s never leave your device, so they have no sharing settings.",
      ":block/order": 2
     },
     {
      ":block/children": [
       {
-       ":block/uid": "HIAqL9UWp",
-       ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FrdZtxdwzbn.gif?alt=media&token=d46dd91e-4963-4dca-bb5f-82f7975e1b6b)",
+       ":block/children": [
+        {
+         ":block/children": [
+          {
+           ":block/uid": "keExA8mqx",
+           ":block/string": "Private, and the default. Only people you invite can open the graph.",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "pC-cMWB43",
+         ":block/string": "`is only shared with the emails below`",
+         ":block/order": 0
+        },
+        {
+         ":block/children": [
+          {
+           ":block/uid": "Ykb_ZmoRs",
+           ":block/string": "Anyone with the link can view the whole graph.",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "ARyJwsXnl",
+         ":block/string": "`can be read by anyone`",
+         ":block/order": 1
+        },
+        {
+         ":block/children": [
+          {
+           ":block/uid": "ZfwsR-gi4",
+           ":block/string": "Anyone with the link can edit it too.",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "b_rWMD7zw",
+         ":block/string": "`can be edited by anyone`",
+         ":block/order": 2
+        }
+       ],
+       ":block/uid": "wDgxEtn_L",
+       ":block/string": "The **This graph** dropdown sets the graph's overall visibility:",
        ":block/order": 0
+      },
+      {
+       ":block/uid": "_8i37dB93",
+       ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fks9BpYNOVI.gif?alt=media&token=5fabb1d0-1981-4a47-a2e0-f2d397b2c3b0)",
+       ":block/order": 1
       }
      ],
-     ":block/uid": "LoPz8BU3S",
-     ":block/string": "Sharing graph with specific readers",
-     ":block/heading": 3,
+     ":block/uid": "fkT8qX3b4",
+     ":block/string": "Sharing the whole graph",
+     ":block/heading": 2,
      ":block/order": 3
     },
     {
      ":block/children": [
       {
-       ":block/uid": "D_WRp9U_U",
-       ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fks9BpYNOVI.gif?alt=media&token=5fabb1d0-1981-4a47-a2e0-f2d397b2c3b0)",
+       ":block/uid": "sy0pTAgxS",
+       ":block/string": "Under **Shared with**, type one or more emails separated by spaces, pick **read** or **edit** access, and press Enter.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "VgRQKRWpR",
+       ":block/string": "Everyone you've invited appears in a list below, where you can switch them between read and edit or remove them.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "6vEg8jn2B",
+       ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FJKD9mM0cwC.gif?alt=media&token=2a28d233-3de1-4667-8c07-5f1dcff7b670)",
+       ":block/order": 3
+      },
+      {
+       ":block/uid": "oQtuXvNNK",
+       ":block/string": "The person doesn't need a Roam account yet: if their email isn't registered, the invitation waits and takes effect as soon as they sign up with it.",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "R8PG5wf-q",
+     ":block/string": "Sharing with specific people",
+     ":block/heading": 2,
+     ":block/order": 4
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "0KoFFWNC5",
+       ":block/string": "To share one page while keeping the rest of the graph private, first turn on **Sharing Individual Pages** at the top of the Sharing tab.",
+       ":block/order": 0
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "DyGRUeXiP"
+        },
+        {
+         ":block/uid": "mkr8MtIBi"
+        }
+       ],
+       ":block/uid": "g8hzB4MNv",
+       ":block/string": "[[>]] [[!WARNING]] Sharing individual pages loads the rest of your graph's data in every visitor's browser. Roam only displays the page you shared, but a technically skilled visitor could dig out the others. Use it on graphs where that risk is acceptable.",
+       ":block/order": 1
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "vITmdYjNM",
+         ":block/string": "Open the **⋯** menu in the top right and pick **Share Page**.",
+         ":block/order": 0
+        },
+        {
+         ":block/uid": "Bqkz9EA7m",
+         ":block/string": "Set \"This page is\" to `can be read by anyone`, or `can be edited by anyone` if visitors should be able to change it. `Private` takes it back down.",
+         ":block/order": 1
+        },
+        {
+         ":block/uid": "0qFNN2K59",
+         ":block/string": "Copy the page's link with **Share Link** in the same menu, and send it to anyone.",
+         ":block/order": 2
+        }
+       ],
+       ":block/uid": "G_SwWkFKc",
+       ":block/string": "Then, on the page you want to share:",
+       ":block/order": 2
+      },
+      {
+       ":block/uid": "nLQdcbkSc",
+       ":block/string": "**Share Page** only appears while the graph itself is private (a public graph's pages are already visible), and only for admins.",
+       ":block/order": 3
+      }
+     ],
+     ":block/uid": "lNk7LbGMy",
+     ":block/string": "Sharing a single page",
+     ":block/heading": 2,
+     ":block/order": 5
+    },
+    {
+     ":block/children": [
+      {
+       ":block/children": [
+        {
+         ":block/children": [
+          {
+           ":block/uid": "4fez4GWgr",
+           ":block/string": "When on, editors can only change the blocks they created themselves, so each person's words stay their own.",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "sKLMIf_LO",
+         ":block/string": "**Immutable blocks**",
+         ":block/order": 0
+        },
+        {
+         ":block/children": [
+          {
+           ":block/uid": "lcO2owLzU",
+           ":block/string": "Who can export the graph's data: only you, people with edit access, everyone invited, or anyone with access to the full graph (the default).",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "9G3dXJ3kr",
+         ":block/string": "**Exportable by**",
+         ":block/order": 1
+        },
+        {
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "7lUbFA_9v"
+            }
+           ],
+           ":block/uid": "CxNNgUPY9",
+           ":block/string": "Who can open the graph's [[Graph History]]. It starts as only you.",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "cczfN42FP",
+         ":block/string": "**History viewable by**",
+         ":block/order": 2
+        }
+       ],
+       ":block/uid": "VrDW23tCB",
+       ":block/string": "Three more settings on the Sharing tab put limits on what the people you've invited can do:",
        ":block/order": 0
       }
      ],
-     ":block/uid": "tSXxX335Z",
-     ":block/string": "Sharing graph as read-only",
-     ":block/heading": 3,
+     ":block/uid": "9ltCBBt-T",
+     ":block/string": "Other sharing controls",
+     ":block/heading": 2,
+     ":block/order": 6
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "3Gjt3Q-qp"
+      }
+     ],
+     ":block/uid": "zQHrKCgUU",
+     ":block/string": "Sharing controls who can see and edit a [[Hosted Graph]]: the whole graph, specific people, or single pages.",
      ":block/order": 0
     }
    ],
@@ -3282,8 +3404,13 @@
        ":block/order": 2
       },
       {
+       ":block/refs": [
+        {
+         ":block/uid": "hTcF3-dXo"
+        }
+       ],
        ":block/uid": "Ey9yBH8aq",
-       ":block/string": "**Better AI assistance.** AI assistants connected to your graph (through Roam's MCP integration) get a semantic search tool too, so they can find relevant context by meaning when answering your questions.",
+       ":block/string": "**Better AI assistance.** AI assistants connected to your graph through the [[Local MCP]] get a semantic search tool too, so they can find relevant context by meaning when answering your questions.",
        ":block/order": 3
       }
      ],
@@ -3806,7 +3933,7 @@
         }
        ],
        ":block/uid": "c3NsMzXkg",
-       ":block/string": "Open **Settings → Graph → Experimental: Semantic search**.",
+       ":block/string": "Open **Settings → Graph → Experimental: Semantic search embeddings**.",
        ":block/order": 1
       }
      ],
@@ -11073,15 +11200,34 @@
        ":block/order": 3
       },
       {
+       ":block/refs": [
+        {
+         ":block/uid": "6Gf4yvK6a"
+        },
+        {
+         ":block/uid": "wV83zeWbM"
+        },
+        {
+         ":block/uid": "fDF1AS-vb"
+        }
+       ],
        ":block/children": [
         {
+         ":block/refs": [
+          {
+           ":block/uid": "XpnfovW5v"
+          },
+          {
+           ":block/uid": "hTcF3-dXo"
+          }
+         ],
          ":block/uid": "VyhssJU9O",
-         ":block/string": "We designed it with the backend API in mind, but likely many of the features of it will not be possible for encrypted graphs",
+         ":block/string": "The same rule applies to [[Roam MCP]]: connected AI tools can only append to today's daily note on an encrypted graph. For full AI access, the [[Local MCP]] on the desktop app works with the decrypted graph on your device",
          ":block/order": 0
         }
        ],
        ":block/uid": "oCmEuPQCk",
-       ":block/string": "Future features, such as a backend API, may not be available for encrypted graphs",
+       ":block/string": "The [[Roam Backend API]] can't read an encrypted graph, but the [[Roam Append API]] works: you can capture into an encrypted graph with an append-only [API token]([[Create API Tokens]])",
        ":block/order": 7
       },
       {
@@ -11779,66 +11925,34 @@
    ":node/title": "Notable Graphs",
    ":block/children": [
     {
-     ":block/uid": "UxmSZDPGX",
-     ":block/string": "[RoamPublic.com](https://www.roampublic.com/all-texts/)",
-     ":block/heading": 2,
-     ":block/order": 1
-    },
-    {
-     ":block/children": [
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "gAbP3Va1E"
-        }
-       ],
-       ":block/uid": "G9E0JdpM0",
-       ":block/string": "[Roam Book Club]([[Roam Book Club]])",
-       ":block/heading": 2,
-       ":block/order": 0
-      },
-      {
-       ":block/uid": "lGfQtsqxD",
-       ":block/string": "[Creator Cooperative ](https://roamresearch.com/#/app/Creator-Cooperative)",
-       ":block/heading": 2,
-       ":block/order": 1
-      }
-     ],
      ":block/uid": "0IJT1ariN",
      ":block/string": "[Roam Collective](https://roamresearch.com/#/app/Roam-Collective/page/MorTyZR-2)",
      ":block/heading": 2,
-     ":block/order": 3
+     ":block/order": 4
     },
     {
-     ":block/children": [
-      {
-       ":block/uid": "ouuPFmKhx",
-       ":block/string": "[Holy Omniscience Graph](https://roamresearch.com/#/app/holy-omniscience/page/c3Z8Q3cb_)",
-       ":block/heading": 2,
-       ":block/order": 1
-      },
-      {
-       ":block/uid": "kKYST-ZbH",
-       ":block/string": "[RoamCN](https://roamresearch.com/#/app/RoamCN)",
-       ":block/heading": 2,
-       ":block/order": 0
-      }
-     ],
-     ":block/uid": "m7J3dYBF0",
-     ":block/string": "[Roam Slack](https://roamresearch.com/#/app/roam-slack)",
+     ":block/uid": "ouuPFmKhx",
+     ":block/string": "[Holy Omniscience Graph](https://roamresearch.com/#/app/holy-omniscience/page/c3Z8Q3cb_)",
      ":block/heading": 2,
-     ":block/order": 4
+     ":block/order": 0
+    },
+    {
+     ":block/uid": "m7J3dYBF0",
+     ":block/string": "[Roam Slack Backup](https://roamresearch.com/#/app/roam-slack)",
+     ":block/heading": 2,
+     ":block/order": 2
     },
     {
      ":block/uid": "pQHI_8Rg5",
      ":block/string": "[Navalmanack](https://roamresearch.com/#/app/Navalmanack)",
      ":block/heading": 2,
-     ":block/order": 5
+     ":block/order": 3
     },
     {
-     ":block/uid": "3-QCfs0_G",
-     ":block/string": "",
-     ":block/order": 7
+     ":block/uid": "kKYST-ZbH",
+     ":block/string": "[RoamCN](https://roamresearch.com/#/app/RoamCN)",
+     ":block/heading": 2,
+     ":block/order": 5
     },
     {
      ":block/uid": "je2WWx5l6",
@@ -11847,31 +11961,20 @@
      ":block/order": 6
     },
     {
-     ":block/refs": [
-      {
-       ":block/uid": "3VEv-jR5D"
-      }
-     ],
      ":block/uid": "8QcllwN92",
-     ":block/string": "{{[[TODO]]}} Request to be featured",
+     ":block/string": "[Contact support to request to be featured](mailto:support@roamresearch.com)",
      ":block/heading": 3,
-     ":block/order": 8
+     ":block/order": 7
     },
     {
-     ":block/uid": "Yqev3Qof4",
-     ":block/string": "[The Roaman Agora](https://roamresearch.com/#/app/The-Roaman-Agora/page/wujSyfjAu)",
+     ":block/uid": "6JHIHY31Q",
+     ":block/string": "[visakanv](https://roamresearch.com/#/app/visakanv-public/page/45EU_k-rI)",
      ":block/heading": 2,
-     ":block/order": 2
-    },
-    {
-     ":block/uid": "cxEjmM6ZG",
-     ":block/string": "Directory",
-     ":block/heading": 1,
-     ":block/order": 0
+     ":block/order": 1
     }
    ],
    ":block/uid": "aSROJm17l",
-   ":children/view-type": "document"
+   ":children/view-type": "bullet"
   },
   {
    ":node/title": "tools",
@@ -12318,16 +12421,146 @@
    ":block/uid": "10-25-2024"
   },
   {
+   ":node/title": "Roam MCP",
+   ":block/children": [
+    {
+     ":block/uid": "1PlwcQ_5F",
+     ":block/string": "It's a hosted service, so it works from anywhere: the AI tool talks to Roam's servers, and your computer doesn't need to be on.",
+     ":block/order": 1
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "hyL5OPFah"
+      },
+      {
+       ":block/uid": "hTcF3-dXo"
+      }
+     ],
+     ":block/uid": "g_huq285c",
+     ":block/string": "For AI tools running on your own computer, there's also [[Local MCP]], which connects through the [[Desktop App]] instead. The local MCP offers more features and is recommended if working from desktop.",
+     ":block/order": 2
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "ss7IJ5SMK"
+      }
+     ],
+     ":block/uid": "fKByik8W3",
+     ":block/string": "[[Working with AI Tools]] covers the ground rules for every AI connection.",
+     ":block/order": 3
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "19WQvnWV3",
+       ":block/string": "Roam is in [Claude's connector directory](https://claude.ai/directory/connectors/roam-research).",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "Fh7rzFQuw",
+       ":block/string": "Click **Connect**, sign in with your Roam account, and pick which graphs Claude should use.",
+       ":block/order": 1
+      }
+     ],
+     ":block/uid": "ZrX-i34IS",
+     ":block/string": "In Claude",
+     ":block/heading": 2,
+     ":block/order": 4
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "xoLY2PaAp",
+       ":block/string": "Roam lives under **Plugins** in ChatGPT: [the Roam Research app](https://chatgpt.com/plugins/plugin_asdk_app_6a32c0c428388191912577d648a44ba4).",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "8CeJpnyoq",
+       ":block/string": "ChatGPT's menu calls these plugins and the listing calls itself an app. Same thing either way: it's Roam MCP underneath.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "VgMVJCyjE",
+       ":block/string": "Open it, connect your Roam account, and grant the graphs you want ChatGPT to use.",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "sU7vcg6qB",
+     ":block/string": "In ChatGPT",
+     ":block/heading": 2,
+     ":block/order": 5
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "AKIcq8Dxp",
+       ":block/string": "Roam MCP is a standard remote MCP server. In tools that let you add an MCP server by URL, use: `https://mcp.roamresearch.com/mcp`",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "u9iiLrlRc",
+       ":block/string": "Signing in and choosing graphs works the same way from there.",
+       ":block/order": 1
+      }
+     ],
+     ":block/uid": "Yu4-p0bd2",
+     ":block/string": "In any other AI tool",
+     ":block/heading": 2,
+     ":block/order": 6
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "oREY8tczz",
+       ":block/string": "Nothing is shared until you pick graphs, and each graph gets its own access level, from read-only up to full access.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "ckiLhYIaE",
+       ":block/string": "Every change the AI makes is attributed to a distinct \"(AI)\" author in your graph, so its edits are always easy to find and review.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "lr61A6b3J",
+       ":block/string": "Adjust a graph's access or disconnect it at any time at [mcp.roamresearch.com/manage](https://mcp.roamresearch.com/manage).",
+       ":block/order": 2
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "DTR1FMubL"
+        },
+        {
+         ":block/uid": "hTcF3-dXo"
+        }
+       ],
+       ":block/uid": "tRKaHd_Um",
+       ":block/string": "Roam's servers can't read [[Encrypted Graphs]], so neither can Roam MCP. You can still grant append-only capture into one, and for full access there's [[Local MCP]].",
+       ":block/order": 3
+      }
+     ],
+     ":block/uid": "2qHLKFyug",
+     ":block/string": "You stay in control",
+     ":block/heading": 2,
+     ":block/order": 7
+    },
+    {
+     ":block/uid": "E22BI8IDG",
+     ":block/string": "Roam MCP connects AI tools like Claude and ChatGPT to your Roam graphs. The AI can search your notes, read pages, and write new blocks, within limits you choose.",
+     ":block/order": 0
+    }
+   ],
+   ":block/uid": "XpnfovW5v"
+  },
+  {
    ":node/title": "September 6th, 2021",
    ":block/uid": "09-06-2021"
   },
   {
    ":node/title": "January 12th, 2026",
    ":block/uid": "01-12-2026"
-  },
-  {
-   ":node/title": "Academia",
-   ":block/uid": "AlLOQyYf9"
   },
   {
    ":node/title": "February 24th, 2021",
@@ -12376,68 +12609,6 @@
      ":block/refs": [
       {
        ":block/uid": "-bNjVrFfG"
-      }
-     ],
-     ":block/children": [
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "wbh78kemE"
-        }
-       ],
-       ":block/children": [
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "2h9V-FtAO"
-          }
-         ],
-         ":block/uid": "-eYG4JGjR",
-         ":block/string": "{{[[video]]: https://www.youtube.com/watch?v=syKAar8ZD-U}}\n",
-         ":block/order": 0
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "OpgJN0KUh"
-          },
-          {
-           ":block/uid": "l8uKkdhbc"
-          },
-          {
-           ":block/uid": "eOaNXBvXZ"
-          },
-          {
-           ":block/uid": "Gx35Ef0-S"
-          },
-          {
-           ":block/uid": "mBGMGlAug"
-          },
-          {
-           ":block/uid": "fJITY2nwZ"
-          },
-          {
-           ":block/uid": "D8ld3cXC3"
-          },
-          {
-           ":block/uid": "nXhOWmKXo"
-          },
-          {
-           ":block/uid": "vmgzUP3fU"
-          },
-          {
-           ":block/uid": "h65_RAv0X"
-          }
-         ],
-         ":block/uid": "G75LUH9p2",
-         ":block/string": "#[[Daily Notes]] | #[[Bidirectional linking]] | #[[Linked References]] #[[Book]] | #[[Sidebar]] | #[[Tags]] | #[[Evergreen Notes]] | #[[Block References]] | #[[Templates]] | #[[Query]]",
-         ":block/order": 1
-        }
-       ],
-       ":block/uid": "t7EF9Q1kj",
-       ":block/string": "What's So Great About Roam Research? by [[Nat Eliason]] ",
-       ":block/heading": 3,
-       ":block/order": 0
       }
      ],
      ":block/uid": "zrPtRhlWV",
@@ -13739,7 +13910,7 @@
         }
        ],
        ":block/uid": "qk-XaTzgN",
-       ":block/string": "PARA in Roam Reserach, Managing projects and tasks by [[Praveen Anuraj]]\n",
+       ":block/string": "PARA in Roam Research, Managing projects and tasks by [[Praveen Anuraj]]",
        ":block/heading": 3,
        ":block/order": 1
       },
@@ -14020,78 +14191,68 @@
      ":block/uid": "GOIAO3CZF",
      ":block/string": "Roam Team Videos::",
      ":block/heading": 2,
-     ":block/order": 15
+     ":block/order": 14
     },
     {
      ":block/uid": "K5d04Wg6d",
      ":block/string": "When you sign into Roam, you will start on a page with today's date.",
-     ":block/order": 2
+     ":block/order": 1
     },
     {
      ":block/uid": "fpnoh4jAF",
      ":block/string": "We encourage people to start writing on this page because it gives context to your notes.",
-     ":block/order": 3
+     ":block/order": 2
     },
     {
      ":block/uid": "CyhNMF9Cg",
      ":block/string": "For example, if you take meeting notes in the Daily Note, the date of your meeting will always be tied to the notes.",
-     ":block/order": 4
+     ":block/order": 3
     },
     {
      ":block/uid": "2FcP837vY",
      ":block/string": "![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/64002864636/original/qqL4apOfjDpoVLBx5JJu6TnrANUlTZSblg.png?1600974212)",
-     ":block/order": 5
+     ":block/order": 4
     },
     {
      ":block/uid": "_o865DFqY",
      ":block/string": "Even if you create a new page, it's often helpful to do so from the Daily Note. This way, you'll be able to see when you created these pages, and your work will be visible when reviewing your days.",
-     ":block/order": 6
+     ":block/order": 5
     },
     {
      ":block/uid": "X91V-OgI4",
      ":block/string": "Consider the following Daily Note:",
-     ":block/order": 7
+     ":block/order": 6
     },
     {
      ":block/uid": "GeI4rMVNY",
      ":block/string": "![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/64002864729/original/jzf65Bfvc_C7CcxpeokK5YM20u9Kv_5G6A.png?1600974564)",
-     ":block/order": 8
+     ":block/order": 7
     },
     {
      ":block/uid": "4k9EVY4eI",
      ":block/string": "An overview on what they changed in their 5 Year Plan, and an intention to work on it more next week.",
-     ":block/order": 11
+     ":block/order": 10
     },
     {
      ":block/uid": "-V4ZTvA18",
      ":block/string": "**Conclusion**",
      ":block/heading": 2,
-     ":block/order": 12
+     ":block/order": 11
     },
     {
      ":block/uid": "fHb-RqdRy",
      ":block/string": "Roam is all about making connections. The Daily Note is intended to help you make connections with yourself over time.",
-     ":block/order": 13
+     ":block/order": 12
     },
     {
      ":block/uid": "w0a1-uXX3",
      ":block/string": "Your future self will thank you!",
-     ":block/order": 14
+     ":block/order": 13
     },
     {
      ":block/uid": "ewTLru5JK",
      ":block/string": "**Daily Notes are the backbone of the Roam experience.**",
      ":block/heading": 2,
-     ":block/order": 1
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "Kt8SWLSya"
-      }
-     ],
-     ":block/uid": "LwSQNBk5v",
-     ":block/string": "[[.--]]",
      ":block/order": 0
     },
     {
@@ -14105,12 +14266,12 @@
      ],
      ":block/uid": "uVGsVpYJf",
      ":block/string": "What does this person get by using the Daily Note instead of just working in the [[Weekly Experiments]] and [[5 Year Plan]] pages?",
-     ":block/order": 9
+     ":block/order": 8
     },
     {
      ":block/uid": "6NXCJCSHe",
      ":block/string": "The context for why they started Weekly Experiments",
-     ":block/order": 10
+     ":block/order": 9
     }
    ],
    ":block/uid": "eOaNXBvXZ",
@@ -14210,10 +14371,6 @@
   {
    ":node/title": "Article",
    ":block/uid": "7klofQ7pS"
-  },
-  {
-   ":node/title": "Productivity",
-   ":block/uid": "GnVbxwMx6"
   },
   {
    ":node/title": "Better search (Experimental)",
@@ -15140,73 +15297,110 @@
    ":node/title": "Roam Mobile",
    ":block/children": [
     {
-     ":block/refs": [
-      {
-       ":block/uid": "BM0yG_cbU"
-      }
-     ],
-     ":block/uid": "yd94DPINv",
-     ":block/string": "Roam Mobile is the native app for iPhone, iPad, and Android. [[Install Roam]] has the store links.",
-     ":block/order": 0
-    },
-    {
      ":block/uid": "4mwjJrKhH",
      ":block/string": "Sign in with your Roam account and your graphs are there, in sync with everywhere else you use Roam.",
      ":block/order": 1
     },
     {
+     ":block/refs": [
+      {
+       ":block/uid": "PwoE6qnIL"
+      }
+     ],
      ":block/children": [
       {
+       ":block/children": [
+        {
+         ":block/uid": "iNrTmoggY",
+         ":block/string": "We recommend turning it on. It's a much smoother way to use Roam on a phone, and the web view is always there for the things it doesn't cover yet.",
+         ":block/order": 0
+        }
+       ],
        ":block/uid": "BeaPD6P99",
-       ":block/string": "The app's native view is built for phones: it feels native, opens fast, and handles large graphs without trouble.",
+       ":block/string": "By default, the app shows the full Roam you know from the browser. The native view is an optional second mode, rebuilt for phones: it opens fast and handles large graphs without trouble.",
        ":block/order": 0
       },
       {
+       ":block/refs": [
+        {
+         ":block/uid": "ZOxNKU481"
+        },
+        {
+         ":block/uid": "zKLAClkHo"
+        },
+        {
+         ":block/uid": "l8uKkdhbc"
+        },
+        {
+         ":block/uid": "Gx35Ef0-S"
+        },
+        {
+         ":block/uid": "xOudW8EHi"
+        },
+        {
+         ":block/uid": "e6ZjyPUL8"
+        }
+       ],
        ":block/uid": "AfQKMcdWk",
-       ":block/string": "You can edit in it, drag blocks around, react with emoji, and use queries, tables, sliders, block references, and callouts.",
-       ":block/order": 1
+       ":block/string": "You can edit in it, drag blocks around, [react with emoji]([[Reactions]]), and use [queries]([[Query]]), [tables]([[Table]]), [sliders]([[Slider]]), [block references]([[Block References]]), and [callouts]([[Callouts]]).",
+       ":block/order": 2
       },
       {
        ":block/uid": "6Qt4vTxBz",
        ":block/string": "For things the native view doesn't cover yet, the app can open the full Roam web app.",
-       ":block/order": 2
+       ":block/order": 3
       },
       {
        ":block/uid": "HTKLTSBna",
        ":block/string": "Encrypted graphs aren't available in the native view, because the servers it reads from can't decrypt them. They open in the web app view instead.",
-       ":block/order": 3
+       ":block/order": 4
+      },
+      {
+       ":block/uid": "_EqzT8lyj",
+       ":block/string": "Turn it on with the **Native view** switch in the app's settings.",
+       ":block/order": 1
       }
      ],
      ":block/uid": "a3uam4-7B",
-     ":block/string": "The native view",
+     ":block/string": "The [[Mobile Native View]]",
      ":block/heading": 2,
      ":block/order": 2
     },
     {
+     ":block/refs": [
+      {
+       ":block/uid": "Tqp-pE4nv"
+      }
+     ],
      ":block/children": [
       {
        ":block/uid": "4kxRY_pkc",
-       ":block/string": "Quick Capture is for getting a thought down fast: open the app, type, done.",
+       ":block/string": "Quick Capture is the app's tab for getting a thought down fast, and the screen the app opens on.",
        ":block/order": 0
       },
       {
        ":block/uid": "uBlza9y38",
-       ":block/string": "Captured notes land on your Daily Notes page the next time the graph syncs.",
+       ":block/string": "It doesn't load your graph, which is what makes it quick: pick a graph, type, save.",
        ":block/order": 1
       },
       {
+       ":block/refs": [
+        {
+         ":block/uid": "eOaNXBvXZ"
+        }
+       ],
        ":block/uid": "a-t_SVIXz",
-       ":block/string": "The capture template is customizable in the app's settings, so captures can arrive pre-tagged and pre-structured.",
+       ":block/string": "Captures go to that graph's [[Daily Notes]] page unless you pick a different page for them. If you're offline, they're saved and synced once you're back online.",
        ":block/order": 2
       },
       {
        ":block/uid": "rGqPAP4do",
-       ":block/string": "Encrypted graphs don't appear in Quick Capture's graph picker.",
+       ":block/string": "Encrypted graphs are not supported in quick capture",
        ":block/order": 3
       }
      ],
      ":block/uid": "4xzBuglFJ",
-     ":block/string": "Quick Capture",
+     ":block/string": "[[Quick Capture]]",
      ":block/heading": 2,
      ":block/order": 3
     },
@@ -15227,6 +15421,47 @@
      ":block/string": "Good to know",
      ":block/heading": 2,
      ":block/order": 4
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "BM0yG_cbU"
+      },
+      {
+       ":block/uid": "cqlyB025W"
+      },
+      {
+       ":block/uid": "gJpnZ0fiZ"
+      },
+      {
+       ":block/uid": "yF2obybFk"
+      }
+     ],
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "N3Uq-2dil"
+        }
+       ],
+       ":block/uid": "NeM-ybyOs",
+       ":block/string": "**[[iOS]]:** download [Roam Mobile on the App Store](https://apps.apple.com/us/app/roam-mobile/id1609277273).",
+       ":block/order": 0
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "yF2obybFk"
+        }
+       ],
+       ":block/uid": "4USmY8-G9",
+       ":block/string": "**[[Android]]:** download [Roam on Google Play](https://play.google.com/store/apps/details?id=com.roamresearch.relemma).",
+       ":block/order": 1
+      }
+     ],
+     ":block/uid": "yd94DPINv",
+     ":block/string": "Roam Mobile is the native app for [[iPhone]], [[iPad]], and [[Android]]. [[Install Roam]] has the store links.",
+     ":block/order": 0
     }
    ],
    ":block/uid": "etKhTqzyg"
@@ -15385,11 +15620,11 @@
     {
      ":block/refs": [
       {
-       ":block/uid": "9QptO5HQh"
+       ":block/uid": "7egjeANPx"
       }
      ],
      ":block/uid": "V3oLEPdXb",
-     ":block/string": "Type `/query` in a block to create one. The [[Query Builder]] opens so you can build it visually. This page covers the clauses underneath.",
+     ":block/string": "Type `/query` in a block to create one. The [[Roam Query Builder]] opens so you can build it visually. This page covers the clauses underneath.",
      ":block/order": 1
     },
     {
@@ -16141,10 +16376,6 @@
    ":block/uid": "nS3A-V0bJ"
   },
   {
-   ":node/title": "Creative writing",
-   ":block/uid": "4eMzQpHLV"
-  },
-  {
    ":node/title": "April 13th, 2024",
    ":block/uid": "04-13-2024"
   },
@@ -16535,7 +16766,7 @@
       },
       {
        ":block/uid": "3PA7hu4g_",
-       ":block/string": "All but the backend API can use the additions we have detailed below\nAlso note that below we will talk about and have examples for `:q` primarily but ",
+       ":block/string": "All but the backend API can use the additions we have detailed below\nAlso note that below we will talk about and have examples for `:q` primarily, but the same additions work in the other ways of querying too",
        ":block/order": 3
       }
      ],
@@ -17693,18 +17924,7 @@
      ],
      ":block/uid": "ku9lXmWGA",
      ":block/string": "How to add emojis and remove them",
-     ":block/heading": 3,
      ":block/order": 0
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "Kt8SWLSya"
-      }
-     ],
-     ":block/uid": "8LO1coK8b",
-     ":block/string": "[[.--]]",
-     ":block/order": 1
     }
    ],
    ":block/uid": "xOudW8EHi"
@@ -18226,10 +18446,6 @@
    ":block/uid": "7nlxjTlnS"
   },
   {
-   ":node/title": "Processes",
-   ":block/uid": "uijae-QwC"
-  },
-  {
    ":node/title": "July 25th, 2022",
    ":block/uid": "07-25-2022"
   },
@@ -18242,114 +18458,12 @@
    ":block/uid": "A3i2JVpHy"
   },
   {
-   ":node/title": "Dr Alex Popadich",
-   ":block/uid": "tvLRWec-K"
-  },
-  {
    ":node/title": "yang Scicily",
    ":block/uid": "ckZdZwG6D"
   },
   {
    ":node/title": "Roam Browser",
    ":block/uid": "lTVCbsjEF"
-  },
-  {
-   ":node/title": "Query Builder",
-   ":block/children": [
-    {
-     ":block/uid": "7YfoSLwWF",
-     ":block/string": "It reads and writes the real query syntax in your block, so you can flip between building visually and editing the text whenever you like.",
-     ":block/order": 1
-    },
-    {
-     ":block/uid": "G7krVF2M1",
-     ":block/string": "Here's a live one: click the wrench button next to the query's title to open the builder and poke around. (Reading this on the help graph? Your edits aren't saved, so play freely.)",
-     ":block/order": 2
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "l8uKkdhbc"
-      },
-      {
-       ":block/uid": "Ec97klr7x"
-      },
-      {
-       ":block/uid": "Y_UVaLrNm"
-      }
-     ],
-     ":block/uid": "uoFbECV5-",
-     ":block/string": "{{[[query]]: {and: [[Block References]] {not: [[Change Log]]}}}}",
-     ":block/order": 3
-    },
-    {
-     ":block/children": [
-      {
-       ":block/uid": "463G_X1wi",
-       ":block/string": "Every query block has a wrench button beside its title. Click it to show or hide the builder.",
-       ":block/order": 0
-      },
-      {
-       ":block/uid": "BsKvgwxG6",
-       ":block/string": "A brand-new query (type `/query` in a block) opens with the builder already showing.",
-       ":block/order": 1
-      },
-      {
-       ":block/uid": "DS98dZK26",
-       ":block/string": "The builder sits right above the query's live results, so you can watch the matches change as you edit.",
-       ":block/order": 2
-      }
-     ],
-     ":block/uid": "vxGcpRhNS",
-     ":block/string": "Opening the builder",
-     ":block/heading": 2,
-     ":block/order": 4
-    },
-    {
-     ":block/children": [
-      {
-       ":block/uid": "PeRDsIInN",
-       ":block/string": "A query is a stack of clauses. Click **Add clause** to add one, and click an existing clause's name to switch its type or delete it.",
-       ":block/order": 0
-      },
-      {
-       ":block/uid": "ueA156iLb",
-       ":block/string": "Clause types: `[[page]]` and `((block))` references, the combinators **and**, **or**, and **not**, full-text **search**, **between** for date ranges (including relative dates), **daily notes**, and **by** / **created by** / **edited by** to filter by author.",
-       ":block/order": 1
-      },
-      {
-       ":block/uid": "wD8jrAv91",
-       ":block/string": "Each clause type brings the right picker with it: page search, block search, free text, user search, or a date picker.",
-       ":block/order": 2
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "Gx35Ef0-S"
-        }
-       ],
-       ":block/uid": "TBO7kOXG1",
-       ":block/string": "For what these clauses mean and the underlying syntax, see [[Query]].",
-       ":block/order": 3
-      }
-     ],
-     ":block/uid": "vRccRaOdC",
-     ":block/string": "Building a query",
-     ":block/heading": 2,
-     ":block/order": 5
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "Gx35Ef0-S"
-      }
-     ],
-     ":block/uid": "gtJ_HgHVw",
-     ":block/string": "The Query Builder is a visual editor for [[Query]] blocks: build and refine a query with menus and pickers instead of writing the syntax by hand.",
-     ":block/order": 0
-    }
-   ],
-   ":block/uid": "9QptO5HQh"
   },
   {
    ":node/title": "Flattened Markdown",
@@ -18860,10 +18974,6 @@
    ":block/uid": "03-14-2022"
   },
   {
-   ":node/title": "Roam fundamentals",
-   ":block/uid": "QdzVG9YXn"
-  },
-  {
    ":node/title": "Étiquette",
    ":block/uid": "mOZjLYEiL"
   },
@@ -19307,18 +19417,6 @@
   },
   {
    ":node/title": "November 26th, 2024",
-   ":block/children": [
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "dBsa9XtRm"
-      }
-     ],
-     ":block/uid": "zYgTOvVhJ",
-     ":block/string": "[[test mobile long press]]",
-     ":block/order": 0
-    }
-   ],
    ":block/uid": "11-26-2024"
   },
   {
@@ -19446,8 +19544,8 @@
       }
      ],
      ":block/uid": "G-fkPirjO",
-     ":block/string": "[Notable Graphs]([[Notable Graphs]])",
-     ":block/order": 7
+     ":block/string": "[[Notable Graphs]]",
+     ":block/order": 5
     },
     {
      ":block/refs": [
@@ -19464,7 +19562,7 @@
      ],
      ":block/uid": "bvEC3ty8Y",
      ":block/string": "[[Articles]]",
-     ":block/order": 3
+     ":block/order": 2
     },
     {
      ":block/refs": [
@@ -19481,29 +19579,7 @@
      ],
      ":block/uid": "_grIRBaDf",
      ":block/string": "[[Community Videos]]",
-     ":block/order": 4
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "ZEs3X-rxb"
-      }
-     ],
-     ":block/children": [
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "gSyRrXdZJ"
-        }
-       ],
-       ":block/uid": "lgHz-sPHZ",
-       ":block/string": "((gSyRrXdZJ))",
-       ":block/order": 0
-      }
-     ],
-     ":block/uid": "6UWzTCdaa",
-     ":block/string": "[[Coaching]]",
-     ":block/order": 6
+     ":block/order": 3
     },
     {
      ":block/refs": [
@@ -19520,7 +19596,7 @@
      ],
      ":block/uid": "jvqz90rda",
      ":block/string": "[[Courses]]",
-     ":block/order": 5
+     ":block/order": 4
     },
     {
      ":block/refs": [
@@ -19531,30 +19607,13 @@
      ":block/children": [
       {
        ":block/uid": "oIStm5Xxq",
-       ":block/string": "[Join us on Slack](https://join.slack.com/t/roamresearch/shared_invite/zt-ni1vw9yf-HzeWr05ZJBt55j_zfddPsw) to learn new workflows, get tips and tricks from your fellow Roamans, and much more!",
+       ":block/string": "[Join us on Slack](https://join.slack.com/t/roamresearch/shared_invite/zt-1x2y9jkx1-KkSjlsWeTdfXy5H8hMB7tg) to learn new workflows, get tips and tricks from your fellow Roamans, and much more!",
        ":block/order": 0
       }
      ],
      ":block/uid": "9Om9vA9wX",
      ":block/string": "[[Roam Slack]]",
      ":block/order": 0
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "gAbP3Va1E"
-      }
-     ],
-     ":block/children": [
-      {
-       ":block/uid": "_qPzHz22Q",
-       ":block/string": "Learn how to use Roam, take better notes, make friends, and more",
-       ":block/order": 0
-      }
-     ],
-     ":block/uid": "GnJ5ZJZk4",
-     ":block/string": "[[Roam Book Club]]",
-     ":block/order": 2
     },
     {
      ":block/refs": [
@@ -20556,10 +20615,6 @@
    ":block/uid": "02-23-2025"
   },
   {
-   ":node/title": "tag",
-   ":block/uid": "eHoNZysE8"
-  },
-  {
    ":node/title": "Morning Review",
    ":block/uid": "Xd0AO9QbF"
   },
@@ -20799,6 +20854,30 @@
   {
    ":node/title": "goal-health",
    ":block/uid": "a9XxDTNIR"
+  },
+  {
+   ":node/title": "Local API Tokens",
+   ":block/children": [
+    {
+     ":block/uid": "J4WFL1VAu",
+     ":block/string": "See the developer documentation graph for [more details](https://roamresearch.com/#/app/developer-documentation/page/8ikgtLSXz).",
+     ":block/order": 1
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "hyL5OPFah"
+      },
+      {
+       ":block/uid": "hTcF3-dXo"
+      }
+     ],
+     ":block/uid": "-f2ju-dRy",
+     ":block/string": "Local API tokens let apps on your computer talk to your graphs through the [[Desktop App]]. They're how [[Local MCP]] connections authenticate.",
+     ":block/order": 0
+    }
+   ],
+   ":block/uid": "CrWDsNUpt"
   },
   {
    ":node/title": "next month",
@@ -21080,6 +21159,11 @@
        ":block/order": 6
       },
       {
+       ":block/refs": [
+        {
+         ":block/uid": "VlGlxM-_q"
+        }
+       ],
        ":block/children": [
         {
          ":block/uid": "uNncTafO1",
@@ -21093,7 +21177,7 @@
         }
        ],
        ":block/uid": "oZY2wE8DF",
-       ":block/string": "**Comment on current block**",
+       ":block/string": "**[Comment on current block]([[Comments]])**",
        ":block/order": 7
       }
      ],
@@ -21577,8 +21661,13 @@
    ":node/title": "query",
    ":block/children": [
     {
+     ":block/refs": [
+      {
+       ":block/uid": "Gx35Ef0-S"
+      }
+     ],
      ":block/uid": "sXpvAVbKi",
-     ":block/string": "",
+     ":block/string": "see [[Query]]",
      ":block/order": 0
     }
    ],
@@ -23001,10 +23090,31 @@
         },
         {
          ":block/uid": "vh3v5clCD"
+        },
+        {
+         ":block/uid": "pjcWdV9zv"
         }
        ],
-       ":block/uid": "T6IqV4smX",
-       ":block/string": "#[[Block References]] | #[[Page References]]",
+       ":block/uid": "sl9UxA89s",
+       ":block/string": "[Active Reading in Roam Research Featuring the Zettelkasten Method](https://padminipyapali.medium.com/zettelkasten-method-roam-research-f7b341f14fbd) by [[Padmini Pyapali]] #[[Block References]] | #[[Page References]]",
+       ":block/heading": 3,
+       ":block/order": 0
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "l8uKkdhbc"
+        },
+        {
+         ":block/uid": "vh3v5clCD"
+        },
+        {
+         ":block/uid": "qoJztv2Xz"
+        }
+       ],
+       ":block/uid": "AgHzN_34B",
+       ":block/string": "[Implementing Zettelkasten in Roam: A Practical Guide](https://www.roambrain.com/implementing-zettelkasten-in-roam/) by [[RoamBrain]] #[[Page References]] | #[[Block References]] ",
+       ":block/heading": 3,
        ":block/order": 1
       },
       {
@@ -23026,92 +23136,15 @@
         },
         {
          ":block/uid": "D8ld3cXC3"
-        }
-       ],
-       ":block/uid": "uenStgs5N",
-       ":block/string": "#[[Page References]] | #[[Linked References]] | #[[Unlinked References]] | #[[Indentation]] | #[[Block References]] | #[[Right Sidebar]]",
-       ":block/order": 7
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "pjcWdV9zv"
-        }
-       ],
-       ":block/uid": "sl9UxA89s",
-       ":block/string": "[Active Reading in Roam Research Featuring the Zettelkasten Method](https://padminipyapali.medium.com/zettelkasten-method-roam-research-f7b341f14fbd) by [[Padmini Pyapali]]",
-       ":block/heading": 3,
-       ":block/order": 0
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "vh3v5clCD"
         },
-        {
-         ":block/uid": "pg0UYWwfj"
-        },
-        {
-         ":block/uid": "iuHyHwocI"
-        },
-        {
-         ":block/uid": "D8ld3cXC3"
-        }
-       ],
-       ":block/uid": "MEuyQQ67i",
-       ":block/string": "#[[Page References]] | #[[Linked References]] | #[[Unlinked References]] | #[[Indentation]] |",
-       ":block/order": 5
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "qoJztv2Xz"
-        }
-       ],
-       ":block/uid": "AgHzN_34B",
-       ":block/string": "[Implementing Zettelkasten in Roam: A Practical Guide](https://www.roambrain.com/implementing-zettelkasten-in-roam/) by [[RoamBrain]]",
-       ":block/heading": 3,
-       ":block/order": 2
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "l8uKkdhbc"
-        },
-        {
-         ":block/uid": "vh3v5clCD"
-        }
-       ],
-       ":block/uid": "dP25bBY_W",
-       ":block/string": "#[[Page References]] | #[[Block References]] ",
-       ":block/order": 3
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "FHBqeOtic"
-        }
-       ],
-       ":block/uid": "clgwYt1qF",
-       ":block/string": "[Roamkasten - a practical how to guide to optimize Zettelkasten in Roam Research](https://www.thrivinghenry.com/writings/roamkasten-a-practical-how-to-guide-to-optimize-zettelkasten-in-roam-research) by [[Thriving Henry]]\n",
-       ":block/heading": 3,
-       ":block/order": 4
-      },
-      {
-       ":block/refs": [
         {
          ":block/uid": "FHBqeOtic"
         }
        ],
        ":block/uid": "d5qQKgmJX",
-       ":block/string": "[Roamkasten - a practical how to guide to optimize Zettelkasten in Roam Research](https://www.thrivinghenry.com/writings/roamkasten-a-practical-how-to-guide-to-optimize-zettelkasten-in-roam-research) by [[Thriving Henry]]",
+       ":block/string": "[Roamkasten - a practical how to guide to optimize Zettelkasten in Roam Research](https://www.thrivinghenry.com/writings/roamkasten-a-practical-how-to-guide-to-optimize-zettelkasten-in-roam-research) by [[Thriving Henry]] #[[Page References]] | #[[Linked References]] | #[[Unlinked References]] | #[[Indentation]] | #[[Block References]] | #[[Right Sidebar]]",
        ":block/heading": 3,
-       ":block/order": 6
-      },
-      {
-       ":block/uid": "34niN-EOM",
-       ":block/string": "",
-       ":block/order": 8
+       ":block/order": 2
       }
      ],
      ":block/uid": "-O6Vum0qR",
@@ -23868,10 +23901,6 @@
    ":block/uid": "05-15-2025"
   },
   {
-   ":node/title": "Publishing",
-   ":block/uid": "Ihodazqn2"
-  },
-  {
    ":node/title": "April 20th, 2021",
    ":block/children": [
     {
@@ -23948,13 +23977,8 @@
      ],
      ":block/children": [
       {
-       ":block/uid": "jYRvUTGVz",
-       ":block/string": "`Cmd+,` for Mac",
-       ":block/order": 1
-      },
-      {
        ":block/uid": "tV-FlCsBF",
-       ":block/string": "`Ctrl+,` for Windows",
+       ":block/string": "`Ctrl+,` on both Mac and Windows",
        ":block/order": 0
       }
      ],
@@ -24008,71 +24032,12 @@
        ],
        ":block/uid": "LCCdOOU0B",
        ":block/string": "Task Management, Roam Research: Dealing with Dates by [[R.J. Nestor]]",
-       ":block/order": 2
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "tvLRWec-K"
-        }
-       ],
-       ":block/children": [
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "y7RCW_g_0"
-          },
-          {
-           ":block/uid": "2h9V-FtAO"
-          },
-          {
-           ":block/uid": "zIIv1EpjB"
-          }
-         ],
-         ":block/uid": "DVKBKXw2n",
-         ":block/string": "{{[[video]]: https://www.youtube.com/watch?v=uO1zMII3gWs}}\n#[[/ Commands]] | #[[Attributes]]",
-         ":block/order": 0
-        }
-       ],
-       ":block/uid": "FEWhacasN",
-       ":block/string": "Roam Basics Part 3: Attributes and Use of / by [[Dr Alex Popadich]]",
        ":block/order": 0
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "NEAOWw2An"
-        }
-       ],
-       ":block/children": [
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "OpgJN0KUh"
-          },
-          {
-           ":block/uid": "mBGMGlAug"
-          },
-          {
-           ":block/uid": "2h9V-FtAO"
-          },
-          {
-           ":block/uid": "zIIv1EpjB"
-          }
-         ],
-         ":block/uid": "3CAakx_Iw",
-         ":block/string": "{{[[video]]: https://www.youtube.com/watch?v=FkIzSeXydZ4}}\n#[[Templates]] | #[[Attributes]] | #[[Sidebar]]",
-         ":block/order": 0
-        }
-       ],
-       ":block/uid": "if8gOBzxa",
-       ":block/string": "Using Template Pages in Roam (Metadata) by [[Dalton Mabery]]",
-       ":block/order": 1
       },
       {
        ":block/uid": "SE8u5mPlX",
        ":block/string": "",
-       ":block/order": 4
+       ":block/order": 2
       },
       {
        ":block/refs": [
@@ -24100,7 +24065,7 @@
        ],
        ":block/uid": "t6N5uZuXB",
        ":block/string": "An in-depth look at Attributes in [[Roam Research]] + BONUS by [[m4rrc0]]",
-       ":block/order": 3
+       ":block/order": 1
       }
      ],
      ":block/uid": "VLeKqor5t",
@@ -24389,6 +24354,10 @@
    ":block/uid": "07-18-2026"
   },
   {
+   ":node/title": "July 20th, 2026",
+   ":block/uid": "07-20-2026"
+  },
+  {
    ":node/title": "January 15th, 2020",
    ":block/uid": "01-15-2020"
   },
@@ -24644,10 +24613,6 @@
    ":block/uid": "qkCWWggiH"
   },
   {
-   ":node/title": "Content creation",
-   ":block/uid": "6VRMKeSYw"
-  },
-  {
    ":node/title": "Inline Calculator",
    ":block/uid": "PjsgI6PX2"
   },
@@ -24658,10 +24623,6 @@
   {
    ":node/title": "Elaptics",
    ":block/uid": "t9ZD8nVOR"
-  },
-  {
-   ":node/title": "Encrypted Graphs|encrypted graph",
-   ":block/uid": "hYqAtEjCH"
   },
   {
    ":node/title": "Streak",
@@ -25113,6 +25074,18 @@
   },
   {
    ":node/title": "Roam Query",
+   ":block/children": [
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "Gx35Ef0-S"
+      }
+     ],
+     ":block/uid": "N1OxtYn70",
+     ":block/string": "see [[Query]]",
+     ":block/order": 0
+    }
+   ],
    ":block/uid": "5Mp7Ows3d"
   },
   {
@@ -25699,7 +25672,7 @@
           },
           {
            ":block/uid": "fZ6jJOfUq",
-           ":block/string": "`Tab+enter` to outdent",
+           ":block/string": "`Shift+Tab` to outdent",
            ":block/order": 1
           }
          ],
@@ -25928,76 +25901,230 @@
    ":node/title": "Roam Depot",
    ":block/children": [
     {
+     ":block/uid": "jFTsp32KB",
+     ":block/string": "The Roam team reviews every extension before it's listed or updated.",
+     ":block/order": 1
+    },
+    {
      ":block/refs": [
       {
-       ":block/uid": "mOo2CZLs0"
+       ":block/uid": "TpA4naC1T"
       }
      ],
+     ":block/uid": "rlWLnc8pe",
+     ":block/string": "Check out the linked references of [[Roam Depot Extensions]] for new extensions",
+     ":block/order": 2
+    },
+    {
+     ":block/children": [
+      {
+       ":block/children": [
+        {
+         ":block/uid": "nLL-ldgQf",
+         ":block/string": "Click **Roam Depot** in the left sidebar.",
+         ":block/order": 0
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "ezi38UFk6"
+          }
+         ],
+         ":block/uid": "8RtHyR0no",
+         ":block/string": "Or open [[Settings]], pick the **Roam Depot** tab, and click **Browse**.",
+         ":block/order": 1
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "D893VH8Ls"
+          }
+         ],
+         ":block/uid": "NPkDNeBAz",
+         ":block/string": "Or run \"Roam Depot Marketplace\" from the [[Command Palette]].",
+         ":block/order": 2
+        }
+       ],
+       ":block/uid": "W4obXczhU",
+       ":block/string": "The marketplace is available in a few places:",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "rqoRWhMbb",
+       ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FyCStM-Yqdu.png?alt=media&token=a76e9ca6-831e-4ddf-92c5-4c699b67c18f)",
+       ":block/order": 1
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "1taThtjJX",
+         ":block/string": "Search by name, or sort the list by downloads, creation date, last update, or name.",
+         ":block/order": 0
+        },
+        {
+         ":block/uid": "KCGk4ULbP",
+         ":block/string": "Click an extension to read its details: description, author, version, download count, and its full README.",
+         ":block/order": 1
+        },
+        {
+         ":block/uid": "L2pwKf7Z_",
+         ":block/string": "Click **Install**. The extension starts running right away.",
+         ":block/order": 2
+        }
+       ],
+       ":block/uid": "sl2JFgXqE",
+       ":block/string": "In the marketplace:",
+       ":block/order": 2
+      },
+      {
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "VjgODBKDn"
+          }
+         ],
+         ":block/uid": "a2Q6kM07R",
+         ":block/string": "To install for everyone on the graph, see ((VjgODBKDn))",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "xipCDv8Vm",
+       ":block/string": "Extensions are installed per person, per graph: installing one here doesn't add it to your other graphs, or to anyone else's view of this graph.",
+       ":block/order": 3
+      },
+      {
+       ":block/uid": "4f_v-a1pX",
+       ":block/string": "Installing needs edit access to the graph, so read-only members and visitors to public graphs can't add extensions.",
+       ":block/order": 4
+      }
+     ],
+     ":block/uid": "4TrsQEnUC",
+     ":block/string": "Installing extensions",
+     ":block/heading": 2,
+     ":block/order": 3
+    },
+    {
      ":block/children": [
       {
        ":block/refs": [
         {
-         ":block/uid": "i61sJcQ0T"
+         ":block/uid": "ezi38UFk6"
         }
        ],
        ":block/children": [
         {
-         ":block/refs": [
-          {
-           ":block/uid": "WqjOlfvm7"
-          }
-         ],
-         ":block/uid": "MnfGfptpI",
-         ":block/string": "((WqjOlfvm7))",
+         ":block/uid": "LGDMJmbNJ",
+         ":block/string": "That tab is also where you set hotkeys for any commands the extension adds.",
          ":block/order": 0
         }
        ],
-       ":block/uid": "mjTwzRbPX",
-       ":block/string": "[[Matter]]",
-       ":block/order": 2
+       ":block/uid": "3suPj31KR",
+       ":block/string": "An extension with settings gets its own tab in [[Settings]], listed under the **Extension Settings** heading.",
+       ":block/order": 0
       },
       {
-       ":block/refs": [
-        {
-         ":block/uid": "663TQo1FC"
-        }
-       ],
-       ":block/children": [
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "u_RFBIP-p"
-          }
-         ],
-         ":block/uid": "dF10mYyKh",
-         ":block/string": "((u_RFBIP-p))",
-         ":block/order": 0
-        }
-       ],
-       ":block/uid": "DC3e35WAm",
-       ":block/string": "((663TQo1FC))",
+       ":block/uid": "1y2tR4PpX",
+       ":block/string": "Every installed extension has an on/off switch in the Roam Depot tab, so you can turn one off without uninstalling it.",
        ":block/order": 1
       },
       {
-       ":block/refs": [
-        {
-         ":block/uid": "07-21-2021"
-        }
-       ],
        ":block/children": [
         {
-         ":block/uid": "uRr1xtjZc",
-         ":block/string": "https://twitter.com/RoamResearch/status/1550192726540374016?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ",
+         ":block/uid": "b4kgB77gJ",
+         ":block/string": "**Update all** in the Roam Depot tab checks immediately.",
          ":block/order": 0
         }
        ],
-       ":block/uid": "GYhBNAXAz",
-       ":block/string": "[[July 21st, 2021]]",
-       ":block/order": 0
+       ":block/uid": "gW4WCL4VH",
+       ":block/string": "Updates are automatic: Roam checks for new versions when your graph loads and about every 12 hours while it's open.",
+       ":block/order": 2
       }
      ],
-     ":block/uid": "GAeuNJNUR",
-     ":block/string": "Official [[Plugins]]",
+     ":block/uid": "DZSUrIOtv",
+     ":block/string": "Settings and updates",
+     ":block/heading": 2,
+     ":block/order": 4
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "U1y4q0zec",
+       ":block/string": "If you're an admin, the globe button next to an installed extension installs it for everyone you've shared the graph with. ((Public visitors don't get it. due to security concerns))",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "IM4dfEJ3X",
+       ":block/string": "Members are asked to confirm before admin-chosen extensions start running for them, and they can opt back out later from the Roam Depot tab.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "eSSc5cy_U",
+       ":block/string": "Members inherit the extension's configuration and can't change its settings, but they can set their own hotkeys for it.",
+       ":block/order": 2
+      },
+      {
+       ":block/uid": "iMeX_pJYL",
+       ":block/string": "Be careful with settings that hold secrets: anything in a shared extension's settings, like an API key, is visible to the people the graph is shared with.",
+       ":block/order": 3
+      }
+     ],
+     ":block/uid": "VjgODBKDn",
+     ":block/string": "Installing for your whole graph",
+     ":block/heading": 2,
+     ":block/order": 5
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "RpeBEfDGe",
+       ":block/string": "Extensions marked **Experimental** may cause data loss or other bugs, so keep them away from graphs you care about.",
+       ":block/order": 0
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "dQIEqeZvP",
+         ":block/string": "For the same reason, these can't be installed for for other users on your graph.",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "ni_vm8O_o",
+       ":block/string": "Some extensions carry a warning that they use javascript eval, which means they can run code that wasn't part of Roam's review. Install those at your own risk.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "RoMXjwr1Q",
+       ":block/string": "If Roam starts misbehaving, the **Temporarily disable all extensions and css** button in the Roam Depot tab reloads with everything off, so you can check whether an extension is the cause.",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "1HpirKO-4",
+     ":block/string": "Good to know",
+     ":block/heading": 2,
+     ":block/order": 6
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "VEe0JMCaa",
+       ":block/string": "The guide to building and submitting an extension lives in the developer docs: [docs link](https://roamresearch.com/#/app/developer-documentation/page/5BB8h4I7b)",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "r7LvxyXoU",
+       ":block/string": "Roam shares a portion of its revenue with extension developers, based on how popular their extensions are.",
+       ":block/order": 1
+      }
+     ],
+     ":block/uid": "msw1sLmrx",
+     ":block/string": "Building your own",
+     ":block/heading": 2,
+     ":block/order": 7
+    },
+    {
+     ":block/uid": "UkyVjNyMu",
+     ":block/string": "Roam Depot is Roam's built-in marketplace for extensions: add-ons built by the community that add new features to Roam.",
      ":block/order": 0
     }
    ],
@@ -26022,10 +26149,6 @@
   {
    ":node/title": "Idaho",
    ":block/uid": "8_ylcurAV"
-  },
-  {
-   ":node/title": "GTD",
-   ":block/uid": "BKCdivOJ2"
   },
   {
    ":node/title": "Images",
@@ -26154,220 +26277,220 @@
    ":node/title": "Developer Documentation",
    ":block/children": [
     {
+     ":block/uid": "VtpLxiauA",
+     ":block/string": "If you're a developer who'd like to build extensions for Roam or connect stuff to Roam, please checkout our [developer-documentation graph](https://roamresearch.com/#/app/developer-documentation)",
+     ":block/order": 0
+    },
+    {
      ":block/children": [
       {
+       ":block/refs": [
+        {
+         ":block/uid": "6Gf4yvK6a"
+        }
+       ],
        ":block/children": [
         {
-         ":block/refs": [
-          {
-           ":block/uid": "6Gf4yvK6a"
-          }
-         ],
+         ":block/uid": "lDJ492Zrx",
+         ":block/string": "A REST API for your roam graph",
+         ":block/order": 0
+        },
+        {
+         ":block/uid": "KixvCv02H",
+         ":block/string": "You can use this API to read or write to your Roam graph via your own code or a variety of services",
+         ":block/order": 1
+        },
+        {
          ":block/children": [
           {
-           ":block/uid": "lDJ492Zrx",
-           ":block/string": "A REST API for your roam graph",
-           ":block/order": 0
-          },
-          {
-           ":block/uid": "KixvCv02H",
-           ":block/string": "You can use this API to read or write to your Roam graph via your own code or a variety of services",
-           ":block/order": 1
-          },
-          {
+           ":block/refs": [
+            {
+             ":block/uid": "FqDoizaVK"
+            }
+           ],
            ":block/children": [
             {
              ":block/refs": [
               {
-               ":block/uid": "FqDoizaVK"
+               ":block/uid": "5CHvCrsmK"
               }
              ],
+             ":block/uid": "aXXSgqxAH",
+             ":block/string": "{{embed: ((5CHvCrsmK))}}",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "OBsBy28OS",
+           ":block/string": "the [[Raycast]] extension",
+           ":block/order": 1
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "C8Y_cGdHM"
+            }
+           ],
+           ":block/children": [
+            {
              ":block/children": [
               {
                ":block/refs": [
                 {
-                 ":block/uid": "5CHvCrsmK"
+                 ":block/uid": "kPyVfSLxb"
                 }
                ],
-               ":block/uid": "aXXSgqxAH",
-               ":block/string": "{{embed: ((5CHvCrsmK))}}",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "OBsBy28OS",
-             ":block/string": "the [[Raycast]] extension",
-             ":block/order": 1
-            },
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "C8Y_cGdHM"
-              }
-             ],
-             ":block/children": [
-              {
                ":block/children": [
                 {
-                 ":block/refs": [
-                  {
-                   ":block/uid": "kPyVfSLxb"
-                  }
-                 ],
-                 ":block/children": [
-                  {
-                   ":block/uid": "q3M9x4MUi",
-                   ":block/string": "Set up guide video: https://www.loom.com/share/9bdbf2495e1f4a049d3d7354594a9808",
-                   ":block/order": 2
-                  },
-                  {
-                   ":block/uid": "r-vsHyn_T",
-                   ":block/string": "The demo video: https://www.loom.com/share/76ebb8a30b1043b3a566f4077054ea73Longer ",
-                   ":block/order": 1
-                  },
-                  {
-                   ":block/uid": "szjCpkNXa",
-                   ":block/string": "(these are for an older version but should be generally correct)",
-                   ":block/order": 0
-                  }
-                 ],
-                 ":block/uid": "pAXWycTQ7",
-                 ":block/string": "[[Loom video]]s",
+                 ":block/uid": "q3M9x4MUi",
+                 ":block/string": "Set up guide video: https://www.loom.com/share/9bdbf2495e1f4a049d3d7354594a9808",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "r-vsHyn_T",
+                 ":block/string": "The demo video: https://www.loom.com/share/76ebb8a30b1043b3a566f4077054ea73",
                  ":block/order": 1
                 },
                 {
-                 ":block/children": [
-                  {
-                   ":block/uid": "5axE2uSFi",
-                   ":block/string": "If recording has been made and then something fails, then save the recording to “iCloud Drive/Shortcuts/SpeakToRoam/FailedRecordings/” folder and show a proper error message to the user",
-                   ":block/order": 2
-                  },
-                  {
-                   ":block/refs": [
-                    {
-                     ":block/uid": "Tc7Z9Lsuc"
-                    }
-                   ],
-                   ":block/uid": "IdHHIw-RX",
-                   ":block/string": "Optionally post-process the transcript via an [[OpenAI]] GPT4 API call (prompt is customizable)",
-                   ":block/order": 1
-                  },
-                  {
-                   ":block/refs": [
-                    {
-                     ":block/uid": "Tc7Z9Lsuc"
-                    }
-                   ],
-                   ":block/uid": "JLYtmCtGX",
-                   ":block/string": "Uses the [[OpenAI]] Whisper API to transcribe a voice recording",
-                   ":block/order": 0
-                  }
-                 ],
-                 ":block/uid": "bBleyxkMp",
-                 ":block/string": "Features",
+                 ":block/uid": "szjCpkNXa",
+                 ":block/string": "(these are for an older version but should be generally correct)",
                  ":block/order": 0
                 }
                ],
-               ":block/uid": "C_tVqcL9s",
-               ":block/string": "Latest version: **v1.2.0: ** https://www.icloud.com/shortcuts/9280597747c543eab39dd65d4aebd992",
+               ":block/uid": "pAXWycTQ7",
+               ":block/string": "[[Loom video]]s",
                ":block/order": 1
               },
               {
                ":block/children": [
                 {
-                 ":block/uid": "DIH1z_hXw",
-                 ":block/string": "And it’s free! (though you do have to enter an OpenAI key 😅)",
+                 ":block/uid": "5axE2uSFi",
+                 ":block/string": "If recording has been made and then something fails, then save the recording to “iCloud Drive/Shortcuts/SpeakToRoam/FailedRecordings/” folder and show a proper error message to the user",
+                 ":block/order": 2
+                },
+                {
+                 ":block/refs": [
+                  {
+                   ":block/uid": "Tc7Z9Lsuc"
+                  }
+                 ],
+                 ":block/uid": "IdHHIw-RX",
+                 ":block/string": "Optionally post-process the transcript via an [[OpenAI]] GPT4 API call (prompt is customizable)",
+                 ":block/order": 1
+                },
+                {
+                 ":block/refs": [
+                  {
+                   ":block/uid": "Tc7Z9Lsuc"
+                  }
+                 ],
+                 ":block/uid": "JLYtmCtGX",
+                 ":block/string": "Uses the [[OpenAI]] Whisper API to transcribe a voice recording",
                  ":block/order": 0
                 }
                ],
-               ":block/uid": "0YIMp6COA",
-               ":block/string": "An Apple Shortcut which allows you to speak and send the transcript to your Roam graph (works on iPhone, iPad, Mac and even on an Apple Watch )",
+               ":block/uid": "bBleyxkMp",
+               ":block/string": "Features",
                ":block/order": 0
               }
              ],
-             ":block/uid": "5Eo_ePG7D",
-             ":block/string": "**[Speak to Roam]([[Apple Shortcuts/Speak to Roam]])** Apple Shortcut (speak and send transcript to your Roam graph)",
-             ":block/order": 0
-            }
-           ],
-           ":block/uid": "nUZH5JaLD",
-           ":children/view-type": "numbered",
-           ":block/string": "Some examples of things that use the Roam Backend API",
-           ":block/order": 2
-          }
-         ],
-         ":block/uid": "lYOflu2v5",
-         ":block/string": "[[Roam Backend API]]: https://roamresearch.com/#/app/developer-documentation/page/W4Po8pcHQ",
-         ":block/order": 1
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "0Dydzbn0e"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/children": [
+             ":block/uid": "C_tVqcL9s",
+             ":block/string": "Latest version: **v1.3.0**: https://www.icloud.com/shortcuts/ae1ae833cada4999b44d9ac5dda2dc6d",
+             ":block/order": 1
+            },
             {
-             ":block/refs": [
+             ":block/children": [
               {
-               ":block/uid": "N8P6RYE7o"
-              },
-              {
-               ":block/uid": "TpA4naC1T"
+               ":block/uid": "DIH1z_hXw",
+               ":block/string": "And it’s free! (though you do have to enter an OpenAI key 😅)",
+               ":block/order": 0
               }
              ],
-             ":block/uid": "LJkUTKz7Q",
-             ":block/string": "If you're writing a [[Roam Depot]] [extension]([[Roam Depot Extensions]]), in addition to the `roamAlphaAPI`, you can also use the `extensionAPI` ([linked here](https://roamresearch.com/#/app/developer-documentation/page/y31lhjIqU))",
+             ":block/uid": "0YIMp6COA",
+             ":block/string": "An Apple Shortcut which allows you to speak and send the transcript to your Roam graph (works on iPhone, iPad, Mac and even on an Apple Watch )",
              ":block/order": 0
             }
            ],
-           ":block/uid": "YQ_nfzC-j",
-           ":block/string": "This is the API that frontend Roam extensions use",
+           ":block/uid": "5Eo_ePG7D",
+           ":block/string": "**[Speak to Roam]([[Apple Shortcuts/Speak to Roam]])** Apple Shortcut (speak and send transcript to your Roam graph)",
            ":block/order": 0
           }
          ],
-         ":block/uid": "llhXv6sYM",
-         ":block/string": "[[Roam Alpha API]]: https://roamresearch.com/#/app/developer-documentation/page/tIaOPdXCj",
-         ":block/order": 0
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "wV83zeWbM"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "DTR1FMubL"
-            }
-           ],
-           ":block/uid": "LKK53Kkti",
-           ":block/string": "difference from the Backend API is that this can be used by [[Encrypted Graphs]] too",
-           ":block/order": 0
-          },
-          {
-           ":block/uid": "13DPl3D_B",
-           ":block/string": "Other convenience features for writes/captures",
-           ":block/order": 1
-          }
-         ],
-         ":block/uid": "qOkQNpSqW",
-         ":block/string": "[[Roam Append API]]: https://roamresearch.com/#/app/developer-documentation/page/eb8OVhaFC",
+         ":block/uid": "nUZH5JaLD",
+         ":children/view-type": "numbered",
+         ":block/string": "Some examples of things that use the Roam Backend API",
          ":block/order": 2
         }
        ],
-       ":block/uid": "q-nYmAAvZ",
-       ":children/view-type": "numbered",
-       ":block/string": "**Some starting points**",
+       ":block/uid": "lYOflu2v5",
+       ":block/string": "[[Roam Backend API]]: [Docs Link](https://roamresearch.com/#/app/developer-documentation/page/W4Po8pcHQ)",
+       ":block/order": 2
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "0Dydzbn0e"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/uid": "YQ_nfzC-j",
+         ":block/string": "This is the API that frontend Roam extensions use",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "llhXv6sYM",
+       ":block/string": "[[Roam Alpha API]]: [Docs Link](https://roamresearch.com/#/app/developer-documentation/page/tIaOPdXCj)",
        ":block/order": 0
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "wV83zeWbM"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "DTR1FMubL"
+          }
+         ],
+         ":block/uid": "LKK53Kkti",
+         ":block/string": "difference from the Backend API is that this can be used by [[Encrypted Graphs]] too",
+         ":block/order": 0
+        },
+        {
+         ":block/uid": "13DPl3D_B",
+         ":block/string": "Other convenience features for writes/captures",
+         ":block/order": 1
+        }
+       ],
+       ":block/uid": "qOkQNpSqW",
+       ":block/string": "[[Roam Append API]]: [Docs Link](https://roamresearch.com/#/app/developer-documentation/page/eb8OVhaFC)",
+       ":block/order": 3
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "N8P6RYE7o"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/uid": "QZuriKyoE",
+         ":block/string": "Covers code guidelines, developing locally, and submitting your extension to the marketplace.",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "61Oe0jknC",
+       ":block/string": "Building a [[Roam Depot]] extension: [Docs Link](https://roamresearch.com/#/app/developer-documentation/page/5BB8h4I7b)",
+       ":block/order": 1
       }
      ],
-     ":block/uid": "VtpLxiauA",
-     ":block/string": "If you're a developer who'd like to build extensions for Roam or connect stuff to Roam, please checkout our `developer-documentation` graph: https://roamresearch.com/#/app/developer-documentation",
-     ":block/order": 0
+     ":block/uid": "q-nYmAAvZ",
+     ":children/view-type": "bullet",
+     ":block/string": "**Some starting points**",
+     ":block/order": 1
     }
    ],
    ":block/uid": "2gI6JTUbb"
@@ -26584,26 +26707,6 @@
      ":block/uid": "RQKq48vU2",
      ":block/string": "You can reference an existing page by typing `[[`, which will open a dropdown menu with reference it in place or reference an existing page",
      ":block/order": 1
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "3Ig0C8LkY"
-      }
-     ],
-     ":block/uid": "H0BVPWHNm",
-     ":block/string": "Community Videos::",
-     ":block/order": 3
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "cGQjOo9hq"
-      }
-     ],
-     ":block/uid": "gi_zs2d4M",
-     ":block/string": "Articles::",
-     ":block/order": 4
     }
    ],
    ":block/uid": "vh3v5clCD"
@@ -26669,6 +26772,257 @@
   {
    ":node/title": "February 15th, 2026",
    ":block/uid": "02-15-2026"
+  },
+  {
+   ":node/title": "Working with AI Tools",
+   ":block/children": [
+    {
+     ":block/uid": "koOt0v10x",
+     ":block/string": "The individual pages cover installing each one. This page is about using them well.",
+     ":block/order": 1
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "hWmtjcwIh",
+       ":block/string": "An AI connected to your graph answers from your notes, so it's useful in ways a plain chatbot isn't.",
+       ":block/order": 0
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "N-6Rsyh7C",
+         ":block/string": "\"What do my notes say about interviewing?\" It searches your graph, reads the relevant pages, and answers with links to the blocks it drew from.",
+         ":block/order": 0
+        },
+        {
+         ":block/uid": "iYCTJL-mP",
+         ":block/string": "\"What did I write about this project last month?\" It reads your daily notes and pages and summarizes, with references.",
+         ":block/order": 1
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "CslZS1zBh"
+          }
+         ],
+         ":block/uid": "b6Hj4c_YZ",
+         ":block/string": "Turn on [[Semantic search (Experimental)]] (local MCP only) and it can find notes by meaning, so the old notes surface even when the words don't match.",
+         ":block/order": 2
+        }
+       ],
+       ":block/uid": "Qn9rXneYz",
+       ":block/string": "Ask it about your own thinking:",
+       ":block/order": 1
+      },
+      {
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "mBGMGlAug"
+          }
+         ],
+         ":block/uid": "ph88smlgv",
+         ":block/string": "Paste in raw meeting notes and ask it to file them using one of your [[Templates]].",
+         ":block/order": 0
+        },
+        {
+         ":block/uid": "VaaqZvqco",
+         ":block/string": "Forward it ideas mid-conversation: \"add this to my daily note under Ideas.\"",
+         ":block/order": 1
+        }
+       ],
+       ":block/uid": "HYX_n4EWB",
+       ":block/string": "Have it capture for you:",
+       ":block/order": 2
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "JigVYbrVS",
+         ":block/string": "\"Link this page up.\" It finds the pages your text mentions and adds the references.",
+         ":block/order": 0
+        },
+        {
+         ":block/uid": "zSTUKF3WJ",
+         ":block/string": "\"Find blocks that mention the offsite but aren't tagged, and tag them.\" Review the plan before it runs; bulk edits are where mistakes get expensive.",
+         ":block/order": 1
+        }
+       ],
+       ":block/uid": "y4iyzbySC",
+       ":block/string": "Put it to work on the graph itself:",
+       ":block/order": 3
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "6zL-sUqCn",
+         ":block/string": "\"Draft a blog post from my notes on this topic, on a new page.\" You get a draft whose sources are a click away, in your graph where you can reshape it block by block.",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "C7f-nw3zM",
+       ":block/string": "Draft with it:",
+       ":block/order": 4
+      }
+     ],
+     ":block/uid": "eOQTEnK7u",
+     ":block/string": "What to ask for",
+     ":block/heading": 2,
+     ":block/order": 2
+    },
+    {
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "eDaFOvCTw"
+        }
+       ],
+       ":block/uid": "frdjmHs_p",
+       ":block/string": "Create a page called [[roam/agent guidelines]] in your graph, and connected AI tools will read it before they start working.",
+       ":block/order": 0
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "om41FQTy1",
+         ":block/string": "How you name things: what page titles look like, what your namespaces mean.",
+         ":block/order": 0
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "WcWHPEX__"
+          },
+          {
+           ":block/uid": "Gsoi5zWZW"
+          }
+         ],
+         ":block/uid": "UZodhdNVh",
+         ":block/string": "Your tags and what they're for: \"#inbox means unprocessed, #ref means external material.\"",
+         ":block/order": 1
+        },
+        {
+         ":block/uid": "Q2QjvddN5",
+         ":block/string": "Where things get filed: which page captures go to, where drafts belong.",
+         ":block/order": 2
+        },
+        {
+         ":block/uid": "8WjZ5Rz1r",
+         ":block/string": "What to leave alone: pages or sections the AI shouldn't touch.",
+         ":block/order": 3
+        },
+        {
+         ":block/uid": "0aA72Cqpu",
+         ":block/string": "How you like blocks written: for example, one idea per block, links over plain mentions.",
+         ":block/order": 4
+        }
+       ],
+       ":block/uid": "F8a9h6nc2",
+       ":block/string": "It's the place for your conventions: how you tag, where things get filed, what the AI should leave alone.",
+       ":block/order": 1
+      }
+     ],
+     ":block/uid": "b515-OTgO",
+     ":block/string": "Guide the AI with graph guidelines",
+     ":block/heading": 2,
+     ":block/order": 3
+    },
+    {
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "7lUbFA_9v"
+        }
+       ],
+       ":block/uid": "AaEU0sgiZ",
+       ":block/string": "A full-access connection can read and write everything in the graph, and an AI's changes can be hard to undo. There is always [[Graph History]] if something disastrous happens",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "Z4IaWsMnm",
+       ":block/string": "Review what the assistant plans to write before confirming it.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "i6JjnLg6V",
+       ":block/string": "Blocks tagged `#.rm-hide` or `#.rm-private` are left out of what the read tools return. This is a convenience filter, not a security guarantee, because the raw query tool reads the database directly.",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "xUoQ37D5k",
+     ":block/string": "Take care",
+     ":block/heading": 2,
+     ":block/order": 4
+    },
+    {
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "CrWDsNUpt"
+        }
+       ],
+       ":block/uid": "Az8DiPHuK",
+       ":block/string": "Every connection authenticates with a token that carries only the scopes you approved. See [[Local API Tokens]].",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "kJHag85bW",
+       ":block/string": "A connection can never do more than your own account can. If your access to a shared graph shrinks, so does the token's.",
+       ":block/order": 1
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "Vn6ed3r-b",
+         ":block/string": "Hover a bullet to see its author, and a query like `{{query: {by: [[Your Name (AI)]]}}}` collects everything an assistant has written in one place.",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "KHjVbM9p-",
+       ":block/string": "Writes made through a connection are attributed to it, so version history shows what an AI changed.",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "K_ZdY_V4H",
+     ":block/string": "Access and permissions",
+     ":block/heading": 2,
+     ":block/order": 5
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "XpnfovW5v"
+      },
+      {
+       ":block/uid": "hTcF3-dXo"
+      },
+      {
+       ":block/uid": "SdGjBvGMU"
+      }
+     ],
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "N8P6RYE7o"
+        }
+       ],
+       ":block/uid": "cQXYTn-SE",
+       ":block/string": "One thing this page does not cover: [[Roam Depot]] extensions that use AI. Those run inside the app under each extension's own rules, so the token, permission, and attribution guarantees here don't apply to them.",
+       ":block/order": 0
+      }
+     ],
+     ":block/uid": "uNZ2MeLh4",
+     ":block/string": "These guidelines apply to every way of connecting an AI to your graphs: [[Roam MCP]], [[Local MCP]], and the [[Roam CLI]].",
+     ":block/order": 0
+    }
+   ],
+   ":block/uid": "ss7IJ5SMK"
   },
   {
    ":node/title": "April 5th, 2024",
@@ -26913,10 +27267,6 @@
    ":block/uid": "08-02-2025"
   },
   {
-   ":node/title": "Maarten van Doorn",
-   ":block/uid": "n3tub6l43"
-  },
-  {
    ":node/title": "October 12th, 2021",
    ":block/uid": "10-12-2021"
   },
@@ -26943,526 +27293,6 @@
   {
    ":node/title": "December 22nd, 2025",
    ":block/uid": "12-22-2025"
-  },
-  {
-   ":node/title": "Coaching",
-   ":block/children": [
-    {
-     ":block/uid": "gSyRrXdZJ",
-     ":block/string": "Get specialized 1:1 help to master Roam from one of our vetted coaches",
-     ":block/heading": 2,
-     ":block/order": 0
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "TPBGyMMUY"
-      }
-     ],
-     ":block/children": [
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "Fu7jG-iaF"
-        }
-       ],
-       ":block/children": [
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "NmcH8RbDC"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/uid": "V6BIjWa7g",
-           ":block/string": "[roamcoaching.rjnestor.com](https://roamcoaching.rjnestor.com) [rjnestor.com](https://rjnestor.com) [youtube.com/c/rjnestorcoach](https://youtube.com/c/rjnestorcoach)",
-           ":block/order": 0
-          }
-         ],
-         ":block/uid": "GJcPIegZ0",
-         ":block/string": "Website:: ",
-         ":block/order": 1
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "PvfaQ0BkP"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "QOmefgeoj"
-            },
-            {
-             ":block/uid": "6VRMKeSYw"
-            },
-            {
-             ":block/uid": "4eMzQpHLV"
-            }
-           ],
-           ":block/uid": "ITh-iGPiZ",
-           ":block/string": "[[Content creation]] [[Writing]] [[Creative writing]]",
-           ":block/order": 3
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "QdzVG9YXn"
-            }
-           ],
-           ":block/uid": "RrIqLP2Qt",
-           ":block/string": "[[Roam fundamentals]] ⬅ for ANY Roam skill level",
-           ":block/order": 0
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "GnVbxwMx6"
-            },
-            {
-             ":block/uid": "BKCdivOJ2"
-            }
-           ],
-           ":block/uid": "HE1_gH7xm",
-           ":block/string": "[[Productivity]] [[GTD]]",
-           ":block/order": 2
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "-bNjVrFfG"
-            },
-            {
-             ":block/uid": "uijae-QwC"
-            }
-           ],
-           ":block/uid": "_hS6d5mdv",
-           ":block/string": "[[Workflows]] [[Processes]]",
-           ":block/order": 1
-          }
-         ],
-         ":block/uid": "-RMneE0y5",
-         ":block/string": "Areas of specialty::",
-         ":block/order": 2
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "Squrr9dJK"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/uid": "LTVBhK6Py",
-           ":block/string": "DM on [Twitter](https://twitter.com/rjnestor)",
-           ":block/order": 0
-          },
-          {
-           ":block/uid": "JEJHWFaZF",
-           ":block/string": "Message through [Facebook coaching page](https://m.me/rjnestorcoach)",
-           ":block/order": 1
-          }
-         ],
-         ":block/uid": "7lljPVXHA",
-         ":block/string": "Contact::",
-         ":block/order": 3
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "LJmy-87gk"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/uid": "jJ9fD114W",
-           ":block/string": "[Roam coaching packages](https://roamcoaching.rjnestor.com) start at $150",
-           ":block/order": 0
-          },
-          {
-           ":block/uid": "rGvlZL1ov",
-           ":block/string": "[DM](https://twitter.com/rjnestor) or [message](https://m.me/rjnestorcoach) for custom coaching package needs",
-           ":block/order": 1
-          }
-         ],
-         ":block/uid": "aLJ6sVAfC",
-         ":block/string": "Price::",
-         ":block/order": 4
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "GPmbtPPKA"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/uid": "lZ6r-8_n-",
-           ":block/string": "Business & Executive Coach, Musician, Writer",
-           ":block/order": 0
-          },
-          {
-           ":block/uid": "rVnAaE_zn",
-           ":block/string": "Helps you develop and optimize your Roam workflows",
-           ":block/order": 1
-          },
-          {
-           ":block/uid": "QrpJgCOP_",
-           ":block/string": "Created courses [Your Road to Roam](https://courses.rjnestor.com/p/your-road-to-roam) and [Powerful Task Management in Roam Research](https://courses.rjnestor.com/p/powerful-task-management-in-roam-research)",
-           ":block/order": 2
-          }
-         ],
-         ":block/uid": "RrkR-C8QR",
-         ":block/string": "Info::",
-         ":block/order": 0
-        }
-       ],
-       ":block/uid": "hiVhRVCwZ",
-       ":block/string": "[R.J. Nestor]([[R.J. Nestor]])",
-       ":block/heading": 1,
-       ":block/order": 0
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "RkvokA4jz"
-        }
-       ],
-       ":block/children": [
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "GPmbtPPKA"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/uid": "R1Ka4U5bY",
-           ":block/string": "PhD Student, Data Analyst, Teacher, Writer",
-           ":block/order": 0
-          },
-          {
-           ":block/uid": "THegCKocn",
-           ":block/string": "Helps you",
-           ":block/order": 1
-          },
-          {
-           ":block/uid": "RTQnVl2Ki",
-           ":block/string": "Created courses [Cite to Write](https://t.co/Z95EFrEenY?amp=1) (using Roam in academia) and Galaxy Brain (Algorithms of Thought)",
-           ":block/order": 2
-          }
-         ],
-         ":block/uid": "UnkQmygDt",
-         ":block/string": "Info::",
-         ":block/order": 0
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "PvfaQ0BkP"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "QdzVG9YXn"
-            }
-           ],
-           ":block/uid": "NCH27NQIb",
-           ":block/string": "[[Roam fundamentals]]",
-           ":block/order": 0
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "-bNjVrFfG"
-            }
-           ],
-           ":block/uid": "RgiNUF6sg",
-           ":block/string": "[[Workflows]]",
-           ":block/order": 1
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "QOmefgeoj"
-            },
-            {
-             ":block/uid": "Ihodazqn2"
-            }
-           ],
-           ":block/uid": "BmT0T1iN0",
-           ":block/string": "[[Writing]], [[Publishing]]",
-           ":block/order": 2
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "AlLOQyYf9"
-            }
-           ],
-           ":block/uid": "AbfUrz3jy",
-           ":block/string": "[[Academia]]",
-           ":block/order": 3
-          }
-         ],
-         ":block/uid": "xVZ_07z7P",
-         ":block/string": "Areas of specialty::",
-         ":block/order": 2
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "Squrr9dJK"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/uid": "jkA18r43k",
-           ":block/string": "[DM on Twitter](https://twitter.com/cortexfutura)",
-           ":block/order": 0
-          },
-          {
-           ":block/uid": "6Whe9XhEZ",
-           ":block/string": "coaching@cortexfutura.com",
-           ":block/order": 1
-          }
-         ],
-         ":block/uid": "boEtJrG6i",
-         ":block/string": "Contact::",
-         ":block/order": 3
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "LJmy-87gk"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/uid": "qakl9UIS9",
-           ":block/string": "DM or message for custom coaching package needs",
-           ":block/order": 1
-          },
-          {
-           ":block/uid": "EvZfYm4d6",
-           ":block/string": "Roam Coaching Packages starting at $150",
-           ":block/order": 0
-          }
-         ],
-         ":block/uid": "Nxks4SGVH",
-         ":block/string": "Price::",
-         ":block/order": 4
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "NmcH8RbDC"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/uid": "M8lSdsrFv",
-           ":block/string": "[Coaching Website](https://learn.cortexfutura.com/p/roam-research-coaching?utm_source=roamresearch&utm_medium=graph&utm_campaign=helpgraph)",
-           ":block/order": 0
-          }
-         ],
-         ":block/uid": "rtmoVxXeS",
-         ":block/string": "Website::",
-         ":block/order": 1
-        }
-       ],
-       ":block/uid": "L8f7DKY2W",
-       ":block/string": "[Cortex Futura]([[Cortex Futura]]) ",
-       ":block/heading": 1,
-       ":block/order": 1
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "n3tub6l43"
-        }
-       ],
-       ":block/children": [
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "GPmbtPPKA"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/uid": "lMBIZ9APn",
-           ":block/string": "PhD, Polymath, Tools for Thought Explorer, Essayist, Coach, Author",
-           ":block/order": 0
-          },
-          {
-           ":block/uid": "a3_4HL8zU",
-           ":block/string": "Helps you set up your personal Zettelkasten and smart notes workflow in Roam. You'll remember what you learn, discover new ideas and insights, turn your thoughts and discoveries into convincing written pieces, and build up a treasure of smart and interconnected notes along the way.",
-           ":block/order": 1
-          },
-          {
-           ":block/uid": "Yb5IAa1jM",
-           ":block/string": "Wrote [The Complete Guide To Effective Note-Taking](https://roambrain.com/the-complete-guide-to-effective-note-taking/) and [The Complete Guide to Effective Reading](https://maartenvandoorn.medium.com/the-complete-guide-to-effective-reading-fc1835937757) (>300K reads). Created course [Academic Mastery with Roam Research](https://www.academicmasterywithroam.com/). ",
-           ":block/order": 2
-          }
-         ],
-         ":block/uid": "McX3P15MN",
-         ":block/string": "Info::",
-         ":block/order": 0
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "NmcH8RbDC"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/uid": "uYhgdU52s",
-           ":block/string": "[Coaching website](https://maartenvandoorn.com/roam-research-coaching/)",
-           ":block/order": 0
-          }
-         ],
-         ":block/uid": "5ih3ycTtB",
-         ":block/string": "Website::",
-         ":block/order": 1
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "PvfaQ0BkP"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "QdzVG9YXn"
-            }
-           ],
-           ":block/uid": "Tbuu25pyT",
-           ":block/string": "[[Roam fundamentals]]",
-           ":block/order": 0
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "81BHd1ZTn"
-            }
-           ],
-           ":block/uid": "6Udr7o0CB",
-           ":block/string": "[[Effective Reading and Note-Taking in Roam Research]]",
-           ":block/order": 1
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "1CLyVZ3wi"
-            }
-           ],
-           ":block/uid": "6utUS2PB1",
-           ":block/string": "[[Information analysis]]",
-           ":block/order": 2
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "HLhtVdTYg"
-            }
-           ],
-           ":block/uid": "fDv8tC1eZ",
-           ":block/string": "[[Academic writing]]",
-           ":block/order": 3
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "B-eDgTFp0"
-            }
-           ],
-           ":block/uid": "uqPftOvSo",
-           ":block/string": "[[Popular writing]]",
-           ":block/order": 4
-          }
-         ],
-         ":block/uid": "64TRObiP4",
-         ":block/string": "Areas of specialty::",
-         ":block/order": 2
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "Squrr9dJK"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/uid": "AV_VEbr3-",
-           ":block/string": "[DM on Twitter](https://twitter.com/maartenvdoorn)",
-           ":block/order": 0
-          },
-          {
-           ":block/uid": "NEuhzB3v_",
-           ":block/string": "maarten@maartenvandoorn.nl",
-           ":block/order": 1
-          }
-         ],
-         ":block/uid": "aLCCchQcK",
-         ":block/string": "Contact::",
-         ":block/order": 3
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "LJmy-87gk"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/uid": "PfC0Eu3Oi",
-           ":block/string": "Get lifetime access to [Academic Mastery with Roam](https://www.academicmasterywithroam.com/) for $159.",
-           ":block/order": 0
-          },
-          {
-           ":block/uid": "yk5yFCvOh",
-           ":block/string": "[Coaching](https://maartenvandoorn.com/roam-research-coaching/) costs only $99 per one-hour 1:1 session, because I'm just an overachieving nerd who wants to help people :)",
-           ":block/order": 1
-          },
-          {
-           ":block/uid": "tqHwuCKbV",
-           ":block/string": "[DM](https://twitter.com/maartenvdoorn) or [message](mailto:maarten@maartenvandoorn.nl) for custom coaching package needs! I focus on the specific use case desired by you.",
-           ":block/order": 2
-          }
-         ],
-         ":block/uid": "zjJWRAOTi",
-         ":block/string": "Price::",
-         ":block/order": 4
-        }
-       ],
-       ":block/uid": "Wt6qCiqlN",
-       ":block/string": "[[Maarten van Doorn]]",
-       ":block/heading": 1,
-       ":block/order": 2
-      }
-     ],
-     ":block/uid": "qGdtTpHqV",
-     ":block/string": "[[Coaches]]",
-     ":block/order": 1
-    },
-    {
-     ":block/uid": "ukct66uOK",
-     ":block/string": "[Request to be vetted](https://roamresearch.typeform.com/to/g5W8uCqz)",
-     ":block/heading": 3,
-     ":block/order": 2
-    }
-   ],
-   ":block/uid": "ZEs3X-rxb",
-   ":children/view-type": "bullet"
   },
   {
    ":node/title": "December 22nd, 2020",
@@ -29709,7 +29539,7 @@
        ":block/children": [
         {
          ":block/uid": "ZjGv35HZf",
-         ":block/string": "Use `cmd+y` ( `ctrl+y` on PC) to strike out the next word: Evernote",
+         ":block/string": "Use `cmd+y` (`win+y` on PC) to strike out the next word: Evernote",
          ":block/order": 0
         },
         {
@@ -30071,7 +29901,7 @@
         }
        ],
        ":block/uid": "D30dqxPcr",
-       ":block/string": "You can also make headings with the ",
+       ":block/string": "You can also make headings with the keyboard shortcuts below",
        ":block/order": 1
       },
       {
@@ -30576,84 +30406,84 @@
          ":block/string": "[How to Keep a Journal in Roam Research](https://markmcelroy.com/how-to-keep-a-journal-in-roam-research/) by [[Mark McElroy]]",
          ":block/heading": 3,
          ":block/order": 0
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "WeWFZD6R5"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "f0KEfKCyA"
-            }
-           ],
-           ":block/uid": "4jeoGVfeb",
-           ":block/string": "[Implementing Zettelkasten in Roam](https://www.roambrain.com/implementing-zettelkasten-in-roam/) by [[Zakk Fleischmann]]",
-           ":block/heading": 3,
-           ":block/order": 0
-          }
-         ],
-         ":block/uid": "2czcRes7o",
-         ":block/string": "[[Zettelkasten]]",
-         ":block/heading": 2,
-         ":block/order": 10
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "iREmZ7QA7"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "4zy9UoBTf"
-            }
-           ],
-           ":block/uid": "tzNsC4YBZ",
-           ":block/string": "[How to Get the Most Out of Online Courses with Roam](https://infodistillery.com/roam/) by [[Anita Amini]]",
-           ":block/heading": 3,
-           ":block/order": 0
-          }
-         ],
-         ":block/uid": "h_hAX7FU6",
-         ":block/string": "[Studying]([[Studying]])",
-         ":block/heading": 2,
-         ":block/order": 8
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "5ijkoa3Cn"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "JTIDZdXpv"
-            }
-           ],
-           ":block/uid": "denqpvaBf",
-           ":block/string": "[Networked Thinking Meets Product Thinking: Using Roam for Product Management](https://www.roambrain.com/networked-thinking-meets-product-thinking/) by [[Andrew Yu]]",
-           ":block/heading": 3,
-           ":block/order": 0
-          }
-         ],
-         ":block/uid": "8E7troNAe",
-         ":block/string": "[Product Management]([[Project Management]])",
-         ":block/heading": 2,
-         ":block/order": 9
         }
        ],
        ":block/uid": "naMopEY60",
        ":block/string": "[Journaling]([[Journaling]])",
        ":block/heading": 2,
        ":block/order": 0
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "WeWFZD6R5"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "f0KEfKCyA"
+          }
+         ],
+         ":block/uid": "4jeoGVfeb",
+         ":block/string": "[Implementing Zettelkasten in Roam](https://www.roambrain.com/implementing-zettelkasten-in-roam/) by [[Zakk Fleischmann]]",
+         ":block/heading": 3,
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "2czcRes7o",
+       ":block/string": "[[Zettelkasten]]",
+       ":block/heading": 2,
+       ":block/order": 3
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "iREmZ7QA7"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "4zy9UoBTf"
+          }
+         ],
+         ":block/uid": "tzNsC4YBZ",
+         ":block/string": "[How to Get the Most Out of Online Courses with Roam](https://infodistillery.com/roam/) by [[Anita Amini]]",
+         ":block/heading": 3,
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "h_hAX7FU6",
+       ":block/string": "[Studying]([[Studying]])",
+       ":block/heading": 2,
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "5ijkoa3Cn"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "JTIDZdXpv"
+          }
+         ],
+         ":block/uid": "denqpvaBf",
+         ":block/string": "[Networked Thinking Meets Product Thinking: Using Roam for Product Management](https://www.roambrain.com/networked-thinking-meets-product-thinking/) by [[Andrew Yu]]",
+         ":block/heading": 3,
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "8E7troNAe",
+       ":block/string": "[Product Management]([[Project Management]])",
+       ":block/heading": 2,
+       ":block/order": 2
       }
      ],
      ":block/uid": "l_E4orAI7",
@@ -30670,37 +30500,12 @@
      ":block/uid": "oTf4tyLL4",
      ":block/string": "**Check us out in the** [News and Press]([[News and Press]])",
      ":block/heading": 3,
-     ":block/order": 5
+     ":block/order": 3
     },
     {
      ":block/uid": "Rz_JjwS5v",
      ":block/string": "[Request to be featured](https://roamresearch.typeform.com/to/g5W8uCqz)",
      ":block/order": 0
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "RA1UXmzp0"
-      },
-      {
-       ":block/uid": "dpLdzMqar"
-      }
-     ],
-     ":block/children": [
-      {
-       ":block/uid": "9gq1QetDR",
-       ":block/string": "```css\n.black .rm-alias {\n  color: #202B33 !important;\n}```",
-       ":block/order": 0
-      }
-     ],
-     ":block/uid": "MRwFK_Tdr",
-     ":block/string": "{{[[roam/css]]}} #.h",
-     ":block/order": 3
-    },
-    {
-     ":block/uid": "QzQZa0lJC",
-     ":block/string": "",
-     ":block/order": 4
     }
    ],
    ":block/uid": "cGQjOo9hq",
@@ -31323,10 +31128,6 @@
   {
    ":node/title": "Assumptions",
    ":block/uid": "BDuDlCT0A"
-  },
-  {
-   ":node/title": "Academic writing",
-   ":block/uid": "HLhtVdTYg"
   },
   {
    ":node/title": "August 23rd, 2023",
@@ -52542,7 +52343,7 @@
                ":block/uid": "bFFLAQoLF"
               },
               {
-               ":block/uid": "9QptO5HQh"
+               ":block/uid": "7egjeANPx"
               }
              ],
              ":block/children": [
@@ -52558,7 +52359,7 @@
               }
              ],
              ":block/uid": "OeuaK11hM",
-             ":block/string": "[[Query Builder]] For native Roam [[queries]]",
+             ":block/string": "[[Roam Query Builder]] For native Roam [[queries]]",
              ":block/order": 0
             }
            ],
@@ -54040,7 +53841,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "9QptO5HQh"
+               ":block/uid": "7egjeANPx"
               }
              ],
              ":block/children": [
@@ -54056,7 +53857,7 @@
               }
              ],
              ":block/uid": "BjTDQwD5j",
-             ":block/string": "[[Query Builder]]",
+             ":block/string": "[[Roam Query Builder]]",
              ":block/order": 0
             }
            ],
@@ -54742,7 +54543,7 @@
             {
              ":block/refs": [
               {
-               ":block/uid": "5Mp7Ows3d"
+               ":block/uid": "7egjeANPx"
               }
              ],
              ":block/children": [
@@ -54753,7 +54554,7 @@
               }
              ],
              ":block/uid": "nIqYjxiKh",
-             ":block/string": "[[Roam Query]] builder now appears __above__ the results, letting you watch updates live as you refine the query.",
+             ":block/string": "[[Roam Query Builder]] now appears __above__ the results, letting you watch updates live as you refine the query.",
              ":block/order": 2
             }
            ],
@@ -66321,25 +66122,7 @@
          ],
          ":block/uid": "BG00u7Kyg",
          ":block/string": "{{[[video]]: https://www.youtube.com/watch?v=otoF_ane688&ab_channel=ConorWhite-Sullivan}}\n#[[Current time]] | #[[Page References]] | #[[Right Sidebar]] | #[[Linked References]] | #[[Query]] | #[[TODO/DONE]] | #[[Block References]] ",
-         ":block/order": 1
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "2h9V-FtAO"
-          },
-          {
-           ":block/uid": "CV_O2qTlP"
-          }
-         ],
-         ":block/uid": "_RaFVjq4x",
-         ":block/string": "{{[[video]]: https://www.youtube.com/watch?v=otoF_ane688&ab_channel=ConorWhite-Sullivan}} #[[Conor White-Sullivan]]",
          ":block/order": 0
-        },
-        {
-         ":block/uid": "fRBVodENU",
-         ":block/string": "",
-         ":block/order": 2
         }
        ],
        ":block/uid": "8jWWEHlm4",
@@ -66720,10 +66503,6 @@
    ":block/uid": "hmICqoDzO"
   },
   {
-   ":node/title": "Information analysis",
-   ":block/uid": "1CLyVZ3wi"
-  },
-  {
    ":node/title": "Roman Rey",
    ":block/uid": "CitDn_0jS"
   },
@@ -67073,6 +66852,18 @@
   },
   {
    ":node/title": "mobile",
+   ":block/children": [
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "etKhTqzyg"
+      }
+     ],
+     ":block/uid": "2zgseJnEv",
+     ":block/string": "see [[Roam Mobile]]",
+     ":block/order": 0
+    }
+   ],
    ":block/uid": "fTOY6E5lG"
   },
   {
@@ -67090,7 +66881,7 @@
         }
        ],
        ":block/uid": "y4YNwQ1B5",
-       ":block/string": "Please report any issues in the #developers channel in the [[Roam Slack]] or via email to [support@roamrsearch.com](mailto:support@roamresearch.com)",
+       ":block/string": "Please report any issues in the #developers channel in the [[Roam Slack]] or via email to [support@roamresearch.com](mailto:support@roamresearch.com)",
        ":block/order": 0
       }
      ],
@@ -67106,13 +66897,26 @@
    ":block/uid": "fqX_kn4k-"
   },
   {
-   ":node/title": "Roam Book Club",
-   ":block/uid": "gAbP3Va1E",
-   ":children/view-type": "document"
-  },
-  {
    ":node/title": "Word count",
    ":block/children": [
+    {
+     ":block/uid": "RpnLYGER_",
+     ":block/string": "Add one by typing `/word` in any block and choosing **Word Count**.",
+     ":block/order": 1
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "Zq7_4pHFq"
+      },
+      {
+       ":block/uid": "efPNR-GTi"
+      }
+     ],
+     ":block/uid": "TuGZSv73z",
+     ":block/string": "You can also go to [[All Pages]] on your [[Left Sidebar]] and view the pages with the most to least word count, or vice versa ",
+     ":block/order": 2
+    },
     {
      ":block/children": [
       {
@@ -67129,7 +66933,7 @@
         }
        ],
        ":block/uid": "s_Oh5olku",
-       ":block/string": "The below child block has 115 words",
+       ":block/string": "The below child block has 116 words",
        ":block/order": 0
       },
       {
@@ -67146,35 +66950,8 @@
       }
      ],
      ":block/uid": "qTa2Mwluv",
-     ":block/string": "Word count counts the number of words in a block, for example",
+     ":block/string": "The word count component counts the number of words in a block, for example",
      ":block/order": 0
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "yzdfVWKFY"
-      }
-     ],
-     ":block/children": [
-      {
-       ":block/uid": "I5VmaeZiw",
-       ":block/string": "`/word`",
-       ":block/order": 0
-      }
-     ],
-     ":block/uid": "hk62owVlY",
-     ":block/string": "Key Commands::",
-     ":block/order": 2
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "Zq7_4pHFq"
-      }
-     ],
-     ":block/uid": "TuGZSv73z",
-     ":block/string": "You can also go to ALL PAGES on your [[Left Sidebar]] and view the pages with the most to least word count, or vice versa ",
-     ":block/order": 1
     }
    ],
    ":block/uid": "fAZ1MYsuZ"
@@ -68472,6 +68249,131 @@
   {
    ":node/title": "Professional",
    ":block/uid": "q3uqwf2hx"
+  },
+  {
+   ":node/title": "Local MCP",
+   ":block/children": [
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "q9X-gs35m"
+      },
+      {
+       ":block/uid": "DTR1FMubL"
+      }
+     ],
+     ":block/uid": "g8F7hMwJ_",
+     ":block/string": "Nothing passes through Roam's servers, so it works fully with [[Encrypted Graphs]] and with a [[Local Graph]].",
+     ":block/order": 1
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "XpnfovW5v"
+      }
+     ],
+     ":block/uid": "BM6pTl4uc",
+     ":block/string": "To reach your graphs from anywhere, with no desktop app running, use [[Roam MCP]] instead.",
+     ":block/order": 2
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "SdGjBvGMU"
+      }
+     ],
+     ":block/uid": "8rPM0CdBU",
+     ":block/string": "The [[Roam CLI]] runs the same tools as terminal commands, for AI agents that work through the shell instead of MCP.",
+     ":block/order": 3
+    },
+    {
+     ":block/uid": "Susa3a3AE",
+     ":block/string": "The full documentation lives in the [roam-tools repository](https://github.com/Roam-Research/roam-tools).",
+     ":block/order": 4
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "KPNf_a17U",
+       ":block/string": "Node.js 18 or later.",
+       ":block/order": 0
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "hyL5OPFah"
+        }
+       ],
+       ":block/uid": "YJiEKiusU",
+       ":block/string": "The [[Desktop App]]. The local API isn't available in the web version.",
+       ":block/order": 1
+      }
+     ],
+     ":block/uid": "R4fRPFqqX",
+     ":block/string": "Requirements",
+     ":block/heading": 2,
+     ":block/order": 5
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "nZACxcTIG",
+       ":block/string": "The easy way: if your AI tool can run commands (Claude Code, Codex, Cursor), give it the [roam-tools repository](https://github.com/Roam-Research/roam-tools) link and ask it to set up the Roam MCP server for you.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "wrI3_d8N8",
+       ":block/string": "To do it by hand instead: add the server to your tool. For Claude Code that's one command: `claude mcp add -s user roam-mcp -- npx -y @roam-research/roam-mcp` (Config snippets for Claude Desktop and other tools are in the [repository README](https://github.com/Roam-Research/roam-tools).)",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "e6TS1oxcm",
+       ":block/string": "Then ask the AI to connect your graph. No command needed: the server has a tool for connecting graphs, and Roam Desktop will ask you to approve.",
+       ":block/order": 2
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "CrWDsNUpt"
+        }
+       ],
+       ":block/uid": "k3hvKQ8YF",
+       ":block/string": "Either way, connecting a graph ends with an approval request in Roam Desktop, naming the tool and the graph. Approving creates a [[Local API Tokens]].",
+       ":block/order": 3
+      },
+      {
+       ":block/uid": "xw9A0llWz",
+       ":block/string": "If Roam isn't running when a tool calls, the server launches the desktop app for you and retries.",
+       ":block/order": 4
+      }
+     ],
+     ":block/uid": "ahsBAch8G",
+     ":block/string": "Setting it up",
+     ":block/heading": 2,
+     ":block/order": 6
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "ss7IJ5SMK"
+      }
+     ],
+     ":block/uid": "Vp5zSSsWt",
+     ":block/string": "Before letting an AI loose on a real graph, read [[Working with AI Tools]].",
+     ":block/order": 7
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "hyL5OPFah"
+      }
+     ],
+     ":block/uid": "x5m3MKrqa",
+     ":block/string": "The local MCP server connects AI tools running on your computer, like Claude Desktop, Claude Code, Codex, or Cursor, to your graphs through the [[Desktop App]].",
+     ":block/order": 0
+    }
+   ],
+   ":block/uid": "hTcF3-dXo"
   },
   {
    ":node/title": "May 12th, 2020",
@@ -69913,6 +69815,10 @@
    ":block/uid": "eEnVzUlxB"
   },
   {
+   ":node/title": "inbox",
+   ":block/uid": "WcWHPEX__"
+  },
+  {
    ":node/title": "text and alias",
    ":block/children": [
     {
@@ -69922,6 +69828,104 @@
     }
    ],
    ":block/uid": "Xrp3SkE2Z"
+  },
+  {
+   ":node/title": "Roam Query Builder",
+   ":block/children": [
+    {
+     ":block/uid": "7YfoSLwWF",
+     ":block/string": "It reads and writes the real query syntax in your block, so you can flip between building visually and editing the text whenever you like.",
+     ":block/order": 1
+    },
+    {
+     ":block/uid": "G7krVF2M1",
+     ":block/string": "Here's a live one: click the wrench button next to the query's title to open the builder and poke around. (Reading this on the help graph? Your edits aren't saved, so play freely.)",
+     ":block/order": 2
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "l8uKkdhbc"
+      },
+      {
+       ":block/uid": "Ec97klr7x"
+      },
+      {
+       ":block/uid": "Y_UVaLrNm"
+      }
+     ],
+     ":block/uid": "uoFbECV5-",
+     ":block/string": "{{[[query]]: {and: [[Block References]] {not: [[Change Log]]}}}}",
+     ":block/order": 3
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "463G_X1wi",
+       ":block/string": "Every query block has a wrench button beside its title. Click it to show or hide the builder.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "BsKvgwxG6",
+       ":block/string": "A brand-new query (type `/query` in a block) opens with the builder already showing.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "DS98dZK26",
+       ":block/string": "The builder sits right above the query's live results, so you can watch the matches change as you edit.",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "vxGcpRhNS",
+     ":block/string": "Opening the builder",
+     ":block/heading": 2,
+     ":block/order": 4
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "PeRDsIInN",
+       ":block/string": "A query is a stack of clauses. Click **Add clause** to add one, and click an existing clause's name to switch its type or delete it.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "ueA156iLb",
+       ":block/string": "Clause types: `[[page]]` and `((block))` references, the combinators **and**, **or**, and **not**, full-text **search**, **between** for date ranges (including relative dates), **daily notes**, and **by** / **created by** / **edited by** to filter by author.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "wD8jrAv91",
+       ":block/string": "Each clause type brings the right picker with it: page search, block search, free text, user search, or a date picker.",
+       ":block/order": 2
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "Gx35Ef0-S"
+        }
+       ],
+       ":block/uid": "TBO7kOXG1",
+       ":block/string": "For what these clauses mean and the underlying syntax, see [[Query]].",
+       ":block/order": 3
+      }
+     ],
+     ":block/uid": "vRccRaOdC",
+     ":block/string": "Building a query",
+     ":block/heading": 2,
+     ":block/order": 5
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "Gx35Ef0-S"
+      }
+     ],
+     ":block/uid": "gtJ_HgHVw",
+     ":block/string": "The Query Builder is a visual editor for [[Query]] blocks: build and refine a query with menus and pickers instead of writing the syntax by hand.",
+     ":block/order": 0
+    }
+   ],
+   ":block/uid": "7egjeANPx"
   },
   {
    ":node/title": ">",
@@ -69943,7 +69947,7 @@
      ":block/children": [
       {
        ":block/uid": "4YzivM5W0",
-       ":block/string": "The Linked References section at the bottom of each page collects all the references to that page that ",
+       ":block/string": "The Linked References section at the bottom of each page collects all the references to that page from across your graph, grouped by the page they appear on",
        ":block/order": 0
       },
       {
@@ -71843,121 +71847,37 @@
        ],
        ":block/children": [
         {
-         ":block/uid": "iHzI-hIZZ",
-         ":block/string": "Roam allows to share your graph as **readable** or **editable** by everyone with the url, or with specific emails addresses.",
-         ":block/order": 0
-        },
-        {
-         ":block/uid": "RtvII-Fi3",
-         ":block/string": "You can access these settings from the **three-dot-menu -> Share**",
+         ":block/refs": [
+          {
+           ":block/uid": "fkT8qX3b4"
+          }
+         ],
+         ":block/uid": "GRcz4SbKD",
+         ":block/string": "{{embed: ((fkT8qX3b4))}}",
          ":block/order": 1
         },
         {
-         ":block/children": [
+         ":block/refs": [
           {
-           ":block/refs": [
-            {
-             ":block/uid": "D_WRp9U_U"
-            }
-           ],
-           ":block/uid": "g24xEFC3Z",
-           ":block/string": "((D_WRp9U_U))",
-           ":block/order": 1
-          },
-          {
-           ":block/uid": "dA3YsVDwf",
-           ":block/string": "From \"Share\" settings, toggle the option \"can be read by anyone with the url\", then click away",
-           ":block/order": 0
+           ":block/uid": "R8PG5wf-q"
           }
          ],
-         ":block/uid": "EzmExI-D2",
-         ":block/string": "Here's how to share your graph as **readable** by everyone with the url:",
+         ":block/uid": "s-WUxZYl1",
+         ":block/string": "{{embed: ((R8PG5wf-q))}}",
          ":block/order": 2
         },
         {
-         ":block/children": [
+         ":block/refs": [
           {
-           ":block/uid": "IGGwrlulZ",
-           ":block/string": "From \"Share\" settings, toggle the option \"can be edited by anyone with the url\", then click away",
-           ":block/order": 0
+           ":block/uid": "vh3S6FSr1"
           },
           {
-           ":block/refs": [
-            {
-             ":block/uid": "sKObR8hRn"
-            }
-           ],
-           ":block/uid": "hj0Zzb0iY",
-           ":block/string": "((sKObR8hRn))",
-           ":block/order": 1
+           ":block/uid": "ezi38UFk6"
           }
          ],
-         ":block/uid": "Ygi4VVTik",
-         ":block/string": "Here's how to share your graph as **editable** by everyone with the url:",
-         ":block/order": 3
-        },
-        {
-         ":block/children": [
-          {
-           ":block/children": [
-            {
-             ":block/uid": "zujag9zq8",
-             ":block/string": "One thing to keep in mind, the person needs to create a Roam account (does not have to have a plan) BEFORE his email is added to the sharing tab!",
-             ":block/order": 0
-            }
-           ],
-           ":block/uid": "4Zc5r8NdP",
-           ":block/string": "In the “Share” settings, toggle on “is shared only with the emails below.” Then, set the role to **read access** on the right side, and add the email addresses of the users you want to give access to. Hit Enter, and their emails will then be added as readers of the graph.",
-           ":block/order": 0
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "HIAqL9UWp"
-            }
-           ],
-           ":block/uid": "L1Nddzv4G",
-           ":block/string": "((HIAqL9UWp))",
-           ":block/order": 1
-          }
-         ],
-         ":block/uid": "8GKYUVqwO",
-         ":block/string": "Here's how to share a graph with specific **readers**:",
-         ":block/order": 4
-        },
-        {
-         ":block/children": [
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "Pub04SZ1p"
-            }
-           ],
-           ":block/uid": "n5DjixZaJ",
-           ":block/string": "((Pub04SZ1p))",
-           ":block/order": 1
-          },
-          {
-           ":block/children": [
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "zujag9zq8"
-              }
-             ],
-             ":block/uid": "StEc4hKr5",
-             ":block/string": "((zujag9zq8))",
-             ":block/order": 0
-            }
-           ],
-           ":block/uid": "IraMB8779",
-           ":block/string": "In the “Share” settings, toggle on “is shared only with the emails below.” Then, keep the role to **edit access** on the right side, and add the email addresses of the users you want to give access to. Hit Enter, and their emails will then be added as editors of the graph.",
-           ":block/order": 0
-          }
-         ],
-         ":block/uid": "0LJJLgZjf",
-         ":block/string": "Here's how to share a graph with specific **editors**:",
-         ":block/order": 5
+         ":block/uid": "IZh__vQc0",
+         ":block/string": "These settings live in [[Settings]] under the **Sharing** tab, and the [[Sharing]] page explains all of them. The two most common flows:",
+         ":block/order": 0
         }
        ],
        ":block/uid": "K_t3a4Rpr",
@@ -71976,16 +71896,6 @@
          ":block/uid": "olxEPcaNG",
          ":block/string": "Check out [[Notable Graphs]] for public graphs by our community",
          ":block/order": 0
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "gAbP3Va1E"
-          }
-         ],
-         ":block/uid": "qjzeDTa2s",
-         ":block/string": "Check out [[Roam Book Club]] for our own experiment with multiplayer",
-         ":block/order": 1
         }
        ],
        ":block/uid": "DLLkeWe9d",
@@ -73263,11 +73173,6 @@
    ":node/title": "/ Commands",
    ":block/children": [
     {
-     ":block/refs": [
-      {
-       ":block/uid": "bzH_VdOMA"
-      }
-     ],
      ":block/children": [
       {
        ":block/refs": [
@@ -73280,6 +73185,18 @@
          ":block/refs": [
           {
            ":block/uid": "Zl4MvhXnM"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/uid": "K9fuBljdv",
+           ":block/string": "Markdown Code Block (4 or 5 backticks)",
+           ":block/order": 0
+          },
+          {
+           ":block/uid": "MX_xUTJF4",
+           ":block/string": "Typing a language name, like `/python`, makes a code block in that language.",
+           ":block/order": 1
           }
          ],
          ":block/uid": "SZyb1X725",
@@ -73345,6 +73262,26 @@
          ":block/uid": "QNJmkJsBH",
          ":block/string": "[[Strikethrough]]",
          ":block/order": 6
+        },
+        {
+         ":block/uid": "u5hMSDTfT",
+         ":block/string": "Highlight",
+         ":block/order": 7
+        },
+        {
+         ":block/uid": "-GbksJ2-1",
+         ":block/string": "Block Quote",
+         ":block/order": 8
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "e6ZjyPUL8"
+          }
+         ],
+         ":block/uid": "1gcI39TRm",
+         ":block/string": "[Callout]([[Callouts]])",
+         ":block/order": 9
         }
        ],
        ":block/uid": "eVTF3pCu5",
@@ -73382,7 +73319,7 @@
          ],
          ":block/uid": "2DjDgfcvQ",
          ":block/string": "[[Pomodoro timer]]",
-         ":block/order": 4
+         ":block/order": 5
         },
         {
          ":block/refs": [
@@ -73392,7 +73329,7 @@
          ],
          ":block/uid": "4jxjdCNRm",
          ":block/string": "[[Date picker]]",
-         ":block/order": 3
+         ":block/order": 4
         },
         {
          ":block/refs": [
@@ -73403,6 +73340,11 @@
          ":block/uid": "gu0yqBMap",
          ":block/string": "[[Current time]]",
          ":block/order": 0
+        },
+        {
+         ":block/uid": "Zp8smMxSu",
+         ":block/string": "Yesterday",
+         ":block/order": 3
         }
        ],
        ":block/uid": "JuUEJA0lS",
@@ -73478,6 +73420,18 @@
            ":block/uid": "3VzkEIjj7"
           }
          ],
+         ":block/children": [
+          {
+           ":block/uid": "iWM3C6eqU",
+           ":block/string": "Block Embed Path",
+           ":block/order": 0
+          },
+          {
+           ":block/uid": "rz3AmNxIH",
+           ":block/string": "Block Embed Children",
+           ":block/order": 1
+          }
+         ],
          ":block/uid": "FX_H4puji",
          ":block/string": "[[Block Embed]]",
          ":block/order": 3
@@ -73551,6 +73505,88 @@
          ":block/uid": "0zHCUsoFM",
          ":block/string": "[[Query]]",
          ":block/order": 13
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "fSydEUefT"
+          }
+         ],
+         ":block/uid": "hb9bPe3d0",
+         ":block/string": "[Search View]([[Search]])",
+         ":block/order": 14
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "gM1I7QA62"
+          }
+         ],
+         ":block/uid": "ZderDyOMP",
+         ":block/string": "[[Streak]]",
+         ":block/order": 15
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "GROwBce2r"
+          }
+         ],
+         ":block/uid": "sbd57zE9A",
+         ":block/string": "[[Kanban]]",
+         ":block/order": 16
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "zKLAClkHo"
+          }
+         ],
+         ":block/uid": "BoN6VXf2G",
+         ":block/string": "[[Slider]]",
+         ":block/order": 17
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "cHzdtfW_s"
+          }
+         ],
+         ":block/uid": "QjYCTRpH6",
+         ":block/string": "[Encrypted Text]([[Encrypted Block]])",
+         ":block/order": 18
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "nzZgnkbII"
+          }
+         ],
+         ":block/uid": "Hv-V8e10x",
+         ":block/string": "[[Mermaid Diagrams]]",
+         ":block/order": 19
+        },
+        {
+         ":block/uid": "ZZDgq2Skh",
+         ":block/string": "Drawing",
+         ":block/order": 20
+        },
+        {
+         ":block/uid": "H98F-3hhp",
+         ":block/string": "Excalidraw",
+         ":block/order": 21
+        },
+        {
+         ":block/children": [
+          {
+           ":block/uid": "n7cW8m9xr",
+           ":block/string": "Appears only when your block is nested under a video, and inserts a link to the video's current playback position.",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "w1n3O4qFi",
+         ":block/string": "Video Timestamp",
+         ":block/order": 22
         }
        ],
        ":block/uid": "XymQrLsPP",
@@ -73560,46 +73596,20 @@
       }
      ],
      ":block/uid": "-4iPq-AQr",
-     ":block/string": "#.--rm-grid ",
+     ":block/string": "Commands",
+     ":block/order": 3
+    },
+    {
+     ":block/uid": "0qxuZ6qtB",
+     ":block/string": "To access / Commands, type `/` + `any of the below keyword` + `enter` (in any block) to access each feature ",
      ":block/order": 1
     },
     {
-     ":block/children": [
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "yzdfVWKFY"
-        }
-       ],
-       ":block/children": [
-        {
-         ":block/uid": "0qxuZ6qtB",
-         ":block/string": "To access / Commands, type `/` + `any of the below keyword` + `enter` (in any block) to access each feature ",
-         ":block/order": 0
-        }
-       ],
-       ":block/uid": "7Oq1HxJt8",
-       ":block/string": "Key Commands:: ",
-       ":block/order": 0
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "N9Lgf-OyE"
-        }
-       ],
-       ":block/children": [
-        {
-         ":block/uid": "Qyeh8M46r",
-         ":block/string": "![An example of accessing the TODO function via / Commands](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FoebmqUA8lT.gif?alt=media&token=0567d373-7f43-4934-9d92-c5f5030b6e42)\n",
-         ":block/order": 0
-        }
-       ],
-       ":block/uid": "0wl_5kfVp",
-       ":block/string": "Team GIFs::",
-       ":block/order": 1
-      }
-     ],
+     ":block/uid": "Qyeh8M46r",
+     ":block/string": "![An example of accessing the TODO function via / Commands](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FoebmqUA8lT.gif?alt=media&token=0567d373-7f43-4934-9d92-c5f5030b6e42)",
+     ":block/order": 2
+    },
+    {
      ":block/uid": "us3dwxxQd",
      ":block/string": "The / Commands give you access to a variety of functions in Roam",
      ":block/order": 0
@@ -73828,16 +73838,6 @@
    ":node/title": "Desktop App",
    ":block/children": [
     {
-     ":block/refs": [
-      {
-       ":block/uid": "BM0yG_cbU"
-      }
-     ],
-     ":block/uid": "KhIn9K3V4",
-     ":block/string": "The desktop app is the full Roam in a standalone window, for Mac, Windows, and Linux. [[Install Roam]] covers the download.",
-     ":block/order": 0
-    },
-    {
      ":block/uid": "i_wbaNOqd",
      ":block/string": "It's the same Roam as the browser version, plus a few things only an app can do.",
      ":block/order": 1
@@ -73855,8 +73855,16 @@
        ":block/order": 1
       },
       {
+       ":block/refs": [
+        {
+         ":block/uid": "hTcF3-dXo"
+        },
+        {
+         ":block/uid": "CrWDsNUpt"
+        }
+       ],
        ":block/uid": "206TSnRZg",
-       ":block/string": "Local API tokens, for connecting local AI tools to your graphs, only exist on desktop.",
+       ":block/string": "[[Local API Tokens]], for connecting local AI tools to your graphs via [[Local MCP]], only exist on desktop.",
        ":block/order": 3
       },
       {
@@ -73874,6 +73882,16 @@
      ":block/string": "What's different from the browser",
      ":block/heading": 2,
      ":block/order": 2
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "BM0yG_cbU"
+      }
+     ],
+     ":block/uid": "KhIn9K3V4",
+     ":block/string": "The desktop app is the full Roam in a standalone window, for Mac, Windows, and Linux. [[Install Roam]] covers the download.",
+     ":block/order": 0
     }
    ],
    ":block/uid": "hyL5OPFah"
@@ -74532,7 +74550,7 @@
           }
          ],
          ":block/uid": "uFLw4qVj8",
-         ":block/string": "Delta (not really sure about this, added it in case it's needed)",
+         ":block/string": "Delta",
          ":block/order": 9
         },
         {
@@ -75329,6 +75347,174 @@
   {
    ":node/title": "April 10th, 2026",
    ":block/uid": "04-10-2026"
+  },
+  {
+   ":node/title": "Comments",
+   ":block/children": [
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "yw35wc1ZI"
+      }
+     ],
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "07-20-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "72L5AkVxT"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "VrLqzuQyG"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "wWAxiIU24",
+             ":block/string": "This is a comment, added by Josh's AI. It lives in the collapsed roam/comments block at the bottom of this page, and the block it discusses now shows a reference count.",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "TA2B6j1R2",
+           ":block/string": "((VrLqzuQyG))",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "zL2WTf4tv",
+         ":block/string": "[[Josh's AI]]",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "urZjm1BD0",
+       ":block/string": "[[July 20th, 2026]]",
+       ":block/order": 0
+      }
+     ],
+     ":block/uid": "RZukUoi9_",
+     ":block/string": "[[roam/comments]]",
+     ":block/order": 5
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "JG_fewIU6"
+      }
+     ],
+     ":block/uid": "4yk1Ya9mx",
+     ":block/string": "Threads open in the [[Right Sidebar]], so the conversation sits next to the thing it's about.",
+     ":block/order": 1
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "9YqN57rP5",
+       ":block/string": "Hold `Cmd` (Mac) or `Ctrl` (PC) and hover over a block, then click the **+** button that appears at its right edge.",
+       ":block/order": 0
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "1yt9StbEv",
+         ":block/string": "Mac: `Cmd-Alt-=`",
+         ":block/order": 0
+        },
+        {
+         ":block/uid": "BNA5gxCr8",
+         ":block/string": "PC: `Ctrl-Alt-=`",
+         ":block/order": 1
+        }
+       ],
+       ":block/uid": "EpvoO_IWz",
+       ":block/string": "Or run **Comment on current block** while your cursor is in the block:",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "6WQdRoi-C",
+       ":block/string": "Either way, the thread opens in the right sidebar with an empty comment ready for you to type.",
+       ":block/order": 2
+      },
+      {
+       ":block/uid": "4OiQEyzYh",
+       ":block/string": "Replies are just blocks: type more in the thread to continue the conversation.",
+       ":block/order": 3
+      }
+     ],
+     ":block/uid": "EuaA-dkqr",
+     ":block/string": "How to comment",
+     ":block/heading": 2,
+     ":block/order": 2
+    },
+    {
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "RZukUoi9_"
+        }
+       ],
+       ":block/uid": "W5QFKVzbf",
+       ":block/string": "Comments are ordinary blocks on the same page as the block they discuss. They collect in a collapsed ((RZukUoi9_)) block at the bottom of the page, grouped by date and author, and each thread starts with a `((block ref))` to the block it's about.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "L4ycmThZC",
+       ":block/string": "Because of that reference, a commented block shows a reference count at its right edge, and its comment threads appear among its linked references.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "v_ms68Gtq",
+       ":block/string": "Since comments are ordinary blocks, they sync, search, and export like the rest of your graph.",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "CmQPacOGB",
+     ":block/string": "Where comments live",
+     ":block/heading": 2,
+     ":block/order": 3
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "fPdaHAz9_",
+       ":block/string": "Commenting needs edit access to the graph, so read-only visitors can't comment.",
+       ":block/order": 0
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "XpnfovW5v"
+        },
+        {
+         ":block/uid": "hTcF3-dXo"
+        }
+       ],
+       ":block/uid": "laEWNkjl8",
+       ":block/string": "AI tools connected through [[Roam MCP]] or the [[Local MCP]] can read and add comments too, which lets an agent leave feedback without touching your text.",
+       ":block/order": 1
+      }
+     ],
+     ":block/uid": "59aM--Dx-",
+     ":block/string": "Good to know",
+     ":block/heading": 2,
+     ":block/order": 4
+    },
+    {
+     ":block/uid": "VrLqzuQyG",
+     ":block/string": "Comments let you and your collaborators discuss a block without editing it: questions, feedback, or side notes that stay out of the text itself.",
+     ":block/order": 0
+    }
+   ],
+   ":block/uid": "VlGlxM-_q"
   },
   {
    ":node/title": "May 8th, 2020",
@@ -76169,10 +76355,6 @@
    ":block/uid": "RtfLGrv81"
   },
   {
-   ":node/title": "Effective Reading and Note-Taking in Roam Research",
-   ":block/uid": "81BHd1ZTn"
-  },
-  {
    ":node/title": "December 11th, 2021",
    ":block/uid": "12-11-2021"
   },
@@ -76587,7 +76769,7 @@
    ":block/children": [
     {
      ":block/uid": "1pcF94vxi",
-     ":block/string": "https://twitter.com/Conaw/status/1198399750032232449?s=20a",
+     ":block/string": "https://twitter.com/Conaw/status/1198399750032232449?s=20",
      ":block/order": 1
     },
     {
@@ -76650,7 +76832,7 @@
     }
    ],
    ":block/uid": "kHiuT34q_",
-   ":children/view-type": "document"
+   ":children/view-type": "bullet"
   },
   {
    ":node/title": "October 22nd, 2020",
@@ -76804,35 +76986,6 @@
        ":block/string": "How to create templates in Roam Research by [[Productivity Academy]]",
        ":block/heading": 3,
        ":block/order": 0
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "HOSGpZMoZ"
-        }
-       ],
-       ":block/children": [
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "mBGMGlAug"
-          },
-          {
-           ":block/uid": "2h9V-FtAO"
-          },
-          {
-           ":block/uid": "zIIv1EpjB"
-          }
-         ],
-         ":block/uid": "USHgjgGMK",
-         ":block/string": "{{[[video]]: https://www.youtube.com/watch?v=OxCgJaeUh90}}\n#[[Attributes]] | #[[Templates]]",
-         ":block/order": 0
-        }
-       ],
-       ":block/uid": "a-gFgHuap",
-       ":block/string": "Native Templates In Roam Research by [[Praveen Anuraj]]",
-       ":block/heading": 3,
-       ":block/order": 2
       }
      ],
      ":block/uid": "GGhC33XLl",
@@ -77273,10 +77426,6 @@
    ":block/uid": "hNM2pDYt3"
   },
   {
-   ":node/title": "Coaches",
-   ":block/uid": "TPBGyMMUY"
-  },
-  {
    ":node/title": "August 15th, 2025",
    ":block/uid": "08-15-2025"
   },
@@ -77585,10 +77734,6 @@
    ":block/uid": "efPNR-GTi"
   },
   {
-   ":node/title": "Popular writing",
-   ":block/uid": "B-eDgTFp0"
-  },
-  {
    ":node/title": "December 23rd, 2024",
    ":block/uid": "12-23-2024"
   },
@@ -77748,6 +77893,10 @@
    ":block/uid": "10-06-2022"
   },
   {
+   ":node/title": "July 21st, 2026",
+   ":block/uid": "07-21-2026"
+  },
+  {
    ":node/title": "May 13th, 2025",
    ":block/uid": "05-13-2025"
   },
@@ -77772,6 +77921,74 @@
   },
   {
    ":node/title": "July 21st, 2021",
+   ":block/children": [
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "N8P6RYE7o"
+      }
+     ],
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "i61sJcQ0T"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "WqjOlfvm7"
+          }
+         ],
+         ":block/uid": "MnfGfptpI",
+         ":block/string": "((WqjOlfvm7))",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "mjTwzRbPX",
+       ":block/string": "[[Matter]]",
+       ":block/order": 2
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "663TQo1FC"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "u_RFBIP-p"
+          }
+         ],
+         ":block/uid": "dF10mYyKh",
+         ":block/string": "((u_RFBIP-p))",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "DC3e35WAm",
+       ":block/string": "((663TQo1FC))",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "uRr1xtjZc",
+       ":block/string": "https://twitter.com/RoamResearch/status/1550192726540374016?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ",
+       ":block/order": 0
+      }
+     ],
+     ":block/uid": "tqx-d7iCW",
+     ":block/string": "[[Roam Depot]]",
+     ":block/order": 0
+    },
+    {
+     ":block/uid": "EPH_aqHA2",
+     ":block/string": "",
+     ":block/order": 1
+    }
+   ],
    ":block/uid": "07-21-2021"
   },
   {
@@ -78020,17 +78237,6 @@
   {
    ":node/title": "Products are Functions",
    ":block/uid": "MsHzu4Spk"
-  },
-  {
-   ":node/title": "hello",
-   ":block/children": [
-    {
-     ":block/uid": "BawODI6_D",
-     ":block/string": "",
-     ":block/order": 0
-    }
-   ],
-   ":block/uid": "MeH-hV7wr"
   },
   {
    ":node/title": "Tangent",
@@ -78686,16 +78892,6 @@
        ":block/uid": "Kt8SWLSya"
       }
      ],
-     ":block/uid": "qPrMxt9OO",
-     ":block/string": "[[.--]]",
-     ":block/order": 0
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "Kt8SWLSya"
-      }
-     ],
      ":block/children": [
       {
        ":block/refs": [
@@ -78919,7 +79115,7 @@
      ],
      ":block/uid": "0gpAOszxu",
      ":block/string": "[[.--]]",
-     ":block/order": 1
+     ":block/order": 0
     }
    ],
    ":block/uid": "b8TnbBqKZ"
@@ -79235,10 +79431,6 @@
     }
    ],
    ":block/uid": "CarpUZGOf"
-  },
-  {
-   ":node/title": "Local API Token: roam-mcp CLI (Joshs-MBP.home.local)",
-   ":block/uid": "QxRwpP9SR"
   },
   {
    ":node/title": "November 22nd, 2022",
@@ -80481,6 +80673,110 @@
    ":block/uid": "hXflirMkR"
   },
   {
+   ":node/title": "Roam CLI",
+   ":block/children": [
+    {
+     ":block/uid": "bgQJz3mZ5",
+     ":block/string": "It's mainly for AI agents that work through shell commands instead of MCP, such as skill-based setups, and its output is formatted with that in mind. It can work for your own scripts too.",
+     ":block/order": 1
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "hyL5OPFah"
+      }
+     ],
+     ":block/uid": "cJmbPnfZC",
+     ":block/string": "Like the MCP server, it talks to your graphs through the [[Desktop App]], and it's documented in the [roam-tools repository](https://github.com/Roam-Research/roam-tools).",
+     ":block/order": 2
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "16B0ybd4I",
+       ":block/string": "Install it globally: `npm install -g @roam-research/roam-cli`",
+       ":block/order": 0
+      },
+      {
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "hTcF3-dXo"
+          }
+         ],
+         ":block/uid": "k8dxFdbVr",
+         ":block/string": "Already connected [[Local MCP]]? Skip that step. The CLI shares the same connection and tokens.",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "XPmlwmaDY",
+       ":block/string": "Run `roam connect` and approve the request in Roam Desktop.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "BNigFkl0X",
+       ":block/string": "Update it the same way you installed it: `npm install -g @roam-research/roam-cli@latest`",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "gqPaBSOnx",
+     ":block/string": "Setting it up",
+     ":block/heading": 2,
+     ":block/order": 3
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "uF0HEVOJy",
+       ":block/string": "`roam list-graphs` shows every graph you've connected.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "1fo3h6amu",
+       ":block/string": "`roam search --query \"my notes\" --graph my-graph` searches a graph.",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "2L54EzKwa",
+       ":block/string": "The `--graph` flag is optional when you've only connected one graph, and nicknames work in place of graph names.",
+       ":block/order": 2
+      },
+      {
+       ":block/uid": "MiSXzT98m",
+       ":block/string": "The full, current command list is in the [roam-tools repository](https://github.com/Roam-Research/roam-tools).",
+       ":block/order": 3
+      }
+     ],
+     ":block/uid": "O4DZR80Tg",
+     ":block/string": "Using it",
+     ":block/heading": 2,
+     ":block/order": 4
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "hTcF3-dXo"
+      }
+     ],
+     ":block/uid": "HGnnX0VDG",
+     ":block/string": "The Roam CLI runs the same tools as [[Local MCP]] as terminal commands: list graphs, search, read pages, and more.",
+     ":block/order": 0
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "ss7IJ5SMK"
+      }
+     ],
+     ":block/uid": "454A_ox5k",
+     ":block/string": "Usage guidelines shared by all the AI connections live at [[Working with AI Tools]].",
+     ":block/order": 5
+    }
+   ],
+   ":block/uid": "SdGjBvGMU"
+  },
+  {
    ":node/title": "July 4th, 2022",
    ":block/uid": "07-04-2022"
   },
@@ -80815,6 +81111,61 @@
      ":block/uid": "Gr8gfTNkQ",
      ":block/string": "(how to create Roam API tokens for a graph)",
      ":block/order": 0
+    },
+    {
+     ":block/children": [
+      {
+       ":block/children": [
+        {
+         ":block/uid": "lfOAiiYnu",
+         ":block/string": "Blocks added or edited through the token are attributed to that name, so you can always tell which changes came in through the API.",
+         ":block/order": 0
+        },
+        {
+         ":block/uid": "giJ6t_tOQ",
+         ":block/string": "The field is pre-filled from your description, and the title can't already be in use by another page.",
+         ":block/order": 1
+        }
+       ],
+       ":block/uid": "mMh5Vle5n",
+       ":block/string": "The create form also asks for a **Roam Page Title**. Each token acts as its own member of your graph, and this is the name it shows up under.",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "dozXNtY08",
+       ":block/string": "Creating tokens requires an active subscription. Without one, the **+ New API Token** button is disabled.",
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "3Gjt3Q-qp"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "hyL5OPFah"
+          },
+          {
+           ":block/uid": "CrWDsNUpt"
+          }
+         ],
+         ":block/uid": "1LmCVJrok",
+         ":block/string": "For AI tools running on your own computer, the [[Desktop App]] has separate [[Local API Tokens]].",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "0Q-lXKqO_",
+       ":block/string": "These tokens work with Roam's cloud APIs, so they exist only for [hosted graphs]([[Hosted Graph]]).",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "WscVD8b_B",
+     ":block/string": "Good to know",
+     ":block/heading": 2,
+     ":block/order": 2
     }
    ],
    ":block/uid": "fDF1AS-vb"
@@ -81184,6 +81535,10 @@
   {
    ":node/title": "March 18th, 2025",
    ":block/uid": "03-18-2025"
+  },
+  {
+   ":node/title": "ref",
+   ":block/uid": "Gsoi5zWZW"
   },
   {
    ":node/title": "June 16th, 2024",
@@ -82560,7 +82915,7 @@
       },
       {
        ":block/uid": "Jf7nwx5Xg",
-       ":block/string": "Keep example syntax inside backticks so `[[links]]` in examples don't create real pages. If a stray page gets created, delete it.",
+       ":block/string": "Keep example syntax inside backticks so `[[links]]` in examples don't create real pages.",
        ":block/order": 3
       },
       {
@@ -82833,7 +83188,7 @@
       }
      ],
      ":block/uid": "pSgR0pi0k",
-     ":block/string": "It doesn't matter what [page]([[Pages]]) you've written a note on, if you mention an idea, every place where you mentioned that idea will get collected underneath that page in the [[Linked References]] section when you turn turn that idea into a [page reference]([[Page References]])",
+     ":block/string": "It doesn't matter what [page]([[Pages]]) you've written a note on, if you mention an idea, every place where you mentioned that idea will get collected underneath that page in the [[Linked References]] section when you turn turn that idea into a [page reference]([[Page References]]).",
      ":block/order": 0
     }
    ],
@@ -83217,97 +83572,6 @@
   {
    ":node/title": "Shu Omi",
    ":block/uid": "OylLeH15w"
-  },
-  {
-   ":node/title": "test mobile long press",
-   ":block/children": [
-    {
-     ":block/children": [
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "01-08-2025"
-        }
-       ],
-       ":block/children": [
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "fXDeJfixl"
-          }
-         ],
-         ":block/uid": "Dgff36YGk",
-         ":block/string": "((fXDeJfixl))",
-         ":block/order": 0
-        }
-       ],
-       ":block/uid": "dptJ8TQgF",
-       ":block/string": "[[January 8th, 2025]]",
-       ":block/order": 0
-      }
-     ],
-     ":block/uid": "pw7-OsjMY",
-     ":block/string": "You can now long press on page ref",
-     ":block/order": 0
-    },
-    {
-     ":block/children": [
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "fXDeJfixl"
-        }
-       ],
-       ":block/uid": "1NeIYG-36",
-       ":block/string": "((fXDeJfixl))",
-       ":block/order": 0
-      }
-     ],
-     ":block/uid": "iNxso9P9K",
-     ":block/string": "... or on block refs",
-     ":block/order": 1
-    },
-    {
-     ":block/children": [
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "01-08-2025"
-        }
-       ],
-       ":block/uid": "B_lxT-06M",
-       ":block/string": "[alias link to jan 8]([[January 8th, 2025]])",
-       ":block/order": 0
-      }
-     ],
-     ":block/uid": "krliiaIAp",
-     ":block/string": "or page ref as alias",
-     ":block/order": 2
-    },
-    {
-     ":block/children": [
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "fXDeJfixl"
-        }
-       ],
-       ":block/uid": "SUiz4elI7",
-       ":block/string": "[block ref as alias](((fXDeJfixl)))",
-       ":block/order": 0
-      }
-     ],
-     ":block/uid": "c2rH_4EDJ",
-     ":block/string": "block ref as alias",
-     ":block/order": 3
-    },
-    {
-     ":block/uid": "Opc2E0cZB",
-     ":block/string": "or in linked refs below",
-     ":block/order": 4
-    }
-   ],
-   ":block/uid": "dBsa9XtRm"
   },
   {
    ":node/title": "January 10th, 2021",

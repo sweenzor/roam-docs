@@ -1,7 +1,7 @@
 # Query
 
 - A query block collects every block in your graph that matches conditions you give it: a saved search that lives right in your notes.
-- Type `/query` in a block to create one. The [[Query Builder]] opens so you can build it visually. This page covers the clauses underneath.
+- Type `/query` in a block to create one. The [[Roam Query Builder]] opens so you can build it visually. This page covers the clauses underneath.
 - Here's a live one under this block: every block that links to [[Templates]], minus the [[Change Log]].
   - {{[[query]]: {and: [[Templates]] {not: [[Change Log]]}}}}
 

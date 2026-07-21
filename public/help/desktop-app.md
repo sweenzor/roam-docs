@@ -8,4 +8,4 @@
 - `roam://` deep links open a specific graph, page, or block straight in the app, which makes Roam linkable from other tools.
 - The app is a thin shell around Roam, with a version number of its own. It keeps itself up to date automatically.
 - The Roam inside it updates just like the web app does, so both stay current without you doing anything. [[Updating Roam]] has the details.
-- Local API tokens, for connecting local AI tools to your graphs, only exist on desktop.
+- [[Local API Tokens]], for connecting local AI tools to your graphs via [[Local MCP]], only exist on desktop.

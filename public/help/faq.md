@@ -382,27 +382,29 @@
 
 #### **How do I** [share]([[Sharing]]) **my graph?**
 
-- Roam allows to share your graph as **readable** or **editable** by everyone with the url, or with specific emails addresses.
-- You can access these settings from the **three-dot-menu -> Share**
-- Here's how to share your graph as **readable** by everyone with the url:
-  - From "Share" settings, toggle the option "can be read by anyone with the url", then click away
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fks9BpYNOVI.gif?alt=media&token=5fabb1d0-1981-4a47-a2e0-f2d397b2c3b0)
-- Here's how to share your graph as **editable** by everyone with the url:
-  - From "Share" settings, toggle the option "can be edited by anyone with the url", then click away
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FEqKJeMhJdP.gif?alt=media&token=9cb021da-d509-496f-b10d-4e8c696f72a8)
-- Here's how to share a graph with specific **readers**:
-  - In the “Share” settings, toggle on “is shared only with the emails below.” Then, set the role to **read access** on the right side, and add the email addresses of the users you want to give access to. Hit Enter, and their emails will then be added as readers of the graph.
-    - One thing to keep in mind, the person needs to create a Roam account (does not have to have a plan) BEFORE his email is added to the sharing tab!
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FrdZtxdwzbn.gif?alt=media&token=d46dd91e-4963-4dca-bb5f-82f7975e1b6b)
-- Here's how to share a graph with specific **editors**:
-  - In the “Share” settings, toggle on “is shared only with the emails below.” Then, keep the role to **edit access** on the right side, and add the email addresses of the users you want to give access to. Hit Enter, and their emails will then be added as editors of the graph.
-    - One thing to keep in mind, the person needs to create a Roam account (does not have to have a plan) BEFORE his email is added to the sharing tab!
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FJKD9mM0cwC.gif?alt=media&token=2a28d233-3de1-4667-8c07-5f1dcff7b670)
+- These settings live in [[Settings]] under the **Sharing** tab, and the [[Sharing]] page explains all of them. The two most common flows:
+
+### Sharing the whole graph
+
+- The **This graph** dropdown sets the graph's overall visibility:
+  - `is only shared with the emails below`
+    - Private, and the default. Only people you invite can open the graph.
+  - `can be read by anyone`
+    - Anyone with the link can view the whole graph.
+  - `can be edited by anyone`
+    - Anyone with the link can edit it too.
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fks9BpYNOVI.gif?alt=media&token=5fabb1d0-1981-4a47-a2e0-f2d397b2c3b0)
+
+### Sharing with specific people
+
+- Under **Shared with**, type one or more emails separated by spaces, pick **read** or **edit** access, and press Enter.
+- Everyone you've invited appears in a list below, where you can switch them between read and edit or remove them.
+- The person doesn't need a Roam account yet: if their email isn't registered, the invitation waits and takes effect as soon as they sign up with it.
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FJKD9mM0cwC.gif?alt=media&token=2a28d233-3de1-4667-8c07-5f1dcff7b670)
 
 #### **Is anyone doing multiplayer at the moment?**
 
 - Check out [[Notable Graphs]] for public graphs by our community
-- Check out [[Roam Book Club]] for our own experiment with multiplayer
 
 ## [Security]([[Security]]) 
 

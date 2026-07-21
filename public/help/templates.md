@@ -17,11 +17,6 @@
 - {{[[video]]: https://www.youtube.com/watch?v=mK7wa0UXzrk}}
   #[[Templates]] | #[[Task Management]] | #[[Current time]] | #[[Tags]]
 
-#### Native Templates In Roam Research by [[Praveen Anuraj]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=OxCgJaeUh90}}
-  #[[Attributes]] | #[[Templates]]
-
 ### Articles::
 
 #### [How to use templates in Roam Research](https://nesslabs.com/roam-research-templates-tutorial) by [[Anne-Laure Le Cunff]]

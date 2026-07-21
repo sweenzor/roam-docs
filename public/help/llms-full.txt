@@ -2,7 +2,7 @@
 
 > Complete markdown export of the public Roam Research graph "help"
 > (https://roamresearch.com/#/app/help). Roam Research's official help graph: the product's user documentation.
-> Exported 2026-07-19T07:43:29.850Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
+> Exported 2026-07-21T07:49:51.763Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
 > Also on this site: Developer documentation — https://roamdocs.fyi/developer-documentation/llms-full.txt
 
 ## Table of contents
@@ -27,11 +27,11 @@
 - Navigation
 - Beating the Averages
 - Kanban
-- Coaching
 - JSON Schema
 - Examples of :q query blocks
 - Query
 - Apple Shortcuts/Speak to Roam
+- / Commands
 - Block Context Menu
 - Features
 - Pipedream Workflows
@@ -45,57 +45,62 @@
 - Zapier Integration
 - Table
 - Mermaid Diagrams
+- Create API Tokens
 - Security
 - Right Sidebar
-- / Commands
-- Courses
+- Roam Depot
+- Working with AI Tools
+- Sharing
 - Updating Roam
-- Create API Tokens
-- Articles
 - Developer Documentation
 - Search
+- Courses
 - Roam Reader
 - Advanced Search
+- Articles
 - Tag Styles
 - Task Management
 - All Graphs Page
+- Comments
 - Filter
 - Welcome to Roam v2
-- Zettelkasten
 - Pages
 - roam/render
+- Roam MCP
+- Roam Mobile
 - File Manager
 - Graph Overview
 - PDF Annotator
 - Advanced Block Reference Search
-- Daily Notes
 - Graph History
 - Pomodoro timer
 - Hosted Graph
 - Command Palette
-- Community
+- Daily Notes
 - Settings
-- Beginner's Guide
 - Better search (Experimental)
-- Roam Mobile
 - Customizable Hotkeys
 - Precise Links
+- Local MCP
 - Extensions
+- Zettelkasten
 - Audio Player
-- Templates
 - Global search
 - Roam Help
+- Roam CLI
 - roam/css
-- Notable Graphs
 - Project Management
-- Query Builder
 - Personal CRM
 - Upload Files
 - Calculator
+- Roam Query Builder
 - News and Press
+- Beginner's Guide
 - Delete Graph
+- Community
 - Miscellaneous
 - Video Embed
+- Templates
 - All Pages
 - Workflows
 - Images
@@ -106,35 +111,34 @@
 - Export
 - Graph Homepage
 - Studying
-- Attributes
-- Meeting notes
 - Long Videos
 - Date picker
 - Bidirectional linking
-- Page References
 - Code Block
-- Sharing
 - Delete Account
+- Notable Graphs
 - Spanish
 - Scripture Study
-- Word count
+- Meeting notes
 - Console Logs
 - Cancelling your membership during your free trial
 - Current time
 - Adding soft line breaks in a block
-- Roam Depot
+- Page References
 - Character count
+- Word count
 - Desktop App
 - Why Roam?
 - Chinese
 - Engelbart 1962 - Augmenting Human Intellect
 - Roam Support
 - Left Sidebar
-- Version Control
+- Attributes
 - Import
 - Wiki
 - Kids
 - Slider
+- Version Control
 - Encrypted Block
 - Numbered List Extension
 - Today
@@ -2239,7 +2243,7 @@
     - Added a [[Filter]] option to include or exclude all daily notes pages
       - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FnwAFzuzoRs.png?alt=media&token=dcf61182-4670-4d57-b619-4579b11d0e59)
       - Similar to Added a [[Roam Query]] clause to filter on all daily notes at once
-    - [[Roam Query]] builder now appears __above__ the results, letting you watch updates live as you refine the query.
+    - [[Roam Query Builder]] now appears __above__ the results, letting you watch updates live as you refine the query.
       - We’ve also swapped the pen icon for a hammer to avoid confusion pen icons which usually focus the underlying block
     - Added a [[Roam Query]] clause to filter on all daily notes at once
       - This is equivalent to manually listing out all of the pages, e.i [[August 1, 2023]], [[August 2nd, 2023]], and so on
@@ -2321,7 +2325,7 @@
     - improved the way the inline auto complete (`(())`, `[[]]`, etc) work to better keep the active item in view
 - [[April 17th, 2025]]
   - [[Bug Fixes]]
-    - [[Query Builder]]
+    - [[Roam Query Builder]]
       - Change the editing icon to an eye when editing to be more clear and fix the tooltip to say "View Results"
       - Fixed a bug that caused pages created while the editor is open to not show up in auto complete
 - [[April 15th, 2025]]
@@ -2569,7 +2573,7 @@
     - Shift click opens version blocks in the sidebar
 - [[February 27th, 2025]]
   - [[New Features]]
-    - [[Query Builder]] For native Roam [[queries]]
+    - [[Roam Query Builder]] For native Roam [[queries]]
       - Click on the pen icon in the top right to edit an existing query or type `/query` to open a new one
       - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FjutKnCquhv.gif?alt=media&token=f177c6db-224d-4f15-b56e-452cb18351a7)
 - [[February 24th, 2025]]
@@ -5607,27 +5611,29 @@
 
 #### **How do I** [share]([[Sharing]]) **my graph?**
 
-- Roam allows to share your graph as **readable** or **editable** by everyone with the url, or with specific emails addresses.
-- You can access these settings from the **three-dot-menu -> Share**
-- Here's how to share your graph as **readable** by everyone with the url:
-  - From "Share" settings, toggle the option "can be read by anyone with the url", then click away
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fks9BpYNOVI.gif?alt=media&token=5fabb1d0-1981-4a47-a2e0-f2d397b2c3b0)
-- Here's how to share your graph as **editable** by everyone with the url:
-  - From "Share" settings, toggle the option "can be edited by anyone with the url", then click away
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FEqKJeMhJdP.gif?alt=media&token=9cb021da-d509-496f-b10d-4e8c696f72a8)
-- Here's how to share a graph with specific **readers**:
-  - In the “Share” settings, toggle on “is shared only with the emails below.” Then, set the role to **read access** on the right side, and add the email addresses of the users you want to give access to. Hit Enter, and their emails will then be added as readers of the graph.
-    - One thing to keep in mind, the person needs to create a Roam account (does not have to have a plan) BEFORE his email is added to the sharing tab!
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FrdZtxdwzbn.gif?alt=media&token=d46dd91e-4963-4dca-bb5f-82f7975e1b6b)
-- Here's how to share a graph with specific **editors**:
-  - In the “Share” settings, toggle on “is shared only with the emails below.” Then, keep the role to **edit access** on the right side, and add the email addresses of the users you want to give access to. Hit Enter, and their emails will then be added as editors of the graph.
-    - One thing to keep in mind, the person needs to create a Roam account (does not have to have a plan) BEFORE his email is added to the sharing tab!
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FJKD9mM0cwC.gif?alt=media&token=2a28d233-3de1-4667-8c07-5f1dcff7b670)
+- These settings live in [[Settings]] under the **Sharing** tab, and the [[Sharing]] page explains all of them. The two most common flows:
+
+### Sharing the whole graph
+
+- The **This graph** dropdown sets the graph's overall visibility:
+  - `is only shared with the emails below`
+    - Private, and the default. Only people you invite can open the graph.
+  - `can be read by anyone`
+    - Anyone with the link can view the whole graph.
+  - `can be edited by anyone`
+    - Anyone with the link can edit it too.
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fks9BpYNOVI.gif?alt=media&token=5fabb1d0-1981-4a47-a2e0-f2d397b2c3b0)
+
+### Sharing with specific people
+
+- Under **Shared with**, type one or more emails separated by spaces, pick **read** or **edit** access, and press Enter.
+- Everyone you've invited appears in a list below, where you can switch them between read and edit or remove them.
+- The person doesn't need a Roam account yet: if their email isn't registered, the invitation waits and takes effect as soon as they sign up with it.
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FJKD9mM0cwC.gif?alt=media&token=2a28d233-3de1-4667-8c07-5f1dcff7b670)
 
 #### **Is anyone doing multiplayer at the moment?**
 
 - Check out [[Notable Graphs]] for public graphs by our community
-- Check out [[Roam Book Club]] for our own experiment with multiplayer
 
 ## [Security]([[Security]]) 
 
@@ -7781,7 +7787,7 @@
   - via our frontend API: [window.roamAlphaAPI.data.q](https://roamresearch.com/#/app/developer-documentation/page/SI3FNt3EQ)
   - via our backend API: [/api/graph/{graph-name}/q](https://roamresearch.com/#/app/developer-documentation/page/vbEj2bZql)
   - All but the backend API can use the additions we have detailed below
-    Also note that below we will talk about and have examples for `:q` primarily but 
+    Also note that below we will talk about and have examples for `:q` primarily, but the same additions work in the other ways of querying too
 - **Custom symbols**
   - Description:: new special words/symbols are available to represent dates which you can use directly in the `:where` clause
     - Some examples:
@@ -9267,7 +9273,7 @@
 - **You remember the idea, not the words.** Notes from years ago rarely use the phrasing you'd reach for today.
 - **Your vocabulary drifts.** Old notes say one thing, new notes say another. Semantic search bridges terms that mean the same thing.
 - **Resurfacing.** Related notes you'd forgotten about show up next to the thing you were actually looking for.
-- **Better AI assistance.** AI assistants connected to your graph (through Roam's MCP integration) get a semantic search tool too, so they can find relevant context by meaning when answering your questions.
+- **Better AI assistance.** AI assistants connected to your graph through the [[Local MCP]] get a semantic search tool too, so they can find relevant context by meaning when answering your questions.
 
 ### How to use it
 
@@ -9281,7 +9287,7 @@
 ### Setting it up
 
 - You need to be an **admin** of the graph.
-- Open **Settings → Graph → Experimental: Semantic search**.
+- Open **Settings → Graph → Experimental: Semantic search embeddings**.
   - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fk1MFsLBXDW.png?alt=media&token=d6c537b1-3089-42c1-aa4f-7640b2542066)
 - The setting is a three-way choice: **Off**, **Default**, or **Custom**. Picking either provider enables semantic search for everyone on this graph.
 
@@ -9600,7 +9606,7 @@
 #### [[Strikethrough]]
 
 - ~~Strike~~ Cross things out using `~~double tildes~~`.
-  - Use `cmd+y` ( `ctrl+y` on PC) to strike out the next word: Evernote
+  - Use `cmd+y` (`win+y` on PC) to strike out the next word: Evernote
   - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FlGhHJyz0-r.gif?alt=media&token=6c1bfdf0-8515-4390-8f7d-73abb19952a7)
 - ℹ️ Remember, you don't have to remember all of this- just type `/` in any block to bring up the [slash commands]([[/ Commands]]). #.box
 
@@ -9653,7 +9659,7 @@
 
 - You can make a header by using the Markdown formatting by typing `#`, `##`, and `###` at the start of a line for H1, H2, and H3 respectively
   - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FCzCS7AMEXp.gif?alt=media&token=e2888dab-0ed6-4625-9e83-c432df314846)
-- You can also make headings with the 
+- You can also make headings with the keyboard shortcuts below
   - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F0O9MDlWQAX.gif?alt=media&token=029598e0-3d9d-462f-b37c-a7af7d0614d4)
 - Key Commands::
   - `cmd+opt+1` (macOS) / `ctrl+opt+1` (PC)
@@ -9733,7 +9739,7 @@
 - **Insert markdown link** (wraps the selected text)
   - Mac: `Cmd-k`
   - PC: `Ctrl-k`
-- **Comment on current block**
+- **[Comment on current block]([[Comments]])**
   - Mac: `Cmd-Alt-=`
   - PC: `Ctrl-Alt-=`
 
@@ -10021,73 +10027,6 @@
 #### [How to create a Kanban board on Roam](https://www.roamtips.com/home/roam-kanban-board) by [[Roam Tips]]
 
 - [[.--]]
-
----
-
-# Coaching
-
-### Get specialized 1:1 help to master Roam from one of our vetted coaches
-
-- [[Coaches]]
-  - **[R.J. Nestor]([[R.J. Nestor]])**
-    - Info::
-      - Business & Executive Coach, Musician, Writer
-      - Helps you develop and optimize your Roam workflows
-      - Created courses [Your Road to Roam](https://courses.rjnestor.com/p/your-road-to-roam) and [Powerful Task Management in Roam Research](https://courses.rjnestor.com/p/powerful-task-management-in-roam-research)
-    - Website:: 
-      - [roamcoaching.rjnestor.com](https://roamcoaching.rjnestor.com) [rjnestor.com](https://rjnestor.com) [youtube.com/c/rjnestorcoach](https://youtube.com/c/rjnestorcoach)
-    - Areas of specialty::
-      - [[Roam fundamentals]] ⬅ for ANY Roam skill level
-      - [[Workflows]] [[Processes]]
-      - [[Productivity]] [[GTD]]
-      - [[Content creation]] [[Writing]] [[Creative writing]]
-    - Contact::
-      - DM on [Twitter](https://twitter.com/rjnestor)
-      - Message through [Facebook coaching page](https://m.me/rjnestorcoach)
-    - Price::
-      - [Roam coaching packages](https://roamcoaching.rjnestor.com) start at $150
-      - [DM](https://twitter.com/rjnestor) or [message](https://m.me/rjnestorcoach) for custom coaching package needs
-  - **[Cortex Futura]([[Cortex Futura]]) **
-    - Info::
-      - PhD Student, Data Analyst, Teacher, Writer
-      - Helps you
-      - Created courses [Cite to Write](https://t.co/Z95EFrEenY?amp=1) (using Roam in academia) and Galaxy Brain (Algorithms of Thought)
-    - Website::
-      - [Coaching Website](https://learn.cortexfutura.com/p/roam-research-coaching?utm_source=roamresearch&utm_medium=graph&utm_campaign=helpgraph)
-    - Areas of specialty::
-      - [[Roam fundamentals]]
-      - [[Workflows]]
-      - [[Writing]], [[Publishing]]
-      - [[Academia]]
-    - Contact::
-      - [DM on Twitter](https://twitter.com/cortexfutura)
-      - coaching@cortexfutura.com
-    - Price::
-      - Roam Coaching Packages starting at $150
-      - DM or message for custom coaching package needs
-  - **[[Maarten van Doorn]]**
-    - Info::
-      - PhD, Polymath, Tools for Thought Explorer, Essayist, Coach, Author
-      - Helps you set up your personal Zettelkasten and smart notes workflow in Roam. You'll remember what you learn, discover new ideas and insights, turn your thoughts and discoveries into convincing written pieces, and build up a treasure of smart and interconnected notes along the way.
-      - Wrote [The Complete Guide To Effective Note-Taking](https://roambrain.com/the-complete-guide-to-effective-note-taking/) and [The Complete Guide to Effective Reading](https://maartenvandoorn.medium.com/the-complete-guide-to-effective-reading-fc1835937757) (>300K reads). Created course [Academic Mastery with Roam Research](https://www.academicmasterywithroam.com/). 
-    - Website::
-      - [Coaching website](https://maartenvandoorn.com/roam-research-coaching/)
-    - Areas of specialty::
-      - [[Roam fundamentals]]
-      - [[Effective Reading and Note-Taking in Roam Research]]
-      - [[Information analysis]]
-      - [[Academic writing]]
-      - [[Popular writing]]
-    - Contact::
-      - [DM on Twitter](https://twitter.com/maartenvdoorn)
-      - maarten@maartenvandoorn.nl
-    - Price::
-      - Get lifetime access to [Academic Mastery with Roam](https://www.academicmasterywithroam.com/) for $159.
-      - [Coaching](https://maartenvandoorn.com/roam-research-coaching/) costs only $99 per one-hour 1:1 session, because I'm just an overachieving nerd who wants to help people :)
-      - [DM](https://twitter.com/maartenvdoorn) or [message](mailto:maarten@maartenvandoorn.nl) for custom coaching package needs! I focus on the specific use case desired by you.
-
-#### [Request to be vetted](https://roamresearch.typeform.com/to/g5W8uCqz)
-
 
 ---
 
@@ -10389,7 +10328,7 @@
 # Query
 
 - A query block collects every block in your graph that matches conditions you give it: a saved search that lives right in your notes.
-- Type `/query` in a block to create one. The [[Query Builder]] opens so you can build it visually. This page covers the clauses underneath.
+- Type `/query` in a block to create one. The [[Roam Query Builder]] opens so you can build it visually. This page covers the clauses underneath.
 - Here's a live one under this block: every block that links to [[Templates]], minus the [[Change Log]].
   - {{[[query]]: {and: [[Templates]] {not: [[Change Log]]}}}}
 
@@ -10531,6 +10470,62 @@
 
 ---
 
+# / Commands
+
+- The / Commands give you access to a variety of functions in Roam
+- To access / Commands, type `/` + `any of the below keyword` + `enter` (in any block) to access each feature 
+- ![An example of accessing the TODO function via / Commands](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FoebmqUA8lT.gif?alt=media&token=0567d373-7f43-4934-9d92-c5f5030b6e42)
+- Commands
+  - ****Functions****
+    - [[TODO]]
+    - [[Page References]]
+    - [[Block References]]
+    - [[Block Embed]]
+      - Block Embed Path
+      - Block Embed Children
+    - [[Table]]
+    - [[Diagram]]
+    - [[Upload Files]]
+    - [[Templates]]
+    - [[Video Embed]]
+    - [[Calculator]]
+    - [[Mentions]]
+    - [[Word count]]
+    - [[Character count]]
+    - [[Query]]
+    - [Search View]([[Search]])
+    - [[Streak]]
+    - [[Kanban]]
+    - [[Slider]]
+    - [Encrypted Text]([[Encrypted Block]])
+    - [[Mermaid Diagrams]]
+    - Drawing
+    - Excalidraw
+    - Video Timestamp
+      - Appears only when your block is nested under a video, and inserts a link to the video's current playback position.
+  - ****Time****
+    - [[Current time]]
+    - [[Today]]
+    - [[Tomorrow]]
+    - Yesterday
+    - [[Date picker]]
+    - [[Pomodoro timer]]
+  - **[Formatting]([[Formatting]])**
+    - [[Links]]
+    - [[Code Block]]
+      - Markdown Code Block (4 or 5 backticks)
+      - Typing a language name, like `/python`, makes a code block in that language.
+    - [[Inline Code]]
+    - [[Bold]]
+    - [[Italics]]
+    - [[KaTeX]]
+    - [[Strikethrough]]
+    - Highlight
+    - Block Quote
+    - [Callout]([[Callouts]])
+
+---
+
 # Block Context Menu
 
 - The Block Context Menu is the menu that gets pulled up when you right click the circle bullets on any block, it brings up a list of common features you might need, these commands include:  
@@ -10553,7 +10548,7 @@
       - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FmVnuTJLLlq.gif?alt=media&token=528fd198-da64-4a21-80c2-8bd6007ba018)
     - Add version
       - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FHNrxPTA3gs.gif?alt=media&token=ad1b8585-b52f-4356-b1b8-1aa109c5f7e3)
-    - Delta (not really sure about this, added it in case it's needed)
+    - Delta
       - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F7vwTMYhLgA.gif?alt=media&token=3ac40f9a-f03b-4aef-a3f5-7e3e0f88800c)
     - View as Numbered list
       - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FXKIKHxUwZn.gif?alt=media&token=1290607c-b3e4-4ce2-a3bf-47afc371aaf9)
@@ -10596,7 +10591,7 @@
 
 #### [[Bidirectional linking]]
 
-- It doesn't matter what [page]([[Pages]]) you've written a note on, if you mention an idea, every place where you mentioned that idea will get collected underneath that page in the [[Linked References]] section when you turn turn that idea into a [page reference]([[Page References]])
+- It doesn't matter what [page]([[Pages]]) you've written a note on, if you mention an idea, every place where you mentioned that idea will get collected underneath that page in the [[Linked References]] section when you turn turn that idea into a [page reference]([[Page References]]).
 - Roam Team Videos::
   - {{[[video]]: https://www.youtube.com/watch?v=v9s3pusI1JQ}}
   - {{[[video]]: https://www.youtube.com/watch?v=lHkMq3aqDtw&ab_channel=ConorWhite-Sullivan}}
@@ -10758,7 +10753,7 @@
 - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FOMLRPp1fPc.gif?alt=media&token=72fc6367-48f3-4b02-b740-f5baa7178973)
 - Key Commands::
   - `Tab` to indent
-  - `Tab+enter` to outdent
+  - `Shift+Tab` to outdent
 
 #### Collapsing and expanding
 
@@ -10921,7 +10916,7 @@
 - Hotkeys: the command name as a bold parent block, with `Mac:` and `PC:` sub-bullets when the keys differ. When the keys are the same on both platforms, one block with the keys inline.
 - Syntax references (query clauses and similar): the syntax in code as the parent block, the explanation nested underneath.
 - Tips go in callouts: `[[>]] [[!TIP]]`.
-- Keep example syntax inside backticks so `[[links]]` in examples don't create real pages. If a stray page gets created, delete it.
+- Keep example syntax inside backticks so `[[links]]` in examples don't create real pages.
 - When an example needs an outline shape, write it as real nested blocks, with each example line's text in a code span.
 
 ### Links
@@ -11194,8 +11189,8 @@
 - You can still share an encrypted graph with someone else, but they need the password used to encrypt it to access the graph
   - In the future we hope to release the ability to have multiple password to a graph
 - Load times of encrypted graphs may be longer than non encrypted
-- Future features, such as a backend API, may not be available for encrypted graphs
-  - We designed it with the backend API in mind, but likely many of the features of it will not be possible for encrypted graphs
+- The [[Roam Backend API]] can't read an encrypted graph, but the [[Roam Append API]] works: you can capture into an encrypted graph with an append-only [API token]([[Create API Tokens]])
+  - The same rule applies to [[Roam MCP]]: connected AI tools can only append to today's daily note on an encrypted graph. For full AI access, the [[Local MCP]] on the desktop app works with the decrypted graph on your device
 - More Info
   - Images and media files are encrypted only on hosted graphs
     - This may effect the load time of them
@@ -11435,6 +11430,49 @@
 
 ---
 
+# Create API Tokens
+
+- (how to create Roam API tokens for a graph)
+  - If you're a developer, you can use these with [[Roam Backend API]] or [[Roam Append API]] 
+- Steps to create new API Token
+  - **Walkthrough GIF**
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FO6sd1Ey3g2.gif?alt=media&token=18c9f89e-e86b-4f9e-97cc-8cf1dc9d3954)
+    - Process is the same for encrypted graphs but you should select the "append-only" scope instead (It is the only option for encrypted graphs)
+    - Please note that you can only create API tokens for your graphs, not for graphs that have been shared with you
+  - **Steps** (if you prefer following via text)
+    - Open your settings via ... > Settings, then go to the "Graph" tab
+      -  ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FfagWR_XbE7.png?alt=media&token=0d1d5156-d91b-4078-ad2f-e35db1ceb8ba)
+    - In the "Graph" tab in settings, click on the green "+ New API Token" button
+      - Do note that you need to be the owner/admin of the graph in order to create API tokens
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FvLvpJCRi36.png?alt=media&token=7cc08bb8-f684-4537-ba15-0f76c07e30d1)
+    - After clicking the button, please enter a clear description of expected usage. In the access scope, select **read & edit access** for unencrypted graphs and **append-only access** for encrypted graphs. More regarding scope below
+      - More details regarding scopes for API tokens below:
+        - **read-only access**
+          - (only available for unencrypted graphs)
+          - This scope only allows access to read to your graph.
+          - In the case of the Zapier integration, this means that you can only use the "Trigger"s, but not the "Action"s
+        - **read & edit access**
+          - (only available for unencrypted graphs)
+          - this scope is the most permissive one. It allows the service to both read your graph and edit/add stuff to it. 
+          - In the case of the Zapier integration, this means that you can use both the "Trigger"s and the "Action"s
+        - **append-only access**
+          - (available for **both** encrypted & unencrypted graphs)
+          - this access only provides the service ability to __add__ stuff to your graph
+          - In the case of the Zapier integration, this means that you can only use the "Actions"s, but not the "Trigger"s
+    - In the next screen, click on the "Clipboard" icon 📋 to copy the token to your clipboard. It will start with "roam-graph-token-"
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FtnYMdlay_y.png?alt=media&token=e49cdfbc-872e-44b6-bc01-4b0c0b22a386)
+
+### Good to know
+
+- The create form also asks for a **Roam Page Title**. Each token acts as its own member of your graph, and this is the name it shows up under.
+  - Blocks added or edited through the token are attributed to that name, so you can always tell which changes came in through the API.
+  - The field is pre-filled from your description, and the title can't already be in use by another page.
+- Creating tokens requires an active subscription. Without one, the **+ New API Token** button is disabled.
+- These tokens work with Roam's cloud APIs, so they exist only for [hosted graphs]([[Hosted Graph]]).
+  - For AI tools running on your own computer, the [[Desktop App]] has separate [[Local API Tokens]].
+
+---
+
 # Security
 
 ## [Security Policy](https://github.com/Roam-Research/issues/security/policy)
@@ -11530,104 +11568,146 @@
 
 ---
 
-# / Commands
+# Roam Depot
 
-- The / Commands give you access to a variety of functions in Roam
-  - Key Commands:: 
-    - To access / Commands, type `/` + `any of the below keyword` + `enter` (in any block) to access each feature 
-  - Team GIFs::
-    - ![An example of accessing the TODO function via / Commands](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FoebmqUA8lT.gif?alt=media&token=0567d373-7f43-4934-9d92-c5f5030b6e42)
+- Roam Depot is Roam's built-in marketplace for extensions: add-ons built by the community that add new features to Roam.
+- The Roam team reviews every extension before it's listed or updated.
+- Check out the linked references of [[Roam Depot Extensions]] for new extensions
 
-- #.--rm-grid 
-  - ****Functions****
-    - [[TODO]]
-    - [[Page References]]
-    - [[Block References]]
-    - [[Block Embed]]
-    - [[Table]]
-    - [[Diagram]]
-    - [[Upload Files]]
-    - [[Templates]]
-    - [[Video Embed]]
-    - [[Calculator]]
-    - [[Mentions]]
-    - [[Word count]]
-    - [[Character count]]
-    - [[Query]]
-  - ****Time****
-    - [[Current time]]
-    - [[Today]]
-    - [[Tomorrow]]
-    - [[Date picker]]
-    - [[Pomodoro timer]]
-  - **[Formatting]([[Formatting]])**
-    - [[Links]]
-    - [[Code Block]]
-    - [[Inline Code]]
-    - [[Bold]]
-    - [[Italics]]
-    - [[KaTeX]]
-    - [[Strikethrough]]
+### Installing extensions
+
+- The marketplace is available in a few places:
+  - Click **Roam Depot** in the left sidebar.
+  - Or open [[Settings]], pick the **Roam Depot** tab, and click **Browse**.
+  - Or run "Roam Depot Marketplace" from the [[Command Palette]].
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FyCStM-Yqdu.png?alt=media&token=a76e9ca6-831e-4ddf-92c5-4c699b67c18f)
+- In the marketplace:
+  - Search by name, or sort the list by downloads, creation date, last update, or name.
+  - Click an extension to read its details: description, author, version, download count, and its full README.
+  - Click **Install**. The extension starts running right away.
+- Extensions are installed per person, per graph: installing one here doesn't add it to your other graphs, or to anyone else's view of this graph.
+  - To install for everyone on the graph, see Installing for your whole graph
+- Installing needs edit access to the graph, so read-only members and visitors to public graphs can't add extensions.
+
+### Settings and updates
+
+- An extension with settings gets its own tab in [[Settings]], listed under the **Extension Settings** heading.
+  - That tab is also where you set hotkeys for any commands the extension adds.
+- Every installed extension has an on/off switch in the Roam Depot tab, so you can turn one off without uninstalling it.
+- Updates are automatic: Roam checks for new versions when your graph loads and about every 12 hours while it's open.
+  - **Update all** in the Roam Depot tab checks immediately.
+
+### Installing for your whole graph
+
+- If you're an admin, the globe button next to an installed extension installs it for everyone you've shared the graph with. ((Public visitors don't get it. due to security concerns))
+- Members are asked to confirm before admin-chosen extensions start running for them, and they can opt back out later from the Roam Depot tab.
+- Members inherit the extension's configuration and can't change its settings, but they can set their own hotkeys for it.
+- Be careful with settings that hold secrets: anything in a shared extension's settings, like an API key, is visible to the people the graph is shared with.
+
+### Good to know
+
+- Extensions marked **Experimental** may cause data loss or other bugs, so keep them away from graphs you care about.
+- Some extensions carry a warning that they use javascript eval, which means they can run code that wasn't part of Roam's review. Install those at your own risk.
+  - For the same reason, these can't be installed for for other users on your graph.
+- If Roam starts misbehaving, the **Temporarily disable all extensions and css** button in the Roam Depot tab reloads with everything off, so you can check whether an extension is the cause.
+
+### Building your own
+
+- The guide to building and submitting an extension lives in the developer docs: [docs link](https://roamresearch.com/#/app/developer-documentation/page/5BB8h4I7b)
+- Roam shares a portion of its revenue with extension developers, based on how popular their extensions are.
 
 ---
 
-# Courses
+# Working with AI Tools
 
-#### [Request to be featured](https://roamresearch.typeform.com/to/g5W8uCqz)
+- These guidelines apply to every way of connecting an AI to your graphs: [[Roam MCP]], [[Local MCP]], and the [[Roam CLI]].
+  - One thing this page does not cover: [[Roam Depot]] extensions that use AI. Those run inside the app under each extension's own rules, so the token, permission, and attribution guarantees here don't apply to them.
+- The individual pages cover installing each one. This page is about using them well.
 
-## Free
+### What to ask for
 
-### [Roam in Context](https://signup.cortexfutura.com/roam-in-context) by [[Cortex Futura]]
+- An AI connected to your graph answers from your notes, so it's useful in ways a plain chatbot isn't.
+- Ask it about your own thinking:
+  - "What do my notes say about interviewing?" It searches your graph, reads the relevant pages, and answers with links to the blocks it drew from.
+  - "What did I write about this project last month?" It reads your daily notes and pages and summarizes, with references.
+  - Turn on [[Semantic search (Experimental)]] (local MCP only) and it can find notes by meaning, so the old notes surface even when the words don't match.
+- Have it capture for you:
+  - Paste in raw meeting notes and ask it to file them using one of your [[Templates]].
+  - Forward it ideas mid-conversation: "add this to my daily note under Ideas."
+- Put it to work on the graph itself:
+  - "Link this page up." It finds the pages your text mentions and adds the references.
+  - "Find blocks that mention the offsite but aren't tagged, and tag them." Review the plan before it runs; bulk edits are where mistakes get expensive.
+- Draft with it:
+  - "Draft a blog post from my notes on this topic, on a new page." You get a draft whose sources are a click away, in your graph where you can reshape it block by block.
 
-- Learn the fundamentals of Roam from seven different perspectives. In six videos per use-case, Roam in Context will teach you Roam's basic features in the context of writing, note-taking, task management, project management, journaling, decision making and research/academia. Pick and choose the focus that fits your needs best – zero previous knowledge required.
+### Guide the AI with graph guidelines
 
-### [How to Use Roam Research: A Complete Guide](https://www.youtube.com/playlist?list=PLralmZwl_8jJuJMIebWFqm6K5I20a5Qve) by [[Shu Omi]]
+- Create a page called [[roam/agent guidelines]] in your graph, and connected AI tools will read it before they start working.
+- It's the place for your conventions: how you tag, where things get filed, what the AI should leave alone.
+  - How you name things: what page titles look like, what your namespaces mean.
+  - Your tags and what they're for: "#inbox means unprocessed, #ref means external material."
+  - Where things get filed: which page captures go to, where drafts belong.
+  - What to leave alone: pages or sections the AI shouldn't touch.
+  - How you like blocks written: for example, one idea per block, links over plain mentions.
 
-- An extensive and comprehensive collection of Roam videos packaged into a free course which can be watched on YouTube.
-- They require some existing knowledge of how to use Roam to be most effective.
+### Take care
 
-### [Effective Note-Taking With Roam Research](https://roam.elaptics.co.uk/learn) by [[Andy Henson]]
+- A full-access connection can read and write everything in the graph, and an AI's changes can be hard to undo. There is always [[Graph History]] if something disastrous happens
+- Review what the assistant plans to write before confirming it.
+- Blocks tagged `#.rm-hide` or `#.rm-private` are left out of what the read tools return. This is a convenience filter, not a security guarantee, because the raw query tool reads the database directly.
 
-- A free 14-day email course providing a comprehensive introduction to Roam.
-- It starts off with basic instructions and features, progressively feeding you useful tips and tricks along the way, and finally ends with more advanced concepts and use-cases.
+### Access and permissions
 
-### [100 Roam Tips: Beginner to Advanced in 25 Minutes](https://www.youtube.com/watch?v=4yXK9OMc2OU&feature=youtu.be) by [[Marc Koenig]]
+- Every connection authenticates with a token that carries only the scopes you approved. See [[Local API Tokens]].
+- A connection can never do more than your own account can. If your access to a shared graph shrinks, so does the token's.
+- Writes made through a connection are attributed to it, so version history shows what an AI changed.
+  - Hover a bullet to see its author, and a query like `{{query: {by: [[Your Name (AI)]]}}}` collects everything an assistant has written in one place.
 
-- Marc shows you how to go from 0 to 100 in Roam real quick.
-- The video also provides timestamps for all the tips, and Marc is including updates and amendments to his tips as Roam evolves and things inevitably change.
+---
 
-### [60 Seconds To Roam](https://www.youtube.com/playlist?list=PL86ba93-ysP_u1i2D44yI9c_tJ5YyTNK-) by [[Mark McElroy]]
+# Sharing
 
-- A very short and sweet 6-part course totalling less than 7 minutes total run time.
-- Mark guides you through the essentials of Roam in each 60-second episode.
+- Sharing controls who can see and edit a [[Hosted Graph]]: the whole graph, specific people, or single pages.
+- The controls live in [[Settings]] under the **Sharing** tab. Only the graph's admin (the person who created it) sees the tab and can change these settings.
+- [[Local Graph]]s never leave your device, so they have no sharing settings.
 
-## Paid
+### Sharing the whole graph
 
-### [Your Road to Roam](https://courses.rjnestor.com/p/your-road-to-roam) by [[R.J. Nestor]] $90
+- The **This graph** dropdown sets the graph's overall visibility:
+  - `is only shared with the emails below`
+    - Private, and the default. Only people you invite can open the graph.
+  - `can be read by anyone`
+    - Anyone with the link can view the whole graph.
+  - `can be edited by anyone`
+    - Anyone with the link can edit it too.
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fks9BpYNOVI.gif?alt=media&token=5fabb1d0-1981-4a47-a2e0-f2d397b2c3b0)
 
-- RJ teaches the nuts and bolts of Roam's feature set and provide learners with the tools to develop their own unique workflows based on their specific interests and needs.
+### Sharing with specific people
 
-### [Magical Academic Note-Taking](https://roam-for-results.teachable.com/p/magical-academic-note-taking) by [[Lisa-Marie Cabrelli]] $129
+- Under **Shared with**, type one or more emails separated by spaces, pick **read** or **edit** access, and press Enter.
+- Everyone you've invited appears in a list below, where you can switch them between read and edit or remove them.
+- The person doesn't need a Roam account yet: if their email isn't registered, the invitation waits and takes effect as soon as they sign up with it.
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FJKD9mM0cwC.gif?alt=media&token=2a28d233-3de1-4667-8c07-5f1dcff7b670)
 
-- Learn how to create, collect and organize magical, time-traveling, smart notes and help your dissertation or thesis write itself. After taking the Magical Academic Note-Taking course, you'll have the skills and process in place to write every day without hesitation. Complete this course and [writing]([[Writing]]) will be fun. Instead of dreading the page, you'll run to the page.
+### Sharing a single page
 
-### [Roam Untangled](https://www.jamoe.org/roam) by [[Jamie Miles]] $0-$89
+- To share one page while keeping the rest of the graph private, first turn on **Sharing Individual Pages** at the top of the Sharing tab.
+- [[>]] [[!WARNING]] Sharing individual pages loads the rest of your graph's data in every visitor's browser. Roam only displays the page you shared, but a technically skilled visitor could dig out the others. Use it on graphs where that risk is acceptable.
+- Then, on the page you want to share:
+  - Open the **⋯** menu in the top right and pick **Share Page**.
+  - Set "This page is" to `can be read by anyone`, or `can be edited by anyone` if visitors should be able to change it. `Private` takes it back down.
+  - Copy the page's link with **Share Link** in the same menu, and send it to anyone.
+- **Share Page** only appears while the graph itself is private (a public graph's pages are already visible), and only for admins.
 
-- Learn to setup your Roam from scratch with use-case driven 90-minute online course that focuses on the 20% of features that will get you 80% of the benefit.
-- Offered with a freemium model with some free lessons and advanced paid lessons.  Features 10 micro-lessons that cover all the Roam essentials and then you jump write into a Roam workflows for producing written content faster.
+### Other sharing controls
 
-### [Cite to Write](https://www.cortexfutura.com/p/cite-to-write/?utm_source=roamresearch&utm_medium=graph&utm_campaign=helpgraph) by [[Cortex Futura]] $150
-
-- Cortex Futura's course covers the whole academic process from literature [research]([[Research]]) over note-taking to [writing]([[Writing]]) inside Roam – and how to get your writing from Roam into a nicely formatted draft in Word or PDF format. The course assumes zero previous Roam knowledge, has already helped hundreds of people in [academia]([[Studying]]) use Roam for their research and received much praise from the community.
-
-### [Effortless Output in Roam](https://www.effortlessoutput.com) by [[Nat Eliason]] $250
-
-- Nat's first version of this course was officially endorsed by Roam and he's back again with an updated version, where he'll show you how to master the basics, build and organize your graph, manage projects and produce output, effortlessly.
-
-### [Roam Essentials](https://nesslabs.com/roam-essentials) by [[Anne-Laure Le Cunff]] $49
-
-- Learn how to make the most out of Roam with real-life examples and powerful mental models. Nesslabs's Anne-Laure Le Cunff will guide you through the essentials with short videos and templates for a variety of workflows, helping you kickstart your Roam journey.
-- 
+- Three more settings on the Sharing tab put limits on what the people you've invited can do:
+  - **Immutable blocks**
+    - When on, editors can only change the blocks they created themselves, so each person's words stay their own.
+  - **Exportable by**
+    - Who can export the graph's data: only you, people with edit access, everyone invited, or anyone with access to the full graph (the default).
+  - **History viewable by**
+    - Who can open the graph's [[Graph History]]. It starts as only you.
 
 ---
 
@@ -11679,147 +11759,54 @@
 
 ---
 
-# Create API Tokens
-
-- (how to create Roam API tokens for a graph)
-  - If you're a developer, you can use these with [[Roam Backend API]] or [[Roam Append API]] 
-- Steps to create new API Token
-  - **Walkthrough GIF**
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FO6sd1Ey3g2.gif?alt=media&token=18c9f89e-e86b-4f9e-97cc-8cf1dc9d3954)
-    - Process is the same for encrypted graphs but you should select the "append-only" scope instead (It is the only option for encrypted graphs)
-    - Please note that you can only create API tokens for your graphs, not for graphs that have been shared with you
-  - **Steps** (if you prefer following via text)
-    - Open your settings via ... > Settings, then go to the "Graph" tab
-      -  ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FfagWR_XbE7.png?alt=media&token=0d1d5156-d91b-4078-ad2f-e35db1ceb8ba)
-    - In the "Graph" tab in settings, click on the green "+ New API Token" button
-      - Do note that you need to be the owner/admin of the graph in order to create API tokens
-      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FvLvpJCRi36.png?alt=media&token=7cc08bb8-f684-4537-ba15-0f76c07e30d1)
-    - After clicking the button, please enter a clear description of expected usage. In the access scope, select **read & edit access** for unencrypted graphs and **append-only access** for encrypted graphs. More regarding scope below
-      - More details regarding scopes for API tokens below:
-        - **read-only access**
-          - (only available for unencrypted graphs)
-          - This scope only allows access to read to your graph.
-          - In the case of the Zapier integration, this means that you can only use the "Trigger"s, but not the "Action"s
-        - **read & edit access**
-          - (only available for unencrypted graphs)
-          - this scope is the most permissive one. It allows the service to both read your graph and edit/add stuff to it. 
-          - In the case of the Zapier integration, this means that you can use both the "Trigger"s and the "Action"s
-        - **append-only access**
-          - (available for **both** encrypted & unencrypted graphs)
-          - this access only provides the service ability to __add__ stuff to your graph
-          - In the case of the Zapier integration, this means that you can only use the "Actions"s, but not the "Trigger"s
-    - In the next screen, click on the "Clipboard" icon 📋 to copy the token to your clipboard. It will start with "roam-graph-token-"
-      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FtnYMdlay_y.png?alt=media&token=e49cdfbc-872e-44b6-bc01-4b0c0b22a386)
-
----
-
-# Articles
-
-- [Request to be featured](https://roamresearch.typeform.com/to/g5W8uCqz)
-
-## Overview
-
-#### [Roam Research: Why I Love It And How I Use It](https://www.nateliason.com/blog/roam) by [[Nat Eliason]]
-
-#### [How to use Roam Research: a tool for metacognition](https://nesslabs.com/roam-research) by [[Anne-Laure Le Cunff]]
-
-#### [Getting Comfortable with Roam](https://www.colemanm.org/post/getting-comfortable-with-roam/) by [[Coleman McCormick]]
-
-#### [How to Take Better Notes With Roam Research](https://lawsonblake.com/roam-research-review/) by [[Lawson Blake]]
-
-#### [Computer Assisted Intuition: How Roam Research fulfills the web's original dream](https://capiche.com/e/roam-research-worldwideweb-xanadu) by [[Matthew Guay]]
-
-## Guides
-
-### [Journaling]([[Journaling]])
-
-#### [How to Keep a Journal in Roam Research](https://markmcelroy.com/how-to-keep-a-journal-in-roam-research/) by [[Mark McElroy]]
-
-#### [How I Use Roam as a Digital Bullet Journal](https://medium.com/my-learning-journal/how-i-use-roam-as-a-digital-bullet-journal-df6e51e56f0f) by [[Shu Omi]]
-
-#### [Atomic Journaling - Expanding Thoughts](https://brandontoner.substack.com/p/atomic-journaling) by [[Brandon Toner]]
-
-#### [Interstitial journaling: combining notes, to-do & time tracking - Ness Labs](https://nesslabs.com/interstitial-journaling) by [[Anne-Laure Le Cunff]]
-
-#### [How to use Roam Research for Interstitial Journaling](https://www.cortexfutura.com/interstitial-journaling-roam-research/) by [[Cortex Futura]]
-
-#### [A beginner’s guide to Roam Research: getting started in 5 easy steps](https://nesslabs.com/roam-research-beginner-guide) by [[Anne-Laure Le Cunff]]
-
-#### [In search of the Literature X-ray: Using Roam in academic research](https://www.roambrain.com/in-search-of-the-literature-x-ray/) by [[Cortex Futura]]
-
-#### [10 ways to speed up your Roam Research workflow](https://nesslabs.com/roam-research-workflow-tips) by [[Anne-Laure Le Cunff]]
-
-### [Studying]([[Studying]])
-
-#### [How to Get the Most Out of Online Courses with Roam](https://infodistillery.com/roam/) by [[Anita Amini]]
-
-### [Product Management]([[Project Management]])
-
-#### [Networked Thinking Meets Product Thinking: Using Roam for Product Management](https://www.roambrain.com/networked-thinking-meets-product-thinking/) by [[Andrew Yu]]
-
-### [[Zettelkasten]]
-
-#### [Implementing Zettelkasten in Roam](https://www.roambrain.com/implementing-zettelkasten-in-roam/) by [[Zakk Fleischmann]]
-
-- {{[[roam/css]]}} #.h
-  - ```css
-    .black .rm-alias {
-      color: #202B33 !important;
-    }```
-- 
-
-#### **Check us out in the** [News and Press]([[News and Press]])
-
-
----
-
 # Developer Documentation
 
-- If you're a developer who'd like to build extensions for Roam or connect stuff to Roam, please checkout our `developer-documentation` graph: https://roamresearch.com/#/app/developer-documentation
-  - **Some starting points**
-    - [[Roam Alpha API]]: https://roamresearch.com/#/app/developer-documentation/page/tIaOPdXCj
-      - This is the API that frontend Roam extensions use
-        - If you're writing a [[Roam Depot]] [extension]([[Roam Depot Extensions]]), in addition to the `roamAlphaAPI`, you can also use the `extensionAPI` ([linked here](https://roamresearch.com/#/app/developer-documentation/page/y31lhjIqU))
-    - [[Roam Backend API]]: https://roamresearch.com/#/app/developer-documentation/page/W4Po8pcHQ
-      - A REST API for your roam graph
-      - You can use this API to read or write to your Roam graph via your own code or a variety of services
-      - Some examples of things that use the Roam Backend API
-        - **[Speak to Roam]([[Apple Shortcuts/Speak to Roam]])** Apple Shortcut (speak and send transcript to your Roam graph)
-          - An Apple Shortcut which allows you to speak and send the transcript to your Roam graph (works on iPhone, iPad, Mac and even on an Apple Watch )
-            - And it’s free! (though you do have to enter an OpenAI key 😅)
-          - Latest version: **v1.2.0: ** https://www.icloud.com/shortcuts/9280597747c543eab39dd65d4aebd992
-            - Features
-              - Uses the [[OpenAI]] Whisper API to transcribe a voice recording
-              - Optionally post-process the transcript via an [[OpenAI]] GPT4 API call (prompt is customizable)
-              - If recording has been made and then something fails, then save the recording to “iCloud Drive/Shortcuts/SpeakToRoam/FailedRecordings/” folder and show a proper error message to the user
-            - [[Loom video]]s
-              - (these are for an older version but should be generally correct)
-              - The demo video: https://www.loom.com/share/76ebb8a30b1043b3a566f4077054ea73Longer 
-              - Set up guide video: https://www.loom.com/share/9bdbf2495e1f4a049d3d7354594a9808
-        - the [[Raycast]] extension
-          - **New and Updated [[Raycast]] extension for Roam!!**
-            - MacOS users, watch the demo video below to get a sense of the power of having your Roam graph (or graphs 😉) at your fingertips:
-              - {{[[video]]: https://www.loom.com/share/3fa11c532cb44822a047caecc638e47f}}
-            - Features::
-              - Search across all your installed graphs or in one specific graph
-                - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FtIlPw_oQ-a.png?alt=media&token=3c666344-8de3-4595-8947-55a216095a2e)
-                - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fv3emRcKcRu.png?alt=media&token=59421ab9-6b29-4b13-b3ee-10ca03ed503d)
-              - Quick capture notes to your Roam graph without leaving your keyboard
-                - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fj8GEmEGAx8.png?alt=media&token=f65dc849-dfa1-4ce3-b820-659036a49151)
-              - View a random block from your roam graph
-              - Easily create Raycast quicklinks to open Roam graphs or specific pages in the graph even faster
-                ... and more features baking in the oven!
-            - Getting Started Guide
-              - Install [[Raycast]] from https://raycast.com
-              - Then install the Roam Extension from: https://raycast.com/roamresearch/roam-research
-              - Follow the loom video below to add a graph
-                - {{[[video]]: https://www.loom.com/share/31ada35f7c8b4f44a2ba537b15237854}}
-            - If you run into any issues, drop us a message at support@roamresearch.com or via Intercom and we will get on it immediately.  
-            - Big thanks to [[hyc]] for their work on the initial version of this extension 🙏
-            - P.S. Users of the older versions of the Raycast extension will need to add their graph(s) again. Sorry for the inconvenience, this should only be a one time thing
-    - [[Roam Append API]]: https://roamresearch.com/#/app/developer-documentation/page/eb8OVhaFC
-      - difference from the Backend API is that this can be used by [[Encrypted Graphs]] too
-      - Other convenience features for writes/captures
+- If you're a developer who'd like to build extensions for Roam or connect stuff to Roam, please checkout our [developer-documentation graph](https://roamresearch.com/#/app/developer-documentation)
+- **Some starting points**
+  - [[Roam Alpha API]]: [Docs Link](https://roamresearch.com/#/app/developer-documentation/page/tIaOPdXCj)
+    - This is the API that frontend Roam extensions use
+  - Building a [[Roam Depot]] extension: [Docs Link](https://roamresearch.com/#/app/developer-documentation/page/5BB8h4I7b)
+    - Covers code guidelines, developing locally, and submitting your extension to the marketplace.
+  - [[Roam Backend API]]: [Docs Link](https://roamresearch.com/#/app/developer-documentation/page/W4Po8pcHQ)
+    - A REST API for your roam graph
+    - You can use this API to read or write to your Roam graph via your own code or a variety of services
+    - Some examples of things that use the Roam Backend API
+      - **[Speak to Roam]([[Apple Shortcuts/Speak to Roam]])** Apple Shortcut (speak and send transcript to your Roam graph)
+        - An Apple Shortcut which allows you to speak and send the transcript to your Roam graph (works on iPhone, iPad, Mac and even on an Apple Watch )
+          - And it’s free! (though you do have to enter an OpenAI key 😅)
+        - Latest version: **v1.3.0**: https://www.icloud.com/shortcuts/ae1ae833cada4999b44d9ac5dda2dc6d
+          - Features
+            - Uses the [[OpenAI]] Whisper API to transcribe a voice recording
+            - Optionally post-process the transcript via an [[OpenAI]] GPT4 API call (prompt is customizable)
+            - If recording has been made and then something fails, then save the recording to “iCloud Drive/Shortcuts/SpeakToRoam/FailedRecordings/” folder and show a proper error message to the user
+          - [[Loom video]]s
+            - (these are for an older version but should be generally correct)
+            - The demo video: https://www.loom.com/share/76ebb8a30b1043b3a566f4077054ea73
+            - Set up guide video: https://www.loom.com/share/9bdbf2495e1f4a049d3d7354594a9808
+      - the [[Raycast]] extension
+        - **New and Updated [[Raycast]] extension for Roam!!**
+          - MacOS users, watch the demo video below to get a sense of the power of having your Roam graph (or graphs 😉) at your fingertips:
+            - {{[[video]]: https://www.loom.com/share/3fa11c532cb44822a047caecc638e47f}}
+          - Features::
+            - Search across all your installed graphs or in one specific graph
+              - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FtIlPw_oQ-a.png?alt=media&token=3c666344-8de3-4595-8947-55a216095a2e)
+              - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fv3emRcKcRu.png?alt=media&token=59421ab9-6b29-4b13-b3ee-10ca03ed503d)
+            - Quick capture notes to your Roam graph without leaving your keyboard
+              - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fj8GEmEGAx8.png?alt=media&token=f65dc849-dfa1-4ce3-b820-659036a49151)
+            - View a random block from your roam graph
+            - Easily create Raycast quicklinks to open Roam graphs or specific pages in the graph even faster
+              ... and more features baking in the oven!
+          - Getting Started Guide
+            - Install [[Raycast]] from https://raycast.com
+            - Then install the Roam Extension from: https://raycast.com/roamresearch/roam-research
+            - Follow the loom video below to add a graph
+              - {{[[video]]: https://www.loom.com/share/31ada35f7c8b4f44a2ba537b15237854}}
+          - If you run into any issues, drop us a message at support@roamresearch.com or via Intercom and we will get on it immediately.  
+          - Big thanks to [[hyc]] for their work on the initial version of this extension 🙏
+          - P.S. Users of the older versions of the Raycast extension will need to add their graph(s) again. Sorry for the inconvenience, this should only be a one time thing
+  - [[Roam Append API]]: [Docs Link](https://roamresearch.com/#/app/developer-documentation/page/eb8OVhaFC)
+    - difference from the Backend API is that this can be used by [[Encrypted Graphs]] too
+    - Other convenience features for writes/captures
 
 ---
 
@@ -11858,6 +11845,56 @@
 
 - Search ignores accents: "café" and "cafe" find each other.
 - You can hide code blocks from search results, as well as change other search settings, in **Settings → Preferences → Search**.
+
+---
+
+# Courses
+
+#### [Request to be featured](https://roamresearch.typeform.com/to/g5W8uCqz)
+
+## Free
+
+### [Roam in Context](https://signup.cortexfutura.com/roam-in-context) by [[Cortex Futura]]
+
+- Learn the fundamentals of Roam from seven different perspectives. In six videos per use-case, Roam in Context will teach you Roam's basic features in the context of writing, note-taking, task management, project management, journaling, decision making and research/academia. Pick and choose the focus that fits your needs best – zero previous knowledge required.
+
+### [How to Use Roam Research: A Complete Guide](https://www.youtube.com/playlist?list=PLralmZwl_8jJuJMIebWFqm6K5I20a5Qve) by [[Shu Omi]]
+
+- An extensive and comprehensive collection of Roam videos packaged into a free course which can be watched on YouTube.
+- They require some existing knowledge of how to use Roam to be most effective.
+
+### [Effective Note-Taking With Roam Research](https://roam.elaptics.co.uk/learn) by [[Andy Henson]]
+
+- A free 14-day email course providing a comprehensive introduction to Roam.
+- It starts off with basic instructions and features, progressively feeding you useful tips and tricks along the way, and finally ends with more advanced concepts and use-cases.
+
+### [100 Roam Tips: Beginner to Advanced in 25 Minutes](https://www.youtube.com/watch?v=4yXK9OMc2OU&feature=youtu.be) by [[Marc Koenig]]
+
+- Marc shows you how to go from 0 to 100 in Roam real quick.
+- The video also provides timestamps for all the tips, and Marc is including updates and amendments to his tips as Roam evolves and things inevitably change.
+
+## Paid
+
+### [Your Road to Roam](https://courses.rjnestor.com/p/your-road-to-roam) by [[R.J. Nestor]] $90
+
+- RJ teaches the nuts and bolts of Roam's feature set and provide learners with the tools to develop their own unique workflows based on their specific interests and needs.
+
+### [Roam Untangled](https://www.jamoe.org/roam) by [[Jamie Miles]] $0-$89
+
+- Learn to setup your Roam from scratch with use-case driven 90-minute online course that focuses on the 20% of features that will get you 80% of the benefit.
+- Offered with a freemium model with some free lessons and advanced paid lessons.  Features 10 micro-lessons that cover all the Roam essentials and then you jump write into a Roam workflows for producing written content faster.
+
+### [Cite to Write](https://www.cortexfutura.com/p/cite-to-write/?utm_source=roamresearch&utm_medium=graph&utm_campaign=helpgraph) by [[Cortex Futura]] $150
+
+- Cortex Futura's course covers the whole academic process from literature [research]([[Research]]) over note-taking to [writing]([[Writing]]) inside Roam – and how to get your writing from Roam into a nicely formatted draft in Word or PDF format. The course assumes zero previous Roam knowledge, has already helped hundreds of people in [academia]([[Studying]]) use Roam for their research and received much praise from the community.
+
+### [Effortless Output in Roam](https://www.effortlessoutput.com) by [[Nat Eliason]] $250
+
+- Nat's first version of this course was officially endorsed by Roam and he's back again with an updated version, where he'll show you how to master the basics, build and organize your graph, manage projects and produce output, effortlessly.
+
+### [Roam Essentials](https://nesslabs.com/roam-essentials) by [[Anne-Laure Le Cunff]] $49
+
+- Learn how to make the most out of Roam with real-life examples and powerful mental models. Nesslabs's Anne-Laure Le Cunff will guide you through the essentials with short videos and templates for a variety of workflows, helping you kickstart your Roam journey.
 
 ---
 
@@ -11933,6 +11970,59 @@
 
 - Press `Alt-Enter` (or shift-click the **Open advanced search** button in the search bar) to open your search as a window in the right sidebar.
 - The sidebar search stays put while you work, and your filters and semantic mode carry over with it.
+
+---
+
+# Articles
+
+- [Request to be featured](https://roamresearch.typeform.com/to/g5W8uCqz)
+
+## Overview
+
+#### [Roam Research: Why I Love It And How I Use It](https://www.nateliason.com/blog/roam) by [[Nat Eliason]]
+
+#### [How to use Roam Research: a tool for metacognition](https://nesslabs.com/roam-research) by [[Anne-Laure Le Cunff]]
+
+#### [Getting Comfortable with Roam](https://www.colemanm.org/post/getting-comfortable-with-roam/) by [[Coleman McCormick]]
+
+#### [How to Take Better Notes With Roam Research](https://lawsonblake.com/roam-research-review/) by [[Lawson Blake]]
+
+#### [Computer Assisted Intuition: How Roam Research fulfills the web's original dream](https://capiche.com/e/roam-research-worldwideweb-xanadu) by [[Matthew Guay]]
+
+## Guides
+
+### [Journaling]([[Journaling]])
+
+#### [How to Keep a Journal in Roam Research](https://markmcelroy.com/how-to-keep-a-journal-in-roam-research/) by [[Mark McElroy]]
+
+#### [How I Use Roam as a Digital Bullet Journal](https://medium.com/my-learning-journal/how-i-use-roam-as-a-digital-bullet-journal-df6e51e56f0f) by [[Shu Omi]]
+
+#### [Atomic Journaling - Expanding Thoughts](https://brandontoner.substack.com/p/atomic-journaling) by [[Brandon Toner]]
+
+#### [Interstitial journaling: combining notes, to-do & time tracking - Ness Labs](https://nesslabs.com/interstitial-journaling) by [[Anne-Laure Le Cunff]]
+
+#### [How to use Roam Research for Interstitial Journaling](https://www.cortexfutura.com/interstitial-journaling-roam-research/) by [[Cortex Futura]]
+
+#### [A beginner’s guide to Roam Research: getting started in 5 easy steps](https://nesslabs.com/roam-research-beginner-guide) by [[Anne-Laure Le Cunff]]
+
+#### [In search of the Literature X-ray: Using Roam in academic research](https://www.roambrain.com/in-search-of-the-literature-x-ray/) by [[Cortex Futura]]
+
+#### [10 ways to speed up your Roam Research workflow](https://nesslabs.com/roam-research-workflow-tips) by [[Anne-Laure Le Cunff]]
+
+### [Studying]([[Studying]])
+
+#### [How to Get the Most Out of Online Courses with Roam](https://infodistillery.com/roam/) by [[Anita Amini]]
+
+### [Product Management]([[Project Management]])
+
+#### [Networked Thinking Meets Product Thinking: Using Roam for Product Management](https://www.roambrain.com/networked-thinking-meets-product-thinking/) by [[Andrew Yu]]
+
+### [[Zettelkasten]]
+
+#### [Implementing Zettelkasten in Roam](https://www.roambrain.com/implementing-zettelkasten-in-roam/) by [[Zakk Fleischmann]]
+
+#### **Check us out in the** [News and Press]([[News and Press]])
+
 
 ---
 
@@ -12077,9 +12167,40 @@
 
 ---
 
+# Comments
+
+- Comments let you and your collaborators discuss a block without editing it: questions, feedback, or side notes that stay out of the text itself.
+- Threads open in the [[Right Sidebar]], so the conversation sits next to the thing it's about.
+
+### How to comment
+
+- Hold `Cmd` (Mac) or `Ctrl` (PC) and hover over a block, then click the **+** button that appears at its right edge.
+- Or run **Comment on current block** while your cursor is in the block:
+  - Mac: `Cmd-Alt-=`
+  - PC: `Ctrl-Alt-=`
+- Either way, the thread opens in the right sidebar with an empty comment ready for you to type.
+- Replies are just blocks: type more in the thread to continue the conversation.
+
+### Where comments live
+
+- Comments are ordinary blocks on the same page as the block they discuss. They collect in a collapsed [[roam/comments]] block at the bottom of the page, grouped by date and author, and each thread starts with a `((block ref))` to the block it's about.
+- Because of that reference, a commented block shows a reference count at its right edge, and its comment threads appear among its linked references.
+- Since comments are ordinary blocks, they sync, search, and export like the rest of your graph.
+
+### Good to know
+
+- Commenting needs edit access to the graph, so read-only visitors can't comment.
+- AI tools connected through [[Roam MCP]] or the [[Local MCP]] can read and add comments too, which lets an agent leave feedback without touching your text.
+- [[roam/comments]]
+  - [[July 20th, 2026]]
+    - [[Josh's AI]]
+      - Comments let you and your collaborators discuss a block without editing it: questions, feedback, or side notes that stay out of the text itself.
+        - This is a comment, added by Josh's AI. It lives in the collapsed roam/comments block at the bottom of this page, and the block it discusses now shows a reference count.
+
+---
+
 # Filter
 
-- [[.--]]
 - [[.--]]
   - **Team GIFs::**
     - **Filter includes**
@@ -12130,45 +12251,6 @@
       - just type `/` to bring up the inline command palette.
         - If you don't find what you're looking for, click on the Help
         -  icon in the top right of the page! If you can think it, you can do it in Roam.
-
----
-
-# Zettelkasten
-
-### Roam Team Videos::
-
-#### Live Zettling on Roam by [[Conor White-Sullivan]]
-
-- {{[[video]]:https://www.youtube.com/watch?v=ScRrcL__SSI&t=2029s&ab_channel=ConorWhite-Sullivan}}
-  #[[Current time]] | #[[Page References]] | #[[Block References]] | #[[Indentation]] | #[[Daily Notes]] | #[[Right Sidebar]] | #[[Block Embed]] | #[[Alias]] | #[[TODO/DONE]] | #[[Indentation]] | #[[Query]] | #[[Table]]
-- Articles::
-  - **[Active Reading in Roam Research Featuring the Zettelkasten Method](https://padminipyapali.medium.com/zettelkasten-method-roam-research-f7b341f14fbd) by [[Padmini Pyapali]]**
-  - #[[Block References]] | #[[Page References]]
-  - **[Implementing Zettelkasten in Roam: A Practical Guide](https://www.roambrain.com/implementing-zettelkasten-in-roam/) by [[RoamBrain]]**
-  - #[[Page References]] | #[[Block References]] 
-  - **[Roamkasten - a practical how to guide to optimize Zettelkasten in Roam Research](https://www.thrivinghenry.com/writings/roamkasten-a-practical-how-to-guide-to-optimize-zettelkasten-in-roam-research) by [[Thriving Henry]]**
-
-  - #[[Page References]] | #[[Linked References]] | #[[Unlinked References]] | #[[Indentation]] |
-  - **[Roamkasten - a practical how to guide to optimize Zettelkasten in Roam Research](https://www.thrivinghenry.com/writings/roamkasten-a-practical-how-to-guide-to-optimize-zettelkasten-in-roam-research) by [[Thriving Henry]]**
-  - #[[Page References]] | #[[Linked References]] | #[[Unlinked References]] | #[[Indentation]] | #[[Block References]] | #[[Right Sidebar]]
-  - 
-
-### Community Videos::
-
-#### How to Take Smart Notes | Zettelkasten Method in Roam Research by [[Shu Omi]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=ljyo_WAJevQ&t=188s&ab_channel=ShuOmi}}
-  #[[Page References]] | #[[Right Sidebar]] | #[[Block References]] | #[[Linked References]] | #[[Filter]] 
-
-#### How Taking Smart, Simple Notes Will Make You a Better Writer
-by [[Drew Coffman]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=wMOACjJzfgM}}
-
-#### Roam Tour: Professor [[Joel Chan]]- Zettelkasten and Evergreen Notes for Generative Thought by [[Robert Haisfield]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=A6PIrVZoZAk&ab_channel=RobertHaisfield}}
-  #[[Page References]] | #[[Right Sidebar]] | #[[Query]] | #[[Linked References]] | #[[Indentation]] 
 
 ---
 
@@ -12320,6 +12402,68 @@ by [[Drew Coffman]]
 
 ---
 
+# Roam MCP
+
+- Roam MCP connects AI tools like Claude and ChatGPT to your Roam graphs. The AI can search your notes, read pages, and write new blocks, within limits you choose.
+- It's a hosted service, so it works from anywhere: the AI tool talks to Roam's servers, and your computer doesn't need to be on.
+- For AI tools running on your own computer, there's also [[Local MCP]], which connects through the [[Desktop App]] instead. The local MCP offers more features and is recommended if working from desktop.
+- [[Working with AI Tools]] covers the ground rules for every AI connection.
+
+### In Claude
+
+- Roam is in [Claude's connector directory](https://claude.ai/directory/connectors/roam-research).
+- Click **Connect**, sign in with your Roam account, and pick which graphs Claude should use.
+
+### In ChatGPT
+
+- Roam lives under **Plugins** in ChatGPT: [the Roam Research app](https://chatgpt.com/plugins/plugin_asdk_app_6a32c0c428388191912577d648a44ba4).
+- ChatGPT's menu calls these plugins and the listing calls itself an app. Same thing either way: it's Roam MCP underneath.
+- Open it, connect your Roam account, and grant the graphs you want ChatGPT to use.
+
+### In any other AI tool
+
+- Roam MCP is a standard remote MCP server. In tools that let you add an MCP server by URL, use: `https://mcp.roamresearch.com/mcp`
+- Signing in and choosing graphs works the same way from there.
+
+### You stay in control
+
+- Nothing is shared until you pick graphs, and each graph gets its own access level, from read-only up to full access.
+- Every change the AI makes is attributed to a distinct "(AI)" author in your graph, so its edits are always easy to find and review.
+- Adjust a graph's access or disconnect it at any time at [mcp.roamresearch.com/manage](https://mcp.roamresearch.com/manage).
+- Roam's servers can't read [[Encrypted Graphs]], so neither can Roam MCP. You can still grant append-only capture into one, and for full access there's [[Local MCP]].
+
+---
+
+# Roam Mobile
+
+- Roam Mobile is the native app for [[iPhone]], [[iPad]], and [[Android]]. [[Install Roam]] has the store links.
+  - **[[iOS]]:** download [Roam Mobile on the App Store](https://apps.apple.com/us/app/roam-mobile/id1609277273).
+  - **[[Android]]:** download [Roam on Google Play](https://play.google.com/store/apps/details?id=com.roamresearch.relemma).
+- Sign in with your Roam account and your graphs are there, in sync with everywhere else you use Roam.
+
+### The [[Mobile Native View]]
+
+- By default, the app shows the full Roam you know from the browser. The native view is an optional second mode, rebuilt for phones: it opens fast and handles large graphs without trouble.
+  - We recommend turning it on. It's a much smoother way to use Roam on a phone, and the web view is always there for the things it doesn't cover yet.
+- Turn it on with the **Native view** switch in the app's settings.
+- You can edit in it, drag blocks around, [react with emoji]([[Reactions]]), and use [queries]([[Query]]), [tables]([[Table]]), [sliders]([[Slider]]), [block references]([[Block References]]), and [callouts]([[Callouts]]).
+- For things the native view doesn't cover yet, the app can open the full Roam web app.
+- Encrypted graphs aren't available in the native view, because the servers it reads from can't decrypt them. They open in the web app view instead.
+
+### [[Quick Capture]]
+
+- Quick Capture is the app's tab for getting a thought down fast, and the screen the app opens on.
+- It doesn't load your graph, which is what makes it quick: pick a graph, type, save.
+- Captures go to that graph's [[Daily Notes]] page unless you pick a different page for them. If you're offline, they're saved and synced once you're back online.
+- Encrypted graphs are not supported in quick capture
+
+### Good to know
+
+- Encrypted graphs can unlock with Face ID or your fingerprint instead of typing the password.
+- Links to Roam pages and blocks can open directly in the app.
+
+---
+
 # File Manager
 
 - Every image, audio file, PDF, and other file you upload is stored with your graph. The File Manager shows them all in one place.
@@ -12430,34 +12574,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Daily Notes
-
-- [[.--]]
-
-### **Daily Notes are the backbone of the Roam experience.**
-
-- When you sign into Roam, you will start on a page with today's date.
-- We encourage people to start writing on this page because it gives context to your notes.
-- For example, if you take meeting notes in the Daily Note, the date of your meeting will always be tied to the notes.
-- ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/64002864636/original/qqL4apOfjDpoVLBx5JJu6TnrANUlTZSblg.png?1600974212)
-- Even if you create a new page, it's often helpful to do so from the Daily Note. This way, you'll be able to see when you created these pages, and your work will be visible when reviewing your days.
-- Consider the following Daily Note:
-- ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/64002864729/original/jzf65Bfvc_C7CcxpeokK5YM20u9Kv_5G6A.png?1600974564)
-- What does this person get by using the Daily Note instead of just working in the [[Weekly Experiments]] and [[5 Year Plan]] pages?
-- The context for why they started Weekly Experiments
-- An overview on what they changed in their 5 Year Plan, and an intention to work on it more next week.
-
-### **Conclusion**
-
-- Roam is all about making connections. The Daily Note is intended to help you make connections with yourself over time.
-- Your future self will thank you!
-
-### Roam Team Videos::
-
-- {{[[video]]: https://www.loom.com/share/ed65ea5c73e04035a910c9c96510d83a}}
-
----
-
 # Graph History
 
 - Graph History lets you open your graph **exactly as it was at any past moment**, all the way back to the day it was created.
@@ -12559,24 +12675,29 @@ by [[Drew Coffman]]
 
 ---
 
-# Community
+# Daily Notes
 
-- [[Roam Slack]]
-  - [Join us on Slack](https://join.slack.com/t/roamresearch/shared_invite/zt-ni1vw9yf-HzeWr05ZJBt55j_zfddPsw) to learn new workflows, get tips and tricks from your fellow Roamans, and much more!
-- [[Twitter]]
-  - Join the [#roamcult](https://twitter.com/search?q=%23roamcult&src=typeahead_click) and keep up to date with all the latest and greatest in Roam
-- [[Roam Book Club]]
-  - Learn how to use Roam, take better notes, make friends, and more
-- [[Articles]]
-  - An (incomplete) list of all the articles written about Roam!
-- [[Community Videos]]
-  - A list of all the great videos made by our wonderful community
-- [[Courses]]
-  - Learn how to use Roam with a collection of free and paid online courses made by top community members
-- [[Coaching]]
-  - Get specialized 1:1 help to master Roam from one of our vetted coaches
-- [Notable Graphs]([[Notable Graphs]])
-  - A list of public graphs available to browse or contribute to
+### **Daily Notes are the backbone of the Roam experience.**
+
+- When you sign into Roam, you will start on a page with today's date.
+- We encourage people to start writing on this page because it gives context to your notes.
+- For example, if you take meeting notes in the Daily Note, the date of your meeting will always be tied to the notes.
+- ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/64002864636/original/qqL4apOfjDpoVLBx5JJu6TnrANUlTZSblg.png?1600974212)
+- Even if you create a new page, it's often helpful to do so from the Daily Note. This way, you'll be able to see when you created these pages, and your work will be visible when reviewing your days.
+- Consider the following Daily Note:
+- ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/64002864729/original/jzf65Bfvc_C7CcxpeokK5YM20u9Kv_5G6A.png?1600974564)
+- What does this person get by using the Daily Note instead of just working in the [[Weekly Experiments]] and [[5 Year Plan]] pages?
+- The context for why they started Weekly Experiments
+- An overview on what they changed in their 5 Year Plan, and an intention to work on it more next week.
+
+### **Conclusion**
+
+- Roam is all about making connections. The Daily Note is intended to help you make connections with yourself over time.
+- Your future self will thank you!
+
+### Roam Team Videos::
+
+- {{[[video]]: https://www.loom.com/share/ed65ea5c73e04035a910c9c96510d83a}}
 
 ---
 
@@ -12605,40 +12726,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Beginner's Guide
-
-## A short but comprehensive guide
-
-#### A Beginner’s Guide to Roam Research by [[Drew Coffman]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=X6OOos4met0}}
-
-- #[[Daily Notes]] | #[[/ Commands]] | #[[Bidirectional linking]]
-
-## [[Why Roam?]]
-
-#### Leonardo Da Vinci and Roam-Thinking by [[Drew Coffman]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=S3qJdvPzOC8}}
-
-## Best [[Features]] of Roam
-
-#### The Simple Guide to Roam Research by [[Shu Omi]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=RTI6Mxu3YiI}}
-
-- #[[Daily Notes]] | #[[Bidirectional linking]]
-
-## What [[Workflows]] can I use Roam for?
-
-#### What's So Great About Roam Research? by [[Nat Eliason]] 
-
-- {{[[video]]: https://www.youtube.com/watch?v=syKAar8ZD-U}}
-
-- #[[Daily Notes]] | #[[Bidirectional linking]] | #[[Linked References]] #[[Book]] | #[[Sidebar]] | #[[Tags]] | #[[Evergreen Notes]] | #[[Block References]] | #[[Templates]] | #[[Query]]
-
----
-
 # Better search (Experimental)
 
 - A new search engine for Roam, currently opt-in while it's experimental.
@@ -12660,32 +12747,6 @@ by [[Drew Coffman]]
 - Each person on a graph chooses for themselves.
 - The toggle is temporary. It will go away once the new engine becomes Roam's default search.
 - Looking for meaning-based search on top of this? See [[Semantic search (Experimental)]].
-
----
-
-# Roam Mobile
-
-- Roam Mobile is the native app for iPhone, iPad, and Android. [[Install Roam]] has the store links.
-- Sign in with your Roam account and your graphs are there, in sync with everywhere else you use Roam.
-
-### The native view
-
-- The app's native view is built for phones: it feels native, opens fast, and handles large graphs without trouble.
-- You can edit in it, drag blocks around, react with emoji, and use queries, tables, sliders, block references, and callouts.
-- For things the native view doesn't cover yet, the app can open the full Roam web app.
-- Encrypted graphs aren't available in the native view, because the servers it reads from can't decrypt them. They open in the web app view instead.
-
-### Quick Capture
-
-- Quick Capture is for getting a thought down fast: open the app, type, done.
-- Captured notes land on your Daily Notes page the next time the graph syncs.
-- The capture template is customizable in the app's settings, so captures can arrive pre-tagged and pre-structured.
-- Encrypted graphs don't appear in Quick Capture's graph picker.
-
-### Good to know
-
-- Encrypted graphs can unlock with Face ID or your fingerprint instead of typing the password.
-- Links to Roam pages and blocks can open directly in the app.
 
 ---
 
@@ -12735,6 +12796,30 @@ by [[Drew Coffman]]
 
 ---
 
+# Local MCP
+
+- The local MCP server connects AI tools running on your computer, like Claude Desktop, Claude Code, Codex, or Cursor, to your graphs through the [[Desktop App]].
+- Nothing passes through Roam's servers, so it works fully with [[Encrypted Graphs]] and with a [[Local Graph]].
+- To reach your graphs from anywhere, with no desktop app running, use [[Roam MCP]] instead.
+- The [[Roam CLI]] runs the same tools as terminal commands, for AI agents that work through the shell instead of MCP.
+- The full documentation lives in the [roam-tools repository](https://github.com/Roam-Research/roam-tools).
+
+### Requirements
+
+- Node.js 18 or later.
+- The [[Desktop App]]. The local API isn't available in the web version.
+
+### Setting it up
+
+- The easy way: if your AI tool can run commands (Claude Code, Codex, Cursor), give it the [roam-tools repository](https://github.com/Roam-Research/roam-tools) link and ask it to set up the Roam MCP server for you.
+- To do it by hand instead: add the server to your tool. For Claude Code that's one command: `claude mcp add -s user roam-mcp -- npx -y @roam-research/roam-mcp` (Config snippets for Claude Desktop and other tools are in the [repository README](https://github.com/Roam-Research/roam-tools).)
+- Then ask the AI to connect your graph. No command needed: the server has a tool for connecting graphs, and Roam Desktop will ask you to approve.
+- Either way, connecting a graph ends with an approval request in Roam Desktop, naming the tool and the graph. Approving creates a [[Local API Tokens]].
+- If Roam isn't running when a tool calls, the server launches the desktop app for you and retries.
+- Before letting an AI loose on a real graph, read [[Working with AI Tools]].
+
+---
+
 # Extensions
 
 - CSS
@@ -12755,6 +12840,38 @@ by [[Drew Coffman]]
 
 ---
 
+# Zettelkasten
+
+### Roam Team Videos::
+
+#### Live Zettling on Roam by [[Conor White-Sullivan]]
+
+- {{[[video]]:https://www.youtube.com/watch?v=ScRrcL__SSI&t=2029s&ab_channel=ConorWhite-Sullivan}}
+  #[[Current time]] | #[[Page References]] | #[[Block References]] | #[[Indentation]] | #[[Daily Notes]] | #[[Right Sidebar]] | #[[Block Embed]] | #[[Alias]] | #[[TODO/DONE]] | #[[Indentation]] | #[[Query]] | #[[Table]]
+- Articles::
+  - **[Active Reading in Roam Research Featuring the Zettelkasten Method](https://padminipyapali.medium.com/zettelkasten-method-roam-research-f7b341f14fbd) by [[Padmini Pyapali]] #[[Block References]] | #[[Page References]]**
+  - **[Implementing Zettelkasten in Roam: A Practical Guide](https://www.roambrain.com/implementing-zettelkasten-in-roam/) by [[RoamBrain]] #[[Page References]] | #[[Block References]] **
+  - **[Roamkasten - a practical how to guide to optimize Zettelkasten in Roam Research](https://www.thrivinghenry.com/writings/roamkasten-a-practical-how-to-guide-to-optimize-zettelkasten-in-roam-research) by [[Thriving Henry]] #[[Page References]] | #[[Linked References]] | #[[Unlinked References]] | #[[Indentation]] | #[[Block References]] | #[[Right Sidebar]]**
+
+### Community Videos::
+
+#### How to Take Smart Notes | Zettelkasten Method in Roam Research by [[Shu Omi]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=ljyo_WAJevQ&t=188s&ab_channel=ShuOmi}}
+  #[[Page References]] | #[[Right Sidebar]] | #[[Block References]] | #[[Linked References]] | #[[Filter]] 
+
+#### How Taking Smart, Simple Notes Will Make You a Better Writer
+by [[Drew Coffman]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=wMOACjJzfgM}}
+
+#### Roam Tour: Professor [[Joel Chan]]- Zettelkasten and Evergreen Notes for Generative Thought by [[Robert Haisfield]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=A6PIrVZoZAk&ab_channel=RobertHaisfield}}
+  #[[Page References]] | #[[Right Sidebar]] | #[[Query]] | #[[Linked References]] | #[[Indentation]] 
+
+---
+
 # Audio Player
 
 - You can upload and embed audio into Roam! Check out this interactive demo on [[Conor White-Sullivan]] describing Roam as Excel
@@ -12772,42 +12889,6 @@ by [[Drew Coffman]]
     - #[[/ Commands]] | #[[Audio Player]]
 - Key Commands::
   - `/upload`
-
----
-
-# Templates
-
-### Team GIFS::
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FGTJJMUaPJd.gif?alt=media&token=c47571e2-1ab0-4271-b6bd-10dc0764ebc9)
-  #[[roam/templates]]
-
-### Community Videos::
-
-#### How to create templates in Roam Research by [[Productivity Academy]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=O_-lhwprLXs}}
-  #[[Templates]] | #[[Attributes]] | #[[Sidebar]]
-
-#### Daily Templates in Roam Research by [[Mickey Mellen]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=mK7wa0UXzrk}}
-  #[[Templates]] | #[[Task Management]] | #[[Current time]] | #[[Tags]]
-
-#### Native Templates In Roam Research by [[Praveen Anuraj]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=OxCgJaeUh90}}
-  #[[Attributes]] | #[[Templates]]
-
-### Articles::
-
-#### [How to use templates in Roam Research](https://nesslabs.com/roam-research-templates-tutorial) by [[Anne-Laure Le Cunff]]
-
-#### [How to Create and Use Templates in Roam Research](https://www.appsntips.com/learn/create-use-templates-roam-research/) by [[appsntips]]
-
-### Key Commands::
-
-- Search for template to trigger `;;`
 
 ---
 
@@ -12867,6 +12948,29 @@ by [[Drew Coffman]]
 
 ---
 
+# Roam CLI
+
+- The Roam CLI runs the same tools as [[Local MCP]] as terminal commands: list graphs, search, read pages, and more.
+- It's mainly for AI agents that work through shell commands instead of MCP, such as skill-based setups, and its output is formatted with that in mind. It can work for your own scripts too.
+- Like the MCP server, it talks to your graphs through the [[Desktop App]], and it's documented in the [roam-tools repository](https://github.com/Roam-Research/roam-tools).
+
+### Setting it up
+
+- Install it globally: `npm install -g @roam-research/roam-cli`
+- Run `roam connect` and approve the request in Roam Desktop.
+  - Already connected [[Local MCP]]? Skip that step. The CLI shares the same connection and tokens.
+- Update it the same way you installed it: `npm install -g @roam-research/roam-cli@latest`
+
+### Using it
+
+- `roam list-graphs` shows every graph you've connected.
+- `roam search --query "my notes" --graph my-graph` searches a graph.
+- The `--graph` flag is optional when you've only connected one graph, and nicknames work in place of graph names.
+- The full, current command list is in the [roam-tools repository](https://github.com/Roam-Research/roam-tools).
+- Usage guidelines shared by all the AI connections live at [[Working with AI Tools]].
+
+---
+
 # roam/css
 
 - #.rm-g
@@ -12897,37 +13001,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Notable Graphs
-
-## Directory
-
-### [RoamPublic.com](https://www.roampublic.com/all-texts/)
-
-### [The Roaman Agora](https://roamresearch.com/#/app/The-Roaman-Agora/page/wujSyfjAu)
-
-### [Roam Collective](https://roamresearch.com/#/app/Roam-Collective/page/MorTyZR-2)
-
-### [Roam Book Club]([[Roam Book Club]])
-
-### [Creator Cooperative ](https://roamresearch.com/#/app/Creator-Cooperative)
-
-### [Roam Slack](https://roamresearch.com/#/app/roam-slack)
-
-### [RoamCN](https://roamresearch.com/#/app/RoamCN)
-
-### [Holy Omniscience Graph](https://roamresearch.com/#/app/holy-omniscience/page/c3Z8Q3cb_)
-
-### [Navalmanack](https://roamresearch.com/#/app/Navalmanack)
-
-### [Roam Depot Developers](https://roamresearch.com/#/app/roam-depot-developers)
-
-- 
-
-#### {{[[TODO]]}} Request to be featured
-
-
----
-
 # Project Management
 
 ### Community Videos::
@@ -12937,7 +13010,7 @@ by [[Drew Coffman]]
 - {{[[video]]: https://www.youtube.com/watch?v=NoNebWRn9ZQ&ab_channel=MickeyMellen}}
   #[[TODO/DONE]] | #[[Page References]] | #[[Daily Notes]] | #[[Linked References]] | #[[Date picker]] | #[[Filter]] 
 
-#### PARA in Roam Reserach, Managing projects and tasks by [[Praveen Anuraj]]
+#### PARA in Roam Research, Managing projects and tasks by [[Praveen Anuraj]]
 
 - {{[[video]]: https://www.youtube.com/watch?v=SQ71uG1q79g&ab_channel=PraveenAnuraj}}
   #[[Page References]] | #[[TODO/DONE]] | #[[Query]] | #[[Date picker]] 
@@ -12956,28 +13029,6 @@ by [[Drew Coffman]]
 
 - #[[Page References]] | #[[Query]] | #[[Block References]] | #[[Replace With]] |  #[[text and alias]] | #[[TODO/DONE]]
 - 
-
----
-
-# Query Builder
-
-- The Query Builder is a visual editor for [[Query]] blocks: build and refine a query with menus and pickers instead of writing the syntax by hand.
-- It reads and writes the real query syntax in your block, so you can flip between building visually and editing the text whenever you like.
-- Here's a live one: click the wrench button next to the query's title to open the builder and poke around. (Reading this on the help graph? Your edits aren't saved, so play freely.)
-- {{[[query]]: {and: [[Block References]] {not: [[Change Log]]}}}}
-
-### Opening the builder
-
-- Every query block has a wrench button beside its title. Click it to show or hide the builder.
-- A brand-new query (type `/query` in a block) opens with the builder already showing.
-- The builder sits right above the query's live results, so you can watch the matches change as you edit.
-
-### Building a query
-
-- A query is a stack of clauses. Click **Add clause** to add one, and click an existing clause's name to switch its type or delete it.
-- Clause types: `[[page]]` and `((block))` references, the combinators **and**, **or**, and **not**, full-text **search**, **between** for date ranges (including relative dates), **daily notes**, and **by** / **created by** / **edited by** to filter by author.
-- Each clause type brings the right picker with it: page search, block search, free text, user search, or a date picker.
-- For what these clauses mean and the underlying syntax, see [[Query]].
 
 ---
 
@@ -13054,6 +13105,28 @@ by [[Drew Coffman]]
 
 ---
 
+# Roam Query Builder
+
+- The Query Builder is a visual editor for [[Query]] blocks: build and refine a query with menus and pickers instead of writing the syntax by hand.
+- It reads and writes the real query syntax in your block, so you can flip between building visually and editing the text whenever you like.
+- Here's a live one: click the wrench button next to the query's title to open the builder and poke around. (Reading this on the help graph? Your edits aren't saved, so play freely.)
+- {{[[query]]: {and: [[Block References]] {not: [[Change Log]]}}}}
+
+### Opening the builder
+
+- Every query block has a wrench button beside its title. Click it to show or hide the builder.
+- A brand-new query (type `/query` in a block) opens with the builder already showing.
+- The builder sits right above the query's live results, so you can watch the matches change as you edit.
+
+### Building a query
+
+- A query is a stack of clauses. Click **Add clause** to add one, and click an existing clause's name to switch its type or delete it.
+- Clause types: `[[page]]` and `((block))` references, the combinators **and**, **or**, and **not**, full-text **search**, **between** for date ranges (including relative dates), **daily notes**, and **by** / **created by** / **edited by** to filter by author.
+- Each clause type brings the right picker with it: page search, block search, free text, user search, or a date picker.
+- For what these clauses mean and the underlying syntax, see [[Query]].
+
+---
+
 # News and Press
 
 - 
@@ -13082,6 +13155,35 @@ by [[Drew Coffman]]
 
 ---
 
+# Beginner's Guide
+
+## A short but comprehensive guide
+
+#### A Beginner’s Guide to Roam Research by [[Drew Coffman]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=X6OOos4met0}}
+
+- #[[Daily Notes]] | #[[/ Commands]] | #[[Bidirectional linking]]
+
+## [[Why Roam?]]
+
+#### Leonardo Da Vinci and Roam-Thinking by [[Drew Coffman]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=S3qJdvPzOC8}}
+
+## Best [[Features]] of Roam
+
+#### The Simple Guide to Roam Research by [[Shu Omi]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=RTI6Mxu3YiI}}
+
+- #[[Daily Notes]] | #[[Bidirectional linking]]
+
+## What [[Workflows]] can I use Roam for?
+
+
+---
+
 # Delete Graph
 
 - Deleting a graph is permanent. Once deleted, it cannot be recovered.
@@ -13102,6 +13204,23 @@ by [[Drew Coffman]]
 
 - **Delete local cache**, in the same settings tab, is a different thing: it clears the graph's copy on your device, and any unsynced local changes are lost with it. A hosted graph re-downloads from the server afterwards.
 - A [[Local Graph]] exists only in your browser, so deleting one removes it completely.
+
+---
+
+# Community
+
+- [[Roam Slack]]
+  - [Join us on Slack](https://join.slack.com/t/roamresearch/shared_invite/zt-1x2y9jkx1-KkSjlsWeTdfXy5H8hMB7tg) to learn new workflows, get tips and tricks from your fellow Roamans, and much more!
+- [[Twitter]]
+  - Join the [#roamcult](https://twitter.com/search?q=%23roamcult&src=typeahead_click) and keep up to date with all the latest and greatest in Roam
+- [[Articles]]
+  - An (incomplete) list of all the articles written about Roam!
+- [[Community Videos]]
+  - A list of all the great videos made by our wonderful community
+- [[Courses]]
+  - Learn how to use Roam with a collection of free and paid online courses made by top community members
+- [[Notable Graphs]]
+  - A list of public graphs available to browse or contribute to
 
 ---
 
@@ -13142,6 +13261,37 @@ by [[Drew Coffman]]
   - `/video`
   - Or just paste the video URL and click on the play button for the URL to auto convert to a video embed  
     - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FnPe_IDkfH6.gif?alt=media&token=0ea93260-9fe4-4e7d-9c45-adf2f698328a)
+
+---
+
+# Templates
+
+### Team GIFS::
+
+- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FGTJJMUaPJd.gif?alt=media&token=c47571e2-1ab0-4271-b6bd-10dc0764ebc9)
+  #[[roam/templates]]
+
+### Community Videos::
+
+#### How to create templates in Roam Research by [[Productivity Academy]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=O_-lhwprLXs}}
+  #[[Templates]] | #[[Attributes]] | #[[Sidebar]]
+
+#### Daily Templates in Roam Research by [[Mickey Mellen]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=mK7wa0UXzrk}}
+  #[[Templates]] | #[[Task Management]] | #[[Current time]] | #[[Tags]]
+
+### Articles::
+
+#### [How to use templates in Roam Research](https://nesslabs.com/roam-research-templates-tutorial) by [[Anne-Laure Le Cunff]]
+
+#### [How to Create and Use Templates in Roam Research](https://www.appsntips.com/learn/create-use-templates-roam-research/) by [[appsntips]]
+
+### Key Commands::
+
+- Search for template to trigger `;;`
 
 ---
 
@@ -13365,50 +13515,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Attributes
-
-- Community Videos::
-  - Roam Basics Part 3: Attributes and Use of / by [[Dr Alex Popadich]]
-    - {{[[video]]: https://www.youtube.com/watch?v=uO1zMII3gWs}}
-      #[[/ Commands]] | #[[Attributes]]
-  - Using Template Pages in Roam (Metadata) by [[Dalton Mabery]]
-    - {{[[video]]: https://www.youtube.com/watch?v=FkIzSeXydZ4}}
-      #[[Templates]] | #[[Attributes]] | #[[Sidebar]]
-  - Task Management, Roam Research: Dealing with Dates by [[R.J. Nestor]]
-    - {{[[video]]: https://www.youtube.com/watch?v=MyDpU4Shwcw}}
-      #[[Filter]] | #[[Linked References]] | #[[Attributes]] 
-  - An in-depth look at Attributes in [[Roam Research]] + BONUS by [[m4rrc0]]
-    - {{[[video]]: https://www.youtube.com/watch?v=uWXm85VFOQs}}
-      #[[Attributes]]
-  - 
-
----
-
-# Meeting notes
-
-### Community Videos::
-
-#### Mini CRM in Roam Research: Logging meeting notes by [[R.J. Nestor]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=CnakhkONQ_g&t=6s&ab_channel=R.J.Nestor}}
-  #[[Daily Notes]] | #[[Tags]] | #[[Indentation]] | #[[Linked References]] | #[[Filter]] | #[[Right Sidebar]]
-
-### Roam Team Videos::
-
-#### Meeting Notes in Roam by [[Conor White-Sullivan]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=wMOOU8uFLZI&t=129s&ab_channel=ConorWhite-Sullivan}}
-  #[[Page References]] | #[[Daily Notes]] | #[[Date picker]] | #[[Linked References]] | #[[TODO/DONE]] | #[[Right Sidebar]] | #[[Filter]] | #[[Query]] | #[[Block References]] | #[[Alias]]
-
-#### Taking Notes on 1:1s by [[Conor White-Sullivan]]
-
-- {{[[video]]: https://www.youtube.com/watch?v=otoF_ane688&ab_channel=ConorWhite-Sullivan}} #[[Conor White-Sullivan]]
-- {{[[video]]: https://www.youtube.com/watch?v=otoF_ane688&ab_channel=ConorWhite-Sullivan}}
-  #[[Current time]] | #[[Page References]] | #[[Right Sidebar]] | #[[Linked References]] | #[[Query]] | #[[TODO/DONE]] | #[[Block References]] 
-- 
-
----
-
 # Long Videos
 
 #### Implementing a Digital Zettelkasten using Block References in Roam Research with [[Beau Haan]] by [[Robert Haisfield]]
@@ -13453,7 +13559,7 @@ by [[Drew Coffman]]
 
 # Bidirectional linking
 
-- It doesn't matter what [page]([[Pages]]) you've written a note on, if you mention an idea, every place where you mentioned that idea will get collected underneath that page in the [[Linked References]] section when you turn turn that idea into a [page reference]([[Page References]])
+- It doesn't matter what [page]([[Pages]]) you've written a note on, if you mention an idea, every place where you mentioned that idea will get collected underneath that page in the [[Linked References]] section when you turn turn that idea into a [page reference]([[Page References]]).
 - Roam Team Videos::
   - {{[[video]]: https://www.youtube.com/watch?v=v9s3pusI1JQ}}
   - {{[[video]]: https://www.youtube.com/watch?v=lHkMq3aqDtw&ab_channel=ConorWhite-Sullivan}}
@@ -13463,20 +13569,6 @@ by [[Drew Coffman]]
   - `[[` to find or create [[Page References]]
   - `cmd+u` (macOS) / `ctrl+u` (PC) to [[Find or create page]]
   - `#` to find or create [[Page References]] as a [tag]([[Tags]])
-
----
-
-# Page References
-
-- Page references are links to [[Pages]] in your graph
-- You can reference an existing page by typing `[[`, which will open a dropdown menu with reference it in place or reference an existing page
-  - All references to a page that have been linked through this method will appear in that pages [[Linked References]]
-  - You can transform any mention of a page to a page reference by opening up the [[Unlinked References]] underneath where you can see and link all the mentions of a page that haven't been linked yet
-- Roam Team Videos::
-  - {{[[video]]: https://www.youtube.com/watch?v=v9s3pusI1JQ}}
-  - {{[[video]]: https://www.youtube.com/watch?v=lHkMq3aqDtw&ab_channel=ConorWhite-Sullivan}}
-- Community Videos::
-- Articles::
 
 ---
 
@@ -13520,26 +13612,6 @@ by [[Drew Coffman]]
 
 ---
 
-# Sharing
-
-#### Sharing graph as read-only
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fks9BpYNOVI.gif?alt=media&token=5fabb1d0-1981-4a47-a2e0-f2d397b2c3b0)
-
-#### Sharing graph as publicly editable
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FEqKJeMhJdP.gif?alt=media&token=9cb021da-d509-496f-b10d-4e8c696f72a8)
-
-#### Sharing graph with specific editors
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FJKD9mM0cwC.gif?alt=media&token=2a28d233-3de1-4667-8c07-5f1dcff7b670)
-
-#### Sharing graph with specific readers
-
-- ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FrdZtxdwzbn.gif?alt=media&token=d46dd91e-4963-4dca-bb5f-82f7975e1b6b)
-
----
-
 # Delete Account
 
 - Deleting your account deletes **every graph you're the only admin of, along with the files uploaded to them**.
@@ -13552,6 +13624,27 @@ by [[Drew Coffman]]
 - Open [[Settings]] → **Account** → **Danger Zone** → **Delete my account**.
 - Type your email address to confirm, then click **I understand the consequences, delete my account**.
 - You can also delete your account from the mobile app's account settings.
+
+---
+
+# Notable Graphs
+
+### [Holy Omniscience Graph](https://roamresearch.com/#/app/holy-omniscience/page/c3Z8Q3cb_)
+
+### [visakanv](https://roamresearch.com/#/app/visakanv-public/page/45EU_k-rI)
+
+### [Roam Slack Backup](https://roamresearch.com/#/app/roam-slack)
+
+### [Navalmanack](https://roamresearch.com/#/app/Navalmanack)
+
+### [Roam Collective](https://roamresearch.com/#/app/Roam-Collective/page/MorTyZR-2)
+
+### [RoamCN](https://roamresearch.com/#/app/RoamCN)
+
+### [Roam Depot Developers](https://roamresearch.com/#/app/roam-depot-developers)
+
+#### [Contact support to request to be featured](mailto:support@roamresearch.com)
+
 
 ---
 
@@ -13595,16 +13688,26 @@ by [[Drew Coffman]]
 
 ---
 
-# Word count
+# Meeting notes
 
-- Word count counts the number of words in a block, for example
-  - The below child block has 115 words
-    - Roam is an online workspace for organizing and evaluating knowledge. The system is built on a directed graph, which frees it from the constraints of the classic file tree. Users can remix and connect ideas in multiple overlapping hierarchies, with each unit of information becoming a node in a dynamic network. Any given node can occupy multiple positions simultaneously, convey information through defined relationships, and populate changes throughout the graph. With weightings assigned to the strength of relationships between nodes, Roam also becomes a tool for Bayesian inference and decision making. The ultimate goal is to extend the system to collaborative reasoning, allowing groups to build shared mental maps and make faster and better-informed decisions. {{[[word-count]]}}
-  - The below child block has 0 words
-    - {{word-count}}
-- You can also go to ALL PAGES on your [[Left Sidebar]] and view the pages with the most to least word count, or vice versa 
-- Key Commands::
-  - `/word`
+### Community Videos::
+
+#### Mini CRM in Roam Research: Logging meeting notes by [[R.J. Nestor]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=CnakhkONQ_g&t=6s&ab_channel=R.J.Nestor}}
+  #[[Daily Notes]] | #[[Tags]] | #[[Indentation]] | #[[Linked References]] | #[[Filter]] | #[[Right Sidebar]]
+
+### Roam Team Videos::
+
+#### Meeting Notes in Roam by [[Conor White-Sullivan]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=wMOOU8uFLZI&t=129s&ab_channel=ConorWhite-Sullivan}}
+  #[[Page References]] | #[[Daily Notes]] | #[[Date picker]] | #[[Linked References]] | #[[TODO/DONE]] | #[[Right Sidebar]] | #[[Filter]] | #[[Query]] | #[[Block References]] | #[[Alias]]
+
+#### Taking Notes on 1:1s by [[Conor White-Sullivan]]
+
+- {{[[video]]: https://www.youtube.com/watch?v=otoF_ane688&ab_channel=ConorWhite-Sullivan}}
+  #[[Current time]] | #[[Page References]] | #[[Right Sidebar]] | #[[Linked References]] | #[[Query]] | #[[TODO/DONE]] | #[[Block References]] 
 
 ---
 
@@ -13660,15 +13763,15 @@ by [[Drew Coffman]]
 
 ---
 
-# Roam Depot
+# Page References
 
-- Official [[Plugins]]
-  - [[July 21st, 2021]]
-    - https://twitter.com/RoamResearch/status/1550192726540374016?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
-  - [[PhonetoNote]]
-    - https://twitter.com/phonetonote/status/1551764556707397633?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
-  - [[Matter]]
-    - https://twitter.com/matter/status/1549490849595080704?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
+- Page references are links to [[Pages]] in your graph
+- You can reference an existing page by typing `[[`, which will open a dropdown menu with reference it in place or reference an existing page
+  - All references to a page that have been linked through this method will appear in that pages [[Linked References]]
+  - You can transform any mention of a page to a page reference by opening up the [[Unlinked References]] underneath where you can see and link all the mentions of a page that haven't been linked yet
+- Roam Team Videos::
+  - {{[[video]]: https://www.youtube.com/watch?v=v9s3pusI1JQ}}
+  - {{[[video]]: https://www.youtube.com/watch?v=lHkMq3aqDtw&ab_channel=ConorWhite-Sullivan}}
 
 ---
 
@@ -13684,6 +13787,18 @@ by [[Drew Coffman]]
 
 ---
 
+# Word count
+
+- The word count component counts the number of words in a block, for example
+  - The below child block has 116 words
+    - Roam is an online workspace for organizing and evaluating knowledge. The system is built on a directed graph, which frees it from the constraints of the classic file tree. Users can remix and connect ideas in multiple overlapping hierarchies, with each unit of information becoming a node in a dynamic network. Any given node can occupy multiple positions simultaneously, convey information through defined relationships, and populate changes throughout the graph. With weightings assigned to the strength of relationships between nodes, Roam also becomes a tool for Bayesian inference and decision making. The ultimate goal is to extend the system to collaborative reasoning, allowing groups to build shared mental maps and make faster and better-informed decisions. {{[[word-count]]}}
+  - The below child block has 0 words
+    - {{word-count}}
+- Add one by typing `/word` in any block and choosing **Word Count**.
+- You can also go to [[All Pages]] on your [[Left Sidebar]] and view the pages with the most to least word count, or vice versa 
+
+---
+
 # Desktop App
 
 - The desktop app is the full Roam in a standalone window, for Mac, Windows, and Linux. [[Install Roam]] covers the download.
@@ -13694,14 +13809,14 @@ by [[Drew Coffman]]
 - `roam://` deep links open a specific graph, page, or block straight in the app, which makes Roam linkable from other tools.
 - The app is a thin shell around Roam, with a version number of its own. It keeps itself up to date automatically.
 - The Roam inside it updates just like the web app does, so both stay current without you doing anything. [[Updating Roam]] has the details.
-- Local API tokens, for connecting local AI tools to your graphs, only exist on desktop.
+- [[Local API Tokens]], for connecting local AI tools to your graphs via [[Local MCP]], only exist on desktop.
 
 ---
 
 # Why Roam?
 
 - This thread of threads on Twitter answers the question of "Why Roam?" pretty well, if not succinctly 😉
-- https://twitter.com/Conaw/status/1198399750032232449?s=20a
+- https://twitter.com/Conaw/status/1198399750032232449?s=20
 - *Conor mentions the old help graph in this thread. If you are searching for the white paper, he mentioned, find it in this graph [here]([[White Paper]]).
 - 
 - Community Videos::
@@ -13765,14 +13880,16 @@ by [[Drew Coffman]]
 
 ---
 
-# Version Control
+# Attributes
 
-- Version control helps you create different versions of of the same block, often used when you want to make multiple drafts of something
-  - This is an example with Roam's elevator pitch, click on the numbers to see the different versions
-    - Roam is a tool to compound knowledge, something I'd be proud to look back on how my brain has grew and evolved 20 years later.
-- Key Commands::
-  - `Ctrl+,` for Windows
-  - `Cmd+,` for Mac
+- Community Videos::
+  - Task Management, Roam Research: Dealing with Dates by [[R.J. Nestor]]
+    - {{[[video]]: https://www.youtube.com/watch?v=MyDpU4Shwcw}}
+      #[[Filter]] | #[[Linked References]] | #[[Attributes]] 
+  - An in-depth look at Attributes in [[Roam Research]] + BONUS by [[m4rrc0]]
+    - {{[[video]]: https://www.youtube.com/watch?v=uWXm85VFOQs}}
+      #[[Attributes]]
+  - 
 
 ---
 
@@ -13833,6 +13950,16 @@ by [[Drew Coffman]]
   - {{[[slider]]}}
 - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FqaRPRyZuKx.gif?alt=media&token=3a89f74b-4888-4b79-9efa-35d27e88fd23)
   - Other users can click on the slider to give their rating as well
+
+---
+
+# Version Control
+
+- Version control helps you create different versions of of the same block, often used when you want to make multiple drafts of something
+  - This is an example with Roam's elevator pitch, click on the numbers to see the different versions
+    - Roam is a tool to compound knowledge, something I'd be proud to look back on how my brain has grew and evolved 20 years later.
+- Key Commands::
+  - `Ctrl+,` on both Mac and Windows
 
 ---
 
@@ -13984,7 +14111,7 @@ by [[Drew Coffman]]
 
 #### Description::
 
-- The Linked References section at the bottom of each page collects all the references to that page that 
+- The Linked References section at the bottom of each page collects all the references to that page from across your graph, grouped by the page they appear on
 - You can [filter]([[Filter]]) the linked references based on the other pages referenced in the same parent path
 
 ---
@@ -14057,10 +14184,6 @@ by [[Drew Coffman]]
 ## January 8th, 2025
 
 - 
-
-## November 26th, 2024
-
-- [[test mobile long press]]
 
 ## June 17th, 2024
 
@@ -14343,6 +14466,16 @@ by [[Drew Coffman]]
       - blue #.bg-blue-500 #.text-white 
       - red #.bg-red-500  #.text-white 
     - Propogates many levels up too -- see ((Styling changes applied to blocks via `#.style-tags-like-this` now propogate to references of those blocks red #.bg-red-500  #.text-white , white and blue #.bg-blue-500 #.text-white )) 
+
+## July 21st, 2021
+
+- [[Roam Depot]]
+  - https://twitter.com/RoamResearch/status/1550192726540374016?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
+  - [[PhonetoNote]]
+    - https://twitter.com/phonetonote/status/1551764556707397633?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
+  - [[Matter]]
+    - https://twitter.com/matter/status/1549490849595080704?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
+- 
 
 ## June 11th, 2021
 

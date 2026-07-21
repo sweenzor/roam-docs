@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local MCP — Roam Research Docs</title>
+<meta name="description" content="The local MCP server connects AI tools running on your computer, like Claude Desktop, Claude Code, Codex, or Cursor, to your graphs through ">
+<link rel="canonical" href="https://roamdocs.fyi/help/local-mcp">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Local MCP — Roam Research Docs">
+<meta property="og:description" content="The local MCP server connects AI tools running on your computer, like Claude Desktop, Claude Code, Codex, or Cursor, to your graphs through ">
+<meta property="og:url" content="https://roamdocs.fyi/help/local-mcp">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"Local MCP","item":"https://roamdocs.fyi/help/local-mcp"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Local MCP</h1>
+<p class="meta"><a href="local-mcp.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/hTcF3-dXo">view in Roam Research</a></p>
+<ul>
+<li>The local MCP server connects AI tools running on your computer, like Claude Desktop, Claude Code, Codex, or Cursor, to your graphs through the <a href="/help/desktop-app">Desktop App</a>.
+</li>
+<li>Nothing passes through Roam's servers, so it works fully with <a href="/help/encrypted-graphs">Encrypted Graphs</a> and with a Local Graph.
+</li>
+<li>To reach your graphs from anywhere, with no desktop app running, use <a href="/help/roam-mcp">Roam MCP</a> instead.
+</li>
+<li>The <a href="/help/roam-cli">Roam CLI</a> runs the same tools as terminal commands, for AI agents that work through the shell instead of MCP.
+</li>
+<li>The full documentation lives in the <a href="https://github.com/Roam-Research/roam-tools">roam-tools repository</a>.
+</li>
+</ul>
+<h3>Requirements</h3>
+<ul>
+<li>Node.js 18 or later.
+</li>
+<li>The <a href="/help/desktop-app">Desktop App</a>. The local API isn't available in the web version.
+</li>
+</ul>
+<h3>Setting it up</h3>
+<ul>
+<li>The easy way: if your AI tool can run commands (Claude Code, Codex, Cursor), give it the <a href="https://github.com/Roam-Research/roam-tools">roam-tools repository</a> link and ask it to set up the Roam MCP server for you.
+</li>
+<li>To do it by hand instead: add the server to your tool. For Claude Code that's one command: <code>claude mcp add -s user roam-mcp -- npx -y @roam-research/roam-mcp</code> (Config snippets for Claude Desktop and other tools are in the <a href="https://github.com/Roam-Research/roam-tools">repository README</a>.)
+</li>
+<li>Then ask the AI to connect your graph. No command needed: the server has a tool for connecting graphs, and Roam Desktop will ask you to approve.
+</li>
+<li>Either way, connecting a graph ends with an approval request in Roam Desktop, naming the tool and the graph. Approving creates a Local API Tokens.
+</li>
+<li>If Roam isn't running when a tool calls, the server launches the desktop app for you and retries.
+</li>
+<li>Before letting an AI loose on a real graph, read <a href="/help/working-with-ai-tools">Working with AI Tools</a>.
+</li>
+</ul>
+</body>
+</html>

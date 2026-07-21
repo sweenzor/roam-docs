@@ -23,20 +23,11 @@
 - Marc shows you how to go from 0 to 100 in Roam real quick.
 - The video also provides timestamps for all the tips, and Marc is including updates and amendments to his tips as Roam evolves and things inevitably change.
 
-### [60 Seconds To Roam](https://www.youtube.com/playlist?list=PL86ba93-ysP_u1i2D44yI9c_tJ5YyTNK-) by [[Mark McElroy]]
-
-- A very short and sweet 6-part course totalling less than 7 minutes total run time.
-- Mark guides you through the essentials of Roam in each 60-second episode.
-
 ## Paid
 
 ### [Your Road to Roam](https://courses.rjnestor.com/p/your-road-to-roam) by [[R.J. Nestor]] $90
 
 - RJ teaches the nuts and bolts of Roam's feature set and provide learners with the tools to develop their own unique workflows based on their specific interests and needs.
-
-### [Magical Academic Note-Taking](https://roam-for-results.teachable.com/p/magical-academic-note-taking) by [[Lisa-Marie Cabrelli]] $129
-
-- Learn how to create, collect and organize magical, time-traveling, smart notes and help your dissertation or thesis write itself. After taking the Magical Academic Note-Taking course, you'll have the skills and process in place to write every day without hesitation. Complete this course and [writing]([[Writing]]) will be fun. Instead of dreading the page, you'll run to the page.
 
 ### [Roam Untangled](https://www.jamoe.org/roam) by [[Jamie Miles]] $0-$89
 
@@ -54,4 +45,3 @@
 ### [Roam Essentials](https://nesslabs.com/roam-essentials) by [[Anne-Laure Le Cunff]] $49
 
 - Learn how to make the most out of Roam with real-life examples and powerful mental models. Nesslabs's Anne-Laure Le Cunff will guide you through the essentials with short videos and templates for a variety of workflows, helping you kickstart your Roam journey.
-- 

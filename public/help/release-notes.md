@@ -67,10 +67,6 @@
 
 - 
 
-## November 26th, 2024
-
-- [[test mobile long press]]
-
 ## June 17th, 2024
 
 - 
@@ -352,6 +348,16 @@
       - blue #.bg-blue-500 #.text-white 
       - red #.bg-red-500  #.text-white 
     - Propogates many levels up too -- see ((Styling changes applied to blocks via `#.style-tags-like-this` now propogate to references of those blocks red #.bg-red-500  #.text-white , white and blue #.bg-blue-500 #.text-white )) 
+
+## July 21st, 2021
+
+- [[Roam Depot]]
+  - https://twitter.com/RoamResearch/status/1550192726540374016?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
+  - [[PhonetoNote]]
+    - https://twitter.com/phonetonote/status/1551764556707397633?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
+  - [[Matter]]
+    - https://twitter.com/matter/status/1549490849595080704?s=20&t=qEEBfrUN4jkSq9qSt5HDAQ
+- 
 
 ## June 11th, 2021
 

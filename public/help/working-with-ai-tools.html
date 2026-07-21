@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Working with AI Tools — Roam Research Docs</title>
+<meta name="description" content="These guidelines apply to every way of connecting an AI to your graphs: Roam MCP, Local MCP, and the Roam CLI.">
+<link rel="canonical" href="https://roamdocs.fyi/help/working-with-ai-tools">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Working with AI Tools — Roam Research Docs">
+<meta property="og:description" content="These guidelines apply to every way of connecting an AI to your graphs: Roam MCP, Local MCP, and the Roam CLI.">
+<meta property="og:url" content="https://roamdocs.fyi/help/working-with-ai-tools">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"Working with AI Tools","item":"https://roamdocs.fyi/help/working-with-ai-tools"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Working with AI Tools</h1>
+<p class="meta"><a href="working-with-ai-tools.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/ss7IJ5SMK">view in Roam Research</a></p>
+<ul>
+<li>These guidelines apply to every way of connecting an AI to your graphs: <a href="/help/roam-mcp">Roam MCP</a>, <a href="/help/local-mcp">Local MCP</a>, and the <a href="/help/roam-cli">Roam CLI</a>.
+<ul>
+<li>One thing this page does not cover: <a href="/help/roam-depot">Roam Depot</a> extensions that use AI. Those run inside the app under each extension's own rules, so the token, permission, and attribution guarantees here don't apply to them.
+</li>
+</ul>
+</li>
+<li>The individual pages cover installing each one. This page is about using them well.
+</li>
+</ul>
+<h3>What to ask for</h3>
+<ul>
+<li>An AI connected to your graph answers from your notes, so it's useful in ways a plain chatbot isn't.
+</li>
+<li>Ask it about your own thinking:
+<ul>
+<li>&quot;What do my notes say about interviewing?&quot; It searches your graph, reads the relevant pages, and answers with links to the blocks it drew from.
+</li>
+<li>&quot;What did I write about this project last month?&quot; It reads your daily notes and pages and summarizes, with references.
+</li>
+<li>Turn on <a href="/help/semantic-search-experimental">Semantic search (Experimental)</a> (local MCP only) and it can find notes by meaning, so the old notes surface even when the words don't match.
+</li>
+</ul>
+</li>
+<li>Have it capture for you:
+<ul>
+<li>Paste in raw meeting notes and ask it to file them using one of your <a href="/help/templates">Templates</a>.
+</li>
+<li>Forward it ideas mid-conversation: &quot;add this to my daily note under Ideas.&quot;
+</li>
+</ul>
+</li>
+<li>Put it to work on the graph itself:
+<ul>
+<li>&quot;Link this page up.&quot; It finds the pages your text mentions and adds the references.
+</li>
+<li>&quot;Find blocks that mention the offsite but aren't tagged, and tag them.&quot; Review the plan before it runs; bulk edits are where mistakes get expensive.
+</li>
+</ul>
+</li>
+<li>Draft with it:
+<ul>
+<li>&quot;Draft a blog post from my notes on this topic, on a new page.&quot; You get a draft whose sources are a click away, in your graph where you can reshape it block by block.
+</li>
+</ul>
+</li>
+</ul>
+<h3>Guide the AI with graph guidelines</h3>
+<ul>
+<li>Create a page called <a href="/help/roam-agent-guidelines">roam/agent guidelines</a> in your graph, and connected AI tools will read it before they start working.
+</li>
+<li>It's the place for your conventions: how you tag, where things get filed, what the AI should leave alone.
+<ul>
+<li>How you name things: what page titles look like, what your namespaces mean.
+</li>
+<li>Your tags and what they're for: &quot;#inbox means unprocessed, #ref means external material.&quot;
+</li>
+<li>Where things get filed: which page captures go to, where drafts belong.
+</li>
+<li>What to leave alone: pages or sections the AI shouldn't touch.
+</li>
+<li>How you like blocks written: for example, one idea per block, links over plain mentions.
+</li>
+</ul>
+</li>
+</ul>
+<h3>Take care</h3>
+<ul>
+<li>A full-access connection can read and write everything in the graph, and an AI's changes can be hard to undo. There is always <a href="/help/graph-history">Graph History</a> if something disastrous happens
+</li>
+<li>Review what the assistant plans to write before confirming it.
+</li>
+<li>Blocks tagged <code>#.rm-hide</code> or <code>#.rm-private</code> are left out of what the read tools return. This is a convenience filter, not a security guarantee, because the raw query tool reads the database directly.
+</li>
+</ul>
+<h3>Access and permissions</h3>
+<ul>
+<li>Every connection authenticates with a token that carries only the scopes you approved. See Local API Tokens.
+</li>
+<li>A connection can never do more than your own account can. If your access to a shared graph shrinks, so does the token's.
+</li>
+<li>Writes made through a connection are attributed to it, so version history shows what an AI changed.
+<ul>
+<li>Hover a bullet to see its author, and a query like <code>{{query: {by: [[Your Name (AI)]]}}}</code> collects everything an assistant has written in one place.
+</li>
+</ul>
+</li>
+</ul>
+</body>
+</html>

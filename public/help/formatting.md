@@ -24,7 +24,7 @@
 #### [[Strikethrough]]
 
 - ~~Strike~~ Cross things out using `~~double tildes~~`.
-  - Use `cmd+y` ( `ctrl+y` on PC) to strike out the next word: Evernote
+  - Use `cmd+y` (`win+y` on PC) to strike out the next word: Evernote
   - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FlGhHJyz0-r.gif?alt=media&token=6c1bfdf0-8515-4390-8f7d-73abb19952a7)
 - ℹ️ Remember, you don't have to remember all of this- just type `/` in any block to bring up the [slash commands]([[/ Commands]]). #.box
 
@@ -77,7 +77,7 @@
 
 - You can make a header by using the Markdown formatting by typing `#`, `##`, and `###` at the start of a line for H1, H2, and H3 respectively
   - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FCzCS7AMEXp.gif?alt=media&token=e2888dab-0ed6-4625-9e83-c432df314846)
-- You can also make headings with the 
+- You can also make headings with the keyboard shortcuts below
   - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F0O9MDlWQAX.gif?alt=media&token=029598e0-3d9d-462f-b37c-a7af7d0614d4)
 - Key Commands::
   - `cmd+opt+1` (macOS) / `ctrl+opt+1` (PC)

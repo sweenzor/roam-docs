@@ -1,6 +1,6 @@
 {
  "graph": "developer-documentation",
- "exportedAt": "2026-07-19T07:43:34.847Z",
+ "exportedAt": "2026-07-21T07:49:58.442Z",
  "attributes": [
   {
    "attr": ":attrs/lookup",
@@ -64,7 +64,7 @@
   },
   {
    "attr": ":block/uid",
-   "entities": 5860,
+   "entities": 5861,
    "type": "string",
    "example": "\"hwhK9Kj-n\""
   },
@@ -82,13 +82,13 @@
   },
   {
    "attr": ":create/time",
-   "entities": 5477,
+   "entities": 5478,
    "type": "number",
    "example": "1619841442834"
   },
   {
    "attr": ":create/user",
-   "entities": 5476,
+   "entities": 5477,
    "type": "number",
    "example": "828"
   },
@@ -100,13 +100,13 @@
   },
   {
    "attr": ":edit/time",
-   "entities": 5942,
+   "entities": 5943,
    "type": "number",
    "example": "1636016072031"
   },
   {
    "attr": ":edit/user",
-   "entities": 5710,
+   "entities": 5711,
    "type": "number",
    "example": "828"
   },
@@ -136,31 +136,31 @@
   },
   {
    "attr": ":log/id",
-   "entities": 229,
+   "entities": 230,
    "type": "number",
    "example": "1671552971449"
   },
   {
    "attr": ":node/title",
-   "entities": 407,
+   "entities": 408,
    "type": "string",
    "example": "\"February 26th, 2026\""
   },
   {
    "attr": ":page/edit-nonce",
-   "entities": 407,
+   "entities": 408,
    "type": "string",
    "example": "\"BdToZgaT-\""
   },
   {
    "attr": ":page/edit-time",
-   "entities": 407,
+   "entities": 408,
    "type": "number",
    "example": "1615210312839"
   },
   {
    "attr": ":page/edit-user",
-   "entities": 407,
+   "entities": 408,
    "type": "number",
    "example": "828"
   },
@@ -172,7 +172,7 @@
   },
   {
    "attr": ":page/word-count",
-   "entities": 407,
+   "entities": 408,
    "type": "number",
    "example": "8961"
   },

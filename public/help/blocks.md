@@ -20,7 +20,7 @@
 - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FOMLRPp1fPc.gif?alt=media&token=72fc6367-48f3-4b02-b740-f5baa7178973)
 - Key Commands::
   - `Tab` to indent
-  - `Tab+enter` to outdent
+  - `Shift+Tab` to outdent
 
 #### Collapsing and expanding
 

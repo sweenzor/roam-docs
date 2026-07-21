@@ -41,11 +41,11 @@
   <url><loc>https://roamdocs.fyi/help/navigation</loc></url>
   <url><loc>https://roamdocs.fyi/help/beating-the-averages</loc></url>
   <url><loc>https://roamdocs.fyi/help/kanban</loc></url>
-  <url><loc>https://roamdocs.fyi/help/coaching</loc></url>
   <url><loc>https://roamdocs.fyi/help/json-schema</loc></url>
   <url><loc>https://roamdocs.fyi/help/examples-of-q-query-blocks</loc></url>
   <url><loc>https://roamdocs.fyi/help/query</loc></url>
   <url><loc>https://roamdocs.fyi/help/apple-shortcuts-speak-to-roam</loc></url>
+  <url><loc>https://roamdocs.fyi/help/commands</loc></url>
   <url><loc>https://roamdocs.fyi/help/block-context-menu</loc></url>
   <url><loc>https://roamdocs.fyi/help/features</loc></url>
   <url><loc>https://roamdocs.fyi/help/pipedream-workflows</loc></url>
@@ -59,57 +59,62 @@
   <url><loc>https://roamdocs.fyi/help/zapier-integration</loc></url>
   <url><loc>https://roamdocs.fyi/help/table</loc></url>
   <url><loc>https://roamdocs.fyi/help/mermaid-diagrams</loc></url>
+  <url><loc>https://roamdocs.fyi/help/create-api-tokens</loc></url>
   <url><loc>https://roamdocs.fyi/help/security</loc></url>
   <url><loc>https://roamdocs.fyi/help/right-sidebar</loc></url>
-  <url><loc>https://roamdocs.fyi/help/commands</loc></url>
-  <url><loc>https://roamdocs.fyi/help/courses</loc></url>
+  <url><loc>https://roamdocs.fyi/help/roam-depot</loc></url>
+  <url><loc>https://roamdocs.fyi/help/working-with-ai-tools</loc></url>
+  <url><loc>https://roamdocs.fyi/help/sharing</loc></url>
   <url><loc>https://roamdocs.fyi/help/updating-roam</loc></url>
-  <url><loc>https://roamdocs.fyi/help/create-api-tokens</loc></url>
-  <url><loc>https://roamdocs.fyi/help/articles</loc></url>
   <url><loc>https://roamdocs.fyi/help/developer-documentation</loc></url>
   <url><loc>https://roamdocs.fyi/help/search</loc></url>
+  <url><loc>https://roamdocs.fyi/help/courses</loc></url>
   <url><loc>https://roamdocs.fyi/help/roam-reader</loc></url>
   <url><loc>https://roamdocs.fyi/help/advanced-search</loc></url>
+  <url><loc>https://roamdocs.fyi/help/articles</loc></url>
   <url><loc>https://roamdocs.fyi/help/tag-styles</loc></url>
   <url><loc>https://roamdocs.fyi/help/task-management</loc></url>
   <url><loc>https://roamdocs.fyi/help/all-graphs-page</loc></url>
+  <url><loc>https://roamdocs.fyi/help/comments</loc></url>
   <url><loc>https://roamdocs.fyi/help/filter</loc></url>
   <url><loc>https://roamdocs.fyi/help/welcome-to-roam-v2</loc></url>
-  <url><loc>https://roamdocs.fyi/help/zettelkasten</loc></url>
   <url><loc>https://roamdocs.fyi/help/pages</loc></url>
   <url><loc>https://roamdocs.fyi/help/roam-render</loc></url>
+  <url><loc>https://roamdocs.fyi/help/roam-mcp</loc></url>
+  <url><loc>https://roamdocs.fyi/help/roam-mobile</loc></url>
   <url><loc>https://roamdocs.fyi/help/file-manager</loc></url>
   <url><loc>https://roamdocs.fyi/help/graph-overview</loc></url>
   <url><loc>https://roamdocs.fyi/help/pdf-annotator</loc></url>
   <url><loc>https://roamdocs.fyi/help/advanced-block-reference-search</loc></url>
-  <url><loc>https://roamdocs.fyi/help/daily-notes</loc></url>
   <url><loc>https://roamdocs.fyi/help/graph-history</loc></url>
   <url><loc>https://roamdocs.fyi/help/pomodoro-timer</loc></url>
   <url><loc>https://roamdocs.fyi/help/hosted-graph</loc></url>
   <url><loc>https://roamdocs.fyi/help/command-palette</loc></url>
-  <url><loc>https://roamdocs.fyi/help/community</loc></url>
+  <url><loc>https://roamdocs.fyi/help/daily-notes</loc></url>
   <url><loc>https://roamdocs.fyi/help/settings</loc></url>
-  <url><loc>https://roamdocs.fyi/help/beginner-s-guide</loc></url>
   <url><loc>https://roamdocs.fyi/help/better-search-experimental</loc></url>
-  <url><loc>https://roamdocs.fyi/help/roam-mobile</loc></url>
   <url><loc>https://roamdocs.fyi/help/customizable-hotkeys</loc></url>
   <url><loc>https://roamdocs.fyi/help/precise-links</loc></url>
+  <url><loc>https://roamdocs.fyi/help/local-mcp</loc></url>
   <url><loc>https://roamdocs.fyi/help/extensions</loc></url>
+  <url><loc>https://roamdocs.fyi/help/zettelkasten</loc></url>
   <url><loc>https://roamdocs.fyi/help/audio-player</loc></url>
-  <url><loc>https://roamdocs.fyi/help/templates</loc></url>
   <url><loc>https://roamdocs.fyi/help/global-search</loc></url>
   <url><loc>https://roamdocs.fyi/help/roam-help</loc></url>
+  <url><loc>https://roamdocs.fyi/help/roam-cli</loc></url>
   <url><loc>https://roamdocs.fyi/help/roam-css</loc></url>
-  <url><loc>https://roamdocs.fyi/help/notable-graphs</loc></url>
   <url><loc>https://roamdocs.fyi/help/project-management</loc></url>
-  <url><loc>https://roamdocs.fyi/help/query-builder</loc></url>
   <url><loc>https://roamdocs.fyi/help/personal-crm</loc></url>
   <url><loc>https://roamdocs.fyi/help/upload-files</loc></url>
   <url><loc>https://roamdocs.fyi/help/calculator</loc></url>
+  <url><loc>https://roamdocs.fyi/help/roam-query-builder</loc></url>
   <url><loc>https://roamdocs.fyi/help/news-and-press</loc></url>
+  <url><loc>https://roamdocs.fyi/help/beginner-s-guide</loc></url>
   <url><loc>https://roamdocs.fyi/help/delete-graph</loc></url>
+  <url><loc>https://roamdocs.fyi/help/community</loc></url>
   <url><loc>https://roamdocs.fyi/help/miscellaneous</loc></url>
   <url><loc>https://roamdocs.fyi/help/video-embed</loc></url>
+  <url><loc>https://roamdocs.fyi/help/templates</loc></url>
   <url><loc>https://roamdocs.fyi/help/all-pages</loc></url>
   <url><loc>https://roamdocs.fyi/help/workflows</loc></url>
   <url><loc>https://roamdocs.fyi/help/images</loc></url>
@@ -120,35 +125,34 @@
   <url><loc>https://roamdocs.fyi/help/export</loc></url>
   <url><loc>https://roamdocs.fyi/help/graph-homepage</loc></url>
   <url><loc>https://roamdocs.fyi/help/studying</loc></url>
-  <url><loc>https://roamdocs.fyi/help/attributes</loc></url>
-  <url><loc>https://roamdocs.fyi/help/meeting-notes</loc></url>
   <url><loc>https://roamdocs.fyi/help/long-videos</loc></url>
   <url><loc>https://roamdocs.fyi/help/date-picker</loc></url>
   <url><loc>https://roamdocs.fyi/help/bidirectional-linking</loc></url>
-  <url><loc>https://roamdocs.fyi/help/page-references</loc></url>
   <url><loc>https://roamdocs.fyi/help/code-block</loc></url>
-  <url><loc>https://roamdocs.fyi/help/sharing</loc></url>
   <url><loc>https://roamdocs.fyi/help/delete-account</loc></url>
+  <url><loc>https://roamdocs.fyi/help/notable-graphs</loc></url>
   <url><loc>https://roamdocs.fyi/help/spanish</loc></url>
   <url><loc>https://roamdocs.fyi/help/scripture-study</loc></url>
-  <url><loc>https://roamdocs.fyi/help/word-count</loc></url>
+  <url><loc>https://roamdocs.fyi/help/meeting-notes</loc></url>
   <url><loc>https://roamdocs.fyi/help/console-logs</loc></url>
   <url><loc>https://roamdocs.fyi/help/cancelling-your-membership-during-your-free-trial</loc></url>
   <url><loc>https://roamdocs.fyi/help/current-time</loc></url>
   <url><loc>https://roamdocs.fyi/help/adding-soft-line-breaks-in-a-block</loc></url>
-  <url><loc>https://roamdocs.fyi/help/roam-depot</loc></url>
+  <url><loc>https://roamdocs.fyi/help/page-references</loc></url>
   <url><loc>https://roamdocs.fyi/help/character-count</loc></url>
+  <url><loc>https://roamdocs.fyi/help/word-count</loc></url>
   <url><loc>https://roamdocs.fyi/help/desktop-app</loc></url>
   <url><loc>https://roamdocs.fyi/help/why-roam</loc></url>
   <url><loc>https://roamdocs.fyi/help/chinese</loc></url>
   <url><loc>https://roamdocs.fyi/help/engelbart-1962-augmenting-human-intellect</loc></url>
   <url><loc>https://roamdocs.fyi/help/roam-support</loc></url>
   <url><loc>https://roamdocs.fyi/help/left-sidebar</loc></url>
-  <url><loc>https://roamdocs.fyi/help/version-control</loc></url>
+  <url><loc>https://roamdocs.fyi/help/attributes</loc></url>
   <url><loc>https://roamdocs.fyi/help/import</loc></url>
   <url><loc>https://roamdocs.fyi/help/wiki</loc></url>
   <url><loc>https://roamdocs.fyi/help/kids</loc></url>
   <url><loc>https://roamdocs.fyi/help/slider</loc></url>
+  <url><loc>https://roamdocs.fyi/help/version-control</loc></url>
   <url><loc>https://roamdocs.fyi/help/encrypted-block</loc></url>
   <url><loc>https://roamdocs.fyi/help/numbered-list-extension</loc></url>
   <url><loc>https://roamdocs.fyi/help/today</loc></url>

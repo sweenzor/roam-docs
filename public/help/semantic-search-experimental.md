@@ -19,7 +19,7 @@
 - **You remember the idea, not the words.** Notes from years ago rarely use the phrasing you'd reach for today.
 - **Your vocabulary drifts.** Old notes say one thing, new notes say another. Semantic search bridges terms that mean the same thing.
 - **Resurfacing.** Related notes you'd forgotten about show up next to the thing you were actually looking for.
-- **Better AI assistance.** AI assistants connected to your graph (through Roam's MCP integration) get a semantic search tool too, so they can find relevant context by meaning when answering your questions.
+- **Better AI assistance.** AI assistants connected to your graph through the [[Local MCP]] get a semantic search tool too, so they can find relevant context by meaning when answering your questions.
 
 ### How to use it
 
@@ -33,7 +33,7 @@
 ### Setting it up
 
 - You need to be an **admin** of the graph.
-- Open **Settings → Graph → Experimental: Semantic search**.
+- Open **Settings → Graph → Experimental: Semantic search embeddings**.
   - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fk1MFsLBXDW.png?alt=media&token=d6c537b1-3089-42c1-aa4f-7640b2542066)
 - The setting is a three-way choice: **Off**, **Default**, or **Custom**. Picking either provider enables semantic search for everyone on this graph.
 

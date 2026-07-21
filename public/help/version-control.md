@@ -4,5 +4,4 @@
   - This is an example with Roam's elevator pitch, click on the numbers to see the different versions
     - Roam is a tool to compound knowledge, something I'd be proud to look back on how my brain has grew and evolved 20 years later.
 - Key Commands::
-  - `Ctrl+,` for Windows
-  - `Cmd+,` for Mac
+  - `Ctrl+,` on both Mac and Windows

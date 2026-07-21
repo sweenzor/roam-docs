@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roam CLI — Roam Research Docs</title>
+<meta name="description" content="The Roam CLI runs the same tools as Local MCP as terminal commands: list graphs, search, read pages, and more.">
+<link rel="canonical" href="https://roamdocs.fyi/help/roam-cli">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Roam CLI — Roam Research Docs">
+<meta property="og:description" content="The Roam CLI runs the same tools as Local MCP as terminal commands: list graphs, search, read pages, and more.">
+<meta property="og:url" content="https://roamdocs.fyi/help/roam-cli">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"Roam CLI","item":"https://roamdocs.fyi/help/roam-cli"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Roam CLI</h1>
+<p class="meta"><a href="roam-cli.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/SdGjBvGMU">view in Roam Research</a></p>
+<ul>
+<li>The Roam CLI runs the same tools as <a href="/help/local-mcp">Local MCP</a> as terminal commands: list graphs, search, read pages, and more.
+</li>
+<li>It's mainly for AI agents that work through shell commands instead of MCP, such as skill-based setups, and its output is formatted with that in mind. It can work for your own scripts too.
+</li>
+<li>Like the MCP server, it talks to your graphs through the <a href="/help/desktop-app">Desktop App</a>, and it's documented in the <a href="https://github.com/Roam-Research/roam-tools">roam-tools repository</a>.
+</li>
+</ul>
+<h3>Setting it up</h3>
+<ul>
+<li>Install it globally: <code>npm install -g @roam-research/roam-cli</code>
+</li>
+<li>Run <code>roam connect</code> and approve the request in Roam Desktop.
+<ul>
+<li>Already connected <a href="/help/local-mcp">Local MCP</a>? Skip that step. The CLI shares the same connection and tokens.
+</li>
+</ul>
+</li>
+<li>Update it the same way you installed it: <code>npm install -g @roam-research/roam-cli@latest</code>
+</li>
+</ul>
+<h3>Using it</h3>
+<ul>
+<li><code>roam list-graphs</code> shows every graph you've connected.
+</li>
+<li><code>roam search --query &quot;my notes&quot; --graph my-graph</code> searches a graph.
+</li>
+<li>The <code>--graph</code> flag is optional when you've only connected one graph, and nicknames work in place of graph names.
+</li>
+<li>The full, current command list is in the <a href="https://github.com/Roam-Research/roam-tools">roam-tools repository</a>.
+</li>
+<li>Usage guidelines shared by all the AI connections live at <a href="/help/working-with-ai-tools">Working with AI Tools</a>.
+</li>
+</ul>
+</body>
+</html>

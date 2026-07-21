@@ -28,7 +28,7 @@
 - **Insert markdown link** (wraps the selected text)
   - Mac: `Cmd-k`
   - PC: `Ctrl-k`
-- **Comment on current block**
+- **[Comment on current block]([[Comments]])**
   - Mac: `Cmd-Alt-=`
   - PC: `Ctrl-Alt-=`
 

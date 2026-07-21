@@ -24,7 +24,7 @@
 - Hotkeys: the command name as a bold parent block, with `Mac:` and `PC:` sub-bullets when the keys differ. When the keys are the same on both platforms, one block with the keys inline.
 - Syntax references (query clauses and similar): the syntax in code as the parent block, the explanation nested underneath.
 - Tips go in callouts: `[[>]] [[!TIP]]`.
-- Keep example syntax inside backticks so `[[links]]` in examples don't create real pages. If a stray page gets created, delete it.
+- Keep example syntax inside backticks so `[[links]]` in examples don't create real pages.
 - When an example needs an outline shape, write it as real nested blocks, with each example line's text in a code span.
 
 ### Links

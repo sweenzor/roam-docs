@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roam MCP — Roam Research Docs</title>
+<meta name="description" content="Roam MCP connects AI tools like Claude and ChatGPT to your Roam graphs. The AI can search your notes, read pages, and write new blocks, with">
+<link rel="canonical" href="https://roamdocs.fyi/help/roam-mcp">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Roam MCP — Roam Research Docs">
+<meta property="og:description" content="Roam MCP connects AI tools like Claude and ChatGPT to your Roam graphs. The AI can search your notes, read pages, and write new blocks, with">
+<meta property="og:url" content="https://roamdocs.fyi/help/roam-mcp">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"Roam MCP","item":"https://roamdocs.fyi/help/roam-mcp"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
+<h1>Roam MCP</h1>
+<p class="meta"><a href="roam-mcp.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/XpnfovW5v">view in Roam Research</a></p>
+<ul>
+<li>Roam MCP connects AI tools like Claude and ChatGPT to your Roam graphs. The AI can search your notes, read pages, and write new blocks, within limits you choose.
+</li>
+<li>It's a hosted service, so it works from anywhere: the AI tool talks to Roam's servers, and your computer doesn't need to be on.
+</li>
+<li>For AI tools running on your own computer, there's also <a href="/help/local-mcp">Local MCP</a>, which connects through the <a href="/help/desktop-app">Desktop App</a> instead. The local MCP offers more features and is recommended if working from desktop.
+</li>
+<li><a href="/help/working-with-ai-tools">Working with AI Tools</a> covers the ground rules for every AI connection.
+</li>
+</ul>
+<h3>In Claude</h3>
+<ul>
+<li>Roam is in <a href="https://claude.ai/directory/connectors/roam-research">Claude's connector directory</a>.
+</li>
+<li>Click <strong>Connect</strong>, sign in with your Roam account, and pick which graphs Claude should use.
+</li>
+</ul>
+<h3>In ChatGPT</h3>
+<ul>
+<li>Roam lives under <strong>Plugins</strong> in ChatGPT: <a href="https://chatgpt.com/plugins/plugin_asdk_app_6a32c0c428388191912577d648a44ba4">the Roam Research app</a>.
+</li>
+<li>ChatGPT's menu calls these plugins and the listing calls itself an app. Same thing either way: it's Roam MCP underneath.
+</li>
+<li>Open it, connect your Roam account, and grant the graphs you want ChatGPT to use.
+</li>
+</ul>
+<h3>In any other AI tool</h3>
+<ul>
+<li>Roam MCP is a standard remote MCP server. In tools that let you add an MCP server by URL, use: <code>https://mcp.roamresearch.com/mcp</code>
+</li>
+<li>Signing in and choosing graphs works the same way from there.
+</li>
+</ul>
+<h3>You stay in control</h3>
+<ul>
+<li>Nothing is shared until you pick graphs, and each graph gets its own access level, from read-only up to full access.
+</li>
+<li>Every change the AI makes is attributed to a distinct &quot;(AI)&quot; author in your graph, so its edits are always easy to find and review.
+</li>
+<li>Adjust a graph's access or disconnect it at any time at <a href="https://mcp.roamresearch.com/manage">mcp.roamresearch.com/manage</a>.
+</li>
+<li>Roam's servers can't read <a href="/help/encrypted-graphs">Encrypted Graphs</a>, so neither can Roam MCP. You can still grant append-only capture into one, and for full access there's <a href="/help/local-mcp">Local MCP</a>.
+</li>
+</ul>
+</body>
+</html>

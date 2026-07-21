@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sharing — Roam Research Docs</title>
-<meta name="description" content="Sharing graph as read-only">
+<meta name="description" content="Sharing controls who can see and edit a Hosted Graph: the whole graph, specific people, or single pages.">
 <link rel="canonical" href="https://roamdocs.fyi/help/sharing">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Roam Research Docs">
 <meta property="og:title" content="Sharing — Roam Research Docs">
-<meta property="og:description" content="Sharing graph as read-only">
+<meta property="og:description" content="Sharing controls who can see and edit a Hosted Graph: the whole graph, specific people, or single pages.">
 <meta property="og:url" content="https://roamdocs.fyi/help/sharing">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/favicon.ico">
@@ -38,24 +38,94 @@
 <p class="crumbs"><a href="/">Roam Research Docs</a> · Help &amp; user documentation</p>
 <h1>Sharing</h1>
 <p class="meta"><a href="sharing.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/vh3S6FSr1">view in Roam Research</a></p>
-<h4>Sharing graph as read-only</h4>
 <ul>
+<li>Sharing controls who can see and edit a <a href="/help/hosted-graph">Hosted Graph</a>: the whole graph, specific people, or single pages.
+</li>
+<li>The controls live in <a href="/help/settings">Settings</a> under the <strong>Sharing</strong> tab. Only the graph's admin (the person who created it) sees the tab and can change these settings.
+</li>
+<li>Local Graphs never leave your device, so they have no sharing settings.
+</li>
+</ul>
+<h3>Sharing the whole graph</h3>
+<ul>
+<li>The <strong>This graph</strong> dropdown sets the graph's overall visibility:
+<ul>
+<li><code>is only shared with the emails below</code>
+<ul>
+<li>Private, and the default. Only people you invite can open the graph.
+</li>
+</ul>
+</li>
+<li><code>can be read by anyone</code>
+<ul>
+<li>Anyone with the link can view the whole graph.
+</li>
+</ul>
+</li>
+<li><code>can be edited by anyone</code>
+<ul>
+<li>Anyone with the link can edit it too.
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fks9BpYNOVI.gif?alt=media&amp;token=5fabb1d0-1981-4a47-a2e0-f2d397b2c3b0" alt="" loading="lazy">
 </li>
 </ul>
-<h4>Sharing graph as publicly editable</h4>
+<h3>Sharing with specific people</h3>
 <ul>
-<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FEqKJeMhJdP.gif?alt=media&amp;token=9cb021da-d509-496f-b10d-4e8c696f72a8" alt="" loading="lazy">
+<li>Under <strong>Shared with</strong>, type one or more emails separated by spaces, pick <strong>read</strong> or <strong>edit</strong> access, and press Enter.
 </li>
-</ul>
-<h4>Sharing graph with specific editors</h4>
-<ul>
+<li>Everyone you've invited appears in a list below, where you can switch them between read and edit or remove them.
+</li>
+<li>The person doesn't need a Roam account yet: if their email isn't registered, the invitation waits and takes effect as soon as they sign up with it.
+</li>
 <li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FJKD9mM0cwC.gif?alt=media&amp;token=2a28d233-3de1-4667-8c07-5f1dcff7b670" alt="" loading="lazy">
 </li>
 </ul>
-<h4>Sharing graph with specific readers</h4>
+<h3>Sharing a single page</h3>
 <ul>
-<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FrdZtxdwzbn.gif?alt=media&amp;token=d46dd91e-4963-4dca-bb5f-82f7975e1b6b" alt="" loading="lazy">
+<li>To share one page while keeping the rest of the graph private, first turn on <strong>Sharing Individual Pages</strong> at the top of the Sharing tab.
+</li>
+<li>&gt; !WARNING Sharing individual pages loads the rest of your graph's data in every visitor's browser. Roam only displays the page you shared, but a technically skilled visitor could dig out the others. Use it on graphs where that risk is acceptable.
+</li>
+<li>Then, on the page you want to share:
+<ul>
+<li>Open the <strong>⋯</strong> menu in the top right and pick <strong>Share Page</strong>.
+</li>
+<li>Set &quot;This page is&quot; to <code>can be read by anyone</code>, or <code>can be edited by anyone</code> if visitors should be able to change it. <code>Private</code> takes it back down.
+</li>
+<li>Copy the page's link with <strong>Share Link</strong> in the same menu, and send it to anyone.
+</li>
+</ul>
+</li>
+<li><strong>Share Page</strong> only appears while the graph itself is private (a public graph's pages are already visible), and only for admins.
+</li>
+</ul>
+<h3>Other sharing controls</h3>
+<ul>
+<li>Three more settings on the Sharing tab put limits on what the people you've invited can do:
+<ul>
+<li><strong>Immutable blocks</strong>
+<ul>
+<li>When on, editors can only change the blocks they created themselves, so each person's words stay their own.
+</li>
+</ul>
+</li>
+<li><strong>Exportable by</strong>
+<ul>
+<li>Who can export the graph's data: only you, people with edit access, everyone invited, or anyone with access to the full graph (the default).
+</li>
+</ul>
+</li>
+<li><strong>History viewable by</strong>
+<ul>
+<li>Who can open the graph's <a href="/help/graph-history">Graph History</a>. It starts as only you.
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 </body>

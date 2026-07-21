@@ -9,7 +9,7 @@
   - via our frontend API: [window.roamAlphaAPI.data.q](https://roamresearch.com/#/app/developer-documentation/page/SI3FNt3EQ)
   - via our backend API: [/api/graph/{graph-name}/q](https://roamresearch.com/#/app/developer-documentation/page/vbEj2bZql)
   - All but the backend API can use the additions we have detailed below
-    Also note that below we will talk about and have examples for `:q` primarily but 
+    Also note that below we will talk about and have examples for `:q` primarily, but the same additions work in the other ways of querying too
 - **Custom symbols**
   - Description:: new special words/symbols are available to represent dates which you can use directly in the `:where` clause
     - Some examples:

@@ -7,16 +7,9 @@
 - {{[[video]]:https://www.youtube.com/watch?v=ScRrcL__SSI&t=2029s&ab_channel=ConorWhite-Sullivan}}
   #[[Current time]] | #[[Page References]] | #[[Block References]] | #[[Indentation]] | #[[Daily Notes]] | #[[Right Sidebar]] | #[[Block Embed]] | #[[Alias]] | #[[TODO/DONE]] | #[[Indentation]] | #[[Query]] | #[[Table]]
 - Articles::
-  - **[Active Reading in Roam Research Featuring the Zettelkasten Method](https://padminipyapali.medium.com/zettelkasten-method-roam-research-f7b341f14fbd) by [[Padmini Pyapali]]**
-  - #[[Block References]] | #[[Page References]]
-  - **[Implementing Zettelkasten in Roam: A Practical Guide](https://www.roambrain.com/implementing-zettelkasten-in-roam/) by [[RoamBrain]]**
-  - #[[Page References]] | #[[Block References]] 
-  - **[Roamkasten - a practical how to guide to optimize Zettelkasten in Roam Research](https://www.thrivinghenry.com/writings/roamkasten-a-practical-how-to-guide-to-optimize-zettelkasten-in-roam-research) by [[Thriving Henry]]**
-
-  - #[[Page References]] | #[[Linked References]] | #[[Unlinked References]] | #[[Indentation]] |
-  - **[Roamkasten - a practical how to guide to optimize Zettelkasten in Roam Research](https://www.thrivinghenry.com/writings/roamkasten-a-practical-how-to-guide-to-optimize-zettelkasten-in-roam-research) by [[Thriving Henry]]**
-  - #[[Page References]] | #[[Linked References]] | #[[Unlinked References]] | #[[Indentation]] | #[[Block References]] | #[[Right Sidebar]]
-  - 
+  - **[Active Reading in Roam Research Featuring the Zettelkasten Method](https://padminipyapali.medium.com/zettelkasten-method-roam-research-f7b341f14fbd) by [[Padmini Pyapali]] #[[Block References]] | #[[Page References]]**
+  - **[Implementing Zettelkasten in Roam: A Practical Guide](https://www.roambrain.com/implementing-zettelkasten-in-roam/) by [[RoamBrain]] #[[Page References]] | #[[Block References]] **
+  - **[Roamkasten - a practical how to guide to optimize Zettelkasten in Roam Research](https://www.thrivinghenry.com/writings/roamkasten-a-practical-how-to-guide-to-optimize-zettelkasten-in-roam-research) by [[Thriving Henry]] #[[Page References]] | #[[Linked References]] | #[[Unlinked References]] | #[[Indentation]] | #[[Block References]] | #[[Right Sidebar]]**
 
 ### Community Videos::
 

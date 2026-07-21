@@ -1,7 +1,5 @@
 # Daily Notes
 
-- [[.--]]
-
 ### **Daily Notes are the backbone of the Roam experience.**
 
 - When you sign into Roam, you will start on a page with today's date.

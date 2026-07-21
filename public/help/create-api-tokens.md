@@ -29,3 +29,12 @@
           - In the case of the Zapier integration, this means that you can only use the "Actions"s, but not the "Trigger"s
     - In the next screen, click on the "Clipboard" icon 📋 to copy the token to your clipboard. It will start with "roam-graph-token-"
       - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FtnYMdlay_y.png?alt=media&token=e49cdfbc-872e-44b6-bc01-4b0c0b22a386)
+
+### Good to know
+
+- The create form also asks for a **Roam Page Title**. Each token acts as its own member of your graph, and this is the name it shows up under.
+  - Blocks added or edited through the token are attributed to that name, so you can always tell which changes came in through the API.
+  - The field is pre-filled from your description, and the title can't already be in use by another page.
+- Creating tokens requires an active subscription. Without one, the **+ New API Token** button is disabled.
+- These tokens work with Roam's cloud APIs, so they exist only for [hosted graphs]([[Hosted Graph]]).
+  - For AI tools running on your own computer, the [[Desktop App]] has separate [[Local API Tokens]].

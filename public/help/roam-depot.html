@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Roam Depot — Roam Research Docs</title>
-<meta name="description" content="Official Plugins">
+<meta name="description" content="Roam Depot is Roam's built-in marketplace for extensions: add-ons built by the community that add new features to Roam.">
 <link rel="canonical" href="https://roamdocs.fyi/help/roam-depot">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Roam Research Docs">
 <meta property="og:title" content="Roam Depot — Roam Research Docs">
-<meta property="og:description" content="Official Plugins">
+<meta property="og:description" content="Roam Depot is Roam's built-in marketplace for extensions: add-ons built by the community that add new features to Roam.">
 <meta property="og:url" content="https://roamdocs.fyi/help/roam-depot">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/favicon.ico">
@@ -39,27 +39,92 @@
 <h1>Roam Depot</h1>
 <p class="meta"><a href="roam-depot.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/N8P6RYE7o">view in Roam Research</a></p>
 <ul>
-<li>Official Plugins
+<li>Roam Depot is Roam's built-in marketplace for extensions: add-ons built by the community that add new features to Roam.
+</li>
+<li>The Roam team reviews every extension before it's listed or updated.
+</li>
+<li>Check out the linked references of Roam Depot Extensions for new extensions
+</li>
+</ul>
+<h3>Installing extensions</h3>
 <ul>
-<li>July 21st, 2021
+<li>The marketplace is available in a few places:
 <ul>
-<li>https://twitter.com/RoamResearch/status/1550192726540374016?s=20&amp;t=qEEBfrUN4jkSq9qSt5HDAQ
+<li>Click <strong>Roam Depot</strong> in the left sidebar.
+</li>
+<li>Or open <a href="/help/settings">Settings</a>, pick the <strong>Roam Depot</strong> tab, and click <strong>Browse</strong>.
+</li>
+<li>Or run &quot;Roam Depot Marketplace&quot; from the <a href="/help/command-palette">Command Palette</a>.
 </li>
 </ul>
 </li>
-<li>PhonetoNote
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FyCStM-Yqdu.png?alt=media&amp;token=a76e9ca6-831e-4ddf-92c5-4c699b67c18f" alt="" loading="lazy">
+</li>
+<li>In the marketplace:
 <ul>
-<li>https://twitter.com/phonetonote/status/1551764556707397633?s=20&amp;t=qEEBfrUN4jkSq9qSt5HDAQ
+<li>Search by name, or sort the list by downloads, creation date, last update, or name.
+</li>
+<li>Click an extension to read its details: description, author, version, download count, and its full README.
+</li>
+<li>Click <strong>Install</strong>. The extension starts running right away.
 </li>
 </ul>
 </li>
-<li>Matter
+<li>Extensions are installed per person, per graph: installing one here doesn't add it to your other graphs, or to anyone else's view of this graph.
 <ul>
-<li>https://twitter.com/matter/status/1549490849595080704?s=20&amp;t=qEEBfrUN4jkSq9qSt5HDAQ
+<li>To install for everyone on the graph, see Installing for your whole graph
+</li>
+</ul>
+</li>
+<li>Installing needs edit access to the graph, so read-only members and visitors to public graphs can't add extensions.
+</li>
+</ul>
+<h3>Settings and updates</h3>
+<ul>
+<li>An extension with settings gets its own tab in <a href="/help/settings">Settings</a>, listed under the <strong>Extension Settings</strong> heading.
+<ul>
+<li>That tab is also where you set hotkeys for any commands the extension adds.
+</li>
+</ul>
+</li>
+<li>Every installed extension has an on/off switch in the Roam Depot tab, so you can turn one off without uninstalling it.
+</li>
+<li>Updates are automatic: Roam checks for new versions when your graph loads and about every 12 hours while it's open.
+<ul>
+<li><strong>Update all</strong> in the Roam Depot tab checks immediately.
 </li>
 </ul>
 </li>
 </ul>
+<h3>Installing for your whole graph</h3>
+<ul>
+<li>If you're an admin, the globe button next to an installed extension installs it for everyone you've shared the graph with. ((Public visitors don't get it. due to security concerns))
+</li>
+<li>Members are asked to confirm before admin-chosen extensions start running for them, and they can opt back out later from the Roam Depot tab.
+</li>
+<li>Members inherit the extension's configuration and can't change its settings, but they can set their own hotkeys for it.
+</li>
+<li>Be careful with settings that hold secrets: anything in a shared extension's settings, like an API key, is visible to the people the graph is shared with.
+</li>
+</ul>
+<h3>Good to know</h3>
+<ul>
+<li>Extensions marked <strong>Experimental</strong> may cause data loss or other bugs, so keep them away from graphs you care about.
+</li>
+<li>Some extensions carry a warning that they use javascript eval, which means they can run code that wasn't part of Roam's review. Install those at your own risk.
+<ul>
+<li>For the same reason, these can't be installed for for other users on your graph.
+</li>
+</ul>
+</li>
+<li>If Roam starts misbehaving, the <strong>Temporarily disable all extensions and css</strong> button in the Roam Depot tab reloads with everything off, so you can check whether an extension is the cause.
+</li>
+</ul>
+<h3>Building your own</h3>
+<ul>
+<li>The guide to building and submitting an extension lives in the developer docs: <a href="https://roamresearch.com/#/app/developer-documentation/page/5BB8h4I7b">docs link</a>
+</li>
+<li>Roam shares a portion of its revenue with extension developers, based on how popular their extensions are.
 </li>
 </ul>
 </body>
