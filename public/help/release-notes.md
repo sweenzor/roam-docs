@@ -1,5 +1,10 @@
 # Release notes (daily-note updates from the help graph)
 
+## July 21st, 2026
+
+- {{[[search]]: white paper}}
+- 
+
 ## July 17th, 2026
 
 - {{[[pdf]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FN8flz2wX1D.pdf?alt=media&token=234bb817-9b2c-4317-846e-9ce2f0b66eb1}}

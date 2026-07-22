@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-07-21T07:49:51.763Z",
+ "exportedAt": "2026-07-22T07:50:07.655Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -10440,6 +10440,10 @@
   {
    ":node/title": "artifacts",
    ":block/uid": "UmsnoKSLS"
+  },
+  {
+   ":node/title": "search",
+   ":block/uid": "2GZHjagRT"
   },
   {
    ":node/title": "July 11th, 2020",
@@ -77894,6 +77898,23 @@
   },
   {
    ":node/title": "July 21st, 2026",
+   ":block/children": [
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "2GZHjagRT"
+      }
+     ],
+     ":block/uid": "X-49Mf1t4",
+     ":block/string": "{{[[search]]: white paper}}",
+     ":block/order": 0
+    },
+    {
+     ":block/uid": "9UBgm7MPX",
+     ":block/string": "",
+     ":block/order": 1
+    }
+   ],
    ":block/uid": "07-21-2026"
   },
   {
@@ -79171,6 +79192,10 @@
   {
    ":node/title": "July 22nd, 2025",
    ":block/uid": "07-22-2025"
+  },
+  {
+   ":node/title": "July 22nd, 2026",
+   ":block/uid": "07-22-2026"
   },
   {
    ":node/title": "Beau Haan",

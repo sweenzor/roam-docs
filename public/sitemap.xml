@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://roamdocs.fyi/</loc></url>
   <url><loc>https://roamdocs.fyi/developer-documentation/developer-hub</loc></url>
+  <url><loc>https://roamdocs.fyi/developer-documentation/data-model</loc></url>
   <url><loc>https://roamdocs.fyi/developer-documentation/roam-alpha-api</loc></url>
   <url><loc>https://roamdocs.fyi/developer-documentation/roam-depot-extension-api</loc></url>
   <url><loc>https://roamdocs.fyi/developer-documentation/roam-depot-extensions</loc></url>
@@ -15,12 +16,13 @@
   <url><loc>https://roamdocs.fyi/developer-documentation/available-libraries</loc></url>
   <url><loc>https://roamdocs.fyi/developer-documentation/local-api</loc></url>
   <url><loc>https://roamdocs.fyi/developer-documentation/contact-us</loc></url>
-  <url><loc>https://roamdocs.fyi/developer-documentation/roam-alpha-api-v2</loc></url>
+  <url><loc>https://roamdocs.fyi/developer-documentation/roam-alpha-api-old</loc></url>
   <url><loc>https://roamdocs.fyi/developer-documentation/roam-clojurescript-api</loc></url>
   <url><loc>https://roamdocs.fyi/developer-documentation/datomic-alpha-api</loc></url>
   <url><loc>https://roamdocs.fyi/developer-documentation/iframe-components</loc></url>
   <url><loc>https://roamdocs.fyi/developer-documentation/attributes-data-model</loc></url>
   <url><loc>https://roamdocs.fyi/developer-documentation/datalog-block-query</loc></url>
+  <url><loc>https://roamdocs.fyi/developer-documentation/roam-agent-guidelines</loc></url>
   <url><loc>https://roamdocs.fyi/help/welcome-to-roam</loc></url>
   <url><loc>https://roamdocs.fyi/help/install-roam</loc></url>
   <url><loc>https://roamdocs.fyi/help/change-log</loc></url>

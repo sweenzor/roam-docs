@@ -6,11 +6,12 @@
 > public graphs and a running Roam Research session; regenerated on a schedule.
 > Source & contributions: https://github.com/sweenzor/roam-docs
 
-Last export: 2026-07-21T07:45:19.816Z
+Last export: 2026-07-22T07:45:35.599Z
 
 ## Developer documentation
 
 - [Developer Hub](https://roamdocs.fyi/developer-documentation/developer-hub.md): Entry point / map of all Roam Research developer documentation
+- [Data Model](https://roamdocs.fyi/developer-documentation/data-model.md): Your graph is a DataScript database.
 - [Roam Alpha API](https://roamdocs.fyi/developer-documentation/roam-alpha-api.md): The frontend JS API (window.roamAlphaAPI): datalog q/pull, block & page CRUD, UI control, file storage
 - [Roam Depot/Extension API](https://roamdocs.fyi/developer-documentation/roam-depot-extension-api.md): Extension API passed to Depot extensions (settings panels, commands, lifecycle)
 - [Roam Depot/Extensions](https://roamdocs.fyi/developer-documentation/roam-depot-extensions.md): How to build, test and publish Roam Depot extensions
@@ -52,12 +53,13 @@ Last export: 2026-07-21T07:45:19.816Z
 
 ## Optional
 
-- [Roam Alpha API v2](https://roamdocs.fyi/developer-documentation/roam-alpha-api-v2.md): Getting Started
+- [Roam Alpha API (old)](https://roamdocs.fyi/developer-documentation/roam-alpha-api-old.md): Getting Started
 - [Roam Clojurescript API](https://roamdocs.fyi/developer-documentation/roam-clojurescript-api.md): Clojure Core Namespaces
 - [Datomic Alpha API](https://roamdocs.fyi/developer-documentation/datomic-alpha-api.md): Important Note: This is the documentation for the Depreciated (& inactive) Datomic API. We have a new API! see it here, Roam Backend API (Be
 - [iFrame Components](https://roamdocs.fyi/developer-documentation/iframe-components.md): Important Note: This is Depreciated, it still most likely works but we will not be continuing it's development
 - [Attributes Data Model](https://roamdocs.fyi/developer-documentation/attributes-data-model.md): Introduction: it's a hypergraph
 - [datalog-block-query](https://roamdocs.fyi/developer-documentation/datalog-block-query.md): Older Loom videos
+- [roam/agent guidelines](https://roamdocs.fyi/developer-documentation/roam-agent-guidelines.md): This graph is Roam's public developer documentation: the frontend API (Roam Alpha API), Roam Depot/Extension API, the backend/HTTP APIs, roa
 - [Developer documentation release notes](https://roamdocs.fyi/developer-documentation/release-notes.md): Dated daily-note updates (newest first)
 - [Commentarii Roamani](https://roamdocs.fyi/help/commentarii-roamani.md): Hello Again, Roamans -- April 5th, 2025
 - [roam/templates](https://roamdocs.fyi/help/roam-templates.md): Dev docs .h

@@ -12,6 +12,10 @@
     - Use [[Roam Alpha API]] (our client side API) 
       - If you're building a [[Roam Depot]] extension or writing [[roam/js]] scripts for yourself 
 
+### [[Data Model]]
+
+- The DataScript attribute reference; what pages, blocks, users, and the other entities look like, plus querying tips.
+
 ### [[Roam Alpha API]]
 
 - Front-end API for read/write operations

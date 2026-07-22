@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Model — Roam Research Docs</title>
+<meta name="description" content="Your graph is a DataScript database.">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/data-model">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Data Model — Roam Research Docs">
+<meta property="og:description" content="Your graph is a DataScript database.">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/data-model">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"Data Model","item":"https://roamdocs.fyi/developer-documentation/data-model"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>Data Model</h1>
+<p class="meta"><a href="data-model.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/oAdYx3oyf">view in Roam Research</a></p>
+<ul>
+<li>Your graph is a <a href="https://github.com/tonsky/datascript">DataScript</a> database.
+<ul>
+<li>DataScript is an in-memory triple store: every fact is an <code>[entity attribute value]</code> datom.
+<ul>
+<li>(Datoms technically also carry a transaction id — but with no history kept, it isn't useful through the API.)
+</li>
+</ul>
+</li>
+<li>It's modeled on <a href="https://www.datomic.com/">Datomic</a> — same datalog queries and pull syntax — but without built-in history.
+</li>
+<li>Every page, block, and user is an entity with attributes, queryable via <code>roamAlphaAPI.data.q</code> and <code>roamAlphaAPI.data.pull</code>.
+</li>
+</ul>
+</li>
+<li>Addressing entities
+<ul>
+<li>Lookup refs work anywhere an entity id is accepted
+<ul>
+<li>a <code>[unique-attribute value]</code> pair: 
+<ul>
+<li><code>[:block/uid &quot;abc123xyz&quot;]</code>
+</li>
+<li><code>[:node/title &quot;My Page&quot;]</code>
+</li>
+<li><code>[:user/uid &quot;BBG4fFwol...&quot;]</code>
+</li>
+<li><code>[:window/id &quot;&quot;]</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>:db/id</code> (number) — the internal entity id you see in query and pull results.
+<ul>
+<li>Stable within a live graph, but not across export/import — persist <code>:block/uid</code>s, never entity ids.
+</li>
+</ul>
+</li>
+<li>Reverse refs: prefix the name with <code>_</code> to traverse a ref attribute backwards
+<ul>
+<li><code>:block/_refs</code> (blocks referencing this entity = backlinks)
+</li>
+<li><code>:block/_children</code> (the direct parent).
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Querying tips
+<ul>
+<li>**Always use <code>roamAlphaAPI.data.pull</code> directly when you know the entity** — a pull with a lookup ref is direct index access, many times faster than a query.
+<ul>
+<li><pre><code>// don't q for a block's children — pull them
+window.roamAlphaAPI.data.pull(
+  &quot;[{:block/children [:block/uid :block/string]}]&quot;,
+  [&quot;:block/uid&quot;, &quot;aBc123xYz&quot;])</code></pre>
+</li>
+</ul>
+</li>
+<li>Clause ordering is huge for performance: <code>:where</code> clauses run top to bottom.
+<ul>
+<li>Put the most selective clause first — one anchored by a constant, a lookup ref, or an <code>:in</code> input.
+</li>
+<li>A clause whose variables aren't bound yet scans its entire index — a leading unselective clause can make the same query drastically slower.
+</li>
+<li>Predicate clauses (<code>[(...)]</code>) run once per remaining row — put them after the narrowing clauses.
+</li>
+</ul>
+</li>
+<li>Pass values through <code>:in</code> parameters instead of interpolating them into the query string.
+</li>
+<li>For backlinks and parents, reverse-ref pulls (<code>:block/_refs</code>, <code>:block/_children</code>) are cheaper than joins.
+</li>
+<li>All descendants of a block in one clause — no recursion needed, because <code>:block/parents</code> holds every ancestor:
+<ul>
+<li><pre><code>window.roamAlphaAPI.data.q(
+  `[:find ?uid
+    :in $ ?ancestor-uid
+    :where
+    [?a :block/uid ?ancestor-uid]
+    [?d :block/parents ?a]
+    [?d :block/uid ?uid]]`,
+  &quot;aBc123xYz&quot;)
+// =&gt; the uid of every block anywhere under it</code></pre>
+</li>
+</ul>
+</li>
+<li>Narrow your pull patterns — <code>[*]</code> combined with recursive <code>{:block/children ...}</code> pulls entire subtrees; select only the attributes you need.
+</li>
+<li>Fetching many entities? <code>roamAlphaAPI.data.pull_many</code> beats pulling in a loop.
+</li>
+<li>For genuinely expensive queries: <code>roamAlphaAPI.data.backend.q</code> runs off the main thread, and <code>roamAlphaAPI.data.fast.q</code> is ~33% faster for read access — and remember the 20-second timeout.
+</li>
+</ul>
+</li>
+<li>Entities
+<ul>
+<li><strong>Page</strong>
+<ul>
+<li>Description::
+<ul>
+<li>A page is an entity with a unique <code>:node/title</code>
+</li>
+<li>Its content lives in <code>:block/children</code>. There is no <code>:block/string</code>.
+</li>
+</ul>
+</li>
+<li>Attributes::
+<ul>
+<li><code>:node/title</code> (string, unique) — the page title
+</li>
+<li><code>:block/uid</code> (string, unique) — the page's uid (daily notes use <code>MM-DD-YYYY</code>)
+</li>
+<li><code>:log/id</code> (number) — present on daily note pages; treat it as a presence flag (&quot;is this a daily note?&quot;)
+<ul>
+<li>The value resembles the date in ms, but timezone offsets can skew it — don't use it for sorting or date math. Derive the date from the page's <code>MM-DD-YYYY</code> uid or its title via <code>roamAlphaAPI.util.pageTitleToDate</code>.
+</li>
+</ul>
+</li>
+<li><code>:block/children</code> (refs, many) — the page's top-level blocks
+</li>
+<li><code>:children/view-type</code> (string, optional) — &quot;bullet&quot; | &quot;numbered&quot; | &quot;document&quot;
+</li>
+<li><code>:page/edit-time</code> (number) — rollup: time of the most recent edit anywhere on the page (this powers &quot;recently edited&quot;)
+</li>
+<li><code>:page/edit-user</code> (ref) — rollup: who made that most recent edit
+</li>
+<li><code>:page/word-count</code> (number) — rollup: word count of the page's content
+</li>
+<li><code>:page/sidebar</code> (number) — present when the page is in the left-sidebar shortcuts; the value is its position (see <code>roamAlphaAPI.data.page.addShortcut</code>)
+</li>
+<li><code>:create/time</code> (number) — creation time, ms since epoch
+</li>
+<li><code>:create/user</code> (ref) — the creating user
+</li>
+<li><code>:edit/time</code> (number) — last edit of the page entity itself
+</li>
+<li><code>:edit/user</code> (ref) — who made that edit
+</li>
+<li>PDF pages — created when a PDF is uploaded (titled from the file) — additionally carry:
+<ul>
+<li><code>:pdf/url</code> (string) — the uploaded file's url in Roam's storage (fetch it via <code>roamAlphaAPI.file.get</code>)
+</li>
+<li><code>:pdf/fingerprints</code> (strings, unique, <em>deprecated</em>) — the PDF's fingerprint(s), used to recognize the same file again
+</li>
+<li><code>:pdf/content-hash</code> (string, unique) — hash of the file's content, also used to match re-uploads
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.data.pull(&quot;[*]&quot;, '[:node/title &quot;unreads&quot;]')
+// =&gt;
+{&quot;:db/id&quot;: 8656,
+ &quot;:node/title&quot;: &quot;unreads&quot;,
+ &quot;:block/uid&quot;: &quot;hvZX-ANLE&quot;,
+ &quot;:block/children&quot;: [{&quot;:db/id&quot;: 11436}, {&quot;:db/id&quot;: 11440}, {&quot;:db/id&quot;: 43580}],
+ &quot;:page/sidebar&quot;: 4,
+ &quot;:page/word-count&quot;: 12,
+ &quot;:page/edit-time&quot;: 1773242490630,
+ &quot;:page/edit-user&quot;: {&quot;:db/id&quot;: 1},
+ &quot;:create/user&quot;: {&quot;:db/id&quot;: 1},
+ &quot;:create/time&quot;: 1773242490630}</code></pre>
+</li>
+<li><pre><code>// a page's top-level blocks, with their text and order
+window.roamAlphaAPI.data.pull(
+  &quot;[{:block/children [:block/uid :block/string :block/order]}]&quot;,
+  '[:node/title &quot;My Page&quot;]')
+// =&gt;
+{&quot;:block/children&quot;: [{&quot;:block/uid&quot;: &quot;aBc123xYz&quot;,
+                      &quot;:block/string&quot;: &quot;first block&quot;,
+                      &quot;:block/order&quot;: 0},
+                     ...]}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Block</strong>
+<ul>
+<li>Description::
+<ul>
+<li>A block is an entity with a <code>:block/string</code>
+</li>
+<li>It lives under a parent block or page via the parent's <code>:block/children</code>.
+</li>
+</ul>
+</li>
+<li>Attributes::
+<ul>
+<li><code>:block/uid</code> (string, unique) — the block's uid
+</li>
+<li><code>:block/string</code> (string) — the block's text, in Roam-flavored markdown
+</li>
+<li><code>:block/order</code> (number) — position among siblings, 0-indexed
+</li>
+<li><code>:block/open</code> (boolean) — collapse state
+</li>
+<li><code>:block/children</code> (refs, many) — direct child blocks
+</li>
+<li><code>:block/parents</code> (refs, many) — <strong>all</strong> ancestors, from the page down to the direct parent — not just the parent
+</li>
+<li><code>:block/page</code> (ref) — the page the block lives on
+</li>
+<li><code>:block/refs</code> (refs, many) — every page or block this block references
+<ul>
+<li><code>[[links]]</code>, <code>#tags</code>, <code>attribute::</code>, and <code>((block refs))</code> all create identical <code>:block/refs</code> datoms — the syntax only changes rendering. Check refs; don't parse strings.
+</li>
+<li>Backlinks are the reverse: <code>:block/_refs</code>.
+</li>
+</ul>
+</li>
+<li><code>:block/heading</code> (number, optional) — 1–3 when the block is styled as a heading; absent otherwise (the write API accepts 0 to clear it)
+</li>
+<li><code>:block/text-align</code> (string, optional) — &quot;left&quot; | &quot;center&quot; | &quot;right&quot; | &quot;justify&quot;
+</li>
+<li><code>:children/view-type</code> (string, optional) — &quot;bullet&quot; | &quot;numbered&quot; | &quot;document&quot; — note the <code>children</code> namespace
+</li>
+<li><code>:block/view-type</code> (string, optional) — same values as the API's block-view-type
+</li>
+<li><code>:block/props</code> (map, optional) — per-block component state: image/iframe sizing, slider positions, query and table settings, ...; treat as internal
+</li>
+<li><code>:create/time</code> (number) — creation time, ms since epoch
+</li>
+<li><code>:create/user</code> (ref) — the creating user
+</li>
+<li><code>:edit/time</code> (number) — last edit time
+</li>
+<li><code>:edit/user</code> (ref) — who made that edit
+</li>
+<li><code>:edit/seen-by</code> (refs, many) — the <strong>User</strong> entities who have seen this block since its last edit; powers unread indicators (&quot;mark unread&quot; retracts the user)
+</li>
+<li><code>:create/seen-by</code> (refs, many) — same, tracked from the block's creation
+</li>
+<li><code>:ent/emojis</code> (vector, optional) — emoji reactions on the block: <code>[{emoji: {native: &quot;👍&quot;}, users: [{uid, time}, ...]}, ...]</code>
+</li>
+<li><code>:annotation/origin</code> (ref) — on PDF highlight blocks: the PDF <strong>Page</strong> the highlight came from
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.data.pull(&quot;[*]&quot;, [&quot;:block/uid&quot;, &quot;6LMkuKL-Y&quot;])
+// =&gt;
+{&quot;:db/id&quot;: 16810,
+ &quot;:block/uid&quot;: &quot;6LMkuKL-Y&quot;,
+ &quot;:block/string&quot;: &quot;[[Developer Notes]] 🧑‍💻&quot;,
+ &quot;:block/order&quot;: 1,
+ &quot;:block/open&quot;: true,
+ &quot;:block/heading&quot;: 3,
+ &quot;:block/children&quot;: [{&quot;:db/id&quot;: 16811}],
+ &quot;:block/parents&quot;: [{&quot;:db/id&quot;: 16287}, {&quot;:db/id&quot;: 16289},
+                    {&quot;:db/id&quot;: 16609}, {&quot;:db/id&quot;: 16804}],
+ &quot;:block/page&quot;: {&quot;:db/id&quot;: 16287},
+ &quot;:block/refs&quot;: [{&quot;:db/id&quot;: 17691}],
+ &quot;:create/user&quot;: {&quot;:db/id&quot;: 1},
+ &quot;:create/time&quot;: 1692372881926,
+ &quot;:edit/user&quot;: {&quot;:db/id&quot;: 1},
+ &quot;:edit/time&quot;: 1692372881926}</code></pre>
+</li>
+<li><pre><code>// backlinks: every block referencing a page
+window.roamAlphaAPI.data.q(
+  `[:find ?s
+    :in $ ?title
+    :where
+    [?page :node/title ?title]
+    [?b :block/refs ?page]
+    [?b :block/string ?s]]`,
+  &quot;My Page&quot;)
+// =&gt; [[&quot;a block referencing [[My Page]]&quot;], ...]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>User</strong>
+<ul>
+<li>Description::
+<ul>
+<li>A member of the graph — referenced by <code>:create/user</code> and <code>:edit/user</code> on every block and page.
+</li>
+</ul>
+</li>
+<li>Attributes::
+<ul>
+<li><code>:user/uid</code> (string, unique) — the user's uid; see <code>roamAlphaAPI.user.uid</code>
+</li>
+<li><code>:user/display-name</code> (string)
+</li>
+<li><code>:user/display-page</code> (ref) — the user's display page
+</li>
+<li><code>:user/email</code> (string, unique)
+</li>
+<li><code>:user/photo-url</code> (string)
+</li>
+<li><code>:user/color</code> (string) — the user's display color (multiplayer presence)
+</li>
+<li><code>:user/settings</code> (map) — the user's client settings; treat as internal
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>// everything about the current user
+roamAlphaAPI.data.pull(&quot;[*]&quot;, [&quot;:user/uid&quot;, roamAlphaAPI.user.uid()])
+// =&gt;
+{&quot;:db/id&quot;: 1,
+ &quot;:user/uid&quot;: &quot;BBG4fFwolaVlT5FZQdzAI7P40aB3&quot;,
+ &quot;:user/display-name&quot;: &quot;Josh&quot;,
+ &quot;:user/display-page&quot;: {&quot;:db/id&quot;: 42}}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Diagram</strong>
+<ul>
+<li>Description::
+<ul>
+<li>A <code>{{[[diagram]]}}</code> block is itself the diagram entity — alongside its normal <strong>Block</strong> attributes, it carries the canvas's nodes and edges as component sub-entities.
+</li>
+</ul>
+</li>
+<li>Attributes::
+<ul>
+<li><code>:diagram/nodes</code> (refs, many) — the diagram's nodes; each node is its own entity (with its own <code>:block/uid</code>):
+<ul>
+<li><code>:diagram.node/block</code> (ref) — the <strong>Block</strong> displayed in the node
+</li>
+<li><code>:diagram.node/parent-node</code> (ref) — the group node containing this node, when nested
+</li>
+<li><code>:diagram.node/data</code> (map) — layout: <code>type</code> (&quot;block&quot; | &quot;group&quot;), <code>position</code> / <code>positionAbsolute</code> ({x, y}), <code>width</code>, <code>height</code>
+</li>
+</ul>
+</li>
+<li><code>:diagram/edges</code> (refs, many) — the diagram's edges; each edge is its own entity:
+<ul>
+<li><code>:diagram.edge/source</code> (ref) — the node the edge starts from
+</li>
+<li><code>:diagram.edge/target</code> (ref) — the node the edge points to
+</li>
+<li><code>:diagram.edge/data</code> (map, optional) — edge styling/metadata
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.data.pull(
+  `[:block/uid :block/string
+    {:diagram/nodes [:diagram.node/data
+                     {:diagram.node/block [:block/uid]}
+                     {:diagram.node/parent-node [:db/id]}]}
+    {:diagram/edges [{:diagram.edge/source [:db/id]}
+                     {:diagram.edge/target [:db/id]}]}]`,
+  [&quot;:block/uid&quot;, &quot;4mJpKhngc&quot;])
+// =&gt;
+{&quot;:block/uid&quot;: &quot;4mJpKhngc&quot;,
+ &quot;:block/string&quot;: &quot;{{[[diagram]]}}&quot;,
+ &quot;:diagram/nodes&quot;: [{&quot;:diagram.node/block&quot;: {&quot;:block/uid&quot;: &quot;gJN3BDpEy&quot;},
+                     &quot;:diagram.node/parent-node&quot;: {&quot;:db/id&quot;: 29759},
+                     &quot;:diagram.node/data&quot;: {&quot;:type&quot;: &quot;block&quot;,
+                                            &quot;:position&quot;: {&quot;:x&quot;: 41, &quot;:y&quot;: 55},
+                                            &quot;:width&quot;: 54, &quot;:height&quot;: 49}},
+                    ...],
+ &quot;:diagram/edges&quot;: [{&quot;:diagram.edge/source&quot;: {&quot;:db/id&quot;: 29757},
+                     &quot;:diagram.edge/target&quot;: {&quot;:db/id&quot;: 29760}}]}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>**Attributes (<code>attr::</code>)**
+<ul>
+<li>Description::
+<ul>
+<li>The triples created by <code>attribute::</code> syntax live in <code>:entity/attrs</code> and <code>:attrs/lookup</code>. The current model is explained on <a href="/developer-documentation/attributes-data-model">Attributes Data Model</a> — but it <strong>will be removed</strong> and replaced by a new attributes system, so don't build on it.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Window</strong>
+<ul>
+<li>Description::
+<ul>
+<li>A window stores one user's view state for one &quot;window&quot; — a page outline, its linked or unlinked references, or a sidebar window. This is where filters live.
+</li>
+<li><code>:window/id</code> embeds the viewing user, the window kind, and the target — e.g. &quot;&lt;user-uid&gt;-body-outline-&lt;page-uid&gt;&quot;, &quot;&lt;user-uid&gt;-mentions-page-&lt;page-uid&gt;&quot;, &quot;&lt;user-uid&gt;-unreffed-links-&lt;page-uid&gt;&quot;. That's why filters are per-user.
+</li>
+</ul>
+</li>
+<li>Attributes::
+<ul>
+<li><code>:window/id</code> (string, unique) — user + window kind + target
+</li>
+<li><code>:window/filters</code> (map) — <code>{includes: [...], removes: [...]}</code> of page uids; <code>roamAlphaAPI.ui.filters</code> reads and writes these as page titles
+</li>
+<li><code>:window/mentions-state</code> (map) — the window's linked-references display settings: sort, grouping, show-paths
+</li>
+<li>windows also have their own <code>:block/uid</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>window.roamAlphaAPI.data.pull(&quot;[*]&quot;, [&quot;:window/id&quot;, &quot;&lt;user-uid&gt;-mentions-page-Do97zfpcF&quot;])
+// =&gt;
+{&quot;:window/id&quot;: &quot;&lt;user-uid&gt;-mentions-page-Do97zfpcF&quot;,
+ &quot;:block/uid&quot;: &quot;TcokCXcKg&quot;,
+ &quot;:window/filters&quot;: {&quot;:includes&quot;: [], &quot;:removes&quot;: []},
+ &quot;:window/mentions-state&quot;: {&quot;:sort&quot;: [&quot;page-date&quot;, &quot;desc&quot;],
+                            &quot;:show-paths&quot;: true,
+                            &quot;:not-by-page?&quot;: false,
+                            &quot;:nest-under-parent-results?&quot;: false}}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Internal</strong>
+<ul>
+<li>Description::
+<ul>
+<li>Entity families for internal machinery — subject to change without notice; don't build on them: <code>:graph/*</code>, <code>:version/*</code>, <code>:token/*</code>, <code>:harc/*</code>, <code>:vc/*</code>, <code>:restrictions/*</code>, <code>:append-api/*</code>, <code>:last-used/time</code>.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</body>
+</html>

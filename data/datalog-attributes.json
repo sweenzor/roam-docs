@@ -1,70 +1,70 @@
 {
  "graph": "developer-documentation",
- "exportedAt": "2026-07-21T07:49:58.442Z",
+ "exportedAt": "2026-07-22T07:50:14.874Z",
  "attributes": [
   {
    "attr": ":attrs/lookup",
-   "entities": 368,
+   "entities": 389,
    "type": "number",
    "example": "5803"
   },
   {
    "attr": ":block/children",
-   "entities": 2658,
+   "entities": 2824,
    "type": "number",
-   "example": "5803"
+   "example": "8626"
   },
   {
    "attr": ":block/heading",
-   "entities": 50,
+   "entities": 51,
    "type": "number",
    "example": "2"
   },
   {
    "attr": ":block/open",
-   "entities": 5223,
+   "entities": 5621,
    "type": "boolean",
    "example": "true"
   },
   {
    "attr": ":block/order",
-   "entities": 5209,
+   "entities": 5606,
    "type": "number",
    "example": "12"
   },
   {
    "attr": ":block/page",
-   "entities": 5208,
+   "entities": 5605,
    "type": "number",
    "example": "3966"
   },
   {
    "attr": ":block/parents",
-   "entities": 5209,
+   "entities": 5606,
    "type": "number",
    "example": "5803"
   },
   {
    "attr": ":block/props",
-   "entities": 10,
+   "entities": 14,
    "type": "object",
    "example": "{\"image-size\":{\"https://firebasestorage.googleapis.com/v0/b/firescript-577a2.…"
   },
   {
    "attr": ":block/refs",
-   "entities": 1945,
+   "entities": 2080,
    "type": "number",
-   "example": "2393"
+   "example": "8333"
   },
   {
    "attr": ":block/string",
-   "entities": 5304,
+   "entities": 5701,
    "type": "string",
    "example": "\"If callback provided, only removes watch with that callback\""
   },
   {
    "attr": ":block/uid",
-   "entities": 5861,
+   "entities": 6265,
    "type": "string",
    "example": "\"hwhK9Kj-n\""
   },
@@ -82,37 +82,37 @@
   },
   {
    "attr": ":create/time",
-   "entities": 5478,
+   "entities": 5882,
    "type": "number",
    "example": "1619841442834"
   },
   {
    "attr": ":create/user",
-   "entities": 5477,
+   "entities": 5881,
    "type": "number",
    "example": "828"
   },
   {
    "attr": ":edit/seen-by",
-   "entities": 841,
+   "entities": 867,
    "type": "number",
    "example": "830"
   },
   {
    "attr": ":edit/time",
-   "entities": 5943,
+   "entities": 6347,
    "type": "number",
    "example": "1636016072031"
   },
   {
    "attr": ":edit/user",
-   "entities": 5711,
+   "entities": 6115,
    "type": "number",
    "example": "828"
   },
   {
    "attr": ":entity/attrs",
-   "entities": 401,
+   "entities": 423,
    "type": "object",
    "example": "[[{\"source\":[\"uid\",\"P_2znWfDD\"],\"value\":[\"uid\",\"P_2znWfDD\"]},{\"source\":[\"uid\"…"
   },
@@ -136,51 +136,51 @@
   },
   {
    "attr": ":log/id",
-   "entities": 230,
+   "entities": 231,
    "type": "number",
    "example": "1671552971449"
   },
   {
    "attr": ":node/title",
-   "entities": 408,
+   "entities": 415,
    "type": "string",
    "example": "\"February 26th, 2026\""
   },
   {
    "attr": ":page/edit-nonce",
-   "entities": 408,
+   "entities": 415,
    "type": "string",
    "example": "\"BdToZgaT-\""
   },
   {
    "attr": ":page/edit-time",
-   "entities": 408,
+   "entities": 415,
    "type": "number",
    "example": "1615210312839"
   },
   {
    "attr": ":page/edit-user",
-   "entities": 408,
+   "entities": 415,
    "type": "number",
    "example": "828"
   },
   {
    "attr": ":page/sidebar",
-   "entities": 14,
+   "entities": 15,
    "type": "number",
    "example": "12"
   },
   {
    "attr": ":page/word-count",
-   "entities": 408,
+   "entities": 415,
    "type": "number",
-   "example": "8961"
+   "example": "24"
   },
   {
    "attr": ":restrictions/prevent-clean",
-   "entities": 24,
+   "entities": 42,
    "type": "number",
-   "example": "1763068662519"
+   "example": "1784666835851"
   },
   {
    "attr": ":token/ai",
