@@ -8,8 +8,8 @@
   - then go through the description: **Description:**
   - then go through **Getting Started:** for hitting the ground running
   - next steps would be **Examples** or the actual **API Reference**
-- **If you have used the [[Roam Backend API (Beta)]] before**
-  - first go through Q:: How is this Append API different from the regular [[Roam Backend API (Beta)]]?
+- **If you have used the [[Roam Backend API]] before**
+  - first go through Q:: How is this Append API different from the regular [[Roam Backend API]]?
   - then go through **Getting Started:** for hitting the ground running
   - next steps would be **Examples** or the actual **API Reference**
 - **If you used this Append API when it was in Alpha stage**
@@ -75,7 +75,7 @@
 - These are the docs for the Roam Append API
   - The main use case for this API is adding stuff to your Roam graph. This works for all hosted Roam graphs - i.e. for both unencrypted and encrypted graphs
 - Q:: When would you use this Append API vs other Roam APIs?
-  - Use [[Roam Backend API (Beta)]] 
+  - Use [[Roam Backend API]] 
     - IF you need to do reads and edits (and not just additions/appends)
     - IF you do NOT need to support encrypted graphs (the backend API cannot work with encrypted graphs)
   - Use [Append API]([[Roam Append API]]) 
@@ -84,7 +84,7 @@
     - IF you do not need read functionality
   - Use [[Roam Alpha API]] (our client side API) 
     - If you're building a [[Roam Depot]] extension or writing [[roam/js]] scripts for yourself 
-- If you have used our regular Backend API, you might want to read the following FAQ to get a sense of the differences: Q:: How is this Append API different from the regular [[Roam Backend API (Beta)]]?
+- If you have used our regular Backend API, you might want to read the following FAQ to get a sense of the differences: Q:: How is this Append API different from the regular [[Roam Backend API]]?
 - **Minimal example using [[cURL]]**
   - ```shell
     curl -X POST "https://append-api.roamresearch.com/api/graph/MY-GRAPH/append-blocks" \
@@ -152,15 +152,15 @@
       - token with an "Append-only" role
         - These tokens cannot read your graph nor can they modify existing blocks in your graph
           - This is very often a desired characteristic: say you want to connect your Roam graph to a service so that you can send data in, but do not want the service from being able to access your Roam graph data 
-        - so, these tokens cannot be used with the [[Roam Backend API (Beta)]]
+        - so, these tokens cannot be used with the [[Roam Backend API]]
         - You can create these tokens via **Settings** > **Graph** > **API Tokens** > "**New API Token**" button. Then you can select a role of "append-only access"
-          - In non-encrypted graphs, you can now create append-only tokens in addition to the "read-only" and "read&edit" tokens that you can use in [[Roam Backend API (Beta)]] 
+          - In non-encrypted graphs, you can now create append-only tokens in addition to the "read-only" and "read&edit" tokens that you can use in [[Roam Backend API]] 
             - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FSeF3Dgj2MU.png?alt=media&token=d68781a4-d742-42dd-ae2b-c092f0704da8)
           - In encrypted graphs, the only tokens you can create are append-only-tokens
             - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2F7FaKvDIYOo.png?alt=media&token=d70c0d27-5ad1-475c-9c97-c9639223c25e)
       - Caveat: you can also use tokens with "read+edit access" in the Append API
         - since read+edit role is a superset of the append role
-  - Now, the things common with **Authentication** in [[Roam Backend API (Beta)]]:
+  - Now, the things common with **Authentication** in [[Roam Backend API]]:
     - Requests to the API use graph specific tokens for authentication
     - You can only get/create these if you own the graph i.e. if you're the admin of the graph
     - These start with `roam-graph-token-`
@@ -292,7 +292,7 @@
   - Returns::
     - (If you're building an integration, be sure to implement at least the response codes below)
     - 200 OK #important
-      - An important difference between this API and the regular [[Roam Backend API (Beta)]] is what a 200 OK response means
+      - An important difference between this API and the regular [[Roam Backend API]] is what a 200 OK response means
         - In the Backend API, when you get a 200 OK response, say on a create block write request, you know that that create has happened
         - However, in the Append API, a 200 OK means that the append data that you sent has been verified and saved in Roam's servers, and it might be applied almost immediately (in the case of unencrypted graphs generally) or the next time a full Roam client is opened by the user (in the case of encrypted graphs)
       - the response.data will look like `{captureSuccessful: true}`
@@ -498,7 +498,7 @@
         - https://x.com/RoamResearch/status/1910658366575178199
 - [[October 26th, 2024]]
   - Made a small change to the Append API: if `open` value is not passed, it is now `true` by default
-    - Change made to match the behavior in the [[Roam Backend API (Beta)]] & the frontend [[Roam Alpha API]]
+    - Change made to match the behavior in the [[Roam Backend API]] & the frontend [[Roam Alpha API]]
     - turns out that we had not mentioned any default value in the docs
       - So, hopefully noone was depending on this value being different
       - If you were depending on this, and if we slightly broke your stuff, super sorry! 😅
@@ -569,23 +569,23 @@
 
 #### **FAQ**
 
-- Q:: How is this Append API different from the regular [[Roam Backend API (Beta)]]?
+- Q:: How is this Append API different from the regular [[Roam Backend API]]?
   - This new API **also works with encrypted graphs** while the Backend API does not (i.e. Append API supports all hosted graphs while Backend API only works with unencrypted hosted graphs)
   - Append API expects a token with an "Append-only" role ~~~~
     - Append API expects a token with an "Append-only" role 
       - token with an "Append-only" role
         - These tokens cannot read your graph nor can they modify existing blocks in your graph
           - This is very often a desired characteristic: say you want to connect your Roam graph to a service so that you can send data in, but do not want the service from being able to access your Roam graph data 
-        - so, these tokens cannot be used with the [[Roam Backend API (Beta)]]
+        - so, these tokens cannot be used with the [[Roam Backend API]]
         - You can create these tokens via **Settings** > **Graph** > **API Tokens** > "**New API Token**" button. Then you can select a role of "append-only access"
-          - In non-encrypted graphs, you can now create append-only tokens in addition to the "read-only" and "read&edit" tokens that you can use in [[Roam Backend API (Beta)]] 
+          - In non-encrypted graphs, you can now create append-only tokens in addition to the "read-only" and "read&edit" tokens that you can use in [[Roam Backend API]] 
             - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FSeF3Dgj2MU.png?alt=media&token=d68781a4-d742-42dd-ae2b-c092f0704da8)
           - In encrypted graphs, the only tokens you can create are append-only-tokens
             - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2F7FaKvDIYOo.png?alt=media&token=d70c0d27-5ad1-475c-9c97-c9639223c25e)
       - Caveat: you can also use tokens with "read+edit access" in the Append API
         - since read+edit role is a superset of the append role
   - The domain is `append-api.roamresearch.com` (as opposed to the `api.roamresearch.com` for the Backend API)
-  - An important difference between this API and the regular [[Roam Backend API (Beta)]] is what a 200 OK response means
+  - An important difference between this API and the regular [[Roam Backend API]] is what a 200 OK response means
     - In the Backend API, when you get a 200 OK response, say on a create block write request, you know that that create has happened
     - However, in the Append API, a 200 OK means that the append data that you sent has been verified and saved in Roam's servers, and it might be applied almost immediately (in the case of unencrypted graphs generally) or the next time a full Roam client is opened by the user (in the case of encrypted graphs)
   - LIMITS

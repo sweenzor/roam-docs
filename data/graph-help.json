@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-07-22T07:50:07.655Z",
+ "exportedAt": "2026-07-23T07:51:51.568Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -23859,10 +23859,6 @@
     }
    ],
    ":block/uid": "9sMIqfTOu"
-  },
-  {
-   ":node/title": ".--rm-grid",
-   ":block/uid": "bzH_VdOMA"
   },
   {
    ":node/title": "August 31st, 2023",
@@ -79195,6 +79191,28 @@
   },
   {
    ":node/title": "July 22nd, 2026",
+   ":block/children": [
+    {
+     ":block/uid": "2zTyOXsVg",
+     ":block/string": "hey test",
+     ":block/order": 0
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "2zTyOXsVg"
+      }
+     ],
+     ":block/uid": "SZ6LWnlmv",
+     ":block/string": "((2zTyOXsVg))",
+     ":block/order": 1
+    },
+    {
+     ":block/uid": "Q9dpzarBM",
+     ":block/string": "",
+     ":block/order": 2
+    }
+   ],
    ":block/uid": "07-22-2026"
   },
   {
@@ -80127,6 +80145,18 @@
   },
   {
    ":node/title": "table",
+   ":block/children": [
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "ZOxNKU481"
+      }
+     ],
+     ":block/uid": "Vd0EL9cTk",
+     ":block/string": "see [[Table]]",
+     ":block/order": 0
+    }
+   ],
    ":block/uid": "2-eIgz-4z"
   },
   {

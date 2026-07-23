@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roam Backend API — Roam Research Docs</title>
+<meta name="description" content="Description">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/roam-backend-api">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Roam Backend API — Roam Research Docs">
+<meta property="og:description" content="Description">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/roam-backend-api">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"Roam Backend API","item":"https://roamdocs.fyi/developer-documentation/roam-backend-api"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>Roam Backend API</h1>
+<p class="meta"><a href="roam-backend-api.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/W4Po8pcHQ">view in Roam Research</a></p>
+<ul>
+<li><strong>Description</strong>
+<ul>
+<li>An HTTP API for reading and writing your Roam graphs from your own code
+</li>
+<li>Encrypted graphs are not supported (and will not be in the future)
+<ul>
+<li>If you want to capture to both unencrypted &amp; encrypted graphs, please checkout the <a href="/developer-documentation/roam-append-api">Roam Append API</a> instead
+</li>
+</ul>
+</li>
+<li>Postman Public workspace to play around with
+<ul>
+<li>https://www.postman.com/roamresearch/workspace/roam-research-backend-api/collection/27948971-ac6bd2a2-c0f0-4259-abc1-78bde0a01958
+<ul>
+<li>A walkthrough Loom video: https://www.loom.com/share/2f14c2331b65439a81632b9b94400160
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Please report any issues in the #developers channel in the Roam Slack or via email to [support@roamresearch.com](mailto:support@roamresearch.com)
+</li>
+</ul>
+</li>
+<li><strong>SDKs</strong>
+<ul>
+<li>Please prefer using <a href="https://github.com/Roam-Research/backend-sdks">our sdks</a>
+<ul>
+<li><a href="https://www.npmjs.com/package/@roam-research/roam-api-sdk">typescript</a>
+</li>
+<li><a href="https://github.com/Roam-Research/backend-sdks/tree/master/clojure">clojure</a>
+</li>
+<li><a href="https://github.com/Roam-Research/backend-sdks/tree/master/python">python</a>
+</li>
+<li><a href="https://github.com/Roam-Research/backend-sdks/tree/master/java">java</a>
+</li>
+<li><a href="https://crates.io/crates/roam-sdk">rust</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Authentication</strong>
+<ul>
+<li>Requests to the API use graph specific tokens for authentication
+</li>
+<li>You can only get/create these if you own the graph i.e. if you're the admin of the graph
+</li>
+<li>These start with <code>roam-graph-token-</code>
+</li>
+<li>You can create and edit roam-graph-tokens from a new section &quot;API tokens&quot; in the &quot;Graph&quot; tab in the Settings
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamteam%2FkqaM1ePPbV.png?alt=media&amp;token=e113f2b5-4fbe-4b75-8d30-a114a6aa0f8d" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>How to pass the tokens in the request?
+<ul>
+<li>pass them in the <code>X-Authorization</code> header
+<ul>
+<li>you can use the <code>Authorization</code> header too (would be more secure) but you have to make sure that your code/library handles redirect properly and passes the authorization header when redirect has been followed (and the latter is generally not default behavior for most network libraries) 
+</li>
+</ul>
+</li>
+<li>Make sure they're prefixed with a <code>Bearer </code>
+</li>
+<li>An example
+<ul>
+<li><code>Bearer roam-graph-token-t_OjqgIAH1JZphzP4HxjJNad55lLFKpsqIM7x3bW</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>To use the Backend API, you need a roam-graph-token with either a &quot;read+edit&quot; or a &quot;read-only&quot; role
+<ul>
+<li>roam-graph-tokens with &quot;append-only&quot; roles can only be used with the <a href="/developer-documentation/roam-append-api">Roam Append API</a>
+</li>
+</ul>
+</li>
+<li>A cURL request example
+<ul>
+<li><pre><code>curl -X POST &quot;https://api.roamresearch.com/api/graph/MY-GRAPH/q&quot; --location-trusted \
+-H &quot;Accept: application/json&quot; \
+-H &quot;X-Authorization: Bearer roam-graph-token-XXX&quot; \
+-H &quot;Content-Type: application/json&quot; \
+-d &quot;{\&quot;query\&quot;: \&quot;[:find ?block-uid ?block-str :in \$ ?search-string :where [?b :block/uid ?block-uid] [?b :block/string ?block-str] [(clojure.string/includes? ?block-str ?search-string)]]\&quot;, \&quot;args\&quot;: [\&quot;apple\&quot;]}&quot;
+# =&gt;
+# {&quot;result&quot;: [[&quot;hjt3Bwqp2&quot;, &quot;apple pie recipe&quot;], [&quot;e1Xp7HELP&quot;, &quot;Bought apples at the farmers market&quot;]]}</code></pre>
+</li>
+<li>Some important points
+<ul>
+<li><code>--location-trusted</code> is required because your request is redirected to the actual machine doing the work. 
+<ul>
+<li>There is a sharding mechanism in place (such that different graphs run on different machines)
+</li>
+<li><code>https://api.roamresearch.com/</code> abstracts away this from the developer point of view, by redirecting messages to the actual machine doing the work
+</li>
+</ul>
+</li>
+<li>As mentioned earlier in, you have to make sure that the tokens are prefixed with a <code>Bearer </code> and are passed in the Authorization header
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Reference</strong>
+<ul>
+<li><strong>Endpoint base url:</strong> https://api.roamresearch.com/
+</li>
+<li>Read requests (<code>q</code>, <code>pull</code>, <code>pull-many</code>) have a <em>20 second</em> time limit. If a request exceeds it, it fails with a 500 whose message contains &quot;took too long to run&quot;
+</li>
+<li><strong>API routes</strong>
+<ul>
+<li><code>/api/graph/{graph-name}/q</code> (POST)
+<ul>
+<li>Description::
+<ul>
+<li>Runs a datalog query against the graph and returns the matching results
+</li>
+<li>The backend version of <code>roamAlphaAPI.data.q</code>
+</li>
+<li>parameters are passed as a JSON request body
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>query</code> (string, required) — the datalog query, as an EDN string
+</li>
+<li><code>args</code> (array, optional) — inputs for the query, bound in order to the extra <code>:in</code> variables (the ones after <code>$</code>)
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>200 with body <code>{&quot;result&quot;: [...]}</code> — the array of query results
+<ul>
+<li>maps produced by pull expressions in the query have keys prefixed with &quot;:&quot;, e.g. &quot;:block/uid&quot;
+</li>
+</ul>
+</li>
+<li>for error responses, see <strong>What does response look like?</strong> (with <strong>HTTP status codes</strong>)
+</li>
+<li>sample output structure
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2Foz9l5Y0q7B.png?alt=media&amp;token=7c7dffd4-6729-4f75-99bc-a0d00589fa3b" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li>Finds the uid and string of every block whose text contains &quot;apple&quot;
+</li>
+<li>Request body (JSON)
+<ul>
+<li><pre><code>{
+  &quot;query&quot;: &quot;[:find ?block-uid ?block-str :in $ ?search-string :where [?b :block/uid ?block-uid] [?b :block/string ?block-str] [(clojure.string/includes? ?block-str ?search-string)]]&quot;,
+  &quot;args&quot;: [&quot;apple&quot;]
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>cURL request
+<ul>
+<li><pre><code>curl -X POST &quot;https://api.roamresearch.com/api/graph/MY-GRAPH/q&quot; --location-trusted \
+-H &quot;Accept: application/json&quot; \
+-H &quot;X-Authorization: Bearer roam-graph-token-XXX&quot; \
+-H &quot;Content-Type: application/json&quot; \
+-d &quot;{\&quot;query\&quot;: \&quot;[:find ?block-uid ?block-str :in \$ ?search-string :where [?b :block/uid ?block-uid] [?b :block/string ?block-str] [(clojure.string/includes? ?block-str ?search-string)]]\&quot;, \&quot;args\&quot;: [\&quot;apple\&quot;]}&quot;
+# =&gt;
+# {&quot;result&quot;: [[&quot;hjt3Bwqp2&quot;, &quot;apple pie recipe&quot;], [&quot;e1Xp7HELP&quot;, &quot;Bought apples at the farmers market&quot;]]}</code></pre>
+</li>
+</ul>
+</li>
+<li>TypeScript — using the <a href="https://github.com/Roam-Research/backend-sdks">official SDK</a>
+<ul>
+<li><pre><code>import { initializeGraph, q } from &quot;@roam-research/roam-api-sdk&quot;;
+
+const graph = initializeGraph({
+  token: &quot;roam-graph-token-XXX&quot;,
+  graph: &quot;MY-GRAPH&quot;,
+});
+
+const result = await q(
+  graph,
+  &quot;[:find ?block-uid ?block-str :in $ ?search-string :where [?b :block/uid ?block-uid] [?b :block/string ?block-str] [(clojure.string/includes? ?block-str ?search-string)]]&quot;,
+  [&quot;apple&quot;]
+);
+// =&gt; [[&quot;hjt3Bwqp2&quot;, &quot;apple pie recipe&quot;], [&quot;e1Xp7HELP&quot;, &quot;Bought apples at the farmers market&quot;]]</code></pre>
+</li>
+<li>the SDK resolves to the <code>result</code> value directly and throws on error responses
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>/api/graph/{graph-name}/pull</code> (POST)
+<ul>
+<li>Description::
+<ul>
+<li>Pulls the requested attributes for one entity, given a pull selector and an entity id
+</li>
+<li>The backend version of <code>roamAlphaAPI.data.pull</code>
+</li>
+<li>parameters are passed as a JSON request body
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>selector</code> (string, required) — the pull pattern, as an EDN string
+</li>
+<li><code>eid</code> (string, required) — the entity to pull, as an EDN string: an entity id number or a lookup ref like [:block/uid &quot;abc123xyz&quot;]
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>200 with body <code>{&quot;result&quot;: {...}}</code> — the pulled map, containing only the attributes the entity actually has
+<ul>
+<li>keys are prefixed with &quot;:&quot;, e.g. &quot;:block/uid&quot;
+</li>
+</ul>
+</li>
+<li>for error responses, see <strong>What does response look like?</strong> (with <strong>HTTP status codes</strong>)
+</li>
+<li>sample output structure
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2Fb-o1HKrX_N.png?alt=media&amp;token=7e6c9ef0-1162-4478-8cba-f0bf3c419deb" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li>Pulls a daily note page's uid and title, plus the uid and string of its children and the title/string/uid of everything they reference
+</li>
+<li>Request body (JSON)
+<ul>
+<li><pre><code>{
+  &quot;eid&quot;: &quot;[:block/uid \&quot;08-30-2022\&quot;]&quot;,
+  &quot;selector&quot;: &quot;[:block/uid :node/title :block/string {:block/children [:block/uid :block/string]} {:block/refs [:node/title :block/string :block/uid]}]&quot;
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>cURL request
+<ul>
+<li><pre><code>curl -X POST &quot;https://api.roamresearch.com/api/graph/MY-GRAPH/pull&quot; --location-trusted \
+-H &quot;Accept: application/json&quot; \
+-H &quot;X-Authorization: Bearer roam-graph-token-XXX&quot; \
+-H &quot;Content-Type: application/json&quot; \
+-d &quot;{\&quot;eid\&quot;: \&quot;[:block/uid \\\&quot;08-30-2022\\\&quot;]\&quot;, \&quot;selector\&quot;: \&quot;[:block/uid :node/title :block/string {:block/children [:block/uid :block/string]} {:block/refs [:node/title :block/string :block/uid]}]\&quot;}&quot;
+# =&gt;
+# {&quot;result&quot;: {&quot;:block/uid&quot;: &quot;08-30-2022&quot;, &quot;:node/title&quot;: &quot;August 30th, 2022&quot;, &quot;:block/children&quot;: [{&quot;:block/uid&quot;: &quot;hjt3Bwqp2&quot;, &quot;:block/string&quot;: &quot;apple pie recipe&quot;}, ...]}}</code></pre>
+</li>
+</ul>
+</li>
+<li>TypeScript — using the <a href="https://github.com/Roam-Research/backend-sdks">official SDK</a>
+<ul>
+<li><pre><code>import { initializeGraph, pull } from &quot;@roam-research/roam-api-sdk&quot;;
+
+const graph = initializeGraph({
+  token: &quot;roam-graph-token-XXX&quot;,
+  graph: &quot;MY-GRAPH&quot;,
+});
+
+const result = await pull(
+  graph,
+  &quot;[:block/uid :node/title :block/string {:block/children [:block/uid :block/string]} {:block/refs [:node/title :block/string :block/uid]}]&quot;,
+  '[:block/uid &quot;08-30-2022&quot;]'
+);
+// =&gt;
+// {&quot;:block/uid&quot;: &quot;08-30-2022&quot;,
+//  &quot;:node/title&quot;: &quot;August 30th, 2022&quot;,
+//  &quot;:block/children&quot;: [{&quot;:block/uid&quot;: &quot;hjt3Bwqp2&quot;, &quot;:block/string&quot;: &quot;apple pie recipe&quot;}, ...]}</code></pre>
+</li>
+<li>the SDK resolves to the <code>result</code> value directly and throws on error responses
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>/api/graph/{graph-name}/pull-many</code> (POST)
+<ul>
+<li>Description::
+<ul>
+<li>Pulls the requested attributes for multiple entities in one request — the many-entity version of <code>/api/graph/{graph-name}/pull</code> (POST)
+</li>
+<li>The backend version of <code>roamAlphaAPI.data.pull_many</code>
+</li>
+<li>parameters are passed as a JSON request body
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>selector</code> (string, required) — the pull pattern, as an EDN string, applied to every eid
+</li>
+<li><code>eids</code> (required) — the entities to pull
+<ul>
+<li>either one EDN string containing a list of eids (as in the example), or a JSON array whose elements are individual eids
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>200 with body <code>{&quot;result&quot;: [...]}</code> — an array of pulled maps, one per eid, in the same order
+<ul>
+<li>keys are prefixed with &quot;:&quot;, e.g. &quot;:block/uid&quot;
+</li>
+</ul>
+</li>
+<li>for error responses, see <strong>What does response look like?</strong> (with <strong>HTTP status codes</strong>)
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li>Pulls the uid, title, and children of two daily note pages in one request
+</li>
+<li>Request body (JSON)
+<ul>
+<li><pre><code>{
+  &quot;eids&quot;: &quot;[[:block/uid \&quot;08-30-2022\&quot;] [:block/uid \&quot;08-31-2022\&quot;]]&quot;,
+  &quot;selector&quot;: &quot;[:block/uid :node/title {:block/children [:block/uid :block/string]}]&quot;
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>cURL request
+<ul>
+<li><pre><code>curl -X POST &quot;https://api.roamresearch.com/api/graph/MY-GRAPH/pull-many&quot; --location-trusted \
+-H &quot;Accept: application/json&quot; \
+-H &quot;X-Authorization: Bearer roam-graph-token-XXX&quot; \
+-H &quot;Content-Type: application/json&quot; \
+-d &quot;{\&quot;eids\&quot;: \&quot;[[:block/uid \\\&quot;08-30-2022\\\&quot;] [:block/uid \\\&quot;08-31-2022\\\&quot;]]\&quot;, \&quot;selector\&quot;: \&quot;[:block/uid :node/title {:block/children [:block/uid :block/string]}]\&quot;}&quot;
+# =&gt;
+# {&quot;result&quot;: [{&quot;:block/uid&quot;: &quot;08-30-2022&quot;, &quot;:node/title&quot;: &quot;August 30th, 2022&quot;, &quot;:block/children&quot;: [...]}, {&quot;:block/uid&quot;: &quot;08-31-2022&quot;, &quot;:node/title&quot;: &quot;August 31st, 2022&quot;, &quot;:block/children&quot;: [...]}]}</code></pre>
+</li>
+</ul>
+</li>
+<li>TypeScript — using the <a href="https://github.com/Roam-Research/backend-sdks">official SDK</a>
+<ul>
+<li><pre><code>import { initializeGraph, pull_many } from &quot;@roam-research/roam-api-sdk&quot;;
+
+const graph = initializeGraph({
+  token: &quot;roam-graph-token-XXX&quot;,
+  graph: &quot;MY-GRAPH&quot;,
+});
+
+const result = await pull_many(
+  graph,
+  &quot;[:block/uid :node/title {:block/children [:block/uid :block/string]}]&quot;,
+  '[[:block/uid &quot;08-30-2022&quot;] [:block/uid &quot;08-31-2022&quot;]]'
+);
+// =&gt;
+// [{&quot;:block/uid&quot;: &quot;08-30-2022&quot;, &quot;:node/title&quot;: &quot;August 30th, 2022&quot;, &quot;:block/children&quot;: [...]},
+//  {&quot;:block/uid&quot;: &quot;08-31-2022&quot;, &quot;:node/title&quot;: &quot;August 31st, 2022&quot;, &quot;:block/children&quot;: [...]}]</code></pre>
+</li>
+<li>the SDK resolves to the <code>result</code> value directly and throws on error responses
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>/api/graph/{graph-name}/search</code> (POST)
+<ul>
+<li>Description::
+<ul>
+<li>Ranked text search over page titles and block strings — the same search that powers the app's &quot;Find or Create Page&quot; search box
+</li>
+<li>results are ranked: exact title matches first, then substring matches, then multi-word (spread) matches; pages come before blocks, and newer entities win ties
+</li>
+<li>parameters are passed as a JSON request body
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>search-str</code> (string, required) — the text to search for
+<ul>
+<li><code>search-string</code> is accepted as an alias
+</li>
+</ul>
+</li>
+<li><code>search-pages</code> (boolean, optional, default true) — include page results
+</li>
+<li><code>search-blocks</code> (boolean, optional, default true) — include block results
+</li>
+<li><code>hide-code-blocks</code> (boolean, optional, default false) — exclude code blocks from block results
+</li>
+<li><code>limit</code> (number, optional, default 300, max 1000) — maximum number of results
+</li>
+<li><code>pull</code> (string, optional) — pull pattern applied to each result, as an EDN string; default [:block/string :node/title :block/uid]
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>200 with body <code>{&quot;result&quot;: [...], &quot;search-str&quot;: &quot;...&quot;}</code> — result is an array of pulled maps
+<ul>
+<li>keys are prefixed with &quot;:&quot;, e.g. &quot;:block/uid&quot;
+</li>
+</ul>
+</li>
+<li>for error responses, see <strong>What does response look like?</strong> (with <strong>HTTP status codes</strong>)
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li>Searches pages and blocks for &quot;apple&quot;
+</li>
+<li>Request body (JSON)
+<ul>
+<li><pre><code>{
+  &quot;search-str&quot;: &quot;apple&quot;,
+  &quot;hide-code-blocks&quot;: true,
+  &quot;limit&quot;: 20
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>cURL request
+<ul>
+<li><pre><code>curl -X POST &quot;https://api.roamresearch.com/api/graph/MY-GRAPH/search&quot; --location-trusted \
+-H &quot;Accept: application/json&quot; \
+-H &quot;X-Authorization: Bearer roam-graph-token-XXX&quot; \
+-H &quot;Content-Type: application/json&quot; \
+-d &quot;{\&quot;search-str\&quot;: \&quot;apple\&quot;, \&quot;hide-code-blocks\&quot;: true, \&quot;limit\&quot;: 20}&quot;
+# =&gt;
+# {&quot;result&quot;: [{&quot;:node/title&quot;: &quot;apple&quot;, &quot;:block/uid&quot;: &quot;x83-jseuA&quot;}, {&quot;:block/string&quot;: &quot;apple pie recipe&quot;, &quot;:block/uid&quot;: &quot;hjt3Bwqp2&quot;}], &quot;search-str&quot;: &quot;apple&quot;}</code></pre>
+</li>
+</ul>
+</li>
+<li>TypeScript — plain <code>fetch</code> (this route is not in the SDK yet)
+<ul>
+<li><pre><code>const response = await fetch(&quot;https://api.roamresearch.com/api/graph/MY-GRAPH/search&quot;, {
+  method: &quot;POST&quot;,
+  headers: {
+    &quot;Content-Type&quot;: &quot;application/json&quot;,
+    &quot;X-Authorization&quot;: &quot;Bearer roam-graph-token-XXX&quot;,
+  },
+  body: JSON.stringify({ &quot;search-str&quot;: &quot;apple&quot;, &quot;hide-code-blocks&quot;: true, &quot;limit&quot;: 20 }),
+});
+const { result } = await response.json();
+// =&gt; [{&quot;:node/title&quot;: &quot;apple&quot;, &quot;:block/uid&quot;: &quot;x83-jseuA&quot;}, {&quot;:block/string&quot;: &quot;apple pie recipe&quot;, &quot;:block/uid&quot;: &quot;hjt3Bwqp2&quot;}]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>/api/graph/{graph-name}/roam-query</code> (POST)
+<ul>
+<li>Description::
+<ul>
+<li>Runs a Roam query — the same syntax used in <code>{{[[query]]: ...}}</code> blocks — and returns the matching blocks and pages
+</li>
+<li>The backend version of <code>roamAlphaAPI.data.roamQuery</code>
+<ul>
+<li>unlike the frontend version, there are no grouping or sorting options — results come back as a flat array
+</li>
+</ul>
+</li>
+<li>blocks that themselves contain a query are excluded from the results (matching the app's behavior)
+</li>
+<li>parameters are passed as a JSON request body
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>query</code> (string, required) — the query string, e.g. <code>{and: [[project]] [[active]]}</code>
+</li>
+<li><code>current-date</code> (string, required) — the client's current date, as &quot;yyyy-MM-dd&quot;
+<ul>
+<li>used as the reference date for <code>{between: }</code> clauses; required even if the query has none
+</li>
+</ul>
+</li>
+<li><code>block-uid</code> (string, optional) — uid of an existing block to treat as the query's location
+<ul>
+<li>if that block is on a daily note page, the page's date is used for <code>{between: }</code> clauses instead of <code>current-date</code>
+</li>
+<li>the block itself is excluded from the results
+</li>
+</ul>
+</li>
+<li><code>limit</code> (number, optional) — maximum number of results
+</li>
+<li><code>pull</code> (string, optional) — pull pattern applied to each result, as an EDN string; default [:block/string :node/title :block/uid]
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>200 with body <code>{&quot;result&quot;: [...]}</code> — an array of pulled maps
+<ul>
+<li>keys are prefixed with &quot;:&quot;, e.g. &quot;:block/uid&quot;
+</li>
+</ul>
+</li>
+<li>for error responses, see <strong>What does response look like?</strong> (with <strong>HTTP status codes</strong>)
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li>Finds everything tagged with both <code>[[project]]</code> and <code>[[active]]</code>
+</li>
+<li>Request body (JSON)
+<ul>
+<li><pre><code>{
+  &quot;query&quot;: &quot;{and: [[project]] [[active]]}&quot;,
+  &quot;current-date&quot;: &quot;2023-07-29&quot;,
+  &quot;limit&quot;: 20
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>cURL request
+<ul>
+<li><pre><code>curl -X POST &quot;https://api.roamresearch.com/api/graph/MY-GRAPH/roam-query&quot; --location-trusted \
+-H &quot;Accept: application/json&quot; \
+-H &quot;X-Authorization: Bearer roam-graph-token-XXX&quot; \
+-H &quot;Content-Type: application/json&quot; \
+-d &quot;{\&quot;query\&quot;: \&quot;{and: [[project]] [[active]]}\&quot;, \&quot;current-date\&quot;: \&quot;2023-07-29\&quot;, \&quot;limit\&quot;: 20}&quot;
+# =&gt;
+# {&quot;result&quot;: [{&quot;:block/string&quot;: &quot;kick off [[project]] review #active&quot;, &quot;:block/uid&quot;: &quot;hjt3Bwqp2&quot;}, ...]}</code></pre>
+</li>
+</ul>
+</li>
+<li>TypeScript — plain <code>fetch</code> (this route is not in the SDK yet)
+<ul>
+<li><pre><code>const response = await fetch(&quot;https://api.roamresearch.com/api/graph/MY-GRAPH/roam-query&quot;, {
+  method: &quot;POST&quot;,
+  headers: {
+    &quot;Content-Type&quot;: &quot;application/json&quot;,
+    &quot;X-Authorization&quot;: &quot;Bearer roam-graph-token-XXX&quot;,
+  },
+  body: JSON.stringify({
+    &quot;query&quot;: &quot;{and: [[project]] [[active]]}&quot;,
+    &quot;current-date&quot;: &quot;2023-07-29&quot;,
+    &quot;limit&quot;: 20,
+  }),
+});
+const { result } = await response.json();
+// =&gt; [{&quot;:block/string&quot;: &quot;kick off [[project]] review #active&quot;, &quot;:block/uid&quot;: &quot;hjt3Bwqp2&quot;}, ...]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>/api/graph/{graph-name}/write</code> (POST)
+<ul>
+<li>Description::
+<ul>
+<li>A single endpoint for all write actions — pass the action's name as the <code>action</code> key in the JSON request body, alongside that action's own parameters
+</li>
+<li>each available action, with its full parameters, is documented below
+</li>
+<li>to run several actions in one request, use <code>batch-actions</code>
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>action</code> (string, required) — one of: <code>create-block</code>, <code>move-block</code>, <code>update-block</code>, <code>delete-block</code>, <code>create-page</code>, <code>update-page</code>, <code>delete-page</code>, <code>batch-actions</code>
+</li>
+<li>the rest of the body is the chosen action's own parameters — written out under each action below
+</li>
+</ul>
+</li>
+<li>Actions::
+<ul>
+<li><code>create-block</code>
+<ul>
+<li>Description::
+<ul>
+<li>creates a new block at the given location
+</li>
+<li>equivalent to <code>roamAlphaAPI.data.block.create</code>
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>location</code> (map, required)
+<ul>
+<li><code>parent-uid</code> (string) — uid of the parent block or page the new block goes under
+</li>
+<li><code>page-title</code> — target a page by title instead of uid; creates the page if it does not exist
+<ul>
+<li>either a title string, or a map <code>{&quot;daily-note-page&quot;: &quot;MM-DD-YYYY&quot;}</code> for daily note pages
+</li>
+</ul>
+</li>
+<li>pass exactly one of parent-uid or page-title
+</li>
+<li><code>order</code> (number | &quot;first&quot; | &quot;last&quot;, required) — position among the parent's children
+</li>
+</ul>
+</li>
+<li><code>block</code> (map, required)
+<ul>
+<li><code>string</code> (string, required) — the block's text
+</li>
+<li><code>uid</code> (string, optional) — uid for the new block, autogenerated if omitted
+</li>
+<li><code>open</code> (boolean, optional, default true) — expanded or collapsed
+</li>
+<li><code>heading</code> (number, optional) — 0, 1, 2, or 3, where 0 means normal text (no heading)
+</li>
+<li><code>text-align</code> (string, optional) — left, center, right, or justify
+</li>
+<li><code>children-view-type</code> (string, optional) — bullet, numbered, or document
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>move-block</code>
+<ul>
+<li>Description::
+<ul>
+<li>moves an existing block (together with its children) to a new location
+</li>
+<li>equivalent to <code>roamAlphaAPI.data.block.move</code>
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>block</code> (map, required)
+<ul>
+<li><code>uid</code> (string, required) — the block to move
+</li>
+</ul>
+</li>
+<li><code>location</code> (map, required)
+<ul>
+<li><code>parent-uid</code> (string) — uid of the new parent block or page
+</li>
+<li><code>page-title</code> — target a page by title instead of uid; creates the page if it does not exist
+<ul>
+<li>either a title string, or a map <code>{&quot;daily-note-page&quot;: &quot;MM-DD-YYYY&quot;}</code> for daily note pages
+</li>
+</ul>
+</li>
+<li>pass exactly one of parent-uid or page-title
+</li>
+<li><code>order</code> (number | &quot;first&quot; | &quot;last&quot;, required) — position among the new parent's children
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>update-block</code>
+<ul>
+<li>Description::
+<ul>
+<li>updates a block's text and/or display properties; only the keys you pass are changed
+</li>
+<li>equivalent to <code>roamAlphaAPI.data.block.update</code>
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>block</code> (map, required)
+<ul>
+<li><code>uid</code> (string, required) — the block to update
+</li>
+<li><code>string</code> (string, optional) — the new text
+</li>
+<li><code>open</code> (boolean, optional) — expanded or collapsed
+</li>
+<li><code>heading</code> (number, optional) — 0, 1, 2, or 3, where 0 means normal text (no heading)
+</li>
+<li><code>text-align</code> (string, optional) — left, center, right, or justify
+</li>
+<li><code>children-view-type</code> (string, optional) — bullet, numbered, or document
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>delete-block</code>
+<ul>
+<li>Description::
+<ul>
+<li>deletes a block and all of its children
+</li>
+<li>equivalent to <code>roamAlphaAPI.data.block.delete</code>
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>block</code> (map, required)
+<ul>
+<li><code>uid</code> (string, required) — the block to delete
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>create-page</code>
+<ul>
+<li>Description::
+<ul>
+<li>creates a new page
+</li>
+<li>equivalent to <code>roamAlphaAPI.data.page.create</code>
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>page</code> (map, required)
+<ul>
+<li><code>title</code> (string, required) — the page's title
+</li>
+<li><code>uid</code> (string, optional) — uid for the new page, autogenerated if omitted
+</li>
+<li><code>children-view-type</code> (string, optional) — bullet, numbered, or document
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>update-page</code>
+<ul>
+<li>Description::
+<ul>
+<li>renames a page and/or updates its display properties; only the keys you pass are changed
+</li>
+<li>equivalent to <code>roamAlphaAPI.data.page.update</code>
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>page</code> (map, required)
+<ul>
+<li><code>uid</code> (string, required) — the page to update
+</li>
+<li><code>title</code> (string, optional) — the new title
+</li>
+<li><code>children-view-type</code> (string, optional) — bullet, numbered, or document
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>delete-page</code>
+<ul>
+<li>Description::
+<ul>
+<li>deletes a page and all of its blocks
+</li>
+<li>equivalent to <code>roamAlphaAPI.data.page.delete</code>
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>page</code> (map, required)
+<ul>
+<li><code>uid</code> (string, required) — the page to delete
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>batch-actions</code>
+<ul>
+<li>Description::
+<ul>
+<li>runs several write actions, in order, in one request
+</li>
+<li><strong>tempids</strong>: in place of real uids, you can pass negative integers in <code>uid</code> and <code>parent-uid</code> values and reuse them across the batch — e.g. create a page with uid -1, then create blocks under parent-uid -1
+<ul>
+<li>the response maps each tempid to the real uid it was assigned: <code>{&quot;tempids-to-uids&quot;: {&quot;-1&quot;: &quot;EBiw8LzPb&quot;}}</code>
+</li>
+</ul>
+</li>
+<li>if an action fails, the actions before it stay transacted and the rest are skipped
+<ul>
+<li>the error body's <code>num-actions-successfully-transacted-before-failure</code> tells you how many succeeded, alongside <code>message</code> and <code>batch-error-message</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>actions</code> (array, required) — a list of action maps, each shaped exactly like the individual actions above
+<ul>
+<li>cannot contain another batch-actions
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>200 with an empty body — the write completed
+<ul>
+<li>exception: <code>batch-actions</code> responds with <code>{&quot;tempids-to-uids&quot;: {...}}</code> when tempids are used
+</li>
+</ul>
+</li>
+<li>for error responses, see <strong>What does response look like?</strong> (with <strong>HTTP status codes</strong>)
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li>A full <code>create-block</code> request — creates a new block as the last child of the September 28th, 2022 daily note page
+<ul>
+<li>Request body (JSON)
+<ul>
+<li><pre><code>{
+  &quot;action&quot;: &quot;create-block&quot;,
+  &quot;location&quot;: {
+      &quot;parent-uid&quot;: &quot;09-28-2022&quot;,
+      &quot;order&quot;: &quot;last&quot;
+  },
+  &quot;block&quot;: {
+      &quot;string&quot;: &quot;new block created via the backend&quot;
+  }
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>cURL request
+<ul>
+<li><pre><code>curl -X POST &quot;https://api.roamresearch.com/api/graph/MY-GRAPH/write&quot; --location-trusted \
+-H &quot;Accept: application/json&quot; \
+-H &quot;X-Authorization: Bearer roam-graph-token-XXX&quot; \
+-H &quot;Content-Type: application/json&quot; \
+-d &quot;{\&quot;action\&quot;:\&quot;create-block\&quot;,\&quot;location\&quot;:{\&quot;parent-uid\&quot;:\&quot;09-28-2022\&quot;,\&quot;order\&quot;:\&quot;last\&quot;},\&quot;block\&quot;:{\&quot;string\&quot;:\&quot;new block created via the backend\&quot;}}&quot;
+# =&gt; 200 OK (empty body)</code></pre>
+</li>
+</ul>
+</li>
+<li>TypeScript — using the <a href="https://github.com/Roam-Research/backend-sdks">official SDK</a>
+<ul>
+<li><pre><code>import { initializeGraph, createBlock } from &quot;@roam-research/roam-api-sdk&quot;;
+
+const graph = initializeGraph({
+  token: &quot;roam-graph-token-XXX&quot;,
+  graph: &quot;MY-GRAPH&quot;,
+});
+
+const ok = await createBlock(graph, {
+  location: { &quot;parent-uid&quot;: &quot;09-28-2022&quot;, order: &quot;last&quot; },
+  block: { string: &quot;new block created via the backend&quot; },
+});
+// =&gt; true</code></pre>
+</li>
+<li>the SDK has one function per action (createBlock, moveBlock, updateBlock, deleteBlock, createPage, updatePage, deletePage) — each fills in <code>action</code> for you and resolves to true on success
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>A single <code>batch-actions</code> request that uses every action — creates pages and blocks (reusing tempids), captures to a daily note page, then moves, updates, and deletes
+<ul>
+<li><pre><code>{
+  &quot;action&quot;: &quot;batch-actions&quot;,
+  &quot;actions&quot;: [
+    {
+      &quot;action&quot;: &quot;create-page&quot;,
+      &quot;page&quot;: { &quot;title&quot;: &quot;Batch action test page&quot;, &quot;uid&quot;: -1 }
+    },
+    {
+      &quot;action&quot;: &quot;create-block&quot;,
+      &quot;location&quot;: { &quot;parent-uid&quot;: -1, &quot;order&quot;: &quot;last&quot; },
+      &quot;block&quot;: { &quot;string&quot;: &quot;First&quot; }
+    },
+    {
+      &quot;action&quot;: &quot;create-block&quot;,
+      &quot;location&quot;: { &quot;parent-uid&quot;: -1, &quot;order&quot;: &quot;last&quot; },
+      &quot;block&quot;: { &quot;string&quot;: &quot;Second&quot;, &quot;uid&quot;: -2, &quot;heading&quot;: 2, &quot;open&quot;: false }
+    },
+    {
+      &quot;action&quot;: &quot;create-block&quot;,
+      &quot;location&quot;: { &quot;page-title&quot;: {&quot;daily-note-page&quot;: &quot;07-29-2023&quot;}, &quot;order&quot;: &quot;first&quot; },
+      &quot;block&quot;: { &quot;string&quot;: &quot;captured to a daily note page&quot; }
+    },
+    {
+      &quot;action&quot;: &quot;move-block&quot;,
+      &quot;block&quot;: { &quot;uid&quot;: -2 },
+      &quot;location&quot;: { &quot;parent-uid&quot;: -1, &quot;order&quot;: 0 }
+    },
+    {
+      &quot;action&quot;: &quot;update-block&quot;,
+      &quot;block&quot;: { &quot;uid&quot;: -2, &quot;string&quot;: &quot;Second (updated)&quot;, &quot;heading&quot;: 0 }
+    },
+    {
+      &quot;action&quot;: &quot;create-page&quot;,
+      &quot;page&quot;: { &quot;title&quot;: &quot;Scratch page&quot;, &quot;uid&quot;: -3, &quot;children-view-type&quot;: &quot;numbered&quot; }
+    },
+    {
+      &quot;action&quot;: &quot;update-page&quot;,
+      &quot;page&quot;: { &quot;uid&quot;: -3, &quot;title&quot;: &quot;Scratch page (renamed)&quot; }
+    },
+    {
+      &quot;action&quot;: &quot;delete-page&quot;,
+      &quot;page&quot;: { &quot;uid&quot;: -3 }
+    },
+    {
+      &quot;action&quot;: &quot;delete-block&quot;,
+      &quot;block&quot;: { &quot;uid&quot;: -2 }
+    }
+  ]
+}
+// =&gt;
+// {&quot;tempids-to-uids&quot;: {&quot;-1&quot;: &quot;EBiw8LzPb&quot;, &quot;-2&quot;: &quot;X4DelKvsP&quot;, &quot;-3&quot;: &quot;mR7wJq2Lc&quot;}}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>What does response look like?</strong> (with <strong>HTTP status codes</strong>)
+<ul>
+<li>(If you're building an integration, be sure to implement at least the response codes below)
+</li>
+<li>200 OK #important
+<ul>
+<li>if successful
+</li>
+<li>If q request , see sample output structure
+</li>
+<li>if pull request, see sample output structure
+</li>
+<li>if write request, 200 status code in response means all done
+</li>
+</ul>
+</li>
+<li>308 PERMANENT REDIRECT
+<ul>
+<li>the API endpoint for backend API i.e. <strong>Endpoint base url:</strong> https://api.roamresearch.com/ actually returns the actual URL you want to hit for your read/write requests
+</li>
+<li>In many cases, the network tool/library you're using will follow the redirect without additional config on your side
+</li>
+</ul>
+</li>
+<li>4XX BAD REQUEST (with error message specifying what went wrong)
+<ul>
+<li>400 BAD REQUEST #important
+<ul>
+<li>this error code is returned in many cases. So, please checkout response body's <code>message</code> value
+</li>
+<li>some cases
+<ul>
+<li>When input format error / invalid parameter values
+<ul>
+<li>Example:: if we pass <code>&quot;order&quot;: 2</code> in an update-block request
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FCYOavPuw7p.png?alt=media&amp;token=a1a7301b-e12a-4385-983f-3d6489a7916f" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If write request fails
+<ul>
+<li>For <code>batch-actions</code> especially, You have to carefully handle this (to know how many requests suceeded)
+<ul>
+<li>Please checkout if an action fails, the actions before it stay transacted and the rest are skipped
+<ul>
+<li>if an action fails, the actions before it stay transacted and the rest are skipped
+<ul>
+<li>the error body's <code>num-actions-successfully-transacted-before-failure</code> tells you how many succeeded, alongside <code>message</code> and <code>batch-error-message</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>When one is trying to use an Encrypted graph
+<ul>
+<li>Encrypted graphs are NOT supported by the <a href="/developer-documentation/roam-backend-api">Roam Backend API</a>
+</li>
+</ul>
+</li>
+<li>When no graph name in request, or invalid graph name
+</li>
+<li>If invalid write action
+</li>
+<li>When token cannot be verified or improperly formatted
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>401 UNAUTHORIZED #important
+<ul>
+<li>If one is unauthorized or if one does not have required access to the graph (read/write)
+</li>
+<li>Please note that in some cases, When token cannot be verified or improperly formatted returns a 400 BAD REQUEST #important
+<ul>
+<li>this is a bug on our part, but changing it now could break existing integrations, so leaving it like this for this version of the API
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>404 NOT FOUND
+<ul>
+<li>If the API route you're calling is not found
+<ul>
+<li>i.e. if you request an API route NOT in <strong>API routes</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>429 TOO MANY REQUESTS #important
+<ul>
+<li>When you run into the per graph limit/quota. See <strong>Graph-specific Usage Quotas</strong>
+<ul>
+<li>Quotas are per minute, per graph, and depend on the type of request
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>500 INTERNAL SERVER ERROR #important ( default fallback code for errors  )
+<ul>
+<li>default fallback code for errors 
+<ul>
+<li>So, please checkout response body's <code>message</code> value
+</li>
+</ul>
+</li>
+<li>If you get this &amp; message does not make clarify, please contact us at support@roamresearch.com or in the #developers channel in the Roam Slack 
+</li>
+<li>Some cases
+<ul>
+<li>If message contains &quot;<strong>took too long to run</strong>&quot;, then the query/pull request is running into our time limit (20 seconds for now). In this case, you want to request less data or add limits. 
+<ul>
+<li>You might want to add limited recursion limits to pull specs: https://docs.datomic.com/pro/query/pull.html#recursive-specifications
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>503 SERVICE UNAVAILABLE #important
+<ul>
+<li>if graph is not ready for requests yet or is unavailable at the moment. If you get this, please try again in a bit
+<ul>
+<li>a common cause: the graph isn’t loaded on our servers yet (brand new, or not accessed in a while) — your request triggers the load, so retrying after a few seconds usually succeeds
+</li>
+</ul>
+</li>
+<li>Example
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FOFF0WgypQ2.png?alt=media&amp;token=99704237-587c-4046-ab08-67b03a0143a3" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Graph-specific Usage Quotas</strong>
+<ul>
+<li>Quotas are per minute, per graph, and depend on the type of request
+<ul>
+<li><em>500 requests/minute</em> for <code>pull</code> and <code>pull-many</code> requests
+</li>
+<li><em>200 requests/minute</em> (shared) for <code>q</code>, <code>search</code>, and <code>roam-query</code> requests
+</li>
+<li><em>100 requests/minute</em> for <code>write</code> requests
+<ul>
+<li>a <code>batch-actions</code> request counts as the number of actions in it, not as 1 request
+</li>
+</ul>
+</li>
+<li>If you run into the limits regularly even when using the strategies mentioned below, please let us know
+</li>
+</ul>
+</li>
+<li>When you run into the limit/quota, server will respond with a 429 TOO MANY REQUESTS #important
+<ul>
+<li>so please account for that in your code by using timeouts etc
+</li>
+</ul>
+</li>
+<li>Batch writes save round trips but do <em>not</em> reduce quota usage — a <code>batch-actions</code> request counts as the number of actions in it
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>FAQ::
+<ul>
+<li>Q:: How do I do the --location-trusted if I'm using something other than cURL?
+<ul>
+<li>The two main things
+<ul>
+<li>You want the request library to automatically follow redirects
+<ul>
+<li>this is generally the default in most libraries and applications
+</li>
+</ul>
+</li>
+<li>You want the authorization header to be passed when redirect has been followed
+<ul>
+<li>This is generally not default behavior, so this will probably need extra configuration
+</li>
+<li>another approach would be to use the <code>X-Authorization</code> header instead of the <code>Authorization</code> header
+<ul>
+<li>pass them in the <code>X-Authorization</code> header
+<ul>
+<li>you can use the <code>Authorization</code> header too (would be more secure) but you have to make sure that your code/library handles redirect properly and passes the authorization header when redirect has been followed (and the latter is generally not default behavior for most network libraries) 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Examples
+<ul>
+<li>Python 
+<ul>
+<li>some examples, courtesy of Matt Vogel: https://gist.github.com/8bitgentleman/75561ac116b5b925fd58ff595389d591
+</li>
+</ul>
+</li>
+<li>Postman client: https://www.postman.com/
+<ul>
+<li>Postman already fulfills criteria 1: it automatically follows redirects
+<ul>
+<li>If it doesn't for you, you have to go to the settings and enable &quot;Automatically follow redirects&quot;
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2Fe-TlApoRVQ.png?alt=media&amp;token=4a136983-a944-4000-98ee-84057b2c2f16" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>For criteria 2 i..e passing authorization header on redirect, that is a per &quot;request&quot; setting and it can be enabled in the request level settings &gt; Follow Authorization Header
+<ul>
+<li>If you don't do this, you will get a <code>&quot;message&quot;: &quot;You are not authenticated&quot;</code> response from the server, which is super confusing unless you go to the console and really look at the requests
+</li>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FnC3atvLkRc.png?alt=media&amp;token=4ed94fa2-fcaf-420e-b2ad-ee3315aa7f40" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Q:: I can't get the request to work using <code>fetch</code> or equivalent in my roam/js (i.e. in the browser)
+<ul>
+<li>A:: This works now — you can <code>fetch</code> directly from the browser. Just make sure you pass your token in the <code>X-Authorization</code> header, not <code>Authorization</code> (browsers drop the <code>Authorization</code> header when following the cross-origin redirect)
+<ul>
+<li>From inside Roam, you can also use <code>roamAlphaAPI.data.backend.q</code> — a client-side wrapper that makes this same request for you
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Change Log</strong>
+<ul>
+<li><a href="/developer-documentation/roam-backend-api-change-log">Roam Backend API Change Log</a>
+</li>
+</ul>
+</li>
+</ul>
+</body>
+</html>

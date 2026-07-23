@@ -117,14 +117,12 @@
           - `default-hotkey`
         - Examples showing `default-hotkey`
       - [[Roam Depot/Extension API]]
-        - exposes new function extensionAPI.ui.commandPalette.addCommand which has params equivalent to roamAlphaAPI's `.addCommand` + the new parameters
+        - exposes new function [extensionAPI.ui.commandPalette.addCommand](`.addCommand`) which has params equivalent to roamAlphaAPI's `.addCommand` + the new parameters
           - only difference is: when you use this version from extensionAPI, the commands are associated with your extension and so you have convenient grouping (in for example the Hotkeys window)
-        - also has extensionAPI.ui.commandPalette.removeCommand, which has same params as `.removeCommand`
+        - also has [extensionAPI.ui.commandPalette.removeCommand](`.removeCommand`), which has same params as `.removeCommand`
           - in contrast to the roamAlphaAPI's version, you do not need to call this on `onunload` - if you call via extensionAPI, will be cleaned automatically on unload
       - [[Loom video]]
-        - [[Migration Guide]] from roamAlphaAPI.ui.commandPalette.addCommand to extensionAPI's version
-          - [[Loom video]]: 
-            {{[[video]]: https://www.loom.com/share/f51a889a8e444ceb8c8eab15654d2650}}
+        - {{embed: [[Migration Guide]] from roamAlphaAPI.ui.commandPalette.addCommand to extensionAPI's version}}
         - Video going into all the changes
           - {{[[video]]: https://www.loom.com/share/a956af55230d4540806d31dc9ecf6870}}
   - [[February 7th, 2023]]
@@ -234,7 +232,7 @@
           - In this case, I'd selected and tried to move all the blocks on the page
           - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FgaYo6asLSn.png?alt=media&token=a1f07291-9b76-4239-86ea-5e5599479bdf)
   - [[October 1st, 2022]]
-    - For the [[Roam Backend API (Beta)]] write API release, we made the error reporting better. It made sense to reuse this code in the frontend (aka in [[Roam Alpha API]]) so as to make it easier for extension devs to reuse their code too
+    - For the [[Roam Backend API]] write API release, we made the error reporting better. It made sense to reuse this code in the frontend (aka in [[Roam Alpha API]]) so as to make it easier for extension devs to reuse their code too
       - Here are some of the main changes you'd want to check
         - Create page (`roamAlphaAPI.data.page.create` or the older `roamAlphaAPI.createPage`) now throws errors (in the promise) if a page with the provided `title` already exists or if a page with the provided `uid` already exists
         - Update page (`roamAlphaAPI.data.page.update` or the older `roamAlphaAPI.updatePage`) now throws errors (in the promise) if we're trying to change to a title that already exists in the db

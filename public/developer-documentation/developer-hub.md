@@ -2,7 +2,7 @@
 
 - Our different APIs and which one you should use
   - Q:: When would you use this Append API vs other Roam APIs?
-    - Use [[Roam Backend API (Beta)]] 
+    - Use [[Roam Backend API]] 
       - IF you need to do reads and edits (and not just additions/appends)
       - IF you do NOT need to support encrypted graphs (the backend API cannot work with encrypted graphs)
     - Use [Append API]([[Roam Append API]]) 
@@ -20,7 +20,7 @@
 
 - Front-end API for read/write operations
 
-### [[Roam Backend API (Beta)]]
+### [[Roam Backend API]]
 
 - Access your Roam data over http! A read/write API for Roam data
 

@@ -1,0 +1,44 @@
+# Roam Backend API Change Log
+
+- [[April 30th, 2024]]
+  - Releasing `pull-many` endpoint: `/api/graph/{graph-name}/pull-many` (POST)
+  - Proper documentation for all error codes: **What does response look like?** (with **HTTP status codes**)
+- [[March 7th, 2024]]
+  - Better error reporting for `batch-actions` write requests
+    - We're now returning [`num-actions-successfully-transacted-before-failure`](the error body's `num-actions-successfully-transacted-before-failure` tells you how many succeeded, alongside `message` and `batch-error-message`) in the `response.data` so you can figure out which action in your request failed
+      - > the error body's `num-actions-successfully-transacted-before-failure` tells you how many succeeded, alongside `message` and `batch-error-message`
+    - More more info and background, please read: if an action fails, the actions before it stay transacted and the rest are skipped
+- [[July 29th, 2023]]
+  - For the `create-block` and `move-block` write actions, you can pass a different parameter `page-title`. If you use this instead of [`parent-uid`](`parent-uid` (string) — uid of the new parent block or page), it will create the page if it does not exist already
+    - `location`
+      - `page-title`
+        - You can use this if you want the location of the block to be a direct child of a page. 
+        - Can either be 
+          - a string corresponding to page's title
+            - example: 
+              "location": {"page-title": **"Roam Backend API (Beta)"**}
+          - or
+          - a map of the form `{"daily-note-page": "MM-DD-YYYY"}`.
+            - **(Use this for Daily Notes Pages)**
+            - example: 
+              "location": {"page-title": **{"daily-note-page": "07-29-2023"}** }
+- [[November 23rd, 2022]]
+  - Breaking change for format of response for pulls (and for queries with pull params)
+    - Previously, response.body looked like the following
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2F8jf_dApP6-.png?alt=media&token=b7dd0ec1-9d37-489b-8536-60c7be9b2157)
+    - Now it looks like
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FrF0B6tKOc3.png?alt=media&token=937181c0-03c8-4be9-bc89-c4560dd84974)
+    - The change therefore is that keys inside of the "result" have ":" at the beginning
+    - The rationale for this change is to minimize the number of different formats across frontend and the backend, a concern which was raised by @David Vargas here: https://roamresearch.slack.com/archives/C02TMKXNVS6/p1663773904953259
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FQjS_ERpIUy.png?alt=media&token=9f6990e3-d109-474f-8506-8aec79f39f5d)
+    - Fixing this in your code should be pretty simple - in the places where you're handling the "result" of query and/or pull, you want to change the keys of type "namespace/property" to ":namespace/property"
+    - Sorry for the inconvenience caused!
+  - Better (More secure) API Tokens
+    - [[Screenshot]]
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FHfSSrPx1_U.png?alt=media&token=5f40ddc8-4cfa-4a8c-89a8-748f65bcb80c)
+    - Now, the only time you can get the secret token is when you're creating the token. you cannot copy it later
+      - this prevents others (malicious code/malicious person who somehow got access to your machine one time) from being able to copy your long lived tokens
+      - Internally, instead of storing the secret token, Roam only stores the hashed value of the tokens. So, the secret token can never be recovered.
+    - However, this does mean that this is a new token format. So, please remove your old tokens and create new ones (the old ones will stop working on [[December 1st, 2022]])
+    - way to get an API token is same as before: You can create and edit roam-graph-tokens from a new section "API tokens" in the "Graph" tab in the Settings, Please just make you do ... > Check for updates
+  - **Graph-specific Usage Quotas**

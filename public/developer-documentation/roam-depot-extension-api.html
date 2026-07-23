@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Roam Depot/Extension API — Roam Research Docs</title>
-<meta name="description" content="Work in progress, for now see https://github.com/panterarocks49/settings-panel-example/blob/main/extension.js for an example of how to use i">
+<meta name="description" content="Extension lifecycle">
 <link rel="canonical" href="https://roamdocs.fyi/developer-documentation/roam-depot-extension-api">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Roam Research Docs">
 <meta property="og:title" content="Roam Depot/Extension API — Roam Research Docs">
-<meta property="og:description" content="Work in progress, for now see https://github.com/panterarocks49/settings-panel-example/blob/main/extension.js for an example of how to use i">
+<meta property="og:description" content="Extension lifecycle">
 <meta property="og:url" content="https://roamdocs.fyi/developer-documentation/roam-depot-extension-api">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/favicon.ico">
@@ -39,150 +39,417 @@
 <h1>Roam Depot/Extension API</h1>
 <p class="meta"><a href="roam-depot-extension-api.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/y31lhjIqU">view in Roam Research</a></p>
 <ul>
-<li>Work in progress, for now see https://github.com/panterarocks49/settings-panel-example/blob/main/extension.js for an example of how to use it
+<li><strong>Extension lifecycle</strong>
+<ul>
+<li>Your <code>extension.js</code> must default-export an object with <code>onload</code> and <code>onunload</code> functions
 </li>
-<li>Roam handles removing dom elements / settings set with the extension API
+<li><code>onload({extensionAPI, extension})</code> runs when the extension is enabled, and again on every app load while it stays enabled
+<ul>
+<li><code>extensionAPI</code> — the API documented on this page, scoped to your extension; it is only passed here, not available on <code>window</code>
 </li>
-<li><strong>methods</strong>
-<ul>
-<li><code>extensionAPI</code>
-<ul>
-<li><code>.settings</code>
-<ul>
-<li>Settings are scoped to your extension, there is no risk of it conflicting with another extension
-<ul>
-<li>They are persisted across devices as well
+<li><code>extension.version</code> (string) — the installed version of your extension
+</li>
+<li><code>onload</code> may return a cleanup function — it is called at unload, right before <code>onunload</code>
+</li>
+<li>an async <code>onload</code> works too — Roam awaits a returned Promise (logging any error), and if it resolves to a function, that function is the cleanup
 </li>
 </ul>
 </li>
-<li><code>.set</code>
-<ul>
-<li>key
+<li><code>onunload()</code> runs when the extension is disabled, uninstalled, updated, or reloaded
 </li>
-<li>value
+<li>If your extension ships an <code>extension.css</code>, it is injected automatically on load and removed on unload
+</li>
+<li>What Roam cleans up automatically on unload (no code needed in <code>onunload</code>):
+<ul>
+<li>commands added via <code>extensionAPI.ui.commandPalette</code> and <code>extensionAPI.ui.slashCommand</code>
+</li>
+<li>the settings panel
+</li>
+<li>your <code>extension.css</code>
+</li>
+<li>everything else — DOM elements, event listeners, intervals — is your responsibility in <code>onunload</code>
 </li>
 </ul>
-</li>
-<li><code>.get</code>
-<ul>
-<li>key
-</li>
-</ul>
-</li>
-<li><code>.getAll</code>
-</li>
-<li><code>.panel</code>
-<ul>
-<li><code>.create</code>
-<ul>
-<li>config
-</li>
-<li><strong>Note regarding &quot;id&quot; in a setting</strong>: they must be non-empty strings and can't contain &quot;.&quot;, &quot;#&quot;, &quot;$&quot;, &quot;[&quot;, or &quot;]&quot;
 </li>
 <li>Example::
 <ul>
-<li><pre><code>function reactButton() {
-    // Declare a new state variable, which we'll call &quot;count&quot;
-    const [count, setCount] = React.useState(0);
-
-    return (
-        React.createElement(
-            &quot;button&quot;,
-            {className: &quot;bp3-button&quot;,
-             onClick: () =&gt; setCount(count + 1)},
-            &quot;my button &quot; + count
-        )
-    );
-}
-
-// actions that are predefined save there state automatically (except button) underneath the id provided for the action
-// custom actions can save state with extensionAPI.settings.set / get / getAll
-const panelConfig = {
-    tabTitle: &quot;Test Ext 1&quot;,
-    settings: [
-        {id:          &quot;button-setting&quot;,
-         className:   &quot;ext-settings-panel-button-setting&quot;,
-         name:        &quot;Button test&quot;,
-         description: &quot;tests the button&quot;,
-         action:      {type:    &quot;button&quot;,
-                       onClick: (evt) =&gt; { console.log(&quot;Button clicked!&quot;); },
-                       content: &quot;Button&quot;}},
-        {id:          &quot;switch-setting&quot;,
-         name:        &quot;Switch Test&quot;,
-         description: React.createElement(&quot;a&quot;, {href: &quot;https:roamresearch.com&quot;}, &quot;Show off react components in the description&quot;),
-         action:      {type:     &quot;switch&quot;,
-                       onChange: (evt) =&gt; { console.log(&quot;Switch!&quot;, evt); }}},
-        {id:     &quot;input-setting&quot;,
-         name:   &quot;Input test&quot;,
-         action: {type:        &quot;input&quot;,
-                  placeholder: &quot;placeholder&quot;,
-                  onChange:    (evt) =&gt; { console.log(&quot;Input Changed!&quot;, evt); }}},
-        {id:     &quot;select-setting&quot;,
-         name:   &quot;Select test&quot;,
-         action: {type:     &quot;select&quot;,
-                  items:    [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;],
-                  onChange: (evt) =&gt; { console.log(&quot;Select Changed!&quot;, evt); }}},
-        {id:     &quot;reactComponent-setting&quot;,
-         name:   &quot;reactComponent test&quot;,
-         action: {type:     &quot;reactComponent&quot;,
-                  component: reactButton}}
-    ]
+<li><pre><code>export default {
+  onload: ({ extensionAPI, extension }) =&gt; {
+    console.log(&quot;loading version&quot;, extension.version);
+    extensionAPI.ui.commandPalette.addCommand({
+      label: &quot;My Extension: Say hi&quot;,
+      callback: () =&gt; console.log(&quot;hi&quot;)});
+    // optionally return a cleanup function;
+    // it runs at unload, right before onunload
+  },
+  onunload: () =&gt; {
+    // undo anything not covered by automatic cleanup
+    // (DOM nodes, event listeners, intervals, ...)
+  }
 };</code></pre>
 </li>
-<li>For an example config see https://github.com/panterarocks49/settings-panel-example/blob/main/extension.js
-</li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>.ui</code>
+<li><strong>Reference</strong>
 <ul>
-<li><code>.commandPalette</code>
+<li><code>extensionAPI.settings</code>
 <ul>
-<li><code>.addCommand</code>
+<li>Description::
 <ul>
-<li>same as window.roamAlphaAPI.ui.commandPalette.addCommand (please follow the link for documentation)
+<li>Persistent key-value storage scoped to your extension — keys cannot collide with other extensions
+</li>
+<li>values are saved with the graph and sync across the user's devices
+</li>
+<li>setting keys must be non-empty strings and cannot contain &quot;.&quot;, &quot;#&quot;, &quot;$&quot;, &quot;[&quot;, or &quot;]&quot;
+</li>
+</ul>
+</li>
+<li><code>extensionAPI.settings.canSet</code> (boolean) — false when the extension was installed &quot;for everyone&quot; by the graph admin and the current user is not an admin; then <code>set</code> only logs a warning and changes nothing
+</li>
+<li><code>extensionAPI.settings.get</code>
 <ul>
-<li>only difference is: when you use this version from extensionAPI, the commands are associated with your extension and so you have convenient grouping (in for example the Hotkeys window)
-</li>
-</ul>
-</li>
-<li>Migration Guide from roamAlphaAPI.ui.commandPalette.addCommand to extensionAPI's version
+<li>Description::
 <ul>
-<li>Loom video: <br>
-{{video: https://www.loom.com/share/f51a889a8e444ceb8c8eab15654d2650}}
+<li>Returns the saved value for a setting key
 </li>
 </ul>
 </li>
-</ul>
-</li>
-<li><code>.removeCommand</code>
+<li>Parameters::
 <ul>
-<li>same as window.roamAlphaAPI.ui.commandPalette.removeCommand (please follow the link for documentation)
+<li><code>key</code> (string, required) — the setting to read
+</li>
+</ul>
+</li>
+<li>Return::
 <ul>
-<li>in contrast to the roamAlphaAPI's version, you do not need to call this on <code>onunload</code> - if you call via extensionAPI, will be cleaned automatically on unload
+<li>the saved value, or null if never set
 </li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Changelog</strong>:
+<li>Example::
 <ul>
-<li>February 14th, 2023
+<li><pre><code>extensionAPI.settings.get(&quot;api-key&quot;)
+// =&gt; &quot;sk-abc123&quot;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>extensionAPI.settings.set</code>
 <ul>
-<li><a href="/developer-documentation/roam-depot-extension-api">Roam Depot/Extension API</a>
+<li>Description::
+<ul>
+<li>Saves a value for a key
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>key</code> (string, required) — non-empty, cannot contain &quot;.&quot;, &quot;#&quot;, &quot;$&quot;, &quot;[&quot;, or &quot;]&quot;
+</li>
+<li><code>value</code> (required) — any JSON-serializable value
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to null
+</li>
+<li>rejects if <code>key</code> is invalid; if the user cannot write settings (<code>canSet</code> is false), it only logs a warning
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await extensionAPI.settings.set(&quot;threshold&quot;, 5)
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>extensionAPI.settings.getAll</code>
+<ul>
+<li>Description::
+<ul>
+<li>Returns all of the extension's saved settings
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>an object of key → value, or null if nothing has been saved yet
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>extensionAPI.settings.getAll()
+// =&gt;
+// {&quot;api-key&quot;: &quot;sk-abc123&quot;,
+//  &quot;threshold&quot;: 5,
+//  &quot;sync-enabled&quot;: true}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>extensionAPI.settings.panel.create</code>
+<ul>
+<li>Description::
+<ul>
+<li>Creates a settings tab for your extension in the Settings dialog
+</li>
+<li>calling it again replaces the panel
+</li>
+<li>switch, input, and select rows save their state automatically under the row's <code>id</code> — read it back with <code>extensionAPI.settings.get</code>; button and reactComponent rows save nothing themselves
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>config</code> (map, required)
+<ul>
+<li><code>tabTitle</code> (string) — the title of your extension's tab in Settings
+</li>
+<li><code>settings</code> (array of maps) — one entry per settings row:
+<ul>
+<li><code>id</code> (string, required) — the storage key for the row; non-empty, cannot contain &quot;.&quot;, &quot;#&quot;, &quot;$&quot;, &quot;[&quot;, or &quot;]&quot;
+</li>
+<li><code>name</code> (string | React element) — the row's title
+</li>
+<li><code>description</code> (string | React element, optional) — shown under the name
+</li>
+<li><code>className</code> (string, optional) — extra CSS class on the row
+</li>
+<li><code>action</code> (map, required) — the control, one of:
+<ul>
+<li><code>{type: &quot;switch&quot;, onChange}</code> — a toggle; saved on change; onChange (optional) receives the DOM event
+</li>
+<li><code>{type: &quot;input&quot;, placeholder, onChange}</code> — a text field; saved on blur; onChange (optional) fires on each keystroke with the event
+</li>
+<li><code>{type: &quot;select&quot;, items, onChange}</code> — a dropdown; items is an array of strings; saved on selection; onChange (optional) receives the selected item
+</li>
+<li><code>{type: &quot;button&quot;, content, onClick, class}</code> — a button; content is the label, onClick (optional) the click handler, class (optional) replaces the default button styling
+</li>
+<li><code>{type: &quot;reactComponent&quot;, component}</code> — renders your React component; manage state yourself with <code>extensionAPI.settings.set</code>/<code>get</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to null
+</li>
+<li>rejects if any setting <code>id</code> is invalid
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await extensionAPI.settings.panel.create({
+  tabTitle: &quot;My Extension&quot;,
+  settings: [
+    {id:          &quot;sync-enabled&quot;,
+     name:        &quot;Sync&quot;,
+     description: &quot;Sync data automatically&quot;,
+     action:      {type:     &quot;switch&quot;,
+                   onChange: (evt) =&gt; console.log(&quot;switch:&quot;, evt.target.checked)}},
+    {id:     &quot;api-key&quot;,
+     name:   &quot;API key&quot;,
+     action: {type:        &quot;input&quot;,
+              placeholder: &quot;paste your key&quot;,
+              onChange:    (evt) =&gt; console.log(&quot;typing:&quot;, evt.target.value)}},
+    {id:     &quot;mode&quot;,
+     name:   &quot;Mode&quot;,
+     action: {type:     &quot;select&quot;,
+              items:    [&quot;fast&quot;, &quot;thorough&quot;],
+              onChange: (item) =&gt; console.log(&quot;selected:&quot;, item)}},
+    {id:     &quot;reset&quot;,
+     name:   &quot;Reset&quot;,
+     action: {type:    &quot;button&quot;,
+              content: &quot;Reset all data&quot;,
+              onClick: () =&gt; console.log(&quot;clicked&quot;)}}
+  ]
+})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>extensionAPI.ui</code>
+<ul>
+<li><code>extensionAPI.ui.commandPalette.addCommand</code>
+<ul>
+<li>Description::
+<ul>
+<li>Add a command to the Command Palette (cmd-p) — same as <code>roamAlphaAPI.ui.commandPalette.addCommand</code>, but tied to your extension:
+<ul>
+<li>commands are grouped under your extension (for example in the Hotkeys window)
+</li>
+<li>the label is namespaced by your extension, so it cannot collide with other extensions' commands
+</li>
+</ul>
+</li>
+<li>Calling again with the same <code>label</code> updates the existing command
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>label</code> (string, required) — text shown in the Command Palette
+</li>
+<li><code>callback</code> (function, required) — called with no arguments when the user runs the command
+</li>
+<li><code>disable-hotkey</code> (boolean, optional) — don't allow a hotkey for this command
+</li>
+<li><code>default-hotkey</code> (string | array of strings, optional) — most commands should NOT set this; without it, users can still assign their own hotkey in Settings → Hotkeys
+<ul>
+<li>a hotkey string looks like &quot;defmod-shift-h&quot; — at least one modifier (shift, ctrl, alt, super, or defmod — the OS default modifier) plus a key; an array of strings (max 5) defines a multi-step hotkey
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to null
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await extensionAPI.ui.commandPalette.addCommand({
+  label: &quot;My Extension: Do the thing&quot;,
+  callback: () =&gt; console.log(&quot;doing the thing&quot;)})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>extensionAPI.ui.commandPalette.removeCommand</code>
+<ul>
+<li>Description::
+<ul>
+<li>Remove a command your extension added — same as <code>roamAlphaAPI.ui.commandPalette.removeCommand</code>
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>label</code> (string, required) — the label the command was added with
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to null
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await extensionAPI.ui.commandPalette.removeCommand(
+  {label: &quot;My Extension: Do the thing&quot;})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>extensionAPI.ui.slashCommand.addCommand</code>
+<ul>
+<li>Description::
+<ul>
+<li>Add a command to the <code>/</code> slash menu — same as <code>roamAlphaAPI.ui.slashCommand.addCommand</code>, but tied to your extension:
+<ul>
+<li>the label is namespaced by your extension, so it cannot collide with other extensions' commands
+</li>
+</ul>
+</li>
+<li>Calling again with the same <code>label</code> updates the existing command
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>label</code> (string, required) — text shown in the slash menu
+</li>
+<li><code>callback</code> (function, required)
+<ul>
+<li>called with a context object when the user selects the command
+<ul>
+<li><pre><code>{&quot;block-uid&quot;: &quot;YnatnbZzF&quot;,
+ &quot;window-id&quot;: &quot;BBG4fFwolaVlT5FZQdzAI7P40aB3-body-outline-04-15-2021&quot;,
+ indexes: [1, 10]}</code></pre>
+</li>
+</ul>
+</li>
+<li>return a string to insert at the cursor, or null to handle insertion yourself (the typed search string is not removed)
+</li>
+</ul>
+</li>
+<li><code>display-conditional</code> (function, optional) — called with the context object (without indexes); return true to show the command
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>null
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>extensionAPI.ui.slashCommand.addCommand({
+  label: &quot;Insert Greeting&quot;,
+  callback: (context) =&gt; &quot;Hello from my extension! 👋&quot;})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>extensionAPI.ui.slashCommand.removeCommand</code>
+<ul>
+<li>Description::
+<ul>
+<li>Remove a slash command your extension added — same as <code>roamAlphaAPI.ui.slashCommand.removeCommand</code>
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>label</code> (string, required) — the label the command was added with
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>null
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>extensionAPI.ui.slashCommand.removeCommand(
+  {label: &quot;Insert Greeting&quot;})
+// =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>

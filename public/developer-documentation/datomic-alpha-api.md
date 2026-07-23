@@ -1,6 +1,6 @@
 # Datomic Alpha API
 
-#### **Important Note: ** This is the documentation for the [[Depreciated]] (& inactive) Datomic API. We have a new API! see it here, [[Roam Backend API (Beta)]]
+#### **Important Note: ** This is the documentation for the [[Depreciated]] (& inactive) Datomic API. We have a new API! see it here, [[Roam Backend API]]
 
 #### Reference::
 

@@ -53,6 +53,12 @@
           - `react-dom`
             - `18.2.0`
               - `window.ReactDOM`
+          - `react-dom/client`
+            - `18.2.0`
+              - `window.ReactDOMClient`
+          - `react-youtube`
+            - `^7.13.1`
+              - `window.ReactYoutube`
           - `@blueprintjs/core`
             - `^3.50.4`
               - `window.Blueprint.Core`
@@ -66,7 +72,7 @@
             - `^2.3.2`
               - `window.ChronoNode`
           - `idb`
-            - ` 7.1.1`
+            - `^7.1.1`
               - `window.idb`
           - `nanoid`
             - `^2.0.4`
@@ -79,7 +85,7 @@
               - `window.CryptoJS`
           - `tslib`
             - `2.2.0`
-              - `TSLib`
+              - `window.TSLib`
       - Async dependencies
         - Some of Roam's dependencies are loaded only when a user uses them, your extension should do the same thing
           - We understand dynamically loading is pretty difficult for a beginner, if that is you, you can ask us for help or for an exception to this rule
@@ -88,7 +94,7 @@
             - **Version**
               - **Global Var**
           - `marked-react`
-            - `^1.1.2`
+            - `1.1.2`
               - `RoamLazy.MarkedReact`
           - `marked`
             - `4.3.0`
@@ -107,17 +113,16 @@
   - Allowed languages
     - Typescript, Javascript, or Clojurescript
 - **Local Development**
-  - To develop locally, you'll have to use this url [https://relemma-git-roam-app-store.roamresearch.com](https://relemma-git-roam-app-store.roamresearch.com/) (until we launch)
-  - Visit a graph, open up settings, and go to the extensions tab
+  - Visit a graph, open up settings, and go to the Roam Depot tab
   - Then click enable developer mode
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FHwNXRGTwD-.png?alt=media&token=23259c21-321c-4687-b2aa-0ce974b23290)
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FEfyjrV4KhR.png?alt=media&token=bf7be2af-6a17-40ee-bc21-cd3eae0691ab)
   - Then load extension
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FCxT8jRodC9.png?alt=media&token=dfb0e961-33d1-449d-b39c-724474b92aa9)
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FIe3FBjQHTW.png?alt=media&token=ffd03157-8b27-4628-8916-663a59eaa09d)
   - and choose the folder on your computer which contains `extension.js` / `extension.css`
-  - To reload the extension you can use the key command `control-d control-r`, which will call your extension's `unload` function, load the new code, and call `onload`
+  - To reload the extension you can use the key command `control-d control-r`, which will call your extension's `onunload` function, load the new code, and call `onload`
     - Note that this key command reloads all loaded developer extensions
-      - You can also reload extensions from the extensions tab in settings
-  - If your state isn't properly removed in `unload` then you can reload the page and hit `control-d control-r` to completely clear the state
+    - You can also reload extensions from the extensions tab in settings
+  - If your state isn't properly removed in `onunload` then you can reload the page and hit `control-d control-r` to completely clear the state
 - **Submitting an extension**
   - Create a github repo for your extension
   - Inside your repository
@@ -130,7 +135,7 @@
     - If your extension bundles dependencies and requires a build step
       - Provide a `build.sh` file
       - The `build.sh` file will be invoked before looking for extension.js (required) or extension.css (optional)
-      - The environment it’ll be invoked in is ubuntu-20.04 from Github Actions. Consult [this](https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-Readme.md) to see what is available. (npm and yarn are available)
+      - The environment it’ll be invoked in is ubuntu-24.04 from Github Actions. Consult [this](https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md) to see what is available. (npm and yarn are available)
       - If your build script requires anything extra (e.g. libraries from NPM), it should download them as a part of build.sh execution.
     - If not and your extension is a simple javascript file, then you can write all of your code in extension.js (required)
   - Fork https://github.com/Roam-Research/roam-depot
@@ -149,10 +154,19 @@
           "source_commit": "d5ecd16363975b2e7a097d46e5f411c95e16682d",
           "stripe_account": "acct_1LGASrQVCl6NYjck" // optional only include if you want to be eligible for payouts from Roam
         }```
+    - Fields
+      - `name` (string, required) — your extension's display name in Roam Depot
+      - `short_description` (string, required) — one-line description shown in the extension list
+      - `author` (string, required) — the author name shown to users
+      - `tags` (array of strings, optional) — keywords for finding your extension
+      - `source_url` (string, required) — link to your extension's repo, shown to users
+      - `source_repo` (string, required) — the git URL your code is fetched from (ends in .git)
+      - `source_commit` (string, required) — the exact commit that gets reviewed, built, and published — bump this to release an update
+      - `stripe_account` (string, optional) — your Stripe account ID; only include it if you want payouts from Roam
     - Then make a Pull Request with this change. After it’s merged, your extension will be published in the Roam Marketplace.
 - **Updating an extension**
   - Every update to your extension will be reviewed, submitting it is the same as **Submitting an extension**
-  - Just update your extension's metadata file in your fork of https://github.com/Roam-Research/roam-depot with a new commit hash
+  - Just update the source_commit in your extension's metadata file in your fork of https://github.com/Roam-Research/roam-depot
     - You may also change other values of your metadata file
 - **Load remote developer extensions from URL or using "PR-shorthand" format**
   - Motivation::
@@ -213,3 +227,41 @@
     - Simple example, with a build process
   - [Roamjs Query Builder](https://github.com/dvargas92495/roamjs-query-builder)
     - Complicated example, with a complex build process
+- **Developer mode**
+  - Load, test, and iterate on extensions in development — from a local folder, a URL, or a roam-depot PR — without publishing them
+  - Enable it
+    - Visit a graph, open Settings, go to the Roam Depot tab, and click enable developer mode
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FEfyjrV4KhR.png?alt=media&token=bf7be2af-6a17-40ee-bc21-cd3eae0691ab)
+  - Load your extension, from one of three sources
+    - a local folder
+      - click "Load extension" and choose the folder on your computer which contains `extension.js` / `extension.css`
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FIe3FBjQHTW.png?alt=media&token=ffd03157-8b27-4628-8916-663a59eaa09d)
+    - a URL
+      - pass a URL to the root path where adding the file names to the url leads to your files — `README.md` and `extension.js` are required, `extension.css` and `CHANGELOG.md` optional
+        - example: with `https://my-extension.pages.dev`, the file `https://my-extension.pages.dev/extension.js` must resolve
+        - a common mistake is to forget the `https://` prefix
+      - useful for testing on mobile — serve your files on your local network with a tool like https://www.npmjs.com/package/serve
+      - useful for sharing a link with beta testers
+        - developer extensions are local to each client — this is not a replacement for publishing; please only use it for testing
+      - to auto-deploy your extension to a URL on every push to `main`:
+        - **Option 1:** for a new extension, fork the [template repository](https://github.com/8bitgentleman/roam-depot-extension-template) by [[Matt Vogel]], then go to repo settings > Pages and the Actions tab to set up
+        - **Option 2:** for an existing extension, copy [.github/workflows/deploy.yml](https://github.com/8bitgentleman/roam-depot-extension-template/blob/main/.github/workflows/deploy.yml) into your own repository (same path), then go to repo settings > Pages and the Actions tab to set up
+        - Short [[Loom video]] guiding through both options
+          - {{[[video]]: https://www.loom.com/share/4785e95fe5454684a48683402da5ea09}}
+        - Longer [[Loom video]] through the entire process (relevant if you want to learn how the github action works here)
+          - https://www.loom.com/share/ac50ccf34f924a95bf6be4ca74ab85d7
+    - a roam-depot PR, via its "PR-shorthand"
+      - format: `username+extension-id+pr-number` — e.g. `digitalmaster+roam-memo+668`
+      - the shorthand is posted in an [auto-generated comment](https://github.com/Roam-Research/roam-depot/pull/668#issuecomment-1524315888) on the PR at creation/update
+      - [[Loom video]] walkthrough of loading from a URL / PR-shorthand
+        - {{[[video]]: https://www.loom.com/share/d6ec8341b17e4959b9604957e7212556}}
+  - Reload after changing your code
+    - `control-d control-r` calls `onunload`, loads the new code, and calls `onload` — for all loaded developer extensions
+    - you can also reload from the Roam Depot tab in Settings
+    - if your state isn't properly removed in `onunload`, reload the page and hit `control-d control-r` to completely clear the state
+  - Properties
+    - URL / PR extensions auto-start with the app, like production extensions
+    - local-folder extensions do not auto-start — load them again from the Roam Depot tab, or with `control-d control-r`
+      - reading your folder needs file-system permission, which the browser only grants from a user action
+    - they are not synced across devices
+    - URL / PR extensions are not cached — they are downloaded again every time you open Roam or press reload

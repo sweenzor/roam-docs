@@ -13,6 +13,12 @@
     - `react-dom`
       - `18.2.0`
         - `window.ReactDOM`
+    - `react-dom/client`
+      - `18.2.0`
+        - `window.ReactDOMClient`
+    - `react-youtube`
+      - `^7.13.1`
+        - `window.ReactYoutube`
     - `@blueprintjs/core`
       - `^3.50.4`
         - `window.Blueprint.Core`
@@ -26,7 +32,7 @@
       - `^2.3.2`
         - `window.ChronoNode`
     - `idb`
-      - ` 7.1.1`
+      - `^7.1.1`
         - `window.idb`
     - `nanoid`
       - `^2.0.4`
@@ -39,7 +45,7 @@
         - `window.CryptoJS`
     - `tslib`
       - `2.2.0`
-        - `TSLib`
+        - `window.TSLib`
 - Async dependencies
   - Some of Roam's dependencies are loaded only when a user uses them, your extension should do the same thing
     - We understand dynamically loading is pretty difficult for a beginner, if that is you, you can ask us for help or for an exception to this rule
@@ -48,7 +54,7 @@
       - **Version**
         - **Global Var**
     - `marked-react`
-      - `^1.1.2`
+      - `1.1.2`
         - `RoamLazy.MarkedReact`
     - `marked`
       - `4.3.0`

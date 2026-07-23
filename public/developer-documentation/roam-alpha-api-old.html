@@ -356,13 +356,13 @@ can specify hotkeys for any command in Settings &gt; Hotkeys
 </li>
 <li><a href="/developer-documentation/roam-depot-extension-api">Roam Depot/Extension API</a>
 <ul>
-<li>exposes new function extensionAPI.ui.commandPalette.addCommand which has params equivalent to roamAlphaAPI's <code>.addCommand</code> + the new parameters
+<li>exposes new function [extensionAPI.ui.commandPalette.addCommand](<code>.addCommand</code>) which has params equivalent to roamAlphaAPI's <code>.addCommand</code> + the new parameters
 <ul>
 <li>only difference is: when you use this version from extensionAPI, the commands are associated with your extension and so you have convenient grouping (in for example the Hotkeys window)
 </li>
 </ul>
 </li>
-<li>also has extensionAPI.ui.commandPalette.removeCommand, which has same params as <code>.removeCommand</code>
+<li>also has [extensionAPI.ui.commandPalette.removeCommand](<code>.removeCommand</code>), which has same params as <code>.removeCommand</code>
 <ul>
 <li>in contrast to the roamAlphaAPI's version, you do not need to call this on <code>onunload</code> - if you call via extensionAPI, will be cleaned automatically on unload
 </li>
@@ -372,12 +372,7 @@ can specify hotkeys for any command in Settings &gt; Hotkeys
 </li>
 <li>Loom video
 <ul>
-<li>Migration Guide from roamAlphaAPI.ui.commandPalette.addCommand to extensionAPI's version
-<ul>
-<li>Loom video: <br>
-{{video: https://www.loom.com/share/f51a889a8e444ceb8c8eab15654d2650}}
-</li>
-</ul>
+<li>{{embed: Migration Guide from roamAlphaAPI.ui.commandPalette.addCommand to extensionAPI's version}}
 </li>
 <li>Video going into all the changes
 <ul>
@@ -640,7 +635,7 @@ window.roamAlphaAPI.ui.components.renderSearch(
 </li>
 <li>October 1st, 2022
 <ul>
-<li>For the <a href="/developer-documentation/roam-backend-api-beta">Roam Backend API (Beta)</a> write API release, we made the error reporting better. It made sense to reuse this code in the frontend (aka in <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a>) so as to make it easier for extension devs to reuse their code too
+<li>For the <a href="/developer-documentation/roam-backend-api">Roam Backend API</a> write API release, we made the error reporting better. It made sense to reuse this code in the frontend (aka in <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a>) so as to make it easier for extension devs to reuse their code too
 <ul>
 <li>Here are some of the main changes you'd want to check
 <ul>
