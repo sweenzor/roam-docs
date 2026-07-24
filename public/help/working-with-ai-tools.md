@@ -22,7 +22,7 @@
 
 ### Guide the AI with graph guidelines
 
-- Create a page called [[roam/agent guidelines]] in your graph, and connected AI tools will read it before they start working.
+- Create a page called [[roam/agent guidelines]] (see this page for an example) in your graph, and connected AI tools will read it before they start working.
 - It's the place for your conventions: how you tag, where things get filed, what the AI should leave alone.
   - How you name things: what page titles look like, what your namespaces mean.
   - Your tags and what they're for: "#inbox means unprocessed, #ref means external material."

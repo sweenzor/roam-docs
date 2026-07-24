@@ -41,62 +41,196 @@
 <ul>
 <li><strong>Getting Started</strong>
 <ul>
-<li>roam/js is a way to customize your Roam experience with javascript. 
+<li>roam/js lets you run your own JavaScript inside Roam to automate and customize your graph.
 </li>
-<li>To use roam/js create a block with <code>{{[[roam/js]]}}</code> in it, then indent underneath and create a javascript code block
+<li>To use it, create a block containing <code>{{[[roam/js]]}}</code>, then nest a javascript code block underneath it.
 <ul>
 <li>Like this
 </li>
 <li>{{<a href="/developer-documentation/roam-js">roam/js</a>}}
 <ul>
-<li><pre><code>console.log(&quot;hello world&quot;);</code></pre>
+<li><pre><code>console.log(&quot;hello from roam/js&quot;);</code></pre>
 </li>
 </ul>
 </li>
-<li>Then, click &quot;Yes, I know what I'm doing&quot; to run the code block, open your browsers developer console to see the logged text
+</ul>
+</li>
+<li>Click &quot;Yes, I know what I'm doing&quot; to run the code — open your browser's developer console to see the logged text.
 <ul>
-<li>Clicking this only enables the javascript to run for you, it will not run for any other users on the graph without them also agreeing to run the javascript
+<li>Enabling is per user and per block: your approval is stored in your user settings, not in the graph, so collaborators get the same prompt and decide for themselves.
+</li>
+<li>Only enable code you've read and understood, or whose author you trust — scripts run with full access to your graph.
 </li>
 </ul>
 </li>
-</ul>
-</li>
-<li>roam/js blocks that are enabled <strong>run automatically run on startup</strong>
+<li><code>{{[[roam/js]]}}</code> blocks can live on any page, and the code applies to the whole app, not just the page the block is on.
 <ul>
-<li>The order of operations is 
+<li>Every <code>{{[[roam/js]]}}</code> block links to <a href="/developer-documentation/roam-js">roam/js</a>, so this page's linked references list every script in your graph.
+</li>
+</ul>
+</li>
+<li>Your code can use the <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> on the <code>window</code> object, as well as the <a href="/developer-documentation/available-libraries">Available Libraries</a> Roam exports.
+</li>
+<li>The attributes you can query are documented on the <a href="/developer-documentation/data-model">Data Model</a> page, and its Querying tips section shows how to query them efficiently.
+</li>
+<li>roam/js is best for small scripts you run for yourself — to share your work with others, build a <a href="/developer-documentation/roam-depot-extensions">Roam Depot/Extensions</a> instead.
+</li>
+</ul>
+</li>
+<li><strong>Languages</strong>
 <ul>
-<li><code>Roam Depot extensions -&gt; roam/js (or roam/cljs) -&gt; roam/render components</code>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>You have access to the <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> in the window object, as well as a list of <a href="/developer-documentation/available-libraries">Available Libraries</a> Roam exports to the window.
-</li>
-<li>roam/js is most useful for developing a small script you expect to only run for yourself, if you want to distribute your extension, we recommend you develop a <a href="/developer-documentation/roam-depot-extensions">Roam Depot/Extensions</a>, which is similar, but has a different development process.
-</li>
-</ul>
-</li>
-<li><strong>Examples</strong>
+<li>Code blocks in three languages are run: <code>javascript</code>, <code>jsx</code>, and <code>clojure</code>. See <a href="/developer-documentation/roam-cljs">roam/cljs</a> for clojure.
 <ul>
-<li>A script that changes a graph's homepage to be a different page than daily notes
+<li>jsx blocks are transformed with Babel using the classic React runtime, so they pair with <code>window.React</code>.
+</li>
+<li>clojure blocks run as ClojureScript, interpreted in the browser — see <a href="/developer-documentation/roam-cljs">roam/cljs</a> for the environment and its namespaces.
+</li>
+</ul>
+</li>
+<li><code>{{[[roam/cljs]]}}</code> works too and behaves identically — same warning, same approval.
+</li>
+<li>Every code block nested anywhere under the <code>{{[[roam/js]]}}</code> block counts, not just direct children.
+</li>
+<li>Multiple code blocks of the same language are joined in block order and run as a single script.
+</li>
+</ul>
+</li>
+<li><strong>How it works</strong>
+<ul>
+<li>Enabled blocks run automatically on startup.
+<ul>
+<li>The load order is <code>Roam Depot extensions -&gt; roam/js (or roam/cljs) -&gt; roam/render components</code>.
+</li>
+<li>With developer mode enabled, the Roam Depot settings tab has a switch to load roam/js at the same time as Roam Depot extensions instead of after them.
+</li>
+</ul>
+</li>
+<li>Enabling a block runs it immediately — no reload needed.
+</li>
+<li>Editing an enabled code block does not re-run it.
+<ul>
+<li>Refresh the app, or click &quot;Stop this&quot; and enable the block again, to run the new version.
+</li>
+<li>Re-running does not undo anything the previous version already did. Any resources created, dom elements added are still there.
+</li>
+</ul>
+</li>
+<li>Code is evaluated in the global scope.
+<ul>
+<li>Top-level <code>var</code> and <code>function</code> declarations land on <code>window</code> and are visible to every other code block.
+</li>
+<li><code>let</code> and <code>const</code> declarations stay inside their own code block.
+</li>
+</ul>
+</li>
+<li>Errors are caught and logged to the browser console — a failing block does not stop other blocks or the app from loading.
+</li>
+<li>If a script makes your graph unusable, add <code>?disablejs=true</code> to the URL to load with all roam/js, roam/render, and Roam Depot extensions turned off until the next refresh.
+<ul>
+<li>The &quot;Temporarily disable all extensions and css&quot; button in the Roam Depot settings tab does the same, and turns off roam/css too.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Examples::
+<ul>
+<li>Open a random page from the command palette — good for rediscovering old notes
 <ul>
 <li>{{<a href="/developer-documentation/roam-js">roam/js</a>}}
 <ul>
-<li><pre><code>function isHomePage() {
-  return ( window.location.hash.split(&quot;/&quot;)[3] == null );
+<li><pre><code>window.roamAlphaAPI.ui.commandPalette.addCommand({
+  label: &quot;Open random page&quot;,
+  callback: async () =&gt; {
+    const uids = window.roamAlphaAPI.q(
+      &quot;[:find [?uid ...] :where [?e :node/title] [?e :block/uid ?uid]]&quot;);
+    const uid = uids[Math.floor(Math.random() * uids.length)];
+    await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid}});
+  }
+});</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Open a page in the sidebar with a keyboard shortcut
+<ul>
+<li>{{<a href="/developer-documentation/roam-js">roam/js</a>}}
+<ul>
+<li><pre><code>window.roamAlphaAPI.ui.commandPalette.addCommand({
+  label: &quot;Open Reading List in sidebar&quot;,
+  &quot;default-hotkey&quot;: &quot;ctrl-shift-7&quot;,
+  callback: () =&gt; {
+    const uid = window.roamAlphaAPI.q(
+      &quot;[:find ?uid . :in $ ?title :where [?e :node/title ?title] [?e :block/uid ?uid]]&quot;,
+      &quot;Reading List&quot;);
+    window.roamAlphaAPI.ui.rightSidebar.addWindow(
+      {window: {type: &quot;outline&quot;, &quot;block-uid&quot;: uid}});
+  }
+});</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Make sure today's daily note starts with a Journal block — runs on every startup, and shows the guard pattern that keeps a script from creating duplicates
+<ul>
+<li>{{<a href="/developer-documentation/roam-js">roam/js</a>}}
+<ul>
+<li><pre><code>async function ensureTodayHasJournal() {
+  const api = window.roamAlphaAPI;
+  const todayUid = api.util.dateToPageUid(new Date());
+  if (!api.q(&quot;[:find ?p . :in $ ?uid :where [?p :block/uid ?uid]]&quot;, todayUid)) {
+    await api.data.page.create(
+      {page: {title: api.util.dateToPageTitle(new Date())}});
+  }
+  const existing = api.q(
+    &quot;[:find ?c . :in $ ?uid ?text :where [?p :block/uid ?uid] [?p :block/children ?c] [?c :block/string ?text]]&quot;,
+    todayUid, &quot;Journal&quot;);
+  if (!existing) {
+    await api.data.block.create(
+      {location: {&quot;parent-uid&quot;: todayUid, order: 0}, block: {string: &quot;Journal&quot;}});
+  }
+}
+ensureTodayHasJournal();</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Define helper functions for your other scripts — top-level function declarations are global, so any code block can call them
+<ul>
+<li>{{<a href="/developer-documentation/roam-js">roam/js</a>}}
+<ul>
+<li><pre><code>function getPageUid(title) {
+  return window.roamAlphaAPI.q(
+    &quot;[:find ?uid . :in $ ?title :where [?e :node/title ?title] [?e :block/uid ?uid]]&quot;,
+    title);
 }
 
-if (isHomePage()) {
-  window.roamAlphaAPI.ui.mainWindow
-    .openPage({page: {title: &quot;Developer Hub&quot;}});
+function getChildUids(parentUid) {
+  return window.roamAlphaAPI.q(
+    &quot;[:find [?uid ...] :in $ ?parent :where [?p :block/uid ?parent] [?p :block/children ?c] [?c :block/uid ?uid]]&quot;,
+    parentUid);
 }</code></pre>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>{{TODO}} More examples
+</ul>
+</li>
+<li><strong>Good practices</strong>
+<ul>
+<li>Write scripts so running them twice is harmless — check for existing blocks before creating them, like the journal example above.
+</li>
+<li>Prefer the <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> over reading the DOM — class names and DOM structure can change without notice.
+</li>
+<li>Keep each script under its own <code>{{[[roam/js]]}}</code> block so you can turn them on and off individually.
+</li>
+<li>Use the browser console for feedback — <code>console.log</code> output and script errors both land there.
+</li>
+<li>Test scripts that write to the graph on a test graph first.
 </li>
 </ul>
 </li>

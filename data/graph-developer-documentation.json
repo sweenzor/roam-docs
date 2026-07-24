@@ -1,6 +1,6 @@
 {
  "graph": "developer-documentation",
- "exportedAt": "2026-07-23T07:47:19.145Z",
+ "exportedAt": "2026-07-24T07:44:42.809Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -74,10 +74,6 @@
    ":block/uid": "zAWWqw6lt"
   },
   {
-   ":node/title": "progressback",
-   ":block/uid": "9VuMdICaY"
-  },
-  {
    ":node/title": "August 30th, 2022",
    ":block/uid": "08-30-2022"
   },
@@ -112,10 +108,6 @@
   {
    ":node/title": "June 22nd, 2022",
    ":block/uid": "06-22-2022"
-  },
-  {
-   ":node/title": "Value",
-   ":block/uid": "MQXRsURuA"
   },
   {
    ":node/title": "April 19th, 2024",
@@ -1960,17 +1952,14 @@
        ":block/refs": [
         {
          ":block/uid": "QE0bxjUwk"
-        },
-        {
-         ":block/uid": "xGld2F4Vr"
         }
        ],
-       ":block/uid": "TpIGtsnL7",
-       ":block/order": 0,
-       ":block/string": "Equivalent to [[roam/js]] but language of choice is [[clojurescript]]"
-      },
-      {
        ":block/children": [
+        {
+         ":block/uid": "d2uPLXbXi",
+         ":block/order": 0,
+         ":block/string": "Like this"
+        },
         {
          ":block/refs": [
           {
@@ -1979,55 +1968,56 @@
          ],
          ":block/children": [
           {
-           ":block/uid": "ezbuguWH8",
+           ":block/uid": "Tm4H8nboN",
            ":block/order": 0,
-           ":block/string": "```clojure\n(prn \"hello world\")```"
+           ":block/string": "```clojure\n(prn \"hello from roam/cljs\")```"
           }
          ],
-         ":block/uid": "-jJVrzmtv",
+         ":block/uid": "mm7rTD0dS",
          ":block/order": 1,
          ":block/string": "{{[[roam/cljs]]}}"
-        },
-        {
-         ":block/uid": "Uav1TxXvn",
-         ":block/order": 0,
-         ":block/string": "Like this"
-        },
-        {
-         ":block/children": [
-          {
-           ":block/uid": "mOm__wa_V",
-           ":block/order": 0,
-           ":block/string": "Clicking this only enables the clojurescript to run for you, it will not run for any other users on the graph without them also agreeing to run the javascript"
-          }
-         ],
-         ":block/uid": "g_1acTB3l",
-         ":block/order": 2,
-         ":block/string": "Then, click \"Yes, I know what I'm doing\" to run the code block, open your browsers developer console to see the logged text"
         }
        ],
-       ":block/uid": "HKvxmx2sq",
-       ":block/order": 2,
-       ":block/string": "To use roam/cljs create a block with `{{[[roam/cljs]]}}` in it, then indent underneath and create a clojure code block"
+       ":block/uid": "lQA3Sg_0a",
+       ":block/order": 0,
+       ":block/string": "roam/cljs is [[roam/js]] in ClojureScript: create a block containing `{{[[roam/cljs]]}}`, then nest a clojure code block underneath it."
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "QE0bxjUwk"
+        },
+        {
+         ":block/uid": "cK96zwL2p"
+        }
+       ],
+       ":block/uid": "qTdAxsQMk",
+       ":block/order": 1,
+       ":block/string": "Everything else — enabling, running on startup, re-running after edits, errors, and `?disablejs=true` — works exactly as described on [[roam/js]], and its ((cK96zwL2p)) apply here too."
+      }
+     ],
+     ":block/uid": "TPdUO7lou",
+     ":block/order": 0,
+     ":block/string": "**Getting Started**"
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "7PnrZD1WD",
+       ":block/order": 0,
+       ":block/string": "All roam/cljs blocks share one ClojureScript environment ([SCI](https://github.com/babashka/sci)), loaded on demand the first time a block runs."
       },
       {
        ":block/children": [
         {
-         ":block/children": [
-          {
-           ":block/uid": "7ECNQdvvH",
-           ":block/order": 0,
-           ":block/string": "`Roam Depot extensions -> roam/js (or roam/cljs) -> roam/render components`"
-          }
-         ],
-         ":block/uid": "dfzUR3En4",
+         ":block/uid": "OHy7kpU3h",
          ":block/order": 0,
-         ":block/string": "The order of operations is "
+         ":block/string": "Namespaces do not autoload: a `:require` only works if the defining block has already run."
         }
        ],
-       ":block/uid": "uHnxLaKHH",
-       ":block/order": 3,
-       ":block/string": "roam/cljs blocks that are enabled **run automatically run on startup**"
+       ":block/uid": "_1QSJiuZY",
+       ":block/order": 1,
+       ":block/string": "Start each script with an `(ns ...)` form — other roam/cljs blocks can then `:require` it."
       },
       {
        ":block/refs": [
@@ -2035,59 +2025,56 @@
          ":block/uid": "tIaOPdXCj"
         },
         {
-         ":block/uid": "YTrHVFXHD"
+         ":block/uid": "KemkOiDE_"
         }
        ],
        ":block/children": [
         {
-         ":block/refs": [
-          {
-           ":block/uid": "tIaOPdXCj"
-          },
-          {
-           ":block/uid": "KemkOiDE_"
-          }
-         ],
-         ":block/uid": "CNQs_d9qp",
+         ":block/uid": "Rmn7Kqbeq",
          ":block/order": 0,
-         ":block/string": "The [[Roam Clojurescript API]] is mostly a copy of the [[Roam Alpha API]] but with a few additions"
+         ":block/string": "`roam.datascript/q` and `roam.datascript/pull` query the graph directly — no connection argument, and queries are plain quoted vectors instead of strings."
+        },
+        {
+         ":block/uid": "ncd7tA0eI",
+         ":block/order": 1,
+         ":block/string": "The write namespaces (`roam.block`, `roam.page`, `roam.user`) only exist when you have write access to the graph."
         }
        ],
-       ":block/uid": "0HdX4qVBo",
-       ":block/order": 4,
-       ":block/string": "You have access to the [[Clojurescript API], [[Roam Alpha API]] in the window object, as well as a list of [[Available Libraries]] Roam exports to the window."
+       ":block/uid": "P75Ukxoyc",
+       ":block/order": 2,
+       ":block/string": "The [[Roam Clojurescript API]] mirrors the [[Roam Alpha API]] as native namespaces — kebab-case names, and arguments as maps with keyword keys (`{:location {:parent-uid ...}}` instead of `{\"parent-uid\": ...}`)."
       },
       {
        ":block/refs": [
         {
-         ":block/uid": "5BB8h4I7b"
+         ":block/uid": "KemkOiDE_"
         }
        ],
-       ":block/children": [
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "7l31uEMqA"
-          }
-         ],
-         ":block/uid": "hXqUzlq2U",
-         ":block/order": 0,
-         ":block/string": "It can also be useful to use roam/cljs to create \"common\" namespaces for use in [[roam/render]]"
-        }
-       ],
-       ":block/uid": "_N8RAc8hz",
-       ":block/order": 5,
-       ":block/string": "roam/cljs is most useful for developing a small script you expect to only run for yourself, if you want to distribute your extension, we recommend you develop a [[Roam Depot/Extensions]], which is similar, but has a different development process."
+       ":block/uid": "ISlRlVACG",
+       ":block/order": 3,
+       ":block/string": "Reagent, promesa, datascript.core, and the other bundled libraries are listed on [[Roam Clojurescript API]] under External Libraries."
       },
       {
-       ":block/uid": "nZKY2Heqm",
-       ":block/order": 1,
-       ":block/string": "roam/cljs is a way to customize your Roam experience with clojurescript. "
+       ":block/children": [
+        {
+         ":block/uid": "aHWJHMGWb",
+         ":block/order": 0,
+         ":block/string": "Callbacks invoked by Roam (command palette, context menus) receive JavaScript objects, not maps — read them with `applied-science.js-interop`."
+        }
+       ],
+       ":block/uid": "HXTdxenY0",
+       ":block/order": 4,
+       ":block/string": "JS interop works throughout: `js/window`, `js/console.log`, and anything on `window.roamAlphaAPI` that has no wrapper."
+      },
+      {
+       ":block/uid": "zRMI4jf6m",
+       ":block/order": 5,
+       ":block/string": "A `:require` of a URL string loads it as an ES module, and a `.css` URL injects a stylesheet."
       }
      ],
-     ":block/uid": "ZonV33B7i",
-     ":block/order": 0,
-     ":block/string": "**Getting Started**"
+     ":block/uid": "CHhnrPsV0",
+     ":block/order": 1,
+     ":block/string": "**The environment**"
     },
     {
      ":block/refs": [
@@ -2097,16 +2084,6 @@
      ],
      ":block/children": [
       {
-       ":block/refs": [
-        {
-         ":block/uid": "nkFdGfwuf"
-        }
-       ],
-       ":block/uid": "pjVeOrXX1",
-       ":block/order": 2,
-       ":block/string": "{{[[TODO]]}} More Examples"
-      },
-      {
        ":block/children": [
         {
          ":block/refs": [
@@ -2116,19 +2093,19 @@
          ],
          ":block/children": [
           {
-           ":block/uid": "dhkUsMFeQ",
+           ":block/uid": "zJdIVmPmy",
            ":block/order": 0,
-           ":block/string": "```clojure\n(ns examples.custom-homepage\n  (:require\n   [clojure.string :as str]\n   [roam.main-window :as main-window]))\n\n(defn on-home-page? []\n  (-> (str/split js/window.location.hash \"/\")\n      (get 3)\n      (= nil)))\n\n(when (on-home-page?)\n  (main-window/open-page {:page {:title \"Developer Hub\"}}))```"
+           ":block/string": "```clojure\n(ns examples.random-page\n  (:require\n   [roam.datascript :as rd]\n   [roam.ui.command-palette :as command-palette]\n   [roam.ui.main-window :as main-window]))\n\n(command-palette/add-command\n  {:label    \"Open random page\"\n   :callback (fn [_]\n               (let [uids (rd/q '[:find [?uid ...]\n                                  :where [?e :node/title]\n                                         [?e :block/uid ?uid]])]\n                 (main-window/open-page {:page {:uid (rand-nth uids)}})))})```"
           }
          ],
-         ":block/uid": "Y0RUarPvH",
+         ":block/uid": "D07AJ9dPP",
          ":block/order": 0,
          ":block/string": "{{[[roam/cljs]]}}"
         }
        ],
-       ":block/uid": "oFahlmY6n",
+       ":block/uid": "OM43sLxM0",
        ":block/order": 0,
-       ":block/string": "A script that changes a graph's homepage to be a different page than daily notes"
+       ":block/string": "Open a random page from the command palette — good for rediscovering old notes"
       },
       {
        ":block/children": [
@@ -2140,29 +2117,70 @@
          ],
          ":block/children": [
           {
-           ":block/uid": "9KeD59_oY",
+           ":block/uid": "ZiFgRGryz",
            ":block/order": 0,
-           ":block/string": "```clojure\n(ns examples.internal-require\n  (:require\n   [examples.custom-homepage :as ch]))\n\n(prn (ch/on-home-page?))```"
+           ":block/string": "```clojure\n(ns examples.daily-journal\n  (:require\n   [promesa.core :as p]\n   [roam.block :as block]\n   [roam.datascript :as rd]\n   [roam.page :as page]\n   [roam.util :as util]))\n\n(defn ensure-today-has-journal []\n  (let [today-uid (util/date->page-uid (js/Date.))]\n    (p/do!\n      (when-not (rd/q '[:find ?p . :in $ ?uid\n                        :where [?p :block/uid ?uid]]\n                      today-uid)\n        (page/create {:page {:title (util/date->page-title (js/Date.))}}))\n      (when-not (rd/q '[:find ?c . :in $ ?uid ?text\n                        :where [?p :block/uid ?uid]\n                               [?p :block/children ?c]\n                               [?c :block/string ?text]]\n                      today-uid \"Journal\")\n        (block/create {:location {:parent-uid today-uid :order 0}\n                       :block    {:string \"Journal\"}})))))\n\n(ensure-today-has-journal)```"
           }
          ],
-         ":block/uid": "1Ra0qENjS",
+         ":block/uid": "ASxrv_CRz",
+         ":block/order": 0,
+         ":block/string": "{{[[roam/cljs]]}}"
+        }
+       ],
+       ":block/uid": "SncYWcXoO",
+       ":block/order": 1,
+       ":block/string": "Make sure today's daily note starts with a Journal block — runs on every startup, and shows the guard pattern that keeps a script from creating duplicates"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "io2LloFF2",
+         ":block/order": 0,
+         ":block/string": "Enable the `my.helpers` block first — namespaces do not autoload, so the block that requires one only works after its defining block has run."
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "Tk5jSgvLX"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/uid": "-3sLDAIOn",
+           ":block/order": 0,
+           ":block/string": "```clojure\n(ns my.helpers\n  (:require\n   [roam.datascript :as rd]))\n\n(defn get-page-uid [title]\n  (rd/q '[:find ?uid . :in $ ?title\n          :where [?e :node/title ?title]\n                 [?e :block/uid ?uid]]\n        title))```"
+          }
+         ],
+         ":block/uid": "__uCg1dUD",
          ":block/order": 1,
          ":block/string": "{{[[roam/cljs]]}}"
         },
         {
-         ":block/uid": "S1agp9CSW",
-         ":block/order": 0,
-         ":block/string": "First click run on the example, `examples.custom-homepage`, above. The namespaces do not autoload "
+         ":block/refs": [
+          {
+           ":block/uid": "Tk5jSgvLX"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/uid": "-AXLNAeCv",
+           ":block/order": 0,
+           ":block/string": "```clojure\n(ns my.scratch\n  (:require\n   [my.helpers :as h]))\n\n(prn (h/get-page-uid \"Reading List\"))```"
+          }
+         ],
+         ":block/uid": "GGpVnfvjd",
+         ":block/order": 2,
+         ":block/string": "{{[[roam/cljs]]}}"
         }
        ],
-       ":block/uid": "_dxLRuatP",
-       ":block/order": 1,
-       ":block/string": "Requiring code from other roam/cljs blocks"
+       ":block/uid": "42tIKFBHs",
+       ":block/order": 2,
+       ":block/string": "Share helper functions between blocks with namespaces"
       }
      ],
-     ":block/uid": "22VPbF5HM",
-     ":block/order": 1,
-     ":block/string": "**[[Examples]]**"
+     ":block/uid": "hhlnKhyKI",
+     ":block/order": 2,
+     ":block/string": "Examples::"
     }
    ],
    ":block/uid": "Tk5jSgvLX"
@@ -2204,7 +2222,7 @@
      ],
      ":block/uid": "C8yrtTsfo",
      ":block/heading": 2,
-     ":block/order": 6,
+     ":block/order": 7,
      ":block/string": "[[roam/js]] and [[roam/cljs]]"
     },
     {
@@ -2222,7 +2240,7 @@
      ],
      ":block/uid": "NjT-rOI5K",
      ":block/heading": 2,
-     ":block/order": 8,
+     ":block/order": 9,
      ":block/string": "[[roam/render]]"
     },
     {
@@ -2240,7 +2258,7 @@
      ],
      ":block/uid": "S31FZCIFC",
      ":block/heading": 2,
-     ":block/order": 2,
+     ":block/order": 3,
      ":block/string": "[[Roam Alpha API]]"
     },
     {
@@ -2259,7 +2277,7 @@
      ":block/uid": "3aEnBmuVD",
      ":children/view-type": "bullet",
      ":block/heading": 2,
-     ":block/order": 5,
+     ":block/order": 6,
      ":block/string": "[[roam/css]]"
     },
     {
@@ -2282,7 +2300,7 @@
      ],
      ":block/uid": "B1u3-zWmT",
      ":block/heading": 2,
-     ":block/order": 4,
+     ":block/order": 5,
      ":block/string": "[[Roam Depot/Extensions]]"
     },
     {
@@ -2292,8 +2310,8 @@
       }
      ],
      ":block/uid": "_nZoiaV_c",
-     ":block/heading": 1,
-     ":block/order": 9,
+     ":block/heading": 2,
+     ":block/order": 10,
      ":block/string": "If you have any questions don't hesitate to reach out! [Join our slack](https://join.slack.com/t/roamresearch/shared_invite/zt-21yynf99v-39t09XesqSiIsz_1VFmwtA) and head over to the #developers channel"
     },
     {
@@ -2319,7 +2337,7 @@
      ],
      ":block/uid": "jtExAA50B",
      ":block/heading": 2,
-     ":block/order": 7,
+     ":block/order": 8,
      ":block/string": "[[Roam Clojurescript API]]"
     },
     {
@@ -2337,7 +2355,7 @@
      ],
      ":block/uid": "hiaVN-GUv",
      ":block/heading": 2,
-     ":block/order": 3,
+     ":block/order": 4,
      ":block/string": "[[Roam Backend API]]"
     },
     {
@@ -2345,15 +2363,80 @@
       {
        ":block/refs": [
         {
-         ":block/uid": "eN3kqbz12"
+         ":block/uid": "eb8OVhaFC"
         }
        ],
-       ":block/uid": "_4IgyYkYM",
+       ":block/children": [
+        {
+         ":block/uid": "w23IcQGYm",
+         ":block/order": 1,
+         ":block/string": "IF you want an easy-to-use API optimized for capture"
+        },
+        {
+         ":block/uid": "4v91EXNXn",
+         ":block/order": 0,
+         ":block/string": "IF you need to support BOTH unencrypted & encrypted graphs"
+        },
+        {
+         ":block/uid": "-yj02PnCC",
+         ":block/order": 2,
+         ":block/string": "IF you do not need read functionality"
+        }
+       ],
+       ":block/uid": "Beq3rt3bU",
+       ":block/order": 1,
+       ":block/string": "Use [Append API]([[Roam Append API]]) "
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "tIaOPdXCj"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "QE0bxjUwk"
+          },
+          {
+           ":block/uid": "XZjB2z9SV"
+          }
+         ],
+         ":block/uid": "5Mq6S1DFd",
+         ":block/order": 0,
+         ":block/string": "If you're building a [[Roam Depot]] extension or writing [[roam/js]] scripts for yourself "
+        }
+       ],
+       ":block/uid": "CimT4vE_m",
+       ":block/order": 2,
+       ":block/string": "Use [[Roam Alpha API]] (our client side API) "
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "W4Po8pcHQ"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/uid": "oHQT4a8NS",
+         ":block/order": 1,
+         ":block/string": "IF you do NOT need to support encrypted graphs (the backend API cannot work with encrypted graphs)"
+        },
+        {
+         ":block/uid": "WgfgnsWG_",
+         ":block/order": 0,
+         ":block/string": "IF you need to do reads and edits (and not just additions/appends)"
+        }
+       ],
+       ":block/uid": "nWxmQvsgc",
        ":block/order": 0,
-       ":block/string": "{{embed-children: ((eN3kqbz12))}}"
+       ":block/string": "Use [[Roam Backend API]] "
       }
      ],
      ":block/uid": "od0Is6M0b",
+     ":block/heading": 2,
      ":block/order": 0,
      ":block/string": "Our different APIs and which one you should use"
     },
@@ -2372,8 +2455,21 @@
      ],
      ":block/uid": "ssd93YlTI",
      ":block/heading": 2,
-     ":block/order": 1,
+     ":block/order": 2,
      ":block/string": "[[Data Model]]"
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "2D7D035IW",
+       ":block/order": 0,
+       ":block/string": "Just tell it to connect to the graph \"developer-documentation\""
+      }
+     ],
+     ":block/uid": "0kmTbUgcu",
+     ":block/heading": 2,
+     ":block/order": 1,
+     ":block/string": "We highly recommend installing the [local MCP](https://roamresearch.com/#/app/help/page/hTcF3-dXo), connecting it to this graph, and telling the AI to search here."
     }
    ],
    ":block/uid": "49715b-M2",
@@ -16653,31 +16749,16 @@
        ],
        ":block/children": [
         {
-         ":block/refs": [
-          {
-           ":block/uid": "n8ECay0Wl"
-          }
-         ],
          ":block/children": [
           {
            ":block/refs": [
             {
-             ":block/uid": "VPEjtYa2j"
-            }
-           ],
-           ":block/uid": "oFE8sc1Fc",
-           ":block/order": 2,
-           ":block/string": "{{embed: ((VPEjtYa2j))}}"
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "n8ECay0Wl"
+             ":block/uid": "igykZqUgu"
             }
            ],
            ":block/uid": "oN8uhvlDX",
            ":block/order": 1,
-           ":block/string": "Read more about it [here](((n8ECay0Wl)))"
+           ":block/string": "Read more about it [here](((igykZqUgu)))"
           },
           {
            ":block/uid": "ib3cnU5Nh",
@@ -16687,7 +16768,7 @@
          ],
          ":block/uid": "k_9WkQ7Sx",
          ":block/order": 0,
-         ":block/string": "((n8ECay0Wl))"
+         ":block/string": "**Load remote developer extensions from ((bQo8v6Qhw)) or using ((QWy8dg6bw))**"
         }
        ],
        ":block/uid": "992AiUH-i",
@@ -19897,10 +19978,6 @@
    ":block/uid": "W4Po8pcHQ"
   },
   {
-   ":node/title": "Motivation",
-   ":block/uid": "vj8fsgtVc"
-  },
-  {
    ":node/title": "August 31st, 2023",
    ":block/uid": "08-31-2023"
   },
@@ -19915,7 +19992,7 @@
      ],
      ":block/uid": "fqPmktgMS",
      ":block/order": 1,
-     ":block/string": "[[Roam Depot/Extensions]]"
+     ":block/string": "See [[Roam Depot/Extensions]]"
     },
     {
      ":block/refs": [
@@ -19933,6 +20010,10 @@
   {
    ":node/title": "March 19th, 2025",
    ":block/uid": "03-19-2025"
+  },
+  {
+   ":node/title": "Roam Team Videos",
+   ":block/uid": "8jpLBa4pl"
   },
   {
    ":node/title": "November 4th, 2024",
@@ -20057,6 +20138,246 @@
    ":node/title": "roam/js",
    ":block/children": [
     {
+     ":block/children": [
+      {
+       ":block/uid": "F0_jVQOaC",
+       ":block/order": 0,
+       ":block/string": "roam/js lets you run your own JavaScript inside Roam to automate and customize your graph."
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "BxhXsY-20",
+         ":block/order": 0,
+         ":block/string": "Like this"
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "QE0bxjUwk"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/uid": "NvgDGSZJo",
+           ":block/order": 0,
+           ":block/string": "```javascript\nconsole.log(\"hello from roam/js\");```"
+          }
+         ],
+         ":block/uid": "eJz6VJ_9H",
+         ":block/order": 1,
+         ":block/string": "{{[[roam/js]]}}"
+        }
+       ],
+       ":block/uid": "6S4PhpwLU",
+       ":block/order": 1,
+       ":block/string": "To use it, create a block containing `{{[[roam/js]]}}`, then nest a javascript code block underneath it."
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "HTZSKVit-",
+         ":block/order": 0,
+         ":block/string": "Enabling is per user and per block: your approval is stored in your user settings, not in the graph, so collaborators get the same prompt and decide for themselves."
+        },
+        {
+         ":block/uid": "-XRRcfyv5",
+         ":block/order": 1,
+         ":block/string": "Only enable code you've read and understood, or whose author you trust — scripts run with full access to your graph."
+        }
+       ],
+       ":block/uid": "8H3fyq1hu",
+       ":block/order": 2,
+       ":block/string": "Click \"Yes, I know what I'm doing\" to run the code — open your browser's developer console to see the logged text."
+      },
+      {
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "QE0bxjUwk"
+          }
+         ],
+         ":block/uid": "yqTqMjAKk",
+         ":block/order": 0,
+         ":block/string": "Every `{{[[roam/js]]}}` block links to [[roam/js]], so this page's linked references list every script in your graph."
+        }
+       ],
+       ":block/uid": "8oEODkEeG",
+       ":block/order": 3,
+       ":block/string": "`{{[[roam/js]]}}` blocks can live on any page, and the code applies to the whole app, not just the page the block is on."
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "tIaOPdXCj"
+        },
+        {
+         ":block/uid": "YTrHVFXHD"
+        }
+       ],
+       ":block/uid": "V8nOs355G",
+       ":block/order": 4,
+       ":block/string": "Your code can use the [[Roam Alpha API]] on the `window` object, as well as the [[Available Libraries]] Roam exports."
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "5BB8h4I7b"
+        }
+       ],
+       ":block/uid": "tZIMBJhDC",
+       ":block/order": 6,
+       ":block/string": "roam/js is best for small scripts you run for yourself — to share your work with others, build a [[Roam Depot/Extensions]] instead."
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "oAdYx3oyf"
+        },
+        {
+         ":block/uid": "V5VQBQuSm"
+        }
+       ],
+       ":block/uid": "sNVF51MDq",
+       ":block/order": 5,
+       ":block/string": "The attributes you can query are documented on the [[Data Model]] page, and its ((V5VQBQuSm)) section shows how to query them efficiently."
+      }
+     ],
+     ":block/uid": "Dg1GQthm2",
+     ":block/order": 0,
+     ":block/string": "**Getting Started**"
+    },
+    {
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "Tk5jSgvLX"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/uid": "AXDs2zqar",
+         ":block/order": 0,
+         ":block/string": "jsx blocks are transformed with Babel using the classic React runtime, so they pair with `window.React`."
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "Tk5jSgvLX"
+          }
+         ],
+         ":block/uid": "VFitGDOtO",
+         ":block/order": 1,
+         ":block/string": "clojure blocks run as ClojureScript, interpreted in the browser — see [[roam/cljs]] for the environment and its namespaces."
+        }
+       ],
+       ":block/uid": "m7TOqDBQd",
+       ":block/order": 0,
+       ":block/string": "Code blocks in three languages are run: `javascript`, `jsx`, and `clojure`. See [[roam/cljs]] for clojure."
+      },
+      {
+       ":block/uid": "EYt5dmK6L",
+       ":block/order": 1,
+       ":block/string": "`{{[[roam/cljs]]}}` works too and behaves identically — same warning, same approval."
+      },
+      {
+       ":block/uid": "1tybhffVy",
+       ":block/order": 2,
+       ":block/string": "Every code block nested anywhere under the `{{[[roam/js]]}}` block counts, not just direct children."
+      },
+      {
+       ":block/uid": "IbokivlKx",
+       ":block/order": 3,
+       ":block/string": "Multiple code blocks of the same language are joined in block order and run as a single script."
+      }
+     ],
+     ":block/uid": "lQ-8X3KIp",
+     ":block/order": 1,
+     ":block/string": "**Languages**"
+    },
+    {
+     ":block/children": [
+      {
+       ":block/children": [
+        {
+         ":block/uid": "uuU-26e2r",
+         ":block/order": 0,
+         ":block/string": "The load order is `Roam Depot extensions -> roam/js (or roam/cljs) -> roam/render components`."
+        },
+        {
+         ":block/uid": "sRfgi38hB",
+         ":block/order": 1,
+         ":block/string": "With developer mode enabled, the Roam Depot settings tab has a switch to load roam/js at the same time as Roam Depot extensions instead of after them."
+        }
+       ],
+       ":block/uid": "Smh7L6xTF",
+       ":block/order": 0,
+       ":block/string": "Enabled blocks run automatically on startup."
+      },
+      {
+       ":block/uid": "lU6BACDIM",
+       ":block/order": 1,
+       ":block/string": "Enabling a block runs it immediately — no reload needed."
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "tI0l0rTlX",
+         ":block/order": 0,
+         ":block/string": "Refresh the app, or click \"Stop this\" and enable the block again, to run the new version."
+        },
+        {
+         ":block/uid": "z9OyUomRO",
+         ":block/order": 1,
+         ":block/string": "Re-running does not undo anything the previous version already did. Any resources created, dom elements added are still there."
+        }
+       ],
+       ":block/uid": "K9ozix49K",
+       ":block/order": 2,
+       ":block/string": "Editing an enabled code block does not re-run it."
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "cu5s6G2qG",
+         ":block/order": 0,
+         ":block/string": "Top-level `var` and `function` declarations land on `window` and are visible to every other code block."
+        },
+        {
+         ":block/uid": "d86Vkr8A0",
+         ":block/order": 1,
+         ":block/string": "`let` and `const` declarations stay inside their own code block."
+        }
+       ],
+       ":block/uid": "iYqUjCQOJ",
+       ":block/order": 3,
+       ":block/string": "Code is evaluated in the global scope."
+      },
+      {
+       ":block/uid": "JKDOOLg8Q",
+       ":block/order": 4,
+       ":block/string": "Errors are caught and logged to the browser console — a failing block does not stop other blocks or the app from loading."
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "QjvcJ2u87",
+         ":block/order": 0,
+         ":block/string": "The \"Temporarily disable all extensions and css\" button in the Roam Depot settings tab does the same, and turns off roam/css too."
+        }
+       ],
+       ":block/uid": "RsZ21aNAR",
+       ":block/order": 5,
+       ":block/string": "If a script makes your graph unusable, add `?disablejs=true` to the URL to load with all roam/js, roam/render, and Roam Depot extensions turned off until the next refresh."
+      }
+     ],
+     ":block/uid": "KWvlttQ3o",
+     ":block/order": 2,
+     ":block/string": "**How it works**"
+    },
+    {
      ":block/refs": [
       {
        ":block/uid": "0zhdQjUXs"
@@ -20073,41 +20394,19 @@
          ],
          ":block/children": [
           {
-           ":block/uid": "SxWIDaR5J",
+           ":block/uid": "he1zkOgNp",
            ":block/order": 0,
-           ":block/string": "```javascript\nfunction isHomePage() {\n  return ( window.location.hash.split(\"/\")[3] == null );\n}\n\nif (isHomePage()) {\n  window.roamAlphaAPI.ui.mainWindow\n    .openPage({page: {title: \"Developer Hub\"}});\n}```"
+           ":block/string": "```javascript\nwindow.roamAlphaAPI.ui.commandPalette.addCommand({\n  label: \"Open random page\",\n  callback: async () => {\n    const uids = window.roamAlphaAPI.q(\n      \"[:find [?uid ...] :where [?e :node/title] [?e :block/uid ?uid]]\");\n    const uid = uids[Math.floor(Math.random() * uids.length)];\n    await window.roamAlphaAPI.ui.mainWindow.openPage({page: {uid}});\n  }\n});```"
           }
          ],
-         ":block/uid": "Xp5Q9RWQq",
+         ":block/uid": "LpyY6tu4X",
          ":block/order": 0,
          ":block/string": "{{[[roam/js]]}}"
         }
        ],
-       ":block/uid": "Xm4Ttbyl7",
+       ":block/uid": "L__l3k2Te",
        ":block/order": 0,
-       ":block/string": "A script that changes a graph's homepage to be a different page than daily notes"
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "nkFdGfwuf"
-        }
-       ],
-       ":block/uid": "A4G19SFj7",
-       ":block/order": 1,
-       ":block/string": "{{[[TODO]]}} More examples"
-      }
-     ],
-     ":block/uid": "n3Ub4lyAK",
-     ":block/order": 1,
-     ":block/string": "**[[Examples]]**"
-    },
-    {
-     ":block/children": [
-      {
-       ":block/uid": "OlpIPMX9G",
-       ":block/order": 0,
-       ":block/string": "roam/js is a way to customize your Roam experience with javascript. "
+       ":block/string": "Open a random page from the command palette — good for rediscovering old notes"
       },
       {
        ":block/children": [
@@ -20119,83 +20418,109 @@
          ],
          ":block/children": [
           {
-           ":block/uid": "0gYlGUpI1",
+           ":block/uid": "P3KU1KYKk",
            ":block/order": 0,
-           ":block/string": "```javascript\nconsole.log(\"hello world\");```"
+           ":block/string": "```javascript\nwindow.roamAlphaAPI.ui.commandPalette.addCommand({\n  label: \"Open Reading List in sidebar\",\n  \"default-hotkey\": \"ctrl-shift-7\",\n  callback: () => {\n    const uid = window.roamAlphaAPI.q(\n      \"[:find ?uid . :in $ ?title :where [?e :node/title ?title] [?e :block/uid ?uid]]\",\n      \"Reading List\");\n    window.roamAlphaAPI.ui.rightSidebar.addWindow(\n      {window: {type: \"outline\", \"block-uid\": uid}});\n  }\n});```"
           }
          ],
-         ":block/uid": "B2XbDHgkO",
-         ":block/order": 1,
-         ":block/string": "{{[[roam/js]]}}"
-        },
-        {
-         ":block/uid": "A-79Gp2Mr",
+         ":block/uid": "CjfV0xhLc",
          ":block/order": 0,
-         ":block/string": "Like this"
-        },
-        {
-         ":block/children": [
-          {
-           ":block/uid": "WK6IZg0Ck",
-           ":block/order": 0,
-           ":block/string": "Clicking this only enables the javascript to run for you, it will not run for any other users on the graph without them also agreeing to run the javascript"
-          }
-         ],
-         ":block/uid": "5OS7ewUt-",
-         ":block/order": 2,
-         ":block/string": "Then, click \"Yes, I know what I'm doing\" to run the code block, open your browsers developer console to see the logged text"
+         ":block/string": "{{[[roam/js]]}}"
         }
        ],
-       ":block/uid": "nfzQkgRdB",
+       ":block/uid": "IKuHMHuRT",
        ":block/order": 1,
-       ":block/string": "To use roam/js create a block with `{{[[roam/js]]}}` in it, then indent underneath and create a javascript code block"
+       ":block/string": "Open a page in the sidebar with a keyboard shortcut"
       },
       {
        ":block/children": [
         {
-         ":block/children": [
+         ":block/refs": [
           {
-           ":block/uid": "q0buRbY5N",
-           ":block/order": 0,
-           ":block/string": "`Roam Depot extensions -> roam/js (or roam/cljs) -> roam/render components`"
+           ":block/uid": "QE0bxjUwk"
           }
          ],
-         ":block/uid": "aB7QOAPhn",
+         ":block/children": [
+          {
+           ":block/uid": "Rcoe614hk",
+           ":block/order": 0,
+           ":block/string": "```javascript\nasync function ensureTodayHasJournal() {\n  const api = window.roamAlphaAPI;\n  const todayUid = api.util.dateToPageUid(new Date());\n  if (!api.q(\"[:find ?p . :in $ ?uid :where [?p :block/uid ?uid]]\", todayUid)) {\n    await api.data.page.create(\n      {page: {title: api.util.dateToPageTitle(new Date())}});\n  }\n  const existing = api.q(\n    \"[:find ?c . :in $ ?uid ?text :where [?p :block/uid ?uid] [?p :block/children ?c] [?c :block/string ?text]]\",\n    todayUid, \"Journal\");\n  if (!existing) {\n    await api.data.block.create(\n      {location: {\"parent-uid\": todayUid, order: 0}, block: {string: \"Journal\"}});\n  }\n}\nensureTodayHasJournal();```"
+          }
+         ],
+         ":block/uid": "pTz5Eon65",
          ":block/order": 0,
-         ":block/string": "The order of operations is "
+         ":block/string": "{{[[roam/js]]}}"
         }
        ],
-       ":block/uid": "WekjMnhsD",
+       ":block/uid": "-Jbcxa5I_",
        ":block/order": 2,
-       ":block/string": "roam/js blocks that are enabled **run automatically run on startup**"
+       ":block/string": "Make sure today's daily note starts with a Journal block — runs on every startup, and shows the guard pattern that keeps a script from creating duplicates"
       },
       {
-       ":block/refs": [
+       ":block/children": [
         {
-         ":block/uid": "5BB8h4I7b"
+         ":block/refs": [
+          {
+           ":block/uid": "QE0bxjUwk"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/uid": "7bu8kmQze",
+           ":block/order": 0,
+           ":block/string": "```javascript\nfunction getPageUid(title) {\n  return window.roamAlphaAPI.q(\n    \"[:find ?uid . :in $ ?title :where [?e :node/title ?title] [?e :block/uid ?uid]]\",\n    title);\n}\n\nfunction getChildUids(parentUid) {\n  return window.roamAlphaAPI.q(\n    \"[:find [?uid ...] :in $ ?parent :where [?p :block/uid ?parent] [?p :block/children ?c] [?c :block/uid ?uid]]\",\n    parentUid);\n}```"
+          }
+         ],
+         ":block/uid": "Putj52pFY",
+         ":block/order": 0,
+         ":block/string": "{{[[roam/js]]}}"
         }
        ],
-       ":block/uid": "re_h29qmB",
-       ":block/order": 4,
-       ":block/string": "roam/js is most useful for developing a small script you expect to only run for yourself, if you want to distribute your extension, we recommend you develop a [[Roam Depot/Extensions]], which is similar, but has a different development process."
+       ":block/uid": "haexLPK4s",
+       ":block/order": 3,
+       ":block/string": "Define helper functions for your other scripts — top-level function declarations are global, so any code block can call them"
+      }
+     ],
+     ":block/uid": "7pt_G6Sjh",
+     ":block/order": 3,
+     ":block/string": "Examples::"
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "wB4F4hhm5",
+       ":block/order": 0,
+       ":block/string": "Write scripts so running them twice is harmless — check for existing blocks before creating them, like the journal example above."
       },
       {
        ":block/refs": [
         {
          ":block/uid": "tIaOPdXCj"
-        },
-        {
-         ":block/uid": "YTrHVFXHD"
         }
        ],
-       ":block/uid": "tg1zeR7Ps",
+       ":block/uid": "PFJXxeGCO",
+       ":block/order": 1,
+       ":block/string": "Prefer the [[Roam Alpha API]] over reading the DOM — class names and DOM structure can change without notice."
+      },
+      {
+       ":block/uid": "qrkrmJaYg",
+       ":block/order": 2,
+       ":block/string": "Keep each script under its own `{{[[roam/js]]}}` block so you can turn them on and off individually."
+      },
+      {
+       ":block/uid": "gRCx7V58r",
        ":block/order": 3,
-       ":block/string": "You have access to the [[Roam Alpha API]] in the window object, as well as a list of [[Available Libraries]] Roam exports to the window."
+       ":block/string": "Use the browser console for feedback — `console.log` output and script errors both land there."
+      },
+      {
+       ":block/uid": "But6jDp9E",
+       ":block/order": 4,
+       ":block/string": "Test scripts that write to the graph on a test graph first."
       }
      ],
-     ":block/uid": "NWZoNhNLZ",
-     ":block/order": 0,
-     ":block/string": "**Getting Started**"
+     ":block/uid": "cK96zwL2p",
+     ":block/order": 4,
+     ":block/string": "**Good practices**"
     }
    ],
    ":block/uid": "QE0bxjUwk"
@@ -20297,68 +20622,87 @@
     {
      ":block/children": [
       {
-       ":block/uid": "VelSNNp42",
+       ":block/children": [
+        {
+         ":block/uid": "VelSNNp42",
+         ":block/order": 0,
+         ":block/string": "These docs describe the Roam codebase. Verify behavioral claims against the source (or by live-testing) before writing them."
+        },
+        {
+         ":block/uid": "djVA8ac2M",
+         ":block/order": 1,
+         ":block/string": "Implementations outrank code comments and docstrings, which can be stale."
+        }
+       ],
+       ":block/uid": "nJzJ6HvAa",
        ":block/order": 0,
-       ":block/string": "These docs describe the Roam codebase. Verify behavioral claims against the source (or by live-testing) before writing them."
+       ":block/string": "Accuracy is the prime rule"
       },
       {
-       ":block/uid": "djVA8ac2M",
+       ":block/children": [
+        {
+         ":block/uid": "a_kNZ1NEP",
+         ":block/order": 0,
+         ":block/string": "One fact per block; nest details under a short lead block instead of writing long blocks."
+        },
+        {
+         ":block/uid": "P9cSfzr-x",
+         ":block/order": 1,
+         ":block/string": "Code examples show their return values as comments."
+        },
+        {
+         ":block/uid": "mi2oUirST",
+         ":block/order": 2,
+         ":block/string": "Don't duplicate content across blocks or pages — link with `((block refs))` or `[[page refs]]` instead."
+        }
+       ],
+       ":block/uid": "Aot8mrIVx",
        ":block/order": 1,
-       ":block/string": "Implementations outrank code comments and docstrings, which can be stale."
+       ":block/string": "Style"
       }
      ],
-     ":block/uid": "nJzJ6HvAa",
-     ":block/order": 1,
-     ":block/string": "Accuracy is the prime rule"
-    },
-    {
-     ":block/children": [
-      {
-       ":block/uid": "a_kNZ1NEP",
-       ":block/order": 0,
-       ":block/string": "One fact per block; nest details under a short lead block instead of writing long blocks."
-      },
-      {
-       ":block/uid": "P9cSfzr-x",
-       ":block/order": 1,
-       ":block/string": "Code examples show their return values as comments."
-      },
-      {
-       ":block/uid": "mi2oUirST",
-       ":block/order": 2,
-       ":block/string": "Don't duplicate content across blocks or pages — link with `((block refs))` or `[[page refs]]` instead."
-      }
-     ],
-     ":block/uid": "Aot8mrIVx",
+     ":block/uid": "U-pTjWG75",
      ":block/order": 2,
-     ":block/string": "Style"
+     ":block/string": "Only for agents writing to this graph (ignore if you are just reading documentation)"
     },
     {
-     ":block/children": [
+     ":block/refs": [
       {
-       ":block/refs": [
-        {
-         ":block/uid": "tIaOPdXCj"
-        }
-       ],
-       ":block/uid": "4l8T7aXIy",
-       ":block/order": 0,
-       ":block/string": "On [[Roam Alpha API]], every method heading is its full dotted path (`roamAlphaAPI.data.block.create`) — search that string and fetch just that block instead of loading the whole page."
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "OiE7WUknO"
-        }
-       ],
-       ":block/uid": "qHLLZx2gP",
-       ":block/order": 1,
-       ":block/string": "[[Roam Alpha API (old)]] is the pre-2026 archive holding the historical change log — don't edit it."
+       ":block/uid": "49715b-M2"
       }
      ],
-     ":block/uid": "gQuaDuKHM",
-     ":block/order": 3,
-     ":block/string": "Reading efficiently"
+     ":block/children": [
+      {
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "tIaOPdXCj"
+          }
+         ],
+         ":block/uid": "4l8T7aXIy",
+         ":block/order": 0,
+         ":block/string": "On [[Roam Alpha API]], every method heading is its full dotted path (`roamAlphaAPI.data.block.create`) — search that string and fetch just that block instead of loading the whole page."
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "OiE7WUknO"
+          }
+         ],
+         ":block/uid": "qHLLZx2gP",
+         ":block/order": 1,
+         ":block/string": "[[Roam Alpha API (old)]] is the pre-2026 archive holding the historical change log — don't edit it and there is no need to read that page."
+        }
+       ],
+       ":block/uid": "gQuaDuKHM",
+       ":block/order": 0,
+       ":block/string": "Reading efficiently"
+      }
+     ],
+     ":block/uid": "DVdyvenfe",
+     ":block/order": 1,
+     ":block/string": "For agents reading this graph, start with the starred pages or [[Developer Hub]]"
     }
    ],
    ":block/uid": "edvliqOj-"
@@ -20379,165 +20723,390 @@
    ":node/title": "roam/css",
    ":block/children": [
     {
-     ":block/refs": [
-      {
-       ":block/uid": "Ln1sKPxeq"
-      }
-     ],
      ":block/uid": "J-_oEDCoE",
-     ":block/heading": 3,
-     ":block/order": 2,
-     ":block/string": "Check out our [community-built themes for inspiration]([[Themes]])"
+     ":block/order": 10,
+     ":block/string": "Check out our [community-built themes for inspiration](https://roamresearch.com/#/app/help/page/dZV0KPRqu)"
     },
     {
      ":block/refs": [
       {
-       ":block/uid": "E0K-uCnYr"
+       ":block/uid": "SdFgXzJHe"
       }
      ],
      ":block/children": [
       {
-       ":block/children": [
+       ":block/refs": [
         {
-         ":block/uid": "sKJvIuRDI",
-         ":block/order": 0,
-         ":block/string": "Press `cmd+u` (mac) or `ctrl+u` (pc) and then start typing \"roam/css\" into the search bar, then press `return` (mac) `enter` (pc)"
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "Q5PT2yfIV"
-          }
-         ],
-         ":block/uid": "LHB1jSN5h",
-         ":block/order": 2,
-         ":block/string": "Type \"[[roam/css]]\" into a block"
-        },
-        {
-         ":block/uid": "CcYyubNkX",
-         ":block/order": 1,
-         ":block/string": "Or"
+         ":block/uid": "0q1crxMwI"
         }
        ],
-       ":block/uid": "hDOFqem5p",
-       ":block/heading": 2,
+       ":block/uid": "KXXR4w-Eb",
        ":block/order": 0,
-       ":block/string": "Create a page in your graph with the title `roam/css`"
-      },
-      {
-       ":block/children": [
-        {
-         ":block/uid": "Ydl_31mm_",
-         ":block/order": 0,
-         ":block/string": "Type \"/\" into any block on the page then type \"CSS\", and then press `enter` or `return`"
-        },
-        {
-         ":block/uid": "Az7Ox4stb",
-         ":block/order": 1,
-         ":block/string": "Or"
-        },
-        {
-         ":block/uid": "tu4gXpIMZ",
-         ":block/order": 2,
-         ":block/string": "Type \"```\" into any block, which"
-        }
-       ],
-       ":block/uid": "CaUrLWhDg",
-       ":block/heading": 2,
-       ":block/order": 1,
-       ":block/string": "Create a CSS code block on the roam/css page"
-      },
-      {
-       ":block/uid": "kmUJn42UQ",
-       ":block/heading": 2,
-       ":block/order": 2,
-       ":block/string": "Crea"
-      }
-     ],
-     ":block/uid": "6aRVb11hW",
-     ":block/heading": 1,
-     ":block/order": 3,
-     ":block/string": "Getting started::"
-    },
-    {
-     ":block/children": [
-      {
-       ":block/uid": "RgjNLn1Jn",
-       ":block/order": 0,
-       ":block/string": "```css\n.rm-sidebar-outline > div:nth-child(1) {\n  margin-bottom: 16px;\n}```"
-      }
-     ],
-     ":block/uid": "0lyhfftox",
-     ":block/order": 8,
-     ":block/string": "Graph-wide CSS "
-    },
-    {
-     ":block/uid": "Wuu11jwlb",
-     ":block/heading": 2,
-     ":block/order": 1,
-     ":block/string": "Use roam/css to create themes, change layouts, develop new features, and style blocks at a granular level"
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "PlLrkvc45"
-      }
-     ],
-     ":block/children": [
-      {
-       ":block/uid": "3sNR9WRDj",
-       ":block/order": 0,
-       ":block/string": "How to use roam/css inline"
-      },
-      {
-       ":block/uid": "W2XqKX8DM",
-       ":block/order": 1,
-       ":block/string": "How to create custom tags"
-      },
-      {
-       ":block/uid": "rin3oucB8",
-       ":block/order": 2,
-       ":block/string": "How to make page tags"
-      },
-      {
-       ":block/uid": "EGZBxvrIk",
-       ":block/order": 3,
-       ":block/string": "How to do block-level customization"
+       ":block/string": "[Painting Roam with Custom CSS](https://maggieappleton.com/paintingroam) by [[Maggie Appleton]]"
       },
       {
        ":block/refs": [
         {
-         ":block/uid": "QBueoI1AR"
+         ":block/uid": "QqDKeiEY7"
+        }
+       ],
+       ":block/uid": "Z9MflfV-G",
+       ":block/order": 1,
+       ":block/string": "[Roam themes: how to style Roam Research with custom CSS](https://nesslabs.com/roam-research-themes-custom-styling-css) by [[Anne-Laure Le Cunff]]"
+      }
+     ],
+     ":block/uid": "6AFqTXgXH",
+     ":block/order": 9,
+     ":block/string": "Articles::"
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "a2XkHw5RJ"
+      }
+     ],
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "YYLgubzBO"
         }
        ],
        ":block/children": [
         {
-         ":block/children": [
+         ":block/refs": [
           {
-           ":block/uid": "8ySg6P9wL",
-           ":block/order": 0,
-           ":block/string": "You can also set these on :root since they cascade"
-          },
-          {
-           ":block/uid": "2OkjTrCGV",
-           ":block/order": 1,
-           ":block/string": "```css\n#rm-canvas-container {\n  background-color: lightblue;\n  --graph-overview-label-font: Times New Roman;\n  --graph-overview-label-color: gray;\n  --graph-overview-default-node-color: #673AB7;\n  --graph-overview-unselected-node-color: #673AB772;\n  --graph-overview-explore-node-color: pink;\n  --graph-overview-default-edge-color: #FFC107B5;\n  --graph-overview-selected-edge-color: black;\n  --graph-overview-unselected-edge-color: white;\n}```"
+           ":block/uid": "vW25f-Zwv"
           }
          ],
-         ":block/uid": "SHN8qAjk4",
+         ":block/uid": "RpFqwnwVu",
          ":block/order": 0,
-         ":block/string": "{{roam/css}}"
+         ":block/string": "{{[[video]]: https://www.youtube.com/watch?v=Cz07-oZlPzA&t=3s&ab_channel=MikeGiannulis}}"
         }
        ],
-       ":block/uid": "cONCaPopv",
-       ":block/order": 4,
-       ":block/string": "How to style the [[Graph Overview]]"
+       ":block/uid": "jZwWng-Fs",
+       ":block/heading": 3,
+       ":block/order": 0,
+       ":block/string": "How to Create and Edit Roam CSS: Interview with [[Abhay Prasanna]]"
       }
      ],
-     ":block/uid": "DN6goSor_",
-     ":block/heading": 1,
-     ":block/order": 4,
-     ":block/string": "How-to guides::"
+     ":block/uid": "1BSCXH9M1",
+     ":block/order": 8,
+     ":block/string": "Community Videos::"
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "55GBGjVAg",
+       ":block/order": 0,
+       ":block/string": "Every css code block on this page — at any nesting depth — is applied to the app, in visual order"
+      },
+      {
+       ":block/uid": "MDn7TfqY8",
+       ":block/order": 1,
+       ":block/string": "Changes apply live as you type"
+      },
+      {
+       ":block/uid": "QFPWxZI2x",
+       ":block/order": 3,
+       ":block/string": "Only code blocks whose language is set to css count. You can switch the language to temporarily disable that css block, or store css on this page for later."
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "Ic1A9xn8m",
+         ":block/order": 1,
+         ":block/string": "**If you want the css to be applied for everyone write directly on this page**"
+        },
+        {
+         ":block/uid": "cv4nikFra",
+         ":block/order": 0,
+         ":block/string": "Each such block has to be enabled by each user of your graph."
+        }
+       ],
+       ":block/uid": "-ZGmFIajj",
+       ":block/order": 5,
+       ":block/string": "To apply css from any other page, nest the css code block under a `{{[[roam/css]]}}` component block"
+      },
+      {
+       ":block/uid": "cMcFWIbaH",
+       ":block/order": 6,
+       ":block/string": "Escape hatch: if bad css makes the app unusable, add `?disablecss=true` to the URL (before the `#`) — all roam/css is disabled until the next refresh. You can also disable all js and css from the \"Roam Depot\" tab in settings"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "ayV1osqm3",
+         ":block/order": 0,
+         ":block/string": "Filter the page to toggle css blocks on and off (e.g. tag each theme's blocks and switch themes by filtering)"
+        },
+        {
+         ":block/uid": "dWS0zbF0B",
+         ":block/order": 1,
+         ":block/string": "You can use this to have css blocks that are only applied for certain users by having each user apply different filters"
+        }
+       ],
+       ":block/uid": "Try5UCp7N",
+       ":block/order": 4,
+       ":block/string": "This page's filters apply and change what css is applied"
+      },
+      {
+       ":block/uid": "0xZJD_RZx",
+       ":block/order": 2,
+       ":block/string": "Click a color value inside a css code block and Roam shows an inline color picker — no need to know hex codes"
+      }
+     ],
+     ":block/uid": "gwzTanPKO",
+     ":block/order": 0,
+     ":block/string": "How it works"
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "CjPgH1sXh",
+       ":block/order": 0,
+       ":block/string": "Right-click any element and choose Inspect — your browser's DevTools open with that element selected, showing its classes"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "xjOI4dWFK",
+         ":block/order": 0,
+         ":block/string": "`bp3-` classes come from [Blueprint](https://blueprintjs.com/docs/versions/3/), the UI library Roam uses — you can target them too, but prefer `rm-` classes when both match"
+        }
+       ],
+       ":block/uid": "1y0AKrvCR",
+       ":block/order": 2,
+       ":block/string": "Roam's own classes are prefixed `rm-` (a few older structural ones use `roam-`)"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "VpLgtWBwQ",
+         ":block/order": 0,
+         ":block/string": "`document.querySelectorAll(\".rm-page-ref\")` returns every element it matches"
+        }
+       ],
+       ":block/uid": "Sx7cHbV_5",
+       ":block/order": 3,
+       ":block/string": "Test a selector from the DevTools console"
+      },
+      {
+       ":block/uid": "cdTWJ0OC1",
+       ":block/order": 1,
+       ":block/string": "To inspect UI that only appears on hover (bullet controls, tooltips), run `setTimeout(() => { debugger }, 3000)` in the DevTools console, then hover the element — the page freezes in the debugger so you can inspect it"
+      }
+     ],
+     ":block/uid": "8jgRB0Zhz",
+     ":block/order": 1,
+     ":block/string": "Finding what to target"
+    },
+    {
+     ":block/children": [
+      {
+       ":block/children": [
+        {
+         ":block/uid": "rRsi75lp3",
+         ":block/order": 0,
+         ":block/string": "`.roam-body`, `.roam-app`, `.roam-main` — the app shell"
+        },
+        {
+         ":block/uid": "qAc4uox9o",
+         ":block/order": 1,
+         ":block/string": "`.roam-article` — the main window's page content"
+        },
+        {
+         ":block/uid": "P8Tr_EOcI",
+         ":block/order": 2,
+         ":block/string": "`.roam-sidebar-container` — the left sidebar"
+        },
+        {
+         ":block/uid": "w-3-Mfb81",
+         ":block/order": 3,
+         ":block/string": "`.rm-sidebar-outline` — a page open in the right sidebar"
+        },
+        {
+         ":block/uid": "hE886_Lwb",
+         ":block/order": 4,
+         ":block/string": "`.roam-log-container` — the daily notes view"
+        },
+        {
+         ":block/uid": "ZmPn71A0M",
+         ":block/order": 5,
+         ":block/string": "`.rm-title-display` — page titles"
+        }
+       ],
+       ":block/uid": "XGlXDDqqT",
+       ":block/order": 0,
+       ":block/string": "Layout"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "rla79bcBS",
+         ":block/order": 0,
+         ":block/string": "`.rm-block` (also `.roam-block-container`) — a block together with its children"
+        },
+        {
+         ":block/uid": "3pGHZrU9h",
+         ":block/order": 1,
+         ":block/string": "`.rm-block-main` (also `.rm-block__self`) — just the block's own line"
+        },
+        {
+         ":block/uid": "UjlbxmSD1",
+         ":block/order": 2,
+         ":block/string": "`.rm-block__children` — the block's children"
+        },
+        {
+         ":block/uid": "bnchhQb6U",
+         ":block/order": 3,
+         ":block/string": "`.rm-block__input` (also `.roam-block`) — the rendered block text; while editing it is the `textarea.rm-block-input`"
+        },
+        {
+         ":block/uid": "bo1MYdGPT",
+         ":block/order": 4,
+         ":block/string": "Modifier classes on `.rm-block`: `rm-heading-level-1` / `-2` / `-3`, `rm-block--open` / `rm-block--closed`, `rm-block--mine` / `rm-block--others`, `rm-block--editable` / `rm-block--readonly`, `rm-focused`"
+        }
+       ],
+       ":block/uid": "aULMaJPwQ",
+       ":block/order": 1,
+       ":block/string": "Blocks"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/children": [
+          {
+           ":block/uid": "vLbEKSZsB",
+           ":block/order": 0,
+           ":block/string": "`.rm-page-ref--link` for bracketed links, `.rm-page-ref--tag` for tags"
+          }
+         ],
+         ":block/uid": "uKYkQKhR8",
+         ":block/order": 0,
+         ":block/string": "`.rm-page-ref` — every page reference"
+        },
+        {
+         ":block/uid": "yDlMs5IzK",
+         ":block/order": 1,
+         ":block/string": "`.rm-block-ref` — block references"
+        },
+        {
+         ":block/uid": "udFcpoEgc",
+         ":block/order": 2,
+         ":block/string": "`.rm-reference-main` — the linked references section (query results use it too)"
+        }
+       ],
+       ":block/uid": "jLY9CPSMm",
+       ":block/order": 2,
+       ":block/string": "References"
+      }
+     ],
+     ":block/uid": "9CaLtKyMk",
+     ":block/order": 2,
+     ":block/string": "Useful selectors"
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "hpP-t-Tud",
+       ":block/order": 0,
+       ":block/string": "Every page ref carries data attributes: `data-tag` (tags) or `data-link-title` (links), plus `data-link-uid`"
+      },
+      {
+       ":block/uid": "TxThfNGjb",
+       ":block/order": 1,
+       ":block/string": "The block container carries `data-page-links` — a JSON array of every page linked in the block — and `data-path-page-links` for pages linked in its ancestors"
+      },
+      {
+       ":block/uid": "SpHs8eEZs",
+       ":block/order": 3,
+       ":block/string": "The block container also carries `data-block-uid`, `data-page-title`, and `data-create-display-name` / `data-edit-display-name`"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "1Xn7IBf2z",
+         ":block/order": 0,
+         ":block/string": "The class (minus the dot) is added to that block's `.rm-block` container"
+        },
+        {
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "lKta8vBIW"
+            },
+            {
+             ":block/uid": "oIyaKsXYn"
+            },
+            {
+             ":block/uid": "Ft4_06LmT"
+            }
+           ],
+           ":block/uid": "MEcI9UYj8",
+           ":block/order": 0,
+           ":block/string": "This block is tagged with #.bg-blue-400 #.rounded #.p-2"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "l3z0sE5Dr"
+            },
+            {
+             ":block/uid": "hSZJZAMYG"
+            }
+           ],
+           ":block/uid": "chdmeq9hx",
+           ":block/order": 1,
+           ":block/string": "And this one with #.font-bold #.italic"
+          }
+         ],
+         ":block/uid": "U2usmr2RF",
+         ":block/order": 1,
+         ":block/string": "Most of [Tailwind's utility classes](https://v2.tailwindcss.com/docs) ship with Roam, so many dot-tags style a block with no css at all"
+        }
+       ],
+       ":block/uid": "gssHzamYA",
+       ":block/order": 2,
+       ":block/string": "Add your own class to a block by tagging it with a page whose title starts with a dot and contains no spaces, e.g. `#.aside`. The tag will be automatically be hidden and appear on hover."
+      }
+     ],
+     ":block/uid": "3ADE20tZD",
+     ":block/order": 3,
+     ":block/string": "Styling specific tags and blocks"
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "P53Va5OAq",
+       ":block/order": 3,
+       ":block/string": "Roam's markup changes between releases and class names are not a formal API, so expect to revisit your css occasionally"
+      },
+      {
+       ":block/uid": "tQ891VGFN",
+       ":block/order": 0,
+       ":block/string": "Prefer `rm-` classes and data attributes; avoid structural selectors like `:nth-child` if you can"
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "QE0bxjUwk"
+        }
+       ],
+       ":block/uid": "Y1w6y6WzQ",
+       ":block/order": 1,
+       ":block/string": "Use CSS for presentation only — if you find yourself trying to add elements or change behavior, you want JavaScript instead (an extension, or [[roam/js]])"
+      },
+      {
+       ":block/uid": "M34HrvrvJ",
+       ":block/order": 2,
+       ":block/string": "If an override doesn't take — common when adjusting an imported theme — add `!important` to the declaration"
+      }
+     ],
+     ":block/uid": "gYS1mcVsW",
+     ":block/order": 6,
+     ":block/string": "Good practices"
     },
     {
      ":block/refs": [
@@ -20549,132 +21118,252 @@
       {
        ":block/children": [
         {
-         ":block/uid": "XUhmAOsLc",
+         ":block/uid": "Y0LWBMi48",
          ":block/order": 0,
-         ":block/string": ""
+         ":block/string": "```javascript\n.roam-app {\n  font-family: \"iA Writer Quattro\", \"Helvetica Neue\", sans-serif;\n}```"
+        },
+        {
+         ":block/uid": "PZGBNjwjN",
+         ":block/order": 1,
+         ":block/string": "`@import` (e.g. a Google Fonts URL or a shared theme stylesheet) only works from the very first css block on this page — all blocks are concatenated into one stylesheet, and css requires `@import` at the top. Hosting a long theme on GitHub and importing it also keeps those lines out of your graph's search results"
         }
        ],
-       ":block/uid": "IOs_cJv9g",
+       ":block/uid": "3EgaYG6CD",
        ":block/order": 0,
-       ":block/string": "Code samples:"
+       ":block/string": "Change the app font"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "UKnLAhmrm",
+         ":block/order": 0,
+         ":block/string": "```javascript\n/* the width setting in the ... menu adds rm-spacing--small or --medium here */\n.rm-article-wrapper.rm-spacing--small {\n  padding-left: calc((100% - 1100px) / 2);\n  padding-right: calc((100% - 1100px) / 2);\n}```"
+        }
+       ],
+       ":block/uid": "lXugijNDv",
+       ":block/order": 1,
+       ":block/string": "Widen the page"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "zTRWfGGEb",
+         ":block/order": 0,
+         ":block/string": "```javascript\n/* the > path matters: a plain descendant selector would also hit the heading's child blocks */\n.rm-heading-level-1 > .rm-block-main .rm-block__input { color: #1c5b8f; }\n.rm-heading-level-2 > .rm-block-main .rm-block__input { color: #2e7d32; }\n.rm-heading-level-3 > .rm-block-main .rm-block__input { color: #8a6d1d; }```"
+        }
+       ],
+       ":block/uid": "haQMgHbWF",
+       ":block/heading": 3,
+       ":block/order": 2,
+       ":block/string": "Color the headings"
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "ZKS4O1Xeu"
+        },
+        {
+         ":block/uid": "syTnA6QvT"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/uid": "5W1Bo_kA3",
+         ":block/order": 0,
+         ":block/string": "```css\n/* an emoji before every #idea tag */\n.rm-page-ref[data-tag=\"idea\"]::before {\n  content: \"💡 \";\n}\n/* style every tag starting with \"project/\" */\n.rm-page-ref[data-tag^=\"project/\"] {\n  color: #7b2d8b;\n  font-weight: 600;\n}```"
+        }
+       ],
+       ":block/uid": "Z0itlh3d2",
+       ":block/order": 3,
+       ":block/string": "Tags with emoji and prefix matching #idea #project/css"
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "a9tnV7Xe7"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/uid": "ZtVwQWpQx",
+         ":block/order": 0,
+         ":block/string": "```css\nspan[data-link-title=\"Projects\"] {\n  font-weight: 600;\n  text-transform: uppercase;\n}```"
+        }
+       ],
+       ":block/uid": "-7pKWtToR",
+       ":block/order": 4,
+       ":block/string": "Style one page's links everywhere [[Projects]]"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "jEOe281Eg",
+         ":block/order": 2,
+         ":block/string": "```javascript\n/* {{[[TODO]]}} renders .rm-checkbox.rm-todo, {{[[DONE]]}} renders .rm-checkbox.rm-done */\n/* the native input is hidden — the visible box is the .checkmark inside .check-container */\n.rm-checkbox .check-container {\n  display: inline-block;\n  transform: scale(1.15);\n  transform-origin: center left;\n}\n/* cross out blocks with a checked box (needs a browser with :has support) */\n.rm-block__input:has(.rm-done) {\n  text-decoration: line-through;\n  opacity: 0.6;\n}```"
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "nkFdGfwuf"
+          }
+         ],
+         ":block/uid": "VM1Zqt8AK",
+         ":block/order": 0,
+         ":block/string": "{{[[TODO]]}} do this"
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "1k1mW2qrt"
+          }
+         ],
+         ":block/uid": "t9FndaIxx",
+         ":block/order": 1,
+         ":block/string": "{{[[DONE]]}} do this"
+        }
+       ],
+       ":block/uid": "ns3L9lL2_",
+       ":block/order": 7,
+       ":block/string": "Bigger TODO checkboxes, crossed-out DONE blocks"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "uh8gi8x5F",
+         ":block/order": 0,
+         ":block/string": "```javascript\n/* ^^highlighted^^ text */\n.rm-highlight {\n  background: #d8f0e0;\n}```"
+        }
+       ],
+       ":block/uid": "ftfKEm7sn",
+       ":block/order": 8,
+       ":block/string": "Change the ^^highlight^^ color"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "T-LuSHOpl",
+         ":block/order": 0,
+         ":block/string": "```javascript\n/* blocks starting with > */\nblockquote.rm-bq {\n  border-left: 3px solid #c9b458;\n  background: #faf6ea;\n  font-style: italic;\n}```"
+        }
+       ],
+       ":block/uid": "VlGzSIpx9",
+       ":block/order": 9,
+       ":block/string": "> Style block quotes"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "oMqw7dX7v",
+         ":block/order": 0,
+         ":block/string": "```javascript\n/* [alias](url) links to the outside world get an arrow */\n.rm-alias--external::after {\n  content: \" ↗\";\n  font-size: 0.8em;\n}```"
+        }
+       ],
+       ":block/uid": "KV-4T2WBe",
+       ":block/order": 10,
+       ":block/string": "Mark [external links](https://blueprintjs.com/docs/versions/3/)"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "0iJhEBgkF",
+         ":block/order": 0,
+         ":block/string": "```javascript\n.rm-inline-img {\n  max-height: 300px;\n}```"
+        }
+       ],
+       ":block/uid": "G9BWsdZdQ",
+       ":block/order": 11,
+       ":block/string": "Limit image height"
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "cVKxqQlyV"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/uid": "xhvD2xve1",
+         ":block/order": 0,
+         ":block/string": "```css\n/* highlight every block that links [[urgent]] */\n.rm-block[data-page-links*='\"urgent\"'] > .rm-block-main {\n  background: #fff6f6;\n}```"
+        }
+       ],
+       ":block/uid": "dUPAaTMsp",
+       ":block/order": 5,
+       ":block/string": "Highlight blocks that link a specific page [[urgent]]"
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "0n2URxHFb"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/uid": "qPk6lh7n9",
+         ":block/order": 0,
+         ":block/string": "```css\n/* tag a block with #.aside to style it */\n.rm-block.aside > .rm-block-main {\n  opacity: 0.6;\n  font-style: italic;\n}\n/* hide the #.aside tag itself */\n.rm-page-ref[data-tag=\".aside\"] {\n  display: none;\n}```"
+        }
+       ],
+       ":block/uid": "bC60pY6PW",
+       ":block/order": 6,
+       ":block/string": "Style blocks you've tagged with a dot-class like `#.aside` #.aside"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "GtVy6tQ2t",
+         ":block/order": 0,
+         ":block/string": "```javascript\n/* define your colors twice and the theme switches with the OS setting */\n@media (prefers-color-scheme: dark) {\n  .roam-app { background: #1d2125; color: #d6d8da; }\n}\n@media (prefers-color-scheme: light) {\n  .roam-app { background: #ffffff; color: #202b33; }\n}```"
+        }
+       ],
+       ":block/uid": "p479MAJ37",
+       ":block/order": 12,
+       ":block/string": "Follow the system's light/dark mode"
       }
      ],
-     ":block/uid": "aWojlSvLv",
-     ":block/heading": 1,
+     ":block/uid": "xjwZaaFwG",
      ":block/order": 5,
      ":block/string": "Examples::"
     },
     {
+     ":block/uid": "aCH3Akpm2",
+     ":block/order": 4,
+     ":block/string": "**Some of the examples below you need to switch the code block type to __css__ in the bottom right to enable**"
+    },
+    {
      ":block/refs": [
       {
-       ":block/uid": "K_unTEjJx"
+       ":block/uid": "8jpLBa4pl"
       }
      ],
      ":block/children": [
       {
        ":block/refs": [
         {
-         ":block/uid": "a2XkHw5RJ"
+         ":block/uid": "MMjTpOuaS"
         }
        ],
        ":block/children": [
         {
          ":block/refs": [
           {
-           ":block/uid": "SdFgXzJHe"
+           ":block/uid": "vW25f-Zwv"
           }
          ],
-         ":block/children": [
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "0q1crxMwI"
-            }
-           ],
-           ":block/uid": "KXXR4w-Eb",
-           ":block/order": 0,
-           ":block/string": "[Painting Roam with Custom CSS](https://maggieappleton.com/paintingroam) by [[Maggie Appleton]]"
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "QqDKeiEY7"
-            }
-           ],
-           ":block/uid": "Z9MflfV-G",
-           ":block/order": 1,
-           ":block/string": "[Roam themes: how to style Roam Research with custom CSS](https://nesslabs.com/roam-research-themes-custom-styling-css) by [[Anne-Laure Le Cunff]]"
-          }
-         ],
-         ":block/uid": "6AFqTXgXH",
-         ":block/heading": 3,
-         ":block/order": 1,
-         ":block/string": "Articles::"
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "YYLgubzBO"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "vW25f-Zwv"
-            }
-           ],
-           ":block/uid": "RpFqwnwVu",
-           ":block/order": 0,
-           ":block/string": "{{[[video]]: https://www.youtube.com/watch?v=Cz07-oZlPzA&t=3s&ab_channel=MikeGiannulis}}"
-          }
-         ],
-         ":block/uid": "jZwWng-Fs",
-         ":block/heading": 3,
+         ":block/uid": "wAEKfk4AH",
          ":block/order": 0,
-         ":block/string": "How to Create and Edit Roam CSS: Interview with [[Abhay Prasanna]]"
+         ":block/string": "{{[[video]]: https://youtu.be/UY-sAC2eGyI}}"
         }
        ],
-       ":block/uid": "1BSCXH9M1",
+       ":block/uid": "chEaWjFUd",
        ":block/heading": 3,
        ":block/order": 0,
-       ":block/string": "Community Videos::"
+       ":block/string": "Applying Custom Themes for your RoamResearch Knowledge Graph by [[Conor White-Sullivan]]"
       }
      ],
-     ":block/uid": "yFOd6F5mV",
-     ":block/heading": 1,
-     ":block/order": 6,
-     ":block/string": "Resources::"
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "2l-2hrjtX"
-      }
-     ],
-     ":block/children": [
-      {
-       ":block/children": [
-        {
-         ":block/uid": "Tv-BhhOyM",
-         ":block/order": 0,
-         ":block/string": ""
-        }
-       ],
-       ":block/uid": "fs3nt6W1M",
-       ":block/order": 0,
-       ":block/string": "Selectors:"
-      }
-     ],
-     ":block/uid": "Cxcskoo4C",
-     ":block/heading": 1,
+     ":block/uid": "ftzLPR6p5",
      ":block/order": 7,
-     ":block/string": "Reference::"
-    },
-    {
-     ":block/uid": "z2PXlDy21",
-     ":block/order": 0,
-     ":block/string": "🚧🚧🚧🚧🚧🚧 Under Construction 🚧🚧🚧🚧🚧🚧"
+     ":block/string": "Roam Team Videos::"
     }
    ],
    ":block/uid": "Q5PT2yfIV"
@@ -20685,154 +21374,6 @@
   },
   {
    ":node/title": "June 9th, 2022",
-   ":block/children": [
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "7l31uEMqA"
-      },
-      {
-       ":block/uid": "HAPOxqLeF"
-      }
-     ],
-     ":block/children": [
-      {
-       ":block/children": [
-        {
-         ":block/uid": "qe2NwvROh",
-         ":block/order": 0,
-         ":block/string": "child"
-        }
-       ],
-       ":block/uid": "LEQfkncR5",
-       ":block/order": 6,
-       ":block/string": "parent"
-      },
-      {
-       ":block/children": [
-        {
-         ":block/uid": "3RddVxtFn",
-         ":block/order": 0,
-         ":block/string": "child"
-        }
-       ],
-       ":block/uid": "aPlIEUAo6",
-       ":block/order": 5,
-       ":block/string": "parent"
-      },
-      {
-       ":block/children": [
-        {
-         ":block/uid": "IvHd2qDrg",
-         ":block/order": 0,
-         ":block/string": "child"
-        }
-       ],
-       ":block/uid": "jL5c6G4U-",
-       ":block/order": 4,
-       ":block/string": "parent"
-      },
-      {
-       ":block/children": [
-        {
-         ":block/uid": "Pk40aPmVm",
-         ":block/order": 0,
-         ":block/string": "child"
-        }
-       ],
-       ":block/uid": "4tIla1tQR",
-       ":block/order": 3,
-       ":block/string": "parent"
-      },
-      {
-       ":block/children": [
-        {
-         ":block/uid": "Cxfol6ctp",
-         ":block/order": 0,
-         ":block/string": "child"
-        }
-       ],
-       ":block/uid": "RtQ2Sj-mn",
-       ":block/order": 2,
-       ":block/string": "parent"
-      },
-      {
-       ":block/children": [
-        {
-         ":block/uid": "6Aq0gEFvf",
-         ":block/order": 0,
-         ":block/string": "child"
-        }
-       ],
-       ":block/uid": "wVm0ukW_T",
-       ":block/order": 1,
-       ":block/string": "parent"
-      },
-      {
-       ":block/children": [
-        {
-         ":block/uid": "bc9hnmlUI",
-         ":block/order": 0,
-         ":block/string": "child"
-        }
-       ],
-       ":block/uid": "QjkJqqzaw",
-       ":block/order": 0,
-       ":block/string": "parent"
-      }
-     ],
-     ":block/uid": "QdL4Uzjtl",
-     ":block/order": 5,
-     ":block/string": "{{[[roam/render]]: ((HAPOxqLeF))}}"
-    },
-    {
-     ":block/uid": "h_kXKklg8",
-     ":block/order": 4,
-     ":block/string": ""
-    },
-    {
-     ":block/uid": "HAPOxqLeF",
-     ":block/order": 6,
-     ":block/string": "```clojure\n(ns example.promise\n  (:require \n   [promesa.core :as p]\n   [roam.util]\n   [roam.block]))\n\n(defn main [{:keys [block-uid]}]\n  [:button\n   {:on-click \n    #(let [new-uid (roam.util/generate-uid)]\n       (p/do! (roam.block/create\n               {:location {:parent-uid block-uid\n                           :order :first}\n                :block {:uid new-uid\n                        :string \"parent\"}})\n              (roam.block/create\n               {:location {:parent-uid new-uid\n                           :order :first}\n                :block {:string \"child\"}})))}\n   \"add children\"])```"
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "9VuMdICaY"
-      }
-     ],
-     ":block/uid": "gTCH7cbaT",
-     ":block/order": 0,
-     ":block/string": "#progressback"
-    },
-    {
-     ":block/uid": "NoqPkZlAF",
-     ":block/order": 3,
-     ":block/string": ""
-    },
-    {
-     ":block/uid": "irlxBv6jI",
-     ":block/order": 2,
-     ":block/string": ""
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "Q5PT2yfIV"
-      }
-     ],
-     ":block/children": [
-      {
-       ":block/uid": "8zGlYp72P",
-       ":block/order": 0,
-       ":block/string": "```css\n[data-tag^=\"progressback\"] {\n  display: none;\n}```"
-      }
-     ],
-     ":block/uid": "HtnsSxpBG",
-     ":block/order": 1,
-     ":block/string": "{{[[roam/css]]}}"
-    }
-   ],
    ":block/uid": "06-09-2022"
   },
   {
@@ -20858,6 +21399,14 @@
   {
    ":node/title": "February 24th, 2022",
    ":block/uid": "02-24-2022"
+  },
+  {
+   ":node/title": "project/css",
+   ":block/uid": "syTnA6QvT"
+  },
+  {
+   ":node/title": "DONE",
+   ":block/uid": "1k1mW2qrt"
   },
   {
    ":node/title": "July 9th, 2025",
@@ -20893,6 +21442,10 @@
   {
    ":node/title": "Output",
    ":block/uid": "FFy7I-U4e"
+  },
+  {
+   ":node/title": ".bg-blue-400",
+   ":block/uid": "lKta8vBIW"
   },
   {
    ":node/title": "July 16th, 2026",
@@ -32300,12 +32853,12 @@
    ":block/uid": "OO3Mqey2w"
   },
   {
-   ":node/title": "Graph Overview",
-   ":block/uid": "QBueoI1AR"
-  },
-  {
    ":node/title": "October 24th, 2025",
    ":block/uid": "10-24-2025"
+  },
+  {
+   ":node/title": "July 23rd, 2026",
+   ":block/uid": "07-23-2026"
   },
   {
    ":node/title": "April 11th, 2025",
@@ -32459,16 +33012,16 @@
    ":block/uid": "ziLxrfbYH"
   },
   {
+   ":node/title": "urgent",
+   ":block/uid": "cVKxqQlyV"
+  },
+  {
    ":node/title": "RIO",
    ":block/uid": "b8M9VekS9"
   },
   {
    ":node/title": "Iframe Resizer",
    ":block/uid": "bt0W5oYPE"
-  },
-  {
-   ":node/title": "project",
-   ":block/uid": "6H0DlpieI"
   },
   {
    ":node/title": "cURL",
@@ -32678,12 +33231,15 @@
               {
                ":block/refs": [
                 {
-                 ":block/uid": "TpIGtsnL7"
+                 ":block/uid": "QE0bxjUwk"
+                },
+                {
+                 ":block/uid": "xGld2F4Vr"
                 }
                ],
                ":block/uid": "5rZBNfw4f",
                ":block/order": 0,
-               ":block/string": "block passed as input is the block at the top of this page: \n((TpIGtsnL7))"
+               ":block/string": "block passed as input is the block at the top of this page: \nEquivalent to [[roam/js]] but language of choice is [[clojurescript]]"
               }
              ],
              ":block/uid": "RDBTeH2IT",
@@ -35626,6 +36182,10 @@
    ":block/uid": "02-26-2024"
   },
   {
+   ":node/title": "Conor White-Sullivan",
+   ":block/uid": "MMjTpOuaS"
+  },
+  {
    ":node/title": "July 3rd, 2024",
    ":block/uid": "07-03-2024"
   },
@@ -35636,6 +36196,10 @@
   {
    ":node/title": "Anonymous",
    ":block/uid": "RPLedNEj4"
+  },
+  {
+   ":node/title": ".rounded",
+   ":block/uid": "oIyaKsXYn"
   },
   {
    ":node/title": "random test page",
@@ -35761,6 +36325,10 @@
    ":block/uid": "05-06-2021"
   },
   {
+   ":node/title": ".aside",
+   ":block/uid": "0n2URxHFb"
+  },
+  {
    ":node/title": "April 21st, 2024",
    ":block/uid": "04-21-2024"
   },
@@ -35771,6 +36339,10 @@
   {
    ":node/title": "March 11th, 2025",
    ":block/uid": "03-11-2025"
+  },
+  {
+   ":node/title": "idea",
+   ":block/uid": "ZKS4O1Xeu"
   },
   {
    ":node/title": "March 11th, 2026",
@@ -35806,10 +36378,6 @@
   {
    ":node/title": "August 4th, 2023",
    ":block/uid": "08-04-2023"
-  },
-  {
-   ":node/title": "active",
-   ":block/uid": "LSJk_2Aqm"
   },
   {
    ":node/title": "David Vargas",
@@ -36956,6 +37524,10 @@
    ":block/uid": "0zF3dMNCl"
   },
   {
+   ":node/title": ".font-bold",
+   ":block/uid": "l3z0sE5Dr"
+  },
+  {
    ":node/title": "March 6th, 2025",
    ":block/uid": "03-06-2025"
   },
@@ -37156,6 +37728,10 @@
    ":block/uid": "06-04-2022"
   },
   {
+   ":node/title": ".p-2",
+   ":block/uid": "Ft4_06LmT"
+  },
+  {
    ":node/title": "clojurescript",
    ":block/uid": "xGld2F4Vr"
   },
@@ -37197,6 +37773,10 @@
   {
    ":node/title": "May 22nd, 2024",
    ":block/uid": "05-22-2024"
+  },
+  {
+   ":node/title": ".italic",
+   ":block/uid": "hSZJZAMYG"
   },
   {
    ":node/title": "experimental",
@@ -38521,76 +39101,12 @@
         {
          ":block/refs": [
           {
-           ":block/uid": "W4Po8pcHQ"
+           ":block/uid": "od0Is6M0b"
           }
          ],
-         ":block/children": [
-          {
-           ":block/uid": "CwLPowr9X",
-           ":block/order": 1,
-           ":block/string": "IF you do NOT need to support encrypted graphs (the backend API cannot work with encrypted graphs)"
-          },
-          {
-           ":block/uid": "GCT1va6cn",
-           ":block/order": 0,
-           ":block/string": "IF you need to do reads and edits (and not just additions/appends)"
-          }
-         ],
-         ":block/uid": "nbEbkkRKj",
+         ":block/uid": "rEwwWvfqn",
          ":block/order": 0,
-         ":block/string": "Use [[Roam Backend API]] "
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "tIaOPdXCj"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "QE0bxjUwk"
-            },
-            {
-             ":block/uid": "XZjB2z9SV"
-            }
-           ],
-           ":block/uid": "itdozKfYC",
-           ":block/order": 0,
-           ":block/string": "If you're building a [[Roam Depot]] extension or writing [[roam/js]] scripts for yourself "
-          }
-         ],
-         ":block/uid": "ZIFOCdQeN",
-         ":block/order": 2,
-         ":block/string": "Use [[Roam Alpha API]] (our client side API) "
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "eb8OVhaFC"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/uid": "j3dC09Nj6",
-           ":block/order": 1,
-           ":block/string": "IF you want an easy-to-use API optimized for capture"
-          },
-          {
-           ":block/uid": "FTho7spmd",
-           ":block/order": 0,
-           ":block/string": "IF you need to support BOTH unencrypted & encrypted graphs"
-          },
-          {
-           ":block/uid": "aEuX0BKAd",
-           ":block/order": 2,
-           ":block/string": "IF you do not need read functionality"
-          }
-         ],
-         ":block/uid": "EtRWiwEsA",
-         ":block/order": 1,
-         ":block/string": "Use [Append API]([[Roam Append API]]) "
+         ":block/string": "{{embed-children: ((od0Is6M0b))}}"
         }
        ],
        ":block/uid": "eN3kqbz12",
@@ -42718,10 +43234,6 @@
    ":block/uid": "nJgfrpFje"
   },
   {
-   ":node/title": "How-to guides",
-   ":block/uid": "PlLrkvc45"
-  },
-  {
    ":node/title": "October 22nd, 2024",
    ":block/children": [
     {
@@ -43053,71 +43565,8 @@
       }
      ],
      ":block/uid": "3mFfDGQxH",
-     ":block/order": 1,
-     ":block/string": "**Code Guidelines**"
-    },
-    {
-     ":block/children": [
-      {
-       ":block/uid": "lO1oJ6wVB",
-       ":block/order": 0,
-       ":block/string": "Visit a graph, open up settings, and go to the Roam Depot tab"
-      },
-      {
-       ":block/children": [
-        {
-         ":block/uid": "_yoqMzK3M",
-         ":block/order": 0,
-         ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FEfyjrV4KhR.png?alt=media&token=bf7be2af-6a17-40ee-bc21-cd3eae0691ab)"
-        }
-       ],
-       ":block/uid": "DqTpKYhC4",
-       ":block/order": 1,
-       ":block/string": "Then click enable developer mode"
-      },
-      {
-       ":block/children": [
-        {
-         ":block/uid": "Sd9WchGQV",
-         ":block/order": 0,
-         ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FIe3FBjQHTW.png?alt=media&token=ffd03157-8b27-4628-8916-663a59eaa09d)"
-        }
-       ],
-       ":block/uid": "gwLLYqa4r",
-       ":block/order": 2,
-       ":block/string": "Then load extension"
-      },
-      {
-       ":block/uid": "cdtwUer76",
-       ":block/order": 3,
-       ":block/string": "and choose the folder on your computer which contains `extension.js` / `extension.css`"
-      },
-      {
-       ":block/children": [
-        {
-         ":block/uid": "L25bf3EKF",
-         ":block/order": 0,
-         ":block/string": "Note that this key command reloads all loaded developer extensions"
-        },
-        {
-         ":block/uid": "l9gI2m3Q6",
-         ":block/order": 1,
-         ":block/string": "You can also reload extensions from the extensions tab in settings"
-        }
-       ],
-       ":block/uid": "aObeiusjL",
-       ":block/order": 4,
-       ":block/string": "To reload the extension you can use the key command `control-d control-r`, which will call your extension's `onunload` function, load the new code, and call `onload`"
-      },
-      {
-       ":block/uid": "uQHWpg-mL",
-       ":block/order": 5,
-       ":block/string": "If your state isn't properly removed in `onunload` then you can reload the page and hit `control-d control-r` to completely clear the state"
-      }
-     ],
-     ":block/uid": "YYGLUZq1-",
      ":block/order": 2,
-     ":block/string": "**Local Development**"
+     ":block/string": "**Code Guidelines**"
     },
     {
      ":block/children": [
@@ -43451,7 +43900,7 @@
       }
      ],
      ":block/uid": "B9Cpi1Crk",
-     ":block/order": 7,
+     ":block/order": 6,
      ":block/string": "**Examples**"
     },
     {
@@ -43556,287 +44005,8 @@
       }
      ],
      ":block/uid": "r-qq1OIMS",
-     ":block/order": 6,
-     ":block/string": "**Tutorials**"
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "bQo8v6Qhw"
-      },
-      {
-       ":block/uid": "QWy8dg6bw"
-      }
-     ],
-     ":block/children": [
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "vj8fsgtVc"
-        }
-       ],
-       ":block/children": [
-        {
-         ":block/children": [
-          {
-           ":block/uid": "cWZ-TcR1m",
-           ":block/order": 0,
-           ":block/string": "using this, can easily test on mobile. Can also give links for testers / beta users to test"
-          }
-         ],
-         ":block/uid": "nVb-PeoMP",
-         ":block/order": 0,
-         ":block/string": "Make it easier to test extensions"
-        }
-       ],
-       ":block/uid": "QMFAzp7KT",
-       ":block/order": 0,
-       ":block/string": "Motivation::"
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "zAWWqw6lt"
-        }
-       ],
-       ":block/children": [
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "vW25f-Zwv"
-          }
-         ],
-         ":block/uid": "nT1xeO1JX",
-         ":block/order": 0,
-         ":block/string": "{{[[video]]: https://www.loom.com/share/d6ec8341b17e4959b9604957e7212556}}"
-        }
-       ],
-       ":block/uid": "VPEjtYa2j",
-       ":block/order": 3,
-       ":block/string": "[[Loom video]]"
-      },
-      {
-       ":block/children": [
-        {
-         ":block/children": [
-          {
-           ":block/uid": "VmQDjCwEf",
-           ":block/order": 0,
-           ":block/string": "URL to root path where adding `README.md` and `extension.js` to the url leads to the required files"
-          },
-          {
-           ":block/children": [
-            {
-             ":block/uid": "9dVyqbnEO",
-             ":block/order": 0,
-             ":block/string": "just a test extension I was working on before upgrading native excalidraw. So, I would recommend not using this version of excalidraw. Use `/excalidraw` instead"
-            }
-           ],
-           ":block/uid": "agBSvdcI-",
-           ":block/order": 1,
-           ":block/string": "Example: `https://roam-excalidraw-depot.pages.dev/`"
-          },
-          {
-           ":block/children": [
-            {
-             ":block/uid": "5G3zb5Wk1",
-             ":block/order": 0,
-             ":block/string": "the extension files have to be publicly accessible when the file names (i.e. \"extension.js\", \"README.md\", \"extension.css\", \"CHANGELOG.md\") are added to the end of the passed URL. (only the first 2 are compulsory)"
-            },
-            {
-             ":block/uid": "WNtUJcRRL",
-             ":block/order": 1,
-             ":block/string": "One common mistake is to forget the prefix in URLs like `https://`"
-            }
-           ],
-           ":block/uid": "4ANM8YFE4",
-           ":block/order": 2,
-           ":block/string": "Things to keep in mind:"
-          },
-          {
-           ":block/children": [
-            {
-             ":block/children": [
-              {
-               ":block/children": [
-                {
-                 ":block/uid": "vB19YIv_H",
-                 ":block/order": 0,
-                 ":block/string": "An important point is that since developer extensions are local to the client, this is not a replacement for actual \"production\" extensions. Please only use it for testing"
-                }
-               ],
-               ":block/uid": "XPbvapgIQ",
-               ":block/order": 0,
-               ":block/string": "(you could then share it with beta-testers)"
-              },
-              {
-               ":block/children": [
-                {
-                 ":block/children": [
-                  {
-                   ":block/refs": [
-                    {
-                     ":block/uid": "heujPgTXn"
-                    }
-                   ],
-                   ":block/uid": "sMGLzOkk3",
-                   ":block/order": 0,
-                   ":block/string": "**Option 1:** If you're creating a new extension, just fork this template repository by [[Matt Vogel]] https://github.com/8bitgentleman/roam-depot-extension-template and then go to repo settings > Pages and then the Actions tab in order to setup "
-                  },
-                  {
-                   ":block/uid": "gJFJeZDXs",
-                   ":block/order": 1,
-                   ":block/string": "**Option 2:** If you already have an extension, you can copy the [.github/workflows/deploy.yml](https://github.com/8bitgentleman/roam-depot-extension-template/blob/main/.github/workflows/deploy.yml) file to your own github repository (make sure to have the same path) and then go to repo settings > Pages and then the Actions tab in order to setup "
-                  },
-                  {
-                   ":block/refs": [
-                    {
-                     ":block/uid": "zAWWqw6lt"
-                    }
-                   ],
-                   ":block/children": [
-                    {
-                     ":block/refs": [
-                      {
-                       ":block/uid": "vW25f-Zwv"
-                      }
-                     ],
-                     ":block/uid": "T0_fZkyOD",
-                     ":block/order": 0,
-                     ":block/string": "{{[[video]]: https://www.loom.com/share/4785e95fe5454684a48683402da5ea09}}"
-                    }
-                   ],
-                   ":block/uid": "hsSCXPEcr",
-                   ":block/order": 2,
-                   ":block/string": "Short [[Loom video]] guiding through both of the above options"
-                  },
-                  {
-                   ":block/children": [
-                    {
-                     ":block/refs": [
-                      {
-                       ":block/uid": "zAWWqw6lt"
-                      }
-                     ],
-                     ":block/children": [
-                      {
-                       ":block/uid": "R1BR9Yhs1",
-                       ":block/order": 0,
-                       ":block/string": "https://www.loom.com/share/ac50ccf34f924a95bf6be4ca74ab85d7 "
-                      }
-                     ],
-                     ":block/uid": "xeob4Apz3",
-                     ":block/order": 0,
-                     ":block/string": "[[Loom video]] guiding through entire process (might only be relevant if you want to learn how github actions works in this case)"
-                    }
-                   ],
-                   ":block/uid": "uyksueUx6",
-                   ":block/order": 3,
-                   ":block/string": "---"
-                  }
-                 ],
-                 ":block/uid": "UP2ovBNH1",
-                 ":block/order": 0,
-                 ":block/string": "A guide for how to deploy extension automatically when pushed to `main` branch in your github repo (in case you want a persistent link or don't want to have to create a [PR in roam-depot](https://github.com/Roam-Research/roam-depot/pulls) before further testing)"
-                }
-               ],
-               ":block/uid": "uUN5VFD6B",
-               ":block/order": 1,
-               ":block/string": "a guide which might come in handy: "
-              }
-             ],
-             ":block/uid": "7N0L9aj2r",
-             ":block/order": 1,
-             ":block/string": "Have a URL with the latest update of your extension"
-            },
-            {
-             ":block/children": [
-              {
-               ":block/uid": "PLj34pLi7",
-               ":block/order": 0,
-               ":block/string": "using a local server like https://www.npmjs.com/package/serve to serve your files on your local network"
-              },
-              {
-               ":block/uid": "hp6zf_FGA",
-               ":block/order": 1,
-               ":block/string": "note that to load the changed files, you either have to reload Roam or go to Settings>Roam Depot>Developer Extensions and click on reload button"
-              }
-             ],
-             ":block/uid": "C1nTEuj1p",
-             ":block/order": 0,
-             ":block/string": "During development, test extension on mobile"
-            }
-           ],
-           ":block/uid": "0v_7CsyjP",
-           ":block/order": 3,
-           ":block/string": "We expect URLs will be useful if you want to"
-          }
-         ],
-         ":block/uid": "bQo8v6Qhw",
-         ":block/order": 1,
-         ":block/string": "URL"
-        },
-        {
-         ":block/children": [
-          {
-           ":block/uid": "hqDsqeUaT",
-           ":block/order": 1,
-           ":block/string": "For example: `digitalmaster+roam-memo+668` is the PR-shorthand for PR 668, and is mentioned in this github comment on the PR: https://github.com/Roam-Research/roam-depot/pull/668#issuecomment-1524315888"
-          },
-          {
-           ":block/uid": "JBLRtosOf",
-           ":block/order": 0,
-           ":block/string": "You can get the PR-shorthand for your PR from a comment which is auto-generated on the PR at creation/update."
-          },
-          {
-           ":block/children": [
-            {
-             ":block/uid": "U2kQg4OxB",
-             ":block/order": 0,
-             ":block/string": "`username + “+” + extension-id + “+” + pr-number`"
-            }
-           ],
-           ":block/uid": "oyxy5tnPU",
-           ":block/order": 2,
-           ":block/string": "---"
-          }
-         ],
-         ":block/uid": "QWy8dg6bw",
-         ":block/order": 0,
-         ":block/string": "\"PR-shorthand\" format"
-        }
-       ],
-       ":block/uid": "JOnw6ovTi",
-       ":children/view-type": "numbered",
-       ":block/order": 1,
-       ":block/string": "Two accepted formats"
-      },
-      {
-       ":block/children": [
-        {
-         ":block/uid": "igq8NbHVX",
-         ":block/order": 1,
-         ":block/string": "Remote Dev Extensions **are NOT cached** (unlike production Roam Depot extensions). They are downloaded again every time you open Roam or press refresh"
-        },
-        {
-         ":block/uid": "zN-_6M2V2",
-         ":block/order": 0,
-         ":block/string": "Remote Dev Extensions **are auto started** similar to production extensions"
-        },
-        {
-         ":block/uid": "M9iZwDTJj",
-         ":block/order": 2,
-         ":block/string": "Remote Dev Extensions **are NOT synced across different devices**"
-        }
-       ],
-       ":block/uid": "JzZvFLRNf",
-       ":block/order": 2,
-       ":block/string": "Properties"
-      }
-     ],
-     ":block/uid": "n8ECay0Wl",
      ":block/order": 5,
-     ":block/string": "**Load remote developer extensions from ((bQo8v6Qhw)) or using ((QWy8dg6bw))**"
+     ":block/string": "**Tutorials**"
     },
     {
      ":block/children": [
@@ -43874,48 +44044,60 @@
           {
            ":block/uid": "_EEQp4pD1",
            ":block/order": 0,
-           ":block/string": "click \"Load extension\" and choose the folder on your computer which contains `extension.js` / `extension.css`"
+           ":block/string": "Click \"Load extension\" and choose the folder on your computer which contains `extension.js` / `extension.css`"
           }
          ],
          ":block/uid": "o-tNS5TC_",
          ":block/order": 0,
-         ":block/string": "a local folder"
+         ":block/string": "A local folder"
         },
         {
          ":block/children": [
           {
            ":block/children": [
             {
-             ":block/uid": "M5gkIdEqO",
-             ":block/order": 0,
-             ":block/string": "example: with `https://my-extension.pages.dev`, the file `https://my-extension.pages.dev/extension.js` must resolve"
-            },
-            {
              ":block/uid": "cFFfhq3FI",
              ":block/order": 1,
-             ":block/string": "a common mistake is to forget the `https://` prefix"
+             ":block/string": "A common mistake is to forget the `https://` prefix"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "M5gkIdEqO",
+               ":block/order": 0,
+               ":block/string": "with `https://my-extension.pages.dev`, the file `https://my-extension.pages.dev/extension.js` must resolve"
+              }
+             ],
+             ":block/uid": "HKD_TeUhp",
+             ":block/order": 0,
+             ":block/string": "Example::"
             }
            ],
            ":block/uid": "YYt5dt-zO",
            ":block/order": 0,
-           ":block/string": "pass a URL to the root path where adding the file names to the url leads to your files — `README.md` and `extension.js` are required, `extension.css` and `CHANGELOG.md` optional"
+           ":block/string": "Pass a URL to the root path where adding the file names to the url leads to your files — `README.md` and `extension.js` are required, `extension.css` and `CHANGELOG.md` optional. The files have to be publicly accessible"
           },
           {
            ":block/uid": "n6DE7hGW5",
            ":block/order": 1,
-           ":block/string": "useful for testing on mobile — serve your files on your local network with a tool like https://www.npmjs.com/package/serve"
+           ":block/string": "Useful for testing on mobile — serve your files on your local network with a tool like https://www.npmjs.com/package/serve"
           },
           {
            ":block/children": [
             {
              ":block/uid": "HZkzewUBI",
              ":block/order": 0,
-             ":block/string": "developer extensions are local to each client — this is not a replacement for publishing; please only use it for testing"
+             ":block/string": "Developer extensions are local to each client — this is not a replacement for publishing; please only use it for testing"
             }
            ],
            ":block/uid": "iRPtWgPGq",
            ":block/order": 2,
-           ":block/string": "useful for sharing a link with beta testers"
+           ":block/string": "Useful for sharing a link with beta testers"
           },
           {
            ":block/children": [
@@ -43976,24 +44158,24 @@
            ],
            ":block/uid": "RrcHALhUe",
            ":block/order": 3,
-           ":block/string": "to auto-deploy your extension to a URL on every push to `main`:"
+           ":block/string": "To auto-deploy your extension to a URL on every push to `main` — a persistent link, without opening a [PR in roam-depot](https://github.com/Roam-Research/roam-depot/pulls) just to test:"
           }
          ],
          ":block/uid": "UshuMdVc8",
-         ":block/order": 1,
-         ":block/string": "a URL"
+         ":block/order": 2,
+         ":block/string": "A URL"
         },
         {
          ":block/children": [
           {
            ":block/uid": "i65pScb0j",
            ":block/order": 0,
-           ":block/string": "format: `username+extension-id+pr-number` — e.g. `digitalmaster+roam-memo+668`"
+           ":block/string": "Format: `username+extension-id+pr-number` — e.g. `digitalmaster+roam-memo+668`"
           },
           {
            ":block/uid": "p3qJMorXy",
            ":block/order": 1,
-           ":block/string": "the shorthand is posted in an [auto-generated comment](https://github.com/Roam-Research/roam-depot/pull/668#issuecomment-1524315888) on the PR at creation/update"
+           ":block/string": "The shorthand is posted in an [auto-generated comment](https://github.com/Roam-Research/roam-depot/pull/668#issuecomment-1524315888) on the PR at creation/update"
           },
           {
            ":block/refs": [
@@ -44019,8 +44201,8 @@
           }
          ],
          ":block/uid": "6LCDCr02x",
-         ":block/order": 2,
-         ":block/string": "a roam-depot PR, via its \"PR-shorthand\""
+         ":block/order": 1,
+         ":block/string": "A roam-depot PR, via its \"PR-shorthand\""
         }
        ],
        ":block/uid": "mWKKyuYri",
@@ -44032,17 +44214,17 @@
         {
          ":block/uid": "Ii-RCnrNq",
          ":block/order": 0,
-         ":block/string": "`control-d control-r` calls `onunload`, loads the new code, and calls `onload` — for all loaded developer extensions"
+         ":block/string": "`ctrl-d ctrl-r` calls `onunload`, loads the new code, and calls `onload` — for all loaded developer extensions"
         },
         {
          ":block/uid": "PZTdVJSTG",
          ":block/order": 1,
-         ":block/string": "you can also reload from the Roam Depot tab in Settings"
+         ":block/string": "You can also reload from Settings > Roam Depot > Developer Extensions"
         },
         {
          ":block/uid": "Sm9oWf38J",
          ":block/order": 2,
-         ":block/string": "if your state isn't properly removed in `onunload`, reload the page and hit `control-d control-r` to completely clear the state"
+         ":block/string": "If your state isn't properly removed in `onunload`, reload the page and hit `ctrl-d ctrl-r` to completely clear the state"
         }
        ],
        ":block/uid": "XN746JRZc",
@@ -44054,29 +44236,29 @@
         {
          ":block/uid": "UYTBronzU",
          ":block/order": 0,
-         ":block/string": "URL / PR extensions auto-start with the app, like production extensions"
+         ":block/string": "URL / PR extensions **are auto-started**, similar to production extensions"
         },
         {
          ":block/uid": "yfO2QB3Rx",
          ":block/order": 2,
-         ":block/string": "they are not synced across devices"
+         ":block/string": "Developer extensions **are NOT synced across devices**"
         },
         {
          ":block/uid": "OF5_s9uSC",
          ":block/order": 3,
-         ":block/string": "URL / PR extensions are not cached — they are downloaded again every time you open Roam or press reload"
+         ":block/string": "URL / PR extensions **are NOT cached** (unlike production Roam Depot extensions) — they are downloaded again every time you open Roam or press reload"
         },
         {
          ":block/children": [
           {
            ":block/uid": "Mm4_VJ7vg",
            ":block/order": 0,
-           ":block/string": "reading your folder needs file-system permission, which the browser only grants from a user action"
+           ":block/string": "Reading your folder needs file-system permission, which the browser only grants from a user action"
           }
          ],
          ":block/uid": "H2h4AWhfY",
          ":block/order": 1,
-         ":block/string": "local-folder extensions do not auto-start — load them again from the Roam Depot tab, or with `control-d control-r`"
+         ":block/string": "Local-folder extensions **are NOT auto-started** — load them again from the Roam Depot tab, or with `ctrl-d ctrl-r`"
         }
        ],
        ":block/uid": "G7Bo4l1et",
@@ -44085,7 +44267,7 @@
       }
      ],
      ":block/uid": "igykZqUgu",
-     ":block/order": 8,
+     ":block/order": 1,
      ":block/string": "**Developer mode**"
     }
    ],
@@ -44476,10 +44658,6 @@
   {
    ":node/title": "Postman",
    ":block/uid": "E0gE5PihH"
-  },
-  {
-   ":node/title": "Getting started",
-   ":block/uid": "E0K-uCnYr"
   },
   {
    ":node/title": "Roam Public Slack",
@@ -45752,6 +45930,10 @@
     }
    ],
    ":block/uid": "04-08-2025"
+  },
+  {
+   ":node/title": "kanban",
+   ":block/uid": "qRQpXO3ot"
   },
   {
    ":node/title": "Code",
@@ -47617,6 +47799,10 @@
   {
    ":node/title": "Open Source",
    ":block/uid": "2EyB8D6aw"
+  },
+  {
+   ":node/title": "Projects",
+   ":block/uid": "a9tnV7Xe7"
   },
   {
    ":node/title": "Type",

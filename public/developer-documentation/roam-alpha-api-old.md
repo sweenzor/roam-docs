@@ -101,11 +101,9 @@
   - [[June 5th, 2023]]
     - New file api
   - [[May 9th, 2023]] 
-    - **Load remote developer extensions from URL or using "PR-shorthand" format**
+    - **Load remote developer extensions from ((bQo8v6Qhw)) or using ((QWy8dg6bw))**
       - One can now load developer extensions via URLs or via PR-shorthand format
       - Read more about it here
-      - [[Loom video]]
-        - {{[[video]]: https://www.loom.com/share/d6ec8341b17e4959b9604957e7212556}}
   - [[February 14th, 2023]]
     - **User configurable hotkeys for commands**
       - new behavior you get without any code change: 

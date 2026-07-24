@@ -378,6 +378,35 @@
 
 - In order to paste content using [soft line breaks]([[Adding soft line breaks in a block]]), use `ctrl-shift-v`.
 
+#### **How do I create a countdown to a specific date in Roam and show it as a notification? (e.g. days until Aug 28)**
+
+- You can use the [[SmartBlock]] extension by RoamJS, available in Roam Depot, to create a template that counts down the days until a specific date. You’ll need to run the SmartBlock each time you want to check the remaining days, but you can assign a keyboard shortcut to make it quick and convenient. So whenever you press the hotkey, it will show you how many days are left until August 28!
+- Here's how to set it up-
+  - Install the SmartBlocks extension from Roam Depot
+  - Enable the following Settings (Command Palette and Command Palette Opt-In)
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FkqV0BNAWwc.gif?alt=media&token=432dbd0b-6759-48b1-98bc-21ab4a2c6804)
+  - Paste the following Smartblock anywhere in your graph
+    - `#SmartBlock Countdown <%CMD%>`
+      - `<%SET:targetDate,[[August 28th, 2026]]%><%SET:todayDate,<%DATE:YYYY/MM/DD%>%> <%NOBLOCKOUTPUT%>`
+      - `There are <%DIFFERENCE:<%GET:targetDate%>,<%GET:todayDate%>%> days left until August 28th.`
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F_NP0nwGrXa.png?alt=media&token=797ab0d1-7887-427c-b709-0651b4b5ee0d)
+  - Then go to `Settings > Hotkeys > Ungrouped Extension Hotkeys` and you should see the '**Trigger SmartBlock: Countdown**' there. Set your preferred keyboard combination.
+  - Now anytime you hit the Hotkeys, a block will be created showing you how many days are left until August 28!
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FGut_t7vhnC.gif?alt=media&token=bb5ab9ce-c1b0-45ba-a067-5ff9f5bc535c)
+- It's also possible to see a **[notification](https://github.com/RoamJS/smartblocks/blob/main/docs/050-command-reference.md#notification)** text instead of creating a block. In that case, you need to use the following Smartblock-
+  - `#SmartBlock Countdown noti <%CMD%>`
+    - `<%SET:targetDate,[[August 28th, 2026]]%><%SET:todayDate,<%DATE:YYYY/MM/DD%>%> <%NOBLOCKOUTPUT%>`
+    - `<%NOTIFICATION:5,There are <%DIFFERENCE:<%GET:targetDate%>,<%GET:todayDate%>%> days left until August 28th.,top right%>`
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FZWBnzKGYei.png?alt=media&token=87469de3-97a8-4f29-8905-c1bad88f0cee)
+  - After setting up the hotkeys, once you press the hotkeys, it will show you the text as a notification. You can change the text position and the duration the notification is visible.
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FWq5rnYmfGE.gif?alt=media&token=370aeaf9-41b8-4a47-9932-64f748ec288c)
+
+#### **Can I turn off autocorrect/spellcheck in Roam?**
+
+- Roam doesn't have any built-in spell checker, and the one you see popping up comes from your OS's spellcheck rules. Here's how to turn it off:
+  - Desktop app
+    - 
+
 ## [Multiplayer]([[Multiplayer]])
 
 #### **How do I** [share]([[Sharing]]) **my graph?**

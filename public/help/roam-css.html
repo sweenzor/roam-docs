@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>roam/css — Roam Research Docs</title>
-<meta name="description" content=".rm-g">
+<meta name="description" content="How it works">
 <link rel="canonical" href="https://roamdocs.fyi/help/roam-css">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Roam Research Docs">
 <meta property="og:title" content="roam/css — Roam Research Docs">
-<meta property="og:description" content=".rm-g">
+<meta property="og:description" content="How it works">
 <meta property="og:url" content="https://roamdocs.fyi/help/roam-css">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/favicon.ico">
@@ -39,33 +39,321 @@
 <h1>roam/css</h1>
 <p class="meta"><a href="roam-css.md">markdown version</a> · <a href="https://roamresearch.com/#/app/help/page/RA1UXmzp0">view in Roam Research</a></p>
 <ul>
-<li>#.rm-g
+<li>How it works
 <ul>
-<li>From having a dark theme to opening multiple panels, with a few clicks (and no coding skill required), roam/css helps you customize the look and feel of your Roam graph
+<li>Every css code block on this page — at any nesting depth — is applied to the app, in visual order
 </li>
-<li>Check out our [community-built themes for inspiration](<a href="/help/themes">Themes</a>)
+<li>Changes apply live as you type
 </li>
-</ul>
+<li>Click a color value inside a css code block and Roam shows an inline color picker — no need to know hex codes
 </li>
-</ul>
-<h3>Articles::</h3>
-<h4><a href="https://maggieappleton.com/paintingroam">Painting Roam with Custom CSS</a> by Maggie Appleton</h4>
-<h4><a href="https://nesslabs.com/roam-research-themes-custom-styling-css">Roam themes: how to style Roam Research with custom CSS</a> by Anne-Laure Le Cunff</h4>
-<h3>Community Videos::</h3>
-<h4>How to do color tagging in Roam by Zack Fan</h4>
+<li>Only code blocks whose language is set to css count. You can switch the language to temporarily disable that css block, or store css on this page for later.
+</li>
+<li>This page's filters apply and change what css is applied
 <ul>
-<li>{{video: https://www.youtube.com/watch?v=kUgAqyzwGzw&amp;t=99s}}
+<li>Filter the page to toggle css blocks on and off (e.g. tag each theme's blocks and switch themes by filtering)
+</li>
+<li>You can use this to have css blocks that are only applied for certain users by having each user apply different filters
 </li>
 </ul>
-<h4>How to Create and Edit Roam CSS: Interview with Abhay Prasanna </h4>
+</li>
+<li>To apply css from any other page, nest the css code block under a <code>{{[[roam/css]]}}</code> component block
+<ul>
+<li>Each such block has to be enabled by each user of your graph.
+</li>
+<li><strong>If you want the css to be applied for everyone write directly on this page</strong>
+</li>
+</ul>
+</li>
+<li>Escape hatch: if bad css makes the app unusable, add <code>?disablecss=true</code> to the URL (before the <code>#</code>) — all roam/css is disabled until the next refresh. You can also disable all js and css from the &quot;Roam Depot&quot; tab in settings
+</li>
+</ul>
+</li>
+<li>Finding what to target
+<ul>
+<li>Right-click any element and choose Inspect — your browser's DevTools open with that element selected, showing its classes
+</li>
+<li>To inspect UI that only appears on hover (bullet controls, tooltips), run <code>setTimeout(() =&gt; { debugger }, 3000)</code> in the DevTools console, then hover the element — the page freezes in the debugger so you can inspect it
+</li>
+<li>Roam's own classes are prefixed <code>rm-</code> (a few older structural ones use <code>roam-</code>)
+<ul>
+<li><code>bp3-</code> classes come from <a href="https://blueprintjs.com/docs/versions/3/">Blueprint</a>, the UI library Roam uses — you can target them too, but prefer <code>rm-</code> classes when both match
+</li>
+</ul>
+</li>
+<li>Test a selector from the DevTools console
+<ul>
+<li><code>document.querySelectorAll(&quot;.rm-page-ref&quot;)</code> returns every element it matches
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Useful selectors
+<ul>
+<li>Layout
+<ul>
+<li><code>.roam-body</code>, <code>.roam-app</code>, <code>.roam-main</code> — the app shell
+</li>
+<li><code>.roam-article</code> — the main window's page content
+</li>
+<li><code>.roam-sidebar-container</code> — the left sidebar
+</li>
+<li><code>.rm-sidebar-outline</code> — a page open in the right sidebar
+</li>
+<li><code>.roam-log-container</code> — the daily notes view
+</li>
+<li><code>.rm-title-display</code> — page titles
+</li>
+</ul>
+</li>
+<li>Blocks
+<ul>
+<li><code>.rm-block</code> (also <code>.roam-block-container</code>) — a block together with its children
+</li>
+<li><code>.rm-block-main</code> (also <code>.rm-block__self</code>) — just the block's own line
+</li>
+<li><code>.rm-block__children</code> — the block's children
+</li>
+<li><code>.rm-block__input</code> (also <code>.roam-block</code>) — the rendered block text; while editing it is the <code>textarea.rm-block-input</code>
+</li>
+<li>Modifier classes on <code>.rm-block</code>: <code>rm-heading-level-1</code> / <code>-2</code> / <code>-3</code>, <code>rm-block--open</code> / <code>rm-block--closed</code>, <code>rm-block--mine</code> / <code>rm-block--others</code>, <code>rm-block--editable</code> / <code>rm-block--readonly</code>, <code>rm-focused</code>
+</li>
+</ul>
+</li>
+<li>References
+<ul>
+<li><code>.rm-page-ref</code> — every page reference
+<ul>
+<li><code>.rm-page-ref--link</code> for bracketed links, <code>.rm-page-ref--tag</code> for tags
+</li>
+</ul>
+</li>
+<li><code>.rm-block-ref</code> — block references
+</li>
+<li><code>.rm-reference-main</code> — the linked references section (query results use it too)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Styling specific tags and blocks
+<ul>
+<li>Every page ref carries data attributes: <code>data-tag</code> (tags) or <code>data-link-title</code> (links), plus <code>data-link-uid</code>
+</li>
+<li>The block container carries <code>data-page-links</code> — a JSON array of every page linked in the block — and <code>data-path-page-links</code> for pages linked in its ancestors
+</li>
+<li>Add your own class to a block by tagging it with a page whose title starts with a dot and contains no spaces, e.g. <code>#.aside</code>. The tag will be automatically be hidden and appear on hover.
+<ul>
+<li>The class (minus the dot) is added to that block's <code>.rm-block</code> container
+</li>
+<li>Most of <a href="https://v2.tailwindcss.com/docs">Tailwind's utility classes</a> ship with Roam, so many dot-tags style a block with no css at all
+<ul>
+<li>This block is tagged with #.bg-blue-400 #.rounded #.p-2
+</li>
+<li>And this one with #.font-bold #.italic
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The block container also carries <code>data-block-uid</code>, <code>data-page-title</code>, and <code>data-create-display-name</code> / <code>data-edit-display-name</code>
+</li>
+</ul>
+</li>
+<li><strong>Some of the examples below you need to switch the code block type to <em>css</em> in the bottom right to enable</strong>
+</li>
+<li>Examples::
+<ul>
+<li>Change the app font
+<ul>
+<li><pre><code>.roam-app {
+  font-family: &quot;iA Writer Quattro&quot;, &quot;Helvetica Neue&quot;, sans-serif;
+}</code></pre>
+</li>
+<li><code>@import</code> (e.g. a Google Fonts URL or a shared theme stylesheet) only works from the very first css block on this page — all blocks are concatenated into one stylesheet, and css requires <code>@import</code> at the top. Hosting a long theme on GitHub and importing it also keeps those lines out of your graph's search results
+</li>
+</ul>
+</li>
+<li>Widen the page
+<ul>
+<li><pre><code>/* the width setting in the ... menu adds rm-spacing--small or --medium here */
+.rm-article-wrapper.rm-spacing--small {
+  padding-left: calc((100% - 1100px) / 2);
+  padding-right: calc((100% - 1100px) / 2);
+}</code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Color the headings</strong>
+<ul>
+<li><pre><code>/* the &gt; path matters: a plain descendant selector would also hit the heading's child blocks */
+.rm-heading-level-1 &gt; .rm-block-main .rm-block__input { color: #1c5b8f; }
+.rm-heading-level-2 &gt; .rm-block-main .rm-block__input { color: #2e7d32; }
+.rm-heading-level-3 &gt; .rm-block-main .rm-block__input { color: #8a6d1d; }</code></pre>
+</li>
+</ul>
+</li>
+<li>Tags with emoji and prefix matching #idea #project/css
+<ul>
+<li><pre><code>/* an emoji before every #idea tag */
+.rm-page-ref[data-tag=&quot;idea&quot;]::before {
+  content: &quot;💡 &quot;;
+}
+/* style every tag starting with &quot;project/&quot; */
+.rm-page-ref[data-tag^=&quot;project/&quot;] {
+  color: #7b2d8b;
+  font-weight: 600;
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>Style one page's links everywhere Projects
+<ul>
+<li><pre><code>span[data-link-title=&quot;Projects&quot;] {
+  font-weight: 600;
+  text-transform: uppercase;
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>Highlight blocks that link a specific page urgent
+<ul>
+<li><pre><code>/* highlight every block that links [[urgent]] */
+.rm-block[data-page-links*='&quot;urgent&quot;'] &gt; .rm-block-main {
+  background: #fff6f6;
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>Style blocks you've tagged with a dot-class like <code>#.aside</code> #.aside
+<ul>
+<li><pre><code>/* tag a block with #.aside to style it */
+.rm-block.aside &gt; .rm-block-main {
+  opacity: 0.6;
+  font-style: italic;
+}
+/* hide the #.aside tag itself */
+.rm-page-ref[data-tag=&quot;.aside&quot;] {
+  display: none;
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>Bigger TODO checkboxes, crossed-out DONE blocks
+<ul>
+<li>{{TODO}} do this
+</li>
+<li>{{DONE}} do this
+</li>
+<li><pre><code>/* {{[[TODO]]}} renders .rm-checkbox.rm-todo, {{[[DONE]]}} renders .rm-checkbox.rm-done */
+/* the native input is hidden — the visible box is the .checkmark inside .check-container */
+.rm-checkbox .check-container {
+  display: inline-block;
+  transform: scale(1.15);
+  transform-origin: center left;
+}
+/* cross out blocks with a checked box (needs a browser with :has support) */
+.rm-block__input:has(.rm-done) {
+  text-decoration: line-through;
+  opacity: 0.6;
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>Change the <mark>highlight</mark> color
+<ul>
+<li><pre><code>/* ^^highlighted^^ text */
+.rm-highlight {
+  background: #d8f0e0;
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>&gt; Style block quotes
+<ul>
+<li><pre><code>/* blocks starting with &gt; */
+blockquote.rm-bq {
+  border-left: 3px solid #c9b458;
+  background: #faf6ea;
+  font-style: italic;
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>Mark <a href="https://blueprintjs.com/docs/versions/3/">external links</a>
+<ul>
+<li><pre><code>/* [alias](url) links to the outside world get an arrow */
+.rm-alias--external::after {
+  content: &quot; ↗&quot;;
+  font-size: 0.8em;
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>Limit image height
+<ul>
+<li><pre><code>.rm-inline-img {
+  max-height: 300px;
+}</code></pre>
+</li>
+</ul>
+</li>
+<li>Follow the system's light/dark mode
+<ul>
+<li><pre><code>/* define your colors twice and the theme switches with the OS setting */
+@media (prefers-color-scheme: dark) {
+  .roam-app { background: #1d2125; color: #d6d8da; }
+}
+@media (prefers-color-scheme: light) {
+  .roam-app { background: #ffffff; color: #202b33; }
+}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Good practices
+<ul>
+<li>Prefer <code>rm-</code> classes and data attributes; avoid structural selectors like <code>:nth-child</code> if you can
+</li>
+<li>Use CSS for presentation only — if you find yourself trying to add elements or change behavior, you want JavaScript instead (an extension, or roam/js)
+</li>
+<li>If an override doesn't take — common when adjusting an imported theme — add <code>!important</code> to the declaration
+</li>
+<li>Roam's markup changes between releases and class names are not a formal API, so expect to revisit your css occasionally
+</li>
+</ul>
+</li>
+<li>Roam Team Videos::
+<ul>
+<li><strong>Applying Custom Themes for your RoamResearch Knowledge Graph by Conor White-Sullivan</strong>
+<ul>
+<li>{{video: https://youtu.be/UY-sAC2eGyI}}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Community Videos::
+<ul>
+<li><strong>How to Create and Edit Roam CSS: Interview with Abhay Prasanna</strong>
 <ul>
 <li>{{video: https://www.youtube.com/watch?v=Cz07-oZlPzA&amp;t=3s&amp;ab_channel=MikeGiannulis}}
 </li>
 </ul>
-<h3>Roam Team Videos::</h3>
-<h4>Applying Custom Themes for your RoamResearch Knowledge Graph by Conor White-Sullivan</h4>
+</li>
+</ul>
+</li>
+<li>Articles::
 <ul>
-<li>{{video: https://youtu.be/UY-sAC2eGyI }}
+<li><a href="https://maggieappleton.com/paintingroam">Painting Roam with Custom CSS</a> by Maggie Appleton
+</li>
+<li><a href="https://nesslabs.com/roam-research-themes-custom-styling-css">Roam themes: how to style Roam Research with custom CSS</a> by Anne-Laure Le Cunff
+</li>
+</ul>
+</li>
+<li>Check out our [community-built themes for inspiration](<a href="/help/themes">Themes</a>)
 </li>
 </ul>
 </body>

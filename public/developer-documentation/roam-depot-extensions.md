@@ -10,6 +10,45 @@
         - We should be able to support authors in all of the countries listed in https://stripe.com/docs/connect/cross-border-payouts (not the preview ones yet, but if you are in one of those contact us first and we can try to get it working).
       - Legally, if you make more than $600 per year from Roam and live in the US, you are expected to pay taxes on it and can ask Roam for a 1099 form
     - Paid extensions do not exist yet, but in the future we hope to add them. You may implement your own payment system for an extension, but this will disqualify you from payouts from Roam
+- **Developer mode**
+  - Load, test, and iterate on extensions in development — from a local folder, a URL, or a roam-depot PR — without publishing them
+  - Enable it
+    - Visit a graph, open Settings, go to the Roam Depot tab, and click enable developer mode
+    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FEfyjrV4KhR.png?alt=media&token=bf7be2af-6a17-40ee-bc21-cd3eae0691ab)
+  - Load your extension, from one of three sources
+    - A local folder
+      - Click "Load extension" and choose the folder on your computer which contains `extension.js` / `extension.css`
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FIe3FBjQHTW.png?alt=media&token=ffd03157-8b27-4628-8916-663a59eaa09d)
+    - A roam-depot PR, via its "PR-shorthand"
+      - Format: `username+extension-id+pr-number` — e.g. `digitalmaster+roam-memo+668`
+      - The shorthand is posted in an [auto-generated comment](https://github.com/Roam-Research/roam-depot/pull/668#issuecomment-1524315888) on the PR at creation/update
+      - [[Loom video]] walkthrough of loading from a URL / PR-shorthand
+        - {{[[video]]: https://www.loom.com/share/d6ec8341b17e4959b9604957e7212556}}
+    - A URL
+      - Pass a URL to the root path where adding the file names to the url leads to your files — `README.md` and `extension.js` are required, `extension.css` and `CHANGELOG.md` optional. The files have to be publicly accessible
+        - Example::
+          - with `https://my-extension.pages.dev`, the file `https://my-extension.pages.dev/extension.js` must resolve
+        - A common mistake is to forget the `https://` prefix
+      - Useful for testing on mobile — serve your files on your local network with a tool like https://www.npmjs.com/package/serve
+      - Useful for sharing a link with beta testers
+        - Developer extensions are local to each client — this is not a replacement for publishing; please only use it for testing
+      - To auto-deploy your extension to a URL on every push to `main` — a persistent link, without opening a [PR in roam-depot](https://github.com/Roam-Research/roam-depot/pulls) just to test:
+        - **Option 1:** for a new extension, fork the [template repository](https://github.com/8bitgentleman/roam-depot-extension-template) by [[Matt Vogel]], then go to repo settings > Pages and the Actions tab to set up
+        - **Option 2:** for an existing extension, copy [.github/workflows/deploy.yml](https://github.com/8bitgentleman/roam-depot-extension-template/blob/main/.github/workflows/deploy.yml) into your own repository (same path), then go to repo settings > Pages and the Actions tab to set up
+        - Short [[Loom video]] guiding through both options
+          - {{[[video]]: https://www.loom.com/share/4785e95fe5454684a48683402da5ea09}}
+        - Longer [[Loom video]] through the entire process (relevant if you want to learn how the github action works here)
+          - https://www.loom.com/share/ac50ccf34f924a95bf6be4ca74ab85d7
+  - Reload after changing your code
+    - `ctrl-d ctrl-r` calls `onunload`, loads the new code, and calls `onload` — for all loaded developer extensions
+    - You can also reload from Settings > Roam Depot > Developer Extensions
+    - If your state isn't properly removed in `onunload`, reload the page and hit `ctrl-d ctrl-r` to completely clear the state
+  - Properties
+    - URL / PR extensions **are auto-started**, similar to production extensions
+    - Local-folder extensions **are NOT auto-started** — load them again from the Roam Depot tab, or with `ctrl-d ctrl-r`
+      - Reading your folder needs file-system permission, which the browser only grants from a user action
+    - Developer extensions **are NOT synced across devices**
+    - URL / PR extensions **are NOT cached** (unlike production Roam Depot extensions) — they are downloaded again every time you open Roam or press reload
 - **Code Guidelines**
   - Your extension should export as default a map with `onload` and `onunload` functions
     - All state setup in `onload` should be removed in `onunload`.
@@ -112,17 +151,6 @@
     - Extensions will run offline, your extension doesn't have to work offline but it should be aware it could be running without network connection and handle that accordingly
   - Allowed languages
     - Typescript, Javascript, or Clojurescript
-- **Local Development**
-  - Visit a graph, open up settings, and go to the Roam Depot tab
-  - Then click enable developer mode
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FEfyjrV4KhR.png?alt=media&token=bf7be2af-6a17-40ee-bc21-cd3eae0691ab)
-  - Then load extension
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FIe3FBjQHTW.png?alt=media&token=ffd03157-8b27-4628-8916-663a59eaa09d)
-  - and choose the folder on your computer which contains `extension.js` / `extension.css`
-  - To reload the extension you can use the key command `control-d control-r`, which will call your extension's `onunload` function, load the new code, and call `onload`
-    - Note that this key command reloads all loaded developer extensions
-    - You can also reload extensions from the extensions tab in settings
-  - If your state isn't properly removed in `onunload` then you can reload the page and hit `control-d control-r` to completely clear the state
 - **Submitting an extension**
   - Create a github repo for your extension
   - Inside your repository
@@ -168,45 +196,6 @@
   - Every update to your extension will be reviewed, submitting it is the same as **Submitting an extension**
   - Just update the source_commit in your extension's metadata file in your fork of https://github.com/Roam-Research/roam-depot
     - You may also change other values of your metadata file
-- **Load remote developer extensions from URL or using "PR-shorthand" format**
-  - Motivation::
-    - Make it easier to test extensions
-      - using this, can easily test on mobile. Can also give links for testers / beta users to test
-  - Two accepted formats
-    - "PR-shorthand" format
-      - You can get the PR-shorthand for your PR from a comment which is auto-generated on the PR at creation/update.
-      - For example: `digitalmaster+roam-memo+668` is the PR-shorthand for PR 668, and is mentioned in this github comment on the PR: https://github.com/Roam-Research/roam-depot/pull/668#issuecomment-1524315888
-      - ---
-        - `username + “+” + extension-id + “+” + pr-number`
-    - URL
-      - URL to root path where adding `README.md` and `extension.js` to the url leads to the required files
-      - Example: `https://roam-excalidraw-depot.pages.dev/`
-        - just a test extension I was working on before upgrading native excalidraw. So, I would recommend not using this version of excalidraw. Use `/excalidraw` instead
-      - Things to keep in mind:
-        - the extension files have to be publicly accessible when the file names (i.e. "extension.js", "README.md", "extension.css", "CHANGELOG.md") are added to the end of the passed URL. (only the first 2 are compulsory)
-        - One common mistake is to forget the prefix in URLs like `https://`
-      - We expect URLs will be useful if you want to
-        - During development, test extension on mobile
-          - using a local server like https://www.npmjs.com/package/serve to serve your files on your local network
-          - note that to load the changed files, you either have to reload Roam or go to Settings>Roam Depot>Developer Extensions and click on reload button
-        - Have a URL with the latest update of your extension
-          - (you could then share it with beta-testers)
-            - An important point is that since developer extensions are local to the client, this is not a replacement for actual "production" extensions. Please only use it for testing
-          - a guide which might come in handy: 
-            - A guide for how to deploy extension automatically when pushed to `main` branch in your github repo (in case you want a persistent link or don't want to have to create a [PR in roam-depot](https://github.com/Roam-Research/roam-depot/pulls) before further testing)
-              - **Option 1:** If you're creating a new extension, just fork this template repository by [[Matt Vogel]] https://github.com/8bitgentleman/roam-depot-extension-template and then go to repo settings > Pages and then the Actions tab in order to setup 
-              - **Option 2:** If you already have an extension, you can copy the [.github/workflows/deploy.yml](https://github.com/8bitgentleman/roam-depot-extension-template/blob/main/.github/workflows/deploy.yml) file to your own github repository (make sure to have the same path) and then go to repo settings > Pages and then the Actions tab in order to setup 
-              - Short [[Loom video]] guiding through both of the above options
-                - {{[[video]]: https://www.loom.com/share/4785e95fe5454684a48683402da5ea09}}
-              - ---
-                - [[Loom video]] guiding through entire process (might only be relevant if you want to learn how github actions works in this case)
-                  - https://www.loom.com/share/ac50ccf34f924a95bf6be4ca74ab85d7 
-  - Properties
-    - Remote Dev Extensions **are auto started** similar to production extensions
-    - Remote Dev Extensions **are NOT cached** (unlike production Roam Depot extensions). They are downloaded again every time you open Roam or press refresh
-    - Remote Dev Extensions **are NOT synced across different devices**
-  - [[Loom video]]
-    - {{[[video]]: https://www.loom.com/share/d6ec8341b17e4959b9604957e7212556}}
 - **Tutorials**
   - Simple walkthrough of porting a [[roam/js]] extension to Roam Depot, without any git knowledge
     - {{[[video]]: https://www.loom.com/share/4027806b92d54e539db272ebf7efffec}}
@@ -227,41 +216,3 @@
     - Simple example, with a build process
   - [Roamjs Query Builder](https://github.com/dvargas92495/roamjs-query-builder)
     - Complicated example, with a complex build process
-- **Developer mode**
-  - Load, test, and iterate on extensions in development — from a local folder, a URL, or a roam-depot PR — without publishing them
-  - Enable it
-    - Visit a graph, open Settings, go to the Roam Depot tab, and click enable developer mode
-    - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FEfyjrV4KhR.png?alt=media&token=bf7be2af-6a17-40ee-bc21-cd3eae0691ab)
-  - Load your extension, from one of three sources
-    - a local folder
-      - click "Load extension" and choose the folder on your computer which contains `extension.js` / `extension.css`
-      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdeveloper-documentation%2FIe3FBjQHTW.png?alt=media&token=ffd03157-8b27-4628-8916-663a59eaa09d)
-    - a URL
-      - pass a URL to the root path where adding the file names to the url leads to your files — `README.md` and `extension.js` are required, `extension.css` and `CHANGELOG.md` optional
-        - example: with `https://my-extension.pages.dev`, the file `https://my-extension.pages.dev/extension.js` must resolve
-        - a common mistake is to forget the `https://` prefix
-      - useful for testing on mobile — serve your files on your local network with a tool like https://www.npmjs.com/package/serve
-      - useful for sharing a link with beta testers
-        - developer extensions are local to each client — this is not a replacement for publishing; please only use it for testing
-      - to auto-deploy your extension to a URL on every push to `main`:
-        - **Option 1:** for a new extension, fork the [template repository](https://github.com/8bitgentleman/roam-depot-extension-template) by [[Matt Vogel]], then go to repo settings > Pages and the Actions tab to set up
-        - **Option 2:** for an existing extension, copy [.github/workflows/deploy.yml](https://github.com/8bitgentleman/roam-depot-extension-template/blob/main/.github/workflows/deploy.yml) into your own repository (same path), then go to repo settings > Pages and the Actions tab to set up
-        - Short [[Loom video]] guiding through both options
-          - {{[[video]]: https://www.loom.com/share/4785e95fe5454684a48683402da5ea09}}
-        - Longer [[Loom video]] through the entire process (relevant if you want to learn how the github action works here)
-          - https://www.loom.com/share/ac50ccf34f924a95bf6be4ca74ab85d7
-    - a roam-depot PR, via its "PR-shorthand"
-      - format: `username+extension-id+pr-number` — e.g. `digitalmaster+roam-memo+668`
-      - the shorthand is posted in an [auto-generated comment](https://github.com/Roam-Research/roam-depot/pull/668#issuecomment-1524315888) on the PR at creation/update
-      - [[Loom video]] walkthrough of loading from a URL / PR-shorthand
-        - {{[[video]]: https://www.loom.com/share/d6ec8341b17e4959b9604957e7212556}}
-  - Reload after changing your code
-    - `control-d control-r` calls `onunload`, loads the new code, and calls `onload` — for all loaded developer extensions
-    - you can also reload from the Roam Depot tab in Settings
-    - if your state isn't properly removed in `onunload`, reload the page and hit `control-d control-r` to completely clear the state
-  - Properties
-    - URL / PR extensions auto-start with the app, like production extensions
-    - local-folder extensions do not auto-start — load them again from the Roam Depot tab, or with `control-d control-r`
-      - reading your folder needs file-system permission, which the browser only grants from a user action
-    - they are not synced across devices
-    - URL / PR extensions are not cached — they are downloaded again every time you open Roam or press reload

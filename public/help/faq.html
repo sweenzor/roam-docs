@@ -718,6 +718,78 @@
 <li>In order to paste content using [soft line breaks](<a href="/help/adding-soft-line-breaks-in-a-block">Adding soft line breaks in a block</a>), use <code>ctrl-shift-v</code>.
 </li>
 </ul>
+<h4><strong>How do I create a countdown to a specific date in Roam and show it as a notification? (e.g. days until Aug 28)</strong></h4>
+<ul>
+<li>You can use the SmartBlock extension by RoamJS, available in Roam Depot, to create a template that counts down the days until a specific date. You’ll need to run the SmartBlock each time you want to check the remaining days, but you can assign a keyboard shortcut to make it quick and convenient. So whenever you press the hotkey, it will show you how many days are left until August 28!
+</li>
+<li>Here's how to set it up-
+<ul>
+<li>Install the SmartBlocks extension from Roam Depot
+</li>
+<li>Enable the following Settings (Command Palette and Command Palette Opt-In)
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FkqV0BNAWwc.gif?alt=media&amp;token=432dbd0b-6759-48b1-98bc-21ab4a2c6804" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>Paste the following Smartblock anywhere in your graph
+<ul>
+<li><code>#SmartBlock Countdown &lt;%CMD%&gt;</code>
+<ul>
+<li><code>&lt;%SET:targetDate,[[August 28th, 2026]]%&gt;&lt;%SET:todayDate,&lt;%DATE:YYYY/MM/DD%&gt;%&gt; &lt;%NOBLOCKOUTPUT%&gt;</code>
+</li>
+<li><code>There are &lt;%DIFFERENCE:&lt;%GET:targetDate%&gt;,&lt;%GET:todayDate%&gt;%&gt; days left until August 28th.</code>
+</li>
+</ul>
+</li>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F_NP0nwGrXa.png?alt=media&amp;token=797ab0d1-7887-427c-b709-0651b4b5ee0d" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>Then go to <code>Settings &gt; Hotkeys &gt; Ungrouped Extension Hotkeys</code> and you should see the '<strong>Trigger SmartBlock: Countdown</strong>' there. Set your preferred keyboard combination.
+</li>
+<li>Now anytime you hit the Hotkeys, a block will be created showing you how many days are left until August 28!
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FGut_t7vhnC.gif?alt=media&amp;token=bb5ab9ce-c1b0-45ba-a067-5ff9f5bc535c" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>It's also possible to see a <strong><a href="https://github.com/RoamJS/smartblocks/blob/main/docs/050-command-reference.md#notification">notification</a></strong> text instead of creating a block. In that case, you need to use the following Smartblock-
+<ul>
+<li><code>#SmartBlock Countdown noti &lt;%CMD%&gt;</code>
+<ul>
+<li><code>&lt;%SET:targetDate,[[August 28th, 2026]]%&gt;&lt;%SET:todayDate,&lt;%DATE:YYYY/MM/DD%&gt;%&gt; &lt;%NOBLOCKOUTPUT%&gt;</code>
+</li>
+<li><code>&lt;%NOTIFICATION:5,There are &lt;%DIFFERENCE:&lt;%GET:targetDate%&gt;,&lt;%GET:todayDate%&gt;%&gt; days left until August 28th.,top right%&gt;</code>
+</li>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FZWBnzKGYei.png?alt=media&amp;token=87469de3-97a8-4f29-8905-c1bad88f0cee" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li>After setting up the hotkeys, once you press the hotkeys, it will show you the text as a notification. You can change the text position and the duration the notification is visible.
+<ul>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FWq5rnYmfGE.gif?alt=media&amp;token=370aeaf9-41b8-4a47-9932-64f748ec288c" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4><strong>Can I turn off autocorrect/spellcheck in Roam?</strong></h4>
+<ul>
+<li>Roam doesn't have any built-in spell checker, and the one you see popping up comes from your OS's spellcheck rules. Here's how to turn it off:
+<ul>
+<li>Desktop app
+<ul>
+<li>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2>[Multiplayer](Multiplayer)</h2>
 <h4><strong>How do I</strong> [share](<a href="/help/sharing">Sharing</a>) <strong>my graph?</strong></h4>
 <ul>

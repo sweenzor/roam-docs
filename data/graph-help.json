@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-07-23T07:51:51.568Z",
+ "exportedAt": "2026-07-24T07:49:16.410Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -10561,6 +10561,10 @@
    ":block/uid": "je3Rfo6oE"
   },
   {
+   ":node/title": "May 23rd, 2026",
+   ":block/uid": "05-23-2026"
+  },
+  {
    ":node/title": "Abhay Prasanna",
    ":block/uid": "IE_X19_Th"
   },
@@ -13748,6 +13752,10 @@
    ":block/uid": "3YYMV1wqN"
   },
   {
+   ":node/title": "July 23rd, 2026",
+   ":block/uid": "07-23-2026"
+  },
+  {
    ":node/title": "Tyler Cowen",
    ":block/uid": "pHeBbyp92"
   },
@@ -14086,6 +14094,10 @@
   {
    ":node/title": "Mek",
    ":block/uid": "nKdPhrk6g"
+  },
+  {
+   ":node/title": ".bg-blue-400",
+   ":block/uid": "8_WQ98lbt"
   },
   {
    ":node/title": "Left Sidebar",
@@ -16234,6 +16246,10 @@
     }
    ],
    ":block/uid": "06-11-2021"
+  },
+  {
+   ":node/title": ".font-bold",
+   ":block/uid": "MWX_QK9o8"
   },
   {
    ":node/title": "June 2nd, 2021",
@@ -20950,6 +20966,10 @@
    ":block/uid": "tNgFM5ueW"
   },
   {
+   ":node/title": ".p-2",
+   ":block/uid": "2ORCLgYRO"
+  },
+  {
    ":node/title": "Winter Arc",
    ":block/uid": "mzMrqSM1U"
   },
@@ -21681,84 +21701,89 @@
    ":node/title": "Themes",
    ":block/children": [
     {
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "_xVV2Rpw_"
+        },
+        {
+         ":block/uid": "ilbMpkUFC"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "Mw11Jsa6V"
+          },
+          {
+           ":block/uid": "HdHehJEXV"
+          }
+         ],
+         ":block/uid": "MxgFrKGNk",
+         ":block/string": "{{[[embed]]: ((HdHehJEXV))}}",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "qiYE36C2l",
+       ":block/string": "from [[Maggie Appleton]] in ((ilbMpkUFC))",
+       ":block/order": 0
+      }
+     ],
+     ":block/uid": "QmoT6w2vp",
+     ":block/string": "**Block Level Customizations**",
+     ":block/heading": 2,
+     ":block/order": 4
+    },
+    {
      ":block/refs": [
       {
-       ":block/uid": "Kt8SWLSya"
+       ":block/uid": "CV_O2qTlP"
       }
      ],
      ":block/children": [
       {
-       ":block/children": [
+       ":block/refs": [
         {
-         ":block/refs": [
-          {
-           ":block/uid": "_xVV2Rpw_"
-          },
-          {
-           ":block/uid": "ilbMpkUFC"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "Mw11Jsa6V"
-            },
-            {
-             ":block/uid": "HdHehJEXV"
-            }
-           ],
-           ":block/uid": "MxgFrKGNk",
-           ":block/string": "{{[[embed]]: ((HdHehJEXV))}}",
-           ":block/order": 0
-          }
-         ],
-         ":block/uid": "qiYE36C2l",
-         ":block/string": "from [[Maggie Appleton]] in ((ilbMpkUFC))",
-         ":block/order": 0
+         ":block/uid": "2h9V-FtAO"
         }
        ],
-       ":block/uid": "QmoT6w2vp",
-       ":block/string": "**Block Level Customizations**",
-       ":block/heading": 2,
-       ":block/order": 6
-      },
+       ":block/uid": "UkXB_tmVE",
+       ":block/string": "{{[[video]]: https://youtu.be/UY-sAC2eGyI }}",
+       ":block/order": 0
+      }
+     ],
+     ":block/uid": "TvT1sAkz9",
+     ":block/string": "Applying Custom Themes to your Graph by [[Conor White-Sullivan]]",
+     ":block/heading": 3,
+     ":block/order": 0
+    },
+    {
+     ":block/children": [
       {
        ":block/refs": [
         {
-         ":block/uid": "CV_O2qTlP"
+         ":block/uid": "Rqn91pDZa"
         }
        ],
        ":block/children": [
         {
-         ":block/refs": [
-          {
-           ":block/uid": "2h9V-FtAO"
-          }
-         ],
-         ":block/uid": "UkXB_tmVE",
-         ":block/string": "{{[[video]]: https://youtu.be/UY-sAC2eGyI }}",
-         ":block/order": 0
-        }
-       ],
-       ":block/uid": "TvT1sAkz9",
-       ":block/string": "Applying Custom Themes to you Graph by [[Conor White-Sullivan]]",
-       ":block/heading": 3,
-       ":block/order": 1
-      },
-      {
-       ":block/children": [
+         ":block/uid": "xUKv7kz2d",
+         ":block/string": "Love this theme? Say thanks via [Paypal](https://paypal.me/maggieappleton)",
+         ":block/order": 2
+        },
         {
          ":block/refs": [
           {
-           ":block/uid": "dA3yiHcLZ"
+           ":block/uid": "EiKfxPiuW"
           }
          ],
          ":block/children": [
           {
            ":block/refs": [
             {
-             ":block/uid": "EiKfxPiuW"
+             ":block/uid": "CQzpM2OA5"
             }
            ],
            ":block/children": [
@@ -21770,59 +21795,593 @@
              ],
              ":block/children": [
               {
-               ":block/uid": "btYeZARio",
-               ":block/string": "```css\n/* IMPORT CORE THEME */\n@import url('https://azlen.github.io/roam-themes/core.css');\n\n/* GOOGLE FONTS */\n@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');\t\n\n:root {\t\n    --page-width: 616px;\n    --page-order: row-reverse; /* new pages show up to the right */\n    /*--page-order: row; /* new pages show up to the left */\n    \n    --header-font: \"Source Sans Pro\", \"Inter\", sans-serif;\t\n    --body-font: \"Source Sans Pro\", \"Inter\", sans-serif;\t\n    \t\n    --bg-color: #EEEEEE;\t\n    --page-color: rgba(255, 255, 255, 0.95);\t\n    \t\n    --text-color: #000000;\t\n    --icon-color: #5c7080;\n    --bullet-color: rgba(0, 0, 0, 0.2);\t\n    \t\n    --page-shadow: 0px 8px 14px rgba(0, 0, 0, 0.05);\t\n    \t\n    --color-primary: 73, 197, 91;\t\n    --color-primary-contrast: #FFFFFF;\t\n    --color-secondary: 147, 100, 235;\n\n    --color-secondary-contrast: #FFFFFF;\t\n}\n\n/* CHANGE COLOURS IN CANVAS */\ncanvas[data-id=\"layer2-node\"] {\t\n    filter: invert(1) hue-rotate(110deg) saturate(2.5);\t\n}```",
+               ":block/uid": "D65iwM2X0",
+               ":block/string": "```css\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n    font-family: \"Lato\", sans-serif;\n    font-size: 3em;\n}\ndiv,\ntextarea {\n    font-weight: 400;\n    color: #3F4758;\n    font-size: 1.002em;\n}\n.roam-block-container {\n    max-width: 1000px;\n}\n\n.rm-pomodoro {\n    background: #fff !important;\n    color: #ff4747 !important;\n    padding: 4px 14px;\n    line-height: 2em;\n    font-weight: 600;\n    border-radius: 2em;\n    border: 1px solid #ff474770;\n}\n\n.rm-pomodoro {\n    background: #ff6956 !important;\n    color: #fff !important;\n    padding: 4px 14px;\n    line-height: 2em;\n    font-weight: 600;\n    border-radius: 2em;\n    border: 1px solid #ed5845;\n}\n\n.rm-pomodoro::first-letter {\n  margin-right: 8px;\n}\n\n.rm-query {\n    border: 0.5px solid #e4e9ec;\n    border-radius: 5px;\n    \n}\n\n.rm-query .rm-query-title {\n    background-color: #f7f8f8;\n    padding: 0.8em;\n    color: #d1dbe2;\n    font-size: 80%;\n}\n\n.rm-reference-main.rm-query-content {\n    padding: 0.8em;\n}\n\n.rm-reference-main .rm-reference-item .rm-block-text {\n    font-size: 90%;\n}\n\n.rm-ref-page-view-title span {\n    \n}\n\n.rm-reference-main .rm-reference-item .controls {\n    margin-left: -1em;\n}\n\n.rm-ref-page-view {\n    padding: 0.4em 0.2em;\n}\n\n.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .page {\n    padding: 6px;\n}\n\ndiv.flex-v-box.starred-pages-wrapper > div.flex-h-box > span {\n    font-size: 14px !important;\n    opacity: 80%;\n    letter-spacing: 0.04em;\n}\n\ndiv.roam-sidebar-container.noselect > div > div {\n    font-size: 14px !important;\n    letter-spacing: 0.03em;\n    \n}\n\n#block-input {\n    background: white;\n}\n\n.roam-body #block-input > span > div {\n    padding: 6px 24px;\n    background: white;\n}\n\nspan.bp3-icon-small.bp3-icon-star {\n    display: none;\n    visibility: hidden;\n}\n\n.roam-block {\n    max-width: 850px;\n}\n\n#right-sidebar > div {\n    background-color: #f7f8fa;\n    border-left: 1px solid #e9ebef;\n}\n.controls .simple-bullet-outer .simple-bullet-inner {\n    background-color: #e5e9f2;\n}\n.block-border-left {\n    border-left: 1px solid #f3f6f7;\n}\n.kanban-board {\n    background-color: #fff;\n}\n.kanban-card {\n    background-color: white;\n    margin: 8px;\n    box-shadow: 0px 1px 2px #9eb3c0a8;\n    padding: 10px;\n    border-radius: 2px;\n    line-height: 1.3em;\n}\n.kanban-title {\n    text-align: center;\n    font-weight: 600;\n    font-size: 1.1em;\n    opacity: 80%;\n    color: #485f6f;\n    padding-top: 8px;\n    border-bottom: 1px solid #c5d1d8;\n}\n.kanban-column {\n    background-color: #e7eff3;\n    margin: 0px 4px 0px 4px;\n    padding: 4px;\n    min-width: 200px;\n    border-radius: 3px;\n}\n\n\n.rm-block-ref::before {\n    content: '';\n    display: inline-block;\n    width: 2px;\n    border-radius: 40px;\n    height: 12px;\n    background: #ff913c;\n    margin-right: 8px;\n}\n.rm-block-ref {\n    border-bottom: none;\n    font-size: 1em;\n    color: #515e70;\n}\n.rm-block-ref:hover {\n    background: none;\n    cursor: pointer;\n}\n.checkmark {\n    background: #fff;\n}\n.check-container input:checked ~ .checkmark {\n    background: #33bdea;\n}\n.check-container input:checked ~ .checkmark:after {\n    border-color: #fff;\n}\n.rm-reference-item {\n    margin-top: 8px;\n    border-radius: 6px;\n    border: 1px solid #e4e9ee;\n    margin-right: 8px;\n    flex: 1 1 100%;\n    word-break: break-word;\n    background-color: #f7f9fb;\n    padding: 8px;\n}\n\n.rm-level2 {\n    font-size: 1.5em;\n}\n.rm-level3 {\n    color: #939aae;\n    font-weight: 400;\n    font-size: 1.3em;\n}\n.rm-page-ref {\n    color: #9aabd0;\n}\n.rm-page-ref-link-color {\n    color: #ec6f35;\n    font-weight: 600;\n}\na {\n    color: #8A3CC8;\n}\n.intercom-app,\n.intercom-launcher-frame,\n#intercom-container {\n    display: none !important;\n}\n.roam-body .roam-app .roam-sidebar-container {\n    background-color: white;\n    border-right: 1px #eee solid;\n}\n.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .page,\n.roam-body .roam-app .roam-sidebar-container > * {\n    opacity: 80%;\n    box-shadow: none;\n}\n.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .page:hover,\n.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .log-button:hover {\n    background: white;\n    color: black;\n    opacity: 100%;\n}\n#buffer.tall {\n    height: calc(100vh - 50px) !important;\n}\n.check-container {\n    padding-right: 4px;\n}\nspan.rm-page-ref {\n    border-radius: 2px;\n    padding-left: 1px;\n    padding-right: 1px;\n}\n.content span.rm-page-ref {\n    padding: 4px 1px 1px;\n    /* required for fixing azo */\n}\n.center-proj {\n    text-align: center;\n}\n\n```",
                ":block/order": 0
               }
              ],
-             ":block/uid": "6BxsI8c_R",
+             ":block/uid": "5frytqNHz",
              ":block/string": "{{[[roam/css]]}}",
              ":block/order": 0
             }
            ],
-           ":block/uid": "9JhNiVPNy",
-           ":block/string": "Code::",
-           ":block/order": 3
+           ":block/uid": "5JysL1BW4",
+           ":block/string": "[[Site-wide]]",
+           ":block/order": 0
           },
           {
            ":block/refs": [
             {
-             ":block/uid": "O3Zn34Tzh"
+             ":block/uid": "CAYGhv3Ex"
             }
            ],
            ":block/children": [
             {
-             ":block/uid": "PX8wdX_cX",
-             ":block/string": "Collapsible columns -- side-by-side view for items opened in the sidebar ",
+             ":block/refs": [
+              {
+               ":block/uid": "RA1UXmzp0"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "vhRfBT-cI",
+               ":block/string": "```css\n\n/* Custom data tags */\nspan.rm-page-ref[data-tag=\"Tweet\"] {\n    background: #81D5ED !important;\n    color: white !important;\n    padding: 3px 7px;\n    line-height: 2em;\n    font-weight: 500;\n}\n\nspan.rm-page-ref[data-tag=\"Literature Notes\"] {\n    background: #9769FF !important;\n    color: white !important;\n    padding: 3px 7px;\n    font-weight: 500;\n    line-height: 2em;\n}\n\n\nspan.rm-page-ref[data-tag=\"Evergreens\"] {\n    background: #0DBAC6 !important;\n    color: #fff !important;\n    padding: 3px 8px;\n    line-height: 2em;\n    font-weight: 500;\n}\n\nspan.rm-page-ref[data-tag=\"Seedling\"] {\n    color: #0dbac6 !important;\n    padding: 3px 3px;\n    font-weight: 600;\n    line-height: 1.4em;\n}\n\nspan.rm-page-ref[data-tag=\"Idea Bank\"] {\n    color: #FCB815 !important;\n    padding: 3px 4px;\n    font-weight: 700;\n    line-height: 1.4em;\n}\n\nspan.rm-page-ref[data-tag=\"Idea Bank\"]:before {\n    content: '✦ '\n}\n\nspan.rm-page-ref[data-tag=\"Illustrated Notes\"] {\n    color: #7172FC;\n    padding: 3px 4px;\n    font-weight: 700;\n    line-height: 1.4em;\n}\n\nspan.rm-page-ref[data-tag=\"Garden Notes\"] {\n    color: #9DBC13;\n    padding: 3px 4px;\n    font-weight: 700;\n    line-height: 1.4em;\n}\n\nspan.rm-page-ref[data-tag=\"Video Tutorial\"] {\n    color: #db3b8d;\n    padding: 3px 4px;\n    line-height: 1.4em;\n    font-weight: 700;\n}\n\nspan.rm-page-ref[data-tag=\"Essay\"] {\n    background: #ADCB2A;\n    color: #fff;\n    padding: 3px 7px;\n    line-height: 2em;\n    font-weight: 500;\n}\n\n\nspan.rm-page-ref[data-tag=\"Livestream\"] {\n    color: #B979CF;\n    padding: 3px 4px;\n    line-height: 1.4em;\n    font-weight: 700;\n}\n\nspan.rm-page-ref[data-tag=\"Talk\"] {\n    background: #7172FC;\n    color: #fff;\n    padding: 3px 7px;\n    line-height: 2em;\n    font-weight: 500;\n}\n\nspan.rm-page-ref[data-tag=\"Waiting\"] {\n    background: #F9C866;\n    color: #fff;\n    padding: 3px 7px;\n    line-height: 2em;\n    font-weight: 500;\n}\n\nspan.rm-page-ref[data-tag=\"Researching\"] {\n    background: #FF9D66 !important;\n    color: #fff;\n    padding: 3px 7px;\n    line-height: 2em;\n    font-weight: 500;\n}\n\nspan.rm-page-ref[data-tag=\"Synthesising\"] {\n    background: #FC766F !important;\n    color: #fff !important;\n    padding: 3px 7px;\n    line-height: 2em;\n    font-weight: 500;\n}\n\n\nspan.rm-page-ref[data-tag=\"Alive\"] {\n    background: #EE5F85 !important;\n    color: #fff !important;\n    padding: 3px 7px;\n    line-height: 2em;\n    font-weight: 500;\n}```",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "UTYi03F79",
+             ":block/string": "{{[[roam/css]]}}",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "HdHehJEXV",
+           ":block/string": "[[Tag Styles]]",
+           ":block/order": 1
+          }
+         ],
+         ":block/uid": "ojvkReCpl",
+         ":block/string": "Code::",
+         ":block/order": 4
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "O3Zn34Tzh"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/uid": "pcY8Xhi0r",
+           ":block/string": "Queries and Kanbans got some extra love. ",
+           ":block/order": 0
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "d8PvhQG4m",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2FER9x_LvrLc.png?alt=media&token=4860ec31-f27e-45c7-adaa-194594cc55e2)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "tJCpZRq75",
+           ":block/string": "Custom data-tags are all at the end of the CSS file, which you'll probably want to edit/customise. ",
+           ":block/order": 1
+          }
+         ],
+         ":block/uid": "xUMGmrt4M",
+         ":block/string": "Special Features::",
+         ":block/order": 3
+        },
+        {
+         ":block/uid": "wKv26nqYn",
+         ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2Ffc9tIphX_X.png?alt=media&token=f6c09e01-742a-478d-a537-0b3a88796325)",
+         ":block/order": 0
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "Hc4H-JsI6"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "_xVV2Rpw_"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "SwSub32Iu"
+              }
+             ],
+             ":block/uid": "y9Zlhx_rN",
+             ":block/string": "Twitter:: [@mappletons](https://twitter.com/mappletons)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "tkFt9F4ay",
+           ":block/string": "[[Maggie Appleton]]",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "8BSQBuPx2",
+         ":block/string": "Designer::",
+         ":block/order": 1
+        }
+       ],
+       ":block/uid": "ilbMpkUFC",
+       ":block/string": "[[Leyendecker]]",
+       ":block/heading": 3,
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "9jMw8_MAJ"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "Aa7fywYAg"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "N6rxNyKVg",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamcss%2FpHrno4MPZY.png?alt=media&token=608fcfc3-3338-4f57-ab6d-c93b51c1ee9d)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "FE8ACh_mm",
+           ":block/string": "Dracula Pro",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "DuqnX_2mx",
+         ":block/string": "Screenshots::",
+         ":block/order": 0
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "I9wRqoPTi"
+          },
+          {
+           ":block/uid": "05-23-2026"
+          }
+         ],
+         ":block/uid": "4Uvoq2HqL",
+         ":block/string": "Last updated:: [[May 23rd, 2026]]",
+         ":block/order": 1
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "Hc4H-JsI6"
+          },
+          {
+           ":block/uid": "IE_X19_Th"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "SwSub32Iu"
+            }
+           ],
+           ":block/uid": "qisvHgmvM",
+           ":block/string": "Twitter:: [@AbhayPrasanna](https://twitter.com/AbhayPrasanna)",
+           ":block/order": 0
+          },
+          {
+           ":block/uid": "DHieX6QY4",
+           ":block/string": "Love this theme? Say thanks via [PayPal](https://www.paypal.me/abhayprasanna) or Venmo @Abhay-Prasanna (all proceeds reinvested in the Roam community!)",
+           ":block/order": 1
+          }
+         ],
+         ":block/uid": "55dXx5ayw",
+         ":block/string": "Designer:: [[Abhay Prasanna]]",
+         ":block/order": 2
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "O3Zn34Tzh"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/uid": "NILIdkU2w",
+           ":block/string": "Very responsive to CSS changes (update within 24 hours)",
+           ":block/order": 0
+          },
+          {
+           ":block/children": [
+            {
+             ":block/children": [
+              {
+               ":block/uid": "NfZ-xipBw",
+               ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamcss%2FTKRjaiLAWr.png?alt=media&token=d1e081e4-61ec-48a1-a7b4-5bd3152e59df)",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "kZRlld6ou",
+             ":block/string": "Material Palenight",
              ":block/order": 0
             },
             {
              ":block/children": [
               {
-               ":block/uid": "KBWy_hR0m",
-               ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FOAvb9EDHlf.png?alt=media&token=c0737a55-e90a-4f85-baa3-cc4797b24834)",
+               ":block/uid": "MAx6iJEHs",
+               ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamcss%2F_XwEZNszZy.png?alt=media&token=44c6974a-ad96-4a79-870d-68563ff2f8cc)",
                ":block/order": 0
               }
              ],
-             ":block/uid": "_BQ5T8s43",
-             ":block/string": "Overlay side-by-side view over graph/diagram",
-             ":block/order": 2
+             ":block/uid": "u4OEatoeT",
+             ":block/string": "Dark Night",
+             ":block/order": 1
             },
             {
-             ":block/uid": "n7Pli5CF9",
-             ":block/string": "Searchbar appears in main page ",
+             ":block/children": [
+              {
+               ":block/uid": "I6CeLE2IG",
+               ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamcss%2FWz9h4gySQQ.png?alt=media&token=79399141-5054-4832-8971-057ee944fc8a)",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "iwbzGyhHg",
+             ":block/string": "Shades of Purple",
+             ":block/order": 2
+            }
+           ],
+           ":block/uid": "Y2dmAQgKc",
+           ":block/string": "Multiple Dark Colorsets",
+           ":block/order": 1
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "NZFooZURb",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamcss%2FTzMglEX3y3.png?alt=media&token=d0ffefe9-e9d9-4429-8f17-d7edae5a4dfb)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "svBUKZraS",
+           ":block/string": "Switches to Light mode based on OS setting",
+           ":block/order": 2
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "q_RGLDfyl",
+             ":block/string": "Pages stack in columns in sidebar",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "j9RKbiNpm",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamcss%2F7kcdEQWEBM.png?alt=media&token=e2f32302-310d-4619-a80d-27c48066dbd6)",
              ":block/order": 1
             }
            ],
-           ":block/uid": "j99y-86X8",
-           ":block/string": "Special Features::",
+           ":block/uid": "cUB7tIivb",
+           ":block/string": "Masonry add-on",
+           ":block/order": 3
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "kpghibyq0",
+             ":block/string": "Colorful shadowed indent levels",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "tEOzo_p11",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamcss%2FksQEhPdk3w.png?alt=media&token=27cc4bd1-b2c1-46ba-b757-31e50da5e957)",
+             ":block/order": 1
+            }
+           ],
+           ":block/uid": "DNrOCRMiD",
+           ":block/string": "Rainbow indents add-on",
+           ":block/order": 4
+          }
+         ],
+         ":block/uid": "IADtsUga7",
+         ":block/string": "Special Features::",
+         ":block/order": 3
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "EiKfxPiuW"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "RA1UXmzp0"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "i-UPF9rf6",
+               ":block/string": "```css\n@import url('https://abhayprasanna.github.io/optional.css');```",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "9Mab_t0Vm",
+             ":block/string": "{{[[roam/css]]}}",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "CqY1TMGLH",
+           ":block/string": "Various optional adjustments I use in my own theme (annotated in code):",
            ":block/order": 2
+          },
+          {
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "NfZ-xipBw"
+              }
+             ],
+             ":block/uid": "VQfi1ze_s",
+             ":block/string": "material-palenight-roam [*](((NfZ-xipBw)))",
+             ":block/order": 0
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "iwbzGyhHg"
+              }
+             ],
+             ":block/uid": "3IN7FwJKj",
+             ":block/string": "shades-of-purple [*](((iwbzGyhHg)))",
+             ":block/order": 2
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "MAx6iJEHs"
+              }
+             ],
+             ":block/uid": "M0Ss6czIW",
+             ":block/string": "dark-night-roam [*](((MAx6iJEHs)))",
+             ":block/order": 1
+            }
+           ],
+           ":block/uid": "iKt4vnWF4",
+           ":block/string": "Replace \"dark-age-dracula\" with the following for other colorsets:",
+           ":block/order": 1
           },
           {
            ":block/refs": [
             {
-             ":block/uid": "Hc4H-JsI6"
-            },
+             ":block/uid": "RA1UXmzp0"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "iSAbiFQwu",
+             ":block/string": "```css\n@import url('https://abhayprasanna.github.io/material-palenight-roam.css');\n@import url('https://abhayprasanna.github.io/rainbow-indent.css');\n@import url('https://abhayprasanna.github.io/dark-masonry.css') (min-width:700px);```",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "A5cDfa_dk",
+           ":block/string": "{{[[roam/css]]}}",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "vjWpqirM0",
+         ":block/string": "Code::",
+         ":block/order": 4
+        }
+       ],
+       ":block/uid": "F_Zt4TcQ1",
+       ":block/string": "[[\"Advaita\" aka Better Dark Age / Dracula Pro]]",
+       ":block/heading": 3,
+       ":block/order": 0
+      }
+     ],
+     ":block/uid": "QqbLy5Fzo",
+     ":block/string": "**Team Favorites**",
+     ":block/heading": 2,
+     ":block/order": 2
+    },
+    {
+     ":block/children": [
+      {
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "EiKfxPiuW"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "06-04-2020"
+            }
+           ],
+           ":block/uid": "elDbApYRH",
+           ":block/string": "Last updated [[June 4th, 2020]]",
+           ":block/order": 0
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "RA1UXmzp0"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "A3fNn1kcg",
+             ":block/string": "```css\n:root {\n    --custom-background-color: lightsteelblue;\n    --custom-background-color-hover: orange;\n    }\n\n\n.rm-page-ref-link-color{\n   color:black !important;\n    background: linear-gradient(0deg, var(--custom-background-color) 2px, white 1px, transparent 1px);\n    background-position: 0 100%;\n    line-height: 24px;\n    padding-bottom: 4px;\n}\n\n.rm-page-ref-link-color:hover{\n   color:black !important;\n    background: linear-gradient(0deg, var(--custom-background-color-hover) 2px, white 1px, transparent 1px);\n    background-position: 0 100%;\n    text-decoration: none;\n    line-height: 24px;\n    padding-bottom: 4px;\n}\n\n.rm-page-ref-link-color .rm-page-ref-link-color {\ncolor: black !important;\n  background: linear-gradient(0deg, var(--custom-background-color) 2px, white 1px, transparent 1px);\n    background-position: 0 100%;\n   line-height: 28px;\n    padding-bottom: 8px;\n}\n\n.rm-page-ref-link-color .rm-page-ref-link-color:hover {\ncolor: black !important;\n  background: linear-gradient(0deg, var(--custom-background-color-hover) 2px, white 1px, transparent 1px);\n    background-position: 0 100%;\n   line-height: 28px;\n    padding-bottom: 8px;\n}\n\n\n.rm-page-ref-link-color .rm-page-ref-link-color .rm-page-ref-link-color {\ncolor: black !important;\nbackground: linear-gradient(0deg, var(--custom-background-color) 2px, white 1px, transparent 1px);\n    background-position: 0 100%;\n   line-height: 32px;\n    padding-bottom: 12px;\n}\n\n\n.rm-page-ref-link-color .rm-page-ref-link-color .rm-page-ref-link-color:hover {\ncolor: black !important;\nbackground: linear-gradient(0deg, var(--custom-background-color-hover) 2px, white 1px, transparent 1px);\n    background-position: 0 100%;\n   line-height: 32px;\n    padding-bottom: 12px;\n}```",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "HfYFFOGZb",
+           ":block/string": "{{[[roam/css]]}}",
+           ":block/order": 1
+          }
+         ],
+         ":block/uid": "MdM99jF3i",
+         ":block/string": "Code::",
+         ":block/order": 3
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "O3Zn34Tzh"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "DCAcgJCRJ",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2FNRBiiUtnF-.png?alt=media&token=233612e7-2aeb-4d13-b28e-8b9cc806d173)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "-4pbwFCbt",
+           ":block/string": "Additional underlining for nested tags ",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "SXHd7zKT4",
+         ":block/string": "Special Features::",
+         ":block/order": 2
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "Hc4H-JsI6"
+          },
+          {
+           ":block/uid": "972cuvF-X"
+          }
+         ],
+         ":block/uid": "-Je-lXUMK",
+         ":block/string": "Designer:: [[Cato Minor]]",
+         ":block/order": 1
+        },
+        {
+         ":block/uid": "NfoDHXF2s",
+         ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2Fqr3tGRCd-s.png?alt=media&token=31913a3e-546a-4955-87fe-2c9ad8fd160f)",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "zw4Z7i4wd",
+       ":block/string": "Nested Links",
+       ":block/heading": 3,
+       ":block/order": 0
+      }
+     ],
+     ":block/uid": "Z98EL6rVb",
+     ":block/string": "**Feature Expansions**",
+     ":block/heading": 2,
+     ":block/order": 3
+    },
+    {
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "dA3yiHcLZ"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "EiKfxPiuW"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "RA1UXmzp0"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "btYeZARio",
+             ":block/string": "```css\n/* IMPORT CORE THEME */\n@import url('https://azlen.github.io/roam-themes/core.css');\n\n/* GOOGLE FONTS */\n@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');\t\n\n:root {\t\n    --page-width: 616px;\n    --page-order: row-reverse; /* new pages show up to the right */\n    /*--page-order: row; /* new pages show up to the left */\n    \n    --header-font: \"Source Sans Pro\", \"Inter\", sans-serif;\t\n    --body-font: \"Source Sans Pro\", \"Inter\", sans-serif;\t\n    \t\n    --bg-color: #EEEEEE;\t\n    --page-color: rgba(255, 255, 255, 0.95);\t\n    \t\n    --text-color: #000000;\t\n    --icon-color: #5c7080;\n    --bullet-color: rgba(0, 0, 0, 0.2);\t\n    \t\n    --page-shadow: 0px 8px 14px rgba(0, 0, 0, 0.05);\t\n    \t\n    --color-primary: 73, 197, 91;\t\n    --color-primary-contrast: #FFFFFF;\t\n    --color-secondary: 147, 100, 235;\n\n    --color-secondary-contrast: #FFFFFF;\t\n}\n\n/* CHANGE COLOURS IN CANVAS */\ncanvas[data-id=\"layer2-node\"] {\t\n    filter: invert(1) hue-rotate(110deg) saturate(2.5);\t\n}```",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "6BxsI8c_R",
+           ":block/string": "{{[[roam/css]]}}",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "9JhNiVPNy",
+         ":block/string": "Code::",
+         ":block/order": 5
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "O3Zn34Tzh"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/uid": "PX8wdX_cX",
+           ":block/string": "Collapsible columns -- side-by-side view for items opened in the sidebar ",
+           ":block/order": 0
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "KBWy_hR0m",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FOAvb9EDHlf.png?alt=media&token=c0737a55-e90a-4f85-baa3-cc4797b24834)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "_BQ5T8s43",
+           ":block/string": "Overlay side-by-side view over graph/diagram",
+           ":block/order": 2
+          },
+          {
+           ":block/uid": "n7Pli5CF9",
+           ":block/string": "Searchbar appears in main page ",
+           ":block/order": 1
+          }
+         ],
+         ":block/uid": "j99y-86X8",
+         ":block/string": "Special Features::",
+         ":block/order": 4
+        },
+        {
+         ":block/uid": "YSLds5TJI",
+         ":block/string": "Love this theme? Say thanks via [Paypal](https://www.paypal.me/azlenelza). ",
+         ":block/order": 3
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "Hc4H-JsI6"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
             {
              ":block/uid": "FwyVaTvlS"
             }
@@ -21839,7 +22398,7 @@
              ],
              ":block/uid": "HoIhuL7Cz",
              ":block/string": "Also created ((dQE5DoOsq)) and ((tljHVAbLS))",
-             ":block/order": 2
+             ":block/order": 1
             },
             {
              ":block/refs": [
@@ -21850,40 +22409,158 @@
              ":block/uid": "wELq9VXp9",
              ":block/string": "Twitter:: [@azlenelza](https://twitter.com/azlenelza) ",
              ":block/order": 0
-            },
-            {
-             ":block/uid": "YSLds5TJI",
-             ":block/string": "Love this theme? Say thanks via [Paypal](https://www.paypal.me/azlenelza). ",
-             ":block/order": 1
             }
            ],
            ":block/uid": "mTZZG7AYj",
-           ":block/string": "Designer:: [[Azlen Elza]]",
-           ":block/order": 1
-          },
+           ":block/string": "[[Azlen Elza]]",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "5I3ow97P0",
+         ":block/string": "Designer::",
+         ":block/order": 2
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "Aa7fywYAg"
+          }
+         ],
+         ":block/children": [
           {
            ":block/uid": "s3ZFvjM_F",
            ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2FpF2OCzwlH2.png?alt=media&token=4bd42cd5-cd10-49a6-a915-a328ff067467)",
            ":block/order": 0
           }
          ],
-         ":block/uid": "gmu7ilUeY",
-         ":block/string": "[[Zenith]]",
-         ":block/heading": 3,
-         ":block/order": 4
+         ":block/uid": "n8Qn991H1",
+         ":block/string": "Screenshots::",
+         ":block/order": 0
         },
         {
          ":block/refs": [
           {
-           ":block/uid": "-IeoleIYG"
+           ":block/uid": "X2nqzttup"
+          }
+         ],
+         ":block/uid": "XOBru4pSw",
+         ":block/string": "Github Link:: https://github.com/azlen/roam-themes",
+         ":block/order": 1
+        }
+       ],
+       ":block/uid": "gmu7ilUeY",
+       ":block/string": "[[Zenith]]",
+       ":block/heading": 3,
+       ":block/order": 2
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "-IeoleIYG"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "O3Zn34Tzh"
           }
          ],
          ":block/children": [
           {
            ":block/refs": [
             {
-             ":block/uid": "Hc4H-JsI6"
-            },
+             ":block/uid": "KzuqwTPYl"
+            }
+           ],
+           ":block/uid": "vB4HFKjsh",
+           ":block/string": "#[[Dark Mode]] but only if your OS is set to dark! ",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "jv4qsg1dr",
+         ":block/string": "Special Features::",
+         ":block/order": 4
+        },
+        {
+         ":block/uid": "uynqvJ-SL",
+         ":block/string": "Love this theme? Say thanks via [Paypal](https://www.paypal.me/linuz90)",
+         ":block/order": 3
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "EiKfxPiuW"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "RA1UXmzp0"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "RocQ0cNGR",
+             ":block/string": "```css\n:root {\n  --font-size: 15.5px;\n  --border-color: rgba(0, 0, 0, 0.08);\n  --subtle-border-color: rgba(0, 0, 0, 0.05);\n  --main-background-color: hsl(210, 9%, 98%);\n  --body-background-color: #ffffff;\n  --reference-item-background: hsl(0, 0%, 99%);\n  --brackets-color: rgba(0, 0, 0, 0.25);\n  --empty-text-color: hsl(203, 12%, 75%); }\n\n.rm-title-untitled,\n#block-input-ghost > span,\ntextarea::placeholder {\n  color: var(--empty-text-color) !important; }\n\nbody,\ndiv,\ntextarea,\n.level2 {\n  font-family: 'Quattro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; }\n\niframe {\n  border: none !important; }\n\n.loading-astrolabe {\n  position: absolute !important;\n  width: 80px !important;\n  height: 80px !important;\n  opacity: 0.3 !important;\n  top: calc(50% - 40px) !important;\n  left: calc(50% - 40px) !important; }\n\n#roam-sidebar-logo {\n  display: none !important; }\n\nbody,\n#app {\n  background: var(--main-background-color) !important; }\n\n.roam-center {\n  border-left: 1px solid var(--border-color) !important;\n  border-top: 1px solid var(--border-color) !important;\n  border-right: 1px solid var(--border-color) !important;\n  border-radius: 6px;\n  box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.04) !important;\n  overflow: visible !important;\n  background: var(--body-background-color) !important;\n  margin-top: 10px;\n  margin-right: 16px;\n  margin-left: 16px; }\n  .roam-center > div:first-child {\n    padding-right: calc(0.5 * (100% - 820px)) !important;\n    padding-left: calc(0.5 * (100% - 820px)) !important; }\n\n.roam-topbar {\n  background: var(--main-background-color) !important; }\n  .roam-topbar input#find-or-create-input {\n    box-shadow: none !important;\n    border: 1px solid var(--border-color) !important; }\n\n.roam-body,\n.roam-topbar,\n#right-sidebar,\n.roam-sidebar-container {\n  background: transparent !important; }\n\n#right-sidebar {\n  border: none !important;\n  transition: none !important;\n  overflow: hidden !important; }\n  #right-sidebar h1 {\n    font-size: 18px !important; }\n  #right-sidebar #roam-right-sidebar-content > div[style] {\n    border-bottom: 1px solid var(--subtle-border-color) !important; }\n  #right-sidebar .hoverparent,\n  #right-sidebar .react-resizable {\n    max-width: 100% !important; }\n    #right-sidebar .hoverparent img,\n    #right-sidebar .react-resizable img {\n      max-width: 100% !important; }\n\n.rm-page-ref-tag {\n  color: #9099a1 !important; }\n\nspan.checkmark {\n  top: -2px; }\n\n.rm-level1 div,\n.rm-level1 textarea {\n  font-size: 22px !important;\n  line-height: 1.5 !important; }\n\n.rm-level2 div,\n.rm-level2 textarea {\n  font-size: 20px !important;\n  line-height: 1.5 !important; }\n\n.rm-level3 div,\n.rm-level3 textarea {\n  font-size: 18px !important;\n  line-height: 1.5 !important; }\n\n.level2 {\n  font-weight: inherit !important; }\n\n.roam-log-container .roam-log-page {\n  border-top: 1px solid var(--subtle-border-color) !important; }\n  .roam-log-container .roam-log-page:first-child {\n    min-height: 0 !important;\n    border-top: none !important; }\n\n.rm-reference-item {\n  background: var(--reference-item-background) !important;\n  border: 1px solid #f0f0f0 !important;\n  border-radius: 6px !important;\n  padding: 8px 10px 8px 2px !important; }\n  .rm-reference-item .rm-block-text {\n    font-size: var(--font-size) !important; }\n\n.CodeMirror {\n  font-size: 13px !important; }\n\n.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .log-button:hover,\n.roam-body\n.roam-app\n.roam-sidebar-container\n.roam-sidebar-content\n.starred-pages-wrapper\n.starred-pages\n.page:hover {\n  color: inherit !important;\n  background-color: transparent !important; }\n\n.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .log-button,\n.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper,\n.roam-body\n.roam-app\n.roam-sidebar-container\n.roam-sidebar-content\n.starred-pages-wrapper\n.starred-pages\n.page,\n.bp3-minimal > div {\n  color: #666666 !important;\n  font-size: 13px !important; }\n\n.roam-sidebar-content {\n  padding: 0 !important; }\n  .roam-sidebar-content > div:not(.log-button):not(:first-child) {\n    padding: 0 !important; }\n  .roam-sidebar-content > div:first-child {\n    padding-bottom: 18px !important; }\n\n.starred-pages-wrapper > div:first-child {\n  display: none; }\n.starred-pages-wrapper .flex-h-box,\n.starred-pages-wrapper .flex-h-box span {\n  font-size: 13px !important;\n  opacity: 0.6 !important; }\n\n.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .log-button,\n.roam-body\n.roam-app\n.roam-sidebar-container\n.roam-sidebar-content\n.starred-pages-wrapper\n.starred-pages\n.page {\n  padding: 6px 24px 6px !important; }\n\n.bp3-icon-small {\n  padding-left: 24px !important; }\n\n.rm-block-text {\n  max-width: 640px !important;\n  font-size: var(--font-size) !important; }\n\n.block-bullet-view {\n  margin-bottom: 3px !important; }\n\n.roam-article > div > div h1 {\n  font-size: 26px !important;\n  font-weight: 700 !important;\n  height: auto !important;\n  line-height: 1.5 !important; }\n\n.rm-title-display,\n.rm-title-textarea {\n  height: auto !important;\n  line-height: 1.5 !important; }\n\n.roam-log-container .roam-log-preview h1 {\n  font-size: 22px !important;\n  font-weight: 700 !important; }\n\nstrong {\n  font-weight: 700 !important; }\n\n.block-border-left {\n  border-left-color: var(--subtle-border-color) !important; }\n\n.rm-reference-main div > strong {\n  color: gray !important; }\n\n@media (prefers-color-scheme: dark) {\n  body {\n    background: #171717 !important; }\n\n  #app {\n    filter: invert(1) hue-rotate(180deg) !important; }\n\n  img,\n  div#buffer,\n  .bp3-portal,\n  .intercom-app,\n  .loading-astrolabe,\n  .bp3-dialog,\n  .twitter-tweet,\n  iframe {\n    filter: invert(1) hue-rotate(180deg) !important; }\n\n  .roam-highlight {\n    background-color: #e2cb47 !important; }\n\n  .bp3-overlay-backdrop {\n    background-color: rgba(255, 255, 255, 0.7) !important; }\n\n  :root {\n    --border-color: rgba(0, 0, 0, 0.07) !important;\n    --subtle-border-color: rgba(0, 0, 0, 0.05) !important;\n    --main-background-color: hsl(0, 0%, 96%) !important;\n    --body-background-color: hsl(0, 0%, 90%) !important;\n    --reference-item-background: hsl(0, 0%, 93%) !important;\n    --brackets-color: rgba(0, 0, 0, 0.3) !important;\n    --empty-text-color: hsl(203, 5%, 70%); } }```",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "LvNBpRNp4",
+           ":block/string": "{{[[roam/css]]}}",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "lDujXemQa",
+         ":block/string": "Code::",
+         ":block/order": 5
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "Aa7fywYAg"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "ShTx0eiSP",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2FqEbHtYl5zg.png?alt=media&token=50a57675-7928-450a-b53d-23a4f5c276fc)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "SHw_GWXJY",
+           ":block/string": "If your OS is in Dark Mode:",
+           ":block/order": 1
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "_ZVDbdm-G",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FnoeJ9L0SQp.png?alt=media&token=dcfd7281-104d-4fbc-b88b-0f93de7c4f4f)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "pxUK03lZK",
+           ":block/string": "If your OS is in Light Mode:",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "qAfG4LEX5",
+         ":block/string": "Screenshots::",
+         ":block/order": 0
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "Hc4H-JsI6"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
             {
              ":block/uid": "XMMKW0rhv"
             }
@@ -21898,56 +22575,380 @@
              ":block/uid": "ThxGRpSX2",
              ":block/string": "Twitter:: [@linuz90](https://twitter.com/linuz90)",
              ":block/order": 0
-            },
-            {
-             ":block/uid": "uynqvJ-SL",
-             ":block/string": "Love this theme? Say thanks via [Paypal](https://www.paypal.me/linuz90)",
-             ":block/order": 1
             }
            ],
            ":block/uid": "73QA-8OGX",
-           ":block/string": "Designer:: [[Fabrizio Rinaldi]]",
+           ":block/string": "[[Fabrizio Rinaldi]]",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "6zxvy0lSc",
+         ":block/string": "Designer::",
+         ":block/order": 2
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "X2nqzttup"
+          }
+         ],
+         ":block/uid": "5lGnb2XZa",
+         ":block/string": "Github Link:: https://github.com/linuz90/better-roam-research",
+         ":block/order": 1
+        }
+       ],
+       ":block/uid": "kPY5SQCv9",
+       ":block/string": "[[Better Roam Research]]",
+       ":block/heading": 3,
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "h7VZihOjj"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "O3Zn34Tzh"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "dA3yiHcLZ"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "n7Pli5CF9"
+              }
+             ],
+             ":block/uid": "jrHOFv8bA",
+             ":block/string": "((n7Pli5CF9))",
+             ":block/order": 1
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "_BQ5T8s43"
+              }
+             ],
+             ":block/uid": "tSQhkjXn2",
+             ":block/string": "((_BQ5T8s43))",
+             ":block/order": 2
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "PX8wdX_cX"
+              }
+             ],
+             ":block/uid": "oqyIMg724",
+             ":block/string": "((PX8wdX_cX))",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "B04L8uSux",
+           ":block/string": "Variation on [[Zenith]] which has: ",
            ":block/order": 1
           },
           {
            ":block/refs": [
             {
-             ":block/uid": "O3Zn34Tzh"
+             ":block/uid": "KzuqwTPYl"
+            }
+           ],
+           ":block/uid": "ArJroSNKX",
+           ":block/string": "#[[Dark Mode]]",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "M7Hmhurq9",
+         ":block/string": "Special Features::",
+         ":block/order": 3
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "EiKfxPiuW"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "RA1UXmzp0"
             }
            ],
            ":block/children": [
             {
-             ":block/refs": [
-              {
-               ":block/uid": "KzuqwTPYl"
-              }
-             ],
-             ":block/uid": "vB4HFKjsh",
-             ":block/string": "#[[Dark Mode]] but only if your OS is set to dark! ",
+             ":block/uid": "4Fhd4l28k",
+             ":block/string": "```css\n/* IMPORT CORE THEME */\n@import url('https://azlen.github.io/roam-themes/core.css');\n\n/* GOOGLE FONTS */\n@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@600&display=swap');\n@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap');\n\n/* VARIABLES */\n:root {\n    --page-width: 616px;\n    \n    --header-font: \"Oxanium\", \"Inter\", sans-serif;\n    --body-font: \"Ubuntu\", \"Inter\", sans-serif;\n    \n    --bg-color: #000000;\n    --page-color: rgba(44, 44, 44, 0.95);\n    \n    --text-color: #FFFFFF;\n    --icon-color: rgb(102, 102, 102);\n    --bullet-color: rgba(255, 255, 255, 0.3);\n    \n    --page-shadow: 0px 8px 14px rgba(0, 0, 0, 0.25);\n    \n    --color-primary: 47, 155, 249;\n    --color-primary-contrast: #FFFFFF;\n    --color-secondary: 228, 78, 244;\n    \n    --color-secondary-contrast: #FFFFFF;\n}\n\n/* CHANGE COLOURS IN CANVAS */\ncanvas[data-id=\"layer2-node\"] {\n    filter: invert(1) contrast(1.1) hue-rotate(180deg) saturate(2);\n}\n\n/* CODE BLOCK STYLING */\n/* modified from https://codemirror.net/demo/theme.html#night */\n.CodeMirror { background: var(--bg-color) !important; color: #f8f8f8 !important; }\ndiv.CodeMirror-selected { background: #447 !important;  }\n.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: rgba(68, 68, 119, .99); }\n.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: rgba(68, 68, 119, .99); }\n.CodeMirror-gutters { background: var(--bg-color); border-right: 1px solid #252525; }\n.CodeMirror-guttermarker { color: white !important; }\n.CodeMirror-guttermarker-subtle { color: #bbb !important; }\n.CodeMirror-linenumber { color: #f8f8f8; }\n.CodeMirror-cursor { border-left: 1px solid white !important; }\nspan.cm-qualifier { color: #666666 !important; }\nspan.cm-comment { color: #C71FF9 !important; }\nspan.cm-atom { color: #B58AFD !important; }\nspan.cm-number, span.cm-attribute { color: #ffd500 !important; }\nspan.cm-keyword { color: #599eff !important; }\nspan.cm-string { color: #37f14a !important; }\nspan.cm-meta { color: #369BFF !important; }\nspan.cm-variable-2, span.cm-tag { color: #99b2ff !important; }\nspan.cm-variable-3, span.cm-def, span.cm-type { color: white !important; }\nspan.cm-bracket { color: #8da6ce !important; }\nspan.cm-builtin, pan.cm-special { color: #ff9e59 !important; }\nspan.cm-link { color: #845dc4 !important; }\nspan.cm-error { color: #F41000 !important; }\n.CodeMirror-activeline-background { background: #1C005A !important; }\n.CodeMirror-matchingbracket { outline:1px solid grey !important; color:white !important; }```",
              ":block/order": 0
             }
            ],
-           ":block/uid": "jv4qsg1dr",
-           ":block/string": "Special Features::",
+           ":block/uid": "FGGm1UQmD",
+           ":block/string": "{{[[roam/css]]}}",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "EQfR_mPpR",
+         ":block/string": "Code::",
+         ":block/order": 4
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "Hc4H-JsI6"
+          },
+          {
+           ":block/uid": "FwyVaTvlS"
+          }
+         ],
+         ":block/uid": "SOk4vSxfn",
+         ":block/string": "Designer:: [[Azlen Elza]]",
+         ":block/order": 2
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "Aa7fywYAg"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/uid": "DgDSJyZIt",
+           ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2FZqga3Oe0uc.png?alt=media&token=ca5c4739-ef61-4dea-a241-eaa81a5450bf)",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "9GW5gEtrG",
+         ":block/string": "Screenshots::",
+         ":block/order": 0
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "X2nqzttup"
+          }
+         ],
+         ":block/uid": "bIezVb5K3",
+         ":block/string": "Github Link:: https://github.com/azlen/roam-themes",
+         ":block/order": 1
+        }
+       ],
+       ":block/uid": "dQE5DoOsq",
+       ":block/string": "[[Cosmonaut]]",
+       ":block/heading": 3,
+       ":block/order": 3
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "OtV-xSQ5U"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "O3Zn34Tzh"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "_BQ5T8s43"
+            }
+           ],
+           ":block/uid": "wcZ4DsER1",
+           ":block/string": "((_BQ5T8s43))",
            ":block/order": 2
           },
           {
            ":block/refs": [
             {
-             ":block/uid": "EiKfxPiuW"
+             ":block/uid": "PX8wdX_cX"
+            }
+           ],
+           ":block/uid": "VhmR1ojsE",
+           ":block/string": "((PX8wdX_cX))",
+           ":block/order": 0
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "n7Pli5CF9"
+            }
+           ],
+           ":block/uid": "6GwbvkKit",
+           ":block/string": "((n7Pli5CF9))",
+           ":block/order": 1
+          }
+         ],
+         ":block/uid": "GBEb1ol6Z",
+         ":block/string": "Special Features:: ",
+         ":block/order": 3
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "Hc4H-JsI6"
+          },
+          {
+           ":block/uid": "FwyVaTvlS"
+          }
+         ],
+         ":block/uid": "qA6U1Txfd",
+         ":block/string": "Designer:: [[Azlen Elza]]",
+         ":block/order": 2
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "EiKfxPiuW"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "RA1UXmzp0"
             }
            ],
            ":block/children": [
             {
+             ":block/uid": "-ciEhcQ38",
+             ":block/string": "```css\n/* IMPORT CORE THEME */\n@import url('https://azlen.github.io/roam-themes/core.css');\n\n/* GOOGLE FONTS */\n@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');\n\n/* VARIABLES */\n:root {\n    --page-width: 616px;\n    \n    --header-font: \"Crimson Text\", serif;\n    --body-font: \"Crimson Text\", serif;\n    \n    --bg-color: #f5f1e2;\n    --page-color: rgba(236, 231, 209, .95);\n    \n    --text-color: #000000;\n    --icon-color: #5c7080;\n    --bullet-color: rgba(0, 0, 0, 0.2);\n    \n    --page-shadow: 0px 8px 14px rgba(0, 0, 0, 0.02);\n    --color-primary: 181, 124, 38;\n    --color-primary-contrast: #FFFFFF;\n    --color-secondary: 100, 181, 38;\n    \n    --color-secondary-contrast: #FFFFFF;\n}\n\n/* YGGDRASIL CUSTOM STYLES */\n\n.rm-page-ref-tag {\n    padding: 3px 6px 2px 6px;\n}\n\n/* reverse colours for saving / saving-remote so that green is used for \"saved\" */\n.rm-saving-icon .rm-synced {\n    background-color: rgb(var(--color-secondary));\n}\n.rm-saving-icon .rm-saving-remote {\n    background-color: rgb(var(--color-primary));\n}\n\n.block-bullet-view .bp3-button:not([class*=\"bp3-icon\"]) {\n    padding: 5px 14px 0px 14px!important;\n}\n\n.kanban-card {\n    box-shadow: 0px 1px 2px rgba(0,0,0, 0.3);\n}\n.kanban-column {\n    background-color: var(--bg-color);\n}\n\n/* CHANGE COLOURS IN CANVAS */\n\ncanvas[data-id=\"layer2-node\"] {\n    filter: invert(1) hue-rotate(170deg) saturate(2.5);\n}```",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "TdRQKfuzG",
+           ":block/string": "{{[[roam/css]]}}",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "uL5VaFrXI",
+         ":block/string": "Code::",
+         ":block/order": 4
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "Aa7fywYAg"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/uid": "9pQwpDCRh",
+           ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2FT0iQmFOXwm.png?alt=media&token=3cdca40f-d2bb-4217-9f26-b44c825f88be)",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "2ijacjqkX",
+         ":block/string": "Screenshots::",
+         ":block/order": 0
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "X2nqzttup"
+          }
+         ],
+         ":block/uid": "NImwGcvGr",
+         ":block/string": "Github Link:: https://github.com/azlen/roam-themes",
+         ":block/order": 1
+        }
+       ],
+       ":block/uid": "tljHVAbLS",
+       ":block/string": "[[Yggdrasil]]",
+       ":block/heading": 3,
+       ":block/order": 4
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "M9Sq9wvj5"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "Aa7fywYAg"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/uid": "FPNwNtOyG",
+           ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamcss%2F866sLcv-ZR.png?alt=media&token=7656688e-3cf9-4d05-9636-16e0ec5eed96)",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "QJ2iTukeY",
+         ":block/string": "Screenshots::",
+         ":block/order": 0
+        },
+        {
+         ":block/uid": "aJW_ikXLJ",
+         ":block/string": "Love this theme? Say thanks via [Cash App](https://cash.app/$jeffharris) or [paypal](https://paypal.me/jmharris903?locale.x=en_US)",
+         ":block/order": 3
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "O3Zn34Tzh"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/children": [
+            {
              ":block/refs": [
               {
-               ":block/uid": "06-04-2020"
+               ":block/uid": "jVfcR_x97"
+              },
+              {
+               ":block/uid": "zY7IbxgjZ"
+              },
+              {
+               ":block/uid": "_z8_Loz0m"
+              },
+              {
+               ":block/uid": "4JFnRoZvK"
+              },
+              {
+               ":block/uid": "JSlcOUPZZ"
               }
              ],
-             ":block/uid": "lcn3MdUhI",
-             ":block/string": "Last updated [[June 4th, 2020]]. If it's been a while, you can check [Github](https://github.com/linuz90/better-roam-research) for the latest version. ",
+             ":block/uid": "DabMRgyVP",
+             ":block/string": "MINIMIZE QUERIES: add any one of the following tags before the beginning of your query (in the same block): #min-title = hides the page reference link / page title #min-con = hides the contextual reference information (breadcrumbs) #minimal = hides both the title and the context #min-q = hides the query string, similar to legacy behavior #min-all = hides everything — title, context, and query string",
              ":block/order": 0
-            },
+            }
+           ],
+           ":block/uid": "Uety8XrhI",
+           ":block/string": "Customize query display",
+           ":block/order": 1
+          },
+          {
+           ":block/uid": "WxJqL4zL6",
+           ":block/string": "Expanded Bullet collapse",
+           ":block/order": 2
+          },
+          {
+           ":block/uid": "06wtbewmU",
+           ":block/string": "Fullwidth search bar",
+           ":block/order": 3
+          },
+          {
+           ":block/children": [
             {
              ":block/refs": [
               {
@@ -21956,263 +22957,65 @@
              ],
              ":block/children": [
               {
-               ":block/uid": "RocQ0cNGR",
-               ":block/string": "```css\n:root {\n  --font-size: 15.5px;\n  --border-color: rgba(0, 0, 0, 0.08);\n  --subtle-border-color: rgba(0, 0, 0, 0.05);\n  --main-background-color: hsl(210, 9%, 98%);\n  --body-background-color: #ffffff;\n  --reference-item-background: hsl(0, 0%, 99%);\n  --brackets-color: rgba(0, 0, 0, 0.25);\n  --empty-text-color: hsl(203, 12%, 75%); }\n\n.rm-title-untitled,\n#block-input-ghost > span,\ntextarea::placeholder {\n  color: var(--empty-text-color) !important; }\n\nbody,\ndiv,\ntextarea,\n.level2 {\n  font-family: 'Quattro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; }\n\niframe {\n  border: none !important; }\n\n.loading-astrolabe {\n  position: absolute !important;\n  width: 80px !important;\n  height: 80px !important;\n  opacity: 0.3 !important;\n  top: calc(50% - 40px) !important;\n  left: calc(50% - 40px) !important; }\n\n#roam-sidebar-logo {\n  display: none !important; }\n\nbody,\n#app {\n  background: var(--main-background-color) !important; }\n\n.roam-center {\n  border-left: 1px solid var(--border-color) !important;\n  border-top: 1px solid var(--border-color) !important;\n  border-right: 1px solid var(--border-color) !important;\n  border-radius: 6px;\n  box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.04) !important;\n  overflow: visible !important;\n  background: var(--body-background-color) !important;\n  margin-top: 10px;\n  margin-right: 16px;\n  margin-left: 16px; }\n  .roam-center > div:first-child {\n    padding-right: calc(0.5 * (100% - 820px)) !important;\n    padding-left: calc(0.5 * (100% - 820px)) !important; }\n\n.roam-topbar {\n  background: var(--main-background-color) !important; }\n  .roam-topbar input#find-or-create-input {\n    box-shadow: none !important;\n    border: 1px solid var(--border-color) !important; }\n\n.roam-body,\n.roam-topbar,\n#right-sidebar,\n.roam-sidebar-container {\n  background: transparent !important; }\n\n#right-sidebar {\n  border: none !important;\n  transition: none !important;\n  overflow: hidden !important; }\n  #right-sidebar h1 {\n    font-size: 18px !important; }\n  #right-sidebar #roam-right-sidebar-content > div[style] {\n    border-bottom: 1px solid var(--subtle-border-color) !important; }\n  #right-sidebar .hoverparent,\n  #right-sidebar .react-resizable {\n    max-width: 100% !important; }\n    #right-sidebar .hoverparent img,\n    #right-sidebar .react-resizable img {\n      max-width: 100% !important; }\n\n.rm-page-ref-tag {\n  color: #9099a1 !important; }\n\nspan.checkmark {\n  top: -2px; }\n\n.rm-level1 div,\n.rm-level1 textarea {\n  font-size: 22px !important;\n  line-height: 1.5 !important; }\n\n.rm-level2 div,\n.rm-level2 textarea {\n  font-size: 20px !important;\n  line-height: 1.5 !important; }\n\n.rm-level3 div,\n.rm-level3 textarea {\n  font-size: 18px !important;\n  line-height: 1.5 !important; }\n\n.level2 {\n  font-weight: inherit !important; }\n\n.roam-log-container .roam-log-page {\n  border-top: 1px solid var(--subtle-border-color) !important; }\n  .roam-log-container .roam-log-page:first-child {\n    min-height: 0 !important;\n    border-top: none !important; }\n\n.rm-reference-item {\n  background: var(--reference-item-background) !important;\n  border: 1px solid #f0f0f0 !important;\n  border-radius: 6px !important;\n  padding: 8px 10px 8px 2px !important; }\n  .rm-reference-item .rm-block-text {\n    font-size: var(--font-size) !important; }\n\n.CodeMirror {\n  font-size: 13px !important; }\n\n.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .log-button:hover,\n.roam-body\n.roam-app\n.roam-sidebar-container\n.roam-sidebar-content\n.starred-pages-wrapper\n.starred-pages\n.page:hover {\n  color: inherit !important;\n  background-color: transparent !important; }\n\n.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .log-button,\n.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper,\n.roam-body\n.roam-app\n.roam-sidebar-container\n.roam-sidebar-content\n.starred-pages-wrapper\n.starred-pages\n.page,\n.bp3-minimal > div {\n  color: #666666 !important;\n  font-size: 13px !important; }\n\n.roam-sidebar-content {\n  padding: 0 !important; }\n  .roam-sidebar-content > div:not(.log-button):not(:first-child) {\n    padding: 0 !important; }\n  .roam-sidebar-content > div:first-child {\n    padding-bottom: 18px !important; }\n\n.starred-pages-wrapper > div:first-child {\n  display: none; }\n.starred-pages-wrapper .flex-h-box,\n.starred-pages-wrapper .flex-h-box span {\n  font-size: 13px !important;\n  opacity: 0.6 !important; }\n\n.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .log-button,\n.roam-body\n.roam-app\n.roam-sidebar-container\n.roam-sidebar-content\n.starred-pages-wrapper\n.starred-pages\n.page {\n  padding: 6px 24px 6px !important; }\n\n.bp3-icon-small {\n  padding-left: 24px !important; }\n\n.rm-block-text {\n  max-width: 640px !important;\n  font-size: var(--font-size) !important; }\n\n.block-bullet-view {\n  margin-bottom: 3px !important; }\n\n.roam-article > div > div h1 {\n  font-size: 26px !important;\n  font-weight: 700 !important;\n  height: auto !important;\n  line-height: 1.5 !important; }\n\n.rm-title-display,\n.rm-title-textarea {\n  height: auto !important;\n  line-height: 1.5 !important; }\n\n.roam-log-container .roam-log-preview h1 {\n  font-size: 22px !important;\n  font-weight: 700 !important; }\n\nstrong {\n  font-weight: 700 !important; }\n\n.block-border-left {\n  border-left-color: var(--subtle-border-color) !important; }\n\n.rm-reference-main div > strong {\n  color: gray !important; }\n\n@media (prefers-color-scheme: dark) {\n  body {\n    background: #171717 !important; }\n\n  #app {\n    filter: invert(1) hue-rotate(180deg) !important; }\n\n  img,\n  div#buffer,\n  .bp3-portal,\n  .intercom-app,\n  .loading-astrolabe,\n  .bp3-dialog,\n  .twitter-tweet,\n  iframe {\n    filter: invert(1) hue-rotate(180deg) !important; }\n\n  .roam-highlight {\n    background-color: #e2cb47 !important; }\n\n  .bp3-overlay-backdrop {\n    background-color: rgba(255, 255, 255, 0.7) !important; }\n\n  :root {\n    --border-color: rgba(0, 0, 0, 0.07) !important;\n    --subtle-border-color: rgba(0, 0, 0, 0.05) !important;\n    --main-background-color: hsl(0, 0%, 96%) !important;\n    --body-background-color: hsl(0, 0%, 90%) !important;\n    --reference-item-background: hsl(0, 0%, 93%) !important;\n    --brackets-color: rgba(0, 0, 0, 0.3) !important;\n    --empty-text-color: hsl(203, 5%, 70%); } }```",
+               ":block/uid": "1Fz_J3950",
+               ":block/string": "```css\n\n:root {\n  /* Roam default variables */\n\n  --primary-color: #137cbd;\n  --s1: 8px;\n  --background-color: #e1e8ed;\n\n  /* Primary fonts */\n\n  --main-font: 'Inter', sans-serif;\n  --main-font-color: #999;\n  --main-font-size: 14px;\n  --code-font: 'Source Code Pro', 'Courier New', Courier, monospace;\n  --code-font-color: #6d9cbe;\n  --code-font-size: 0.9rem;\n  --caret-color: #0080ff;\n\n  /* Fonts */\n\n  --alias-bg: transparent;\n  --alias-font-color: #fecf2b;\n  --attr-font-color: rgba(17, 137, 189, 0.65);\n  --block-ref-bg: none;\n  --block-ref-border: rgba(254, 207, 43, 0.6);\n  --block-ref-font-size: 1em;\n  --block-ref-hover: #eb9854;\n  --block-ref-hover-bg: #111;\n  --breadcrumb-bg: transparent;\n  --breadcrumb-color: #5c7080;\n  --breadcrumb-font-size: 13px;\n  --breadcrumb-line-height: 0.85em;\n  --calculation-color: #ff6000;\n  --db-menu-bg: #333;\n  --db-menu-border: #3d3d3d;\n  --db-menu-header: #5c7080;\n  --db-menu-item: #eb9854;\n  --db-title-font-color: #eb9854;\n  --db-title-hover: rgba(167, 182, 194, 0.3);\n  --dialog-bg: #333;\n  --dialog-font-color: #eee;\n  --emphasis: #fc5963;\n  --external-link-color: #8dbb40;\n  --h1-font: var(--main-font);\n  --h1-font-color: #1189bd;\n  --h1-font-size: 2.25em;\n  --h1-font__link--color: var(--page-link-color);\n  --h2-font: var(--h1-font);\n  --h2-font-color: #1189bd;\n  --h2-font-size: 1.625em;\n  --h2-font__link--color: var(--page-link-color);\n  --h3-font: var(--h1-font);\n  --h3-font-color: #1189bd;\n  --h3-font-size: 1.2rem;\n  --h3-font__link--color: var(--page-link-color);\n  --hashtag: #e9892475;\n  --highlight-background-color: #008aff5e;\n  --highlight-font-color: #bbb;\n  --highlight-link-color: #ff6000;\n  --left-sidebar-font-color: #1189bd;\n  --left-sidebar-font-color-hover: #e98924;\n  --left-sidebar-font-size: 1rem;\n  --left-sidebar-shortcuts-color: var(--left-sidebar-font-color);\n  --left-sidebar-shortcuts-font-size: 1rem;\n  --left-sidebar-shortcuts-title-color: var(--left-sidebar-font-color);\n  --page-brackets: rgba(228, 124, 67, 0.25);\n  --page-link-color: #eb9854;\n  --page-link-namespace-color: #ebd454;\n  --popover-font-color: #e98924;\n  --popover-bg: #333;\n  --ref-count-font-size: 0.8em;\n  --right-sidebar-font-color: var(--main-font-color);\n  --right-sidebar-link-color: #eb9854;\n  --right-sidebar-bg: #323232;\n  --right-sidebar-masonry-bg: var(--body-bg);\n  --right-sidebar-masonry-outline: #3d3d3d;\n  --right-sidebar-section-border-color: #e9892475;\n  --search-bg: #252525;\n  --search-body-font-color: #8a9ba8;\n  --search-font-color: #af671c;\n  --search-new-page-color: #8dbb40;\n  --search-outline: #e9892475;\n  --search-selected-row: #4c4c4c;\n  --strong: #508bb5;\n  --tag-font-color: #777;\n  --tag-font-color-hover: #fff;\n  --tag-hover-bg: #e98924;\n  --tag-padding: 0.071428571em 0.428571429em 0.214285714em;\n  --tag-radius: 2em;\n\n  /* Backgrounds and objects */\n\n  --block-highlight: #00588e;\n  --block-highlight-current: rgba(255, 255, 255, 0.05);\n  --block-highlight-bg: #312c28; // This is the Mentions background highlight color\n  // --body-bg: #232323;\n  --body-bg: #2c2c2c;\n  --bullet: rgba(225, 117, 28, 0.3);\n  --bullet-closed: rgba(225, 117, 28, 1);\n  --bullet-closed-right-sidebar: var(--bullet-closed);\n  --bullet-outline: #404040;\n  --bullet-outline-highlight: #ff9500;\n  --bullet-outline-hover: #ff9500b3; //recommend this be 70% of --bullet-outline-highlight\n  --bullet-position: 4px;\n  --bullet-version: #137cbd;\n  --checkmark-border: #137cbd;\n  --checkmark-bg: #555;\n  --checkmark-color: #137cbd;\n  --code-bg: #002b36;\n  --datepicker-bg: transparent;\n  --datepicker-day-wrapper: #d9822b7a;\n  --datepicker-font-color: var(--popover-font-color);\n  --datepicker-select-bg: #444;\n  --hr: rgba(225, 117, 28, 0.5);\n  --icon-bg-hover: rgba(167, 182, 194, 0.3);\n  --icon-color: #e78924;\n  --icon-color-hover: #e78924;\n  --inline-search-bg: #333;\n  --inline-comment-bg: transparent;\n  --inline-comment-bg-hover: var(--reference-item-bg);\n  // --left-sidebar-bg: #2b2b2b;\n  --left-sidebar-bg: #323232;\n  --left-sidebar-hover-bg: #1f1f1f;\n  --reference-item-bg: #d8ac6e1a; // JH: Railscast uses 1 semi-transparent color for all three bg values\n  --reference-item-bg-2: #d8ac6e1a;\n  --reference-item-bg-3: #d8ac6e1a;\n  --section-border-color: #e9892475;\n  --select-bg: #232323;\n  --topbar-bg: var(--body-bg);\n  --topbar-border-color: #333;\n\n  /* Misc */\n\n  --pages-delete-bg: #222; // modal variable\n  --pages-delete-border-color: #d8e1e8; // JH: modal variable, New variable TODO add to body .delete-all-dialog-items\n  --pages-header-row-bg: #262626;\n  --pages-header-row-font-color: #bfccd6;\n  --pages-mentions-bg-empty: #3a3a3a;\n  --pages-mentions-color: #ff6000;\n  --pages-mentions-color-empty: #737373;\n  --pages-row-highlight: #292929;\n  --pages-search-bg: #3a3a3a;\n  --pages-search-outline: #e9892475;\n  // --pages-search-outline: var(--search-outline); //no longer exists in Roam, add if needed for Theme or replace with inherit or initial?\n  --pages-table-border: #2f373d;\n  --pages-sorted-color: #508bb5;\n\n  --table-border: #444;\n  --table-font-size: 0.85rem;\n\n  --kanban-board-bg: #333333;\n  --kanban-card-bg: #555555;\n  --kanban-card-font-color: #6d9cbe;\n  --kanban-column-bg: #454545;\n  --kanban-column-font-color: #e98924;\n\n  --encrypted-font-color: #ff6000;\n  --encrypted-bg: #222;\n\n  --pomodoro-bg: transparent;\n  --pomodoro-color: #fc5963;\n  --pomodoro-border: #fc596370;\n\n  --blockquote-font-color: rgba(109, 156, 190, 0.89);\n  --blockquote-font-size: 14px;\n  --blockquote-border-color: #30404d;\n  --blockquote-bg: none;\n  --blockquote-cite: #777;\n\n  --emoji-bg: #2d2d2d;\n  --emoji-border: rgba(225, 117, 28, 0.4);\n  --emoji-color: #aaa;\n\n  --no-query-results: 'Query returned no results';\n  --no-query-results-color: #fc5963;\n  --query-results-border: #f2c98f1a;\n\n  --q1: #50b2c0;\n  --q2: #c5d86d;\n  --q3: #ff6b6b;\n  --q4: #ca7d4a;\n\n  /* Scrollbar settings - to disable set values to none */\n\n  --scrollbar-thumb: #323232;\n  --scrollbar-track: rgba(153, 153, 153, 0.1);\n\n  /* Saving icon colors */\n\n  --saving-local: #99280f;\n  --saving-remote: #d9822b;\n  --synched: #0f9960;```",
                ":block/order": 0
               }
              ],
-             ":block/uid": "LvNBpRNp4",
+             ":block/uid": "tk7Nd8Hen",
              ":block/string": "{{[[roam/css]]}}",
-             ":block/order": 1
-            }
-           ],
-           ":block/uid": "lDujXemQa",
-           ":block/string": "Code::",
-           ":block/order": 3
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "Aa7fywYAg"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/children": [
-              {
-               ":block/uid": "ShTx0eiSP",
-               ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2FqEbHtYl5zg.png?alt=media&token=50a57675-7928-450a-b53d-23a4f5c276fc)",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "SHw_GWXJY",
-             ":block/string": "If your OS is in Dark Mode:",
-             ":block/order": 1
-            },
-            {
-             ":block/children": [
-              {
-               ":block/uid": "_ZVDbdm-G",
-               ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FnoeJ9L0SQp.png?alt=media&token=dcfd7281-104d-4fbc-b88b-0f93de7c4f4f)",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "pxUK03lZK",
-             ":block/string": "If your OS is in Light Mode:",
              ":block/order": 0
             }
            ],
-           ":block/uid": "qAfG4LEX5",
-           ":block/string": "Screenshots::",
+           ":block/uid": "mQZVI8OYa",
+           ":block/string": "Robust variables for customization",
            ":block/order": 0
           }
          ],
-         ":block/uid": "kPY5SQCv9",
-         ":block/string": "[[Better Roam Research]]",
-         ":block/heading": 3,
-         ":block/order": 2
+         ":block/uid": "y9-PJowsT",
+         ":block/string": "Special Features::",
+         ":block/order": 4
         },
         {
          ":block/refs": [
           {
-           ":block/uid": "Rqn91pDZa"
+           ":block/uid": "EiKfxPiuW"
           }
          ],
          ":block/children": [
           {
            ":block/refs": [
             {
-             ":block/uid": "EiKfxPiuW"
+             ":block/uid": "RA1UXmzp0"
             }
            ],
            ":block/children": [
             {
-             ":block/refs": [
-              {
-               ":block/uid": "CQzpM2OA5"
-              }
-             ],
-             ":block/children": [
-              {
-               ":block/refs": [
-                {
-                 ":block/uid": "RA1UXmzp0"
-                }
-               ],
-               ":block/children": [
-                {
-                 ":block/uid": "D65iwM2X0",
-                 ":block/string": "```css\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n    font-family: \"Lato\", sans-serif;\n    font-size: 3em;\n}\ndiv,\ntextarea {\n    font-weight: 400;\n    color: #3F4758;\n    font-size: 1.002em;\n}\n.roam-block-container {\n    max-width: 1000px;\n}\n\n.rm-pomodoro {\n    background: #fff !important;\n    color: #ff4747 !important;\n    padding: 4px 14px;\n    line-height: 2em;\n    font-weight: 600;\n    border-radius: 2em;\n    border: 1px solid #ff474770;\n}\n\n.rm-pomodoro {\n    background: #ff6956 !important;\n    color: #fff !important;\n    padding: 4px 14px;\n    line-height: 2em;\n    font-weight: 600;\n    border-radius: 2em;\n    border: 1px solid #ed5845;\n}\n\n.rm-pomodoro::first-letter {\n  margin-right: 8px;\n}\n\n.rm-query {\n    border: 0.5px solid #e4e9ec;\n    border-radius: 5px;\n    \n}\n\n.rm-query .rm-query-title {\n    background-color: #f7f8f8;\n    padding: 0.8em;\n    color: #d1dbe2;\n    font-size: 80%;\n}\n\n.rm-reference-main.rm-query-content {\n    padding: 0.8em;\n}\n\n.rm-reference-main .rm-reference-item .rm-block-text {\n    font-size: 90%;\n}\n\n.rm-ref-page-view-title span {\n    \n}\n\n.rm-reference-main .rm-reference-item .controls {\n    margin-left: -1em;\n}\n\n.rm-ref-page-view {\n    padding: 0.4em 0.2em;\n}\n\n.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .page {\n    padding: 6px;\n}\n\ndiv.flex-v-box.starred-pages-wrapper > div.flex-h-box > span {\n    font-size: 14px !important;\n    opacity: 80%;\n    letter-spacing: 0.04em;\n}\n\ndiv.roam-sidebar-container.noselect > div > div {\n    font-size: 14px !important;\n    letter-spacing: 0.03em;\n    \n}\n\n#block-input {\n    background: white;\n}\n\n.roam-body #block-input > span > div {\n    padding: 6px 24px;\n    background: white;\n}\n\nspan.bp3-icon-small.bp3-icon-star {\n    display: none;\n    visibility: hidden;\n}\n\n.roam-block {\n    max-width: 850px;\n}\n\n#right-sidebar > div {\n    background-color: #f7f8fa;\n    border-left: 1px solid #e9ebef;\n}\n.controls .simple-bullet-outer .simple-bullet-inner {\n    background-color: #e5e9f2;\n}\n.block-border-left {\n    border-left: 1px solid #f3f6f7;\n}\n.kanban-board {\n    background-color: #fff;\n}\n.kanban-card {\n    background-color: white;\n    margin: 8px;\n    box-shadow: 0px 1px 2px #9eb3c0a8;\n    padding: 10px;\n    border-radius: 2px;\n    line-height: 1.3em;\n}\n.kanban-title {\n    text-align: center;\n    font-weight: 600;\n    font-size: 1.1em;\n    opacity: 80%;\n    color: #485f6f;\n    padding-top: 8px;\n    border-bottom: 1px solid #c5d1d8;\n}\n.kanban-column {\n    background-color: #e7eff3;\n    margin: 0px 4px 0px 4px;\n    padding: 4px;\n    min-width: 200px;\n    border-radius: 3px;\n}\n\n\n.rm-block-ref::before {\n    content: '';\n    display: inline-block;\n    width: 2px;\n    border-radius: 40px;\n    height: 12px;\n    background: #ff913c;\n    margin-right: 8px;\n}\n.rm-block-ref {\n    border-bottom: none;\n    font-size: 1em;\n    color: #515e70;\n}\n.rm-block-ref:hover {\n    background: none;\n    cursor: pointer;\n}\n.checkmark {\n    background: #fff;\n}\n.check-container input:checked ~ .checkmark {\n    background: #33bdea;\n}\n.check-container input:checked ~ .checkmark:after {\n    border-color: #fff;\n}\n.rm-reference-item {\n    margin-top: 8px;\n    border-radius: 6px;\n    border: 1px solid #e4e9ee;\n    margin-right: 8px;\n    flex: 1 1 100%;\n    word-break: break-word;\n    background-color: #f7f9fb;\n    padding: 8px;\n}\n\n.rm-level2 {\n    font-size: 1.5em;\n}\n.rm-level3 {\n    color: #939aae;\n    font-weight: 400;\n    font-size: 1.3em;\n}\n.rm-page-ref {\n    color: #9aabd0;\n}\n.rm-page-ref-link-color {\n    color: #ec6f35;\n    font-weight: 600;\n}\na {\n    color: #8A3CC8;\n}\n.intercom-app,\n.intercom-launcher-frame,\n#intercom-container {\n    display: none !important;\n}\n.roam-body .roam-app .roam-sidebar-container {\n    background-color: white;\n    border-right: 1px #eee solid;\n}\n.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .page,\n.roam-body .roam-app .roam-sidebar-container > * {\n    opacity: 80%;\n    box-shadow: none;\n}\n.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .page:hover,\n.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .log-button:hover {\n    background: white;\n    color: black;\n    opacity: 100%;\n}\n#buffer.tall {\n    height: calc(100vh - 50px) !important;\n}\n.check-container {\n    padding-right: 4px;\n}\nspan.rm-page-ref {\n    border-radius: 2px;\n    padding-left: 1px;\n    padding-right: 1px;\n}\n.content span.rm-page-ref {\n    padding: 4px 1px 1px;\n    /* required for fixing azo */\n}\n.center-proj {\n    text-align: center;\n}\n\n```",
-                 ":block/order": 0
-                }
-               ],
-               ":block/uid": "5frytqNHz",
-               ":block/string": "{{[[roam/css]]}}",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "5JysL1BW4",
-             ":block/string": "[[Site-wide]]",
-             ":block/order": 1
-            },
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "CAYGhv3Ex"
-              }
-             ],
-             ":block/children": [
-              {
-               ":block/refs": [
-                {
-                 ":block/uid": "RA1UXmzp0"
-                }
-               ],
-               ":block/children": [
-                {
-                 ":block/uid": "vhRfBT-cI",
-                 ":block/string": "```css\n\n/* Custom data tags */\nspan.rm-page-ref[data-tag=\"Tweet\"] {\n    background: #81D5ED !important;\n    color: white !important;\n    padding: 3px 7px;\n    line-height: 2em;\n    font-weight: 500;\n}\n\nspan.rm-page-ref[data-tag=\"Literature Notes\"] {\n    background: #9769FF !important;\n    color: white !important;\n    padding: 3px 7px;\n    font-weight: 500;\n    line-height: 2em;\n}\n\n\nspan.rm-page-ref[data-tag=\"Evergreens\"] {\n    background: #0DBAC6 !important;\n    color: #fff !important;\n    padding: 3px 8px;\n    line-height: 2em;\n    font-weight: 500;\n}\n\nspan.rm-page-ref[data-tag=\"Seedling\"] {\n    color: #0dbac6 !important;\n    padding: 3px 3px;\n    font-weight: 600;\n    line-height: 1.4em;\n}\n\nspan.rm-page-ref[data-tag=\"Idea Bank\"] {\n    color: #FCB815 !important;\n    padding: 3px 4px;\n    font-weight: 700;\n    line-height: 1.4em;\n}\n\nspan.rm-page-ref[data-tag=\"Idea Bank\"]:before {\n    content: '✦ '\n}\n\nspan.rm-page-ref[data-tag=\"Illustrated Notes\"] {\n    color: #7172FC;\n    padding: 3px 4px;\n    font-weight: 700;\n    line-height: 1.4em;\n}\n\nspan.rm-page-ref[data-tag=\"Garden Notes\"] {\n    color: #9DBC13;\n    padding: 3px 4px;\n    font-weight: 700;\n    line-height: 1.4em;\n}\n\nspan.rm-page-ref[data-tag=\"Video Tutorial\"] {\n    color: #db3b8d;\n    padding: 3px 4px;\n    line-height: 1.4em;\n    font-weight: 700;\n}\n\nspan.rm-page-ref[data-tag=\"Essay\"] {\n    background: #ADCB2A;\n    color: #fff;\n    padding: 3px 7px;\n    line-height: 2em;\n    font-weight: 500;\n}\n\n\nspan.rm-page-ref[data-tag=\"Livestream\"] {\n    color: #B979CF;\n    padding: 3px 4px;\n    line-height: 1.4em;\n    font-weight: 700;\n}\n\nspan.rm-page-ref[data-tag=\"Talk\"] {\n    background: #7172FC;\n    color: #fff;\n    padding: 3px 7px;\n    line-height: 2em;\n    font-weight: 500;\n}\n\nspan.rm-page-ref[data-tag=\"Waiting\"] {\n    background: #F9C866;\n    color: #fff;\n    padding: 3px 7px;\n    line-height: 2em;\n    font-weight: 500;\n}\n\nspan.rm-page-ref[data-tag=\"Researching\"] {\n    background: #FF9D66 !important;\n    color: #fff;\n    padding: 3px 7px;\n    line-height: 2em;\n    font-weight: 500;\n}\n\nspan.rm-page-ref[data-tag=\"Synthesising\"] {\n    background: #FC766F !important;\n    color: #fff !important;\n    padding: 3px 7px;\n    line-height: 2em;\n    font-weight: 500;\n}\n\n\nspan.rm-page-ref[data-tag=\"Alive\"] {\n    background: #EE5F85 !important;\n    color: #fff !important;\n    padding: 3px 7px;\n    line-height: 2em;\n    font-weight: 500;\n}```",
-                 ":block/order": 0
-                }
-               ],
-               ":block/uid": "UTYi03F79",
-               ":block/string": "{{[[roam/css]]}}",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "HdHehJEXV",
-             ":block/string": "[[Tag Styles]]",
-             ":block/order": 2
-            },
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "06-04-2020"
-              }
-             ],
-             ":block/uid": "FpHeVDAGz",
-             ":block/string": "Last updated [[June 4th, 2020]]",
+             ":block/uid": "ZvrokB5X6",
+             ":block/string": "```css\n@import url('https://jmharris903.github.io/Railscast-for-Roam-Research-Theme/RailsRoam.css');```",
              ":block/order": 0
             }
            ],
-           ":block/uid": "ojvkReCpl",
-           ":block/string": "Code::",
-           ":block/order": 3
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "O3Zn34Tzh"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/uid": "pcY8Xhi0r",
-             ":block/string": "Queries and Kanbans got some extra love. ",
-             ":block/order": 0
-            },
-            {
-             ":block/children": [
-              {
-               ":block/uid": "d8PvhQG4m",
-               ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2FER9x_LvrLc.png?alt=media&token=4860ec31-f27e-45c7-adaa-194594cc55e2)",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "tJCpZRq75",
-             ":block/string": "Custom data-tags are all at the end of the CSS file, which you'll probably want to edit/customise. ",
-             ":block/order": 1
-            }
-           ],
-           ":block/uid": "xUMGmrt4M",
-           ":block/string": "Special Features::",
-           ":block/order": 2
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "_xVV2Rpw_"
-            },
-            {
-             ":block/uid": "Hc4H-JsI6"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/uid": "xUKv7kz2d",
-             ":block/string": "Love this theme? Say thanks via [Paypal](https://paypal.me/maggieappleton)",
-             ":block/order": 1
-            },
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "SwSub32Iu"
-              }
-             ],
-             ":block/uid": "y9Zlhx_rN",
-             ":block/string": "Twitter:: [@mappletons](https://twitter.com/mappletons)",
-             ":block/order": 0
-            }
-           ],
-           ":block/uid": "tkFt9F4ay",
-           ":block/string": "Designer:: [[Maggie Appleton]]",
-           ":block/order": 1
-          },
-          {
-           ":block/uid": "wKv26nqYn",
-           ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2Ffc9tIphX_X.png?alt=media&token=f6c09e01-742a-478d-a537-0b3a88796325)",
+           ":block/uid": "cr_jozK9Z",
+           ":block/string": "{{[[roam/css]]}}",
            ":block/order": 0
           }
          ],
-         ":block/uid": "ilbMpkUFC",
-         ":block/string": "[[Leyendecker]]",
-         ":block/heading": 3,
-         ":block/order": 3
+         ":block/uid": "Q9vNFtFF7",
+         ":block/string": "Code::",
+         ":block/order": 5
         },
         {
          ":block/refs": [
           {
-           ":block/uid": "M9Sq9wvj5"
+           ":block/uid": "Hc4H-JsI6"
           }
          ],
          ":block/children": [
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "Aa7fywYAg"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/uid": "FPNwNtOyG",
-             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamcss%2F866sLcv-ZR.png?alt=media&token=7656688e-3cf9-4d05-9636-16e0ec5eed96)",
-             ":block/order": 0
-            }
-           ],
-           ":block/uid": "QJ2iTukeY",
-           ":block/string": "Screenshots::",
-           ":block/order": 0
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "01-06-2021"
-            },
-            {
-             ":block/uid": "I9wRqoPTi"
-            }
-           ],
-           ":block/uid": "x2g0ZEqhP",
-           ":block/string": "Last updated:: [[January 6th, 2021]]",
-           ":block/order": 1
-          },
           {
            ":block/refs": [
             {
              ":block/uid": "pWRyFfmVo"
-            },
-            {
-             ":block/uid": "Hc4H-JsI6"
             }
            ],
            ":block/children": [
@@ -22225,849 +23028,41 @@
              ":block/uid": "9Hy83Yld_",
              ":block/string": "Twitter:: [@jeffharrissays](https://twitter.com/jeffharrissays)",
              ":block/order": 0
-            },
-            {
-             ":block/uid": "aJW_ikXLJ",
-             ":block/string": "Love this theme? Say thanks via [Cash App](https://cash.app/$jeffharris) or [paypal](https://paypal.me/jmharris903?locale.x=en_US)",
-             ":block/order": 1
             }
            ],
            ":block/uid": "DwXKayVx2",
-           ":block/string": "Designer:: [[Jeff Harris]]",
-           ":block/order": 2
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "O3Zn34Tzh"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/children": [
-              {
-               ":block/refs": [
-                {
-                 ":block/uid": "jVfcR_x97"
-                },
-                {
-                 ":block/uid": "zY7IbxgjZ"
-                },
-                {
-                 ":block/uid": "_z8_Loz0m"
-                },
-                {
-                 ":block/uid": "4JFnRoZvK"
-                },
-                {
-                 ":block/uid": "JSlcOUPZZ"
-                }
-               ],
-               ":block/uid": "DabMRgyVP",
-               ":block/string": "MINIMIZE QUERIES: add any one of the following tags before the beginning of your query (in the same block): #min-title = hides the page reference link / page title #min-con = hides the contextual reference information (breadcrumbs) #minimal = hides both the title and the context #min-q = hides the query string, similar to legacy behavior #min-all = hides everything — title, context, and query string",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "Uety8XrhI",
-             ":block/string": "Customize query display",
-             ":block/order": 1
-            },
-            {
-             ":block/uid": "WxJqL4zL6",
-             ":block/string": "Expanded Bullet collapse",
-             ":block/order": 2
-            },
-            {
-             ":block/uid": "06wtbewmU",
-             ":block/string": "Fullwidth search bar",
-             ":block/order": 3
-            },
-            {
-             ":block/children": [
-              {
-               ":block/refs": [
-                {
-                 ":block/uid": "RA1UXmzp0"
-                }
-               ],
-               ":block/children": [
-                {
-                 ":block/uid": "1Fz_J3950",
-                 ":block/string": "```css\n\n:root {\n  /* Roam default variables */\n\n  --primary-color: #137cbd;\n  --s1: 8px;\n  --background-color: #e1e8ed;\n\n  /* Primary fonts */\n\n  --main-font: 'Inter', sans-serif;\n  --main-font-color: #999;\n  --main-font-size: 14px;\n  --code-font: 'Source Code Pro', 'Courier New', Courier, monospace;\n  --code-font-color: #6d9cbe;\n  --code-font-size: 0.9rem;\n  --caret-color: #0080ff;\n\n  /* Fonts */\n\n  --alias-bg: transparent;\n  --alias-font-color: #fecf2b;\n  --attr-font-color: rgba(17, 137, 189, 0.65);\n  --block-ref-bg: none;\n  --block-ref-border: rgba(254, 207, 43, 0.6);\n  --block-ref-font-size: 1em;\n  --block-ref-hover: #eb9854;\n  --block-ref-hover-bg: #111;\n  --breadcrumb-bg: transparent;\n  --breadcrumb-color: #5c7080;\n  --breadcrumb-font-size: 13px;\n  --breadcrumb-line-height: 0.85em;\n  --calculation-color: #ff6000;\n  --db-menu-bg: #333;\n  --db-menu-border: #3d3d3d;\n  --db-menu-header: #5c7080;\n  --db-menu-item: #eb9854;\n  --db-title-font-color: #eb9854;\n  --db-title-hover: rgba(167, 182, 194, 0.3);\n  --dialog-bg: #333;\n  --dialog-font-color: #eee;\n  --emphasis: #fc5963;\n  --external-link-color: #8dbb40;\n  --h1-font: var(--main-font);\n  --h1-font-color: #1189bd;\n  --h1-font-size: 2.25em;\n  --h1-font__link--color: var(--page-link-color);\n  --h2-font: var(--h1-font);\n  --h2-font-color: #1189bd;\n  --h2-font-size: 1.625em;\n  --h2-font__link--color: var(--page-link-color);\n  --h3-font: var(--h1-font);\n  --h3-font-color: #1189bd;\n  --h3-font-size: 1.2rem;\n  --h3-font__link--color: var(--page-link-color);\n  --hashtag: #e9892475;\n  --highlight-background-color: #008aff5e;\n  --highlight-font-color: #bbb;\n  --highlight-link-color: #ff6000;\n  --left-sidebar-font-color: #1189bd;\n  --left-sidebar-font-color-hover: #e98924;\n  --left-sidebar-font-size: 1rem;\n  --left-sidebar-shortcuts-color: var(--left-sidebar-font-color);\n  --left-sidebar-shortcuts-font-size: 1rem;\n  --left-sidebar-shortcuts-title-color: var(--left-sidebar-font-color);\n  --page-brackets: rgba(228, 124, 67, 0.25);\n  --page-link-color: #eb9854;\n  --page-link-namespace-color: #ebd454;\n  --popover-font-color: #e98924;\n  --popover-bg: #333;\n  --ref-count-font-size: 0.8em;\n  --right-sidebar-font-color: var(--main-font-color);\n  --right-sidebar-link-color: #eb9854;\n  --right-sidebar-bg: #323232;\n  --right-sidebar-masonry-bg: var(--body-bg);\n  --right-sidebar-masonry-outline: #3d3d3d;\n  --right-sidebar-section-border-color: #e9892475;\n  --search-bg: #252525;\n  --search-body-font-color: #8a9ba8;\n  --search-font-color: #af671c;\n  --search-new-page-color: #8dbb40;\n  --search-outline: #e9892475;\n  --search-selected-row: #4c4c4c;\n  --strong: #508bb5;\n  --tag-font-color: #777;\n  --tag-font-color-hover: #fff;\n  --tag-hover-bg: #e98924;\n  --tag-padding: 0.071428571em 0.428571429em 0.214285714em;\n  --tag-radius: 2em;\n\n  /* Backgrounds and objects */\n\n  --block-highlight: #00588e;\n  --block-highlight-current: rgba(255, 255, 255, 0.05);\n  --block-highlight-bg: #312c28; // This is the Mentions background highlight color\n  // --body-bg: #232323;\n  --body-bg: #2c2c2c;\n  --bullet: rgba(225, 117, 28, 0.3);\n  --bullet-closed: rgba(225, 117, 28, 1);\n  --bullet-closed-right-sidebar: var(--bullet-closed);\n  --bullet-outline: #404040;\n  --bullet-outline-highlight: #ff9500;\n  --bullet-outline-hover: #ff9500b3; //recommend this be 70% of --bullet-outline-highlight\n  --bullet-position: 4px;\n  --bullet-version: #137cbd;\n  --checkmark-border: #137cbd;\n  --checkmark-bg: #555;\n  --checkmark-color: #137cbd;\n  --code-bg: #002b36;\n  --datepicker-bg: transparent;\n  --datepicker-day-wrapper: #d9822b7a;\n  --datepicker-font-color: var(--popover-font-color);\n  --datepicker-select-bg: #444;\n  --hr: rgba(225, 117, 28, 0.5);\n  --icon-bg-hover: rgba(167, 182, 194, 0.3);\n  --icon-color: #e78924;\n  --icon-color-hover: #e78924;\n  --inline-search-bg: #333;\n  --inline-comment-bg: transparent;\n  --inline-comment-bg-hover: var(--reference-item-bg);\n  // --left-sidebar-bg: #2b2b2b;\n  --left-sidebar-bg: #323232;\n  --left-sidebar-hover-bg: #1f1f1f;\n  --reference-item-bg: #d8ac6e1a; // JH: Railscast uses 1 semi-transparent color for all three bg values\n  --reference-item-bg-2: #d8ac6e1a;\n  --reference-item-bg-3: #d8ac6e1a;\n  --section-border-color: #e9892475;\n  --select-bg: #232323;\n  --topbar-bg: var(--body-bg);\n  --topbar-border-color: #333;\n\n  /* Misc */\n\n  --pages-delete-bg: #222; // modal variable\n  --pages-delete-border-color: #d8e1e8; // JH: modal variable, New variable TODO add to body .delete-all-dialog-items\n  --pages-header-row-bg: #262626;\n  --pages-header-row-font-color: #bfccd6;\n  --pages-mentions-bg-empty: #3a3a3a;\n  --pages-mentions-color: #ff6000;\n  --pages-mentions-color-empty: #737373;\n  --pages-row-highlight: #292929;\n  --pages-search-bg: #3a3a3a;\n  --pages-search-outline: #e9892475;\n  // --pages-search-outline: var(--search-outline); //no longer exists in Roam, add if needed for Theme or replace with inherit or initial?\n  --pages-table-border: #2f373d;\n  --pages-sorted-color: #508bb5;\n\n  --table-border: #444;\n  --table-font-size: 0.85rem;\n\n  --kanban-board-bg: #333333;\n  --kanban-card-bg: #555555;\n  --kanban-card-font-color: #6d9cbe;\n  --kanban-column-bg: #454545;\n  --kanban-column-font-color: #e98924;\n\n  --encrypted-font-color: #ff6000;\n  --encrypted-bg: #222;\n\n  --pomodoro-bg: transparent;\n  --pomodoro-color: #fc5963;\n  --pomodoro-border: #fc596370;\n\n  --blockquote-font-color: rgba(109, 156, 190, 0.89);\n  --blockquote-font-size: 14px;\n  --blockquote-border-color: #30404d;\n  --blockquote-bg: none;\n  --blockquote-cite: #777;\n\n  --emoji-bg: #2d2d2d;\n  --emoji-border: rgba(225, 117, 28, 0.4);\n  --emoji-color: #aaa;\n\n  --no-query-results: 'Query returned no results';\n  --no-query-results-color: #fc5963;\n  --query-results-border: #f2c98f1a;\n\n  --q1: #50b2c0;\n  --q2: #c5d86d;\n  --q3: #ff6b6b;\n  --q4: #ca7d4a;\n\n  /* Scrollbar settings - to disable set values to none */\n\n  --scrollbar-thumb: #323232;\n  --scrollbar-track: rgba(153, 153, 153, 0.1);\n\n  /* Saving icon colors */\n\n  --saving-local: #99280f;\n  --saving-remote: #d9822b;\n  --synched: #0f9960;```",
-                 ":block/order": 0
-                }
-               ],
-               ":block/uid": "tk7Nd8Hen",
-               ":block/string": "{{[[roam/css]]}}",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "mQZVI8OYa",
-             ":block/string": "Robust variables for customization",
-             ":block/order": 0
-            }
-           ],
-           ":block/uid": "y9-PJowsT",
-           ":block/string": "Special Features::",
-           ":block/order": 3
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "EiKfxPiuW"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "RA1UXmzp0"
-              }
-             ],
-             ":block/children": [
-              {
-               ":block/uid": "ZvrokB5X6",
-               ":block/string": "```css\n@import url('https://jmharris903.github.io/Railscast-for-Roam-Research-Theme/RailsRoam.css');```",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "cr_jozK9Z",
-             ":block/string": "{{[[roam/css]]}}",
-             ":block/order": 0
-            }
-           ],
-           ":block/uid": "Q9vNFtFF7",
-           ":block/string": "Code::",
-           ":block/order": 4
+           ":block/string": "[[Jeff Harris]]",
+           ":block/order": 0
           }
          ],
-         ":block/uid": "SzCGjeH31",
-         ":block/string": "[[Railscast]]",
-         ":block/heading": 3,
-         ":block/order": 1
+         ":block/uid": "i_dZnBk3I",
+         ":block/string": "Designer::",
+         ":block/order": 2
         },
         {
          ":block/refs": [
           {
-           ":block/uid": "9jMw8_MAJ"
+           ":block/uid": "X2nqzttup"
           }
          ],
-         ":block/children": [
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "Aa7fywYAg"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/children": [
-              {
-               ":block/uid": "N6rxNyKVg",
-               ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamcss%2FpHrno4MPZY.png?alt=media&token=608fcfc3-3338-4f57-ab6d-c93b51c1ee9d)",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "FE8ACh_mm",
-             ":block/string": "Dracula Pro",
-             ":block/order": 0
-            }
-           ],
-           ":block/uid": "DuqnX_2mx",
-           ":block/string": "Screenshots::",
-           ":block/order": 0
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "I9wRqoPTi"
-            },
-            {
-             ":block/uid": "12-30-2020"
-            }
-           ],
-           ":block/uid": "4Uvoq2HqL",
-           ":block/string": "Last updated:: [[December 30th, 2020]]",
-           ":block/order": 1
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "Hc4H-JsI6"
-            },
-            {
-             ":block/uid": "IE_X19_Th"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "SwSub32Iu"
-              }
-             ],
-             ":block/uid": "qisvHgmvM",
-             ":block/string": "Twitter:: [@AbhayPrasanna](https://twitter.com/AbhayPrasanna)",
-             ":block/order": 0
-            },
-            {
-             ":block/uid": "DHieX6QY4",
-             ":block/string": "Love this theme? Say thanks via [PayPal](https://www.paypal.me/abhayprasanna) or Venmo @Abhay-Prasanna (all proceeds reinvested in the Roam community!)",
-             ":block/order": 1
-            }
-           ],
-           ":block/uid": "55dXx5ayw",
-           ":block/string": "Designer:: [[Abhay Prasanna]]",
-           ":block/order": 2
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "O3Zn34Tzh"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/uid": "NILIdkU2w",
-             ":block/string": "Very responsive to CSS changes (update within 24 hours)",
-             ":block/order": 0
-            },
-            {
-             ":block/children": [
-              {
-               ":block/children": [
-                {
-                 ":block/uid": "NfZ-xipBw",
-                 ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamcss%2FTKRjaiLAWr.png?alt=media&token=d1e081e4-61ec-48a1-a7b4-5bd3152e59df)",
-                 ":block/order": 0
-                }
-               ],
-               ":block/uid": "kZRlld6ou",
-               ":block/string": "Material Palenight",
-               ":block/order": 0
-              },
-              {
-               ":block/children": [
-                {
-                 ":block/uid": "MAx6iJEHs",
-                 ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamcss%2F_XwEZNszZy.png?alt=media&token=44c6974a-ad96-4a79-870d-68563ff2f8cc)",
-                 ":block/order": 0
-                }
-               ],
-               ":block/uid": "u4OEatoeT",
-               ":block/string": "Dark Night",
-               ":block/order": 1
-              },
-              {
-               ":block/children": [
-                {
-                 ":block/uid": "I6CeLE2IG",
-                 ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamcss%2FWz9h4gySQQ.png?alt=media&token=79399141-5054-4832-8971-057ee944fc8a)",
-                 ":block/order": 0
-                }
-               ],
-               ":block/uid": "iwbzGyhHg",
-               ":block/string": "Shades of Purple",
-               ":block/order": 2
-              }
-             ],
-             ":block/uid": "Y2dmAQgKc",
-             ":block/string": "Multiple Dark Colorsets",
-             ":block/order": 1
-            },
-            {
-             ":block/children": [
-              {
-               ":block/uid": "NZFooZURb",
-               ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamcss%2FTzMglEX3y3.png?alt=media&token=d0ffefe9-e9d9-4429-8f17-d7edae5a4dfb)",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "svBUKZraS",
-             ":block/string": "Switches to Light mode based on OS setting",
-             ":block/order": 2
-            },
-            {
-             ":block/children": [
-              {
-               ":block/uid": "q_RGLDfyl",
-               ":block/string": "Pages stack in columns in sidebar",
-               ":block/order": 0
-              },
-              {
-               ":block/uid": "j9RKbiNpm",
-               ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamcss%2F7kcdEQWEBM.png?alt=media&token=e2f32302-310d-4619-a80d-27c48066dbd6)",
-               ":block/order": 1
-              }
-             ],
-             ":block/uid": "cUB7tIivb",
-             ":block/string": "Masonry add-on",
-             ":block/order": 3
-            },
-            {
-             ":block/children": [
-              {
-               ":block/uid": "kpghibyq0",
-               ":block/string": "Colorful shadowed indent levels",
-               ":block/order": 0
-              },
-              {
-               ":block/uid": "tEOzo_p11",
-               ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froamcss%2FksQEhPdk3w.png?alt=media&token=27cc4bd1-b2c1-46ba-b757-31e50da5e957)",
-               ":block/order": 1
-              }
-             ],
-             ":block/uid": "DNrOCRMiD",
-             ":block/string": "Rainbow indents add-on",
-             ":block/order": 4
-            }
-           ],
-           ":block/uid": "IADtsUga7",
-           ":block/string": "Special Features::",
-           ":block/order": 3
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "EiKfxPiuW"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/children": [
-              {
-               ":block/refs": [
-                {
-                 ":block/uid": "RA1UXmzp0"
-                }
-               ],
-               ":block/children": [
-                {
-                 ":block/uid": "i-UPF9rf6",
-                 ":block/string": "```css\n@import url('https://abhayprasanna.github.io/optional.css');```",
-                 ":block/order": 0
-                }
-               ],
-               ":block/uid": "9Mab_t0Vm",
-               ":block/string": "{{[[roam/css]]}}",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "CqY1TMGLH",
-             ":block/string": "Various optional adjustments I use in my own theme (annotated in code):",
-             ":block/order": 2
-            },
-            {
-             ":block/children": [
-              {
-               ":block/refs": [
-                {
-                 ":block/uid": "NfZ-xipBw"
-                }
-               ],
-               ":block/uid": "VQfi1ze_s",
-               ":block/string": "material-palenight-roam [*](((NfZ-xipBw)))",
-               ":block/order": 0
-              },
-              {
-               ":block/refs": [
-                {
-                 ":block/uid": "iwbzGyhHg"
-                }
-               ],
-               ":block/uid": "3IN7FwJKj",
-               ":block/string": "shades-of-purple [*](((iwbzGyhHg)))",
-               ":block/order": 2
-              },
-              {
-               ":block/refs": [
-                {
-                 ":block/uid": "MAx6iJEHs"
-                }
-               ],
-               ":block/uid": "M0Ss6czIW",
-               ":block/string": "dark-night-roam [*](((MAx6iJEHs)))",
-               ":block/order": 1
-              }
-             ],
-             ":block/uid": "iKt4vnWF4",
-             ":block/string": "Replace \"dark-age-dracula\" with the following for other colorsets:",
-             ":block/order": 1
-            },
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "RA1UXmzp0"
-              }
-             ],
-             ":block/children": [
-              {
-               ":block/uid": "iSAbiFQwu",
-               ":block/string": "```css\n@import url('https://abhayprasanna.github.io/material-palenight-roam.css');\n@import url('https://abhayprasanna.github.io/rainbow-indent.css');\n@import url('https://abhayprasanna.github.io/dark-masonry.css') (min-width:700px);```",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "A5cDfa_dk",
-             ":block/string": "{{[[roam/css]]}}",
-             ":block/order": 0
-            }
-           ],
-           ":block/uid": "vjWpqirM0",
-           ":block/string": "Code::",
-           ":block/order": 4
-          }
-         ],
-         ":block/uid": "F_Zt4TcQ1",
-         ":block/string": "[[\"Advaita\" aka Better Dark Age / Dracula Pro]]",
-         ":block/heading": 3,
-         ":block/order": 0
+         ":block/uid": "WMIEqVqB5",
+         ":block/string": "Github Link:: https://github.com/jmharris903/Railscast-for-Roam-Research-Theme",
+         ":block/order": 1
         }
        ],
-       ":block/uid": "QqbLy5Fzo",
-       ":block/string": "**Team Favorites**",
-       ":block/heading": 2,
-       ":block/order": 2
-      },
-      {
-       ":block/children": [
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "OtV-xSQ5U"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/uid": "9pQwpDCRh",
-           ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2FT0iQmFOXwm.png?alt=media&token=3cdca40f-d2bb-4217-9f26-b44c825f88be)",
-           ":block/order": 0
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "O3Zn34Tzh"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "_BQ5T8s43"
-              }
-             ],
-             ":block/uid": "wcZ4DsER1",
-             ":block/string": "((_BQ5T8s43))",
-             ":block/order": 2
-            },
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "PX8wdX_cX"
-              }
-             ],
-             ":block/uid": "VhmR1ojsE",
-             ":block/string": "((PX8wdX_cX))",
-             ":block/order": 0
-            },
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "n7Pli5CF9"
-              }
-             ],
-             ":block/uid": "6GwbvkKit",
-             ":block/string": "((n7Pli5CF9))",
-             ":block/order": 1
-            }
-           ],
-           ":block/uid": "GBEb1ol6Z",
-           ":block/string": "Special Features:: ",
-           ":block/order": 2
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "Hc4H-JsI6"
-            },
-            {
-             ":block/uid": "FwyVaTvlS"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "wELq9VXp9"
-              }
-             ],
-             ":block/uid": "pJh4LzJeC",
-             ":block/string": "((wELq9VXp9))",
-             ":block/order": 0
-            },
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "gmu7ilUeY"
-              },
-              {
-               ":block/uid": "dQE5DoOsq"
-              }
-             ],
-             ":block/uid": "gdrW5nMTz",
-             ":block/string": "Also created ((dQE5DoOsq)) and ((gmu7ilUeY))",
-             ":block/order": 2
-            },
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "YSLds5TJI"
-              }
-             ],
-             ":block/uid": "TQvBo4FtK",
-             ":block/string": "((YSLds5TJI))",
-             ":block/order": 1
-            }
-           ],
-           ":block/uid": "qA6U1Txfd",
-           ":block/string": "Designer:: [[Azlen Elza]]",
-           ":block/order": 1
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "EiKfxPiuW"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "RA1UXmzp0"
-              }
-             ],
-             ":block/children": [
-              {
-               ":block/uid": "-ciEhcQ38",
-               ":block/string": "```css\n/* IMPORT CORE THEME */\n@import url('https://azlen.github.io/roam-themes/core.css');\n\n/* GOOGLE FONTS */\n@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');\n\n/* VARIABLES */\n:root {\n    --page-width: 616px;\n    \n    --header-font: \"Crimson Text\", serif;\n    --body-font: \"Crimson Text\", serif;\n    \n    --bg-color: #f5f1e2;\n    --page-color: rgba(236, 231, 209, .95);\n    \n    --text-color: #000000;\n    --icon-color: #5c7080;\n    --bullet-color: rgba(0, 0, 0, 0.2);\n    \n    --page-shadow: 0px 8px 14px rgba(0, 0, 0, 0.02);\n    --color-primary: 181, 124, 38;\n    --color-primary-contrast: #FFFFFF;\n    --color-secondary: 100, 181, 38;\n    \n    --color-secondary-contrast: #FFFFFF;\n}\n\n/* YGGDRASIL CUSTOM STYLES */\n\n.rm-page-ref-tag {\n    padding: 3px 6px 2px 6px;\n}\n\n/* reverse colours for saving / saving-remote so that green is used for \"saved\" */\n.rm-saving-icon .rm-synced {\n    background-color: rgb(var(--color-secondary));\n}\n.rm-saving-icon .rm-saving-remote {\n    background-color: rgb(var(--color-primary));\n}\n\n.block-bullet-view .bp3-button:not([class*=\"bp3-icon\"]) {\n    padding: 5px 14px 0px 14px!important;\n}\n\n.kanban-card {\n    box-shadow: 0px 1px 2px rgba(0,0,0, 0.3);\n}\n.kanban-column {\n    background-color: var(--bg-color);\n}\n\n/* CHANGE COLOURS IN CANVAS */\n\ncanvas[data-id=\"layer2-node\"] {\n    filter: invert(1) hue-rotate(170deg) saturate(2.5);\n}```",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "TdRQKfuzG",
-             ":block/string": "{{[[roam/css]]}}",
-             ":block/order": 0
-            }
-           ],
-           ":block/uid": "uL5VaFrXI",
-           ":block/string": "Code::",
-           ":block/order": 3
-          }
-         ],
-         ":block/uid": "tljHVAbLS",
-         ":block/string": "[[Yggdrasil]]",
-         ":block/heading": 3,
-         ":block/order": 0
-        }
-       ],
-       ":block/uid": "nv4fRJQq-",
-       ":block/string": "**More Colors**",
-       ":block/heading": 2,
-       ":block/order": 5
-      },
-      {
-       ":block/children": [
-        {
-         ":block/children": [
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "EiKfxPiuW"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "06-04-2020"
-              }
-             ],
-             ":block/uid": "elDbApYRH",
-             ":block/string": "Last updated [[June 4th, 2020]]",
-             ":block/order": 0
-            },
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "RA1UXmzp0"
-              }
-             ],
-             ":block/children": [
-              {
-               ":block/uid": "A3fNn1kcg",
-               ":block/string": "```css\n:root {\n    --custom-background-color: lightsteelblue;\n    --custom-background-color-hover: orange;\n    }\n\n\n.rm-page-ref-link-color{\n   color:black !important;\n    background: linear-gradient(0deg, var(--custom-background-color) 2px, white 1px, transparent 1px);\n    background-position: 0 100%;\n    line-height: 24px;\n    padding-bottom: 4px;\n}\n\n.rm-page-ref-link-color:hover{\n   color:black !important;\n    background: linear-gradient(0deg, var(--custom-background-color-hover) 2px, white 1px, transparent 1px);\n    background-position: 0 100%;\n    text-decoration: none;\n    line-height: 24px;\n    padding-bottom: 4px;\n}\n\n.rm-page-ref-link-color .rm-page-ref-link-color {\ncolor: black !important;\n  background: linear-gradient(0deg, var(--custom-background-color) 2px, white 1px, transparent 1px);\n    background-position: 0 100%;\n   line-height: 28px;\n    padding-bottom: 8px;\n}\n\n.rm-page-ref-link-color .rm-page-ref-link-color:hover {\ncolor: black !important;\n  background: linear-gradient(0deg, var(--custom-background-color-hover) 2px, white 1px, transparent 1px);\n    background-position: 0 100%;\n   line-height: 28px;\n    padding-bottom: 8px;\n}\n\n\n.rm-page-ref-link-color .rm-page-ref-link-color .rm-page-ref-link-color {\ncolor: black !important;\nbackground: linear-gradient(0deg, var(--custom-background-color) 2px, white 1px, transparent 1px);\n    background-position: 0 100%;\n   line-height: 32px;\n    padding-bottom: 12px;\n}\n\n\n.rm-page-ref-link-color .rm-page-ref-link-color .rm-page-ref-link-color:hover {\ncolor: black !important;\nbackground: linear-gradient(0deg, var(--custom-background-color-hover) 2px, white 1px, transparent 1px);\n    background-position: 0 100%;\n   line-height: 32px;\n    padding-bottom: 12px;\n}```",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "HfYFFOGZb",
-             ":block/string": "{{[[roam/css]]}}",
-             ":block/order": 1
-            }
-           ],
-           ":block/uid": "MdM99jF3i",
-           ":block/string": "Code::",
-           ":block/order": 3
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "O3Zn34Tzh"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/children": [
-              {
-               ":block/uid": "DCAcgJCRJ",
-               ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2FNRBiiUtnF-.png?alt=media&token=233612e7-2aeb-4d13-b28e-8b9cc806d173)",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "-4pbwFCbt",
-             ":block/string": "Additional underlining for nested tags ",
-             ":block/order": 0
-            }
-           ],
-           ":block/uid": "SXHd7zKT4",
-           ":block/string": "Special Features::",
-           ":block/order": 2
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "Hc4H-JsI6"
-            },
-            {
-             ":block/uid": "972cuvF-X"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/uid": "PI_z3kptk",
-             ":block/string": "Love this theme? Say thanks via [Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6AMGMUDRX29XU&source=url)",
-             ":block/order": 1
-            },
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "SwSub32Iu"
-              }
-             ],
-             ":block/uid": "7rGoVhDnS",
-             ":block/string": "Twitter:: [@CatoMinor3](https://twitter.com/CatoMinor3)",
-             ":block/order": 0
-            }
-           ],
-           ":block/uid": "-Je-lXUMK",
-           ":block/string": "Designer:: [[Cato Minor]]",
-           ":block/order": 1
-          },
-          {
-           ":block/uid": "NfoDHXF2s",
-           ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2Fqr3tGRCd-s.png?alt=media&token=31913a3e-546a-4955-87fe-2c9ad8fd160f)",
-           ":block/order": 0
-          }
-         ],
-         ":block/uid": "zw4Z7i4wd",
-         ":block/string": "Nested Links",
-         ":block/heading": 3,
-         ":block/order": 0
-        }
-       ],
-       ":block/uid": "Z98EL6rVb",
-       ":block/string": "**Feature Expansions**",
-       ":block/heading": 2,
-       ":block/order": 4
-      },
-      {
-       ":block/children": [
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "h7VZihOjj"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/uid": "DgDSJyZIt",
-           ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Froam%2FZqga3Oe0uc.png?alt=media&token=ca5c4739-ef61-4dea-a241-eaa81a5450bf)",
-           ":block/order": 0
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "O3Zn34Tzh"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "dA3yiHcLZ"
-              }
-             ],
-             ":block/children": [
-              {
-               ":block/refs": [
-                {
-                 ":block/uid": "n7Pli5CF9"
-                }
-               ],
-               ":block/uid": "jrHOFv8bA",
-               ":block/string": "((n7Pli5CF9))",
-               ":block/order": 1
-              },
-              {
-               ":block/refs": [
-                {
-                 ":block/uid": "_BQ5T8s43"
-                }
-               ],
-               ":block/uid": "tSQhkjXn2",
-               ":block/string": "((_BQ5T8s43))",
-               ":block/order": 2
-              },
-              {
-               ":block/refs": [
-                {
-                 ":block/uid": "PX8wdX_cX"
-                }
-               ],
-               ":block/uid": "oqyIMg724",
-               ":block/string": "((PX8wdX_cX))",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "B04L8uSux",
-             ":block/string": "Variation on [[Zenith]] which has: ",
-             ":block/order": 1
-            },
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "KzuqwTPYl"
-              }
-             ],
-             ":block/uid": "ArJroSNKX",
-             ":block/string": "#[[Dark Mode]]",
-             ":block/order": 0
-            }
-           ],
-           ":block/uid": "M7Hmhurq9",
-           ":block/string": "Special Features::",
-           ":block/order": 2
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "EiKfxPiuW"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "RA1UXmzp0"
-              }
-             ],
-             ":block/children": [
-              {
-               ":block/uid": "4Fhd4l28k",
-               ":block/string": "```css\n/* IMPORT CORE THEME */\n@import url('https://azlen.github.io/roam-themes/core.css');\n\n/* GOOGLE FONTS */\n@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@600&display=swap');\n@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap');\n\n/* VARIABLES */\n:root {\n    --page-width: 616px;\n    \n    --header-font: \"Oxanium\", \"Inter\", sans-serif;\n    --body-font: \"Ubuntu\", \"Inter\", sans-serif;\n    \n    --bg-color: #000000;\n    --page-color: rgba(44, 44, 44, 0.95);\n    \n    --text-color: #FFFFFF;\n    --icon-color: rgb(102, 102, 102);\n    --bullet-color: rgba(255, 255, 255, 0.3);\n    \n    --page-shadow: 0px 8px 14px rgba(0, 0, 0, 0.25);\n    \n    --color-primary: 47, 155, 249;\n    --color-primary-contrast: #FFFFFF;\n    --color-secondary: 228, 78, 244;\n    \n    --color-secondary-contrast: #FFFFFF;\n}\n\n/* CHANGE COLOURS IN CANVAS */\ncanvas[data-id=\"layer2-node\"] {\n    filter: invert(1) contrast(1.1) hue-rotate(180deg) saturate(2);\n}\n\n/* CODE BLOCK STYLING */\n/* modified from https://codemirror.net/demo/theme.html#night */\n.CodeMirror { background: var(--bg-color) !important; color: #f8f8f8 !important; }\ndiv.CodeMirror-selected { background: #447 !important;  }\n.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: rgba(68, 68, 119, .99); }\n.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: rgba(68, 68, 119, .99); }\n.CodeMirror-gutters { background: var(--bg-color); border-right: 1px solid #252525; }\n.CodeMirror-guttermarker { color: white !important; }\n.CodeMirror-guttermarker-subtle { color: #bbb !important; }\n.CodeMirror-linenumber { color: #f8f8f8; }\n.CodeMirror-cursor { border-left: 1px solid white !important; }\nspan.cm-qualifier { color: #666666 !important; }\nspan.cm-comment { color: #C71FF9 !important; }\nspan.cm-atom { color: #B58AFD !important; }\nspan.cm-number, span.cm-attribute { color: #ffd500 !important; }\nspan.cm-keyword { color: #599eff !important; }\nspan.cm-string { color: #37f14a !important; }\nspan.cm-meta { color: #369BFF !important; }\nspan.cm-variable-2, span.cm-tag { color: #99b2ff !important; }\nspan.cm-variable-3, span.cm-def, span.cm-type { color: white !important; }\nspan.cm-bracket { color: #8da6ce !important; }\nspan.cm-builtin, pan.cm-special { color: #ff9e59 !important; }\nspan.cm-link { color: #845dc4 !important; }\nspan.cm-error { color: #F41000 !important; }\n.CodeMirror-activeline-background { background: #1C005A !important; }\n.CodeMirror-matchingbracket { outline:1px solid grey !important; color:white !important; }```",
-               ":block/order": 0
-              }
-             ],
-             ":block/uid": "FGGm1UQmD",
-             ":block/string": "{{[[roam/css]]}}",
-             ":block/order": 0
-            }
-           ],
-           ":block/uid": "EQfR_mPpR",
-           ":block/string": "Code::",
-           ":block/order": 3
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "Hc4H-JsI6"
-            },
-            {
-             ":block/uid": "FwyVaTvlS"
-            }
-           ],
-           ":block/children": [
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "gmu7ilUeY"
-              },
-              {
-               ":block/uid": "tljHVAbLS"
-              }
-             ],
-             ":block/uid": "OgV00GhAO",
-             ":block/string": "Also created ((gmu7ilUeY)) and ((tljHVAbLS))",
-             ":block/order": 2
-            },
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "YSLds5TJI"
-              }
-             ],
-             ":block/uid": "FXvicvahF",
-             ":block/string": "((YSLds5TJI))",
-             ":block/order": 1
-            },
-            {
-             ":block/refs": [
-              {
-               ":block/uid": "wELq9VXp9"
-              }
-             ],
-             ":block/uid": "HRWktXUrd",
-             ":block/string": "((wELq9VXp9))",
-             ":block/order": 0
-            }
-           ],
-           ":block/uid": "SOk4vSxfn",
-           ":block/string": "Designer:: [[Azlen Elza]]",
-           ":block/order": 1
-          }
-         ],
-         ":block/uid": "dQE5DoOsq",
-         ":block/string": "[[Cosmonaut]]",
-         ":block/heading": 3,
-         ":block/order": 0
-        }
-       ],
-       ":block/uid": "ilR7IuMRY",
-       ":block/string": "**Dark Modes**",
-       ":block/heading": 2,
-       ":block/order": 3
-      },
-      {
-       ":block/uid": "GiMeb8ZnM",
-       ":block/string": "[Request to be featured](https://roamresearch.typeform.com/to/g5W8uCqz)",
+       ":block/uid": "SzCGjeH31",
+       ":block/string": "[[Railscast]]",
        ":block/heading": 3,
        ":block/order": 0
       }
      ],
-     ":block/uid": "iIH8nL2fp",
-     ":block/string": "[[.--]]",
-     ":block/order": 0
+     ":block/uid": "lPUd6qJt7",
+     ":block/string": "Older out of date themes (may or may not work right)",
+     ":block/order": 1
     }
    ],
    ":block/uid": "dZV0KPRqu",
-   ":children/view-type": "document"
+   ":children/view-type": "bullet"
   },
   {
    ":node/title": "November 15th, 2021",
@@ -23873,6 +23868,10 @@
    ":block/uid": "HARiHRzcF"
   },
   {
+   ":node/title": "idea",
+   ":block/uid": "MME3bbumg"
+  },
+  {
    ":node/title": "Replace With",
    ":block/uid": "n35OEadDb"
   },
@@ -23988,6 +23987,10 @@
     }
    ],
    ":block/uid": "JsFdrvAde"
+  },
+  {
+   ":node/title": ".italic",
+   ":block/uid": "xMya7noZa"
   },
   {
    ":node/title": "references",
@@ -24611,6 +24614,10 @@
   {
    ":node/title": "Factory Template",
    ":block/uid": "qkCWWggiH"
+  },
+  {
+   ":node/title": "Github Link",
+   ":block/uid": "X2nqzttup"
   },
   {
    ":node/title": "Inline Calculator",
@@ -25399,7 +25406,7 @@
     }
    ],
    ":block/uid": "sHu_QcMSj",
-   ":children/view-type": "document"
+   ":children/view-type": "bullet"
   },
   {
    ":node/title": "April 21st, 2021",
@@ -26881,7 +26888,7 @@
         }
        ],
        ":block/uid": "frdjmHs_p",
-       ":block/string": "Create a page called [[roam/agent guidelines]] in your graph, and connected AI tools will read it before they start working.",
+       ":block/string": "Create a page called [[roam/agent guidelines]] (see this page for an example) in your graph, and connected AI tools will read it before they start working.",
        ":block/order": 0
       },
       {
@@ -28890,6 +28897,10 @@
   {
    ":node/title": ".morning-routine",
    ":block/uid": "L3VZr0a5G"
+  },
+  {
+   ":node/title": ".rounded",
+   ":block/uid": "e6t9Cw0ue"
   },
   {
    ":node/title": "Antifragile",
@@ -34825,7 +34836,7 @@
        ":block/uid": "z7nDW4FYi",
        ":block/string": "[[2021]]",
        ":block/heading": 3,
-       ":block/order": 45
+       ":block/order": 46
       },
       {
        ":block/refs": [
@@ -37988,7 +37999,7 @@
        ":block/uid": "oEUzBpPVt",
        ":block/string": "[[2022]]",
        ":block/heading": 3,
-       ":block/order": 44
+       ":block/order": 45
       },
       {
        ":block/refs": [
@@ -42575,7 +42586,7 @@
        ":block/uid": "3DcyG9fYJ",
        ":block/string": "[[2023]]",
        ":block/heading": 3,
-       ":block/order": 43
+       ":block/order": 44
       },
       {
        ":block/refs": [
@@ -48413,7 +48424,7 @@
        ":block/uid": "N8o9mOFxV",
        ":block/string": "[[2024]]",
        ":block/heading": 3,
-       ":block/order": 42
+       ":block/order": 43
       },
       {
        ":block/refs": [
@@ -48501,7 +48512,7 @@
        ],
        ":block/uid": "mbBXOyRr4",
        ":block/string": "[[January 7th, 2026]]",
-       ":block/order": 40
+       ":block/order": 41
       },
       {
        ":block/refs": [
@@ -49348,7 +49359,7 @@
        ],
        ":block/uid": "D4sWwAFQH",
        ":block/string": "[[January 12th, 2026]]",
-       ":block/order": 39
+       ":block/order": 40
       },
       {
        ":block/refs": [
@@ -49766,7 +49777,7 @@
        ],
        ":block/uid": "fZnJ8SpjV",
        ":block/string": "[[January 16th, 2026]]",
-       ":block/order": 38
+       ":block/order": 39
       },
       {
        ":block/refs": [
@@ -58908,7 +58919,7 @@
        ":block/uid": "e3HyGxGmz",
        ":block/string": "[[2025]]",
        ":block/heading": 3,
-       ":block/order": 41
+       ":block/order": 42
       },
       {
        ":block/refs": [
@@ -59135,7 +59146,7 @@
        ],
        ":block/uid": "DQLXBkLqB",
        ":block/string": "[[January 30th, 2026]]",
-       ":block/order": 37
+       ":block/order": 38
       },
       {
        ":block/refs": [
@@ -59441,7 +59452,7 @@
        ],
        ":block/uid": "faBrrXpMf",
        ":block/string": "[[February 10th, 2026]]",
-       ":block/order": 36
+       ":block/order": 37
       },
       {
        ":block/refs": [
@@ -59498,7 +59509,7 @@
        ],
        ":block/uid": "HGdio9-X1",
        ":block/string": "[[February 11th, 2026]]",
-       ":block/order": 35
+       ":block/order": 36
       },
       {
        ":block/refs": [
@@ -59658,7 +59669,7 @@
        ],
        ":block/uid": "3YbHyvMVu",
        ":block/string": "[[February 18th, 2026]]",
-       ":block/order": 34
+       ":block/order": 35
       },
       {
        ":block/refs": [
@@ -59748,7 +59759,7 @@
        ],
        ":block/uid": "l1CEHstpS",
        ":block/string": "[[February 19th, 2026]]",
-       ":block/order": 33
+       ":block/order": 34
       },
       {
        ":block/refs": [
@@ -59806,7 +59817,7 @@
        ],
        ":block/uid": "w7XCOWrmV",
        ":block/string": "[[February 22nd, 2026]]",
-       ":block/order": 32
+       ":block/order": 33
       },
       {
        ":block/refs": [
@@ -59899,7 +59910,7 @@
        ],
        ":block/uid": "lq5IvpQ7J",
        ":block/string": "[[February 25th, 2026]]",
-       ":block/order": 31
+       ":block/order": 32
       },
       {
        ":block/refs": [
@@ -60697,7 +60708,7 @@
        ],
        ":block/uid": "ipU_NCoCx",
        ":block/string": "[[February 26th, 2026]]",
-       ":block/order": 30
+       ":block/order": 31
       },
       {
        ":block/refs": [
@@ -60745,7 +60756,7 @@
        ],
        ":block/uid": "WO-6A7VX9",
        ":block/string": "[[February 27th, 2026]]",
-       ":block/order": 29
+       ":block/order": 30
       },
       {
        ":block/refs": [
@@ -60880,7 +60891,7 @@
        ],
        ":block/uid": "AHy3mUokJ",
        ":block/string": "[[March 9th, 2026]]",
-       ":block/order": 28
+       ":block/order": 29
       },
       {
        ":block/refs": [
@@ -61050,7 +61061,7 @@
        ],
        ":block/uid": "-R8L5nZLD",
        ":block/string": "[[March 11th, 2026]]",
-       ":block/order": 27
+       ":block/order": 28
       },
       {
        ":block/refs": [
@@ -61174,7 +61185,7 @@
        ],
        ":block/uid": "e5HOoYOYK",
        ":block/string": "[[March 24th, 2026]]",
-       ":block/order": 26
+       ":block/order": 27
       },
       {
        ":block/refs": [
@@ -61213,7 +61224,7 @@
        ],
        ":block/uid": "hP0WzVCb3",
        ":block/string": "[[March 30th, 2026]]",
-       ":block/order": 25
+       ":block/order": 26
       },
       {
        ":block/refs": [
@@ -61712,7 +61723,7 @@
        ],
        ":block/uid": "kYfXB-KfD",
        ":block/string": "[[March 31st, 2026]]",
-       ":block/order": 24
+       ":block/order": 25
       },
       {
        ":block/refs": [
@@ -61776,7 +61787,7 @@
        ],
        ":block/uid": "hy237MoSG",
        ":block/string": "[[April 10th, 2026]]",
-       ":block/order": 23
+       ":block/order": 24
       },
       {
        ":block/refs": [
@@ -61998,7 +62009,7 @@
        ],
        ":block/uid": "Ld3WwhXAJ",
        ":block/string": "[[April 14th, 2026]]",
-       ":block/order": 22
+       ":block/order": 23
       },
       {
        ":block/refs": [
@@ -62049,7 +62060,7 @@
        ],
        ":block/uid": "FX03un0yx",
        ":block/string": "[[April 15th, 2026]]",
-       ":block/order": 21
+       ":block/order": 22
       },
       {
        ":block/refs": [
@@ -62098,7 +62109,7 @@
        ],
        ":block/uid": "Tdxn9p6T-",
        ":block/string": "[[April 17th, 2026]]",
-       ":block/order": 20
+       ":block/order": 21
       },
       {
        ":block/refs": [
@@ -63778,7 +63789,7 @@
        ],
        ":block/uid": "yYmOmnffK",
        ":block/string": "[[April 27th, 2026]]",
-       ":block/order": 19
+       ":block/order": 20
       },
       {
        ":block/refs": [
@@ -63858,7 +63869,7 @@
        ],
        ":block/uid": "E8B5FpUqb",
        ":block/string": "[[May 1st, 2026]]",
-       ":block/order": 18
+       ":block/order": 19
       },
       {
        ":block/refs": [
@@ -64042,7 +64053,7 @@
        ],
        ":block/uid": "_bXQOG7-W",
        ":block/string": "[[May 4th, 2026]]",
-       ":block/order": 17
+       ":block/order": 18
       },
       {
        ":block/refs": [
@@ -64141,7 +64152,7 @@
        ],
        ":block/uid": "77u8rD3tN",
        ":block/string": "[[May 5th, 2026]]",
-       ":block/order": 16
+       ":block/order": 17
       },
       {
        ":block/refs": [
@@ -64204,7 +64215,7 @@
        ],
        ":block/uid": "4jefQzlrL",
        ":block/string": "[[May 15th, 2026]]",
-       ":block/order": 15
+       ":block/order": 16
       },
       {
        ":block/refs": [
@@ -64260,7 +64271,7 @@
        ],
        ":block/uid": "yCa6IFyF-",
        ":block/string": "[[May 21st, 2026]]",
-       ":block/order": 14
+       ":block/order": 15
       },
       {
        ":block/refs": [
@@ -64301,7 +64312,7 @@
        ],
        ":block/uid": "s1JCTlMYp",
        ":block/string": "[[May 28th, 2026]]",
-       ":block/order": 13
+       ":block/order": 14
       },
       {
        ":block/refs": [
@@ -64343,7 +64354,7 @@
        ],
        ":block/uid": "GtQy1iARj",
        ":block/string": "[[June 1st, 2026]]",
-       ":block/order": 12
+       ":block/order": 13
       },
       {
        ":block/refs": [
@@ -64470,7 +64481,7 @@
        ],
        ":block/uid": "FfZFcIMVi",
        ":block/string": "[[June 2nd, 2026]]",
-       ":block/order": 11
+       ":block/order": 12
       },
       {
        ":block/refs": [
@@ -64506,7 +64517,7 @@
        ],
        ":block/uid": "o0biga_ls",
        ":block/string": "[[June 9th, 2026]]",
-       ":block/order": 10
+       ":block/order": 11
       },
       {
        ":block/refs": [
@@ -64535,7 +64546,7 @@
        ],
        ":block/uid": "1oHVhjf1j",
        ":block/string": "[[June 10th, 2026]]",
-       ":block/order": 9
+       ":block/order": 10
       },
       {
        ":block/refs": [
@@ -64574,7 +64585,7 @@
        ],
        ":block/uid": "jlW42mQ3s",
        ":block/string": "[[June 11th, 2026]]",
-       ":block/order": 8
+       ":block/order": 9
       },
       {
        ":block/refs": [
@@ -65121,7 +65132,7 @@
        ],
        ":block/uid": "Wp3IwehIi",
        ":block/string": "[[June 13th, 2026]]",
-       ":block/order": 7
+       ":block/order": 8
       },
       {
        ":block/refs": [
@@ -65262,7 +65273,7 @@
        ],
        ":block/uid": "T7MyhAu_Z",
        ":block/string": "[[June 30th, 2026]]",
-       ":block/order": 6
+       ":block/order": 7
       },
       {
        ":block/refs": [
@@ -65318,7 +65329,7 @@
        ],
        ":block/uid": "MdrAuMqaU",
        ":block/string": "[[July 2nd, 2026]]",
-       ":block/order": 5
+       ":block/order": 6
       },
       {
        ":block/refs": [
@@ -65347,7 +65358,7 @@
        ],
        ":block/uid": "MUux5EgdX",
        ":block/string": "[[July 6th, 2026]]",
-       ":block/order": 4
+       ":block/order": 5
       },
       {
        ":block/refs": [
@@ -65381,7 +65392,7 @@
        ],
        ":block/uid": "Omo5TNL1L",
        ":block/string": "[[July 7th, 2026]]",
-       ":block/order": 3
+       ":block/order": 4
       },
       {
        ":block/refs": [
@@ -65560,7 +65571,7 @@
        ],
        ":block/uid": "6kZb0aiyX",
        ":block/string": "[[July 10th, 2026]]",
-       ":block/order": 2
+       ":block/order": 3
       },
       {
        ":block/refs": [
@@ -65713,7 +65724,7 @@
        ],
        ":block/uid": "VoTSRMSbW",
        ":block/string": "[[July 13th, 2026]]",
-       ":block/order": 1
+       ":block/order": 2
       },
       {
        ":block/refs": [
@@ -65747,6 +65758,35 @@
        ],
        ":block/uid": "x3tGBCvQq",
        ":block/string": "[[July 15th, 2026]]",
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "07-23-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "xxFKZqzYN"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/uid": "XL_ekIWkc",
+           ":block/string": "Fixed \"Cycle namespace view\" working on nested page names like `[[[[Alpha]]/Beta]]`",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "6AfArg6wh",
+         ":block/string": "[[Bug Fixes]]",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "CNp2sgkob",
+       ":block/string": "[[July 23rd, 2026]]",
        ":block/order": 0
       }
      ],
@@ -71825,6 +71865,167 @@
        ":block/string": "**How do I move a local graph from one device to another?**",
        ":block/heading": 3,
        ":block/order": 23
+      },
+      {
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "fqX_kn4k-"
+          }
+         ],
+         ":block/uid": "iCn_Z4yKf",
+         ":block/string": "You can use the [[SmartBlock]] extension by RoamJS, available in Roam Depot, to create a template that counts down the days until a specific date. You’ll need to run the SmartBlock each time you want to check the remaining days, but you can assign a keyboard shortcut to make it quick and convenient. So whenever you press the hotkey, it will show you how many days are left until August 28!",
+         ":block/order": 0
+        },
+        {
+         ":block/children": [
+          {
+           ":block/uid": "11YT-Fin5",
+           ":block/string": "Install the SmartBlocks extension from Roam Depot",
+           ":block/order": 0
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "cWFqJA4-c",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FkqV0BNAWwc.gif?alt=media&token=432dbd0b-6759-48b1-98bc-21ab4a2c6804)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "bY8LuHmVu",
+           ":block/string": "Enable the following Settings (Command Palette and Command Palette Opt-In)",
+           ":block/order": 1
+          },
+          {
+           ":block/children": [
+            {
+             ":block/children": [
+              {
+               ":block/uid": "u9Q4xRrJF",
+               ":block/string": "`<%SET:targetDate,[[August 28th, 2026]]%><%SET:todayDate,<%DATE:YYYY/MM/DD%>%> <%NOBLOCKOUTPUT%>`",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "FvXe11-RQ",
+               ":block/string": "`There are <%DIFFERENCE:<%GET:targetDate%>,<%GET:todayDate%>%> days left until August 28th.`",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "qRg7l6Ex6",
+             ":block/string": "`#SmartBlock Countdown <%CMD%>`",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "bZcA3eIEC",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F_NP0nwGrXa.png?alt=media&token=797ab0d1-7887-427c-b709-0651b4b5ee0d)",
+             ":block/order": 1
+            }
+           ],
+           ":block/uid": "FaiGUZDRC",
+           ":block/string": "Paste the following Smartblock anywhere in your graph",
+           ":block/order": 2
+          },
+          {
+           ":block/uid": "Ao6T-wXbV",
+           ":block/string": "Then go to `Settings > Hotkeys > Ungrouped Extension Hotkeys` and you should see the '**Trigger SmartBlock: Countdown**' there. Set your preferred keyboard combination.",
+           ":block/order": 3
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "4D_8EIPSn",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FGut_t7vhnC.gif?alt=media&token=bb5ab9ce-c1b0-45ba-a067-5ff9f5bc535c)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "MgOnHtV21",
+           ":block/string": "Now anytime you hit the Hotkeys, a block will be created showing you how many days are left until August 28!",
+           ":block/order": 4
+          }
+         ],
+         ":block/uid": "iI_q0N0RF",
+         ":block/string": "Here's how to set it up-",
+         ":block/order": 1
+        },
+        {
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "LAApadrSM",
+             ":block/string": "`<%SET:targetDate,[[August 28th, 2026]]%><%SET:todayDate,<%DATE:YYYY/MM/DD%>%> <%NOBLOCKOUTPUT%>`",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "isucKYhmJ",
+             ":block/string": "`<%NOTIFICATION:5,There are <%DIFFERENCE:<%GET:targetDate%>,<%GET:todayDate%>%> days left until August 28th.,top right%>`",
+             ":block/order": 1
+            },
+            {
+             ":block/uid": "69G-gm7wG",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FZWBnzKGYei.png?alt=media&token=87469de3-97a8-4f29-8905-c1bad88f0cee)",
+             ":block/order": 2
+            }
+           ],
+           ":block/uid": "G6DD5HAf7",
+           ":block/string": "`#SmartBlock Countdown noti <%CMD%>`",
+           ":block/order": 0
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "Ao6T-wXbV"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "mowqpsrQB",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FWq5rnYmfGE.gif?alt=media&token=370aeaf9-41b8-4a47-9932-64f748ec288c)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "4vB1AY4JF",
+           ":block/string": "After [setting up the hotkeys](((Ao6T-wXbV))), once you press the hotkeys, it will show you the text as a notification. You can change the text position and the duration the notification is visible.",
+           ":block/order": 1
+          }
+         ],
+         ":block/uid": "0OxoErFJu",
+         ":block/string": "It's also possible to see a **[notification](https://github.com/RoamJS/smartblocks/blob/main/docs/050-command-reference.md#notification)** text instead of creating a block. In that case, you need to use the following Smartblock-",
+         ":block/order": 2
+        }
+       ],
+       ":block/uid": "RWZ1dJiOc",
+       ":block/string": "**How do I create a countdown to a specific date in Roam and show it as a notification? (e.g. days until Aug 28)**",
+       ":block/heading": 3,
+       ":block/order": 31
+      },
+      {
+       ":block/children": [
+        {
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "A5gGkypWP",
+             ":block/string": "",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "pICTtMGtR",
+           ":block/string": "Desktop app",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "3-y2ALhPb",
+         ":block/string": "Roam doesn't have any built-in spell checker, and the one you see popping up comes from your OS's spellcheck rules. Here's how to turn it off:",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "9GIH0LXUe",
+       ":block/string": "**Can I turn off autocorrect/spellcheck in Roam?**",
+       ":block/heading": 3,
+       ":block/order": 32
       }
      ],
      ":block/uid": "8PnUxBsZt",
@@ -75517,6 +75718,10 @@
    ":block/uid": "VlGlxM-_q"
   },
   {
+   ":node/title": "urgent",
+   ":block/uid": "MgxtfGzQA"
+  },
+  {
    ":node/title": "May 8th, 2020",
    ":block/uid": "05-08-2020"
   },
@@ -77518,6 +77723,10 @@
   {
    ":node/title": "API Token: Matt Sweeny docs web",
    ":block/uid": "imW5S1TTM"
+  },
+  {
+   ":node/title": "project/css",
+   ":block/uid": "wT87MjWqp"
   },
   {
    ":node/title": "meeting",
@@ -81545,6 +81754,10 @@
    ":block/uid": "ti2FseEAb"
   },
   {
+   ":node/title": ".aside",
+   ":block/uid": "BkVm-NiHO"
+  },
+  {
    ":node/title": "March 1st, 2023",
    ":block/uid": "03-01-2023"
   },
@@ -81704,6 +81917,15 @@
   {
    ":node/title": "August 6th, 2024",
    ":block/uid": "08-06-2024"
+  },
+  {
+   ":node/title": "[[Alpha]]/Beta",
+   ":block/refs": [
+    {
+     ":block/uid": "odqZ-cQS3"
+    }
+   ],
+   ":block/uid": "HFVJAgazX"
   },
   {
    ":node/title": "May 5th, 2026",
@@ -83324,39 +83546,509 @@
    ":node/title": "roam/css",
    ":block/children": [
     {
+     ":block/children": [
+      {
+       ":block/uid": "CjPgH1sXh",
+       ":block/string": "Right-click any element and choose Inspect — your browser's DevTools open with that element selected, showing its classes",
+       ":block/order": 0
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "xjOI4dWFK",
+         ":block/string": "`bp3-` classes come from [Blueprint](https://blueprintjs.com/docs/versions/3/), the UI library Roam uses — you can target them too, but prefer `rm-` classes when both match",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "1y0AKrvCR",
+       ":block/string": "Roam's own classes are prefixed `rm-` (a few older structural ones use `roam-`)",
+       ":block/order": 2
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "VpLgtWBwQ",
+         ":block/string": "`document.querySelectorAll(\".rm-page-ref\")` returns every element it matches",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "Sx7cHbV_5",
+       ":block/string": "Test a selector from the DevTools console",
+       ":block/order": 3
+      },
+      {
+       ":block/uid": "cdTWJ0OC1",
+       ":block/string": "To inspect UI that only appears on hover (bullet controls, tooltips), run `setTimeout(() => { debugger }, 3000)` in the DevTools console, then hover the element — the page freezes in the debugger so you can inspect it",
+       ":block/order": 1
+      }
+     ],
+     ":block/uid": "8jgRB0Zhz",
+     ":block/string": "Finding what to target",
+     ":block/order": 1
+    },
+    {
+     ":block/children": [
+      {
+       ":block/children": [
+        {
+         ":block/uid": "rRsi75lp3",
+         ":block/string": "`.roam-body`, `.roam-app`, `.roam-main` — the app shell",
+         ":block/order": 0
+        },
+        {
+         ":block/uid": "qAc4uox9o",
+         ":block/string": "`.roam-article` — the main window's page content",
+         ":block/order": 1
+        },
+        {
+         ":block/uid": "P8Tr_EOcI",
+         ":block/string": "`.roam-sidebar-container` — the left sidebar",
+         ":block/order": 2
+        },
+        {
+         ":block/uid": "w-3-Mfb81",
+         ":block/string": "`.rm-sidebar-outline` — a page open in the right sidebar",
+         ":block/order": 3
+        },
+        {
+         ":block/uid": "hE886_Lwb",
+         ":block/string": "`.roam-log-container` — the daily notes view",
+         ":block/order": 4
+        },
+        {
+         ":block/uid": "ZmPn71A0M",
+         ":block/string": "`.rm-title-display` — page titles",
+         ":block/order": 5
+        }
+       ],
+       ":block/uid": "XGlXDDqqT",
+       ":block/string": "Layout",
+       ":block/order": 0
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "rla79bcBS",
+         ":block/string": "`.rm-block` (also `.roam-block-container`) — a block together with its children",
+         ":block/order": 0
+        },
+        {
+         ":block/uid": "3pGHZrU9h",
+         ":block/string": "`.rm-block-main` (also `.rm-block__self`) — just the block's own line",
+         ":block/order": 1
+        },
+        {
+         ":block/uid": "UjlbxmSD1",
+         ":block/string": "`.rm-block__children` — the block's children",
+         ":block/order": 2
+        },
+        {
+         ":block/uid": "bnchhQb6U",
+         ":block/string": "`.rm-block__input` (also `.roam-block`) — the rendered block text; while editing it is the `textarea.rm-block-input`",
+         ":block/order": 3
+        },
+        {
+         ":block/uid": "bo1MYdGPT",
+         ":block/string": "Modifier classes on `.rm-block`: `rm-heading-level-1` / `-2` / `-3`, `rm-block--open` / `rm-block--closed`, `rm-block--mine` / `rm-block--others`, `rm-block--editable` / `rm-block--readonly`, `rm-focused`",
+         ":block/order": 4
+        }
+       ],
+       ":block/uid": "aULMaJPwQ",
+       ":block/string": "Blocks",
+       ":block/order": 1
+      },
+      {
+       ":block/children": [
+        {
+         ":block/children": [
+          {
+           ":block/uid": "vLbEKSZsB",
+           ":block/string": "`.rm-page-ref--link` for bracketed links, `.rm-page-ref--tag` for tags",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "uKYkQKhR8",
+         ":block/string": "`.rm-page-ref` — every page reference",
+         ":block/order": 0
+        },
+        {
+         ":block/uid": "yDlMs5IzK",
+         ":block/string": "`.rm-block-ref` — block references",
+         ":block/order": 1
+        },
+        {
+         ":block/uid": "udFcpoEgc",
+         ":block/string": "`.rm-reference-main` — the linked references section (query results use it too)",
+         ":block/order": 2
+        }
+       ],
+       ":block/uid": "jLY9CPSMm",
+       ":block/string": "References",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "9CaLtKyMk",
+     ":block/string": "Useful selectors",
+     ":block/order": 2
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "hpP-t-Tud",
+       ":block/string": "Every page ref carries data attributes: `data-tag` (tags) or `data-link-title` (links), plus `data-link-uid`",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "TxThfNGjb",
+       ":block/string": "The block container carries `data-page-links` — a JSON array of every page linked in the block — and `data-path-page-links` for pages linked in its ancestors",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "SpHs8eEZs",
+       ":block/string": "The block container also carries `data-block-uid`, `data-page-title`, and `data-create-display-name` / `data-edit-display-name`",
+       ":block/order": 3
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "1Xn7IBf2z",
+         ":block/string": "The class (minus the dot) is added to that block's `.rm-block` container",
+         ":block/order": 0
+        },
+        {
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "8_WQ98lbt"
+            },
+            {
+             ":block/uid": "e6t9Cw0ue"
+            },
+            {
+             ":block/uid": "2ORCLgYRO"
+            }
+           ],
+           ":block/uid": "MEcI9UYj8",
+           ":block/string": "This block is tagged with #.bg-blue-400 #.rounded #.p-2",
+           ":block/order": 0
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "MWX_QK9o8"
+            },
+            {
+             ":block/uid": "xMya7noZa"
+            }
+           ],
+           ":block/uid": "chdmeq9hx",
+           ":block/string": "And this one with #.font-bold #.italic",
+           ":block/order": 1
+          }
+         ],
+         ":block/uid": "U2usmr2RF",
+         ":block/string": "Most of [Tailwind's utility classes](https://v2.tailwindcss.com/docs) ship with Roam, so many dot-tags style a block with no css at all",
+         ":block/order": 1
+        }
+       ],
+       ":block/uid": "gssHzamYA",
+       ":block/string": "Add your own class to a block by tagging it with a page whose title starts with a dot and contains no spaces, e.g. `#.aside`. The tag will be automatically be hidden and appear on hover.",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "3ADE20tZD",
+     ":block/string": "Styling specific tags and blocks",
+     ":block/order": 3
+    },
+    {
+     ":block/uid": "aCH3Akpm2",
+     ":block/string": "**Some of the examples below you need to switch the code block type to __css__ in the bottom right to enable**",
+     ":block/order": 4
+    },
+    {
      ":block/refs": [
       {
-       ":block/uid": "cGQjOo9hq"
+       ":block/uid": "-77Q9kDnv"
+      }
+     ],
+     ":block/children": [
+      {
+       ":block/children": [
+        {
+         ":block/uid": "Y0LWBMi48",
+         ":block/string": "```javascript\n.roam-app {\n  font-family: \"iA Writer Quattro\", \"Helvetica Neue\", sans-serif;\n}```",
+         ":block/order": 0
+        },
+        {
+         ":block/uid": "PZGBNjwjN",
+         ":block/string": "`@import` (e.g. a Google Fonts URL or a shared theme stylesheet) only works from the very first css block on this page — all blocks are concatenated into one stylesheet, and css requires `@import` at the top. Hosting a long theme on GitHub and importing it also keeps those lines out of your graph's search results",
+         ":block/order": 1
+        }
+       ],
+       ":block/uid": "3EgaYG6CD",
+       ":block/string": "Change the app font",
+       ":block/order": 0
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "UKnLAhmrm",
+         ":block/string": "```javascript\n/* the width setting in the ... menu adds rm-spacing--small or --medium here */\n.rm-article-wrapper.rm-spacing--small {\n  padding-left: calc((100% - 1100px) / 2);\n  padding-right: calc((100% - 1100px) / 2);\n}```",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "lXugijNDv",
+       ":block/string": "Widen the page",
+       ":block/order": 1
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "zTRWfGGEb",
+         ":block/string": "```javascript\n/* the > path matters: a plain descendant selector would also hit the heading's child blocks */\n.rm-heading-level-1 > .rm-block-main .rm-block__input { color: #1c5b8f; }\n.rm-heading-level-2 > .rm-block-main .rm-block__input { color: #2e7d32; }\n.rm-heading-level-3 > .rm-block-main .rm-block__input { color: #8a6d1d; }```",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "haQMgHbWF",
+       ":block/string": "Color the headings",
+       ":block/heading": 3,
+       ":block/order": 2
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "MME3bbumg"
+        },
+        {
+         ":block/uid": "wT87MjWqp"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/uid": "5W1Bo_kA3",
+         ":block/string": "```css\n/* an emoji before every #idea tag */\n.rm-page-ref[data-tag=\"idea\"]::before {\n  content: \"💡 \";\n}\n/* style every tag starting with \"project/\" */\n.rm-page-ref[data-tag^=\"project/\"] {\n  color: #7b2d8b;\n  font-weight: 600;\n}```",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "Z0itlh3d2",
+       ":block/string": "Tags with emoji and prefix matching #idea #project/css",
+       ":block/order": 3
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "AlQe0V8Um"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/uid": "ZtVwQWpQx",
+         ":block/string": "```css\nspan[data-link-title=\"Projects\"] {\n  font-weight: 600;\n  text-transform: uppercase;\n}```",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "-7pKWtToR",
+       ":block/string": "Style one page's links everywhere [[Projects]]",
+       ":block/order": 4
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "jEOe281Eg",
+         ":block/string": "```javascript\n/* {{[[TODO]]}} renders .rm-checkbox.rm-todo, {{[[DONE]]}} renders .rm-checkbox.rm-done */\n/* the native input is hidden — the visible box is the .checkmark inside .check-container */\n.rm-checkbox .check-container {\n  display: inline-block;\n  transform: scale(1.15);\n  transform-origin: center left;\n}\n/* cross out blocks with a checked box (needs a browser with :has support) */\n.rm-block__input:has(.rm-done) {\n  text-decoration: line-through;\n  opacity: 0.6;\n}```",
+         ":block/order": 2
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "3VEv-jR5D"
+          }
+         ],
+         ":block/uid": "VM1Zqt8AK",
+         ":block/string": "{{[[TODO]]}} do this",
+         ":block/order": 0
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "fsPJ2C4FF"
+          }
+         ],
+         ":block/uid": "t9FndaIxx",
+         ":block/string": "{{[[DONE]]}} do this",
+         ":block/order": 1
+        }
+       ],
+       ":block/uid": "ns3L9lL2_",
+       ":block/string": "Bigger TODO checkboxes, crossed-out DONE blocks",
+       ":block/order": 7
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "uh8gi8x5F",
+         ":block/string": "```javascript\n/* ^^highlighted^^ text */\n.rm-highlight {\n  background: #d8f0e0;\n}```",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "ftfKEm7sn",
+       ":block/string": "Change the ^^highlight^^ color",
+       ":block/order": 8
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "T-LuSHOpl",
+         ":block/string": "```javascript\n/* blocks starting with > */\nblockquote.rm-bq {\n  border-left: 3px solid #c9b458;\n  background: #faf6ea;\n  font-style: italic;\n}```",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "VlGzSIpx9",
+       ":block/string": "> Style block quotes",
+       ":block/order": 9
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "oMqw7dX7v",
+         ":block/string": "```javascript\n/* [alias](url) links to the outside world get an arrow */\n.rm-alias--external::after {\n  content: \" ↗\";\n  font-size: 0.8em;\n}```",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "KV-4T2WBe",
+       ":block/string": "Mark [external links](https://blueprintjs.com/docs/versions/3/)",
+       ":block/order": 10
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "0iJhEBgkF",
+         ":block/string": "```javascript\n.rm-inline-img {\n  max-height: 300px;\n}```",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "G9BWsdZdQ",
+       ":block/string": "Limit image height",
+       ":block/order": 11
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "MgxtfGzQA"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/uid": "xhvD2xve1",
+         ":block/string": "```css\n/* highlight every block that links [[urgent]] */\n.rm-block[data-page-links*='\"urgent\"'] > .rm-block-main {\n  background: #fff6f6;\n}```",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "dUPAaTMsp",
+       ":block/string": "Highlight blocks that link a specific page [[urgent]]",
+       ":block/order": 5
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "BkVm-NiHO"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/uid": "qPk6lh7n9",
+         ":block/string": "```css\n/* tag a block with #.aside to style it */\n.rm-block.aside > .rm-block-main {\n  opacity: 0.6;\n  font-style: italic;\n}\n/* hide the #.aside tag itself */\n.rm-page-ref[data-tag=\".aside\"] {\n  display: none;\n}```",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "bC60pY6PW",
+       ":block/string": "Style blocks you've tagged with a dot-class like `#.aside` #.aside",
+       ":block/order": 6
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "GtVy6tQ2t",
+         ":block/string": "```javascript\n/* define your colors twice and the theme switches with the OS setting */\n@media (prefers-color-scheme: dark) {\n  .roam-app { background: #1d2125; color: #d6d8da; }\n}\n@media (prefers-color-scheme: light) {\n  .roam-app { background: #ffffff; color: #202b33; }\n}```",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "p479MAJ37",
+       ":block/string": "Follow the system's light/dark mode",
+       ":block/order": 12
+      }
+     ],
+     ":block/uid": "xjwZaaFwG",
+     ":block/string": "Examples::",
+     ":block/order": 5
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "P53Va5OAq",
+       ":block/string": "Roam's markup changes between releases and class names are not a formal API, so expect to revisit your css occasionally",
+       ":block/order": 3
+      },
+      {
+       ":block/uid": "tQ891VGFN",
+       ":block/string": "Prefer `rm-` classes and data attributes; avoid structural selectors like `:nth-child` if you can",
+       ":block/order": 0
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "nBCwjGuI7"
+        }
+       ],
+       ":block/uid": "Y1w6y6WzQ",
+       ":block/string": "Use CSS for presentation only — if you find yourself trying to add elements or change behavior, you want JavaScript instead (an extension, or [[roam/js]])",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "M34HrvrvJ",
+       ":block/string": "If an override doesn't take — common when adjusting an imported theme — add `!important` to the declaration",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "gYS1mcVsW",
+     ":block/string": "Good practices",
+     ":block/order": 6
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "oEhVJ0Eaw"
       }
      ],
      ":block/children": [
       {
        ":block/refs": [
         {
-         ":block/uid": "_xVV2Rpw_"
+         ":block/uid": "CV_O2qTlP"
         }
        ],
-       ":block/uid": "KXXR4w-Eb",
-       ":block/string": "[Painting Roam with Custom CSS](https://maggieappleton.com/paintingroam) by [[Maggie Appleton]]",
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "2h9V-FtAO"
+          }
+         ],
+         ":block/uid": "wAEKfk4AH",
+         ":block/string": "{{[[video]]: https://youtu.be/UY-sAC2eGyI}}",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "chEaWjFUd",
+       ":block/string": "Applying Custom Themes for your RoamResearch Knowledge Graph by [[Conor White-Sullivan]]",
        ":block/heading": 3,
        ":block/order": 0
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "sB0yQf6IR"
-        }
-       ],
-       ":block/uid": "Z9MflfV-G",
-       ":block/string": "[Roam themes: how to style Roam Research with custom CSS](https://nesslabs.com/roam-research-themes-custom-styling-css) by [[Anne-Laure Le Cunff]]",
-       ":block/heading": 3,
-       ":block/order": 1
       }
      ],
-     ":block/uid": "6AFqTXgXH",
-     ":block/string": "Articles::",
-     ":block/heading": 2,
-     ":block/order": 1
+     ":block/uid": "ftzLPR6p5",
+     ":block/string": "Roam Team Videos::",
+     ":block/order": 7
     },
     {
      ":block/refs": [
@@ -83384,99 +84076,122 @@
         }
        ],
        ":block/uid": "jZwWng-Fs",
-       ":block/string": "How to Create and Edit Roam CSS: Interview with [[Abhay Prasanna]] ",
-       ":block/heading": 3,
-       ":block/order": 1
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "adx8YOPTR"
-        }
-       ],
-       ":block/children": [
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "2h9V-FtAO"
-          }
-         ],
-         ":block/uid": "0BcWgfdYQ",
-         ":block/string": "{{[[video]]: https://www.youtube.com/watch?v=kUgAqyzwGzw&t=99s}}",
-         ":block/order": 0
-        }
-       ],
-       ":block/uid": "D1H-Upg1U",
-       ":block/string": "How to do color tagging in Roam by [[Zack Fan]]",
+       ":block/string": "How to Create and Edit Roam CSS: Interview with [[Abhay Prasanna]]",
        ":block/heading": 3,
        ":block/order": 0
       }
      ],
      ":block/uid": "1BSCXH9M1",
      ":block/string": "Community Videos::",
-     ":block/heading": 2,
-     ":block/order": 2
+     ":block/order": 8
     },
     {
      ":block/refs": [
       {
-       ":block/uid": "KnkoPsb5q"
+       ":block/uid": "cGQjOo9hq"
       }
      ],
      ":block/children": [
       {
-       ":block/uid": "Wuu11jwlb",
-       ":block/string": "From having a dark theme to opening multiple panels, with a few clicks (and no coding skill required), roam/css helps you customize the look and feel of your Roam graph",
+       ":block/refs": [
+        {
+         ":block/uid": "_xVV2Rpw_"
+        }
+       ],
+       ":block/uid": "KXXR4w-Eb",
+       ":block/string": "[Painting Roam with Custom CSS](https://maggieappleton.com/paintingroam) by [[Maggie Appleton]]",
        ":block/order": 0
       },
       {
        ":block/refs": [
         {
-         ":block/uid": "dZV0KPRqu"
+         ":block/uid": "sB0yQf6IR"
         }
        ],
-       ":block/uid": "J-_oEDCoE",
-       ":block/string": "Check out our [community-built themes for inspiration]([[Themes]])",
+       ":block/uid": "Z9MflfV-G",
+       ":block/string": "[Roam themes: how to style Roam Research with custom CSS](https://nesslabs.com/roam-research-themes-custom-styling-css) by [[Anne-Laure Le Cunff]]",
        ":block/order": 1
       }
      ],
-     ":block/uid": "QgK-NosAd",
-     ":block/string": "#.rm-g",
+     ":block/uid": "6AFqTXgXH",
+     ":block/string": "Articles::",
+     ":block/order": 9
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "dZV0KPRqu"
+      }
+     ],
+     ":block/uid": "J-_oEDCoE",
+     ":block/string": "Check out our [community-built themes for inspiration]([[Themes]])",
+     ":block/order": 10
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "55GBGjVAg",
+       ":block/string": "Every css code block on this page — at any nesting depth — is applied to the app, in visual order",
+       ":block/order": 0
+      },
+      {
+       ":block/uid": "MDn7TfqY8",
+       ":block/string": "Changes apply live as you type",
+       ":block/order": 1
+      },
+      {
+       ":block/uid": "QFPWxZI2x",
+       ":block/string": "Only code blocks whose language is set to css count. You can switch the language to temporarily disable that css block, or store css on this page for later.",
+       ":block/order": 3
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "Ic1A9xn8m",
+         ":block/string": "**If you want the css to be applied for everyone write directly on this page**",
+         ":block/order": 1
+        },
+        {
+         ":block/uid": "cv4nikFra",
+         ":block/string": "Each such block has to be enabled by each user of your graph.",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "-ZGmFIajj",
+       ":block/string": "To apply css from any other page, nest the css code block under a `{{[[roam/css]]}}` component block",
+       ":block/order": 5
+      },
+      {
+       ":block/uid": "cMcFWIbaH",
+       ":block/string": "Escape hatch: if bad css makes the app unusable, add `?disablecss=true` to the URL (before the `#`) — all roam/css is disabled until the next refresh. You can also disable all js and css from the \"Roam Depot\" tab in settings",
+       ":block/order": 6
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "ayV1osqm3",
+         ":block/string": "Filter the page to toggle css blocks on and off (e.g. tag each theme's blocks and switch themes by filtering)",
+         ":block/order": 0
+        },
+        {
+         ":block/uid": "dWS0zbF0B",
+         ":block/string": "You can use this to have css blocks that are only applied for certain users by having each user apply different filters",
+         ":block/order": 1
+        }
+       ],
+       ":block/uid": "Try5UCp7N",
+       ":block/string": "This page's filters apply and change what css is applied",
+       ":block/order": 4
+      },
+      {
+       ":block/uid": "0xZJD_RZx",
+       ":block/string": "Click a color value inside a css code block and Roam shows an inline color picker — no need to know hex codes",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "gwzTanPKO",
+     ":block/string": "How it works",
      ":block/order": 0
-    },
-    {
-     ":block/refs": [
-      {
-       ":block/uid": "oEhVJ0Eaw"
-      }
-     ],
-     ":block/children": [
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "2h9V-FtAO"
-        }
-       ],
-       ":block/uid": "vjoBuVU1B",
-       ":block/string": "{{[[video]]: https://youtu.be/UY-sAC2eGyI }}",
-       ":block/order": 1
-      },
-      {
-       ":block/refs": [
-        {
-         ":block/uid": "CV_O2qTlP"
-        }
-       ],
-       ":block/uid": "Dqnmt4naU",
-       ":block/string": "Applying Custom Themes for your RoamResearch Knowledge Graph by [[Conor White-Sullivan]]",
-       ":block/heading": 3,
-       ":block/order": 0
-      }
-     ],
-     ":block/uid": "0qmlzLSK2",
-     ":block/string": "Roam Team Videos::",
-     ":block/heading": 2,
-     ":block/order": 3
     }
    ],
    ":block/uid": "RA1UXmzp0",

@@ -4,6 +4,9 @@
 
 ### **New Changes**
 
+- [[July 23rd, 2026]]
+  - [[Bug Fixes]]
+    - Fixed "Cycle namespace view" working on nested page names like `[[[[Alpha]]/Beta]]`
 - [[July 15th, 2026]]
   - [[Bug Fixes]]
     - Fixed a rare bug where two different PDFs could sometimes share the same highlights

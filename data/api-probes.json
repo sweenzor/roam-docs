@@ -99,7 +99,7 @@
  },
  "q('[:find (count ?e) . :where [?e :block/uid]]')": {
   "async": false,
-  "value": 6433
+  "value": 6469
  },
  "pull(minimal)": {
   "async": false,

@@ -75,15 +75,16 @@
 - These are the docs for the Roam Append API
   - The main use case for this API is adding stuff to your Roam graph. This works for all hosted Roam graphs - i.e. for both unencrypted and encrypted graphs
 - Q:: When would you use this Append API vs other Roam APIs?
-  - Use [[Roam Backend API]] 
-    - IF you need to do reads and edits (and not just additions/appends)
-    - IF you do NOT need to support encrypted graphs (the backend API cannot work with encrypted graphs)
-  - Use [Append API]([[Roam Append API]]) 
-    - IF you need to support BOTH unencrypted & encrypted graphs
-    - IF you want an easy-to-use API optimized for capture
-    - IF you do not need read functionality
-  - Use [[Roam Alpha API]] (our client side API) 
-    - If you're building a [[Roam Depot]] extension or writing [[roam/js]] scripts for yourself 
+  - **Our different APIs and which one you should use**
+    - Use [[Roam Backend API]] 
+      - IF you need to do reads and edits (and not just additions/appends)
+      - IF you do NOT need to support encrypted graphs (the backend API cannot work with encrypted graphs)
+    - Use [Append API]([[Roam Append API]]) 
+      - IF you need to support BOTH unencrypted & encrypted graphs
+      - IF you want an easy-to-use API optimized for capture
+      - IF you do not need read functionality
+    - Use [[Roam Alpha API]] (our client side API) 
+      - If you're building a [[Roam Depot]] extension or writing [[roam/js]] scripts for yourself 
 - If you have used our regular Backend API, you might want to read the following FAQ to get a sense of the differences: Q:: How is this Append API different from the regular [[Roam Backend API]]?
 - **Minimal example using [[cURL]]**
   - ```shell

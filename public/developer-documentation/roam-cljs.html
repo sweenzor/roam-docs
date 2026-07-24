@@ -41,92 +41,138 @@
 <ul>
 <li><strong>Getting Started</strong>
 <ul>
-<li>Equivalent to <a href="/developer-documentation/roam-js">roam/js</a> but language of choice is clojurescript
-</li>
-<li>roam/cljs is a way to customize your Roam experience with clojurescript. 
-</li>
-<li>To use roam/cljs create a block with <code>{{[[roam/cljs]]}}</code> in it, then indent underneath and create a clojure code block
+<li>roam/cljs is <a href="/developer-documentation/roam-js">roam/js</a> in ClojureScript: create a block containing <code>{{[[roam/cljs]]}}</code>, then nest a clojure code block underneath it.
 <ul>
 <li>Like this
 </li>
 <li>{{<a href="/developer-documentation/roam-cljs">roam/cljs</a>}}
 <ul>
-<li><pre><code>(prn &quot;hello world&quot;)</code></pre>
+<li><pre><code>(prn &quot;hello from roam/cljs&quot;)</code></pre>
 </li>
 </ul>
 </li>
-<li>Then, click &quot;Yes, I know what I'm doing&quot; to run the code block, open your browsers developer console to see the logged text
+</ul>
+</li>
+<li>Everything else — enabling, running on startup, re-running after edits, errors, and <code>?disablejs=true</code> — works exactly as described on <a href="/developer-documentation/roam-js">roam/js</a>, and its <strong>Good practices</strong> apply here too.
+</li>
+</ul>
+</li>
+<li><strong>The environment</strong>
 <ul>
-<li>Clicking this only enables the clojurescript to run for you, it will not run for any other users on the graph without them also agreeing to run the javascript
+<li>All roam/cljs blocks share one ClojureScript environment (<a href="https://github.com/babashka/sci">SCI</a>), loaded on demand the first time a block runs.
 </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>roam/cljs blocks that are enabled <strong>run automatically run on startup</strong>
+<li>Start each script with an <code>(ns ...)</code> form — other roam/cljs blocks can then <code>:require</code> it.
 <ul>
-<li>The order of operations is 
+<li>Namespaces do not autoload: a <code>:require</code> only works if the defining block has already run.
+</li>
+</ul>
+</li>
+<li>The <a href="/developer-documentation/roam-clojurescript-api">Roam Clojurescript API</a> mirrors the <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> as native namespaces — kebab-case names, and arguments as maps with keyword keys (<code>{:location {:parent-uid ...}}</code> instead of <code>{&quot;parent-uid&quot;: ...}</code>).
 <ul>
-<li><code>Roam Depot extensions -&gt; roam/js (or roam/cljs) -&gt; roam/render components</code>
+<li><code>roam.datascript/q</code> and <code>roam.datascript/pull</code> query the graph directly — no connection argument, and queries are plain quoted vectors instead of strings.
+</li>
+<li>The write namespaces (<code>roam.block</code>, <code>roam.page</code>, <code>roam.user</code>) only exist when you have write access to the graph.
 </li>
 </ul>
 </li>
-</ul>
+<li>Reagent, promesa, datascript.core, and the other bundled libraries are listed on <a href="/developer-documentation/roam-clojurescript-api">Roam Clojurescript API</a> under External Libraries.
 </li>
-<li>You have access to the [[Clojurescript API], <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> in the window object, as well as a list of <a href="/developer-documentation/available-libraries">Available Libraries</a> Roam exports to the window.
+<li>JS interop works throughout: <code>js/window</code>, <code>js/console.log</code>, and anything on <code>window.roamAlphaAPI</code> that has no wrapper.
 <ul>
-<li>The <a href="/developer-documentation/roam-clojurescript-api">Roam Clojurescript API</a> is mostly a copy of the <a href="/developer-documentation/roam-alpha-api">Roam Alpha API</a> but with a few additions
+<li>Callbacks invoked by Roam (command palette, context menus) receive JavaScript objects, not maps — read them with <code>applied-science.js-interop</code>.
 </li>
 </ul>
 </li>
-<li>roam/cljs is most useful for developing a small script you expect to only run for yourself, if you want to distribute your extension, we recommend you develop a <a href="/developer-documentation/roam-depot-extensions">Roam Depot/Extensions</a>, which is similar, but has a different development process.
+<li>A <code>:require</code> of a URL string loads it as an ES module, and a <code>.css</code> URL injects a stylesheet.
+</li>
+</ul>
+</li>
+<li>Examples::
 <ul>
-<li>It can also be useful to use roam/cljs to create &quot;common&quot; namespaces for use in <a href="/developer-documentation/roam-render">roam/render</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Examples</strong>
-<ul>
-<li>A script that changes a graph's homepage to be a different page than daily notes
+<li>Open a random page from the command palette — good for rediscovering old notes
 <ul>
 <li>{{<a href="/developer-documentation/roam-cljs">roam/cljs</a>}}
 <ul>
-<li><pre><code>(ns examples.custom-homepage
+<li><pre><code>(ns examples.random-page
   (:require
-   [clojure.string :as str]
-   [roam.main-window :as main-window]))
+   [roam.datascript :as rd]
+   [roam.ui.command-palette :as command-palette]
+   [roam.ui.main-window :as main-window]))
 
-(defn on-home-page? []
-  (-&gt; (str/split js/window.location.hash &quot;/&quot;)
-      (get 3)
-      (= nil)))
-
-(when (on-home-page?)
-  (main-window/open-page {:page {:title &quot;Developer Hub&quot;}}))</code></pre>
+(command-palette/add-command
+  {:label    &quot;Open random page&quot;
+   :callback (fn [_]
+               (let [uids (rd/q '[:find [?uid ...]
+                                  :where [?e :node/title]
+                                         [?e :block/uid ?uid]])]
+                 (main-window/open-page {:page {:uid (rand-nth uids)}})))})</code></pre>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Requiring code from other roam/cljs blocks
+<li>Make sure today's daily note starts with a Journal block — runs on every startup, and shows the guard pattern that keeps a script from creating duplicates
 <ul>
-<li>First click run on the example, <code>examples.custom-homepage</code>, above. The namespaces do not autoload 
+<li>{{<a href="/developer-documentation/roam-cljs">roam/cljs</a>}}
+<ul>
+<li><pre><code>(ns examples.daily-journal
+  (:require
+   [promesa.core :as p]
+   [roam.block :as block]
+   [roam.datascript :as rd]
+   [roam.page :as page]
+   [roam.util :as util]))
+
+(defn ensure-today-has-journal []
+  (let [today-uid (util/date-&gt;page-uid (js/Date.))]
+    (p/do!
+      (when-not (rd/q '[:find ?p . :in $ ?uid
+                        :where [?p :block/uid ?uid]]
+                      today-uid)
+        (page/create {:page {:title (util/date-&gt;page-title (js/Date.))}}))
+      (when-not (rd/q '[:find ?c . :in $ ?uid ?text
+                        :where [?p :block/uid ?uid]
+                               [?p :block/children ?c]
+                               [?c :block/string ?text]]
+                      today-uid &quot;Journal&quot;)
+        (block/create {:location {:parent-uid today-uid :order 0}
+                       :block    {:string &quot;Journal&quot;}})))))
+
+(ensure-today-has-journal)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Share helper functions between blocks with namespaces
+<ul>
+<li>Enable the <code>my.helpers</code> block first — namespaces do not autoload, so the block that requires one only works after its defining block has run.
 </li>
 <li>{{<a href="/developer-documentation/roam-cljs">roam/cljs</a>}}
 <ul>
-<li><pre><code>(ns examples.internal-require
+<li><pre><code>(ns my.helpers
   (:require
-   [examples.custom-homepage :as ch]))
+   [roam.datascript :as rd]))
 
-(prn (ch/on-home-page?))</code></pre>
+(defn get-page-uid [title]
+  (rd/q '[:find ?uid . :in $ ?title
+          :where [?e :node/title ?title]
+                 [?e :block/uid ?uid]]
+        title))</code></pre>
+</li>
+</ul>
+</li>
+<li>{{<a href="/developer-documentation/roam-cljs">roam/cljs</a>}}
+<ul>
+<li><pre><code>(ns my.scratch
+  (:require
+   [my.helpers :as h]))
+
+(prn (h/get-page-uid &quot;Reading List&quot;))</code></pre>
 </li>
 </ul>
 </li>
 </ul>
-</li>
-<li>{{TODO}} More Examples
 </li>
 </ul>
 </li>

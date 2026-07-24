@@ -6,7 +6,7 @@
 > public graphs and a running Roam Research session; regenerated on a schedule.
 > Source & contributions: https://github.com/sweenzor/roam-docs
 
-Last export: 2026-07-23T07:47:19.145Z
+Last export: 2026-07-24T07:44:42.809Z
 
 ## Developer documentation
 
@@ -66,11 +66,12 @@ Last export: 2026-07-23T07:47:19.145Z
 - [roam/templates](https://roamdocs.fyi/help/roam-templates.md): Dev docs .h
 - [Diagram](https://roamdocs.fyi/help/diagram.md): Diagrams are an extra dimension of the blocks in your graph. You can lay your thoughts out in a 2D infinite canvas, group and connect ideas.
 - [Roam-specific :q additions](https://roamdocs.fyi/help/roam-specific-q-additions.md): If you're a dev (or even if not!), you can use our very flexible query features to do the kinds of specialized queries you want
-- [Themes](https://roamdocs.fyi/help/themes.md): .--
+- [Themes](https://roamdocs.fyi/help/themes.md): Applying Custom Themes to your Graph by Conor White-Sullivan
 - [Semantic search (Experimental)](https://roamdocs.fyi/help/semantic-search-experimental.md): Roam's regular search matches the words you type. Semantic search matches meaning: it can find your notes about __insomnia__ when you search
 - [Block References](https://roamdocs.fyi/help/block-references.md): One of Roam's most powerful, flagship features
 - [What You Can't Say](https://roamdocs.fyi/help/what-you-can-t-say.md): Essay Paul Graham
 - [Formatting](https://roamdocs.fyi/help/formatting.md): Bold
+- [roam/css](https://roamdocs.fyi/help/roam-css.md): How it works
 - [Key Commands](https://roamdocs.fyi/help/key-commands.md): Roam is built to be driven from the keyboard. These are the commands worth learning first.
 - [Navigation](https://roamdocs.fyi/help/navigation.md): If you're used to clicking hyperlinks when browsing the web, you already know how to navigate in Roam! Click on any page reference or extern
 - [Beating the Averages](https://roamdocs.fyi/help/beating-the-averages.md): Paul Graham Essay
@@ -136,7 +137,6 @@ Last export: 2026-07-23T07:47:19.145Z
 - [Global search](https://roamdocs.fyi/help/global-search.md): Global search finds pages and blocks across all of your graphs at once, not just the one you have open.
 - [Roam Help](https://roamdocs.fyi/help/roam-help.md): Welcome to Roam
 - [Roam CLI](https://roamdocs.fyi/help/roam-cli.md): The Roam CLI runs the same tools as Local MCP as terminal commands: list graphs, search, read pages, and more.
-- [roam/css](https://roamdocs.fyi/help/roam-css.md): .rm-g
 - [Project Management](https://roamdocs.fyi/help/project-management.md): Community Videos::
 - [Personal CRM](https://roamdocs.fyi/help/personal-crm.md): Community Videos::
 - [Upload Files](https://roamdocs.fyi/help/upload-files.md): You can upload and embed files in Roam, including audio, PDFs, and images, so you can access files right on the spot
