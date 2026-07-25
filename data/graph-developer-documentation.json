@@ -1,6 +1,6 @@
 {
  "graph": "developer-documentation",
- "exportedAt": "2026-07-24T07:44:42.809Z",
+ "exportedAt": "2026-07-25T07:31:46.404Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -2284,6 +2284,9 @@
      ":block/refs": [
       {
        ":block/uid": "5BB8h4I7b"
+      },
+      {
+       ":block/uid": "y31lhjIqU"
       }
      ],
      ":block/children": [
@@ -2301,7 +2304,7 @@
      ":block/uid": "B1u3-zWmT",
      ":block/heading": 2,
      ":block/order": 5,
-     ":block/string": "[[Roam Depot/Extensions]]"
+     ":block/string": "[[Roam Depot/Extensions]] and [[Roam Depot/Extension API]]"
     },
     {
      ":block/refs": [
@@ -32123,13 +32126,318 @@
         }
        ],
        ":block/uid": "PdrNXV6Jb",
-       ":block/order": 9,
+       ":block/order": 10,
        ":block/string": "`roamAlphaAPI.constants`"
       },
       {
        ":block/uid": "8ZcG9W_nx",
        ":block/order": 0,
        ":block/string": "`roamAlphaAPI.apiVersion` (string) — the API version, e.g. \"1.1.3\"; use it for feature detection"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "V_Ct0-fxy"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "dSAi8APjS"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "4pZO1f0jc",
+             ":block/order": 0,
+             ":block/string": "Register AI tools: JavaScript functions that AI agents connected to this graph through the local MCP or CLI (not supported by remote MCP) can discover and call."
+            },
+            {
+             ":block/uid": "Oe_kGhQQ7",
+             ":block/order": 2,
+             ":block/string": "Registered tools are advertised to agents in `roamAlphaAPI.data.ai.getGraphGuidelines` (as `extensionTools`) and invoked via `roamAlphaAPI.data.ai.callExtensionTool`."
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "8t6J-5qZc"
+              }
+             ],
+             ":block/uid": "AQG-Taz2r",
+             ":block/order": 3,
+             ":block/string": "Tools registered here are keyed by their bare `name`, graph-wide, and are never removed automatically — the registering script owns the lifecycle. Roam Depot extensions should use ((8t6J-5qZc)) instead: same arguments, but tools are namespaced by extension and removed automatically on unload."
+            },
+            {
+             ":block/uid": "HbqhOLYBr",
+             ":block/order": 1,
+             ":block/string": "Calling again with the same `name` updates the existing tool instead of adding a second one, so re-running a script is safe."
+            },
+            {
+             ":block/uid": "rcoEfEejK",
+             ":block/order": 4,
+             ":block/string": "Throws synchronously on invalid input. At most 25 tools can be registered via roamAlphaAPI per graph."
+            },
+            {
+             ":block/uid": "4Vnno4hbk",
+             ":block/order": 5,
+             ":block/string": "When an agent calls the tool, its args are validated against `inputSchema` (if provided) before `handler` runs."
+            }
+           ],
+           ":block/uid": "3xIcQcVBt",
+           ":block/order": 0,
+           ":block/string": "Description::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "f4rqZkvUg"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "Sy5CWq7Jn",
+             ":block/order": 0,
+             ":block/string": "`name` (string, required) — the id agents call the tool by; up to 64 characters from `A-Za-z0-9_-`"
+            },
+            {
+             ":block/uid": "cDvSiMaCA",
+             ":block/order": 1,
+             ":block/string": "`description` (string, required) — tells the agent what the tool does and when to use it; up to 2000 characters"
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "9O30YV_I_",
+               ":block/order": 1,
+               ":block/string": "The return value is what the agent reads. We do add some more metadata such as the graph name and queried time. Shape it for reading (a small object or a plain sentence)."
+              },
+              {
+               ":block/uid": "5NBAV8yno",
+               ":block/order": 2,
+               ":block/string": "Throwing (or rejecting) fails the agent's call with the error message, attributed to this tool."
+              },
+              {
+               ":block/uid": "AyFBA-9fj",
+               ":block/order": 0,
+               ":block/string": "Called with two arguments — the agent's args as a plain object, and a `context` object (below); returns a JSON-serializable value or a Promise resolving to one"
+              },
+              {
+               ":block/uid": "wzUm1Xe1W",
+               ":block/order": 3,
+               ":block/string": "`context.tokenUserUid` (string) — uid of the AI user the call came from; absent when the tool is invoked directly from JS"
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "icMeT6zhM",
+                 ":block/order": 0,
+                 ":block/string": "The callback must issue its writes synchronously — never pass an async function; await the returned value outside instead."
+                },
+                {
+                 ":block/uid": "jdcocU_l0",
+                 ":block/order": 1,
+                 ":block/string": "Otherwise, graph writes made after the handler's first await are attributed to the logged-in user, not the AI."
+                }
+               ],
+               ":block/uid": "5hmmNmYOF",
+               ":block/order": 4,
+               ":block/string": "`context.asTokenUser(fn)` — runs `fn` with the graph writes it issues attributed to the calling AI, with the AI's token scopes in effect"
+              }
+             ],
+             ":block/uid": "DyppKKAu6",
+             ":block/order": 2,
+             ":block/string": "`handler` (function, required)"
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "vA4EDwE2N",
+               ":block/order": 3,
+               ":block/string": "Validated against the JSON Schema meta-schema at registration; invalid schemas throw."
+              },
+              {
+               ":block/uid": "H3vTb_3h5",
+               ":block/order": 4,
+               ":block/string": "When present, agents' args are validated against it before `handler` runs; when absent, args reach the handler unvalidated."
+              },
+              {
+               ":block/uid": "HAASUt3hC",
+               ":block/order": 5,
+               ":block/string": "Must serialize to at most 4000 characters."
+              },
+              {
+               ":block/uid": "0Y8sTdCcN",
+               ":block/order": 0,
+               ":block/string": "draft-07 JSON Schema describing `handler`'s args"
+              },
+              {
+               ":block/uid": "tf_2G1X3j",
+               ":block/order": 1,
+               ":block/string": "`$schema`, if present, must be the draft-07 URI — schemas are always validated as draft-07."
+              },
+              {
+               ":block/uid": "KJ3URNitU",
+               ":block/order": 2,
+               ":block/string": "`type`, if present, must be \"object\" — a tool's args are always a plain object."
+              }
+             ],
+             ":block/uid": "xoks1O1yt",
+             ":block/order": 4,
+             ":block/string": "`inputSchema` (object, optional)"
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "KF9PTC0LC",
+               ":block/order": 1,
+               ":block/string": "Declare the least scope the tool needs; a read-only AI connection can only call \"read\" tools."
+              },
+              {
+               ":block/uid": "zneTvJqtY",
+               ":block/order": 0,
+               ":block/string": "The access an agent's connection needs to call this tool"
+              }
+             ],
+             ":block/uid": "4xPVYzGXG",
+             ":block/order": 3,
+             ":block/string": "`scope` (string, optional, default \"edit\") — \"read\" | \"append\" | \"edit\""
+            }
+           ],
+           ":block/uid": "pgGqFkp-d",
+           ":block/order": 1,
+           ":block/string": "Parameters::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "w2TkzJeTV"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "zzCVEpFTB",
+             ":block/order": 0,
+             ":block/string": "`null`"
+            }
+           ],
+           ":block/uid": "AKjJE7KGm",
+           ":block/order": 2,
+           ":block/string": "Return::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "YSuAc1n3V"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "MCWglcIMD",
+             ":block/order": 0,
+             ":block/string": "```javascript\nwindow.roamAlphaAPI.ai.addTool({\n  name: \"word-count\",\n  description: \"Counts words in a block's text.\",\n  scope: \"read\",\n  inputSchema: {\n    type: \"object\",\n    properties: {uid: {type: \"string\", description: \"The block's uid\"}},\n    required: [\"uid\"]\n  },\n  handler: ({uid}) => {\n    const s = window.roamAlphaAPI.pull(\"[:block/string]\", [\":block/uid\", uid])[\":block/string\"] || \"\";\n    return {words: s.trim() ? s.trim().split(/\\s+/).length : 0};\n  }\n}) // => null```"
+            }
+           ],
+           ":block/uid": "etPuCrUpR",
+           ":block/order": 3,
+           ":block/string": "Example::"
+          }
+         ],
+         ":block/uid": "ImXeh5Fxn",
+         ":block/order": 0,
+         ":block/string": "`roamAlphaAPI.ai.addTool` #experimental"
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "V_Ct0-fxy"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "dSAi8APjS"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "ImXeh5Fxn"
+              }
+             ],
+             ":block/uid": "NnI7DjVBS",
+             ":block/order": 0,
+             ":block/string": "Remove a tool registered with ((ImXeh5Fxn)). Removing a `name` that isn't registered does nothing."
+            }
+           ],
+           ":block/uid": "FhuSsvD4d",
+           ":block/order": 0,
+           ":block/string": "Description::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "f4rqZkvUg"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "mu3jDwOUo",
+             ":block/order": 0,
+             ":block/string": "`name` (string, required) — the registered tool's name"
+            }
+           ],
+           ":block/uid": "RWss_ywk3",
+           ":block/order": 1,
+           ":block/string": "Parameters::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "w2TkzJeTV"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "xGvsk1KkV",
+             ":block/order": 0,
+             ":block/string": "`null`"
+            }
+           ],
+           ":block/uid": "7vZmK5AFD",
+           ":block/order": 2,
+           ":block/string": "Return::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "YSuAc1n3V"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "Ejxj9JJGt",
+             ":block/order": 0,
+             ":block/string": "```javascript\nwindow.roamAlphaAPI.ai.removeTool({name: \"word-count\"}) // => null```"
+            }
+           ],
+           ":block/uid": "p6azd7Tqg",
+           ":block/order": 3,
+           ":block/string": "Example::"
+          }
+         ],
+         ":block/uid": "6ly4VyMGr",
+         ":block/order": 1,
+         ":block/string": "`roamAlphaAPI.ai.removeTool` #experimental"
+        }
+       ],
+       ":block/uid": "fSnAKNqJq",
+       ":block/order": 9,
+       ":block/string": "`roamAlphaAPI.ai`"
       }
      ],
      ":block/uid": "x6jDqoJTX",
@@ -45750,6 +46058,10 @@
    ":block/uid": "02-28-2025"
   },
   {
+   ":node/title": "July 24th, 2026",
+   ":block/uid": "07-24-2026"
+  },
+  {
    ":node/title": "January 3rd, 2022",
    ":block/uid": "01-03-2022"
   },
@@ -46926,18 +47238,28 @@
         },
         {
          ":block/uid": "a8dqhUKi7",
-         ":block/order": 1,
+         ":block/order": 2,
          ":block/string": "the settings panel"
         },
         {
          ":block/uid": "GwN7OMq6Q",
-         ":block/order": 2,
+         ":block/order": 3,
          ":block/string": "your `extension.css`"
         },
         {
          ":block/uid": "4EvoOth24",
-         ":block/order": 3,
+         ":block/order": 4,
          ":block/string": "everything else — DOM elements, event listeners, intervals — is your responsibility in `onunload`"
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "V_Ct0-fxy"
+          }
+         ],
+         ":block/uid": "Akhn3JwEy",
+         ":block/order": 1,
+         ":block/string": "AI tools added via `extensionAPI.ai` #experimental"
         }
        ],
        ":block/uid": "NN55o5hDQ",
@@ -47787,6 +48109,313 @@
        ":block/uid": "zxgxdRvws",
        ":block/order": 1,
        ":block/string": "`extensionAPI.ui`"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "V_Ct0-fxy"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "dSAi8APjS"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "ImXeh5Fxn"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "PXJO_8ngS",
+               ":block/order": 0,
+               ":block/string": "Agents see it namespaced — its callable id is \"<extension-id>/<name>\" and it is advertised with your extension's display name."
+              },
+              {
+               ":block/uid": "ce-Mpi4zs",
+               ":block/order": 1,
+               ":block/string": "Removed automatically on unload — no cleanup code needed."
+              },
+              {
+               ":block/uid": "3o5cAqdcy",
+               ":block/order": 2,
+               ":block/string": "The 25-tool cap applies per extension."
+              }
+             ],
+             ":block/uid": "pa0C79B35",
+             ":block/order": 0,
+             ":block/string": "Register an AI tool — same as ((ImXeh5Fxn)), but tied to your extension:"
+            },
+            {
+             ":block/uid": "JopFUZmSF",
+             ":block/order": 1,
+             ":block/string": "Calling again with the same `name` updates the existing tool instead of adding a second one."
+            },
+            {
+             ":block/uid": "ApQhuu54Q",
+             ":block/order": 2,
+             ":block/string": "Throws synchronously on invalid input."
+            }
+           ],
+           ":block/uid": "ggfUpBMDc",
+           ":block/order": 0,
+           ":block/string": "Description::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "f4rqZkvUg"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "GIJb8nvta",
+             ":block/order": 0,
+             ":block/string": "`name` (string, required) — the tool's name; up to 64 characters from `A-Za-z0-9_-`"
+            },
+            {
+             ":block/uid": "gkMlkLeG-",
+             ":block/order": 1,
+             ":block/string": "`description` (string, required) — tells the agent what the tool does and when to use it; up to 2000 characters"
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "-3zt2wCfY",
+               ":block/order": 0,
+               ":block/string": "Called with two arguments — the agent's args as a plain object, and a `context` object (below); returns a JSON-serializable value or a Promise resolving to one"
+              },
+              {
+               ":block/uid": "4elkqK3yv",
+               ":block/order": 1,
+               ":block/string": "The return value is what the agent reads. We do add some more metadata such as the graph name and queried time. Shape it for reading (a small object or a plain sentence)."
+              },
+              {
+               ":block/uid": "TFOhcspmT",
+               ":block/order": 2,
+               ":block/string": "Throwing (or rejecting) fails the agent's call with the error message, attributed to this tool."
+              },
+              {
+               ":block/uid": "6YnIzBe5Q",
+               ":block/order": 3,
+               ":block/string": "`context.tokenUserUid` (string) — uid of the AI user the call came from; absent when the tool is invoked directly from JS"
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "HPBciK7-y",
+                 ":block/order": 0,
+                 ":block/string": "The callback must issue its writes synchronously — never pass an async function; await the returned value outside instead."
+                },
+                {
+                 ":block/uid": "KpD7x_OLK",
+                 ":block/order": 1,
+                 ":block/string": "Otherwise, graph writes made after the handler's first await are attributed to the logged-in user, not the AI."
+                }
+               ],
+               ":block/uid": "urdrOz6mY",
+               ":block/order": 4,
+               ":block/string": "`context.asTokenUser(fn)` — runs `fn` with the graph writes it issues attributed to the calling AI, with the AI's token scopes in effect"
+              }
+             ],
+             ":block/uid": "S1PjGxCHW",
+             ":block/order": 2,
+             ":block/string": "`handler` (function, required)"
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "_ODB7OH11",
+               ":block/order": 0,
+               ":block/string": "The access an agent's connection needs to call this tool"
+              },
+              {
+               ":block/uid": "EH3SP6gWq",
+               ":block/order": 1,
+               ":block/string": "Declare the least scope the tool needs; a read-only AI connection can only call \"read\" tools."
+              }
+             ],
+             ":block/uid": "tcpyp1XBZ",
+             ":block/order": 3,
+             ":block/string": "`scope` (string, optional, default \"edit\") — \"read\" | \"append\" | \"edit\""
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "Ayeghywev",
+               ":block/order": 0,
+               ":block/string": "draft-07 JSON Schema describing `handler`'s args"
+              },
+              {
+               ":block/uid": "blFTX4t_l",
+               ":block/order": 3,
+               ":block/string": "Validated against the JSON Schema meta-schema at registration; invalid schemas throw."
+              },
+              {
+               ":block/uid": "Z9m8Hi53h",
+               ":block/order": 4,
+               ":block/string": "When present, agents' args are validated against it before `handler` runs; when absent, args reach the handler unvalidated."
+              },
+              {
+               ":block/uid": "tSxnpZ0fW",
+               ":block/order": 5,
+               ":block/string": "Must serialize to at most 4000 characters."
+              },
+              {
+               ":block/uid": "ms_VuAZpN",
+               ":block/order": 1,
+               ":block/string": "`$schema`, if present, must be the draft-07 URI — schemas are always validated as draft-07."
+              },
+              {
+               ":block/uid": "XjaweaJ_u",
+               ":block/order": 2,
+               ":block/string": "`type`, if present, must be \"object\" — a tool's args are always a plain object."
+              }
+             ],
+             ":block/uid": "hMCV58fGo",
+             ":block/order": 4,
+             ":block/string": "`inputSchema` (object, optional)"
+            }
+           ],
+           ":block/uid": "JF9Y_dEpj",
+           ":block/order": 1,
+           ":block/string": "Parameters::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "w2TkzJeTV"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "UTk_11u4v",
+             ":block/order": 0,
+             ":block/string": "`null`"
+            }
+           ],
+           ":block/uid": "WrILVu06V",
+           ":block/order": 2,
+           ":block/string": "Return::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "YSuAc1n3V"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "FTW85JKK_",
+             ":block/order": 0,
+             ":block/string": "```javascript\nextensionAPI.ai.addTool({\n  name: \"word-count\",\n  description: \"Counts words in a block's text.\",\n  scope: \"read\",\n  inputSchema: {\n    type: \"object\",\n    properties: {uid: {type: \"string\", description: \"The block's uid\"}},\n    required: [\"uid\"]\n  },\n  handler: ({uid}) => {\n    const s = window.roamAlphaAPI.pull(\"[:block/string]\", [\":block/uid\", uid])[\":block/string\"] || \"\";\n    return {words: s.trim() ? s.trim().split(/\\s+/).length : 0};\n  }\n}) // => null```"
+            }
+           ],
+           ":block/uid": "ZGHFozXKX",
+           ":block/order": 3,
+           ":block/string": "Example::"
+          }
+         ],
+         ":block/uid": "8t6J-5qZc",
+         ":block/order": 0,
+         ":block/string": "`extensionAPI.ai.addTool` #experimental"
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "V_Ct0-fxy"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "dSAi8APjS"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "6ly4VyMGr"
+              }
+             ],
+             ":block/uid": "hgfgdM7DG",
+             ":block/order": 0,
+             ":block/string": "Remove a tool your extension added — same as ((6ly4VyMGr))"
+            }
+           ],
+           ":block/uid": "KiwlyQf9X",
+           ":block/order": 0,
+           ":block/string": "Description::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "f4rqZkvUg"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "iqfDS2yDv",
+             ":block/order": 0,
+             ":block/string": "`name` (string, required) — the name the tool was added with"
+            }
+           ],
+           ":block/uid": "kihzHtFwC",
+           ":block/order": 1,
+           ":block/string": "Parameters::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "w2TkzJeTV"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "Qn88ksHvJ",
+             ":block/order": 0,
+             ":block/string": "`null`"
+            }
+           ],
+           ":block/uid": "qFZJq_gbg",
+           ":block/order": 2,
+           ":block/string": "Return::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "YSuAc1n3V"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "3pBy4RR32",
+             ":block/order": 0,
+             ":block/string": "```javascript\nextensionAPI.ai.removeTool({name: \"word-count\"}) // => null```"
+            }
+           ],
+           ":block/uid": "ABhZ1eDcO",
+           ":block/order": 3,
+           ":block/string": "Example::"
+          }
+         ],
+         ":block/uid": "SCkA8iY_j",
+         ":block/order": 1,
+         ":block/string": "`extensionAPI.ai.removeTool` #experimental"
+        }
+       ],
+       ":block/uid": "s6y2whWXW",
+       ":block/order": 2,
+       ":block/string": "`extensionAPI.ai`"
       }
      ],
      ":block/uid": "WgCFAXhdy",

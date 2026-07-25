@@ -63,6 +63,8 @@
 <ul>
 <li>commands added via <code>extensionAPI.ui.commandPalette</code> and <code>extensionAPI.ui.slashCommand</code>
 </li>
+<li>AI tools added via <code>extensionAPI.ai</code> #experimental
+</li>
 <li>the settings panel
 </li>
 <li>your <code>extension.css</code>
@@ -446,6 +448,137 @@
 <li><pre><code>extensionAPI.ui.slashCommand.removeCommand(
   {label: &quot;Insert Greeting&quot;})
 // =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>extensionAPI.ai</code>
+<ul>
+<li><code>extensionAPI.ai.addTool</code> #experimental
+<ul>
+<li>Description::
+<ul>
+<li>Register an AI tool — same as <code>roamAlphaAPI.ai.addTool</code> #experimental, but tied to your extension:
+<ul>
+<li>Agents see it namespaced — its callable id is &quot;&lt;extension-id&gt;/&lt;name&gt;&quot; and it is advertised with your extension's display name.
+</li>
+<li>Removed automatically on unload — no cleanup code needed.
+</li>
+<li>The 25-tool cap applies per extension.
+</li>
+</ul>
+</li>
+<li>Calling again with the same <code>name</code> updates the existing tool instead of adding a second one.
+</li>
+<li>Throws synchronously on invalid input.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>name</code> (string, required) — the tool's name; up to 64 characters from <code>A-Za-z0-9_-</code>
+</li>
+<li><code>description</code> (string, required) — tells the agent what the tool does and when to use it; up to 2000 characters
+</li>
+<li><code>handler</code> (function, required)
+<ul>
+<li>Called with two arguments — the agent's args as a plain object, and a <code>context</code> object (below); returns a JSON-serializable value or a Promise resolving to one
+</li>
+<li>The return value is what the agent reads. We do add some more metadata such as the graph name and queried time. Shape it for reading (a small object or a plain sentence).
+</li>
+<li>Throwing (or rejecting) fails the agent's call with the error message, attributed to this tool.
+</li>
+<li><code>context.tokenUserUid</code> (string) — uid of the AI user the call came from; absent when the tool is invoked directly from JS
+</li>
+<li><code>context.asTokenUser(fn)</code> — runs <code>fn</code> with the graph writes it issues attributed to the calling AI, with the AI's token scopes in effect
+<ul>
+<li>The callback must issue its writes synchronously — never pass an async function; await the returned value outside instead.
+</li>
+<li>Otherwise, graph writes made after the handler's first await are attributed to the logged-in user, not the AI.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>scope</code> (string, optional, default &quot;edit&quot;) — &quot;read&quot; | &quot;append&quot; | &quot;edit&quot;
+<ul>
+<li>The access an agent's connection needs to call this tool
+</li>
+<li>Declare the least scope the tool needs; a read-only AI connection can only call &quot;read&quot; tools.
+</li>
+</ul>
+</li>
+<li><code>inputSchema</code> (object, optional)
+<ul>
+<li>draft-07 JSON Schema describing <code>handler</code>'s args
+</li>
+<li><code>$schema</code>, if present, must be the draft-07 URI — schemas are always validated as draft-07.
+</li>
+<li><code>type</code>, if present, must be &quot;object&quot; — a tool's args are always a plain object.
+</li>
+<li>Validated against the JSON Schema meta-schema at registration; invalid schemas throw.
+</li>
+<li>When present, agents' args are validated against it before <code>handler</code> runs; when absent, args reach the handler unvalidated.
+</li>
+<li>Must serialize to at most 4000 characters.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li><code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>extensionAPI.ai.addTool({
+  name: &quot;word-count&quot;,
+  description: &quot;Counts words in a block's text.&quot;,
+  scope: &quot;read&quot;,
+  inputSchema: {
+    type: &quot;object&quot;,
+    properties: {uid: {type: &quot;string&quot;, description: &quot;The block's uid&quot;}},
+    required: [&quot;uid&quot;]
+  },
+  handler: ({uid}) =&gt; {
+    const s = window.roamAlphaAPI.pull(&quot;[:block/string]&quot;, [&quot;:block/uid&quot;, uid])[&quot;:block/string&quot;] || &quot;&quot;;
+    return {words: s.trim() ? s.trim().split(/\s+/).length : 0};
+  }
+}) // =&gt; null</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>extensionAPI.ai.removeTool</code> #experimental
+<ul>
+<li>Description::
+<ul>
+<li>Remove a tool your extension added — same as <code>roamAlphaAPI.ai.removeTool</code> #experimental
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>name</code> (string, required) — the name the tool was added with
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li><code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>extensionAPI.ai.removeTool({name: &quot;word-count&quot;}) // =&gt; null</code></pre>
 </li>
 </ul>
 </li>

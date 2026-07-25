@@ -405,7 +405,11 @@
 
 - Roam doesn't have any built-in spell checker, and the one you see popping up comes from your OS's spellcheck rules. Here's how to turn it off:
   - Desktop app
-    - 
+    - On the top Menu bar click on the `Menu button > Edit > Spellcheck`
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FkF-msviMfa.gif?alt=media&token=9a034f56-4149-4d8c-8049-a892d41a3bdb)
+  - Browser
+    - For [Chrome](chrome://settings/languages)/Brave, from `Settings > Languages`
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Ftuu3ll6IPv.png?alt=media&token=52e9cbcd-b748-4bd7-a624-ebb8b400367e)
 
 ## [Multiplayer]([[Multiplayer]])
 

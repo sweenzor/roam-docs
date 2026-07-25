@@ -28,7 +28,7 @@
 
 - Access your Roam data over http! A read/write API for Roam data
 
-### [[Roam Depot/Extensions]]
+### [[Roam Depot/Extensions]] and [[Roam Depot/Extension API]]
 
 - How to write and submit [[Roam Depot]] extensions
 
