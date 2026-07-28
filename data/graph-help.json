@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-07-25T07:36:19.896Z",
+ "exportedAt": "2026-07-28T08:03:17.132Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -81943,15 +81943,6 @@
   {
    ":node/title": "August 6th, 2024",
    ":block/uid": "08-06-2024"
-  },
-  {
-   ":node/title": "[[Alpha]]/Beta",
-   ":block/refs": [
-    {
-     ":block/uid": "odqZ-cQS3"
-    }
-   ],
-   ":block/uid": "HFVJAgazX"
   },
   {
    ":node/title": "May 5th, 2026",
