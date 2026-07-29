@@ -2,7 +2,7 @@
 
 > Complete markdown export of the public Roam Research graph "help"
 > (https://roamresearch.com/#/app/help). Roam Research's official help graph: the product's user documentation.
-> Exported 2026-07-28T08:03:17.132Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
+> Exported 2026-07-29T08:07:07.102Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
 > Also on this site: Developer documentation — https://roamdocs.fyi/developer-documentation/llms-full.txt
 
 ## Table of contents
@@ -201,6 +201,12 @@
 
 ### **New Changes**
 
+- [[July 28th, 2026]]
+  - [[Quality of Life Improvements]]
+    - Images too wide for the space they're in now scale down to fit, keeping their set size for when there's room again, and can be resized up to the full width of their column.
+    - Pages now remember your scroll position until you restart the app
+      - If you'd scrolled into Linked References, you'll come back to the top of them.
+    - Added `/embed pdf` to the [[/ Commands]]
 - [[July 23rd, 2026]]
   - [[Bug Fixes]]
     - Fixed "Cycle namespace view" working on nested page names like `[[[[Alpha]]/Beta]]`

@@ -4,6 +4,12 @@
 
 ### **New Changes**
 
+- [[July 28th, 2026]]
+  - [[Quality of Life Improvements]]
+    - Images too wide for the space they're in now scale down to fit, keeping their set size for when there's room again, and can be resized up to the full width of their column.
+    - Pages now remember your scroll position until you restart the app
+      - If you'd scrolled into Linked References, you'll come back to the top of them.
+    - Added `/embed pdf` to the [[/ Commands]]
 - [[July 23rd, 2026]]
   - [[Bug Fixes]]
     - Fixed "Cycle namespace view" working on nested page names like `[[[[Alpha]]/Beta]]`
