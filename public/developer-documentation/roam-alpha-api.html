@@ -850,6 +850,8 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 </li>
 <li><code>block-view-type</code> (string, optional) — view type of the block itself: &quot;outline&quot; | &quot;horizontal-outline&quot; | &quot;popout&quot; | &quot;tabs&quot; | &quot;comment&quot; | &quot;side&quot; | &quot;vertical&quot;
 </li>
+<li><code>user-uid</code> (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from <code>roamAlphaAPI.ai.addTool</code> #experimental handlers
+</li>
 </ul>
 </li>
 </ul>
@@ -899,6 +901,8 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 </li>
 <li><code>block-view-type</code> (string, optional) — view type of the block itself: &quot;outline&quot; | &quot;horizontal-outline&quot; | &quot;popout&quot; | &quot;tabs&quot; | &quot;comment&quot; | &quot;side&quot; | &quot;vertical&quot;
 </li>
+<li><code>user-uid</code> (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from <code>roamAlphaAPI.ai.addTool</code> #experimental handlers
+</li>
 </ul>
 </li>
 </ul>
@@ -934,6 +938,8 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 <li><code>block</code> (object, required)
 <ul>
 <li><code>uid</code> (string, required) — block to move
+</li>
+<li><code>user-uid</code> (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from <code>roamAlphaAPI.ai.addTool</code> #experimental handlers
 </li>
 </ul>
 </li>
@@ -980,6 +986,8 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 <ul>
 <li><code>uid</code> (string, required) — block to delete
 </li>
+<li><code>user-uid</code> (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from <code>roamAlphaAPI.ai.addTool</code> #experimental handlers
+</li>
 </ul>
 </li>
 </ul>
@@ -1019,6 +1027,8 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 </ul>
 </li>
 <li><code>blocks</code> (array of strings, required) — every child uid of <code>parent-uid</code>, listed in the new order
+</li>
+<li><code>user-uid</code> (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from <code>roamAlphaAPI.ai.addTool</code> #experimental handlers
 </li>
 </ul>
 </li>
@@ -1149,6 +1159,8 @@ await window.roamAlphaAPI.data.block.addComment(
 </li>
 <li><code>children-view-type</code> (string, optional) — &quot;bullet&quot; | &quot;numbered&quot; | &quot;document&quot;
 </li>
+<li><code>user-uid</code> (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from <code>roamAlphaAPI.ai.addTool</code> #experimental handlers
+</li>
 </ul>
 </li>
 </ul>
@@ -1231,6 +1243,8 @@ await window.roamAlphaAPI.data.block.addComment(
 </li>
 <li><code>children-view-type</code> (string, optional) — &quot;bullet&quot; | &quot;numbered&quot; | &quot;document&quot;
 </li>
+<li><code>user-uid</code> (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from <code>roamAlphaAPI.ai.addTool</code> #experimental handlers
+</li>
 </ul>
 </li>
 </ul>
@@ -1266,6 +1280,8 @@ await window.roamAlphaAPI.data.block.addComment(
 <li><code>page</code> (object, required)
 <ul>
 <li><code>uid</code> (string, required)
+</li>
+<li><code>user-uid</code> (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from <code>roamAlphaAPI.ai.addTool</code> #experimental handlers
 </li>
 </ul>
 </li>
@@ -4569,6 +4585,10 @@ roamAlphaAPI.data.pull(&quot;[*]&quot;, [&quot;:user/uid&quot;, window.roamAlpha
 <li>Throwing (or rejecting) fails the agent's call with the error message, attributed to this tool.
 </li>
 <li><code>context.tokenUserUid</code> (string) — uid of the AI user the call came from; absent when the tool is invoked directly from JS
+<ul>
+<li>Pass it as the write APIs' <code>user-uid</code> argument (e.g. <code>block: {..., &quot;user-uid&quot;: context.tokenUserUid}</code>) to attribute writes to the AI — including writes made after the handler's first await.
+</li>
+</ul>
 </li>
 <li><code>context.asTokenUser(fn)</code> — runs <code>fn</code> with the graph writes it issues attributed to the calling AI, with the AI's token scopes in effect
 <ul>

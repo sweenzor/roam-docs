@@ -4,6 +4,13 @@
 
 ### **New Changes**
 
+- [[July 29th, 2026]]
+  - [[Quality of Life Improvements]]
+    - [[Document Mode]] redesign
+      - After
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fpaf8wr4a-p.png?alt=media&token=42530b74-0464-49f3-ab50-74fa8e31048e)
+      - Before
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FdFEkwCDcQt.png?alt=media&token=f3078568-b346-4180-b366-ae74126769e4)
 - [[July 28th, 2026]]
   - [[Quality of Life Improvements]]
     - Images too wide for the space they're in now scale down to fit, keeping their set size for when there's room again, and can be resized up to the full width of their column.

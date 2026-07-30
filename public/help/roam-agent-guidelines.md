@@ -9,7 +9,7 @@
 - Re-read a page before editing it; it may have changed since you last saw it.
 - When replacing old content, every fact the old version conveyed must be either carried forward or deliberately dropped as wrong. Say which.
 - Verify every claim against the product's source code before writing it. Never document from memory, and never trust the old docs' claims without checking.
-- If you have access to the relemma codebase: the full audit and fix plan lives at `generated-docs/help-graph-audit-2026-07.md`. Read it before starting doc work, and check items off there as they land.
+- If you have access to the relemma codebase: the full audit and fix plan lives at `ai_scratchpad/help-graph-audit-2026-07.md`. Read it before starting doc work, and check items off there as they land.
 
 ### Page structure
 

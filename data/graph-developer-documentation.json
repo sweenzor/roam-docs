@@ -1,6 +1,6 @@
 {
  "graph": "developer-documentation",
- "exportedAt": "2026-07-29T08:02:33.176Z",
+ "exportedAt": "2026-07-30T07:45:40.832Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -23381,6 +23381,16 @@
                  ":block/uid": "dEw2Vvwwc",
                  ":block/order": 6,
                  ":block/string": "`block-view-type` (string, optional) — view type of the block itself: \"outline\" | \"horizontal-outline\" | \"popout\" | \"tabs\" | \"comment\" | \"side\" | \"vertical\""
+                },
+                {
+                 ":block/refs": [
+                  {
+                   ":block/uid": "ImXeh5Fxn"
+                  }
+                 ],
+                 ":block/uid": "kBAWmwzhK",
+                 ":block/order": 7,
+                 ":block/string": "`user-uid` (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from ((ImXeh5Fxn)) handlers"
                 }
                ],
                ":block/uid": "kknNirre1",
@@ -23498,6 +23508,16 @@
                  ":block/uid": "iW6Wv6IDd",
                  ":block/order": 6,
                  ":block/string": "`block-view-type` (string, optional) — view type of the block itself: \"outline\" | \"horizontal-outline\" | \"popout\" | \"tabs\" | \"comment\" | \"side\" | \"vertical\""
+                },
+                {
+                 ":block/refs": [
+                  {
+                   ":block/uid": "ImXeh5Fxn"
+                  }
+                 ],
+                 ":block/uid": "0ODIEJDEE",
+                 ":block/order": 7,
+                 ":block/string": "`user-uid` (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from ((ImXeh5Fxn)) handlers"
                 }
                ],
                ":block/uid": "jLBptyRo7",
@@ -23585,6 +23605,16 @@
                  ":block/uid": "nhPKiJ9id",
                  ":block/order": 0,
                  ":block/string": "`uid` (string, required) — block to move"
+                },
+                {
+                 ":block/refs": [
+                  {
+                   ":block/uid": "ImXeh5Fxn"
+                  }
+                 ],
+                 ":block/uid": "oV1DQ4zk0",
+                 ":block/order": 1,
+                 ":block/string": "`user-uid` (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from ((ImXeh5Fxn)) handlers"
                 }
                ],
                ":block/uid": "6ioH0FRXm",
@@ -23689,6 +23719,16 @@
                  ":block/uid": "GWZD7p1gt",
                  ":block/order": 0,
                  ":block/string": "`uid` (string, required) — block to delete"
+                },
+                {
+                 ":block/refs": [
+                  {
+                   ":block/uid": "ImXeh5Fxn"
+                  }
+                 ],
+                 ":block/uid": "gmB9n9Lzk",
+                 ":block/order": 1,
+                 ":block/string": "`user-uid` (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from ((ImXeh5Fxn)) handlers"
                 }
                ],
                ":block/uid": "FERIamk_Y",
@@ -23791,6 +23831,16 @@
                ":block/uid": "xY70K-3WJ",
                ":block/order": 0,
                ":block/string": "`location` (object, required)"
+              },
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "ImXeh5Fxn"
+                }
+               ],
+               ":block/uid": "uQ-G1WFZp",
+               ":block/order": 2,
+               ":block/string": "`user-uid` (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from ((ImXeh5Fxn)) handlers"
               }
              ],
              ":block/uid": "aI5374wba",
@@ -24077,6 +24127,16 @@
                  ":block/uid": "yb0XMAoQf",
                  ":block/order": 2,
                  ":block/string": "`children-view-type` (string, optional) — \"bullet\" | \"numbered\" | \"document\""
+                },
+                {
+                 ":block/refs": [
+                  {
+                   ":block/uid": "ImXeh5Fxn"
+                  }
+                 ],
+                 ":block/uid": "IWYIxwmzg",
+                 ":block/order": 3,
+                 ":block/string": "`user-uid` (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from ((ImXeh5Fxn)) handlers"
                 }
                ],
                ":block/uid": "s--kWoj05",
@@ -24281,6 +24341,16 @@
                  ":block/uid": "Y7LDH0EyG",
                  ":block/order": 2,
                  ":block/string": "`children-view-type` (string, optional) — \"bullet\" | \"numbered\" | \"document\""
+                },
+                {
+                 ":block/refs": [
+                  {
+                   ":block/uid": "ImXeh5Fxn"
+                  }
+                 ],
+                 ":block/uid": "RNU1RQi2b",
+                 ":block/order": 3,
+                 ":block/string": "`user-uid` (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from ((ImXeh5Fxn)) handlers"
                 }
                ],
                ":block/uid": "sNDx4JKrE",
@@ -24368,6 +24438,16 @@
                  ":block/uid": "qfR4-FRl-",
                  ":block/order": 0,
                  ":block/string": "`uid` (string, required)"
+                },
+                {
+                 ":block/refs": [
+                  {
+                   ":block/uid": "ImXeh5Fxn"
+                  }
+                 ],
+                 ":block/uid": "yM-eR16wC",
+                 ":block/order": 1,
+                 ":block/string": "`user-uid` (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from ((ImXeh5Fxn)) handlers"
                 }
                ],
                ":block/uid": "ns9YQOpYs",
@@ -32225,6 +32305,13 @@
                ":block/string": "Called with two arguments — the agent's args as a plain object, and a `context` object (below); returns a JSON-serializable value or a Promise resolving to one"
               },
               {
+               ":block/children": [
+                {
+                 ":block/uid": "ncimIJl9b",
+                 ":block/order": 0,
+                 ":block/string": "Pass it as the write APIs' `user-uid` argument (e.g. `block: {..., \"user-uid\": context.tokenUserUid}`) to attribute writes to the AI — including writes made after the handler's first await."
+                }
+               ],
                ":block/uid": "wzUm1Xe1W",
                ":block/order": 3,
                ":block/string": "`context.tokenUserUid` (string) — uid of the AI user the call came from; absent when the tool is invoked directly from JS"
@@ -36434,10 +36521,6 @@
   {
    ":node/title": "January 29th, 2024",
    ":block/uid": "01-29-2024"
-  },
-  {
-   ":node/title": "Themes",
-   ":block/uid": "Ln1sKPxeq"
   },
   {
    ":node/title": "May 4th, 2021",
@@ -46030,10 +46113,6 @@
    ":block/uid": "03-14-2023"
   },
   {
-   ":node/title": "{{embed: Returns",
-   ":block/uid": "C8vT9E8Sm"
-  },
-  {
    ":node/title": "September 1st, 2023",
    ":block/uid": "09-01-2023"
   },
@@ -46242,10 +46321,6 @@
     }
    ],
    ":block/uid": "04-08-2025"
-  },
-  {
-   ":node/title": "kanban",
-   ":block/uid": "qRQpXO3ot"
   },
   {
    ":node/title": "Code",
@@ -48203,6 +48278,13 @@
                ":block/string": "Throwing (or rejecting) fails the agent's call with the error message, attributed to this tool."
               },
               {
+               ":block/children": [
+                {
+                 ":block/uid": "XkmV_cg3k",
+                 ":block/order": 0,
+                 ":block/string": "Pass it as the write APIs' `user-uid` argument (e.g. `block: {..., \"user-uid\": context.tokenUserUid}`) to attribute writes to the AI — including writes made after the handler's first await."
+                }
+               ],
                ":block/uid": "6YnIzBe5Q",
                ":block/order": 3,
                ":block/string": "`context.tokenUserUid` (string) — uid of the AI user the call came from; absent when the tool is invoked directly from JS"

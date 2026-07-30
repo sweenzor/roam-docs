@@ -492,6 +492,10 @@
 <li>Throwing (or rejecting) fails the agent's call with the error message, attributed to this tool.
 </li>
 <li><code>context.tokenUserUid</code> (string) — uid of the AI user the call came from; absent when the tool is invoked directly from JS
+<ul>
+<li>Pass it as the write APIs' <code>user-uid</code> argument (e.g. <code>block: {..., &quot;user-uid&quot;: context.tokenUserUid}</code>) to attribute writes to the AI — including writes made after the handler's first await.
+</li>
+</ul>
 </li>
 <li><code>context.asTokenUser(fn)</code> — runs <code>fn</code> with the graph writes it issues attributed to the calling AI, with the AI's token scopes in effect
 <ul>

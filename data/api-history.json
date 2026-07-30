@@ -1,9 +1,12 @@
 {
- "apiVersion": "1.1.4",
+ "apiVersion": "1.1.5",
  "functions": [
+  "ai.addTool",
+  "ai.removeTool",
   "createBlock",
   "createPage",
   "data.addPullWatch",
+  "data.ai.callExtensionTool",
   "data.ai.getBacklinks",
   "data.ai.getBlock",
   "data.ai.getComments",
@@ -174,6 +177,17 @@
    "added": [],
    "removed": [],
    "total": 132
+  },
+  {
+   "date": "2026-07-30",
+   "apiVersion": "1.1.5",
+   "added": [
+    "ai.addTool",
+    "ai.removeTool",
+    "data.ai.callExtensionTool"
+   ],
+   "removed": [],
+   "total": 135
   }
  ]
 }

@@ -1,7 +1,7 @@
 {
  "apiVersion": {
   "async": false,
-  "value": "1.1.4"
+  "value": "1.1.5"
  },
  "graph": {
   "async": false,
@@ -99,7 +99,7 @@
  },
  "q('[:find (count ?e) . :where [?e :block/uid]]')": {
   "async": false,
-  "value": 6557
+  "value": 6564
  },
  "pull(minimal)": {
   "async": false,

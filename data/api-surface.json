@@ -651,6 +651,23 @@
    "cljsArities": [],
    "variadic": false
   },
+  "ai": {
+   "kind": "namespace",
+   "children": {
+    "addTool": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
+    },
+    "removeTool": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
+    }
+   }
+  },
   "updatePage": {
    "kind": "function",
    "jsLength": 1,
@@ -908,6 +925,12 @@
        "cljsArities": [],
        "variadic": false
       },
+      "callExtensionTool": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
       "search": {
        "kind": "function",
        "jsLength": 1,
@@ -1014,7 +1037,7 @@
   },
   "apiVersion": {
    "kind": "string",
-   "value": "1.1.4"
+   "value": "1.1.5"
   }
  }
 }

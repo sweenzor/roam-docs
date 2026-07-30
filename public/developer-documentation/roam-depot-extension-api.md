@@ -209,6 +209,7 @@
           - The return value is what the agent reads. We do add some more metadata such as the graph name and queried time. Shape it for reading (a small object or a plain sentence).
           - Throwing (or rejecting) fails the agent's call with the error message, attributed to this tool.
           - `context.tokenUserUid` (string) — uid of the AI user the call came from; absent when the tool is invoked directly from JS
+            - Pass it as the write APIs' `user-uid` argument (e.g. `block: {..., "user-uid": context.tokenUserUid}`) to attribute writes to the AI — including writes made after the handler's first await.
           - `context.asTokenUser(fn)` — runs `fn` with the graph writes it issues attributed to the calling AI, with the AI's token scopes in effect
             - The callback must issue its writes synchronously — never pass an async function; await the returned value outside instead.
             - Otherwise, graph writes made after the handler's first await are attributed to the logged-in user, not the AI.

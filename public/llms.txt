@@ -2,11 +2,11 @@
 
 > Markdown mirror of public Roam Research graphs (developer-documentation, help),
 > refreshed automatically, plus live-introspected TypeScript definitions for
-> window.roamAlphaAPI (v1.1.4) and copy-pasteable examples. Sources of truth: the
+> window.roamAlphaAPI (v1.1.5) and copy-pasteable examples. Sources of truth: the
 > public graphs and a running Roam Research session; regenerated on a schedule.
 > Source & contributions: https://github.com/sweenzor/roam-docs
 
-Last export: 2026-07-29T08:02:33.176Z
+Last export: 2026-07-30T07:45:40.832Z
 
 ## Developer documentation
 
@@ -29,7 +29,7 @@ Last export: 2026-07-29T08:02:33.176Z
 
 ## API reference
 
-- [roam-alpha-api.d.ts](https://roamdocs.fyi/types/roam-alpha-api.d.ts): TypeScript definitions for window.roamAlphaAPI — all 132 live-introspected functions (2 newly-discovered functions not yet typed — see the llms-full.txt function inventory appendix)
+- [roam-alpha-api.d.ts](https://roamdocs.fyi/types/roam-alpha-api.d.ts): TypeScript definitions for window.roamAlphaAPI — all 135 live-introspected functions (5 newly-discovered functions not yet typed — see the llms-full.txt function inventory appendix)
 
 ## Examples
 
@@ -150,7 +150,6 @@ Last export: 2026-07-29T08:02:33.176Z
 - [Video Embed](https://roamdocs.fyi/help/video-embed.md): You can embed videos in Roam directly, without going to a separate page to access them
 - [Templates](https://roamdocs.fyi/help/templates.md): Team GIFS::
 - [All Pages](https://roamdocs.fyi/help/all-pages.md): Every page in your graph in one sortable list, with columns for mentions, word count, and when each page was created and last updated.
-- [Workflows](https://roamdocs.fyi/help/workflows.md): Journaling
 - [Images](https://roamdocs.fyi/help/images.md): You can include images on Roam in these two ways
 - [Journaling](https://roamdocs.fyi/help/journaling.md): Articles::
 - [Mentions](https://roamdocs.fyi/help/mentions.md): Mentions help you pull information (i.e., References) right on any Blocks, without you having to open extra windows or sidebars to access th
@@ -160,6 +159,7 @@ Last export: 2026-07-29T08:02:33.176Z
 - [Graph Homepage](https://roamdocs.fyi/help/graph-homepage.md): A graph can have a homepage: a page that opens automatically whenever the graph loads, instead of today's Daily Notes.
 - [Studying](https://roamdocs.fyi/help/studying.md): Community Videos::
 - [Long Videos](https://roamdocs.fyi/help/long-videos.md): Implementing a Digital Zettelkasten using Block References in Roam Research with Beau Haan by Robert Haisfield
+- [Workflows](https://roamdocs.fyi/help/workflows.md): Journaling
 - [Date picker](https://roamdocs.fyi/help/date-picker.md): Date picker helps you pick a date's page by showing you a calendar
 - [Bidirectional linking](https://roamdocs.fyi/help/bidirectional-linking.md): It doesn't matter what page you've written a note on, if you mention an idea, every place where you mentioned that idea will get collected u
 - [Code Block](https://roamdocs.fyi/help/code-block.md): You can include code in different programming languages in Roam, for example
