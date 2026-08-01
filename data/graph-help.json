@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-07-30T07:50:15.504Z",
+ "exportedAt": "2026-08-01T07:45:26.399Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -72167,6 +72167,129 @@
        ":block/string": "**Can I turn off autocorrect/spellcheck in Roam?**",
        ":block/heading": 3,
        ":block/order": 32
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "KzuqwTPYl"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "dW98JOuj0"
+            },
+            {
+             ":block/uid": "W8BQTGEBd"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "t-XUoYi7m",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F60uLtuv8Iq.gif?alt=media&token=2405c2de-8d01-4df3-8e24-8cd3e8b899d7)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "fiMzLs95I",
+           ":block/string": "[[Blueprint]] by [[Alexander Rink]] offers light and dark theme for Roam Research based on blueprint.js. Here's how to enable it:",
+           ":block/order": 1
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "Hb35UDr0b"
+            },
+            {
+             ":block/uid": "bbMVZOMdB"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "n-GJ-Y8GC",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FX19XTdGE53.gif?alt=media&token=6b294eef-e5eb-4c6c-a739-91a7c4566f56)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "b4-WOCQd2",
+           ":block/string": "[[CSS Dark Mode Toggle]] by [[Matt Vogel]] adds a button to the topbar to toggle a theme's dark mode manually. Here's how to enable it:",
+           ":block/order": 0
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "f1lxUcEYl"
+            },
+            {
+             ":block/uid": "et9mV1ned"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "rxzZ0A1cq",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F62RroyZD-b.gif?alt=media&token=d845b444-404f-4dd2-99a8-539657a83cea)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "qelSoQNrL",
+           ":block/string": "[[Roam \"Native\" Dark]] by [[hyc]]. Here's how to enable it:",
+           ":block/order": 2
+          }
+         ],
+         ":block/uid": "QdorU9OF4",
+         ":block/string": "Roam Depot Extensions",
+         ":block/order": 0
+        },
+        {
+         ":block/children": [
+          {
+           ":block/uid": "UiUwfFNOk",
+           ":block/string": "Only applies outside graphs while switching graphs, billing etc.",
+           ":block/order": 0
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "3srYcqY0e",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FE_WCiEAWni.gif?alt=media&token=105e780f-619c-41a0-a8ea-3d2efe47cf98)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "YzMiYs-cW",
+           ":block/string": "Go to the [Graphs and Settings/All Graphs](https://roamresearch.com/#/app) > Click on your photo > Theme > Dark",
+           ":block/order": 1
+          }
+         ],
+         ":block/uid": "Tee-S5RpX",
+         ":block/string": "[Graphs and Settings/All Graphs](https://roamresearch.com/#/app) page",
+         ":block/order": 1
+        },
+        {
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "RN7TfpvSS",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FYsyPz3QsZf.gif?alt=media&token=8fbb46ff-4b93-42d6-b32b-c3c25f82998a)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "YhcigNaDz",
+           ":block/string": "From the bottom bar > Settings > Theme > Dark (Please toggle the 'Native View')",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "9dpRusiCK",
+         ":block/string": "Mobile App",
+         ":block/order": 2
+        }
+       ],
+       ":block/uid": "B9SVYOAtT",
+       ":block/string": "**Does Roam have a [[Dark Mode]], and how do I enable it?**",
+       ":block/heading": 3,
+       ":block/order": 33
       }
      ],
      ":block/uid": "8PnUxBsZt",
@@ -72223,7 +72346,7 @@
         }
        ],
        ":block/uid": "K_t3a4Rpr",
-       ":block/string": "**How do I** [share]([[Sharing]]) **my graph?**",
+       ":block/string": "**How do I** [share]([[Sharing]]) **my graph?** ",
        ":block/heading": 3,
        ":block/order": 0
       },
@@ -72344,7 +72467,7 @@
         }
        ],
        ":block/uid": "HSGQuqD0d",
-       ":block/string": "**Where do I find the newest feature updates and bug fixes?**",
+       ":block/string": "**Where do I find the newest feature updates and bug fixes?** ",
        ":block/heading": 3,
        ":block/order": 2
       },
@@ -72808,7 +72931,7 @@
         }
        ],
        ":block/uid": "3fmrz3XwY",
-       ":block/string": "**Where are local graphs stored?**",
+       ":block/string": "**Where are local graphs stored?** ",
        ":block/heading": 3,
        ":block/order": 2
       },
@@ -76304,6 +76427,10 @@
   {
    ":node/title": "December 1st, 2025",
    ":block/uid": "12-01-2025"
+  },
+  {
+   ":node/title": "CSS Dark Mode Toggle",
+   ":block/uid": "bbMVZOMdB"
   },
   {
    ":node/title": "Philosophy",
@@ -82620,6 +82747,10 @@
   {
    ":node/title": "Problem Statement",
    ":block/uid": "qVcfxyyTG"
+  },
+  {
+   ":node/title": "Roam \"Native\" Dark",
+   ":block/uid": "et9mV1ned"
   },
   {
    ":node/title": "Evergreen Notes",

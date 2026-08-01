@@ -3061,7 +3061,7 @@
       - We feel like a weekly backup makes more sense in a lot of cases
     - For local graphs, if you do not have auto backups turned on, alerts every time you open the graph
       - We are strongly pushing towards setting up local graphs because they are stored in browser's local storage and so are lost if you clear browsing history/data
-        - ****Where are local graphs stored?****
+        - ****Where are local graphs stored?** **
           - Local graphs are stored in your browser's local storage. This means that if you clear your browser data then you will lose all the data in your local graph. To mitigate this risk, we recommend you set up daily automatic backups.
       - Also please note that since we have [[Encrypted Graphs]], if possible, we recommend using those instead of local graphs.
     - Better error handling when running into any errors during backup (for example, browser permission errors)
