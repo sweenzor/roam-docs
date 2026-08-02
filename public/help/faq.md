@@ -428,6 +428,18 @@
   - From the bottom bar > Settings > Theme > Dark (Please toggle the 'Native View')
     - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FYsyPz3QsZf.gif?alt=media&token=8fbb46ff-4b93-42d6-b32b-c3c25f82998a)
 
+#### **How do I turn on [document mode]([[Document Mode]]) in Roam?**
+
+- Right-click on the page title > View as > Document
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F-UvYJeHv4o.gif?alt=media&token=b4010a7d-b3af-4e0f-908e-5a73d28b5de4)
+
+#### **Can I add the day of the week to my Daily Notes header in Roam?**
+
+- This is available with the [[Workbench]] extension by [[David Vargas]], available on the Roam Depot. After installing the extension, you need to toggle the __Daily Notes Popup__ from the extension settings to have the day of the week below the title of daily notes.
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FZHVWs0rYOy.gif?alt=media&token=81d05496-2212-446f-a6c4-49e66deef211)
+
+#### **Can I [export]([[Export]]) a Roam page to PDF, Word (.docx), or EPUB format?**
+
 ## [Multiplayer]([[Multiplayer]])
 
 #### **How do I** [share]([[Sharing]]) **my graph?** 

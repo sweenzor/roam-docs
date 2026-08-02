@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-08-01T07:45:26.399Z",
+ "exportedAt": "2026-08-02T07:48:13.380Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -23997,6 +23997,10 @@
    ":block/uid": "xMya7noZa"
   },
   {
+   ":node/title": "Workbench",
+   ":block/uid": "wJ-R8uhMh"
+  },
+  {
    ":node/title": "references",
    ":block/uid": "1XmBPh0o1"
   },
@@ -24391,6 +24395,10 @@
   {
    ":node/title": "Parker Rex",
    ":block/uid": "jWwYEbxnj"
+  },
+  {
+   ":node/title": "August 1st, 2026",
+   ":block/uid": "08-01-2026"
   },
   {
    ":node/title": "August 1st, 2023",
@@ -27272,6 +27280,10 @@
   {
    ":node/title": "August 2nd, 2023",
    ":block/uid": "08-02-2023"
+  },
+  {
+   ":node/title": "August 2nd, 2026",
+   ":block/uid": "08-02-2026"
   },
   {
    ":node/title": "August 2nd, 2025",
@@ -72290,6 +72302,70 @@
        ":block/string": "**Does Roam have a [[Dark Mode]], and how do I enable it?**",
        ":block/heading": 3,
        ":block/order": 33
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "Ln3eurV3r"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/children": [
+          {
+           ":block/uid": "l7jsEb-nh",
+           ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F-UvYJeHv4o.gif?alt=media&token=b4010a7d-b3af-4e0f-908e-5a73d28b5de4)",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "7gRFz4MME",
+         ":block/string": "Right-click on the page title > View as > Document",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "K3cI_xjDB",
+       ":block/string": "**How do I turn on [document mode]([[Document Mode]]) in Roam?**",
+       ":block/heading": 3,
+       ":block/order": 34
+      },
+      {
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "wJ-R8uhMh"
+          },
+          {
+           ":block/uid": "Zh7pFmVu6"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/uid": "vfD8wgdLU",
+           ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FZHVWs0rYOy.gif?alt=media&token=81d05496-2212-446f-a6c4-49e66deef211)",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "YL1cu7oOC",
+         ":block/string": "This is available with the [[Workbench]] extension by [[David Vargas]], available on the Roam Depot. After installing the extension, you need to toggle the __Daily Notes Popup__ from the extension settings to have the day of the week below the title of daily notes.",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "nXzzPbAwU",
+       ":block/string": "**Can I add the day of the week to my Daily Notes header in Roam?**",
+       ":block/heading": 3,
+       ":block/order": 35
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "FK4fiJVom"
+        }
+       ],
+       ":block/uid": "CtBuPhfhu",
+       ":block/string": "**Can I [export]([[Export]]) a Roam page to PDF, Word (.docx), or EPUB format?**",
+       ":block/heading": 3,
+       ":block/order": 36
       }
      ],
      ":block/uid": "8PnUxBsZt",
@@ -76419,6 +76495,10 @@
   {
    ":node/title": "Nabhan",
    ":block/uid": "VF-EAcsDC"
+  },
+  {
+   ":node/title": "David Vargas",
+   ":block/uid": "Zh7pFmVu6"
   },
   {
    ":node/title": "October 20th, 2021",
