@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-08-02T07:48:13.380Z",
+ "exportedAt": "2026-08-03T08:50:46.992Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -70345,48 +70345,6 @@
         {
          ":block/children": [
           {
-           ":block/uid": "u_X36Or3R",
-           ":block/string": "You have to cancel your original plan from the dashboard (from the \"click here\" link)",
-           ":block/order": 0
-          },
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "2h9V-FtAO"
-            }
-           ],
-           ":block/uid": "AdGt6juy0",
-           ":block/string": "{{[[video]]: https://www.loom.com/share/f28c077d47ce4d8396363e4bcae485b7}}",
-           ":block/order": 5
-          },
-          {
-           ":block/uid": "HaR2CFPwe",
-           ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2FCorOr3Fd_d.png?alt=media&token=3ce5a03e-5ecc-49c9-9478-d641890934ed)",
-           ":block/order": 1
-          },
-          {
-           ":block/uid": "FgPqA75_S",
-           ":block/string": "Then, follow the directions on the dashboard to upgrade",
-           ":block/order": 2
-          },
-          {
-           ":block/uid": "5Qq9-kSjP",
-           ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp-documentation%2F49IaMFvK7i.png?alt=media&token=b54a2af2-9d24-4dec-a4a1-54a1c5b6f4ac)",
-           ":block/order": 3
-          },
-          {
-           ":block/uid": "IsYGzOukD",
-           ":block/string": "Here's a video walkthrough for upgrading to believer: ",
-           ":block/order": 4
-          }
-         ],
-         ":block/uid": "i_OkWzwio",
-         ":block/string": "Old",
-         ":block/order": 5
-        },
-        {
-         ":block/children": [
-          {
            ":block/uid": "1t_n47i31",
            ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F7ACw1ddipJ.png?alt=media&token=f22b0133-c350-4f71-ba57-a4709eb06819)",
            ":block/order": 0
@@ -72304,31 +72262,6 @@
        ":block/order": 33
       },
       {
-       ":block/refs": [
-        {
-         ":block/uid": "Ln3eurV3r"
-        }
-       ],
-       ":block/children": [
-        {
-         ":block/children": [
-          {
-           ":block/uid": "l7jsEb-nh",
-           ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F-UvYJeHv4o.gif?alt=media&token=b4010a7d-b3af-4e0f-908e-5a73d28b5de4)",
-           ":block/order": 0
-          }
-         ],
-         ":block/uid": "7gRFz4MME",
-         ":block/string": "Right-click on the page title > View as > Document",
-         ":block/order": 0
-        }
-       ],
-       ":block/uid": "K3cI_xjDB",
-       ":block/string": "**How do I turn on [document mode]([[Document Mode]]) in Roam?**",
-       ":block/heading": 3,
-       ":block/order": 34
-      },
-      {
        ":block/children": [
         {
          ":block/refs": [
@@ -72354,16 +72287,77 @@
        ":block/uid": "nXzzPbAwU",
        ":block/string": "**Can I add the day of the week to my Daily Notes header in Roam?**",
        ":block/heading": 3,
-       ":block/order": 35
+       ":block/order": 34
       },
       {
        ":block/refs": [
         {
          ":block/uid": "FK4fiJVom"
+        },
+        {
+         ":block/uid": "rHet0URfR"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/children": [
+          {
+           ":block/uid": "uWfroZ7en",
+           ":block/string": "Install **Export or Import Document** by Mark Lavercombe from Roam Depot",
+           ":block/order": 0
+          },
+          {
+           ":block/uid": "SRukCZwoH",
+           ":block/string": "Go to the page you want to export",
+           ":block/order": 1
+          },
+          {
+           ":block/uid": "pshTmB0dT",
+           ":block/string": "Press Ctrl+p and search for export",
+           ":block/order": 2
+          },
+          {
+           ":block/uid": "6hhC15GYX",
+           ":block/string": "Select Export as PDF or DOCS\n![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FG-HF77i2mH.gif?alt=media&token=6f4eeeed-3eff-408f-b9e2-b793e58b7fe3)",
+           ":block/order": 3
+          }
+         ],
+         ":block/uid": "MsA8_HHfS",
+         ":children/view-type": "numbered",
+         ":block/string": "The Export or Import Document extension by Mark Lavercombe, available on Roam Depot, allows you to export a page (not the whole graph) in your graph into many different formats. Here's how to do that-",
+         ":block/order": 0
         }
        ],
        ":block/uid": "CtBuPhfhu",
-       ":block/string": "**Can I [export]([[Export]]) a Roam page to PDF, Word (.docx), or EPUB format?**",
+       ":block/string": "**Can I [export]([[Export]]) a Roam page to [PDF]([[pdf]]), Word (.docx), or EPUB format?**",
+       ":block/heading": 3,
+       ":block/order": 35
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "7nlxjTlnS"
+        },
+        {
+         ":block/uid": "ZaGqjTosz"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/children": [
+          {
+           ":block/uid": "BoCg0iswF",
+           ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FKcOChggtjb.gif?alt=media&token=26c1e0fe-8292-4764-bc8f-9ed26d529cc8)",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "YsIRyKlMa",
+         ":block/string": "You can try the[ Weathercards](https://github.com/mlava/weathercards) extension by Mark Lavercombe, available on Roam Depot, which imports weather conditions and forecasts from Open Weather Map. You can update the location and number of days from the settings.",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "9_raMtZk0",
+       ":block/string": "**Can I pull [[Weather Report]] or a daily [[Weather Summary]] into my Roam Daily Notes?**",
        ":block/heading": 3,
        ":block/order": 36
       }
