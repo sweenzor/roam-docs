@@ -6,7 +6,7 @@
 > public graphs and a running Roam Research session; regenerated on a schedule.
 > Source & contributions: https://github.com/sweenzor/roam-docs
 
-Last export: 2026-08-04T07:59:25.446Z
+Last export: 2026-08-05T08:00:00.870Z
 
 ## Developer documentation
 
@@ -57,6 +57,7 @@ Last export: 2026-08-04T07:59:25.446Z
 - [Roam Clojurescript API](https://roamdocs.fyi/developer-documentation/roam-clojurescript-api.md): Clojure Core Namespaces
 - [Datomic Alpha API](https://roamdocs.fyi/developer-documentation/datomic-alpha-api.md): Important Note: This is the documentation for the Depreciated (& inactive) Datomic API. We have a new API! see it here, Roam Backend API
 - [iFrame Components](https://roamdocs.fyi/developer-documentation/iframe-components.md): Important Note: This is Depreciated, it still most likely works but we will not be continuing it's development
+- [Attributes Data Model (new)](https://roamdocs.fyi/developer-documentation/attributes-data-model-new.md): Introduction: it's a hypergraph
 - [Attributes Data Model](https://roamdocs.fyi/developer-documentation/attributes-data-model.md): Introduction: it's a hypergraph
 - [datalog-block-query](https://roamdocs.fyi/developer-documentation/datalog-block-query.md): Older Loom videos
 - [Roam Backend API Change Log](https://roamdocs.fyi/developer-documentation/roam-backend-api-change-log.md): April 30th, 2024

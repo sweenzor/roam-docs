@@ -1,6 +1,6 @@
 {
  "graph": "developer-documentation",
- "exportedAt": "2026-08-04T07:59:25.446Z",
+ "exportedAt": "2026-08-05T08:00:00.870Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -36783,6 +36783,10 @@
    ":block/uid": "02-01-2023"
   },
   {
+   ":node/title": "August 4th, 2026",
+   ":block/uid": "08-04-2026"
+  },
+  {
    ":node/title": "npm",
    ":block/uid": "-lt0GcDV8"
   },
@@ -38028,6 +38032,369 @@
   {
    ":node/title": "Github Repo",
    ":block/uid": "onf9R3WXs"
+  },
+  {
+   ":node/title": "Attributes Data Model (new)",
+   ":block/children": [
+    {
+     ":block/children": [
+      {
+       ":block/uid": "V3enMnDro",
+       ":block/order": 0,
+       ":block/string": "Roam's graph is made of nodes: __pages__ (named nodes) and __blocks__ (outline content nodes with stable ids). `[[links]]` and `((refs))` connect them, but that is an __untyped__ graph. Attributes (written `Name:: value`) add __typed relationships__ on top."
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "6a5WeZEUX",
+         ":block/order": 0,
+         ":block/string": "Each `Name:: value` assertion is derived from a real block, the attribute name is a real page, and the value can be another entity that carries its own attributes."
+        },
+        {
+         ":block/uid": "H3CbWqk6Q",
+         ":block/order": 1,
+         ":block/string": "So edges are addressable, can be annotated, and can serve as endpoints of further edges."
+        }
+       ],
+       ":block/uid": "R9-PpvT8C",
+       ":block/order": 1,
+       ":block/string": "What makes it a __hypergraph__ rather than a plain labeled graph: **a relationship is itself a node.**"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "rjvljPje9",
+         ":block/order": 0,
+         ":block/string": "It holds the `[entity attribute value]` triple, plus provenance refs recording which blocks it was derived from."
+        }
+       ],
+       ":block/uid": "2LX8sND-Q",
+       ":block/order": 2,
+       ":block/string": "Concretely, each assertion is stored as its own entity: a **harc** (hyperedge/arc) with its own `:block/uid`."
+      }
+     ],
+     ":block/uid": "mKVThEQWD",
+     ":block/order": 0,
+     ":block/string": "**Introduction: it's a hypergraph**"
+    },
+    {
+     ":block/children": [
+      {
+       ":block/children": [
+        {
+         ":block/children": [
+          {
+           ":block/uid": "FDYnGzcA7",
+           ":block/order": 0,
+           ":block/string": "If the parent block is exactly one reference and nothing else, the assertion is about the __referenced__ entity instead: `:harc/e` points at the referenced node while the e-source stays the referencing block."
+          },
+          {
+           ":block/uid": "qXKF-zEAC",
+           ":block/order": 1,
+           ":block/string": "This is how you can assert attributes about `[[Project Apollo]]` from a daily note."
+          }
+         ],
+         ":block/uid": "nQVkOAOOs",
+         ":block/order": 0,
+         ":block/string": "`:harc/e` is the **entity** being described (normally the attribute block's parent page/block)."
+        },
+        {
+         ":block/uid": "8kT6_tlYN",
+         ":block/order": 1,
+         ":block/string": "`:harc/a` is the **attribute**; always a __page__, since `Name::` resolves to a `[[Name]]` page."
+        },
+        {
+         ":block/uid": "NfIOAxozl",
+         ":block/order": 2,
+         ":block/string": "`:harc/v` is the **value(s)**; many-cardinality, so one harc holds all of an attribute's values for that entity."
+        },
+        {
+         ":block/uid": "3a4FjmeW8",
+         ":block/order": 3,
+         ":block/string": "`:harc/e-source`, `:harc/a-source`, `:harc/v-source` record which blocks each position was derived __from__ (see provenance below)."
+        }
+       ],
+       ":block/uid": "D_TuXiouQ",
+       ":block/order": 0,
+       ":block/string": "Each assertion is one entity carrying six ref attributes, three for the logical triple and three for provenance:"
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "oAdYx3oyf"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/uid": "99xs7mRhc",
+         ":block/order": 0,
+         ":block/string": "For now, only `:harc/v` can have multiple values. But all were made cardinality many for future compatibility"
+        }
+       ],
+       ":block/uid": "jdMS86P-k",
+       ":block/order": 1,
+       ":block/string": "All six are ordinary many-cardinality refs, so everything is natively indexed by DataScript and traversable with plain pulls and reverse refs (see [[Data Model]] for the underlying store)."
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "X-hkIZSWM",
+         ":block/order": 0,
+         ":block/string": "There is no API for writing them (for now). To change a harc, edit the blocks it derives from."
+        }
+       ],
+       ":block/uid": "dBMhrmxgX",
+       ":block/order": 2,
+       ":block/string": "Harcs are **derived data**: Roam recomputes them from the source blocks whenever those blocks change."
+      }
+     ],
+     ":block/uid": "-qbz39rvn",
+     ":block/order": 1,
+     ":block/string": "**The harc entity**"
+    },
+    {
+     ":block/children": [
+      {
+       ":block/children": [
+        {
+         ":block/uid": "xhsxYVeAv",
+         ":block/order": 0,
+         ":block/string": "When it stops being an attribute (edited to plain text, or deleted), the harc is retracted."
+        }
+       ],
+       ":block/uid": "MMS4L7_bR",
+       ":block/order": 0,
+       ":block/string": "`:harc/a-source` is the `Name::` block itself, the block that defines the assertion. One per harc."
+      },
+      {
+       ":block/uid": "fOWS4kvLe",
+       ":block/order": 1,
+       ":block/string": "`:harc/e-source` is the block the entity was reached through: normally the attribute block's parent, even when `:harc/e` proxied through it to a referenced entity."
+      },
+      {
+       ":block/uid": "8v7E3kp4u",
+       ":block/order": 2,
+       ":block/string": "`:harc/v-source` records which block contributed each value: a value child, or the attribute block itself when the value comes from its inline tail."
+      }
+     ],
+     ":block/uid": "ZsbgHJ47g",
+     ":block/order": 2,
+     ":block/string": "**Provenance: the `-source` refs**"
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "71K7jG6Ty",
+       ":block/order": 0,
+       ":block/string": "**Plain-text child block** → `:harc/v` is that child block's own node."
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "yZnjMXLfk",
+         ":block/order": 0,
+         ":block/string": "Multiple refs all become values, unlike the entity position, which proxies only through a single ref."
+        }
+       ],
+       ":block/uid": "X-4wK3a9W",
+       ":block/order": 1,
+       ":block/string": "**Refs-only content** (`Owner:: [[Jane Doe]]`, or a child that is only refs) → `:harc/v` is the referenced node(s)."
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "PNw2oaKxQ",
+         ":block/order": 1,
+         ":block/string": "Text values are entities with `:harc.text/string`, so value __strings__ are directly queryable."
+        },
+        {
+         ":block/uid": "mUjzB9aZ6",
+         ":block/order": 2,
+         ":block/string": "The text entity's uid is deterministic (`t-` + the harc's uid), so two clients minting the same value concurrently converge on one entity instead of duplicating."
+        },
+        {
+         ":block/uid": "i-sVN6f5G",
+         ":block/order": 0,
+         ":block/string": "It is not a block (no parent, no `:block/string`) and is referenced only through `:harc/v`. It lives and dies with its harc."
+        }
+       ],
+       ":block/uid": "sddQu15ME",
+       ":block/order": 2,
+       ":block/string": "**Inline text tail** (`Status:: Active`) → the tail becomes one owned **text entity**: `{:block/uid \"t-<harc-uid>\" :harc.text/string \"Active\"}`."
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "aJP_wylMG",
+         ":block/order": 0,
+         ":block/string": "A bare `Name::` with no tail and no children keeps its harc with an empty `:harc/v`."
+        }
+       ],
+       ":block/uid": "0X37UE9qy",
+       ":block/order": 3,
+       ":block/string": "**Exclusivity**: a non-blank inline tail claims the value position, and the block's children are then plain sub-content, not values."
+      },
+      {
+       ":block/uid": "4j6X9JA-b",
+       ":block/order": 5,
+       ":block/string": "Attribute names resolve refs only **one level deep** (`[[hello [[world]]]]` picks up `hello`, not the nested `world`)."
+      },
+      {
+       ":block/uid": "FdP3NXBeA",
+       ":block/order": 4,
+       ":block/string": "Children that are themselves attributes are never values: they define their own harcs about this relationship instead (see attributes on relationships below)."
+      }
+     ],
+     ":block/uid": "vbdBbY9Nm",
+     ":block/order": 3,
+     ":block/string": "**Values: blocks, pages, and owned text**"
+    },
+    {
+     ":block/children": [
+      {
+       ":block/uid": "rOilrR33A",
+       ":block/order": 0,
+       ":block/string": "The harc's own datoms are the index: traversal is plain pulls and reverse refs."
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "BfmwBrxmz",
+         ":block/order": 0,
+         ":block/string": "```javascript\n// all attributes of a page, with their values\nwindow.roamAlphaAPI.data.pull(\n  \"[{:harc/_e [{:harc/a [:node/title]} {:harc/v [:block/uid :node/title :block/string :harc.text/string]}]}]\",\n  [\":node/title\", \"Project Apollo\"])```"
+        }
+       ],
+       ":block/uid": "Hajuscu1s",
+       ":block/order": 1,
+       ":block/string": "Everything asserted about an entity: pull `:harc/_e` off it."
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "Ijt2crIYr",
+         ":block/order": 0,
+         ":block/string": "```clojure\n;; datalog: every entity with a Status attribute, and the value entities\n[:find ?e ?v\n :where [?a :node/title \"Status\"]\n        [?harc :harc/a ?a]\n        [?harc :harc/e ?e]\n        [?harc :harc/v ?v]]```"
+        }
+       ],
+       ":block/uid": "T1u-FgqBz",
+       ":block/order": 2,
+       ":block/string": "Every entity with a given attribute: walk `:harc/_a` backwards from the attribute page."
+      },
+      {
+       ":block/uid": "v8cSRBOtQ",
+       ":block/order": 3,
+       ":block/string": "What a block defines: `:harc/_a-source` from the block. Everything a node is a value of: `:harc/_v` from the node."
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "d-pE_YtEq",
+         ":block/order": 0,
+         ":block/string": "An `or` over those three normalizes the heterogeneity."
+        }
+       ],
+       ":block/uid": "BogMZjRnY",
+       ":block/order": 4,
+       ":block/string": "A value's display string is one of three shapes: a page's `:node/title`, a block's `:block/string`, or a text entity's `:harc.text/string`."
+      }
+     ],
+     ":block/uid": "0MDrmlWyu",
+     ":block/order": 4,
+     ":block/string": "**Querying: reverse refs do the work**"
+    },
+    {
+     ":block/children": [
+      {
+       ":block/children": [
+        {
+         ":block/uid": "rSAm7i4hE",
+         ":block/order": 0,
+         ":block/string": "```javascript\nProject Apollo (page-apollo)\n  Status:: Active (blk-status)\n  Owner:: [[Jane Doe]] (blk-owner)\n  Tags::(blk-tags)\n    [[urgent]] (blk-tag1)\n    [[backend]] (blk-tag2)```"
+        }
+       ],
+       ":block/uid": "IGufAV667",
+       ":block/order": 0,
+       ":block/string": "Outline (uids in parens):"
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "C8JQQWycT",
+         ":block/order": 0,
+         ":block/string": "```clojure\n;; Project Apollo --Status--> \"Active\"  (inline tail -> owned text entity)\n{:block/uid     \"harc-1\"\n :harc/e        [{:block/uid \"page-apollo\"}]\n :harc/a        [{:block/uid \"page-status\"}]\n :harc/v        [{:block/uid \"t-harc-1\" :harc.text/string \"Active\"}]\n :harc/e-source [{:block/uid \"page-apollo\"}]\n :harc/a-source [{:block/uid \"blk-status\"}]\n :harc/v-source [{:block/uid \"blk-status\"}]}\n\n;; Project Apollo --Owner--> [[Jane Doe]]  (inline ref -> the page)\n{:block/uid     \"harc-2\"\n :harc/e        [{:block/uid \"page-apollo\"}]\n :harc/a        [{:block/uid \"page-owner\"}]\n :harc/v        [{:block/uid \"page-jane\"}]\n :harc/e-source [{:block/uid \"page-apollo\"}]\n :harc/a-source [{:block/uid \"blk-owner\"}]\n :harc/v-source [{:block/uid \"blk-owner\"}]}\n\n;; Project Apollo --Tags--> [[urgent]], [[backend]]  (one harc, two values)\n{:block/uid     \"harc-3\"\n :harc/e        [{:block/uid \"page-apollo\"}]\n :harc/a        [{:block/uid \"page-tags\"}]\n :harc/v        [{:block/uid \"page-urgent\"} {:block/uid \"page-backend\"}]\n :harc/e-source [{:block/uid \"page-apollo\"}]\n :harc/a-source [{:block/uid \"blk-tags\"}]\n :harc/v-source [{:block/uid \"blk-tag1\"} {:block/uid \"blk-tag2\"}]}\n```"
+        }
+       ],
+       ":block/uid": "G56nUR0KC",
+       ":block/order": 1,
+       ":block/string": "Three harc entities exist (one per attribute block), shown as pulls:"
+      }
+     ],
+     ":block/uid": "Fww-wR9b8",
+     ":block/order": 5,
+     ":block/string": "**Worked example**"
+    },
+    {
+     ":block/children": [
+      {
+       ":block/children": [
+        {
+         ":block/children": [
+          {
+           ":block/uid": "Utcrj8lb6",
+           ":block/order": 0,
+           ":block/string": "```javascript\nProject Apollo (page-apollo)\n  Owner:: [[Jane Doe]] (blk-owner)\n    Role:: Lead (blk-role)```"
+          },
+          {
+           ":block/uid": "nnk8MdrXw",
+           ":block/order": 1,
+           ":block/string": "```clojure\n;; the ownership relationship --Role--> \"Lead\"\n{:block/uid     \"harc-4\"\n :harc/e        [{:block/uid \"harc-2\"}]   ;; harc-2 = the Owner harc above\n :harc/a        [{:block/uid \"page-role\"}]\n :harc/v        [{:block/uid \"t-harc-4\" :harc.text/string \"Lead\"}]\n :harc/e-source [{:block/uid \"blk-owner\"}]\n :harc/a-source [{:block/uid \"blk-role\"}]\n :harc/v-source [{:block/uid \"blk-role\"}]}```"
+          }
+         ],
+         ":block/uid": "bxHxdWuL4",
+         ":block/order": 0,
+         ":block/string": "Extending the worked example with `Role:: Lead` nested under the `Owner::` block:"
+        },
+        {
+         ":block/uid": "8trPelLI9",
+         ":block/order": 1,
+         ":block/string": "So `:harc/e` can point at another harc, and chains of statements-about-statements are plain graph walks."
+        }
+       ],
+       ":block/uid": "doNdkdGfq",
+       ":block/order": 0,
+       ":block/string": "Attributes nested under an attribute block describe __the relationship itself__: their `:harc/e` is the parent **harc**, not a page or block."
+      }
+     ],
+     ":block/uid": "gL3HftjI-",
+     ":block/order": 6,
+     ":block/string": "**Attributes on relationships (edges as endpoints)**"
+    },
+    {
+     ":block/children": [
+      {
+       ":block/children": [
+        {
+         ":block/uid": "qpJA4gvR6",
+         ":block/order": 0,
+         ":block/string": "Attribute blocks nested under it attach to the `roam/meta::` block's __parent__: a way to tuck an entity's attributes away under a single child."
+        }
+       ],
+       ":block/uid": "dyduRuooD",
+       ":block/order": 0,
+       ":block/string": "A block whose text is exactly `roam/meta::` never gets a harc of its own."
+      },
+      {
+       ":block/uid": "WBcjU96vi",
+       ":block/order": 1,
+       ":block/string": "The blocks walked through this proxy are recorded as additional `:harc/e-source`s."
+      }
+     ],
+     ":block/uid": "Z0EBF5eH5",
+     ":block/order": 7,
+     ":block/string": "**`roam/meta::` as a structural proxy**"
+    }
+   ],
+   ":block/uid": "2ZhT2Vi46"
   },
   {
    ":node/title": "return example",

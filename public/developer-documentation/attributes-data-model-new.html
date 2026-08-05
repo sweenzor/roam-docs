@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attributes Data Model (new) — Roam Research Docs</title>
+<meta name="description" content="Introduction: it's a hypergraph">
+<link rel="canonical" href="https://roamdocs.fyi/developer-documentation/attributes-data-model-new">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roam Research Docs">
+<meta property="og:title" content="Attributes Data Model (new) — Roam Research Docs">
+<meta property="og:description" content="Introduction: it's a hypergraph">
+<meta property="og:url" content="https://roamdocs.fyi/developer-documentation/attributes-data-model-new">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Roam Research Docs","item":"https://roamdocs.fyi/"},{"@type":"ListItem","position":2,"name":"Attributes Data Model (new)","item":"https://roamdocs.fyi/developer-documentation/attributes-data-model-new"}]}</script>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { background: #16181d; color: #d6d8dd; } a { color: #8ab4f8; } }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.12); padding: .8em 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  img { max-width: 100%; }
+  ul { list-style: none; margin: .2em 0; padding: 0; }
+  li { position: relative; padding-left: 1.5em; margin: .3em 0; }
+  li::before { content: ''; position: absolute; left: .3em; top: .6em; width: .38em; height: .38em; border-radius: 50%; background: rgba(127,127,127,.75); }
+  /* Guide line through the parent bullet's center: bullet center sits .49em
+     into the li, but the nested ul starts after the li's 1.5em text padding —
+     pull it back by the difference (.49 - 1.5 = -1.01em), then re-indent. */
+  li > ul { border-left: 1px solid rgba(127,127,127,.35); margin-left: -1.01em; padding-left: 1.5em; }
+  .crumbs { font-size: .85em; opacity: .75; }
+  .meta { font-size: .85em; opacity: .75; margin: -.6em 0 1.6em; }
+  summary { cursor: pointer; }
+  summary h2 { display: inline; }
+</style>
+</head>
+<body>
+<p class="crumbs"><a href="/">Roam Research Docs</a> · Developer documentation</p>
+<h1>Attributes Data Model (new)</h1>
+<p class="meta"><a href="attributes-data-model-new.md">markdown version</a> · <a href="https://roamresearch.com/#/app/developer-documentation/page/2ZhT2Vi46">view in Roam Research</a></p>
+<ul>
+<li><strong>Introduction: it's a hypergraph</strong>
+<ul>
+<li>Roam's graph is made of nodes: <em>pages</em> (named nodes) and <em>blocks</em> (outline content nodes with stable ids). <code>[[links]]</code> and <code>((refs))</code> connect them, but that is an <em>untyped</em> graph. Attributes (written <code>Name:: value</code>) add <em>typed relationships</em> on top.
+</li>
+<li>What makes it a <em>hypergraph</em> rather than a plain labeled graph: <strong>a relationship is itself a node.</strong>
+<ul>
+<li>Each <code>Name:: value</code> assertion is derived from a real block, the attribute name is a real page, and the value can be another entity that carries its own attributes.
+</li>
+<li>So edges are addressable, can be annotated, and can serve as endpoints of further edges.
+</li>
+</ul>
+</li>
+<li>Concretely, each assertion is stored as its own entity: a <strong>harc</strong> (hyperedge/arc) with its own <code>:block/uid</code>.
+<ul>
+<li>It holds the <code>[entity attribute value]</code> triple, plus provenance refs recording which blocks it was derived from.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>The harc entity</strong>
+<ul>
+<li>Each assertion is one entity carrying six ref attributes, three for the logical triple and three for provenance:
+<ul>
+<li><code>:harc/e</code> is the <strong>entity</strong> being described (normally the attribute block's parent page/block).
+<ul>
+<li>If the parent block is exactly one reference and nothing else, the assertion is about the <em>referenced</em> entity instead: <code>:harc/e</code> points at the referenced node while the e-source stays the referencing block.
+</li>
+<li>This is how you can assert attributes about <code>[[Project Apollo]]</code> from a daily note.
+</li>
+</ul>
+</li>
+<li><code>:harc/a</code> is the <strong>attribute</strong>; always a <em>page</em>, since <code>Name::</code> resolves to a <code>[[Name]]</code> page.
+</li>
+<li><code>:harc/v</code> is the <strong>value(s)</strong>; many-cardinality, so one harc holds all of an attribute's values for that entity.
+</li>
+<li><code>:harc/e-source</code>, <code>:harc/a-source</code>, <code>:harc/v-source</code> record which blocks each position was derived <em>from</em> (see provenance below).
+</li>
+</ul>
+</li>
+<li>All six are ordinary many-cardinality refs, so everything is natively indexed by DataScript and traversable with plain pulls and reverse refs (see <a href="/developer-documentation/data-model">Data Model</a> for the underlying store).
+<ul>
+<li>For now, only <code>:harc/v</code> can have multiple values. But all were made cardinality many for future compatibility
+</li>
+</ul>
+</li>
+<li>Harcs are <strong>derived data</strong>: Roam recomputes them from the source blocks whenever those blocks change.
+<ul>
+<li>There is no API for writing them (for now). To change a harc, edit the blocks it derives from.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>**Provenance: the <code>-source</code> refs**
+<ul>
+<li><code>:harc/a-source</code> is the <code>Name::</code> block itself, the block that defines the assertion. One per harc.
+<ul>
+<li>When it stops being an attribute (edited to plain text, or deleted), the harc is retracted.
+</li>
+</ul>
+</li>
+<li><code>:harc/e-source</code> is the block the entity was reached through: normally the attribute block's parent, even when <code>:harc/e</code> proxied through it to a referenced entity.
+</li>
+<li><code>:harc/v-source</code> records which block contributed each value: a value child, or the attribute block itself when the value comes from its inline tail.
+</li>
+</ul>
+</li>
+<li><strong>Values: blocks, pages, and owned text</strong>
+<ul>
+<li><strong>Plain-text child block</strong> → <code>:harc/v</code> is that child block's own node.
+</li>
+<li><strong>Refs-only content</strong> (<code>Owner:: [[Jane Doe]]</code>, or a child that is only refs) → <code>:harc/v</code> is the referenced node(s).
+<ul>
+<li>Multiple refs all become values, unlike the entity position, which proxies only through a single ref.
+</li>
+</ul>
+</li>
+<li><strong>Inline text tail</strong> (<code>Status:: Active</code>) → the tail becomes one owned <strong>text entity</strong>: <code>{:block/uid &quot;t-&lt;harc-uid&gt;&quot; :harc.text/string &quot;Active&quot;}</code>.
+<ul>
+<li>It is not a block (no parent, no <code>:block/string</code>) and is referenced only through <code>:harc/v</code>. It lives and dies with its harc.
+</li>
+<li>Text values are entities with <code>:harc.text/string</code>, so value <em>strings</em> are directly queryable.
+</li>
+<li>The text entity's uid is deterministic (<code>t-</code> + the harc's uid), so two clients minting the same value concurrently converge on one entity instead of duplicating.
+</li>
+</ul>
+</li>
+<li><strong>Exclusivity</strong>: a non-blank inline tail claims the value position, and the block's children are then plain sub-content, not values.
+<ul>
+<li>A bare <code>Name::</code> with no tail and no children keeps its harc with an empty <code>:harc/v</code>.
+</li>
+</ul>
+</li>
+<li>Children that are themselves attributes are never values: they define their own harcs about this relationship instead (see attributes on relationships below).
+</li>
+<li>Attribute names resolve refs only <strong>one level deep</strong> (<code>[[hello [[world]]]]</code> picks up <code>hello</code>, not the nested <code>world</code>).
+</li>
+</ul>
+</li>
+<li><strong>Querying: reverse refs do the work</strong>
+<ul>
+<li>The harc's own datoms are the index: traversal is plain pulls and reverse refs.
+</li>
+<li>Everything asserted about an entity: pull <code>:harc/_e</code> off it.
+<ul>
+<li><pre><code>// all attributes of a page, with their values
+window.roamAlphaAPI.data.pull(
+  &quot;[{:harc/_e [{:harc/a [:node/title]} {:harc/v [:block/uid :node/title :block/string :harc.text/string]}]}]&quot;,
+  [&quot;:node/title&quot;, &quot;Project Apollo&quot;])</code></pre>
+</li>
+</ul>
+</li>
+<li>Every entity with a given attribute: walk <code>:harc/_a</code> backwards from the attribute page.
+<ul>
+<li><pre><code>;; datalog: every entity with a Status attribute, and the value entities
+[:find ?e ?v
+ :where [?a :node/title &quot;Status&quot;]
+        [?harc :harc/a ?a]
+        [?harc :harc/e ?e]
+        [?harc :harc/v ?v]]</code></pre>
+</li>
+</ul>
+</li>
+<li>What a block defines: <code>:harc/_a-source</code> from the block. Everything a node is a value of: <code>:harc/_v</code> from the node.
+</li>
+<li>A value's display string is one of three shapes: a page's <code>:node/title</code>, a block's <code>:block/string</code>, or a text entity's <code>:harc.text/string</code>.
+<ul>
+<li>An <code>or</code> over those three normalizes the heterogeneity.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Worked example</strong>
+<ul>
+<li>Outline (uids in parens):
+<ul>
+<li><pre><code>Project Apollo (page-apollo)
+  Status:: Active (blk-status)
+  Owner:: [[Jane Doe]] (blk-owner)
+  Tags::(blk-tags)
+    [[urgent]] (blk-tag1)
+    [[backend]] (blk-tag2)</code></pre>
+</li>
+</ul>
+</li>
+<li>Three harc entities exist (one per attribute block), shown as pulls:
+<ul>
+<li><pre><code>;; Project Apollo --Status--&gt; &quot;Active&quot;  (inline tail -&gt; owned text entity)
+{:block/uid     &quot;harc-1&quot;
+ :harc/e        [{:block/uid &quot;page-apollo&quot;}]
+ :harc/a        [{:block/uid &quot;page-status&quot;}]
+ :harc/v        [{:block/uid &quot;t-harc-1&quot; :harc.text/string &quot;Active&quot;}]
+ :harc/e-source [{:block/uid &quot;page-apollo&quot;}]
+ :harc/a-source [{:block/uid &quot;blk-status&quot;}]
+ :harc/v-source [{:block/uid &quot;blk-status&quot;}]}
+
+;; Project Apollo --Owner--&gt; [[Jane Doe]]  (inline ref -&gt; the page)
+{:block/uid     &quot;harc-2&quot;
+ :harc/e        [{:block/uid &quot;page-apollo&quot;}]
+ :harc/a        [{:block/uid &quot;page-owner&quot;}]
+ :harc/v        [{:block/uid &quot;page-jane&quot;}]
+ :harc/e-source [{:block/uid &quot;page-apollo&quot;}]
+ :harc/a-source [{:block/uid &quot;blk-owner&quot;}]
+ :harc/v-source [{:block/uid &quot;blk-owner&quot;}]}
+
+;; Project Apollo --Tags--&gt; [[urgent]], [[backend]]  (one harc, two values)
+{:block/uid     &quot;harc-3&quot;
+ :harc/e        [{:block/uid &quot;page-apollo&quot;}]
+ :harc/a        [{:block/uid &quot;page-tags&quot;}]
+ :harc/v        [{:block/uid &quot;page-urgent&quot;} {:block/uid &quot;page-backend&quot;}]
+ :harc/e-source [{:block/uid &quot;page-apollo&quot;}]
+ :harc/a-source [{:block/uid &quot;blk-tags&quot;}]
+ :harc/v-source [{:block/uid &quot;blk-tag1&quot;} {:block/uid &quot;blk-tag2&quot;}]}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Attributes on relationships (edges as endpoints)</strong>
+<ul>
+<li>Attributes nested under an attribute block describe <em>the relationship itself</em>: their <code>:harc/e</code> is the parent <strong>harc</strong>, not a page or block.
+<ul>
+<li>Extending the worked example with <code>Role:: Lead</code> nested under the <code>Owner::</code> block:
+<ul>
+<li><pre><code>Project Apollo (page-apollo)
+  Owner:: [[Jane Doe]] (blk-owner)
+    Role:: Lead (blk-role)</code></pre>
+</li>
+<li><pre><code>;; the ownership relationship --Role--&gt; &quot;Lead&quot;
+{:block/uid     &quot;harc-4&quot;
+ :harc/e        [{:block/uid &quot;harc-2&quot;}]   ;; harc-2 = the Owner harc above
+ :harc/a        [{:block/uid &quot;page-role&quot;}]
+ :harc/v        [{:block/uid &quot;t-harc-4&quot; :harc.text/string &quot;Lead&quot;}]
+ :harc/e-source [{:block/uid &quot;blk-owner&quot;}]
+ :harc/a-source [{:block/uid &quot;blk-role&quot;}]
+ :harc/v-source [{:block/uid &quot;blk-role&quot;}]}</code></pre>
+</li>
+</ul>
+</li>
+<li>So <code>:harc/e</code> can point at another harc, and chains of statements-about-statements are plain graph walks.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>**<code>roam/meta::</code> as a structural proxy**
+<ul>
+<li>A block whose text is exactly <code>roam/meta::</code> never gets a harc of its own.
+<ul>
+<li>Attribute blocks nested under it attach to the <code>roam/meta::</code> block's <em>parent</em>: a way to tuck an entity's attributes away under a single child.
+</li>
+</ul>
+</li>
+<li>The blocks walked through this proxy are recorded as additional <code>:harc/e-source</code>s.
+</li>
+</ul>
+</li>
+</ul>
+</body>
+</html>
