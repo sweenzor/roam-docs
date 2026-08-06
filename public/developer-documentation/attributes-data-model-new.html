@@ -117,13 +117,13 @@
 </li>
 </ul>
 </li>
-<li><strong>Inline text tail</strong> (<code>Status:: Active</code>) → the tail becomes one owned <strong>text entity</strong>: <code>{:block/uid &quot;t-&lt;harc-uid&gt;&quot; :harc.text/string &quot;Active&quot;}</code>.
+<li><strong>Inline text tail</strong> (<code>Status:: Active</code>) → the tail becomes one owned <strong>text entity</strong>: <code>{:block/uid &quot;v-&lt;harc-uid&gt;&quot; :harc/v-string &quot;Active&quot;}</code>.
 <ul>
 <li>It is not a block (no parent, no <code>:block/string</code>) and is referenced only through <code>:harc/v</code>. It lives and dies with its harc.
 </li>
-<li>Text values are entities with <code>:harc.text/string</code>, so value <em>strings</em> are directly queryable.
+<li>Text values are entities with <code>:harc/v-string</code>, so value <em>strings</em> are directly queryable.
 </li>
-<li>The text entity's uid is deterministic (<code>t-</code> + the harc's uid), so two clients minting the same value concurrently converge on one entity instead of duplicating.
+<li>The text entity's uid is deterministic (<code>v-</code> + the harc's uid), so two clients minting the same value concurrently converge on one entity instead of duplicating.
 </li>
 </ul>
 </li>
@@ -147,7 +147,7 @@
 <ul>
 <li><pre><code>// all attributes of a page, with their values
 window.roamAlphaAPI.data.pull(
-  &quot;[{:harc/_e [{:harc/a [:node/title]} {:harc/v [:block/uid :node/title :block/string :harc.text/string]}]}]&quot;,
+  &quot;[{:harc/_e [{:harc/a [:node/title]} {:harc/v [:block/uid :node/title :block/string :harc/v-string]}]}]&quot;,
   [&quot;:node/title&quot;, &quot;Project Apollo&quot;])</code></pre>
 </li>
 </ul>
@@ -165,7 +165,7 @@ window.roamAlphaAPI.data.pull(
 </li>
 <li>What a block defines: <code>:harc/_a-source</code> from the block. Everything a node is a value of: <code>:harc/_v</code> from the node.
 </li>
-<li>A value's display string is one of three shapes: a page's <code>:node/title</code>, a block's <code>:block/string</code>, or a text entity's <code>:harc.text/string</code>.
+<li>A value's display string is one of three shapes: a page's <code>:node/title</code>, a block's <code>:block/string</code>, or a text entity's <code>:harc/v-string</code>.
 <ul>
 <li>An <code>or</code> over those three normalizes the heterogeneity.
 </li>
@@ -192,7 +192,7 @@ window.roamAlphaAPI.data.pull(
 {:block/uid     &quot;harc-1&quot;
  :harc/e        [{:block/uid &quot;page-apollo&quot;}]
  :harc/a        [{:block/uid &quot;page-status&quot;}]
- :harc/v        [{:block/uid &quot;t-harc-1&quot; :harc.text/string &quot;Active&quot;}]
+ :harc/v        [{:block/uid &quot;v-harc-1&quot; :harc/v-string &quot;Active&quot;}]
  :harc/e-source [{:block/uid &quot;page-apollo&quot;}]
  :harc/a-source [{:block/uid &quot;blk-status&quot;}]
  :harc/v-source [{:block/uid &quot;blk-status&quot;}]}
@@ -234,7 +234,7 @@ window.roamAlphaAPI.data.pull(
 {:block/uid     &quot;harc-4&quot;
  :harc/e        [{:block/uid &quot;harc-2&quot;}]   ;; harc-2 = the Owner harc above
  :harc/a        [{:block/uid &quot;page-role&quot;}]
- :harc/v        [{:block/uid &quot;t-harc-4&quot; :harc.text/string &quot;Lead&quot;}]
+ :harc/v        [{:block/uid &quot;v-harc-4&quot; :harc/v-string &quot;Lead&quot;}]
  :harc/e-source [{:block/uid &quot;blk-owner&quot;}]
  :harc/a-source [{:block/uid &quot;blk-role&quot;}]
  :harc/v-source [{:block/uid &quot;blk-role&quot;}]}</code></pre>

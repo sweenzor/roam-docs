@@ -1,6 +1,6 @@
 {
  "graph": "developer-documentation",
- "exportedAt": "2026-08-05T08:00:00.870Z",
+ "exportedAt": "2026-08-06T07:59:30.457Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -38205,12 +38205,12 @@
         {
          ":block/uid": "PNw2oaKxQ",
          ":block/order": 1,
-         ":block/string": "Text values are entities with `:harc.text/string`, so value __strings__ are directly queryable."
+         ":block/string": "Text values are entities with `:harc/v-string`, so value __strings__ are directly queryable."
         },
         {
          ":block/uid": "mUjzB9aZ6",
          ":block/order": 2,
-         ":block/string": "The text entity's uid is deterministic (`t-` + the harc's uid), so two clients minting the same value concurrently converge on one entity instead of duplicating."
+         ":block/string": "The text entity's uid is deterministic (`v-` + the harc's uid), so two clients minting the same value concurrently converge on one entity instead of duplicating."
         },
         {
          ":block/uid": "i-sVN6f5G",
@@ -38220,7 +38220,7 @@
        ],
        ":block/uid": "sddQu15ME",
        ":block/order": 2,
-       ":block/string": "**Inline text tail** (`Status:: Active`) → the tail becomes one owned **text entity**: `{:block/uid \"t-<harc-uid>\" :harc.text/string \"Active\"}`."
+       ":block/string": "**Inline text tail** (`Status:: Active`) → the tail becomes one owned **text entity**: `{:block/uid \"v-<harc-uid>\" :harc/v-string \"Active\"}`."
       },
       {
        ":block/children": [
@@ -38261,7 +38261,7 @@
         {
          ":block/uid": "BfmwBrxmz",
          ":block/order": 0,
-         ":block/string": "```javascript\n// all attributes of a page, with their values\nwindow.roamAlphaAPI.data.pull(\n  \"[{:harc/_e [{:harc/a [:node/title]} {:harc/v [:block/uid :node/title :block/string :harc.text/string]}]}]\",\n  [\":node/title\", \"Project Apollo\"])```"
+         ":block/string": "```javascript\n// all attributes of a page, with their values\nwindow.roamAlphaAPI.data.pull(\n  \"[{:harc/_e [{:harc/a [:node/title]} {:harc/v [:block/uid :node/title :block/string :harc/v-string]}]}]\",\n  [\":node/title\", \"Project Apollo\"])```"
         }
        ],
        ":block/uid": "Hajuscu1s",
@@ -38295,7 +38295,7 @@
        ],
        ":block/uid": "BogMZjRnY",
        ":block/order": 4,
-       ":block/string": "A value's display string is one of three shapes: a page's `:node/title`, a block's `:block/string`, or a text entity's `:harc.text/string`."
+       ":block/string": "A value's display string is one of three shapes: a page's `:node/title`, a block's `:block/string`, or a text entity's `:harc/v-string`."
       }
      ],
      ":block/uid": "0MDrmlWyu",
@@ -38321,7 +38321,7 @@
         {
          ":block/uid": "C8JQQWycT",
          ":block/order": 0,
-         ":block/string": "```clojure\n;; Project Apollo --Status--> \"Active\"  (inline tail -> owned text entity)\n{:block/uid     \"harc-1\"\n :harc/e        [{:block/uid \"page-apollo\"}]\n :harc/a        [{:block/uid \"page-status\"}]\n :harc/v        [{:block/uid \"t-harc-1\" :harc.text/string \"Active\"}]\n :harc/e-source [{:block/uid \"page-apollo\"}]\n :harc/a-source [{:block/uid \"blk-status\"}]\n :harc/v-source [{:block/uid \"blk-status\"}]}\n\n;; Project Apollo --Owner--> [[Jane Doe]]  (inline ref -> the page)\n{:block/uid     \"harc-2\"\n :harc/e        [{:block/uid \"page-apollo\"}]\n :harc/a        [{:block/uid \"page-owner\"}]\n :harc/v        [{:block/uid \"page-jane\"}]\n :harc/e-source [{:block/uid \"page-apollo\"}]\n :harc/a-source [{:block/uid \"blk-owner\"}]\n :harc/v-source [{:block/uid \"blk-owner\"}]}\n\n;; Project Apollo --Tags--> [[urgent]], [[backend]]  (one harc, two values)\n{:block/uid     \"harc-3\"\n :harc/e        [{:block/uid \"page-apollo\"}]\n :harc/a        [{:block/uid \"page-tags\"}]\n :harc/v        [{:block/uid \"page-urgent\"} {:block/uid \"page-backend\"}]\n :harc/e-source [{:block/uid \"page-apollo\"}]\n :harc/a-source [{:block/uid \"blk-tags\"}]\n :harc/v-source [{:block/uid \"blk-tag1\"} {:block/uid \"blk-tag2\"}]}\n```"
+         ":block/string": "```clojure\n;; Project Apollo --Status--> \"Active\"  (inline tail -> owned text entity)\n{:block/uid     \"harc-1\"\n :harc/e        [{:block/uid \"page-apollo\"}]\n :harc/a        [{:block/uid \"page-status\"}]\n :harc/v        [{:block/uid \"v-harc-1\" :harc/v-string \"Active\"}]\n :harc/e-source [{:block/uid \"page-apollo\"}]\n :harc/a-source [{:block/uid \"blk-status\"}]\n :harc/v-source [{:block/uid \"blk-status\"}]}\n\n;; Project Apollo --Owner--> [[Jane Doe]]  (inline ref -> the page)\n{:block/uid     \"harc-2\"\n :harc/e        [{:block/uid \"page-apollo\"}]\n :harc/a        [{:block/uid \"page-owner\"}]\n :harc/v        [{:block/uid \"page-jane\"}]\n :harc/e-source [{:block/uid \"page-apollo\"}]\n :harc/a-source [{:block/uid \"blk-owner\"}]\n :harc/v-source [{:block/uid \"blk-owner\"}]}\n\n;; Project Apollo --Tags--> [[urgent]], [[backend]]  (one harc, two values)\n{:block/uid     \"harc-3\"\n :harc/e        [{:block/uid \"page-apollo\"}]\n :harc/a        [{:block/uid \"page-tags\"}]\n :harc/v        [{:block/uid \"page-urgent\"} {:block/uid \"page-backend\"}]\n :harc/e-source [{:block/uid \"page-apollo\"}]\n :harc/a-source [{:block/uid \"blk-tags\"}]\n :harc/v-source [{:block/uid \"blk-tag1\"} {:block/uid \"blk-tag2\"}]}\n```"
         }
        ],
        ":block/uid": "G56nUR0KC",
@@ -38347,7 +38347,7 @@
           {
            ":block/uid": "nnk8MdrXw",
            ":block/order": 1,
-           ":block/string": "```clojure\n;; the ownership relationship --Role--> \"Lead\"\n{:block/uid     \"harc-4\"\n :harc/e        [{:block/uid \"harc-2\"}]   ;; harc-2 = the Owner harc above\n :harc/a        [{:block/uid \"page-role\"}]\n :harc/v        [{:block/uid \"t-harc-4\" :harc.text/string \"Lead\"}]\n :harc/e-source [{:block/uid \"blk-owner\"}]\n :harc/a-source [{:block/uid \"blk-role\"}]\n :harc/v-source [{:block/uid \"blk-role\"}]}```"
+           ":block/string": "```clojure\n;; the ownership relationship --Role--> \"Lead\"\n{:block/uid     \"harc-4\"\n :harc/e        [{:block/uid \"harc-2\"}]   ;; harc-2 = the Owner harc above\n :harc/a        [{:block/uid \"page-role\"}]\n :harc/v        [{:block/uid \"v-harc-4\" :harc/v-string \"Lead\"}]\n :harc/e-source [{:block/uid \"blk-owner\"}]\n :harc/a-source [{:block/uid \"blk-role\"}]\n :harc/v-source [{:block/uid \"blk-role\"}]}```"
           }
          ],
          ":block/uid": "bxHxdWuL4",
