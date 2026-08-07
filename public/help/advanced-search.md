@@ -26,7 +26,7 @@
   - **Search in**: page titles only, or blocks only.
   - **Date**: edited today, in the last 7 or 30 days, or in a custom date range.
 - Filters apply to keyword searches when [[Better search (Experimental)]] is on, and always apply in semantic mode.
-- **Semantic**: when [[Semantic search (Experimental)]] is enabled for your graph, the Semantic chip switches to meaning-based search. Toggle it with `Cmd-s` / `Ctrl-s`.
+- **Semantic**: when [[Semantic search]] is enabled for your graph, the Semantic chip switches to meaning-based search. Toggle it with `Cmd-s` / `Ctrl-s`.
 
 ### Keep a search open in the sidebar
 

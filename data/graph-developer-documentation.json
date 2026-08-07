@@ -1,6 +1,6 @@
 {
  "graph": "developer-documentation",
- "exportedAt": "2026-08-06T07:59:30.457Z",
+ "exportedAt": "2026-08-07T06:39:28.446Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -38243,6 +38243,28 @@
        ":block/uid": "FdP3NXBeA",
        ":block/order": 4,
        ":block/string": "Children that are themselves attributes are never values: they define their own harcs about this relationship instead (see attributes on relationships below)."
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "BTMhu7jx6",
+         ":block/order": 0,
+         ":block/string": "A tail containing only class tags counts as blank, so the children keep the value position."
+        },
+        {
+         ":block/uid": "RboX4apbM",
+         ":block/order": 1,
+         ":block/string": "Text values are stored with the class-tag syntax stripped."
+        },
+        {
+         ":block/uid": "jmoMz4ote",
+         ":block/order": 2,
+         ":block/string": "Class-tag refs never join `:harc/v`, and never count toward refs-only proxying in any position."
+        }
+       ],
+       ":block/uid": "hsdTVekOD",
+       ":block/order": 6,
+       ":block/string": "Class tags (`#.foo` / `#[[.foo]]` — hidden by the renderer) are invisible to attribute interpretation."
       }
      ],
      ":block/uid": "vbdBbY9Nm",
@@ -38376,22 +38398,49 @@
         {
          ":block/uid": "qpJA4gvR6",
          ":block/order": 0,
-         ":block/string": "Attribute blocks nested under it attach to the `roam/meta::` block's __parent__: a way to tuck an entity's attributes away under a single child."
+         ":block/string": "Attribute blocks nested under it attach to the pass-through block's __parent__: a way to tuck an entity's attributes away under a single child."
         }
        ],
        ":block/uid": "dyduRuooD",
        ":block/order": 0,
-       ":block/string": "A block whose text is exactly `roam/meta::` never gets a harc of its own."
+       ":block/string": "An attribute block of a pass-through attribute **never** gets a harc of its own — any inline tail is inert annotation, not a value."
       },
       {
        ":block/uid": "WBcjU96vi",
        ":block/order": 1,
        ":block/string": "The blocks walked through this proxy are recorded as additional `:harc/e-source`s."
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "_VvGhOrxT",
+         ":block/order": 0,
+         ":block/string": "`roam/meta` always is — a fixed rule (like `roam/js`), not stored as data."
+        },
+        {
+         ":block/uid": "9W_34fWc4",
+         ":block/order": 1,
+         ":block/string": "Any other attribute page can opt in via `:attr/proxy` `true` on the page entity, toggled from the page's Attribute Settings (the `::` icon next to the title)."
+        },
+        {
+         ":block/uid": "ADG3Kv33r",
+         ":block/order": 2,
+         ":block/string": "To query all pass-through attributes: pages with `:attr/proxy` `true`, plus `roam/meta`."
+        },
+        {
+         ":block/uid": "B0CmdH0Az",
+         ":block/order": 3,
+         ":block/string": "Don't transact `:attr/proxy` directly: the settings toggle also re-derives every existing use of the attribute, while a raw datom write leaves stale harcs (they heal lazily as blocks are edited)."
+        }
+       ],
+       ":block/uid": "z8Chzt3aa",
+       ":block/order": 2,
+       ":block/string": "Which attributes are pass-throughs:"
       }
      ],
      ":block/uid": "Z0EBF5eH5",
      ":block/order": 7,
-     ":block/string": "**`roam/meta::` as a structural proxy**"
+     ":block/string": "**Pass-through attributes (structural proxies)**"
     }
    ],
    ":block/uid": "2ZhT2Vi46"
@@ -41082,6 +41131,10 @@
     }
    ],
    ":block/uid": "03-16-2022"
+  },
+  {
+   ":node/title": "August 6th, 2026",
+   ":block/uid": "08-06-2026"
   },
   {
    ":node/title": "June 13th, 2023",

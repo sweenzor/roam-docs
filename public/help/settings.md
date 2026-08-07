@@ -10,7 +10,7 @@
 - **[[Sharing]]**: invite people to the graph, set their roles, and control who can export or view history.
 - **Attachments**: every file uploaded to the graph, in the [[File Manager]].
 - **Hotkeys**: view and change keyboard shortcuts. See [[Customizable Hotkeys]].
-- **Graph**: settings for the whole graph, including [[Graph History]], the [[Graph Homepage]], API tokens, graph size, automatic cleanup of empty daily notes, [[Semantic search (Experimental)]] embeddings, and [[Delete Graph]].
+- **Graph**: settings for the whole graph, including [[Graph History]], the [[Graph Homepage]], API tokens, graph size, automatic cleanup of empty daily notes, [[Semantic search]] embeddings, and [[Delete Graph]].
 - **Encryption**: change the password of an encrypted graph. This tab only appears on [[Encrypted Graphs]].
 - **Account**: your email, password, and [[Delete Account]].
 - **[[Data & Backups]]**: automatic backups, import and export, moving attachments between graphs, and [[Restore Graph]].

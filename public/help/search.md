@@ -26,7 +26,7 @@
 - **[[Global search]]**: (`Cmd-Shift-u` / `Ctrl-Shift-u`): search across all of your graphs at once.
 - **[[All Pages]]**: a sortable list of every page in your graph. Sort by title, word count, mentions, or when pages were created or last edited.
 - **[[Better search (Experimental)]]**: the new search engine. Faster on large graphs, and block references become searchable.
-- **[[Semantic search (Experimental)]]**: meaning-based search, once embeddings are enabled for your graph.
+- **[[Semantic search]]**: meaning-based search, once embeddings are enabled for your graph.
 - **[[Advanced Block Reference Search]]**: (`Ctrl-Shift-9`): find a block by drilling down through its outline, level by level, and drop a reference to it where you're writing.
 
 ### Good to know

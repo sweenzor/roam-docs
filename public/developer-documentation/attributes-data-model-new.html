@@ -137,6 +137,16 @@
 </li>
 <li>Attribute names resolve refs only <strong>one level deep</strong> (<code>[[hello [[world]]]]</code> picks up <code>hello</code>, not the nested <code>world</code>).
 </li>
+<li>Class tags (<code>#.foo</code> / <code>#[[.foo]]</code> — hidden by the renderer) are invisible to attribute interpretation.
+<ul>
+<li>A tail containing only class tags counts as blank, so the children keep the value position.
+</li>
+<li>Text values are stored with the class-tag syntax stripped.
+</li>
+<li>Class-tag refs never join <code>:harc/v</code>, and never count toward refs-only proxying in any position.
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><strong>Querying: reverse refs do the work</strong>
@@ -247,15 +257,27 @@ window.roamAlphaAPI.data.pull(
 </li>
 </ul>
 </li>
-<li>**<code>roam/meta::</code> as a structural proxy**
+<li><strong>Pass-through attributes (structural proxies)</strong>
 <ul>
-<li>A block whose text is exactly <code>roam/meta::</code> never gets a harc of its own.
+<li>An attribute block of a pass-through attribute <strong>never</strong> gets a harc of its own — any inline tail is inert annotation, not a value.
 <ul>
-<li>Attribute blocks nested under it attach to the <code>roam/meta::</code> block's <em>parent</em>: a way to tuck an entity's attributes away under a single child.
+<li>Attribute blocks nested under it attach to the pass-through block's <em>parent</em>: a way to tuck an entity's attributes away under a single child.
 </li>
 </ul>
 </li>
 <li>The blocks walked through this proxy are recorded as additional <code>:harc/e-source</code>s.
+</li>
+<li>Which attributes are pass-throughs:
+<ul>
+<li><code>roam/meta</code> always is — a fixed rule (like <code>roam/js</code>), not stored as data.
+</li>
+<li>Any other attribute page can opt in via <code>:attr/proxy</code> <code>true</code> on the page entity, toggled from the page's Attribute Settings (the <code>::</code> icon next to the title).
+</li>
+<li>To query all pass-through attributes: pages with <code>:attr/proxy</code> <code>true</code>, plus <code>roam/meta</code>.
+</li>
+<li>Don't transact <code>:attr/proxy</code> directly: the settings toggle also re-derives every existing use of the attribute, while a raw datom write leaves stale harcs (they heal lazily as blocks are edited).
+</li>
+</ul>
 </li>
 </ul>
 </li>

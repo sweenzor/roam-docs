@@ -36,6 +36,10 @@
     - A bare `Name::` with no tail and no children keeps its harc with an empty `:harc/v`.
   - Children that are themselves attributes are never values: they define their own harcs about this relationship instead (see attributes on relationships below).
   - Attribute names resolve refs only **one level deep** (`[[hello [[world]]]]` picks up `hello`, not the nested `world`).
+  - Class tags (`#.foo` / `#[[.foo]]` — hidden by the renderer) are invisible to attribute interpretation.
+    - A tail containing only class tags counts as blank, so the children keep the value position.
+    - Text values are stored with the class-tag syntax stripped.
+    - Class-tag refs never join `:harc/v`, and never count toward refs-only proxying in any position.
 - **Querying: reverse refs do the work**
   - The harc's own datoms are the index: traversal is plain pulls and reverse refs.
   - Everything asserted about an entity: pull `:harc/_e` off it.
@@ -110,7 +114,12 @@
          :harc/a-source [{:block/uid "blk-role"}]
          :harc/v-source [{:block/uid "blk-role"}]}```
     - So `:harc/e` can point at another harc, and chains of statements-about-statements are plain graph walks.
-- **`roam/meta::` as a structural proxy**
-  - A block whose text is exactly `roam/meta::` never gets a harc of its own.
-    - Attribute blocks nested under it attach to the `roam/meta::` block's __parent__: a way to tuck an entity's attributes away under a single child.
+- **Pass-through attributes (structural proxies)**
+  - An attribute block of a pass-through attribute **never** gets a harc of its own — any inline tail is inert annotation, not a value.
+    - Attribute blocks nested under it attach to the pass-through block's __parent__: a way to tuck an entity's attributes away under a single child.
   - The blocks walked through this proxy are recorded as additional `:harc/e-source`s.
+  - Which attributes are pass-throughs:
+    - `roam/meta` always is — a fixed rule (like `roam/js`), not stored as data.
+    - Any other attribute page can opt in via `:attr/proxy` `true` on the page entity, toggled from the page's Attribute Settings (the `::` icon next to the title).
+    - To query all pass-through attributes: pages with `:attr/proxy` `true`, plus `roam/meta`.
+    - Don't transact `:attr/proxy` directly: the settings toggle also re-derives every existing use of the attribute, while a raw datom write leaves stale harcs (they heal lazily as blocks are edited).

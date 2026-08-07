@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-08-06T08:04:06.557Z",
+ "exportedAt": "2026-08-07T06:44:04.308Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -3339,7 +3339,7 @@
    ":block/uid": "E8E41Iq2a"
   },
   {
-   ":node/title": "Semantic search (Experimental)",
+   ":node/title": "Semantic search",
    ":block/children": [
     {
      ":block/children": [
@@ -3928,12 +3928,12 @@
        ":block/children": [
         {
          ":block/uid": "AZZdWzFrr",
-         ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fk1MFsLBXDW.png?alt=media&token=d6c537b1-3089-42c1-aa4f-7640b2542066)",
+         ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FfxCj2-b4pu.png?alt=media&token=e4795d26-9996-434c-9ec5-ed7ae402900c)",
          ":block/order": 0
         }
        ],
        ":block/uid": "c3NsMzXkg",
-       ":block/string": "Open **Settings → Graph → Experimental: Semantic search embeddings**.",
+       ":block/string": "Open **Settings → Graph → Semantic search**.",
        ":block/order": 1
       }
      ],
@@ -14460,7 +14460,7 @@
         }
        ],
        ":block/uid": "Z4pSU7Xlz",
-       ":block/string": "Looking for meaning-based search on top of this? See [[Semantic search (Experimental)]].",
+       ":block/string": "Looking for meaning-based search on top of this? See [[Semantic search]].",
        ":block/order": 3
       }
      ],
@@ -16569,7 +16569,7 @@
         }
        ],
        ":block/uid": "hJXCQW1ig",
-       ":block/string": "**Semantic**: when [[Semantic search (Experimental)]] is enabled for your graph, the Semantic chip switches to meaning-based search. Toggle it with `Cmd-s` / `Ctrl-s`.",
+       ":block/string": "**Semantic**: when [[Semantic search]] is enabled for your graph, the Semantic chip switches to meaning-based search. Toggle it with `Cmd-s` / `Ctrl-s`.",
        ":block/order": 2
       }
      ],
@@ -26826,7 +26826,7 @@
           }
          ],
          ":block/uid": "b6Hj4c_YZ",
-         ":block/string": "Turn on [[Semantic search (Experimental)]] (local MCP only) and it can find notes by meaning, so the old notes surface even when the words don't match.",
+         ":block/string": "Turn on [[Semantic search]] (local MCP only) and it can find notes by meaning, so the old notes surface even when the words don't match.",
          ":block/order": 2
         }
        ],
@@ -27416,7 +27416,7 @@
         }
        ],
        ":block/uid": "PcxVrbjby",
-       ":block/string": "**Graph**: settings for the whole graph, including [[Graph History]], the [[Graph Homepage]], API tokens, graph size, automatic cleanup of empty daily notes, [[Semantic search (Experimental)]] embeddings, and [[Delete Graph]].",
+       ":block/string": "**Graph**: settings for the whole graph, including [[Graph History]], the [[Graph Homepage]], API tokens, graph size, automatic cleanup of empty daily notes, [[Semantic search]] embeddings, and [[Delete Graph]].",
        ":block/order": 4
       },
       {
@@ -74833,7 +74833,7 @@
         }
        ],
        ":block/uid": "gxWYwu313",
-       ":block/string": "**[[Semantic search (Experimental)]]**: meaning-based search, once embeddings are enabled for your graph.",
+       ":block/string": "**[[Semantic search]]**: meaning-based search, once embeddings are enabled for your graph.",
        ":block/order": 4
       },
       {

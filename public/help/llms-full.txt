@@ -2,7 +2,7 @@
 
 > Complete markdown export of the public Roam Research graph "help"
 > (https://roamresearch.com/#/app/help). Roam Research's official help graph: the product's user documentation.
-> Exported 2026-08-06T08:04:06.557Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
+> Exported 2026-08-07T06:44:04.308Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
 > Also on this site: Developer documentation — https://roamdocs.fyi/developer-documentation/llms-full.txt
 
 ## Table of contents
@@ -19,7 +19,7 @@
 - Diagram
 - Roam-specific :q additions
 - Themes
-- Semantic search (Experimental)
+- Semantic search
 - Block References
 - What You Can't Say
 - Formatting
@@ -9339,7 +9339,7 @@
 
 ---
 
-# Semantic search (Experimental)
+# Semantic search
 
 - Roam's regular search matches the **words** you type. Semantic search matches **meaning**: it can find your notes about __insomnia__ when you search for "trouble sleeping", even though they don't share a single word.
 - It runs as an optional mode inside Roam's search. Once an admin sets it up, it's available to everyone on the graph.
@@ -9374,8 +9374,8 @@
 ### Setting it up
 
 - You need to be an **admin** of the graph.
-- Open **Settings → Graph → Experimental: Semantic search embeddings**.
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fk1MFsLBXDW.png?alt=media&token=d6c537b1-3089-42c1-aa4f-7640b2542066)
+- Open **Settings → Graph → Semantic search**.
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FfxCj2-b4pu.png?alt=media&token=e4795d26-9996-434c-9ec5-ed7ae402900c)
 - The setting is a three-way choice: **Off**, **Default**, or **Custom**. Picking either provider enables semantic search for everyone on this graph.
 
 #### Option 1: **Default — Roam (Voyage AI)**
@@ -11890,7 +11890,7 @@
 - Ask it about your own thinking:
   - "What do my notes say about interviewing?" It searches your graph, reads the relevant pages, and answers with links to the blocks it drew from.
   - "What did I write about this project last month?" It reads your daily notes and pages and summarizes, with references.
-  - Turn on [[Semantic search (Experimental)]] (local MCP only) and it can find notes by meaning, so the old notes surface even when the words don't match.
+  - Turn on [[Semantic search]] (local MCP only) and it can find notes by meaning, so the old notes surface even when the words don't match.
 - Have it capture for you:
   - Paste in raw meeting notes and ask it to file them using one of your [[Templates]].
   - Forward it ideas mid-conversation: "add this to my daily note under Ideas."
@@ -12098,7 +12098,7 @@
 - **[[Global search]]**: (`Cmd-Shift-u` / `Ctrl-Shift-u`): search across all of your graphs at once.
 - **[[All Pages]]**: a sortable list of every page in your graph. Sort by title, word count, mentions, or when pages were created or last edited.
 - **[[Better search (Experimental)]]**: the new search engine. Faster on large graphs, and block references become searchable.
-- **[[Semantic search (Experimental)]]**: meaning-based search, once embeddings are enabled for your graph.
+- **[[Semantic search]]**: meaning-based search, once embeddings are enabled for your graph.
 - **[[Advanced Block Reference Search]]**: (`Ctrl-Shift-9`): find a block by drilling down through its outline, level by level, and drop a reference to it where you're writing.
 
 ### Good to know
@@ -12224,7 +12224,7 @@
   - **Search in**: page titles only, or blocks only.
   - **Date**: edited today, in the last 7 or 30 days, or in a custom date range.
 - Filters apply to keyword searches when [[Better search (Experimental)]] is on, and always apply in semantic mode.
-- **Semantic**: when [[Semantic search (Experimental)]] is enabled for your graph, the Semantic chip switches to meaning-based search. Toggle it with `Cmd-s` / `Ctrl-s`.
+- **Semantic**: when [[Semantic search]] is enabled for your graph, the Semantic chip switches to meaning-based search. Toggle it with `Cmd-s` / `Ctrl-s`.
 
 ### Keep a search open in the sidebar
 
@@ -12973,7 +12973,7 @@
 - **[[Sharing]]**: invite people to the graph, set their roles, and control who can export or view history.
 - **Attachments**: every file uploaded to the graph, in the [[File Manager]].
 - **Hotkeys**: view and change keyboard shortcuts. See [[Customizable Hotkeys]].
-- **Graph**: settings for the whole graph, including [[Graph History]], the [[Graph Homepage]], API tokens, graph size, automatic cleanup of empty daily notes, [[Semantic search (Experimental)]] embeddings, and [[Delete Graph]].
+- **Graph**: settings for the whole graph, including [[Graph History]], the [[Graph Homepage]], API tokens, graph size, automatic cleanup of empty daily notes, [[Semantic search]] embeddings, and [[Delete Graph]].
 - **Encryption**: change the password of an encrypted graph. This tab only appears on [[Encrypted Graphs]].
 - **Account**: your email, password, and [[Delete Account]].
 - **[[Data & Backups]]**: automatic backups, import and export, moving attachments between graphs, and [[Restore Graph]].
@@ -13006,7 +13006,7 @@
 - Open **Settings → User → Experimental: Better search** and flip the switch.
 - Each person on a graph chooses for themselves.
 - The toggle is temporary. It will go away once the new engine becomes Roam's default search.
-- Looking for meaning-based search on top of this? See [[Semantic search (Experimental)]].
+- Looking for meaning-based search on top of this? See [[Semantic search]].
 
 ---
 

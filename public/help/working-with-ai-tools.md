@@ -10,7 +10,7 @@
 - Ask it about your own thinking:
   - "What do my notes say about interviewing?" It searches your graph, reads the relevant pages, and answers with links to the blocks it drew from.
   - "What did I write about this project last month?" It reads your daily notes and pages and summarizes, with references.
-  - Turn on [[Semantic search (Experimental)]] (local MCP only) and it can find notes by meaning, so the old notes surface even when the words don't match.
+  - Turn on [[Semantic search]] (local MCP only) and it can find notes by meaning, so the old notes surface even when the words don't match.
 - Have it capture for you:
   - Paste in raw meeting notes and ask it to file them using one of your [[Templates]].
   - Forward it ideas mid-conversation: "add this to my daily note under Ideas."

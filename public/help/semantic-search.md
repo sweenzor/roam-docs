@@ -1,4 +1,4 @@
-# Semantic search (Experimental)
+# Semantic search
 
 - Roam's regular search matches the **words** you type. Semantic search matches **meaning**: it can find your notes about __insomnia__ when you search for "trouble sleeping", even though they don't share a single word.
 - It runs as an optional mode inside Roam's search. Once an admin sets it up, it's available to everyone on the graph.
@@ -33,8 +33,8 @@
 ### Setting it up
 
 - You need to be an **admin** of the graph.
-- Open **Settings → Graph → Experimental: Semantic search embeddings**.
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2Fk1MFsLBXDW.png?alt=media&token=d6c537b1-3089-42c1-aa4f-7640b2542066)
+- Open **Settings → Graph → Semantic search**.
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FfxCj2-b4pu.png?alt=media&token=e4795d26-9996-434c-9ec5-ed7ae402900c)
 - The setting is a three-way choice: **Off**, **Default**, or **Custom**. Picking either provider enables semantic search for everyone on this graph.
 
 #### Option 1: **Default — Roam (Voyage AI)**

@@ -18,4 +18,4 @@
 - Open **Settings → User → Experimental: Better search** and flip the switch.
 - Each person on a graph chooses for themselves.
 - The toggle is temporary. It will go away once the new engine becomes Roam's default search.
-- Looking for meaning-based search on top of this? See [[Semantic search (Experimental)]].
+- Looking for meaning-based search on top of this? See [[Semantic search]].
