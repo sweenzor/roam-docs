@@ -125,9 +125,11 @@
 </ul>
 <h4>Option 2: Custom (bring your own endpoint)</h4>
 <ul>
-<li>For full control over where your text goes, select <strong>Custom — Ollama / OpenAI-compatible endpoint</strong>.
+<li>To choose your own embedding model and provider, select <strong>Custom — Ollama / OpenAI-compatible endpoint</strong>.
 </li>
-<li>Your graph contents are sent only to the endpoint you configure: a hosted API you have a key for, or a local server on your own machine (Ollama, LM Studio). This is also the only option for offline graphs, since the Default option runs through Roam's servers, which offline graphs never talk to.
+<li>Your graph contents go to the endpoint you configure rather than to Voyage AI: a hosted API you have a key for, or a local server on your own machine (Ollama, LM Studio). This is also the only option for offline graphs, since the Default option runs through Roam's servers, which offline graphs never talk to.
+</li>
+<li>How they get there depends on the endpoint. A server on your own machine or local network is called straight from your browser, with no Roam server involved. Any other endpoint is relayed through Roam's CORS proxy, which means the text being indexed and your API key pass through Roam's servers on the way. The proxy forwards each request to your endpoint and hands back the reply without storing the text or the key.
 </li>
 <li><strong>Setting up for a team?</strong> With a <code>localhost</code> endpoint, every graph member needs that same server on their own machine. See <strong>A note on local endpoints and collaborators</strong>
 </li>
@@ -137,11 +139,11 @@
 </li>
 <li><strong>Model</strong>: the embedding model name your endpoint expects.
 </li>
-<li><strong>API key</strong>: only if your endpoint needs one. Keys are stored <strong>on this device only</strong> and never synced; collaborators enter their own key on their own device.
+<li><strong>API key</strong>: only if your endpoint needs one. Keys are stored <strong>on this device only</strong> and never synced; collaborators enter their own key on their own device. For a remote endpoint the key travels with each request through Roam's proxy, which passes it on without storing it.
 </li>
 <li><strong>Dimensions</strong>: optional. Leave blank to use the model's native vector size (must be 1024 or smaller). If your model lets you choose, 512 is a good balance of quality and speed.
 </li>
-<li><strong>Rerank URL</strong>: optional. Reranking is a second pass where a more accurate (but slower) model re-sorts the top results before you see them. Point this at a Cohere-style <code>/rerank</code> endpoint, for example <code>https://api.cohere.com/v2/rerank</code>. Leave blank to skip and use default ranking.
+<li><strong>Rerank URL</strong>: optional, but we recommend setting it up. Reranking is a second pass where a more accurate (but slower) model re-sorts the top results before you see them. Without it, Roam orders results by blending the keyword and semantic rankings by position, which is a rougher guide to what you were actually after. Point this at a Cohere-style <code>/rerank</code> endpoint, for example <code>https://api.cohere.com/v2/rerank</code>. Leave blank to skip.
 </li>
 <li><strong>Rerank model</strong>: the reranking model name your endpoint expects, for example <code>rerank-v3.5</code> for Cohere.
 </li>
@@ -161,7 +163,11 @@
 </li>
 <li>Pick an embedding model that produces vectors of 1024 dimensions or fewer, or one that lets you choose the size (set <strong>Dimensions</strong> to 512 in that case).
 </li>
-<li>Requests to non-local endpoints are routed through Roam's CORS proxy, because browsers can't call most APIs directly.
+<li>Requests to a remote endpoint are routed through Roam's CORS proxy, because browsers block direct calls to APIs that don't send CORS headers. Your text and API key pass through Roam's servers on the way to the provider, and Roam forwards them without keeping a copy.
+<ul>
+<li>&quot;Local&quot; here means <code>localhost</code>, an address on your own network (like <code>192.168.1.20</code>), a <code>.local</code> or <code>.lan</code> name, or a Tailscale address. Anything else counts as remote, including a public domain name that happens to point at a server you run yourself.
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -211,7 +217,7 @@
 </li>
 <li>If the test fails with &quot;model not found&quot;, the model isn't downloaded yet. Run <code>ollama pull nomic-embed-text</code> again.
 </li>
-<li><strong>Reranking with Ollama:</strong> Ollama doesn't offer a rerank endpoint, so leave the rerank fields blank; semantic search works well without them. If you want reranking, use a hosted service like Cohere, or run a local reranker: see <strong>Custom setup: a local reranker (llama.cpp)</strong>
+<li><strong>Reranking with Ollama:</strong> Ollama doesn't offer a rerank endpoint, so the rerank fields stay blank unless you set one up separately. Semantic search works without it, but reranking is worth adding. To keep everything on your own machine, run a local reranker (see <strong>Custom setup: a local reranker (llama.cpp)</strong>). A hosted service like Cohere works too, though it sends your search queries and the blocks they match through Roam's proxy.
 </li>
 </ul>
 </li>
@@ -245,7 +251,7 @@
 </li>
 </ul>
 </li>
-<li><strong>Reranking with LM Studio:</strong> LM Studio doesn't offer a rerank endpoint, so leave the rerank fields blank; semantic search works well without them. If you want reranking, use a hosted service like Cohere, or run a local reranker: see <strong>Custom setup: a local reranker (llama.cpp)</strong>
+<li><strong>Reranking with LM Studio:</strong> LM Studio doesn't offer a rerank endpoint, so the rerank fields stay blank unless you set one up separately. Semantic search works without it, but reranking is worth adding. To keep everything on your own machine, run a local reranker (see <strong>Custom setup: a local reranker (llama.cpp)</strong>). A hosted service like Cohere works too, though it sends your search queries and the blocks they match through Roam's proxy.
 </li>
 </ul>
 </li>

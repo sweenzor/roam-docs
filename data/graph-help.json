@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-08-08T06:07:04.243Z",
+ "exportedAt": "2026-08-11T06:16:10.293Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -3521,7 +3521,7 @@
        ":block/children": [
         {
          ":block/uid": "r5i5w7QjW",
-         ":block/string": "Your graph contents are sent only to the endpoint you configure: a hosted API you have a key for, or a local server on your own machine (Ollama, LM Studio). This is also the only option for offline graphs, since the Default option runs through Roam's servers, which offline graphs never talk to.",
+         ":block/string": "Your graph contents go to the endpoint you configure rather than to Voyage AI: a hosted API you have a key for, or a local server on your own machine (Ollama, LM Studio). This is also the only option for offline graphs, since the Default option runs through Roam's servers, which offline graphs never talk to.",
          ":block/order": 1
         },
         {
@@ -3538,7 +3538,7 @@
           },
           {
            ":block/uid": "q8-Tp7hG3",
-           ":block/string": "**API key**: only if your endpoint needs one. Keys are stored **on this device only** and never synced; collaborators enter their own key on their own device.",
+           ":block/string": "**API key**: only if your endpoint needs one. Keys are stored **on this device only** and never synced; collaborators enter their own key on their own device. For a remote endpoint the key travels with each request through Roam's proxy, which passes it on without storing it.",
            ":block/order": 2
           },
           {
@@ -3548,7 +3548,7 @@
           },
           {
            ":block/uid": "xiwsi_ugC",
-           ":block/string": "**Rerank URL**: optional. Reranking is a second pass where a more accurate (but slower) model re-sorts the top results before you see them. Point this at a Cohere-style `/rerank` endpoint, for example `https://api.cohere.com/v2/rerank`. Leave blank to skip and use default ranking.",
+           ":block/string": "**Rerank URL**: optional, but we recommend setting it up. Reranking is a second pass where a more accurate (but slower) model re-sorts the top results before you see them. Without it, Roam orders results by blending the keyword and semantic rankings by position, which is a rougher guide to what you were actually after. Point this at a Cohere-style `/rerank` endpoint, for example `https://api.cohere.com/v2/rerank`. Leave blank to skip.",
            ":block/order": 4
           },
           {
@@ -3564,17 +3564,17 @@
          ],
          ":block/uid": "W3ALbI77D",
          ":block/string": "The form fields:",
-         ":block/order": 3
+         ":block/order": 4
         },
         {
          ":block/uid": "wWS_8QLN3",
          ":block/string": "Clicking **Save** first tests your endpoint with a live embedding (any problem shows up right there), and then indexing starts.",
-         ":block/order": 4
+         ":block/order": 5
         },
         {
          ":block/uid": "bDKSAB7RP",
          ":block/string": "Turning embeddings **Off** keeps the index on disk, so re-enabling doesn't start from scratch.",
-         ":block/order": 6
+         ":block/order": 7
         },
         {
          ":block/children": [
@@ -3589,14 +3589,21 @@
            ":block/order": 1
           },
           {
+           ":block/children": [
+            {
+             ":block/uid": "JrJ1NRErE",
+             ":block/string": "\"Local\" here means `localhost`, an address on your own network (like `192.168.1.20`), a `.local` or `.lan` name, or a Tailscale address. Anything else counts as remote, including a public domain name that happens to point at a server you run yourself.",
+             ":block/order": 0
+            }
+           ],
            ":block/uid": "_W4-V9QqB",
-           ":block/string": "Requests to non-local endpoints are routed through Roam's CORS proxy, because browsers can't call most APIs directly.",
+           ":block/string": "Requests to a remote endpoint are routed through Roam's CORS proxy, because browsers block direct calls to APIs that don't send CORS headers. Your text and API key pass through Roam's servers on the way to the provider, and Roam forwards them without keeping a copy.",
            ":block/order": 2
           }
          ],
          ":block/uid": "Kp9KVH8zP",
          ":block/string": "**Custom setup: a remote API**",
-         ":block/order": 7
+         ":block/order": 8
         },
         {
          ":block/children": [
@@ -3702,13 +3709,13 @@
             }
            ],
            ":block/uid": "kgxke5aQR",
-           ":block/string": "**Reranking with Ollama:** Ollama doesn't offer a rerank endpoint, so leave the rerank fields blank; semantic search works well without them. If you want reranking, use a hosted service like Cohere, or run a local reranker: see ((mFx35ZE6M))",
+           ":block/string": "**Reranking with Ollama:** Ollama doesn't offer a rerank endpoint, so the rerank fields stay blank unless you set one up separately. Semantic search works without it, but reranking is worth adding. To keep everything on your own machine, run a local reranker (see ((mFx35ZE6M))). A hosted service like Cohere works too, though it sends your search queries and the blocks they match through Roam's proxy.",
            ":block/order": 5
           }
          ],
          ":block/uid": "WxYJKc1XT",
          ":block/string": "**Custom setup: Ollama (local and free)**",
-         ":block/order": 8
+         ":block/order": 9
         },
         {
          ":block/children": [
@@ -3780,13 +3787,13 @@
             }
            ],
            ":block/uid": "GbnJVUkOq",
-           ":block/string": "**Reranking with LM Studio:** LM Studio doesn't offer a rerank endpoint, so leave the rerank fields blank; semantic search works well without them. If you want reranking, use a hosted service like Cohere, or run a local reranker: see ((mFx35ZE6M))",
+           ":block/string": "**Reranking with LM Studio:** LM Studio doesn't offer a rerank endpoint, so the rerank fields stay blank unless you set one up separately. Semantic search works without it, but reranking is worth adding. To keep everything on your own machine, run a local reranker (see ((mFx35ZE6M))). A hosted service like Cohere works too, though it sends your search queries and the blocks they match through Roam's proxy.",
            ":block/order": 3
           }
          ],
          ":block/uid": "hGkevgUpP",
          ":block/string": "**Custom setup: LM Studio (local and free)**",
-         ":block/order": 9
+         ":block/order": 10
         },
         {
          ":block/children": [
@@ -3798,17 +3805,17 @@
          ],
          ":block/uid": "jeiZYtM9A",
          ":block/string": "**A note on local endpoints and collaborators**",
-         ":block/order": 11
+         ":block/order": 12
         },
         {
          ":block/uid": "shn4YxOWE",
-         ":block/string": "For full control over where your text goes, select **Custom — Ollama / OpenAI-compatible endpoint**.",
+         ":block/string": "To choose your own embedding model and provider, select **Custom — Ollama / OpenAI-compatible endpoint**.",
          ":block/order": 0
         },
         {
          ":block/uid": "t_15QYh2P",
          ":block/string": "Switching to a different model later discards the index and rebuilds it under the new model.",
-         ":block/order": 5
+         ":block/order": 6
         },
         {
          ":block/children": [
@@ -3901,7 +3908,7 @@
          ],
          ":block/uid": "mFx35ZE6M",
          ":block/string": "**Custom setup: a local reranker (llama.cpp)**",
-         ":block/order": 10
+         ":block/order": 11
         },
         {
          ":block/refs": [
@@ -3911,6 +3918,11 @@
          ],
          ":block/uid": "7PYdC0BYZ",
          ":block/string": "**Setting up for a team?** With a `localhost` endpoint, every graph member needs that same server on their own machine. See ((jeiZYtM9A))",
+         ":block/order": 3
+        },
+        {
+         ":block/uid": "ceIEin8_D",
+         ":block/string": "How they get there depends on the endpoint. A server on your own machine or local network is called straight from your browser, with no Roam server involved. Any other endpoint is relayed through Roam's CORS proxy, which means the text being indexed and your API key pass through Roam's servers on the way. The proxy forwards each request to your endpoint and hands back the reply without storing the text or the key.",
          ":block/order": 2
         }
        ],
@@ -28093,6 +28105,10 @@
    ],
    ":block/uid": "80uPAx8m-",
    ":children/view-type": "bullet"
+  },
+  {
+   ":node/title": "August 10th, 2026",
+   ":block/uid": "08-10-2026"
   },
   {
    ":node/title": "Bug Fixes",
