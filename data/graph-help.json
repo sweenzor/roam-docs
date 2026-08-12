@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-08-11T06:16:10.293Z",
+ "exportedAt": "2026-08-12T06:54:48.940Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -13028,6 +13028,10 @@
   {
    ":node/title": "June 8th, 2021",
    ":block/uid": "06-08-2021"
+  },
+  {
+   ":node/title": "August 11th, 2026",
+   ":block/uid": "08-11-2026"
   },
   {
    ":node/title": "Terms and Conditions",
@@ -34868,7 +34872,7 @@
        ":block/uid": "z7nDW4FYi",
        ":block/string": "[[2021]]",
        ":block/heading": 3,
-       ":block/order": 48
+       ":block/order": 49
       },
       {
        ":block/refs": [
@@ -38031,7 +38035,7 @@
        ":block/uid": "oEUzBpPVt",
        ":block/string": "[[2022]]",
        ":block/heading": 3,
-       ":block/order": 47
+       ":block/order": 48
       },
       {
        ":block/refs": [
@@ -42618,7 +42622,7 @@
        ":block/uid": "3DcyG9fYJ",
        ":block/string": "[[2023]]",
        ":block/heading": 3,
-       ":block/order": 46
+       ":block/order": 47
       },
       {
        ":block/refs": [
@@ -48456,7 +48460,7 @@
        ":block/uid": "N8o9mOFxV",
        ":block/string": "[[2024]]",
        ":block/heading": 3,
-       ":block/order": 45
+       ":block/order": 46
       },
       {
        ":block/refs": [
@@ -48544,7 +48548,7 @@
        ],
        ":block/uid": "mbBXOyRr4",
        ":block/string": "[[January 7th, 2026]]",
-       ":block/order": 43
+       ":block/order": 44
       },
       {
        ":block/refs": [
@@ -49391,7 +49395,7 @@
        ],
        ":block/uid": "D4sWwAFQH",
        ":block/string": "[[January 12th, 2026]]",
-       ":block/order": 42
+       ":block/order": 43
       },
       {
        ":block/refs": [
@@ -49809,7 +49813,7 @@
        ],
        ":block/uid": "fZnJ8SpjV",
        ":block/string": "[[January 16th, 2026]]",
-       ":block/order": 41
+       ":block/order": 42
       },
       {
        ":block/refs": [
@@ -58951,7 +58955,7 @@
        ":block/uid": "e3HyGxGmz",
        ":block/string": "[[2025]]",
        ":block/heading": 3,
-       ":block/order": 44
+       ":block/order": 45
       },
       {
        ":block/refs": [
@@ -59178,7 +59182,7 @@
        ],
        ":block/uid": "DQLXBkLqB",
        ":block/string": "[[January 30th, 2026]]",
-       ":block/order": 40
+       ":block/order": 41
       },
       {
        ":block/refs": [
@@ -59484,7 +59488,7 @@
        ],
        ":block/uid": "faBrrXpMf",
        ":block/string": "[[February 10th, 2026]]",
-       ":block/order": 39
+       ":block/order": 40
       },
       {
        ":block/refs": [
@@ -59541,7 +59545,7 @@
        ],
        ":block/uid": "HGdio9-X1",
        ":block/string": "[[February 11th, 2026]]",
-       ":block/order": 38
+       ":block/order": 39
       },
       {
        ":block/refs": [
@@ -59701,7 +59705,7 @@
        ],
        ":block/uid": "3YbHyvMVu",
        ":block/string": "[[February 18th, 2026]]",
-       ":block/order": 37
+       ":block/order": 38
       },
       {
        ":block/refs": [
@@ -59791,7 +59795,7 @@
        ],
        ":block/uid": "l1CEHstpS",
        ":block/string": "[[February 19th, 2026]]",
-       ":block/order": 36
+       ":block/order": 37
       },
       {
        ":block/refs": [
@@ -59849,7 +59853,7 @@
        ],
        ":block/uid": "w7XCOWrmV",
        ":block/string": "[[February 22nd, 2026]]",
-       ":block/order": 35
+       ":block/order": 36
       },
       {
        ":block/refs": [
@@ -59942,7 +59946,7 @@
        ],
        ":block/uid": "lq5IvpQ7J",
        ":block/string": "[[February 25th, 2026]]",
-       ":block/order": 34
+       ":block/order": 35
       },
       {
        ":block/refs": [
@@ -60740,7 +60744,7 @@
        ],
        ":block/uid": "ipU_NCoCx",
        ":block/string": "[[February 26th, 2026]]",
-       ":block/order": 33
+       ":block/order": 34
       },
       {
        ":block/refs": [
@@ -60788,7 +60792,7 @@
        ],
        ":block/uid": "WO-6A7VX9",
        ":block/string": "[[February 27th, 2026]]",
-       ":block/order": 32
+       ":block/order": 33
       },
       {
        ":block/refs": [
@@ -60923,7 +60927,7 @@
        ],
        ":block/uid": "AHy3mUokJ",
        ":block/string": "[[March 9th, 2026]]",
-       ":block/order": 31
+       ":block/order": 32
       },
       {
        ":block/refs": [
@@ -61093,7 +61097,7 @@
        ],
        ":block/uid": "-R8L5nZLD",
        ":block/string": "[[March 11th, 2026]]",
-       ":block/order": 30
+       ":block/order": 31
       },
       {
        ":block/refs": [
@@ -61217,7 +61221,7 @@
        ],
        ":block/uid": "e5HOoYOYK",
        ":block/string": "[[March 24th, 2026]]",
-       ":block/order": 29
+       ":block/order": 30
       },
       {
        ":block/refs": [
@@ -61256,7 +61260,7 @@
        ],
        ":block/uid": "hP0WzVCb3",
        ":block/string": "[[March 30th, 2026]]",
-       ":block/order": 28
+       ":block/order": 29
       },
       {
        ":block/refs": [
@@ -61755,7 +61759,7 @@
        ],
        ":block/uid": "kYfXB-KfD",
        ":block/string": "[[March 31st, 2026]]",
-       ":block/order": 27
+       ":block/order": 28
       },
       {
        ":block/refs": [
@@ -61819,7 +61823,7 @@
        ],
        ":block/uid": "hy237MoSG",
        ":block/string": "[[April 10th, 2026]]",
-       ":block/order": 26
+       ":block/order": 27
       },
       {
        ":block/refs": [
@@ -62041,7 +62045,7 @@
        ],
        ":block/uid": "Ld3WwhXAJ",
        ":block/string": "[[April 14th, 2026]]",
-       ":block/order": 25
+       ":block/order": 26
       },
       {
        ":block/refs": [
@@ -62092,7 +62096,7 @@
        ],
        ":block/uid": "FX03un0yx",
        ":block/string": "[[April 15th, 2026]]",
-       ":block/order": 24
+       ":block/order": 25
       },
       {
        ":block/refs": [
@@ -62141,7 +62145,7 @@
        ],
        ":block/uid": "Tdxn9p6T-",
        ":block/string": "[[April 17th, 2026]]",
-       ":block/order": 23
+       ":block/order": 24
       },
       {
        ":block/refs": [
@@ -63821,7 +63825,7 @@
        ],
        ":block/uid": "yYmOmnffK",
        ":block/string": "[[April 27th, 2026]]",
-       ":block/order": 22
+       ":block/order": 23
       },
       {
        ":block/refs": [
@@ -63901,7 +63905,7 @@
        ],
        ":block/uid": "E8B5FpUqb",
        ":block/string": "[[May 1st, 2026]]",
-       ":block/order": 21
+       ":block/order": 22
       },
       {
        ":block/refs": [
@@ -64085,7 +64089,7 @@
        ],
        ":block/uid": "_bXQOG7-W",
        ":block/string": "[[May 4th, 2026]]",
-       ":block/order": 20
+       ":block/order": 21
       },
       {
        ":block/refs": [
@@ -64184,7 +64188,7 @@
        ],
        ":block/uid": "77u8rD3tN",
        ":block/string": "[[May 5th, 2026]]",
-       ":block/order": 19
+       ":block/order": 20
       },
       {
        ":block/refs": [
@@ -64247,7 +64251,7 @@
        ],
        ":block/uid": "4jefQzlrL",
        ":block/string": "[[May 15th, 2026]]",
-       ":block/order": 18
+       ":block/order": 19
       },
       {
        ":block/refs": [
@@ -64303,7 +64307,7 @@
        ],
        ":block/uid": "yCa6IFyF-",
        ":block/string": "[[May 21st, 2026]]",
-       ":block/order": 17
+       ":block/order": 18
       },
       {
        ":block/refs": [
@@ -64344,7 +64348,7 @@
        ],
        ":block/uid": "s1JCTlMYp",
        ":block/string": "[[May 28th, 2026]]",
-       ":block/order": 16
+       ":block/order": 17
       },
       {
        ":block/refs": [
@@ -64386,7 +64390,7 @@
        ],
        ":block/uid": "GtQy1iARj",
        ":block/string": "[[June 1st, 2026]]",
-       ":block/order": 15
+       ":block/order": 16
       },
       {
        ":block/refs": [
@@ -64513,7 +64517,7 @@
        ],
        ":block/uid": "FfZFcIMVi",
        ":block/string": "[[June 2nd, 2026]]",
-       ":block/order": 14
+       ":block/order": 15
       },
       {
        ":block/refs": [
@@ -64549,7 +64553,7 @@
        ],
        ":block/uid": "o0biga_ls",
        ":block/string": "[[June 9th, 2026]]",
-       ":block/order": 13
+       ":block/order": 14
       },
       {
        ":block/refs": [
@@ -64578,7 +64582,7 @@
        ],
        ":block/uid": "1oHVhjf1j",
        ":block/string": "[[June 10th, 2026]]",
-       ":block/order": 12
+       ":block/order": 13
       },
       {
        ":block/refs": [
@@ -64617,7 +64621,7 @@
        ],
        ":block/uid": "jlW42mQ3s",
        ":block/string": "[[June 11th, 2026]]",
-       ":block/order": 11
+       ":block/order": 12
       },
       {
        ":block/refs": [
@@ -65164,7 +65168,7 @@
        ],
        ":block/uid": "Wp3IwehIi",
        ":block/string": "[[June 13th, 2026]]",
-       ":block/order": 10
+       ":block/order": 11
       },
       {
        ":block/refs": [
@@ -65305,7 +65309,7 @@
        ],
        ":block/uid": "T7MyhAu_Z",
        ":block/string": "[[June 30th, 2026]]",
-       ":block/order": 9
+       ":block/order": 10
       },
       {
        ":block/refs": [
@@ -65361,7 +65365,7 @@
        ],
        ":block/uid": "MdrAuMqaU",
        ":block/string": "[[July 2nd, 2026]]",
-       ":block/order": 8
+       ":block/order": 9
       },
       {
        ":block/refs": [
@@ -65390,7 +65394,7 @@
        ],
        ":block/uid": "MUux5EgdX",
        ":block/string": "[[July 6th, 2026]]",
-       ":block/order": 7
+       ":block/order": 8
       },
       {
        ":block/refs": [
@@ -65424,7 +65428,7 @@
        ],
        ":block/uid": "Omo5TNL1L",
        ":block/string": "[[July 7th, 2026]]",
-       ":block/order": 6
+       ":block/order": 7
       },
       {
        ":block/refs": [
@@ -65603,7 +65607,7 @@
        ],
        ":block/uid": "6kZb0aiyX",
        ":block/string": "[[July 10th, 2026]]",
-       ":block/order": 5
+       ":block/order": 6
       },
       {
        ":block/refs": [
@@ -65756,7 +65760,7 @@
        ],
        ":block/uid": "VoTSRMSbW",
        ":block/string": "[[July 13th, 2026]]",
-       ":block/order": 4
+       ":block/order": 5
       },
       {
        ":block/refs": [
@@ -65790,7 +65794,7 @@
        ],
        ":block/uid": "x3tGBCvQq",
        ":block/string": "[[July 15th, 2026]]",
-       ":block/order": 3
+       ":block/order": 4
       },
       {
        ":block/refs": [
@@ -65819,7 +65823,7 @@
        ],
        ":block/uid": "CNp2sgkob",
        ":block/string": "[[July 23rd, 2026]]",
-       ":block/order": 2
+       ":block/order": 3
       },
       {
        ":block/refs": [
@@ -65870,7 +65874,7 @@
        ],
        ":block/uid": "Oe6_LO9ka",
        ":block/string": "[[July 28th, 2026]]",
-       ":block/order": 1
+       ":block/order": 2
       },
       {
        ":block/refs": [
@@ -65930,6 +65934,646 @@
        ],
        ":block/uid": "jYcUoRTGl",
        ":block/string": "[[July 29th, 2026]]",
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "08-11-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "TpA4naC1T"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "vce64pq9_",
+             ":block/string": "Remove page tags from one or many Roam Research blocks without leaving the editor.",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "MtfxKGwqC",
+             ":block/string": "![Roam Remove Tag demo](https://github.com/404KSG/roam-remove-tag/raw/ee3ee5ea1a0c61ada0863a521bc1763092ec3373/assets/roam-remove-tag-demo-v2.gif)[🔗](https://github.com/404KSG/roam-remove-tag/blob/ee3ee5ea1a0c61ada0863a521bc1763092ec3373/assets/roam-remove-tag-demo-v2.gif)",
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "8LH1eNFUv",
+               ":block/string": "Adds Remove Block's Page Tag and Remove All Tags & Aliases to both the single-block and multi-select context menus.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "9mjYAO2Ol",
+               ":block/string": "Handles `#tag`, `#[[Page Title]]`, Unicode tags such as `#café`, and `[*](((uid)))` star aliases.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "k_UckT-WC",
+               ":block/string": "Preserves URL fragments, arbitrary backtick code spans, fenced code, unrelated tags, children, and existing whitespace.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "AyQiOKXPp",
+               ":block/string": "Supports current and legacy Roam context-menu UID shapes.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "h4qWncpmp",
+               ":block/string": "Uses Roam's native Blueprint notifications and reports updated or failed blocks.",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "co9cswPIp",
+               ":block/string": "Safely rolls back partial menu registration and prevents duplicate Depot/`roam/js` instances.",
+               ":block/order": 5
+              },
+              {
+               ":block/uid": "a0wYahr4h",
+               ":block/string": "Only explicitly selected blocks are edited. Selecting a parent does not recursively modify unselected descendants.",
+               ":block/order": 6
+              }
+             ],
+             ":block/uid": "WNcw87zSz",
+             ":block/string": "Features",
+             ":block/heading": 2,
+             ":block/order": 2
+            }
+           ],
+           ":block/uid": "JU2BCS36m",
+           ":block/string": "Roam Remove Tag",
+           ":block/heading": 1,
+           ":block/order": 1
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "9ys7B71Cv",
+             ":block/string": "Insert emoji inline while you type.",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "DR2C4fqIu",
+             ":block/string": "```plain text\n:sli  →  🙂 :slightly_smiling_face:\n:tada →  🎉 :tada:\n:hrt  →  ❤️ :heart:```",
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "HDMSJfPib",
+               ":block/string": "Type your trigger (`:` by default) at the start of a word, followed by at least two characters. A list appears at the cursor.",
+               ":block/order": 0
+              },
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "2-eIgz-4z"
+                }
+               ],
+               ":block/children": [
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "nq-TydHCV",
+                   ":block/string": "Action",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "1AsyvnPDi",
+                 ":block/string": "Key",
+                 ":block/order": 0
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "znlKzoFol",
+                   ":block/string": "Move through the list",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "7e1VnMyWy",
+                 ":block/string": "`↑` `↓`",
+                 ":block/order": 1
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "0ipWUaqEH",
+                   ":block/string": "Insert the highlighted emoji",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "x6ZXqUBSV",
+                 ":block/string": "`Enter` or `Tab`",
+                 ":block/order": 2
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "ZbOLhNepq",
+                   ":block/string": "Close the list",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "0YaZbGOeA",
+                 ":block/string": "`Esc`",
+                 ":block/order": 3
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "3hebfo39T",
+                   ":block/string": "Close the list and keep typing",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "uoWZscver",
+                 ":block/string": "`Space`",
+                 ":block/order": 4
+                }
+               ],
+               ":block/uid": "EWpa7lLyg",
+               ":block/string": "{{[[table]]}}",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "WZSMaeBwj",
+               ":block/string": "If you already know the shortcode, type it in full and close it with a second `:` — `:tada:` inserts 🎉 immediately without opening the list.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "yxinSJAcG",
+               ":block/string": "Searching matches shortcodes first, then keywords, then descriptions. When nothing matches exactly, a looser search takes over, so `:hrt` still finds ❤️.",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "6Z8vMwhGj",
+             ":block/string": "Using it",
+             ":block/heading": 2,
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "OJWdhydsu",
+               ":block/string": "Found under Roam Depot → Roamoji.",
+               ":block/order": 0
+              },
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "2-eIgz-4z"
+                }
+               ],
+               ":block/children": [
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "r2158Nyl9",
+                     ":block/string": "What it does",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "i4h8jTS1R",
+                   ":block/string": "Default",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "Lt507-6MF",
+                 ":block/string": "Setting",
+                 ":block/order": 0
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "JHplr70fs",
+                     ":block/string": "The characters that open the picker. One or two symbols; letters and digits are rejected.",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "j_QyQUJ8w",
+                   ":block/string": "`:`",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "GD1vdFGYB",
+                 ":block/string": "Trigger",
+                 ":block/order": 1
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "ajP0K-nVd",
+                     ":block/string": "How much you type after the trigger before the list appears.",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "WGoV9tCvo",
+                   ":block/string": "`2`",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "PzFs-r1Cg",
+                 ":block/string": "Minimum characters",
+                 ":block/order": 2
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "aGlVQsfxf",
+                     ":block/string": "How many emoji are listed at once.",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "_pZoKB20Y",
+                   ":block/string": "`8`",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "ejP6sEIyY",
+                 ":block/string": "Results shown",
+                 ":block/order": 3
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "xdRBwDIUL",
+                     ":block/string": "Loose matching when nothing matches exactly.",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "M2CPIFcOy",
+                   ":block/string": "on",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "MhCKEXRkd",
+                 ":block/string": "Fuzzy fallback",
+                 ":block/order": 4
+                }
+               ],
+               ":block/uid": "KQttvuXEk",
+               ":block/string": "{{[[table]]}}",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "VEQZNWoR6",
+             ":block/string": "Settings",
+             ":block/heading": 2,
+             ":block/order": 3
+            }
+           ],
+           ":block/uid": "doEfKJpYg",
+           ":block/string": "Roamoji",
+           ":block/heading": 1,
+           ":block/order": 2
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "mB-_KirG2",
+             ":block/string": "See your complete Roam block creation history as a contribution heatmap, from your earliest block through today. Every year stays visible in one compact view.",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "kEqB9DDxw",
+             ":block/string": "![Contribution Graph displayed inside Roam Research](https://github.com/404KSG/contribution-graph/raw/3686d356e14c8ee0924ceb7b7c000040730e25fc/docs/images/contribution-graph-dialog.png)[🔗](https://github.com/404KSG/contribution-graph/blob/3686d356e14c8ee0924ceb7b7c000040730e25fc/docs/images/contribution-graph-dialog.png)",
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "YTFPXJcrk",
+               ":block/string": "View the entire graph or only blocks created by the current Roam user.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "aWU8wVwLF",
+               ":block/string": "Track Days in Roam, longest streak, current streak, and total blocks.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "8pGumjhKy",
+               ":block/string": "Tell future dates, pre-history dates, and inactive historical days apart at a glance.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "SttZQumIU",
+               ":block/string": "Export the complete history as a crisp 3× PNG with Share Screenshot.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "3DRpbRGNn",
+               ":block/string": "Use a Roam- and Blueprint-style interface with responsive controls and keyboard support.",
+               ":block/order": 4
+              }
+             ],
+             ":block/uid": "bXySMcLT6",
+             ":block/string": "Highlights",
+             ":block/heading": 2,
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "yxox2wqMC",
+               ":block/string": "Open Contribution Graph: Open complete history from the Command Palette or use the topbar grid button. Choose a scope, refresh when needed, or share the complete graph as an image.",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "AtKtFl3xZ",
+             ":block/string": "Use",
+             ":block/heading": 2,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "6MJflnzoZ",
+               ":block/string": "The extension reads block creation timestamps, never block text. It has no analytics, external service, runtime dependency, or extension-initiated network request.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "UMfV2wgOi",
+               ":block/string": "History loads only when the graph is opened or refreshed, then stays in a short in-memory cache. Imported and Agent-created blocks may be included in the selected creator's activity.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "6t8_jNmPe",
+             ":block/string": "Privacy and performance",
+             ":block/heading": 2,
+             ":block/order": 4
+            }
+           ],
+           ":block/uid": "rnmMx6E0A",
+           ":block/string": "Contribution Graph",
+           ":block/heading": 1,
+           ":block/order": 0
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "yC7o2VFaw",
+             ":block/string": "Turn Roam's core block-reference workflow into a fast, writing-friendly drag gesture.",
+             ":block/order": 0
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "fniNPOvCi",
+               ":block/string": "![Drag References demo](https://github.com/404KSG/roam-drag-references/raw/52aa2e04b5e7bf9b9682bbf668c175e4a8cd34ee/assets/demo.gif)[🔗](https://github.com/404KSG/roam-drag-references/blob/52aa2e04b5e7bf9b9682bbf668c175e4a8cd34ee/assets/demo.mp4)",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "gMBy_RFA9",
+               ":block/string": "Click the preview for the full-quality video.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "kjR3L5UcO",
+             ":block/string": "Demo",
+             ":block/heading": 2,
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "2-eIgz-4z"
+                }
+               ],
+               ":block/children": [
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "PBw0poo_p",
+                   ":block/string": "Result",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "EBGNznsu9",
+                 ":block/string": "Gesture",
+                 ":block/order": 0
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "pmbtxkil1",
+                   ":block/string": "Roam's native block move",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "diisbpiUr",
+                 ":block/string": "Drag",
+                 ":block/order": 1
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "U-NbaeNyd",
+                   ":block/string": "Roam's native `((blockUid))` reference drag",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "DsuCHSgG3",
+                 ":block/string": "Option + Drag",
+                 ":block/order": 2
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "Y087owFw-",
+                   ":block/string": "`[*](((blockUid)))`",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "ItksqBU4h",
+                 ":block/string": "Command + Drag",
+                 ":block/order": 3
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "aeN8srvcG",
+                   ":block/string": "`Original block text [*](((blockUid)))`",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "w4R1MRwsJ",
+                 ":block/string": "Control + Drag",
+                 ":block/order": 4
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "iQHfNKBoQ",
+                   ":block/string": "`{{embed-path: ((blockUid))}}`",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "fqkdInCoY",
+                 ":block/string": "Shift + Drag",
+                 ":block/order": 5
+                }
+               ],
+               ":block/uid": "3lx_SWHyh",
+               ":block/string": "{{[[table]]}}",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "h70J2Impb",
+             ":block/string": "Shortcuts",
+             ":block/heading": 2,
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "Z5-JexRYH",
+               ":block/string": "Hold a modifier when you start dragging a bullet, then drop before, after, or to the right of another block to create a child. The source stays untouched, and every successful reference is copied to the clipboard.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "Zai6Spjmd",
+               ":block/string": "Plain drag and Option-drag remain native to Roam. Query results and linked-reference renderings are excluded because their hierarchy can be ambiguous.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "LAh81Ec5r",
+             ":block/string": "How It Works",
+             ":block/heading": 2,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "dYXs1KfwQ",
+               ":block/string": "Keeps citations and source context inside the writing flow.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "iGXewjIi8",
+               ":block/string": "Makes Roam's core block references and outliner structure faster to use.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "k39eJR7Xv",
+               ":block/string": "Keeps graph data local with no analytics or external services.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "c20z883pn",
+             ":block/string": "Why It Helps",
+             ":block/heading": 2,
+             ":block/order": 4
+            }
+           ],
+           ":block/uid": "rT3Ep91wR",
+           ":block/string": "Drag References for Roam Research",
+           ":block/heading": 1,
+           ":block/order": 3
+          },
+          {
+           ":block/children": [
+            {
+             ":block/children": [
+              {
+               ":block/uid": "gpmEuISAW",
+               ":block/string": "`ctrl+1` … `ctrl+9` — open the Nth Shortcut in the main window",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "W9uU5BpiG",
+               ":block/string": "`ctrl+shift+1` … `ctrl+shift+9` — open the Nth Shortcut in the right sidebar",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "LdkgP1m9i",
+             ":block/string": "Jump between your left-sidebar Shortcuts with number hotkeys.",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "DVWwf589L",
+             ":block/string": "Shortcuts are matched by their order in the left sidebar and resolved on every keypress, so reordering, starring, or unstarring pages takes effect immediately. Pressing a number beyond your current Shortcuts count does nothing.",
+             ":block/order": 1
+            },
+            {
+             ":block/uid": "IZkJKMO0_",
+             ":block/string": "All commands are also available in the Command Palette, just search for `QuickCuts`.",
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "Ca_FKjUll",
+               ":block/string": "Hotkey Modifier (default: `ctrl`) — one switch re-generates the default hotkeys of all 18 commands. Options: `ctrl`, `alt`, `cmd`.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "TuM4Vsz4V",
+               ":block/string": "You can also rebind any command individually in Roam's native Settings → Hotkeys panel.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "32EXnu-iz",
+               ":block/string": "Important",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "hv9YCTdgl",
+               ":block/string": "Custom hotkeys take precedence. If you rebind an individual command in Settings → Hotkeys, that binding wins over the unified modifier, this is Roam's native behavior and extensions cannot override it. To make the command follow the unified modifier again, click \"restore default\" on it in the Hotkeys panel.",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "O4F8hyORA",
+             ":block/string": "Settings",
+             ":block/heading": 2,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "bslZ7tQNN",
+               ":block/string": "Works in both Roam Desktop and the browser. `ctrl+number` is not captured by browsers. `cmd+number` may conflict with browser tab switching, so the `cmd` modifier is best used in Roam Desktop.",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "GC0BFG4bx",
+             ":block/string": "Compatibility",
+             ":block/heading": 2,
+             ":block/order": 4
+            }
+           ],
+           ":block/uid": "7fPF1Opa5",
+           ":block/string": "QuickCuts",
+           ":block/heading": 1,
+           ":block/order": 4
+          }
+         ],
+         ":block/uid": "OL6e6d9QM",
+         ":block/string": "[[Roam Depot Extensions]]",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "iYlYbcCWh",
+       ":block/string": "[[August 11th, 2026]]",
        ":block/order": 0
       }
      ],

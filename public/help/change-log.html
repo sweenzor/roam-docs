@@ -41,6 +41,300 @@
 <h3>[Updating Roam](<a href="/help/updating-roam">Updating Roam</a>)</h3>
 <h3><strong>New Changes</strong></h3>
 <ul>
+<li>August 11th, 2026
+<ul>
+<li>Roam Depot Extensions
+<ul>
+<li><strong>Contribution Graph</strong>
+<ul>
+<li>See your complete Roam block creation history as a contribution heatmap, from your earliest block through today. Every year stays visible in one compact view.
+</li>
+<li><img src="https://github.com/404KSG/contribution-graph/raw/3686d356e14c8ee0924ceb7b7c000040730e25fc/docs/images/contribution-graph-dialog.png" alt="Contribution Graph displayed inside Roam Research" loading="lazy"><a href="https://github.com/404KSG/contribution-graph/blob/3686d356e14c8ee0924ceb7b7c000040730e25fc/docs/images/contribution-graph-dialog.png">🔗</a>
+</li>
+<li><strong>Highlights</strong>
+<ul>
+<li>View the entire graph or only blocks created by the current Roam user.
+</li>
+<li>Track Days in Roam, longest streak, current streak, and total blocks.
+</li>
+<li>Tell future dates, pre-history dates, and inactive historical days apart at a glance.
+</li>
+<li>Export the complete history as a crisp 3× PNG with Share Screenshot.
+</li>
+<li>Use a Roam- and Blueprint-style interface with responsive controls and keyboard support.
+</li>
+</ul>
+</li>
+<li><strong>Use</strong>
+<ul>
+<li>Open Contribution Graph: Open complete history from the Command Palette or use the topbar grid button. Choose a scope, refresh when needed, or share the complete graph as an image.
+</li>
+</ul>
+</li>
+<li><strong>Privacy and performance</strong>
+<ul>
+<li>The extension reads block creation timestamps, never block text. It has no analytics, external service, runtime dependency, or extension-initiated network request.
+</li>
+<li>History loads only when the graph is opened or refreshed, then stays in a short in-memory cache. Imported and Agent-created blocks may be included in the selected creator's activity.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Roam Remove Tag</strong>
+<ul>
+<li>Remove page tags from one or many Roam Research blocks without leaving the editor.
+</li>
+<li><img src="https://github.com/404KSG/roam-remove-tag/raw/ee3ee5ea1a0c61ada0863a521bc1763092ec3373/assets/roam-remove-tag-demo-v2.gif" alt="Roam Remove Tag demo" loading="lazy"><a href="https://github.com/404KSG/roam-remove-tag/blob/ee3ee5ea1a0c61ada0863a521bc1763092ec3373/assets/roam-remove-tag-demo-v2.gif">🔗</a>
+</li>
+<li><strong>Features</strong>
+<ul>
+<li>Adds Remove Block's Page Tag and Remove All Tags &amp; Aliases to both the single-block and multi-select context menus.
+</li>
+<li>Handles <code>#tag</code>, <code>#[[Page Title]]</code>, Unicode tags such as <code>#café</code>, and <code>[*](((uid)))</code> star aliases.
+</li>
+<li>Preserves URL fragments, arbitrary backtick code spans, fenced code, unrelated tags, children, and existing whitespace.
+</li>
+<li>Supports current and legacy Roam context-menu UID shapes.
+</li>
+<li>Uses Roam's native Blueprint notifications and reports updated or failed blocks.
+</li>
+<li>Safely rolls back partial menu registration and prevents duplicate Depot/<code>roam/js</code> instances.
+</li>
+<li>Only explicitly selected blocks are edited. Selecting a parent does not recursively modify unselected descendants.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Roamoji</strong>
+<ul>
+<li>Insert emoji inline while you type.
+</li>
+<li><pre><code>:sli  →  🙂 :slightly_smiling_face:
+:tada →  🎉 :tada:
+:hrt  →  ❤️ :heart:</code></pre>
+</li>
+<li><strong>Using it</strong>
+<ul>
+<li>Type your trigger (<code>:</code> by default) at the start of a word, followed by at least two characters. A list appears at the cursor.
+</li>
+<li>{{table}}
+<ul>
+<li>Key
+<ul>
+<li>Action
+</li>
+</ul>
+</li>
+<li><code>↑</code> <code>↓</code>
+<ul>
+<li>Move through the list
+</li>
+</ul>
+</li>
+<li><code>Enter</code> or <code>Tab</code>
+<ul>
+<li>Insert the highlighted emoji
+</li>
+</ul>
+</li>
+<li><code>Esc</code>
+<ul>
+<li>Close the list
+</li>
+</ul>
+</li>
+<li><code>Space</code>
+<ul>
+<li>Close the list and keep typing
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If you already know the shortcode, type it in full and close it with a second <code>:</code> — <code>:tada:</code> inserts 🎉 immediately without opening the list.
+</li>
+<li>Searching matches shortcodes first, then keywords, then descriptions. When nothing matches exactly, a looser search takes over, so <code>:hrt</code> still finds ❤️.
+</li>
+</ul>
+</li>
+<li><strong>Settings</strong>
+<ul>
+<li>Found under Roam Depot → Roamoji.
+</li>
+<li>{{table}}
+<ul>
+<li>Setting
+<ul>
+<li>Default
+<ul>
+<li>What it does
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Trigger
+<ul>
+<li><code>:</code>
+<ul>
+<li>The characters that open the picker. One or two symbols; letters and digits are rejected.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Minimum characters
+<ul>
+<li><code>2</code>
+<ul>
+<li>How much you type after the trigger before the list appears.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Results shown
+<ul>
+<li><code>8</code>
+<ul>
+<li>How many emoji are listed at once.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Fuzzy fallback
+<ul>
+<li>on
+<ul>
+<li>Loose matching when nothing matches exactly.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Drag References for Roam Research</strong>
+<ul>
+<li>Turn Roam's core block-reference workflow into a fast, writing-friendly drag gesture.
+</li>
+<li><strong>Demo</strong>
+<ul>
+<li><img src="https://github.com/404KSG/roam-drag-references/raw/52aa2e04b5e7bf9b9682bbf668c175e4a8cd34ee/assets/demo.gif" alt="Drag References demo" loading="lazy"><a href="https://github.com/404KSG/roam-drag-references/blob/52aa2e04b5e7bf9b9682bbf668c175e4a8cd34ee/assets/demo.mp4">🔗</a>
+</li>
+<li>Click the preview for the full-quality video.
+</li>
+</ul>
+</li>
+<li><strong>Shortcuts</strong>
+<ul>
+<li>{{table}}
+<ul>
+<li>Gesture
+<ul>
+<li>Result
+</li>
+</ul>
+</li>
+<li>Drag
+<ul>
+<li>Roam's native block move
+</li>
+</ul>
+</li>
+<li>Option + Drag
+<ul>
+<li>Roam's native <code>((blockUid))</code> reference drag
+</li>
+</ul>
+</li>
+<li>Command + Drag
+<ul>
+<li><code>[*](((blockUid)))</code>
+</li>
+</ul>
+</li>
+<li>Control + Drag
+<ul>
+<li><code>Original block text [*](((blockUid)))</code>
+</li>
+</ul>
+</li>
+<li>Shift + Drag
+<ul>
+<li><code>{{embed-path: ((blockUid))}}</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>How It Works</strong>
+<ul>
+<li>Hold a modifier when you start dragging a bullet, then drop before, after, or to the right of another block to create a child. The source stays untouched, and every successful reference is copied to the clipboard.
+</li>
+<li>Plain drag and Option-drag remain native to Roam. Query results and linked-reference renderings are excluded because their hierarchy can be ambiguous.
+</li>
+</ul>
+</li>
+<li><strong>Why It Helps</strong>
+<ul>
+<li>Keeps citations and source context inside the writing flow.
+</li>
+<li>Makes Roam's core block references and outliner structure faster to use.
+</li>
+<li>Keeps graph data local with no analytics or external services.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>QuickCuts</strong>
+<ul>
+<li>Jump between your left-sidebar Shortcuts with number hotkeys.
+<ul>
+<li><code>ctrl+1</code> … <code>ctrl+9</code> — open the Nth Shortcut in the main window
+</li>
+<li><code>ctrl+shift+1</code> … <code>ctrl+shift+9</code> — open the Nth Shortcut in the right sidebar
+</li>
+</ul>
+</li>
+<li>Shortcuts are matched by their order in the left sidebar and resolved on every keypress, so reordering, starring, or unstarring pages takes effect immediately. Pressing a number beyond your current Shortcuts count does nothing.
+</li>
+<li>All commands are also available in the Command Palette, just search for <code>QuickCuts</code>.
+</li>
+<li><strong>Settings</strong>
+<ul>
+<li>Hotkey Modifier (default: <code>ctrl</code>) — one switch re-generates the default hotkeys of all 18 commands. Options: <code>ctrl</code>, <code>alt</code>, <code>cmd</code>.
+</li>
+<li>You can also rebind any command individually in Roam's native Settings → Hotkeys panel.
+</li>
+<li>Important
+</li>
+<li>Custom hotkeys take precedence. If you rebind an individual command in Settings → Hotkeys, that binding wins over the unified modifier, this is Roam's native behavior and extensions cannot override it. To make the command follow the unified modifier again, click &quot;restore default&quot; on it in the Hotkeys panel.
+</li>
+</ul>
+</li>
+<li><strong>Compatibility</strong>
+<ul>
+<li>Works in both Roam Desktop and the browser. <code>ctrl+number</code> is not captured by browsers. <code>cmd+number</code> may conflict with browser tab switching, so the <code>cmd</code> modifier is best used in Roam Desktop.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>July 29th, 2026
 <ul>
 <li>Quality of Life Improvements
