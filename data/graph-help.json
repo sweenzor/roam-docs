@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-08-12T06:54:48.940Z",
+ "exportedAt": "2026-08-23T05:56:37.672Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -25195,6 +25195,10 @@
    ":block/uid": "pWRyFfmVo"
   },
   {
+   ":node/title": "August 22nd, 2026",
+   ":block/uid": "08-22-2026"
+  },
+  {
    ":node/title": "Brandon Toner",
    ":block/uid": "ngeZ1RHid"
   },
@@ -34872,7 +34876,7 @@
        ":block/uid": "z7nDW4FYi",
        ":block/string": "[[2021]]",
        ":block/heading": 3,
-       ":block/order": 49
+       ":block/order": 50
       },
       {
        ":block/refs": [
@@ -38035,7 +38039,7 @@
        ":block/uid": "oEUzBpPVt",
        ":block/string": "[[2022]]",
        ":block/heading": 3,
-       ":block/order": 48
+       ":block/order": 49
       },
       {
        ":block/refs": [
@@ -42622,7 +42626,7 @@
        ":block/uid": "3DcyG9fYJ",
        ":block/string": "[[2023]]",
        ":block/heading": 3,
-       ":block/order": 47
+       ":block/order": 48
       },
       {
        ":block/refs": [
@@ -48460,7 +48464,7 @@
        ":block/uid": "N8o9mOFxV",
        ":block/string": "[[2024]]",
        ":block/heading": 3,
-       ":block/order": 46
+       ":block/order": 47
       },
       {
        ":block/refs": [
@@ -48548,7 +48552,7 @@
        ],
        ":block/uid": "mbBXOyRr4",
        ":block/string": "[[January 7th, 2026]]",
-       ":block/order": 44
+       ":block/order": 45
       },
       {
        ":block/refs": [
@@ -49395,7 +49399,7 @@
        ],
        ":block/uid": "D4sWwAFQH",
        ":block/string": "[[January 12th, 2026]]",
-       ":block/order": 43
+       ":block/order": 44
       },
       {
        ":block/refs": [
@@ -49813,7 +49817,7 @@
        ],
        ":block/uid": "fZnJ8SpjV",
        ":block/string": "[[January 16th, 2026]]",
-       ":block/order": 42
+       ":block/order": 43
       },
       {
        ":block/refs": [
@@ -58955,7 +58959,7 @@
        ":block/uid": "e3HyGxGmz",
        ":block/string": "[[2025]]",
        ":block/heading": 3,
-       ":block/order": 45
+       ":block/order": 46
       },
       {
        ":block/refs": [
@@ -59182,7 +59186,7 @@
        ],
        ":block/uid": "DQLXBkLqB",
        ":block/string": "[[January 30th, 2026]]",
-       ":block/order": 41
+       ":block/order": 42
       },
       {
        ":block/refs": [
@@ -59488,7 +59492,7 @@
        ],
        ":block/uid": "faBrrXpMf",
        ":block/string": "[[February 10th, 2026]]",
-       ":block/order": 40
+       ":block/order": 41
       },
       {
        ":block/refs": [
@@ -59545,7 +59549,7 @@
        ],
        ":block/uid": "HGdio9-X1",
        ":block/string": "[[February 11th, 2026]]",
-       ":block/order": 39
+       ":block/order": 40
       },
       {
        ":block/refs": [
@@ -59705,7 +59709,7 @@
        ],
        ":block/uid": "3YbHyvMVu",
        ":block/string": "[[February 18th, 2026]]",
-       ":block/order": 38
+       ":block/order": 39
       },
       {
        ":block/refs": [
@@ -59795,7 +59799,7 @@
        ],
        ":block/uid": "l1CEHstpS",
        ":block/string": "[[February 19th, 2026]]",
-       ":block/order": 37
+       ":block/order": 38
       },
       {
        ":block/refs": [
@@ -59853,7 +59857,7 @@
        ],
        ":block/uid": "w7XCOWrmV",
        ":block/string": "[[February 22nd, 2026]]",
-       ":block/order": 36
+       ":block/order": 37
       },
       {
        ":block/refs": [
@@ -59946,7 +59950,7 @@
        ],
        ":block/uid": "lq5IvpQ7J",
        ":block/string": "[[February 25th, 2026]]",
-       ":block/order": 35
+       ":block/order": 36
       },
       {
        ":block/refs": [
@@ -60744,7 +60748,7 @@
        ],
        ":block/uid": "ipU_NCoCx",
        ":block/string": "[[February 26th, 2026]]",
-       ":block/order": 34
+       ":block/order": 35
       },
       {
        ":block/refs": [
@@ -60792,7 +60796,7 @@
        ],
        ":block/uid": "WO-6A7VX9",
        ":block/string": "[[February 27th, 2026]]",
-       ":block/order": 33
+       ":block/order": 34
       },
       {
        ":block/refs": [
@@ -60927,7 +60931,7 @@
        ],
        ":block/uid": "AHy3mUokJ",
        ":block/string": "[[March 9th, 2026]]",
-       ":block/order": 32
+       ":block/order": 33
       },
       {
        ":block/refs": [
@@ -61097,7 +61101,7 @@
        ],
        ":block/uid": "-R8L5nZLD",
        ":block/string": "[[March 11th, 2026]]",
-       ":block/order": 31
+       ":block/order": 32
       },
       {
        ":block/refs": [
@@ -61221,7 +61225,7 @@
        ],
        ":block/uid": "e5HOoYOYK",
        ":block/string": "[[March 24th, 2026]]",
-       ":block/order": 30
+       ":block/order": 31
       },
       {
        ":block/refs": [
@@ -61260,7 +61264,7 @@
        ],
        ":block/uid": "hP0WzVCb3",
        ":block/string": "[[March 30th, 2026]]",
-       ":block/order": 29
+       ":block/order": 30
       },
       {
        ":block/refs": [
@@ -61759,7 +61763,7 @@
        ],
        ":block/uid": "kYfXB-KfD",
        ":block/string": "[[March 31st, 2026]]",
-       ":block/order": 28
+       ":block/order": 29
       },
       {
        ":block/refs": [
@@ -61823,7 +61827,7 @@
        ],
        ":block/uid": "hy237MoSG",
        ":block/string": "[[April 10th, 2026]]",
-       ":block/order": 27
+       ":block/order": 28
       },
       {
        ":block/refs": [
@@ -62045,7 +62049,7 @@
        ],
        ":block/uid": "Ld3WwhXAJ",
        ":block/string": "[[April 14th, 2026]]",
-       ":block/order": 26
+       ":block/order": 27
       },
       {
        ":block/refs": [
@@ -62096,7 +62100,7 @@
        ],
        ":block/uid": "FX03un0yx",
        ":block/string": "[[April 15th, 2026]]",
-       ":block/order": 25
+       ":block/order": 26
       },
       {
        ":block/refs": [
@@ -62145,7 +62149,7 @@
        ],
        ":block/uid": "Tdxn9p6T-",
        ":block/string": "[[April 17th, 2026]]",
-       ":block/order": 24
+       ":block/order": 25
       },
       {
        ":block/refs": [
@@ -63825,7 +63829,7 @@
        ],
        ":block/uid": "yYmOmnffK",
        ":block/string": "[[April 27th, 2026]]",
-       ":block/order": 23
+       ":block/order": 24
       },
       {
        ":block/refs": [
@@ -63905,7 +63909,7 @@
        ],
        ":block/uid": "E8B5FpUqb",
        ":block/string": "[[May 1st, 2026]]",
-       ":block/order": 22
+       ":block/order": 23
       },
       {
        ":block/refs": [
@@ -64089,7 +64093,7 @@
        ],
        ":block/uid": "_bXQOG7-W",
        ":block/string": "[[May 4th, 2026]]",
-       ":block/order": 21
+       ":block/order": 22
       },
       {
        ":block/refs": [
@@ -64188,7 +64192,7 @@
        ],
        ":block/uid": "77u8rD3tN",
        ":block/string": "[[May 5th, 2026]]",
-       ":block/order": 20
+       ":block/order": 21
       },
       {
        ":block/refs": [
@@ -64251,7 +64255,7 @@
        ],
        ":block/uid": "4jefQzlrL",
        ":block/string": "[[May 15th, 2026]]",
-       ":block/order": 19
+       ":block/order": 20
       },
       {
        ":block/refs": [
@@ -64307,7 +64311,7 @@
        ],
        ":block/uid": "yCa6IFyF-",
        ":block/string": "[[May 21st, 2026]]",
-       ":block/order": 18
+       ":block/order": 19
       },
       {
        ":block/refs": [
@@ -64348,7 +64352,7 @@
        ],
        ":block/uid": "s1JCTlMYp",
        ":block/string": "[[May 28th, 2026]]",
-       ":block/order": 17
+       ":block/order": 18
       },
       {
        ":block/refs": [
@@ -64390,7 +64394,7 @@
        ],
        ":block/uid": "GtQy1iARj",
        ":block/string": "[[June 1st, 2026]]",
-       ":block/order": 16
+       ":block/order": 17
       },
       {
        ":block/refs": [
@@ -64517,7 +64521,7 @@
        ],
        ":block/uid": "FfZFcIMVi",
        ":block/string": "[[June 2nd, 2026]]",
-       ":block/order": 15
+       ":block/order": 16
       },
       {
        ":block/refs": [
@@ -64553,7 +64557,7 @@
        ],
        ":block/uid": "o0biga_ls",
        ":block/string": "[[June 9th, 2026]]",
-       ":block/order": 14
+       ":block/order": 15
       },
       {
        ":block/refs": [
@@ -64582,7 +64586,7 @@
        ],
        ":block/uid": "1oHVhjf1j",
        ":block/string": "[[June 10th, 2026]]",
-       ":block/order": 13
+       ":block/order": 14
       },
       {
        ":block/refs": [
@@ -64621,7 +64625,7 @@
        ],
        ":block/uid": "jlW42mQ3s",
        ":block/string": "[[June 11th, 2026]]",
-       ":block/order": 12
+       ":block/order": 13
       },
       {
        ":block/refs": [
@@ -65168,7 +65172,7 @@
        ],
        ":block/uid": "Wp3IwehIi",
        ":block/string": "[[June 13th, 2026]]",
-       ":block/order": 11
+       ":block/order": 12
       },
       {
        ":block/refs": [
@@ -65309,7 +65313,7 @@
        ],
        ":block/uid": "T7MyhAu_Z",
        ":block/string": "[[June 30th, 2026]]",
-       ":block/order": 10
+       ":block/order": 11
       },
       {
        ":block/refs": [
@@ -65365,7 +65369,7 @@
        ],
        ":block/uid": "MdrAuMqaU",
        ":block/string": "[[July 2nd, 2026]]",
-       ":block/order": 9
+       ":block/order": 10
       },
       {
        ":block/refs": [
@@ -65394,7 +65398,7 @@
        ],
        ":block/uid": "MUux5EgdX",
        ":block/string": "[[July 6th, 2026]]",
-       ":block/order": 8
+       ":block/order": 9
       },
       {
        ":block/refs": [
@@ -65428,7 +65432,7 @@
        ],
        ":block/uid": "Omo5TNL1L",
        ":block/string": "[[July 7th, 2026]]",
-       ":block/order": 7
+       ":block/order": 8
       },
       {
        ":block/refs": [
@@ -65607,7 +65611,7 @@
        ],
        ":block/uid": "6kZb0aiyX",
        ":block/string": "[[July 10th, 2026]]",
-       ":block/order": 6
+       ":block/order": 7
       },
       {
        ":block/refs": [
@@ -65760,7 +65764,7 @@
        ],
        ":block/uid": "VoTSRMSbW",
        ":block/string": "[[July 13th, 2026]]",
-       ":block/order": 5
+       ":block/order": 6
       },
       {
        ":block/refs": [
@@ -65794,7 +65798,7 @@
        ],
        ":block/uid": "x3tGBCvQq",
        ":block/string": "[[July 15th, 2026]]",
-       ":block/order": 4
+       ":block/order": 5
       },
       {
        ":block/refs": [
@@ -65823,7 +65827,7 @@
        ],
        ":block/uid": "CNp2sgkob",
        ":block/string": "[[July 23rd, 2026]]",
-       ":block/order": 3
+       ":block/order": 4
       },
       {
        ":block/refs": [
@@ -65874,7 +65878,7 @@
        ],
        ":block/uid": "Oe6_LO9ka",
        ":block/string": "[[July 28th, 2026]]",
-       ":block/order": 2
+       ":block/order": 3
       },
       {
        ":block/refs": [
@@ -65934,7 +65938,7 @@
        ],
        ":block/uid": "jYcUoRTGl",
        ":block/string": "[[July 29th, 2026]]",
-       ":block/order": 1
+       ":block/order": 2
       },
       {
        ":block/refs": [
@@ -66574,6 +66578,1597 @@
        ],
        ":block/uid": "iYlYbcCWh",
        ":block/string": "[[August 11th, 2026]]",
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "08-22-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "TpA4naC1T"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "6qperY4E6",
+             ":block/string": "Roam Map turns location pages and blocks into live maps inside Roam. Choose places directly, collect them with a native query, or return exact page and block UIDs with Datalog. The map stays connected to its Roam sources and opens them in the right sidebar when you need the underlying notes.",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "HK5Fx_MxB",
+             ":block/string": "Install [Roam Places](https://github.com/MaskyS/roam-places) alongside Roam Map. Roam Map renders location data; Roam Places is the recommended way to create it. Its `/Place` command searches your graph and online place services, then saves the coordinates Roam Map reads — no attribute editing by hand. Everything below works without it, but every step is easier with it.",
+             ":block/order": 1
+            },
+            {
+             ":block/uid": "R8a8sV23j",
+             ":block/string": "![A Roam Map showing five places, its toolbar, a marker card, and the source outline](https://raw.githubusercontent.com/MaskyS/roam-map/main/assets/roam-map-basic-example.webp)[🔗](https://raw.githubusercontent.com/MaskyS/roam-map/main/assets/roam-map-basic-example.webp)",
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "qUe5LIZ0r",
+               ":block/string": "Give each place page a `Coordinates` attribute. The quickest way is the Roam Places `/Place` command, which saves this while you write. To add one by hand instead:",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "Jl1YkEH-V",
+               ":block/string": "```plain text\nroam/meta::\n  Coordinates:: geo:-20.1609,57.5012```",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "VgcPB93Wj",
+               ":block/string": "Type `/map` and choose Map (Roam Map), or type `{{map}}` in a block.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "UcXocCtFk",
+               ":block/string": "Add each place reference in its own descendant block:",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "cD1lKMefR",
+               ":block/string": "```plain text\n{{map}}\n  [[Port Louis]]\n  [[Curepipe]]```",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "Khnt0ReUS",
+               ":block/string": "Parent blocks can group places. Roam Map follows outline order, removes duplicates, and updates when known sources or their location details change.",
+               ":block/order": 5
+              }
+             ],
+             ":block/uid": "1pAsnhXJb",
+             ":children/view-type": "numbered",
+             ":block/string": "Create your first map",
+             ":block/heading": 2,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "OW2bddGir",
+                 ":block/string": "location page references;",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "YYr0aSHl7",
+                 ":block/string": "a bare `geo:latitude,longitude` block;",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "zu9-VrFUH",
+                 ":block/string": "a named block with a `Coordinates` child;",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "VIXzc_b9D",
+                 ":block/string": "a native Roam query placed directly beneath the map; or",
+                 ":block/order": 3
+                },
+                {
+                 ":block/uid": "SPI42Gw67",
+                 ":block/string": "a fenced Datalog query placed directly beneath the map that returns page or block UIDs.",
+                 ":block/order": 4
+                }
+               ],
+               ":block/uid": "5QmyULXdu",
+               ":block/string": "A map can read:",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "mK_XZVEsG",
+               ":block/string": "For example, a native query can keep a map tied to changing graph content:",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "QotwypfIR",
+               ":block/string": "```plain text\n{{map}}\n  {{[[query]]: {and: [[Efforts]] {search: roam/meta::}}}}```",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "YeHlUDCqh",
+               ":block/string": "Native-query block results map through their containing page. Use Datalog when you need to select exact location pages or block-backed points. Press Refresh when an unrelated page may have started or stopped matching a dynamic query.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "XjhyTP8iW",
+               ":block/string": "See the [tested query and Datalog examples](https://github.com/MaskyS/roam-map/blob/main/examples.md#native-query-and-datalog-source-maps) for copyable patterns, including relationship-aware maps.",
+               ":block/order": 4
+              }
+             ],
+             ":block/uid": "l3jsgJ__1",
+             ":block/string": "Choose what appears",
+             ":block/heading": 2,
+             ":block/order": 4
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "dvUvXD_QC",
+               ":block/string": "Click the place count to open a text-first results list. Selecting a row highlights and focuses its point; Open in sidebar returns to its source.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "uh7DBiuh0",
+               ":block/string": "Use Fit to frame the current places and Refresh to rerun all sources.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "Btf8WLF9G",
+               ":block/string": "Use the basemap menu to preview another style. Add a child such as `map/basemap:: OpenFreeMap Dark` when the choice should be saved with the map.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "t8O0zl9cw",
+               ":block/string": "Hover near the bottom-right corner and drag the resize grip. Roam Map saves the result in one readable `map/size` child; Reset map size restores the responsive default.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "gCqQMSaip",
+               ":block/string": "Click a marker for its label, address, overlapping places, and source action.",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "2oOV9ivAS",
+               ":block/string": "Map movement is intentionally temporary. Roam Map does not save pan, zoom, bearing, or pitch.",
+               ":block/order": 5
+              }
+             ],
+             ":block/uid": "9N5td-0-0",
+             ":block/string": "Use the map",
+             ":block/heading": 2,
+             ":block/order": 5
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "6UPuOLt-c",
+               ":block/string": "`Coordinates` uses a plain two-dimensional WGS84 `geo:` URI with latitude first and longitude second. An optional `u` parameter records uncertainty in metres. Roam Map can also render a GeoJSON Point from `Geometry`; lines, polygons, and other non-point geometry are reported rather than drawn as markers.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "tNnT8M_jI",
+               ":block/string": "`Address` and `Geocoder ID` add useful place details. Other scalar attributes can drive advanced MapLibre styling. Roam Map reads both current Roam attributes and compatibility `Attribute:: value` blocks, including attributes beneath an exact `roam/meta::` child. Rendering never rewrites a source block or location page.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "imy7ptVYl",
+             ":block/string": "Location data",
+             ":block/heading": 2,
+             ":block/order": 6
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "ll5LTsD_s",
+               ":block/string": "OpenFreeMap Liberty is the default. Keyless alternatives include OpenFreeMap Positron, Bright, Dark, and Fiord, plus the attributed 2016 EOX Satellite Context mosaic.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "BZ7CKkvTA",
+               ":block/string": "Graph administrators can open Settings → Roam Depot → Roam Map → Basemap catalog to add a complete MapLibre style URL, an attributed raster tile template, or the optional MapTiler shortcut. Catalog settings sync with the graph: collaborators may be able to read configured URLs and browser keys, and providers receive those values in browser requests. Use restricted public browser keys, not secrets.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "HaYHMIEh3",
+               ":block/string": "Opening a map loads styles, sprites, fonts, and tiles from its selected providers. Roam Map keeps required provider and OpenStreetMap attribution in the map. Reading pages, native queries, and Datalog results from the current graph does not contact an external search service.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "xidlamGR0",
+             ":block/string": "Basemaps",
+             ":block/heading": 2,
+             ":block/order": 7
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "JPrAYxRZu",
+                 ":block/string": "[Open the tested examples](https://github.com/MaskyS/roam-map/blob/main/examples.md)",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "sy70cdh4i",
+                 ":block/string": "[Read the complete customization reference](https://github.com/MaskyS/roam-map/blob/main/customization.md)",
+                 ":block/order": 1
+                }
+               ],
+               ":block/uid": "5hWhn4zNM",
+               ":block/string": "Roam Map also supports data-driven MapLibre layers, image markers, reusable marker cards, and custom results lists. These are graph-authored code and presentation resources rather than extra location fields.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "JDz4QAkgC",
+               ":block/string": "Enable Roam's custom-components setting before using graph-authored JavaScript, JSX, or Clojure components, and treat that code as trusted graph content.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "gEElEe1BR",
+             ":block/string": "Advanced maps",
+             ":block/heading": 2,
+             ":block/order": 8
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "trVhn0mnI",
+               ":block/string": "Maps render points; lines, polygons, clustering, and arbitrary authored GeoJSON sources are separate capabilities.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "-nQi3dsXU",
+               ":block/string": "Dynamic membership comes from native queries or fenced Datalog, not search components, saved `:q` components, or `{{map: ...}}` arguments.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "BLq7IDFNy",
+               ":block/string": "Roam Map does not geocode, classify, or rename sources. Use Roam Places or edit the location page directly.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "0I8RlTb4S",
+             ":block/string": "Current limits",
+             ":block/heading": 2,
+             ":block/order": 9
+            }
+           ],
+           ":block/uid": "8rPzpvgNa",
+           ":block/string": "Roam Map",
+           ":block/heading": 1,
+           ":block/order": 3
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "UnM3wQe4H",
+             ":block/string": "![Roam Places search results with a map preview](https://raw.githubusercontent.com/MaskyS/roam-places/main/assets/roam-places-picker.webp)[🔗](https://raw.githubusercontent.com/MaskyS/roam-places/main/assets/roam-places-picker.webp)",
+             ":block/order": 1
+            },
+            {
+             ":block/uid": "64tpIxeKe",
+             ":block/string": "Want to see several saved locations together? [Roam Map](https://github.com/MaskyS/roam-map) turns location pages written by Places into persistent maps sourced from an outline, a native Roam query, or Datalog. Places handles location capture; Roam Map handles aggregation and map rendering.",
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "_NoP5_TU8",
+               ":block/string": "Type `/` and choose Place.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "sdhZqUgpZ",
+               ":block/string": "Keep typing in the same block.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "MmyOTU0UJ",
+               ":block/string": "Use the arrow keys and Enter, or click a result.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "I8kVNx-tN",
+               ":block/string": "Places shows matching location pages from your graph before online results. Graph results lead with their exact Roam page title. Their second line may show an address, coordinates, location status, or an online place name when the Geocoder ID matches. Choosing one inserts its page reference without changing the page.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "pa6x6aChN",
+               ":block/string": "The footer previews where Enter will save the highlighted result, for example `Save to Artisan Coffee ↵`. That preview changes as you move through results. When the highlighted result has coordinates, press Control–M to show or hide a map preview. The arrow keys continue moving through results and update the preview. It is only for checking the location; use Pick on map when you want to choose or adjust a point.",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "M3S33LUw_",
+               ":block/string": "For an online result or exact pin, press Command–Enter on macOS or Control–Enter elsewhere to choose a different existing page or new page title. Choosing a page there saves immediately. A graph result always inserts its existing page. Press Escape to return to the place results without saving.",
+               ":block/order": 5
+              },
+              {
+               ":block/uid": "7IrxMilFH",
+               ":block/string": "Escape from the main picker cancels it and removes only the text entered for that search.",
+               ":block/order": 6
+              }
+             ],
+             ":block/uid": "khGsOwLcn",
+             ":children/view-type": "numbered",
+             ":block/string": "Add a place",
+             ":block/heading": 3,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "EHuvGqdCY",
+               ":block/string": "New places use ordinary page titles by default:",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "ACkvDUUaj",
+               ":block/string": "```plain text\n[[San Francisco City Hall]]```",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "KPDH53J6-",
+               ":block/string": "A place does not have to live under `Places`. It may fit an existing structure such as `[[Cafe]]/Artisan Coffee` or `[[People]]/Jane Smith`, and the same page can still carry location details.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "Okp0TnlBE",
+               ":block/string": "If you nearly always use one parent page, set Default parent page. Entering `Cafe`, for example, suggests `[[Cafe]]/Place name` for new results. The setting only changes suggestions; it does not classify places or rename existing pages. The Change page action can choose a different target for any online result or exact pin.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "-bb95Apmy",
+               ":block/string": "Choosing an existing page through Change page is explicit permission to add the selected place's details when the page has no `Coordinates`, `Geometry`, or `Geocoder ID`. If any of those attributes already exists, Places does not compare or overwrite it and asks you to choose another page.",
+               ":block/order": 4
+              }
+             ],
+             ":block/uid": "IgiGJNy8S",
+             ":block/string": "Page names",
+             ":block/heading": 3,
+             ":block/order": 4
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "KnBPlHFnP",
+               ":block/string": "Pick on map stays at the end of the results. The map has the same place search, and you can click or drag its marker. Use this point automatically looks up nearby names with the selected place-search service. Choose one of those results or use the exact pin. A failed map or nearby-place lookup does not discard a coordinate you already chose.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "tR--nGYsQ",
+               ":block/string": "Current location is hidden because Roam Desktop does not provide the required browser geolocation surface. Progress is tracked in [issue 1](https://github.com/MaskyS/roam-places/issues/1). Places does not substitute an estimated IP location.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "0kkGpL3oz",
+             ":block/string": "Map",
+             ":block/heading": 3,
+             ":block/order": 5
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "Z2oHG5NnP",
+               ":block/string": "Photon works immediately and is the default. Geoapify is an optional alternative: choose it under Search places with, then paste your Geoapify API key. The key setting is shown only while Geoapify is selected.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "TNiKTdVpv",
+               ":block/string": "Graph search starts with the first character. Online search starts after three characters and waits briefly for typing to pause. Each source returns at most 12 results, and stale online requests are cancelled as the query changes.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "uuK1AQXPz",
+               ":block/string": "Under Search home, choose Pick on map to rank nearby online results first. Click the map or drag its pin, then choose Use this point. This is a soft preference, not a geographic filter, so a sufficiently specific search can still find places anywhere. A city or regional center is usually enough; avoid choosing your exact home address. Clear the setting to return to worldwide ranking.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "5yrjTQdbZ",
+               ":block/string": "Search home is stored with this Roam graph and syncs with its extension settings. People who share the graph can see inherited extension settings. Its coordinates are sent to Photon or Geoapify with each online place search as a ranking bias.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "RzubY89Ao",
+               ":block/string": "The Geoapify API key is also stored with the graph. People who share the graph can see an inherited key, and every Geoapify search or reverse lookup sends it to Geoapify as the `apiKey` request parameter. Use a key with appropriate usage limits.",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "uiQ4Re4mj",
+               ":block/string": "Searching your graph and saving an exact map point remain available if the selected service cannot be used.",
+               ":block/order": 5
+              }
+             ],
+             ":block/uid": "_urEnp6qF",
+             ":block/string": "Place search service",
+             ":block/heading": 3,
+             ":block/order": 6
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "KWVciicBe",
+               ":block/string": "Places writes ordinary, readable Roam attributes under a direct metadata block when it creates a page or explicitly enriches an existing page. `Coordinates` is always written; the other children appear when applicable:",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "RevKQE5kh",
+               ":block/string": "```plain text\nroam/meta::\n  Coordinates:: geo:<latitude>,<longitude>[;u=<metres>]\n  Address:: <address>\n  Geocoder ID:: <search-result identity>\n  Geocoded at:: [[<date>]]\n  Geocoder attribution:: <attribution>```",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "G1R5sFjkp",
+               ":block/string": "`roam/meta::` is Roam's metadata container. Keep that block text unchanged so Roam continues to treat the nested attributes as details about the page. Places creates it collapsed when needed and reuses an existing direct child without changing its open or collapsed state. Inserting a graph result writes nothing to that page.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "qLLi-EV9f",
+               ":block/string": "`Coordinates` contains a plain WGS84 `geo:` URI, with latitude first and longitude second. It is not a Markdown link. The optional standard `u` parameter records uncertainty in metres. A raw exact pin may contain only the `Coordinates` child. A provider result normally adds an address, Geocoder ID, date, and attribution; a reverse-geocoded exact pin has no fabricated Geocoder ID.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "f3aMgnbJT",
+               ":block/string": "Places does not add a `Type` attribute or force a page hierarchy. Existing pages with a top-level or metadata-contained `Coordinates`, `Geometry`, or `Geocoder ID` attribute are treated as places regardless of their title. A valid `Coordinates` geo URI is required for a point or map preview. `Geometry` marks a page as a place but is not parsed or rendered on the map.",
+               ":block/order": 4
+              }
+             ],
+             ":block/uid": "lu0lWLMQe",
+             ":block/string": "What Places saves",
+             ":block/heading": 3,
+             ":block/order": 7
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "1EtnNMa45",
+               ":block/string": "After three characters, place-search text is sent to Photon, or to Geoapify when you select it. When Search home is set, its coordinates are sent with that text as a ranking bias.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "c-tEHtXy9",
+               ":block/string": "Opening a map loads its style, sprites, fonts, and tiles from OpenFreeMap and the services referenced by that style.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "vPzo4UOVt",
+               ":block/string": "Choosing Use this point sends the selected coordinate to Photon or Geoapify for an automatic reverse lookup of nearby names.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "-A5ZffNFm",
+               ":block/string": "Geoapify requests include the graph-stored API key as an `apiKey` parameter.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "2jJstmAJn",
+               ":block/string": "Searching pages already in your graph does not use an external service.",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "jz1zsh0eg",
+               ":block/string": "Photon and map data include OpenStreetMap contributors. Places keeps the required attribution on pages it creates or enriches.",
+               ":block/order": 5
+              }
+             ],
+             ":block/uid": "gdvY1fzHj",
+             ":block/string": "Network use",
+             ":block/heading": 3,
+             ":block/order": 8
+            },
+            {
+             ":block/uid": "f1FW4s92V",
+             ":block/string": "Places helps you find and save locations while you write in Roam.",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "Dn20EnN7j",
+           ":block/string": "Roam Places",
+           ":block/heading": 1,
+           ":block/order": 2
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "6n6bvzD7m",
+             ":block/string": "Turn a native Roam `{{table}}` into a spreadsheet — formulas, merges, sorting, resizing, charts, comments — without moving a cell out of your graph.",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "9QfU3neVn",
+             ":block/string": "Rows and columns stay ordinary nested Roam blocks, so links, `((block references))`, search, exports, and the plain Roam renderer keep working exactly as before. Turn Roam Grid off and the table is still there.",
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "9_WBQxjY9",
+               ":block/string": "Roam Depot → Roam Grid → Install. No account, no key, no configuration.",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "Od6PFKQMo",
+             ":block/string": "Install",
+             ":block/heading": 2,
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "gckuGhiLN",
+               ":block/string": "Put the cursor in any native `{{[[table]]}}` block.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "ZhNI4S7tO",
+               ":block/string": "Run Roam Grid: Enhance this table from the command palette.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "Ckwkx-XsM",
+               ":block/string": "The table becomes a grid. Arrow keys navigate, typing edits, `Enter` commits, `F2` opens the larger editor, `=` starts a formula, `Cmd/Ctrl-Z` undoes.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "84BXmTTFu",
+               ":block/string": "To go back, run Roam Grid: Restore native table. Your content does not change; only the layout notes Roam Grid kept for that table are dropped.",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "RCyInaZS_",
+             ":children/view-type": "numbered",
+             ":block/string": "Quick start",
+             ":block/heading": 2,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "NCbFv0OeN",
+               ":block/string": "Edit with Roam's own block editor or the grid's fast editor. `[[`, `((`, `#`, and `{{` complete the way Roam's own menus do.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "KhFqp1u09",
+               ":block/string": "Formulas: `=SUM(A1:A10)` and a broad function library, with autocomplete, signature help, and `F4` reference cycling.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "MFiA_pMXa",
+               ":block/string": "Sort, resize, reorder, merge, fill, hide the axis headers, fit the grid to its block width.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "bOy43EO5h",
+               ":block/string": "Paste or drag images into cells, capped to the cell, with a lightbox and per-column sizing.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "LXMZ8iEKz",
+               ":block/string": "Comment on cells with real Roam comment threads.",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "joGMIAJBV",
+               ":block/string": "Embed a live, read-only view of part of another grid with `{{roam-grid-range: ((uid)) B2:D5}}`.",
+               ":block/order": 5
+              },
+              {
+               ":block/uid": "e4vP7AcEF",
+               ":block/string": "Deterministic SVG charts: bar, column, line, scatter, histogram, boxplot, density, sparklines.",
+               ":block/order": 6
+              },
+              {
+               ":block/uid": "u4teJJHbI",
+               ":block/string": "Import and export CSV, TSV, Markdown, Org, reStructuredText, and Roam Grid JSON.",
+               ":block/order": 7
+              }
+             ],
+             ":block/uid": "mesoAK0hL",
+             ":block/string": "What you can do",
+             ":block/heading": 2,
+             ":block/order": 4
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "fVKkKZp-_",
+                 ":block/string": "Roam Grid: Enhance this table",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "6aVOzuTyq",
+                 ":block/string": "Roam Grid: Restore native table",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "eBeQ2iVL9",
+                 ":block/string": "Roam Grid: Save current grid as template",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "8uUB1DciT",
+                 ":block/string": "Roam Grid: New from saved template",
+                 ":block/order": 3
+                },
+                {
+                 ":block/uid": "yGFiL7zxr",
+                 ":block/string": "Roam Grid: New large grid — available when Experimental — Large grids is on",
+                 ":block/order": 4
+                },
+                {
+                 ":block/uid": "_cJZ-1jOC",
+                 ":block/string": "Roam Grid: Copy/convert table",
+                 ":block/order": 5
+                },
+                {
+                 ":block/uid": "Glr_4pKyS",
+                 ":block/string": "Roam Grid: Import",
+                 ":block/order": 6
+                },
+                {
+                 ":block/uid": "heb0oRv9R",
+                 ":block/string": "Roam Grid: Export",
+                 ":block/order": 7
+                },
+                {
+                 ":block/uid": "VgkYkSO-4",
+                 ":block/string": "Roam Grid: Restore discarded edits",
+                 ":block/order": 8
+                },
+                {
+                 ":block/uid": "exYROylv4",
+                 ":block/string": "Roam Grid: Undo",
+                 ":block/order": 9
+                },
+                {
+                 ":block/uid": "Xas01hGcv",
+                 ":block/string": "Roam Grid: Redo",
+                 ":block/order": 10
+                },
+                {
+                 ":block/uid": "3RBwj2f_j",
+                 ":block/string": "Roam Grid: Insert chart",
+                 ":block/order": 11
+                },
+                {
+                 ":block/uid": "51pq3sP3T",
+                 ":block/string": "Roam Grid: Merge",
+                 ":block/order": 12
+                },
+                {
+                 ":block/uid": "lBdZV82mV",
+                 ":block/string": "Roam Grid: Unmerge",
+                 ":block/order": 13
+                }
+               ],
+               ":block/uid": "cWYrtC2Ry",
+               ":block/string": "All in the command palette:",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "0G0J75zpa",
+             ":block/string": "Commands",
+             ":block/heading": 2,
+             ":block/order": 5
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "S5WUxRUKW",
+               ":block/string": "Everything Roam Grid can put in your graph, in one table. There is nothing else.",
+               ":block/order": 0
+              },
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "2-eIgz-4z"
+                }
+               ],
+               ":block/children": [
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "ZsLycuHeP",
+                     ":block/string": "When",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "thywr0tdP",
+                   ":block/string": "Where",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "Ii1HZRNVL",
+                 ":block/string": "What",
+                 ":block/order": 0
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "bWwJ60DqW",
+                     ":block/string": "Whenever you edit a cell",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "xoQIIaXA4",
+                   ":block/string": "The original Roam blocks, unchanged in structure",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "V6YiUv-7a",
+                 ":block/string": "Cell contents",
+                 ":block/order": 1
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "JrdzbWvVz",
+                     ":block/string": "The page is created on the first table you enhance, never on install",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "oIg8-l8wj",
+                   ":block/string": "Blocks on the `[[roam/grid/metadata]]` page, one per table",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "oWPXEkXCf",
+                 ":block/string": "Table layout (column widths, row heights, merges, alignment, header visibility, chart specs)",
+                 ":block/order": 2
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "4c8ed6Cbb",
+                     ":block/string": "Only when you run Roam Grid: Save current grid as template",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "7rtArYyuz",
+                   ":block/string": "A name block per template on the `[[roam/grid/templates]]` page, with the template itself as a real `{{[[table]]}}` table under it",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "wmSuRPWAq",
+                 ":block/string": "Saved templates",
+                 ":block/order": 3
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "10wZsJMDy",
+                     ":block/string": "Only if a one-time migration rewrites a pre-0.12 JSON template into an editable table",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "dSuKwNIiJ",
+                   ":block/string": "`roam-grid/template-backup::` blocks on the `[[roam/grid/metadata]]` page",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "XluzfPV7m",
+                 ":block/string": "Legacy template backups",
+                 ":block/order": 4
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "3BEOVPr4l",
+                     ":block/string": "Only when you add a comment to a cell",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "UbYENpJSQ",
+                   ":block/string": "A collapsed `[[roam/comments]]` block on the commented cell's own page, exactly the structure Roam's own comments use",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "mfBC3-sj5",
+                 ":block/string": "Comment threads",
+                 ":block/order": 5
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "ohP3Sny-l",
+                     ":block/string": "Only for large grids you explicitly create",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "sq4pOrDoJ",
+                   ":block/string": "JSON files in Roam's file storage, pointed at by a manifest block under the `{{[[roam/grid]]}}` block",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "By7fuQNLj",
+                 ":block/string": "Large-grid data (experimental, off by default)",
+                 ":block/order": 6
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "aNTFHGf6K",
+                     ":block/string": "Only while Large grids — Mirror large-grid references into Roam is on",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "iCmAf-lgz",
+                   ":block/string": "Collapsed blocks under that same `{{[[roam/grid]]}}` block, listing the distinct `[[page]]`, `#tag` and `((block))` references that grid's cells contain",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "c-5ANJesk",
+                 ":block/string": "Large-grid reference mirror (experimental, off by default)",
+                 ":block/order": 7
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "puzR98Jig",
+                     ":block/string": "Only when you paste a range reference",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "ggiwS8Ba_",
+                   ":block/string": "The `{{roam-grid-range: ((uid)) A1:D5}}` text you type into a block",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "Di5_M33Ge",
+                 ":block/string": "Live range views",
+                 ":block/order": 8
+                }
+               ],
+               ":block/uid": "pZwDY_4SM",
+               ":block/string": "{{[[table]]}}",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "ZCx3Nn2l2",
+               ":block/string": "Cell contents never leave the blocks they already live in. Layout is kept separately so that turning Roam Grid off leaves a normal Roam table.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "WdLnfbj0l",
+               ":block/string": "Saved templates are ordinary enhanced tables on `[[roam/grid/templates]]`: open the page and edit one like any other grid. Templates saved by older versions as JSON blocks are converted in place once, automatically — the original JSON is backed up first — and Maintenance — Migrate legacy grid templates retries anything that was skipped.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "4EmwVb0fc",
+               ":block/string": "Locally, on your device only: two `localStorage` keys per graph — `roam-grid:enhanced-uids:<graph>` (which tables you enhanced, so they render without a flash) and `roam-grid:settings:<graph>` (device-only settings). Only if you turn the experimental large-grid switch on, an IndexedDB database named `roam-grid-chunks` also caches downloaded chunks. None of it is data: deleting any of it costs speed, not content. Maintenance — Clear local caches and Maintenance — Forget this device's overrides reset the first two.",
+               ":block/order": 4
+              }
+             ],
+             ":block/uid": "VPVWbN-ee",
+             ":block/string": "What it writes to your graph",
+             ":block/heading": 2,
+             ":block/order": 6
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "tFaRRPZJQ",
+               ":block/string": "No network requests. No `fetch`, no `XMLHttpRequest`, no WebSocket, no external `import`. Every read and write goes through `roamAlphaAPI`, including large-grid files.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "x3NiYDOuH",
+               ":block/string": "No telemetry, no analytics, no error reporting. Nothing is measured and nothing is sent.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "l5BzmW_3I",
+               ":block/string": "No `eval`, no `new Function`. Formulas run on the extension's own expression engine; arbitrary JavaScript is not supported and never will be.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "0_sbd3pgs",
+               ":block/string": "No runtime dependencies.",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "lVD6kt_mN",
+             ":block/string": "Privacy and network",
+             ":block/heading": 2,
+             ":block/order": 7
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "RwNQXngRH",
+                 ":block/string": "Editing — Edit cells with Roam's own block editor",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "qAdPJ1a1Y",
+                 ":block/string": "Editing — Suggest functions and pages while typing",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "yc9wH35G_",
+                 ":block/string": "Editing — Enter moves",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "WH-56r7mi",
+                 ":block/string": "Editing — Tab moves",
+                 ":block/order": 3
+                },
+                {
+                 ":block/uid": "EpwXWqT2P",
+                 ":block/string": "Editing — Grow the grid to fit a paste",
+                 ":block/order": 4
+                },
+                {
+                 ":block/uid": "qt7dy-osm",
+                 ":block/string": "Appearance — Tint formula cells",
+                 ":block/order": 5
+                },
+                {
+                 ":block/uid": "tjbuXb_fh",
+                 ":block/string": "Appearance — Show row and column headers",
+                 ":block/order": 6
+                },
+                {
+                 ":block/uid": "nEUTitzhd",
+                 ":block/string": "Appearance — Fit grids to the block width",
+                 ":block/order": 7
+                },
+                {
+                 ":block/uid": "EAQfVCT6L",
+                 ":block/string": "Appearance — Toolbar",
+                 ":block/order": 8
+                },
+                {
+                 ":block/uid": "t4IgXOt2I",
+                 ":block/string": "Appearance — Theme",
+                 ":block/order": 9
+                },
+                {
+                 ":block/uid": "WwwdMBUkj",
+                 ":block/string": "Comments — Enable cell comments",
+                 ":block/order": 10
+                },
+                {
+                 ":block/uid": "Dx_AcG8ey",
+                 ":block/string": "Comments — Show the comment button",
+                 ":block/order": 11
+                },
+                {
+                 ":block/uid": "-YFAzJ0_j",
+                 ":block/string": "Comments — Composing and opening threads",
+                 ":block/order": 12
+                },
+                {
+                 ":block/uid": "TWE5-TlvM",
+                 ":block/string": "Ranges — Render live range references",
+                 ":block/order": 13
+                },
+                {
+                 ":block/uid": "UyOHKe22E",
+                 ":block/string": "Images — Render images in cells",
+                 ":block/order": 14
+                },
+                {
+                 ":block/uid": "UGsSmPiB1",
+                 ":block/string": "Images — Maximum image height in cells (px)",
+                 ":block/order": 15
+                },
+                {
+                 ":block/uid": "f43Qis3qk",
+                 ":block/string": "Experimental — Large grids — off by default",
+                 ":block/order": 16
+                }
+               ],
+               ":block/uid": "JyI8PSay8",
+               ":block/string": "Settings → Roam Depot → Roam Grid. The panel shows these rows:",
+               ":block/order": 0
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "pITr7wDB3",
+                 ":block/string": "Maintenance — Apply display defaults to open grids",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "95KLUJlsB",
+                 ":block/string": "Maintenance — Forget this device's overrides",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "1DJ_0PfgQ",
+                 ":block/string": "Maintenance — Clear local caches",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "EUqCX3Ddo",
+                 ":block/string": "Maintenance — Migrate legacy grid templates",
+                 ":block/order": 3
+                },
+                {
+                 ":block/uid": "1Hy_0hVoz",
+                 ":block/string": "Maintenance — Reset all Roam Grid settings",
+                 ":block/order": 4
+                }
+               ],
+               ":block/uid": "OdNUT1nrJ",
+               ":block/string": "Plus five maintenance actions:",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "P14Ma-3wv",
+             ":block/string": "Settings",
+             ":block/heading": 2,
+             ":block/order": 8
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "fcLkENQ9Q",
+               ":block/string": "Large grids are for datasets too big to keep as blocks. They are off until you turn Experimental — Large grids on. Turning the switch off unmounts the views and leaves the files in the graph.",
+               ":block/order": 0
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "eKdVygVCG",
+                 ":block/string": "Large grids — Cache large-grid chunks on this device",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "71qHsTwy-",
+                 ":block/string": "Large grids — Permanently delete superseded large-grid files (irreversible)",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "OAhWaAiXo",
+                 ":block/string": "Large grids — Mirror large-grid references into Roam",
+                 ":block/order": 2
+                }
+               ],
+               ":block/uid": "ClEDlLmVr",
+               ":block/string": "With the switch on, three more rows appear in the panel:",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "bLY4jNjrl",
+             ":block/string": "Experimental: large grids",
+             ":block/heading": 2,
+             ":block/order": 9
+            }
+           ],
+           ":block/uid": "WwI_77sie",
+           ":block/string": "Roam Grid",
+           ":block/heading": 1,
+           ":block/order": 4
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "Y99TSsfmz",
+             ":block/string": "Give your graph a polished dark mode and fine-tune its colors without editing `roam/css`.",
+             ":block/order": 0
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "ejXDxGT5K",
+               ":block/string": "Dark, Auto, and Off modes",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "rKFCLS7pT",
+               ":block/string": "A curated default palette for Roam surfaces, text, links, states, and content",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "B_EjDOi4O",
+               ":block/string": "Quick color swatches, Tailwind color tokens, and custom hex values",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "YDPblfPjL",
+               ":block/string": "Per-user settings that do not write to `roam/css`",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "Lz9RjfYzf",
+               ":block/string": "Color-only styling that leaves Roam's layout and spacing unchanged",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "Sy4kd_enB",
+               ":block/string": "Command palette actions for opening settings and quickly toggling dark mode",
+               ":block/order": 5
+              }
+             ],
+             ":block/uid": "mnA55BDNa",
+             ":block/string": "Features",
+             ":block/heading": 2,
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "EWYVv_Gux",
+               ":block/string": "Run Custom Dark Mode: Open Settings from the command palette.",
+               ":block/order": 0
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "6dvkrjpRO",
+                 ":block/string": "Dark always applies Custom Dark Mode.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "4Pc-fe9vx",
+                 ":block/string": "Auto applies it when your browser or operating system prefers a dark color scheme.",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "bN5eXVas6",
+                 ":block/string": "Off removes the custom colors and restores Roam's normal appearance.",
+                 ":block/order": 2
+                }
+               ],
+               ":block/uid": "YStlDbGh1",
+               ":block/string": "Choose a mode:",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "j_aNprQdw",
+               ":block/string": "Expand a color group to customize individual roles with a suggested swatch, a Tailwind color token such as `slate-900`, or a hex value such as `#0f172a`. Use Reset all to return every color to the default palette.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "z6KNuBxT4",
+               ":block/string": "Run Custom Dark Mode: Toggle Dark Mode from the command palette to switch between Off and your previously selected Dark or Auto mode.",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "u6i6psDpI",
+             ":block/string": "Usage",
+             ":block/heading": 2,
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "EtO6_47-O",
+               ":block/string": "Preset themes drawn from the theme-design mockups: black, gray, terminal, monochrome (black and white), and Ubuntu",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "RhdP8s3lv",
+               ":block/string": "Save and load your own custom themes",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "VrOZQk43t",
+             ":block/string": "Roadmap",
+             ":block/heading": 2,
+             ":block/order": 3
+            }
+           ],
+           ":block/uid": "zK05QtdVm",
+           ":block/string": "Custom Dark Mode",
+           ":block/heading": 1,
+           ":block/order": 1
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "PkxVFChyl",
+             ":block/string": "Jump to saved Roam pages and blocks from a fast, searchable switcher with optional command palette shortcuts.",
+             ":block/order": 0
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "r62AlIqhM",
+               ":block/string": "Save frequently used pages and blocks as Quick Switcher entries.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "q7UUTlQvY",
+               ":block/string": "Open saved pages and blocks from a Roam-style searchable dialog.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "iaHcy_iSJ",
+               ":block/string": "Switch between `Open` and `Manage` modes inside the Quick Switcher dialog.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "lfSiPqaqH",
+               ":block/string": "Search Roam pages and blocks in `Manage` mode to add new saved entries.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "8J4IfGoqF",
+               ":block/string": "Review, delete, and alias saved entries from `Manage` mode.",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "K4f29fU4_",
+               ":block/string": "Search saved entries by alias, original title, or URL.",
+               ":block/order": 5
+              },
+              {
+               ":block/uid": "uwRmfXZGF",
+               ":block/string": "Open saved entries in the main window, or open them in the right sidebar with `Shift+Enter`, `Shift`-click, or the `Open in sidebar` footer action.",
+               ":block/order": 6
+              },
+              {
+               ":block/uid": "s8nyrESq3",
+               ":block/string": "Optionally expose saved entries as command palette commands with a custom `QS: ` prefix. Aliased entries include both names, like `Alias (Original title)`.",
+               ":block/order": 7
+              }
+             ],
+             ":block/uid": "ogzbFZWiS",
+             ":block/string": "Features",
+             ":block/heading": 2,
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "s57o8Dohj",
+               ":block/string": "`Open Dialog`: opens the Quick Switcher in `Open` mode.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "sT4Bo8Ebw",
+               ":block/string": "`Manage Saved Entries`: opens the Quick Switcher in `Manage` mode.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "cyrFKKkaO",
+               ":block/string": "`Add Saved Entries To Command Palette`: creates one command palette command per saved entry.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "nWZwVbYQe",
+               ":block/string": "`Command Palette Prefix`: customizes the prefix used for saved-entry command palette commands.",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "RCnLZG2US",
+             ":block/string": "Settings",
+             ":block/heading": 2,
+             ":block/order": 2
+            }
+           ],
+           ":block/uid": "JViZSST11",
+           ":block/string": "Quick Switcher",
+           ":block/heading": 1,
+           ":block/order": 0
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "KJAUZjz_g",
+             ":block/string": "Turn a block or a page into a social post without leaving Roam. Pick the accounts you connected in [Publora](https://publora.com/?utm_source=roam&utm_medium=extension), write or edit the text, then publish now, save a draft, or schedule it.",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "XczX8BIW-",
+             ":block/string": "Ten networks: LinkedIn, X, Instagram, Threads, TikTok, YouTube, Facebook, Bluesky, Mastodon and Telegram.",
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "5XHuNTePR",
+                 ":block/string": "Publora: send this block — sends the block you are editing.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "hT8oZpA2V",
+                 ":block/string": "Publora: send this page — sends the page you have open, blocks joined in order.",
+                 ":block/order": 1
+                }
+               ],
+               ":block/uid": "YaMBERzRg",
+               ":block/string": "Open the Command Palette and run one of:",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "8u6qnCf4a",
+               ":block/string": "A window opens with your connected accounts, the text, and the choice between publishing now, saving a draft and scheduling for a time you pick.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "FyFDdyoWE",
+             ":block/string": "Commands",
+             ":block/heading": 2,
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "PrHe-tA4u",
+               ":block/string": "Create a Publora account and connect at least one social account. The free plan is 15 posts a month and three accounts, no card needed.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "6lRst6tla",
+               ":block/string": "Open Settings → Publora in Roam and paste an API key from [Settings → API keys](https://app.publora.com/dashboard/api?utm_source=roam&utm_medium=extension).",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "ZtPmMwe9h",
+             ":children/view-type": "numbered",
+             ":block/string": "Setup",
+             ":block/heading": 2,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "47N7JutxS",
+               ":block/string": "Instagram, TikTok and YouTube need media. They reject text-only posts, and this version sends text only. The extension says so rather than failing quietly.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "u_qoaiXls",
+               ":block/string": "Your key stays in Roam's extension settings and is sent only to `https://api.publora.com` in a request header. The extension talks to no other host, reads nothing else from your graph, and sends only the block or page you chose, only when you run the command.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "vRPACp9RW",
+             ":block/string": "Things worth knowing",
+             ":block/heading": 2,
+             ":block/order": 4
+            }
+           ],
+           ":block/uid": "HgrXUO5y7",
+           ":block/string": "Publora for Roam Research",
+           ":block/heading": 1,
+           ":block/order": 5
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "-mCi3eLe4",
+             ":block/string": "> Give every minute a job.",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "fUAwIsRmb",
+             ":block/string": "A transparent visual day planner for Roam Research. Nautilus Log places fixed events and flexible tasks on one spiral timeline, so you can see what fits before the day gets away from you.",
+             ":block/order": 1
+            },
+            {
+             ":block/uid": "XcH0KFUXD",
+             ":block/string": "English · [简体中文](https://github.com/404KSG/roam-nautilus-log/blob/main/README.zh-CN.md) · [User guide](https://github.com/404KSG/roam-nautilus-log/blob/main/docs/guide.md)",
+             ":block/order": 2
+            },
+            {
+             ":block/uid": "Gk-YUuGHX",
+             ":block/string": "![Nautilus Log visual day planner with Timing, Plan, Review, and right-sidebar views](https://raw.githubusercontent.com/404KSG/roam-nautilus-log/main/docs/assets/nautilus-log-overview.png)[🔗](https://raw.githubusercontent.com/404KSG/roam-nautilus-log/main/docs/assets/nautilus-log-overview.png)",
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "10plQA5hu",
+                 ":block/string": "See capacity before committing. Planned demand, remaining time, overload, and work that will not fit stay visible.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "cmAaBi_82",
+                 ":block/string": "Keep structure without becoming rigid. Events stay fixed while unfinished tasks flow forward around them in Roam block order.",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "ixTcoSENe",
+                 ":block/string": "Connect estimates with reality. Plan with low-friction estimates, then optionally compare Planned with `LOGBOOK::` / `CLOCK:` Actual time.",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "VOl9s0pOL",
+                 ":block/string": "Stay inside Roam. Focus, task switching, timing, completion, and daily Review remain connected to ordinary Roam blocks.",
+                 ":block/order": 3
+                }
+               ],
+               ":block/uid": "9SamI19Ie",
+               ":block/string": "A to-do list tells you what matters, but not whether it fits. Nautilus Log turns today's Daily Note into a living time plan:",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "tE3fJiSX9",
+             ":block/string": "See the whole day, not just a list",
+             ":block/heading": 2,
+             ":block/order": 4
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "gZXWZkRgb",
+               ":block/string": "Block commitments. Write meetings, meals, and routines as fixed ranges.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "_s-i4gy1p",
+               ":block/string": "Timebox intentions. Order flexible TODOs and give each one an estimate.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "I908jV1cA",
+               ":block/string": "Review reality. Optionally record Actual time and improve future estimates.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "OL1rXlz_7",
+               ":block/string": "The scheduler is deterministic: fixed events claim their ranges first, then whole tasks fill suitable gaps from the current moment. Unfinished work moves forward without changing priority. Anything that still cannot fit appears in Today won't fit instead of disappearing. No AI estimates and no black-box scheduling.",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "NQLhAgW_9",
+             ":children/view-type": "numbered",
+             ":block/string": "One workflow, three layers",
+             ":block/heading": 2,
+             ":block/order": 5
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "34kvC7d5m",
+               ":block/string": "During Depot review, install the [Roam Depot preview PR](https://github.com/Roam-Research/roam-depot/pull/1428) with ShortHand `404KSG+roam-nautilus-log+1428`.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "33QpXWJ7b",
+               ":block/string": "On today's Daily Note, type `;;` and choose Nautilus Log.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "E-kOfLR7X",
+               ":block/string": "Add events and TODOs as direct children of the component.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "FTEJAJeJT",
+               ":block/string": "Order the tasks, add rough durations, and adjust until the day fits.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "aJ8rXNxsZ",
+               ":block/string": "```plain text\n05:00-06:00 Morning routine\n{{[[TODO]]}} Write project brief 45m\n{{[[TODO]]}} Review notes 30m\n11:45-12:30 Lunch```",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "g__vFwM6Q",
+               ":block/string": "Durations support `30m`, `30min`, `1h`, and `1h30m`. Untimed tasks use the configured default duration.",
+               ":block/order": 5
+              }
+             ],
+             ":block/uid": "ArI0oSkV5",
+             ":children/view-type": "numbered",
+             ":block/string": "Quick start",
+             ":block/heading": 2,
+             ":block/order": 6
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "M6mGjNXX7",
+                 ":block/string": "Timing shows the current task and recently closed work.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "ypfbh3dLm",
+                 ":block/string": "Plan shows unfinished tasks from today's Primary Plan.",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "Ig4qyvkK1",
+                 ":block/string": "Review compares valid Planned and Actual results for the day.",
+                 ":block/order": 2
+                }
+               ],
+               ":block/uid": "jFk4HJpga",
+               ":block/string": "The optional Execution Layer defaults to off, so estimate-only planning stays light. Enable it in Settings to add a compact execution panel:",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "EDheY02NB",
+               ":block/string": "Only one CLOCK runs at a time. Clock In can place the active task at the top of Roam's right sidebar, keeping focus and task switching close to native Shift+Click.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "wcl9iBRj8",
+               ":block/string": "See the [full user guide](https://github.com/404KSG/roam-nautilus-log/blob/main/docs/guide.md) for syntax, metrics, settings, commands, Actual-history rules, and safety boundaries.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "JOGd6EA0Z",
+             ":block/string": "Execution Layer—when you want it",
+             ":block/heading": 2,
+             ":block/order": 7
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "CMcOGveUk",
+               ":block/string": "[Nautilus](https://github.com/tombarys/roam-depot-nautilus) by Tomáš Barys—the original transparent spiral-planning concept.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "UCApsP63v",
+               ":block/string": "[Nautilus Enhanced](https://github.com/hopeserena/nautilus-enhanced)—the enhanced fork from which this project developed.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "zF7p8YmBH",
+               ":block/string": "[Roam Logbook](https://github.com/forrestchang/roam-logbook)—the inspiration for compatible CLOCK tracking and focused task execution.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "gMk1za9XQ",
+               ":block/string": "The time-allocation philosophy is inspired by the [YNAB Method](https://www.ynab.com/the-four-rules/). Nautilus Log is not affiliated with YNAB. Released under the original MIT license.",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "4XdbuZiMg",
+             ":block/string": "Credits and inspiration",
+             ":block/heading": 2,
+             ":block/order": 8
+            }
+           ],
+           ":block/uid": "jj0CMsC0o",
+           ":block/string": "Nautilus Log",
+           ":block/heading": 1,
+           ":block/order": 6
+          }
+         ],
+         ":block/uid": "NH-ws9DjM",
+         ":block/string": "[[Roam Depot Extensions]]",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "YXoTyc5pB",
+       ":block/string": "[[August 22nd, 2026]]",
        ":block/order": 0
       }
      ],
