@@ -1,6 +1,6 @@
 {
  "graph": "developer-documentation",
- "exportedAt": "2026-08-23T05:56:43.845Z",
+ "exportedAt": "2026-08-25T05:58:49.217Z",
  "attributes": [
   {
    "attr": ":attrs/lookup",
@@ -94,7 +94,7 @@
   },
   {
    "attr": ":edit/seen-by",
-   "entities": 1094,
+   "entities": 1097,
    "type": "number",
    "example": "830"
   },
