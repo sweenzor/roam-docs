@@ -1,6 +1,6 @@
 {
  "graph": "developer-documentation",
- "exportedAt": "2026-08-25T05:54:08.811Z",
+ "exportedAt": "2026-08-26T05:56:09.478Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -12066,19 +12066,31 @@
                   {
                    ":block/children": [
                     {
-                     ":block/refs": [
-                      {
-                       ":block/uid": "CMKX2Zpwl"
-                      }
-                     ],
-                     ":block/uid": "H2D-Ffvlo",
+                     ":block/uid": "NQqCZLA5D",
                      ":block/order": 0,
-                     ":block/string": "More details [here](((CMKX2Zpwl)))"
+                     ":block/string": "do not hardcode the `reason` value, we might have different reasons in the future"
                     }
                    ],
-                   ":block/uid": "wBMjLFRny",
+                   ":block/uid": "Dxihz0P1k",
                    ":block/order": 0,
-                   ":block/string": "Promise which resolves once operation has completed"
+                   ":block/string": "Promise resolving to `{deleted: true}` or `{deleted: false, reason: \"not-found\"}`"
+                  },
+                  {
+                   ":block/children": [
+                    {
+                     ":block/refs": [
+                      {
+                       ":block/uid": "BSdSuhoZY"
+                      }
+                     ],
+                     ":block/uid": "SX_BzIxp6",
+                     ":block/order": 0,
+                     ":block/string": "((BSdSuhoZY))"
+                    }
+                   ],
+                   ":block/uid": "oWjbL5WD9",
+                   ":block/order": 1,
+                   ":block/string": "for issues other than not found, errors are thrown"
                   }
                  ],
                  ":block/uid": "FVj1-CuZs",
@@ -13700,14 +13712,33 @@
                  ],
                  ":block/children": [
                   {
-                   ":block/refs": [
+                   ":block/children": [
                     {
-                     ":block/uid": "CMKX2Zpwl"
+                     ":block/uid": "kHLRbT8Ss",
+                     ":block/order": 0,
+                     ":block/string": "do not hardcode the `reason` value, we might have different reasons in the future"
                     }
                    ],
-                   ":block/uid": "21FB3kBYE",
+                   ":block/uid": "TtWKaEI7b",
                    ":block/order": 0,
-                   ":block/string": "Promise which resolves once operation has [completed](((CMKX2Zpwl)))"
+                   ":block/string": "Promise resolving to `{deleted: true}` or `{deleted: false, reason: \"not-found\"}` once the operation has been handled"
+                  },
+                  {
+                   ":block/children": [
+                    {
+                     ":block/refs": [
+                      {
+                       ":block/uid": "BSdSuhoZY"
+                      }
+                     ],
+                     ":block/uid": "KVDSQeBp3",
+                     ":block/order": 0,
+                     ":block/string": "((BSdSuhoZY))"
+                    }
+                   ],
+                   ":block/uid": "FAf2sfUPR",
+                   ":block/order": 1,
+                   ":block/string": "for issues other than not found, errors are thrown"
                   }
                  ],
                  ":block/uid": "ZU5qTytqX",
@@ -18485,6 +18516,35 @@
                ":block/uid": "6Fz-fpj2E",
                ":block/order": 1,
                ":block/string": "Parameters::"
+              },
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "w2TkzJeTV"
+                }
+               ],
+               ":block/children": [
+                {
+                 ":block/uid": "1dLjFPPSQ",
+                 ":block/order": 1,
+                 ":block/string": "for issues other than not-found, errors show up as return values other than HTTP 200"
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "gcP9UEwoR",
+                   ":block/order": 0,
+                   ":block/string": "do not hardcode not-found, we might have other reasons in the future"
+                  }
+                 ],
+                 ":block/uid": "3xZI4cNRQ",
+                 ":block/order": 0,
+                 ":block/string": "Successful deletion returns `{\"deleted\":true}` in the response. A missing target returns `{\"deleted\":false,\"reason\":\"not-found\"}` with HTTP 200."
+                }
+               ],
+               ":block/uid": "vcb0uTzfj",
+               ":block/order": 2,
+               ":block/string": "Return::"
               }
              ],
              ":block/uid": "jnsAvFtWX",
@@ -18679,6 +18739,35 @@
                ":block/uid": "tTCT2kqCT",
                ":block/order": 1,
                ":block/string": "Parameters::"
+              },
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "w2TkzJeTV"
+                }
+               ],
+               ":block/children": [
+                {
+                 ":block/uid": "Ozs4b5580",
+                 ":block/order": 1,
+                 ":block/string": "for issues other than not-found, errors show up as return values other than HTTP 200"
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "939x6fPDC",
+                   ":block/order": 0,
+                   ":block/string": "do not hardcode not-found, we might have other reasons in the future"
+                  }
+                 ],
+                 ":block/uid": "_Y7CUfoTM",
+                 ":block/order": 0,
+                 ":block/string": "Successful deletion returns `{\"deleted\":true}` in the response. A missing target returns `{\"deleted\":false,\"reason\":\"not-found\"}` with HTTP 200."
+                }
+               ],
+               ":block/uid": "dKGsbKp-8",
+               ":block/order": 2,
+               ":block/string": "Return::"
               }
              ],
              ":block/uid": "NNnA-nFM4",
@@ -23748,9 +23837,33 @@
              ],
              ":block/children": [
               {
+               ":block/children": [
+                {
+                 ":block/uid": "qcUSC8MRi",
+                 ":block/order": 0,
+                 ":block/string": "do not hardcode the `reason` value, we might have different reasons in the future"
+                }
+               ],
                ":block/uid": "jdPvhcnjq",
                ":block/order": 0,
-               ":block/string": "Promise resolving to `undefined`"
+               ":block/string": "Promise resolving to `{deleted: true}` or `{deleted: false, reason: \"not-found\"}`"
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/refs": [
+                  {
+                   ":block/uid": "BSdSuhoZY"
+                  }
+                 ],
+                 ":block/uid": "9Shw6_G97",
+                 ":block/order": 0,
+                 ":block/string": "((BSdSuhoZY))"
+                }
+               ],
+               ":block/uid": "VhCdlFwjz",
+               ":block/order": 1,
+               ":block/string": "for issues other than not found, errors are thrown"
               }
              ],
              ":block/uid": "sJ6IJUjaB",
@@ -23767,7 +23880,7 @@
               {
                ":block/uid": "CNvpVlyzK",
                ":block/order": 0,
-               ":block/string": "```javascript\nawait window.roamAlphaAPI.data.block.delete(\n  {\"block\": {\"uid\": \"f8cXfDIRn\"}})\n// => undefined```"
+               ":block/string": "```javascript\nawait window.roamAlphaAPI.data.block.delete(\n  {\"block\": {\"uid\": \"f8cXfDIRn\"}})\n// => {deleted: true}```"
               }
              ],
              ":block/uid": "yJRmL2EZI",
@@ -24467,9 +24580,33 @@
              ],
              ":block/children": [
               {
-               ":block/uid": "e6NEELKAN",
+               ":block/children": [
+                {
+                 ":block/uid": "rnoh1qlta",
+                 ":block/order": 0,
+                 ":block/string": "do not hardcode the `reason` value, we might have different reasons in the future"
+                }
+               ],
+               ":block/uid": "1Rni4NGTN",
                ":block/order": 0,
-               ":block/string": "Promise resolving to `undefined`"
+               ":block/string": "Promise resolving to `{deleted: true}` or `{deleted: false, reason: \"not-found\"}`"
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/refs": [
+                  {
+                   ":block/uid": "BSdSuhoZY"
+                  }
+                 ],
+                 ":block/uid": "yqzjndjEC",
+                 ":block/order": 0,
+                 ":block/string": "((BSdSuhoZY))"
+                }
+               ],
+               ":block/uid": "xVQP008cV",
+               ":block/order": 1,
+               ":block/string": "for issues other than not found, errors are thrown"
               }
              ],
              ":block/uid": "zb4gCuLyf",
@@ -24486,7 +24623,7 @@
               {
                ":block/uid": "OKEmh2FNL",
                ":block/order": 0,
-               ":block/string": "```javascript\nawait window.roamAlphaAPI.data.page.delete({page: {uid: \"RZVuh3aZN\"}})\n// => undefined```"
+               ":block/string": "```javascript\nawait window.roamAlphaAPI.data.page.delete({page: {uid: \"RZVuh3aZN\"}})\n// => {deleted: true}```"
               }
              ],
              ":block/uid": "UGybhb6Z3",
@@ -32796,8 +32933,81 @@
         }
        ],
        ":block/uid": "bvJUBvi3z",
-       ":block/order": 0,
+       ":block/order": 1,
        ":block/string": "See ((tvM-fr4XK)) for older changes"
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "08-25-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "4V8fx-4n4",
+             ":block/order": 0,
+             ":block/string": "what was happening in these cases was that the promise was resolving but the actual deletion was not taking place"
+            },
+            {
+             ":block/uid": "eqxHt_Sne",
+             ":block/order": 1,
+             ":block/string": "this is the one that could possibly break code, so please check"
+            },
+            {
+             ":block/uid": "vFpRTb6G-",
+             ":block/order": 2,
+             ":block/string": "however, we made this change because it is slightly more correct. And well, for agents … It makes a lot of sense for people to instruct agents to be more liberal with delete_block compared to delete_page, but that is moot if both fns can delete blocks as well as pages. Hence the change"
+            }
+           ],
+           ":block/uid": "uPb3pLtbf",
+           ":block/order": 0,
+           ":block/string": "**1. delete_block(uidOfAPage) and delete_page(uidOfABlock) now fails with an error message instead of silently succeeding**"
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "tBUzD_D-E",
+             ":block/order": 0,
+             ":block/string": "these previously did not signal if the block/page that was sent for deletion did not exist. The promise would just succeed (with value undefined) and backend would return a 200 with empty body."
+            },
+            {
+             ":block/uid": "dlNQiAb3H",
+             ":block/order": 1,
+             ":block/string": "We changed it so that Successful deletion returns {\"deleted\":true} instead of an empty body, while a missing target would return {\"deleted\":false,\"reason\":\"not-found\"} with success/HTTP 200."
+            },
+            {
+             ":block/uid": "APY7XkUkT",
+             ":block/order": 2,
+             ":block/string": "Just to be clear, we intentionally did not make this return an error, it still counts as a success (both in the promise sense in the frontend api and in the 200 OK sense in the backend api). We did this just in cases anyone’s code was depending on the fact that deleteBlock/deletePage on non-existing stuff did not throw. So, hopefully no-one’s code breaks due to this"
+            }
+           ],
+           ":block/uid": "krCyyMoPl",
+           ":block/order": 1,
+           ":block/string": "**change to deleteBlock and deletePage return values in both frontend and backend APIs**"
+          },
+          {
+           ":block/uid": "7G3Fxl14L",
+           ":block/order": 2,
+           ":block/string": "Sorry for the changes we had to make. We try to make as few breaking changes to our APIs as possible, including changes to undocumented behavior, but the old wrong-type behavior could silently lie or perform the wrong kind of deletion and needed to be made consistent."
+          },
+          {
+           ":block/uid": "Ph4CKVDTH",
+           ":block/order": 3,
+           ":block/string": "If this causes a problem in an extension or integration, please let us know. We’ll help investigate and expedite any necessary compatibility fix. Thanks!"
+          }
+         ],
+         ":block/uid": "DuPypJdI9",
+         ":block/order": 0,
+         ":block/string": "Some behavioral changes of our delete actions (in both our frontend and backend APIs)"
+        }
+       ],
+       ":block/uid": "ixMdBgMDJ",
+       ":block/order": 0,
+       ":block/string": "[[August 25th, 2026]]"
       }
      ],
      ":block/uid": "UFglhAAcr",
@@ -33381,6 +33591,10 @@
   {
    ":node/title": "April 6th, 2022",
    ":block/uid": "04-06-2022"
+  },
+  {
+   ":node/title": "August 25th, 2026",
+   ":block/uid": "08-25-2026"
   },
   {
    ":node/title": "August 25th, 2023",
@@ -45262,7 +45476,7 @@
       }
      ],
      ":block/uid": "NUv6YPB5V",
-     ":block/order": 3,
+     ":block/order": 4,
      ":block/string": "[[November 23rd, 2022]]"
     },
     {
@@ -45360,7 +45574,7 @@
       }
      ],
      ":block/uid": "BJ4SebUbN",
-     ":block/order": 2,
+     ":block/order": 3,
      ":block/string": "[[July 29th, 2023]]"
     },
     {
@@ -45416,7 +45630,7 @@
       }
      ],
      ":block/uid": "OvjA8HqFz",
-     ":block/order": 1,
+     ":block/order": 2,
      ":block/string": "[[March 7th, 2024]]"
     },
     {
@@ -45448,8 +45662,33 @@
       }
      ],
      ":block/uid": "YPHLh2mnd",
-     ":block/order": 0,
+     ":block/order": 1,
      ":block/string": "[[April 30th, 2024]]"
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "08-25-2026"
+      }
+     ],
+     ":block/children": [
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "u1xZT14an"
+        },
+        {
+         ":block/uid": "ixMdBgMDJ"
+        }
+       ],
+       ":block/uid": "Iuz3399TI",
+       ":block/order": 0,
+       ":block/string": "{{[[embed]]: ((ixMdBgMDJ))}}"
+      }
+     ],
+     ":block/uid": "kiPhmzXSu",
+     ":block/order": 0,
+     ":block/string": "[[August 25th, 2026]]"
     }
    ],
    ":block/uid": "Br0pVKNRI"

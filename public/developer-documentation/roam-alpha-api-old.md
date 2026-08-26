@@ -893,8 +893,10 @@
             - `block`
               - `uid` **required**
           - Returns::
-            - Promise which resolves once operation has completed
-              - More details here
+            - Promise resolving to `{deleted: true}` or `{deleted: false, reason: "not-found"}`
+              - do not hardcode the `reason` value, we might have different reasons in the future
+            - for issues other than not found, errors are thrown
+              - Obviously, you can `.catch()` for errors (or the just use try catch blocks in case you are using `await`)
           - [[roam/js]]
             - ```javascript
               window
@@ -1057,7 +1059,10 @@
             - `page`
               - `uid` **required**
           - Returns::
-            - Promise which resolves once operation has completed
+            - Promise resolving to `{deleted: true}` or `{deleted: false, reason: "not-found"}` once the operation has been handled
+              - do not hardcode the `reason` value, we might have different reasons in the future
+            - for issues other than not found, errors are thrown
+              - Obviously, you can `.catch()` for errors (or the just use try catch blocks in case you are using `await`)
         - `addShortcut`
           - Description::
             - Add page to the left sidebar shortcuts, supply an index to add at a specific place, or none to add at the end

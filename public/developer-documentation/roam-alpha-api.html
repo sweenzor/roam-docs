@@ -994,7 +994,17 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 </li>
 <li>Return::
 <ul>
-<li>Promise resolving to <code>undefined</code>
+<li>Promise resolving to <code>{deleted: true}</code> or <code>{deleted: false, reason: &quot;not-found&quot;}</code>
+<ul>
+<li>do not hardcode the <code>reason</code> value, we might have different reasons in the future
+</li>
+</ul>
+</li>
+<li>for issues other than not found, errors are thrown
+<ul>
+<li>Obviously, you can <code>.catch()</code> for errors (or the just use try catch blocks in case you are using <code>await</code>)
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -1002,7 +1012,7 @@ await window.roamAlphaAPI.data.roamQuery({uid: &quot;abc123def&quot;})
 <ul>
 <li><pre><code>await window.roamAlphaAPI.data.block.delete(
   {&quot;block&quot;: {&quot;uid&quot;: &quot;f8cXfDIRn&quot;}})
-// =&gt; undefined</code></pre>
+// =&gt; {deleted: true}</code></pre>
 </li>
 </ul>
 </li>
@@ -1289,14 +1299,24 @@ await window.roamAlphaAPI.data.block.addComment(
 </li>
 <li>Return::
 <ul>
-<li>Promise resolving to <code>undefined</code>
+<li>Promise resolving to <code>{deleted: true}</code> or <code>{deleted: false, reason: &quot;not-found&quot;}</code>
+<ul>
+<li>do not hardcode the <code>reason</code> value, we might have different reasons in the future
+</li>
+</ul>
+</li>
+<li>for issues other than not found, errors are thrown
+<ul>
+<li>Obviously, you can <code>.catch()</code> for errors (or the just use try catch blocks in case you are using <code>await</code>)
+</li>
+</ul>
 </li>
 </ul>
 </li>
 <li>Example::
 <ul>
 <li><pre><code>await window.roamAlphaAPI.data.page.delete({page: {uid: &quot;RZVuh3aZN&quot;}})
-// =&gt; undefined</code></pre>
+// =&gt; {deleted: true}</code></pre>
 </li>
 </ul>
 </li>
@@ -4779,6 +4799,38 @@ await fetch(`${roamAlphaAPI.constants.corsAnywhereProxyUrl}/${urlToFetch}`)
 </li>
 <li><strong>Change Log</strong>
 <ul>
+<li>August 25th, 2026
+<ul>
+<li>Some behavioral changes of our delete actions (in both our frontend and backend APIs)
+<ul>
+<li><strong>1. delete_block(uidOfAPage) and delete_page(uidOfABlock) now fails with an error message instead of silently succeeding</strong>
+<ul>
+<li>what was happening in these cases was that the promise was resolving but the actual deletion was not taking place
+</li>
+<li>this is the one that could possibly break code, so please check
+</li>
+<li>however, we made this change because it is slightly more correct. And well, for agents … It makes a lot of sense for people to instruct agents to be more liberal with delete_block compared to delete_page, but that is moot if both fns can delete blocks as well as pages. Hence the change
+</li>
+</ul>
+</li>
+<li><strong>change to deleteBlock and deletePage return values in both frontend and backend APIs</strong>
+<ul>
+<li>these previously did not signal if the block/page that was sent for deletion did not exist. The promise would just succeed (with value undefined) and backend would return a 200 with empty body.
+</li>
+<li>We changed it so that Successful deletion returns {&quot;deleted&quot;:true} instead of an empty body, while a missing target would return {&quot;deleted&quot;:false,&quot;reason&quot;:&quot;not-found&quot;} with success/HTTP 200.
+</li>
+<li>Just to be clear, we intentionally did not make this return an error, it still counts as a success (both in the promise sense in the frontend api and in the 200 OK sense in the backend api). We did this just in cases anyone’s code was depending on the fact that deleteBlock/deletePage on non-existing stuff did not throw. So, hopefully no-one’s code breaks due to this
+</li>
+</ul>
+</li>
+<li>Sorry for the changes we had to make. We try to make as few breaking changes to our APIs as possible, including changes to undocumented behavior, but the old wrong-type behavior could silently lie or perform the wrong kind of deletion and needed to be made consistent.
+</li>
+<li>If this causes a problem in an extension or integration, please let us know. We’ll help investigate and expedite any necessary compatibility fix. Thanks!
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>See Change Log:: for older changes
 </li>
 </ul>

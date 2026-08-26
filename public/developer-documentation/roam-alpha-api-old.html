@@ -2185,9 +2185,15 @@ console.log(&quot;Removed pull watch&quot;)
 </li>
 <li>Returns::
 <ul>
-<li>Promise which resolves once operation has completed
+<li>Promise resolving to <code>{deleted: true}</code> or <code>{deleted: false, reason: &quot;not-found&quot;}</code>
 <ul>
-<li>More details here
+<li>do not hardcode the <code>reason</code> value, we might have different reasons in the future
+</li>
+</ul>
+</li>
+<li>for issues other than not found, errors are thrown
+<ul>
+<li>Obviously, you can <code>.catch()</code> for errors (or the just use try catch blocks in case you are using <code>await</code>)
 </li>
 </ul>
 </li>
@@ -2556,7 +2562,17 @@ window.roamAlphaAPI.data.block
 </li>
 <li>Returns::
 <ul>
-<li>Promise which resolves once operation has completed
+<li>Promise resolving to <code>{deleted: true}</code> or <code>{deleted: false, reason: &quot;not-found&quot;}</code> once the operation has been handled
+<ul>
+<li>do not hardcode the <code>reason</code> value, we might have different reasons in the future
+</li>
+</ul>
+</li>
+<li>for issues other than not found, errors are thrown
+<ul>
+<li>Obviously, you can <code>.catch()</code> for errors (or the just use try catch blocks in case you are using <code>await</code>)
+</li>
+</ul>
 </li>
 </ul>
 </li>

@@ -1,5 +1,18 @@
 # Roam Backend API Change Log
 
+- [[August 25th, 2026]]
+  - [[August 25th, 2026]]
+    - Some behavioral changes of our delete actions (in both our frontend and backend APIs)
+      - **1. delete_block(uidOfAPage) and delete_page(uidOfABlock) now fails with an error message instead of silently succeeding**
+        - what was happening in these cases was that the promise was resolving but the actual deletion was not taking place
+        - this is the one that could possibly break code, so please check
+        - however, we made this change because it is slightly more correct. And well, for agents … It makes a lot of sense for people to instruct agents to be more liberal with delete_block compared to delete_page, but that is moot if both fns can delete blocks as well as pages. Hence the change
+      - **change to deleteBlock and deletePage return values in both frontend and backend APIs**
+        - these previously did not signal if the block/page that was sent for deletion did not exist. The promise would just succeed (with value undefined) and backend would return a 200 with empty body.
+        - We changed it so that Successful deletion returns {"deleted":true} instead of an empty body, while a missing target would return {"deleted":false,"reason":"not-found"} with success/HTTP 200.
+        - Just to be clear, we intentionally did not make this return an error, it still counts as a success (both in the promise sense in the frontend api and in the 200 OK sense in the backend api). We did this just in cases anyone’s code was depending on the fact that deleteBlock/deletePage on non-existing stuff did not throw. So, hopefully no-one’s code breaks due to this
+      - Sorry for the changes we had to make. We try to make as few breaking changes to our APIs as possible, including changes to undocumented behavior, but the old wrong-type behavior could silently lie or perform the wrong kind of deletion and needed to be made consistent.
+      - If this causes a problem in an extension or integration, please let us know. We’ll help investigate and expedite any necessary compatibility fix. Thanks!
 - [[April 30th, 2024]]
   - Releasing `pull-many` endpoint: `/api/graph/{graph-name}/pull-many` (POST)
   - Proper documentation for all error codes: **What does response look like?** (with **HTTP status codes**)

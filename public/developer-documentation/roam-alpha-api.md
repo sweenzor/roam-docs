@@ -424,12 +424,15 @@
             - `uid` (string, required) — block to delete
             - `user-uid` (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from `roamAlphaAPI.ai.addTool` #experimental handlers
         - Return::
-          - Promise resolving to `undefined`
+          - Promise resolving to `{deleted: true}` or `{deleted: false, reason: "not-found"}`
+            - do not hardcode the `reason` value, we might have different reasons in the future
+          - for issues other than not found, errors are thrown
+            - Obviously, you can `.catch()` for errors (or the just use try catch blocks in case you are using `await`)
         - Example::
           - ```javascript
             await window.roamAlphaAPI.data.block.delete(
               {"block": {"uid": "f8cXfDIRn"}})
-            // => undefined```
+            // => {deleted: true}```
       - `roamAlphaAPI.data.block.reorderBlocks`
         - Description::
           - Reorder the direct children of a block. Pass **all** current children of `parent-uid` — no other blocks, no duplicates — in the desired order.
@@ -548,11 +551,14 @@
             - `uid` (string, required)
             - `user-uid` (string, optional) — attribute this write to the given user instead of the acting user; officially supported only from `roamAlphaAPI.ai.addTool` #experimental handlers
         - Return::
-          - Promise resolving to `undefined`
+          - Promise resolving to `{deleted: true}` or `{deleted: false, reason: "not-found"}`
+            - do not hardcode the `reason` value, we might have different reasons in the future
+          - for issues other than not found, errors are thrown
+            - Obviously, you can `.catch()` for errors (or the just use try catch blocks in case you are using `await`)
         - Example::
           - ```javascript
             await window.roamAlphaAPI.data.page.delete({page: {uid: "RZVuh3aZN"}})
-            // => undefined```
+            // => {deleted: true}```
       - `roamAlphaAPI.data.page.addShortcut`
         - Description::
           - Add a page to the left-sidebar shortcuts, or move it if it's already there. Takes positional arguments.
@@ -2000,4 +2006,16 @@
   - [roam-toolkit](https://github.com/roam-unofficial/roam-toolkit) from [[Vlad Sitalo]] — a Chrome and Firefox extension toolkit to extend Roam
   - [Fabricius](https://github.com/chronologos/Fabricius) from [[Ian Tay]] — an Anki plugin that bidirectionally syncs with Roam
 - **Change Log**
+  - [[August 25th, 2026]]
+    - Some behavioral changes of our delete actions (in both our frontend and backend APIs)
+      - **1. delete_block(uidOfAPage) and delete_page(uidOfABlock) now fails with an error message instead of silently succeeding**
+        - what was happening in these cases was that the promise was resolving but the actual deletion was not taking place
+        - this is the one that could possibly break code, so please check
+        - however, we made this change because it is slightly more correct. And well, for agents … It makes a lot of sense for people to instruct agents to be more liberal with delete_block compared to delete_page, but that is moot if both fns can delete blocks as well as pages. Hence the change
+      - **change to deleteBlock and deletePage return values in both frontend and backend APIs**
+        - these previously did not signal if the block/page that was sent for deletion did not exist. The promise would just succeed (with value undefined) and backend would return a 200 with empty body.
+        - We changed it so that Successful deletion returns {"deleted":true} instead of an empty body, while a missing target would return {"deleted":false,"reason":"not-found"} with success/HTTP 200.
+        - Just to be clear, we intentionally did not make this return an error, it still counts as a success (both in the promise sense in the frontend api and in the 200 OK sense in the backend api). We did this just in cases anyone’s code was depending on the fact that deleteBlock/deletePage on non-existing stuff did not throw. So, hopefully no-one’s code breaks due to this
+      - Sorry for the changes we had to make. We try to make as few breaking changes to our APIs as possible, including changes to undocumented behavior, but the old wrong-type behavior could silently lie or perform the wrong kind of deletion and needed to be made consistent.
+      - If this causes a problem in an extension or integration, please let us know. We’ll help investigate and expedite any necessary compatibility fix. Thanks!
   - See Change Log:: for older changes

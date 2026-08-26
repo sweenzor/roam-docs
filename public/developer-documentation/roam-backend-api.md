@@ -352,6 +352,10 @@
           - Parameters::
             - `block` (map, required)
               - `uid` (string, required) — the block to delete
+          - Return::
+            - Successful deletion returns `{"deleted":true}` in the response. A missing target returns `{"deleted":false,"reason":"not-found"}` with HTTP 200.
+              - do not hardcode not-found, we might have other reasons in the future
+            - for issues other than not-found, errors show up as return values other than HTTP 200
         - `create-page`
           - Description::
             - creates a new page
@@ -377,6 +381,10 @@
           - Parameters::
             - `page` (map, required)
               - `uid` (string, required) — the page to delete
+          - Return::
+            - Successful deletion returns `{"deleted":true}` in the response. A missing target returns `{"deleted":false,"reason":"not-found"}` with HTTP 200.
+              - do not hardcode not-found, we might have other reasons in the future
+            - for issues other than not-found, errors show up as return values other than HTTP 200
         - `batch-actions`
           - Description::
             - runs several write actions, in order, in one request

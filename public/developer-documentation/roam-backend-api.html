@@ -771,6 +771,18 @@ const { result } = await response.json();
 </li>
 </ul>
 </li>
+<li>Return::
+<ul>
+<li>Successful deletion returns <code>{&quot;deleted&quot;:true}</code> in the response. A missing target returns <code>{&quot;deleted&quot;:false,&quot;reason&quot;:&quot;not-found&quot;}</code> with HTTP 200.
+<ul>
+<li>do not hardcode not-found, we might have other reasons in the future
+</li>
+</ul>
+</li>
+<li>for issues other than not-found, errors show up as return values other than HTTP 200
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><code>create-page</code>
@@ -842,6 +854,18 @@ const { result } = await response.json();
 <li><code>uid</code> (string, required) — the page to delete
 </li>
 </ul>
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Successful deletion returns <code>{&quot;deleted&quot;:true}</code> in the response. A missing target returns <code>{&quot;deleted&quot;:false,&quot;reason&quot;:&quot;not-found&quot;}</code> with HTTP 200.
+<ul>
+<li>do not hardcode not-found, we might have other reasons in the future
+</li>
+</ul>
+</li>
+<li>for issues other than not-found, errors show up as return values other than HTTP 200
 </li>
 </ul>
 </li>
