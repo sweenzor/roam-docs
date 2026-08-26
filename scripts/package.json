@@ -5,7 +5,8 @@
   "scripts": {
     "export": "node export.mjs",
     "introspect": "node introspect.mjs",
-    "generate": "node generate.mjs"
+    "generate": "node generate.mjs",
+    "test": "node --test"
   },
   "dependencies": {
     "playwright": "1.53.0"

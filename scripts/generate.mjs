@@ -50,7 +50,7 @@ const CSS = `
   summary { cursor: pointer; }
   summary h2 { display: inline; }
 `;
-const htmlShell = ({ title, description, canonicalPath, body, jsonLd }) => `<!DOCTYPE html>
+const htmlShell = ({ title, description, canonicalPath, mdPath, body, jsonLd }) => `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -58,7 +58,7 @@ const htmlShell = ({ title, description, canonicalPath, body, jsonLd }) => `<!DO
 <title>${escHtml(title)}</title>
 <meta name="description" content="${escHtml(description)}">
 <link rel="canonical" href="${BASE}${canonicalPath}">
-<meta property="og:type" content="website">
+${mdPath ? `<link rel="alternate" type="text/markdown" href="${mdPath}">\n` : ''}<meta property="og:type" content="website">
 <meta property="og:site_name" content="${SITE_NAME}">
 <meta property="og:title" content="${escHtml(title)}">
 <meta property="og:description" content="${escHtml(description)}">
@@ -320,6 +320,7 @@ function processGraph(cfg) {
         title: `${title} — ${SITE_NAME}`,
         description: first || `${title}, from Roam Research's ${cfg.name} graph.`,
         canonicalPath: `/${outDir}/${s}`,
+        mdPath: `/${outDir}/${s}.md`,
         jsonLd: {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
@@ -739,6 +740,9 @@ ${graphs
     </ul>
   </li>
 </ul>
+<p>Every page URL here <a href="https://acceptmarkdown.com">content-negotiates</a>:
+request it with <code>Accept: text/markdown</code> to get plain markdown from the
+same URL, or append <code>.md</code>.</p>
 ${graphs
   .map(
     (g) => `<details>
@@ -757,6 +761,7 @@ ${pageList(g)}
       description:
         'Machine-friendly mirror of public Roam Research documentation graphs: llms.txt, full markdown exports, and TypeScript definitions for window.roamAlphaAPI.',
       canonicalPath: '/',
+      mdPath: '/llms.txt',
       body,
       jsonLd: { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE_NAME, url: `${BASE}/` },
     })
@@ -782,6 +787,33 @@ ${pageList(g)}
   fs.writeFileSync(
     path.join(PUBLIC, '_redirects'),
     ['/docs/* /developer-documentation/:splat 301', ''].join('\n')
+  );
+
+  // Keep known static-only paths from invoking the content-negotiation
+  // Pages Function (functions/[[path]].js) — they have exactly one
+  // representation, so there's nothing to negotiate. /docs/* stays excluded
+  // too so the _redirects above keep running natively.
+  fs.writeFileSync(
+    path.join(PUBLIC, '_routes.json'),
+    JSON.stringify(
+      {
+        version: 1,
+        include: ['/*'],
+        exclude: [
+          '/favicon.ico',
+          '/robots.txt',
+          '/sitemap.xml',
+          '/indexnow.txt',
+          '/llms.txt',
+          '/llms-full.txt',
+          '/types/*',
+          '/examples/*',
+          '/docs/*',
+        ],
+      },
+      null,
+      2
+    ) + '\n'
   );
 }
 

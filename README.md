@@ -19,8 +19,8 @@ The graph name is the first URL path segment:
 | `/llms.txt` | [llms.txt](https://llmstxt.org) index of everything on the site |
 | `/llms-full.txt` | Every graph's full export concatenated into one file |
 | `/<graph>/llms-full.txt` | Full markdown export of one graph (smaller than the root file) |
-| `/<graph>/<page>` | HTML version of each page — titles, descriptions, internal links; the surface for humans and search engines |
-| `/<graph>/<page>.md` | Markdown version of the same page — the surface for agents |
+| `/<graph>/<page>` | Each page, [content-negotiated](#content-negotiation): HTML for browsers and search engines, markdown when requested with `Accept: text/markdown` |
+| `/<graph>/<page>.md` | Markdown version of the same page — for agents that prefer an explicit URL |
 | `/<graph>/release-notes.md` | Dated daily-note updates from that graph, when it has any |
 | `/sitemap.xml`, `/robots.txt` | Search-engine plumbing; the sitemap lists the HTML pages |
 | `/types/roam-alpha-api.d.ts` | TypeScript definitions for `window.roamAlphaAPI` — coverage verified against live introspection, including functions missing from the official docs (e.g. `depot.getInstalledExtensions`) |
@@ -39,6 +39,31 @@ official Roam Research documentation:
 
 Legacy `/docs/*` URLs (from before the graph name was in the path) 301-redirect via
 `public/_redirects`.
+
+## Content negotiation
+
+Following [acceptmarkdown.com](https://acceptmarkdown.com/start), every page URL
+serves both representations: a Cloudflare Pages Function
+(`functions/[[path]].js`) parses the `Accept` header per RFC 9110 (q-values,
+specificity, no substring matching) and rewrites to the page's `.md` twin when
+the client prefers `text/markdown` — the landing page `/` negotiates to
+`/llms.txt`. Responses carry the matching `Content-Type`, `Vary: Accept`, and a
+`Link: rel="alternate"` to the other representation (the HTML `<head>` also
+advertises it); a client that rules out both formats gets `406 Not Acceptable`.
+`public/_routes.json` keeps single-representation paths (`/llms.txt`,
+`/sitemap.xml`, `/types/*`, …) from invoking the function.
+
+Verify against the live site:
+
+```sh
+curl -s -H 'Accept: text/markdown' https://roamdocs.fyi/developer-documentation/developer-hub | head  # markdown
+curl -s -H 'Accept: text/html'     https://roamdocs.fyi/developer-documentation/developer-hub | head  # HTML
+curl -sI -H 'Accept: application/json' https://roamdocs.fyi/developer-documentation/developer-hub     # 406
+```
+
+The negotiation logic is unit-tested (`cd scripts && npm test`, pure `node:test`,
+runs in CI on every PR); for an end-to-end check, `npx wrangler pages dev public`
+serves the site with the function locally.
 
 ## Adding a graph
 
@@ -77,6 +102,8 @@ scripts/introspect.mjs  walks window.roamAlphaAPI in a live session → full fun
 scripts/generate.mjs    graphs.json + data/*.json → public/, verifies every introspected
                         function appears in the .d.ts, and updates data/api-history.json
                         (the API changelog) when the inventory changes
+functions/[[path]].js   Cloudflare Pages Function serving the Accept-header content
+                        negotiation (see above); tested by scripts/accept.test.mjs
 ```
 
 `data/*.json` (graph exports, API surface, probes, datalog attributes, API history) are
