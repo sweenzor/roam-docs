@@ -4,6 +4,8 @@
 
 ### **New Changes**
 
+- [[September 9th, 2026]]
+  - Fix `{{video:}}` to work with youtube short links
 - [[August 22nd, 2026]]
   - [[Roam Depot Extensions]]
     - **Quick Switcher**
