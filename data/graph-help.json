@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-09-11T09:56:30.730Z",
+ "exportedAt": "2026-09-12T09:33:27.329Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -15523,6 +15523,10 @@
    ":block/uid": "07-12-2025"
   },
   {
+   ":node/title": "1442",
+   ":block/uid": "EoMTktW0c"
+  },
+  {
    ":node/title": "Query",
    ":block/children": [
     {
@@ -19844,6 +19848,10 @@
     }
    ],
    ":block/uid": "I4YgKCNj0"
+  },
+  {
+   ":node/title": "September 11th, 2026",
+   ":block/uid": "09-11-2026"
   },
   {
    ":node/title": "Block References",
@@ -34884,7 +34892,7 @@
        ":block/uid": "z7nDW4FYi",
        ":block/string": "[[2021]]",
        ":block/heading": 3,
-       ":block/order": 51
+       ":block/order": 52
       },
       {
        ":block/refs": [
@@ -38047,7 +38055,7 @@
        ":block/uid": "oEUzBpPVt",
        ":block/string": "[[2022]]",
        ":block/heading": 3,
-       ":block/order": 50
+       ":block/order": 51
       },
       {
        ":block/refs": [
@@ -42634,7 +42642,7 @@
        ":block/uid": "3DcyG9fYJ",
        ":block/string": "[[2023]]",
        ":block/heading": 3,
-       ":block/order": 49
+       ":block/order": 50
       },
       {
        ":block/refs": [
@@ -48472,7 +48480,7 @@
        ":block/uid": "N8o9mOFxV",
        ":block/string": "[[2024]]",
        ":block/heading": 3,
-       ":block/order": 48
+       ":block/order": 49
       },
       {
        ":block/refs": [
@@ -48560,7 +48568,7 @@
        ],
        ":block/uid": "mbBXOyRr4",
        ":block/string": "[[January 7th, 2026]]",
-       ":block/order": 46
+       ":block/order": 47
       },
       {
        ":block/refs": [
@@ -49407,7 +49415,7 @@
        ],
        ":block/uid": "D4sWwAFQH",
        ":block/string": "[[January 12th, 2026]]",
-       ":block/order": 45
+       ":block/order": 46
       },
       {
        ":block/refs": [
@@ -49825,7 +49833,7 @@
        ],
        ":block/uid": "fZnJ8SpjV",
        ":block/string": "[[January 16th, 2026]]",
-       ":block/order": 44
+       ":block/order": 45
       },
       {
        ":block/refs": [
@@ -58967,7 +58975,7 @@
        ":block/uid": "e3HyGxGmz",
        ":block/string": "[[2025]]",
        ":block/heading": 3,
-       ":block/order": 47
+       ":block/order": 48
       },
       {
        ":block/refs": [
@@ -59194,7 +59202,7 @@
        ],
        ":block/uid": "DQLXBkLqB",
        ":block/string": "[[January 30th, 2026]]",
-       ":block/order": 43
+       ":block/order": 44
       },
       {
        ":block/refs": [
@@ -59500,7 +59508,7 @@
        ],
        ":block/uid": "faBrrXpMf",
        ":block/string": "[[February 10th, 2026]]",
-       ":block/order": 42
+       ":block/order": 43
       },
       {
        ":block/refs": [
@@ -59557,7 +59565,7 @@
        ],
        ":block/uid": "HGdio9-X1",
        ":block/string": "[[February 11th, 2026]]",
-       ":block/order": 41
+       ":block/order": 42
       },
       {
        ":block/refs": [
@@ -59717,7 +59725,7 @@
        ],
        ":block/uid": "3YbHyvMVu",
        ":block/string": "[[February 18th, 2026]]",
-       ":block/order": 40
+       ":block/order": 41
       },
       {
        ":block/refs": [
@@ -59807,7 +59815,7 @@
        ],
        ":block/uid": "l1CEHstpS",
        ":block/string": "[[February 19th, 2026]]",
-       ":block/order": 39
+       ":block/order": 40
       },
       {
        ":block/refs": [
@@ -59865,7 +59873,7 @@
        ],
        ":block/uid": "w7XCOWrmV",
        ":block/string": "[[February 22nd, 2026]]",
-       ":block/order": 38
+       ":block/order": 39
       },
       {
        ":block/refs": [
@@ -59958,7 +59966,7 @@
        ],
        ":block/uid": "lq5IvpQ7J",
        ":block/string": "[[February 25th, 2026]]",
-       ":block/order": 37
+       ":block/order": 38
       },
       {
        ":block/refs": [
@@ -60756,7 +60764,7 @@
        ],
        ":block/uid": "ipU_NCoCx",
        ":block/string": "[[February 26th, 2026]]",
-       ":block/order": 36
+       ":block/order": 37
       },
       {
        ":block/refs": [
@@ -60804,7 +60812,7 @@
        ],
        ":block/uid": "WO-6A7VX9",
        ":block/string": "[[February 27th, 2026]]",
-       ":block/order": 35
+       ":block/order": 36
       },
       {
        ":block/refs": [
@@ -60939,7 +60947,7 @@
        ],
        ":block/uid": "AHy3mUokJ",
        ":block/string": "[[March 9th, 2026]]",
-       ":block/order": 34
+       ":block/order": 35
       },
       {
        ":block/refs": [
@@ -61109,7 +61117,7 @@
        ],
        ":block/uid": "-R8L5nZLD",
        ":block/string": "[[March 11th, 2026]]",
-       ":block/order": 33
+       ":block/order": 34
       },
       {
        ":block/refs": [
@@ -61233,7 +61241,7 @@
        ],
        ":block/uid": "e5HOoYOYK",
        ":block/string": "[[March 24th, 2026]]",
-       ":block/order": 32
+       ":block/order": 33
       },
       {
        ":block/refs": [
@@ -61272,7 +61280,7 @@
        ],
        ":block/uid": "hP0WzVCb3",
        ":block/string": "[[March 30th, 2026]]",
-       ":block/order": 31
+       ":block/order": 32
       },
       {
        ":block/refs": [
@@ -61771,7 +61779,7 @@
        ],
        ":block/uid": "kYfXB-KfD",
        ":block/string": "[[March 31st, 2026]]",
-       ":block/order": 30
+       ":block/order": 31
       },
       {
        ":block/refs": [
@@ -61835,7 +61843,7 @@
        ],
        ":block/uid": "hy237MoSG",
        ":block/string": "[[April 10th, 2026]]",
-       ":block/order": 29
+       ":block/order": 30
       },
       {
        ":block/refs": [
@@ -62057,7 +62065,7 @@
        ],
        ":block/uid": "Ld3WwhXAJ",
        ":block/string": "[[April 14th, 2026]]",
-       ":block/order": 28
+       ":block/order": 29
       },
       {
        ":block/refs": [
@@ -62108,7 +62116,7 @@
        ],
        ":block/uid": "FX03un0yx",
        ":block/string": "[[April 15th, 2026]]",
-       ":block/order": 27
+       ":block/order": 28
       },
       {
        ":block/refs": [
@@ -62157,7 +62165,7 @@
        ],
        ":block/uid": "Tdxn9p6T-",
        ":block/string": "[[April 17th, 2026]]",
-       ":block/order": 26
+       ":block/order": 27
       },
       {
        ":block/refs": [
@@ -63837,7 +63845,7 @@
        ],
        ":block/uid": "yYmOmnffK",
        ":block/string": "[[April 27th, 2026]]",
-       ":block/order": 25
+       ":block/order": 26
       },
       {
        ":block/refs": [
@@ -63917,7 +63925,7 @@
        ],
        ":block/uid": "E8B5FpUqb",
        ":block/string": "[[May 1st, 2026]]",
-       ":block/order": 24
+       ":block/order": 25
       },
       {
        ":block/refs": [
@@ -64101,7 +64109,7 @@
        ],
        ":block/uid": "_bXQOG7-W",
        ":block/string": "[[May 4th, 2026]]",
-       ":block/order": 23
+       ":block/order": 24
       },
       {
        ":block/refs": [
@@ -64200,7 +64208,7 @@
        ],
        ":block/uid": "77u8rD3tN",
        ":block/string": "[[May 5th, 2026]]",
-       ":block/order": 22
+       ":block/order": 23
       },
       {
        ":block/refs": [
@@ -64263,7 +64271,7 @@
        ],
        ":block/uid": "4jefQzlrL",
        ":block/string": "[[May 15th, 2026]]",
-       ":block/order": 21
+       ":block/order": 22
       },
       {
        ":block/refs": [
@@ -64319,7 +64327,7 @@
        ],
        ":block/uid": "yCa6IFyF-",
        ":block/string": "[[May 21st, 2026]]",
-       ":block/order": 20
+       ":block/order": 21
       },
       {
        ":block/refs": [
@@ -64360,7 +64368,7 @@
        ],
        ":block/uid": "s1JCTlMYp",
        ":block/string": "[[May 28th, 2026]]",
-       ":block/order": 19
+       ":block/order": 20
       },
       {
        ":block/refs": [
@@ -64402,7 +64410,7 @@
        ],
        ":block/uid": "GtQy1iARj",
        ":block/string": "[[June 1st, 2026]]",
-       ":block/order": 18
+       ":block/order": 19
       },
       {
        ":block/refs": [
@@ -64529,7 +64537,7 @@
        ],
        ":block/uid": "FfZFcIMVi",
        ":block/string": "[[June 2nd, 2026]]",
-       ":block/order": 17
+       ":block/order": 18
       },
       {
        ":block/refs": [
@@ -64565,7 +64573,7 @@
        ],
        ":block/uid": "o0biga_ls",
        ":block/string": "[[June 9th, 2026]]",
-       ":block/order": 16
+       ":block/order": 17
       },
       {
        ":block/refs": [
@@ -64594,7 +64602,7 @@
        ],
        ":block/uid": "1oHVhjf1j",
        ":block/string": "[[June 10th, 2026]]",
-       ":block/order": 15
+       ":block/order": 16
       },
       {
        ":block/refs": [
@@ -64633,7 +64641,7 @@
        ],
        ":block/uid": "jlW42mQ3s",
        ":block/string": "[[June 11th, 2026]]",
-       ":block/order": 14
+       ":block/order": 15
       },
       {
        ":block/refs": [
@@ -65180,7 +65188,7 @@
        ],
        ":block/uid": "Wp3IwehIi",
        ":block/string": "[[June 13th, 2026]]",
-       ":block/order": 13
+       ":block/order": 14
       },
       {
        ":block/refs": [
@@ -65321,7 +65329,7 @@
        ],
        ":block/uid": "T7MyhAu_Z",
        ":block/string": "[[June 30th, 2026]]",
-       ":block/order": 12
+       ":block/order": 13
       },
       {
        ":block/refs": [
@@ -65377,7 +65385,7 @@
        ],
        ":block/uid": "MdrAuMqaU",
        ":block/string": "[[July 2nd, 2026]]",
-       ":block/order": 11
+       ":block/order": 12
       },
       {
        ":block/refs": [
@@ -65406,7 +65414,7 @@
        ],
        ":block/uid": "MUux5EgdX",
        ":block/string": "[[July 6th, 2026]]",
-       ":block/order": 10
+       ":block/order": 11
       },
       {
        ":block/refs": [
@@ -65440,7 +65448,7 @@
        ],
        ":block/uid": "Omo5TNL1L",
        ":block/string": "[[July 7th, 2026]]",
-       ":block/order": 9
+       ":block/order": 10
       },
       {
        ":block/refs": [
@@ -65619,7 +65627,7 @@
        ],
        ":block/uid": "6kZb0aiyX",
        ":block/string": "[[July 10th, 2026]]",
-       ":block/order": 8
+       ":block/order": 9
       },
       {
        ":block/refs": [
@@ -65772,7 +65780,7 @@
        ],
        ":block/uid": "VoTSRMSbW",
        ":block/string": "[[July 13th, 2026]]",
-       ":block/order": 7
+       ":block/order": 8
       },
       {
        ":block/refs": [
@@ -65806,7 +65814,7 @@
        ],
        ":block/uid": "x3tGBCvQq",
        ":block/string": "[[July 15th, 2026]]",
-       ":block/order": 6
+       ":block/order": 7
       },
       {
        ":block/refs": [
@@ -65835,7 +65843,7 @@
        ],
        ":block/uid": "CNp2sgkob",
        ":block/string": "[[July 23rd, 2026]]",
-       ":block/order": 5
+       ":block/order": 6
       },
       {
        ":block/refs": [
@@ -65886,7 +65894,7 @@
        ],
        ":block/uid": "Oe6_LO9ka",
        ":block/string": "[[July 28th, 2026]]",
-       ":block/order": 4
+       ":block/order": 5
       },
       {
        ":block/refs": [
@@ -65946,7 +65954,7 @@
        ],
        ":block/uid": "jYcUoRTGl",
        ":block/string": "[[July 29th, 2026]]",
-       ":block/order": 3
+       ":block/order": 4
       },
       {
        ":block/refs": [
@@ -66586,7 +66594,7 @@
        ],
        ":block/uid": "iYlYbcCWh",
        ":block/string": "[[August 11th, 2026]]",
-       ":block/order": 2
+       ":block/order": 3
       },
       {
        ":block/refs": [
@@ -68177,7 +68185,7 @@
        ],
        ":block/uid": "YXoTyc5pB",
        ":block/string": "[[August 22nd, 2026]]",
-       ":block/order": 1
+       ":block/order": 2
       },
       {
        ":block/refs": [
@@ -68194,6 +68202,498 @@
        ],
        ":block/uid": "3uD6RaJ7K",
        ":block/string": "[[September 9th, 2026]]",
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "09-11-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "TpA4naC1T"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "HVa8VR8WU",
+             ":block/string": "A small Roam Research extension that displays the favicon (website icon) next to every external link — with a settings panel, so you never have to touch code.",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "5jYxtlJr6",
+             ":block/string": "> Favicon Manager is a fork of [roam-show-favicon](https://github.com/paulovieira/roam-show-favicon) by Paul Vieira (paulovieira). All credit for the original idea and its implementation belongs to him.\n> The original extension worked exactly as well as this one, but it could only be configured by editing its source. Making those options user-configurable was on the original author's own TODO list — this fork does that, and nothing else.",
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "hSJi7AgXJ",
+               ":block/string": "Shows a small website icon next to every external link in Roam (main area and right sidebar), exactly like the original extension.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "eDAJ6-i3h",
+               ":block/string": "Adds a settings panel (Roam Settings → Extension Settings → Favicon Manager):",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "2lLXW-_3-",
+             ":block/string": "What it does",
+             ":block/heading": 2,
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "RFGQnjHa5",
+               ":block/string": "In the settings panel, under Custom icons, write a mapping as `domain=image-url`:",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "UBViqjCi-",
+               ":block/string": "```plain text\ngithub.com=https://github.com/favicon.ico```",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "lHAI1NRS0",
+               ":block/string": "To give several websites their own icon, separate the mappings with a semicolon:",
+               ":block/order": 2
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "wVMK-R5qJ",
+                 ":block/string": "The part before `=` is the website's domain (a leading `www.` is ignored).",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "0TnPvgVdG",
+                 ":block/string": "The domain must match the link exactly — a mapping for `github.com` does not apply to `gist.github.com`.",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "NLsR2yY9_",
+                 ":block/string": "The part after `=` is any image URL.",
+                 ":block/order": 2
+                }
+               ],
+               ":block/uid": "jK-g6FuKk",
+               ":block/string": "```plain text\ngithub.com=https://github.com/favicon.ico; wikipedia.org=https://www.wikipedia.org/static/favicon/wikipedia.ico```",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "zkCwlrqRt",
+             ":block/string": "Custom icons",
+             ":block/heading": 2,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "NbKgkR2ld",
+               ":block/string": "Open Roam Research → Settings → Roam Depot.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "wmHr9tr0p",
+               ":block/string": "Find Favicon Manager and enable it.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "fQxvvTB-r",
+               ":block/string": "Open its Settings tab to tune things.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "p02FwDkgo",
+             ":children/view-type": "numbered",
+             ":block/string": "Install (Roam Depot)",
+             ":block/heading": 2,
+             ":block/order": 4
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "oDKyRRhl2",
+               ":block/string": "`extension.js` is the only required file. It `export default`s `{ onload, onunload }`.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "2KnSuqFPf",
+               ":block/string": "Configuration lives in `extensionAPI.settings`; there is no build step and no runtime dependency.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "UiX9Z-R4p",
+               ":block/string": "This is a fork of [paulovieira/roam-show-favicon](https://github.com/paulovieira/roam-show-favicon). Please keep the attribution intact if you fork further.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "B2M6RdrSh",
+             ":block/string": "For developers",
+             ":block/heading": 2,
+             ":block/order": 5
+            }
+           ],
+           ":block/uid": "UBPpXfapG",
+           ":block/string": "Favicon Manager for Roam Research",
+           ":block/heading": 1,
+           ":block/order": 1
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "AcquCzPCY",
+             ":block/string": "Website: [roamprompt.puli-consulting.com](https://roamprompt.puli-consulting.com/)",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "KYEiaEi1e",
+             ":block/string": "Turn notes, images, and supported PDFs into structured, connected knowledge inside Roam Research.",
+             ":block/order": 1
+            },
+            {
+             ":block/uid": "rxctUGYSJ",
+             ":block/string": "RoamPrompt is an AI-assisted extension from Puli Consulting for people who use Roam Research for scholarly work, professional learning, writing, and knowledge development.",
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "yY_8Hwg5_",
+               ":block/string": "structured smart notes;",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "8LZZ-cIit",
+               ":block/string": "source-grounded QEC literature notes;",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "n3IucaBqT",
+               ":block/string": "provenance-rich News Source Notes for text-native and scanned journalism;",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "LVRL5T0V-",
+               ":block/string": "candidate atomic Zettelkasten notes;",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "VDbLB2L3s",
+               ":block/string": "explicit evidence and source connections; and",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "NTgIYTtRk",
+               ":block/string": "reusable ideas that can develop across a Roam graph.",
+               ":block/order": 5
+              }
+             ],
+             ":block/uid": "fC-hLlnT2",
+             ":block/string": "It helps transform source material into:",
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "5dNGSleLW",
+               ":block/string": "RoamPrompt is designed around a simple principle: AI should accelerate knowledge work without silently deciding what becomes knowledge.",
+               ":block/order": 0
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "x1r38HMy1",
+                 ":block/string": "what the source reports;",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "HhogURsXH",
+                 ":block/string": "what the authors interpret;",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "wFCb1RVfd",
+                 ":block/string": "what the reader synthesises; and",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "clAV0nMqt",
+                 ":block/string": "what remains speculative.",
+                 ":block/order": 3
+                }
+               ],
+               ":block/uid": "czA8hJthE",
+               ":children/view-type": "numbered",
+               ":block/string": "For source-grounded PDFs, RoamPrompt separates:",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "vDfSVV8F4",
+               ":block/string": "For journalism, it also keeps reported events, attributed statements, and contemporary predictions distinct. Image-only clipping PDFs are read visually, and multi-column pages retain an explicit article-region boundary so neighbouring stories and advertisements are not silently merged.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "vY11cNnLa",
+               ":block/string": "Permanent-note candidates are reviewed before insertion. Existing Roam connections are distinguished from newly suggested concepts.",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "ADyBiyVw0",
+             ":block/string": "What makes RoamPrompt different?",
+             ":block/heading": 2,
+             ":block/order": 4
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "sSFBZrKJ-",
+                 ":block/string": "Convert a focused Roam block into a structured note with useful metadata and page links.",
+                 ":block/order": 0
+                }
+               ],
+               ":block/uid": "seO0NEsLr",
+               ":block/string": "Smart-note conversion",
+               ":block/heading": 3,
+               ":block/order": 0
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "rtUN3K3AE",
+                 ":block/string": "Enter notes or paste an image in a lightweight window without leaving the current Roam page.",
+                 ":block/order": 0
+                }
+               ],
+               ":block/uid": "RrOl0uT_C",
+               ":block/string": "Ambient Assistant",
+               ":block/heading": 3,
+               ":block/order": 1
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "dBXuw5G4B",
+                 ":block/string": "Attach a supported PDF to produce a source-grounded source note and reviewable permanent-note candidates. Supported routes include academic papers, reports, books, book chapters, news articles, scanned news clippings, and other documents. For a PDF already embedded in the current Roam page or Daily Note, run RoamPrompt: Read PDF on Current Page. A sole PDF loads automatically; multiple PDFs open a chooser.",
+                 ":block/order": 0
+                }
+               ],
+               ":block/uid": "kHfHXgKwg",
+               ":block/string": "PDF document workflow",
+               ":block/heading": 3,
+               ":block/order": 2
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "xQ13y8EVh",
+                 ":block/string": "Use RoamPrompt: Weekly Review Agent to group recent quote material, reproduce open tasks for deliberate migration, and draft a short reflection.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "Bi_Tbc1jS",
+                   ":block/string": "add `[[Quotes]]` to quote blocks that should be considered;",
+                   ":block/order": 0
+                  },
+                  {
+                   ":block/uid": "V8TaHEqgh",
+                   ":block/string": "use Roam's open `[[TODO]]` task syntax for tasks that should be considered; and",
+                   ":block/order": 1
+                  },
+                  {
+                   ":block/uid": "lvjRKkUay",
+                   ":block/string": "optionally add `[[Wisdom & Quotes]]` to already-curated quote blocks so they are excluded.",
+                   ":block/order": 2
+                  }
+                 ],
+                 ":block/uid": "AK67JaHbz",
+                 ":block/string": "Before using it:",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "AaVZh3gOV",
+                 ":block/string": "Dedicated destination pages do not have to be created in advance. Roam creates linked pages when their links are first used. The generated report replaces the bullet that is focused when the command starts; original Quote and TODO blocks remain unchanged and are not automatically moved.",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "iZ4qWJ5-w",
+                 ":block/string": "Version 0.4.5 sends at most 50 `[[Quotes]]` block strings and 50 open `[[TODO]]` block strings created during the previous seven days. Gemini receives those strings because thematic grouping and synthesis require the language model to read them. A workflow-specific confirmation explains the purpose, setup, reason for transmission, limits, and destination before anything is sent.",
+                 ":block/order": 3
+                }
+               ],
+               ":block/uid": "2_wHtfLrg",
+               ":block/string": "Weekly Review",
+               ":block/heading": 3,
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "Z8qR57eoE",
+             ":block/string": "Core workflows",
+             ":block/heading": 2,
+             ":block/order": 5
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "1V6nKuEsR",
+               ":block/string": "RoamPrompt v0.4.5 is the current public reliability and privacy update. Its self-contained distribution file is available in this repository.",
+               ":block/order": 0
+              },
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "EoMTktW0c"
+                }
+               ],
+               ":block/uid": "eiR0pP51F",
+               ":block/string": "RoamPrompt is not yet listed in Roam Depot. PR #1442 remains open while the v0.4.5 corrective release is reviewed. Current development testing therefore uses a locally loaded extension folder; general users should wait for the Depot release. Internal development history and experimental materials remain separate.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "ciu8Yybpq",
+             ":block/string": "Release status",
+             ":block/heading": 2,
+             ":block/order": 6
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "ijmt6mWRD",
+               ":block/string": "[Getting Started](https://github.com/Puli-AI/RoamPrompt-Public/blob/main/docs/GETTING_STARTED.md)",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "EtLbRd8WA",
+               ":block/string": "[User Guide](https://github.com/Puli-AI/RoamPrompt-Public/blob/main/docs/USER_GUIDE.md)",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "zfJxXb3l4",
+               ":block/string": "[Privacy](https://github.com/Puli-AI/RoamPrompt-Public/blob/main/docs/PRIVACY.md)",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "7GYGEzPt0",
+               ":block/string": "[Frequently Asked Questions](https://github.com/Puli-AI/RoamPrompt-Public/blob/main/docs/FAQ.md)",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "ZyHS0oL9y",
+               ":block/string": "[Security](https://github.com/Puli-AI/RoamPrompt-Public/blob/main/SECURITY.md)",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "q8XI2ApKf",
+               ":block/string": "[Changelog](https://github.com/Puli-AI/RoamPrompt-Public/blob/main/CHANGELOG.md)",
+               ":block/order": 5
+              }
+             ],
+             ":block/uid": "yy13pYVk3",
+             ":block/string": "Documentation",
+             ":block/heading": 2,
+             ":block/order": 7
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "hb9QLqIGY",
+                 ":block/string": "a Roam Research graph;",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "Y6NM5-Y7b",
+                 ":block/string": "a supported web browser;",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "j54X9O07L",
+                 ":block/string": "a user-provided Google Gemini API key; and",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "OGzxKqzzi",
+                 ":block/string": "acceptance of the applicable Google API terms and costs.",
+                 ":block/order": 3
+                }
+               ],
+               ":block/uid": "-Ap4UJj0-",
+               ":block/string": "The release requires:",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "YSHgKhRh9",
+               ":block/string": "Roam Depot installation instructions will be finalised when the listing is approved.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "3RI0HS9iK",
+             ":block/string": "Requirements",
+             ":block/heading": 2,
+             ":block/order": 8
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "q91YGXQgh",
+               ":block/string": "Use [GitHub Issues](https://github.com/Puli-AI/RoamPrompt-Public/issues) for reproducible bugs and feature requests. Do not include API keys, private notes, confidential documents, or sensitive graph content in an issue.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "tAVneyXhD",
+               ":block/string": "We welcome conversations with Roam practitioners, researchers, educators, extension developers, and institutional partners interested in promoting RoamPrompt or co-developing responsible, source-grounded knowledge workflows.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "WAXsJXwj-",
+               ":block/string": "Contact Dr. M.K. Mak, Managing Partner, Puli Consulting International Co., Ltd., at [m.k.mak@puli-consulting.com](mailto:m.k.mak@puli-consulting.com).",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "ds_NNWvR-",
+             ":block/string": "Support, feedback, and collaboration",
+             ":block/heading": 2,
+             ":block/order": 9
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "RjCwoCYQc",
+               ":block/string": "RoamPrompt is developed by [Puli Consulting International Co., Ltd.](https://www.puli-consulting.com/) as part of its work on human-centred AI, knowledge infrastructure, and augmented professional reasoning.",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "YRjOwnGLH",
+             ":block/string": "About Puli Consulting",
+             ":block/heading": 2,
+             ":block/order": 10
+            }
+           ],
+           ":block/uid": "KEx6Gvq2d",
+           ":block/string": "RoamPrompt",
+           ":block/heading": 1,
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "pUUISVxfd",
+         ":block/string": "[[Roam Depot Extensions]]",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "ZCXwQjjYw",
+       ":block/string": "[[September 11th, 2026]]",
        ":block/order": 0
       }
      ],

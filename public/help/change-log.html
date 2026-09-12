@@ -42,6 +42,219 @@
 <h3>[Updating Roam](<a href="/help/updating-roam">Updating Roam</a>)</h3>
 <h3><strong>New Changes</strong></h3>
 <ul>
+<li>September 11th, 2026
+<ul>
+<li>Roam Depot Extensions
+<ul>
+<li><strong>RoamPrompt</strong>
+<ul>
+<li>Website: <a href="https://roamprompt.puli-consulting.com/">roamprompt.puli-consulting.com</a>
+</li>
+<li>Turn notes, images, and supported PDFs into structured, connected knowledge inside Roam Research.
+</li>
+<li>RoamPrompt is an AI-assisted extension from Puli Consulting for people who use Roam Research for scholarly work, professional learning, writing, and knowledge development.
+</li>
+<li>It helps transform source material into:
+<ul>
+<li>structured smart notes;
+</li>
+<li>source-grounded QEC literature notes;
+</li>
+<li>provenance-rich News Source Notes for text-native and scanned journalism;
+</li>
+<li>candidate atomic Zettelkasten notes;
+</li>
+<li>explicit evidence and source connections; and
+</li>
+<li>reusable ideas that can develop across a Roam graph.
+</li>
+</ul>
+</li>
+<li><strong>What makes RoamPrompt different?</strong>
+<ul>
+<li>RoamPrompt is designed around a simple principle: AI should accelerate knowledge work without silently deciding what becomes knowledge.
+</li>
+<li>For source-grounded PDFs, RoamPrompt separates:
+<ul>
+<li>what the source reports;
+</li>
+<li>what the authors interpret;
+</li>
+<li>what the reader synthesises; and
+</li>
+<li>what remains speculative.
+</li>
+</ul>
+</li>
+<li>For journalism, it also keeps reported events, attributed statements, and contemporary predictions distinct. Image-only clipping PDFs are read visually, and multi-column pages retain an explicit article-region boundary so neighbouring stories and advertisements are not silently merged.
+</li>
+<li>Permanent-note candidates are reviewed before insertion. Existing Roam connections are distinguished from newly suggested concepts.
+</li>
+</ul>
+</li>
+<li><strong>Core workflows</strong>
+<ul>
+<li><strong>Smart-note conversion</strong>
+<ul>
+<li>Convert a focused Roam block into a structured note with useful metadata and page links.
+</li>
+</ul>
+</li>
+<li><strong>Ambient Assistant</strong>
+<ul>
+<li>Enter notes or paste an image in a lightweight window without leaving the current Roam page.
+</li>
+</ul>
+</li>
+<li><strong>PDF document workflow</strong>
+<ul>
+<li>Attach a supported PDF to produce a source-grounded source note and reviewable permanent-note candidates. Supported routes include academic papers, reports, books, book chapters, news articles, scanned news clippings, and other documents. For a PDF already embedded in the current Roam page or Daily Note, run RoamPrompt: Read PDF on Current Page. A sole PDF loads automatically; multiple PDFs open a chooser.
+</li>
+</ul>
+</li>
+<li><strong>Weekly Review</strong>
+<ul>
+<li>Use RoamPrompt: Weekly Review Agent to group recent quote material, reproduce open tasks for deliberate migration, and draft a short reflection.
+</li>
+<li>Before using it:
+<ul>
+<li>add <code>[[Quotes]]</code> to quote blocks that should be considered;
+</li>
+<li>use Roam's open <code>[[TODO]]</code> task syntax for tasks that should be considered; and
+</li>
+<li>optionally add <code>[[Wisdom &amp; Quotes]]</code> to already-curated quote blocks so they are excluded.
+</li>
+</ul>
+</li>
+<li>Dedicated destination pages do not have to be created in advance. Roam creates linked pages when their links are first used. The generated report replaces the bullet that is focused when the command starts; original Quote and TODO blocks remain unchanged and are not automatically moved.
+</li>
+<li>Version 0.4.5 sends at most 50 <code>[[Quotes]]</code> block strings and 50 open <code>[[TODO]]</code> block strings created during the previous seven days. Gemini receives those strings because thematic grouping and synthesis require the language model to read them. A workflow-specific confirmation explains the purpose, setup, reason for transmission, limits, and destination before anything is sent.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Release status</strong>
+<ul>
+<li>RoamPrompt v0.4.5 is the current public reliability and privacy update. Its self-contained distribution file is available in this repository.
+</li>
+<li>RoamPrompt is not yet listed in Roam Depot. PR #1442 remains open while the v0.4.5 corrective release is reviewed. Current development testing therefore uses a locally loaded extension folder; general users should wait for the Depot release. Internal development history and experimental materials remain separate.
+</li>
+</ul>
+</li>
+<li><strong>Documentation</strong>
+<ul>
+<li><a href="https://github.com/Puli-AI/RoamPrompt-Public/blob/main/docs/GETTING_STARTED.md">Getting Started</a>
+</li>
+<li><a href="https://github.com/Puli-AI/RoamPrompt-Public/blob/main/docs/USER_GUIDE.md">User Guide</a>
+</li>
+<li><a href="https://github.com/Puli-AI/RoamPrompt-Public/blob/main/docs/PRIVACY.md">Privacy</a>
+</li>
+<li><a href="https://github.com/Puli-AI/RoamPrompt-Public/blob/main/docs/FAQ.md">Frequently Asked Questions</a>
+</li>
+<li><a href="https://github.com/Puli-AI/RoamPrompt-Public/blob/main/SECURITY.md">Security</a>
+</li>
+<li><a href="https://github.com/Puli-AI/RoamPrompt-Public/blob/main/CHANGELOG.md">Changelog</a>
+</li>
+</ul>
+</li>
+<li><strong>Requirements</strong>
+<ul>
+<li>The release requires:
+<ul>
+<li>a Roam Research graph;
+</li>
+<li>a supported web browser;
+</li>
+<li>a user-provided Google Gemini API key; and
+</li>
+<li>acceptance of the applicable Google API terms and costs.
+</li>
+</ul>
+</li>
+<li>Roam Depot installation instructions will be finalised when the listing is approved.
+</li>
+</ul>
+</li>
+<li><strong>Support, feedback, and collaboration</strong>
+<ul>
+<li>Use <a href="https://github.com/Puli-AI/RoamPrompt-Public/issues">GitHub Issues</a> for reproducible bugs and feature requests. Do not include API keys, private notes, confidential documents, or sensitive graph content in an issue.
+</li>
+<li>We welcome conversations with Roam practitioners, researchers, educators, extension developers, and institutional partners interested in promoting RoamPrompt or co-developing responsible, source-grounded knowledge workflows.
+</li>
+<li>Contact Dr. M.K. Mak, Managing Partner, Puli Consulting International Co., Ltd., at [m.k.mak@puli-consulting.com](mailto:m.k.mak@puli-consulting.com).
+</li>
+</ul>
+</li>
+<li><strong>About Puli Consulting</strong>
+<ul>
+<li>RoamPrompt is developed by <a href="https://www.puli-consulting.com/">Puli Consulting International Co., Ltd.</a> as part of its work on human-centred AI, knowledge infrastructure, and augmented professional reasoning.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Favicon Manager for Roam Research</strong>
+<ul>
+<li>A small Roam Research extension that displays the favicon (website icon) next to every external link — with a settings panel, so you never have to touch code.
+</li>
+<li>&gt; Favicon Manager is a fork of <a href="https://github.com/paulovieira/roam-show-favicon">roam-show-favicon</a> by Paul Vieira (paulovieira). All credit for the original idea and its implementation belongs to him.<br>
+&gt; The original extension worked exactly as well as this one, but it could only be configured by editing its source. Making those options user-configurable was on the original author's own TODO list — this fork does that, and nothing else.
+</li>
+<li><strong>What it does</strong>
+<ul>
+<li>Shows a small website icon next to every external link in Roam (main area and right sidebar), exactly like the original extension.
+</li>
+<li>Adds a settings panel (Roam Settings → Extension Settings → Favicon Manager):
+</li>
+</ul>
+</li>
+<li><strong>Custom icons</strong>
+<ul>
+<li>In the settings panel, under Custom icons, write a mapping as <code>domain=image-url</code>:
+</li>
+<li><pre><code>github.com=https://github.com/favicon.ico</code></pre>
+</li>
+<li>To give several websites their own icon, separate the mappings with a semicolon:
+</li>
+<li><pre><code>github.com=https://github.com/favicon.ico; wikipedia.org=https://www.wikipedia.org/static/favicon/wikipedia.ico</code></pre>
+<ul>
+<li>The part before <code>=</code> is the website's domain (a leading <code>www.</code> is ignored).
+</li>
+<li>The domain must match the link exactly — a mapping for <code>github.com</code> does not apply to <code>gist.github.com</code>.
+</li>
+<li>The part after <code>=</code> is any image URL.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Install (Roam Depot)</strong>
+<ul>
+<li>Open Roam Research → Settings → Roam Depot.
+</li>
+<li>Find Favicon Manager and enable it.
+</li>
+<li>Open its Settings tab to tune things.
+</li>
+</ul>
+</li>
+<li><strong>For developers</strong>
+<ul>
+<li><code>extension.js</code> is the only required file. It <code>export default</code>s <code>{ onload, onunload }</code>.
+</li>
+<li>Configuration lives in <code>extensionAPI.settings</code>; there is no build step and no runtime dependency.
+</li>
+<li>This is a fork of <a href="https://github.com/paulovieira/roam-show-favicon">paulovieira/roam-show-favicon</a>. Please keep the attribution intact if you fork further.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>September 9th, 2026
 <ul>
 <li>Fix <code>{{video:}}</code> to work with youtube short links
