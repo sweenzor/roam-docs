@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-09-12T09:33:27.329Z",
+ "exportedAt": "2026-09-17T10:13:23.020Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -41739,11 +41739,6 @@
               {
                ":block/children": [
                 {
-                 ":block/refs": [
-                  {
-                   ":block/uid": "8TELovzTD"
-                  }
-                 ],
                  ":block/uid": "d2fRkxDZK",
                  ":block/string": "\"【【】】\": \"[[]]\"",
                  ":block/order": 0
@@ -85055,10 +85050,6 @@
    ":block/uid": "05-05-2026"
   },
   {
-   ":node/title": "Adnan",
-   ":block/uid": "tPi5iPs4C"
-  },
-  {
    ":node/title": "Research",
    ":block/children": [
     {
@@ -87727,6 +87718,10 @@
   {
    ":node/title": "Augmenting the Human Intellect: A Conceptual Framework",
    ":block/uid": "qkUIZqKDb"
+  },
+  {
+   ":node/title": "Md. Toslim Adnan Hemel",
+   ":block/uid": "CAnVay_U9"
   },
   {
    ":node/title": "Mickey Mellen",
