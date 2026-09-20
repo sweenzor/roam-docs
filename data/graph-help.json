@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-09-17T10:13:23.020Z",
+ "exportedAt": "2026-09-20T09:59:00.917Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -9692,6 +9692,281 @@
      ":block/string": "Commentarii Roamani: Roam Depot Gems: Roam Copilot -- [[January 10th, 2026]]",
      ":block/heading": 3,
      ":block/order": 20
+    },
+    {
+     ":block/refs": [
+      {
+       ":block/uid": "01-28-2026"
+      }
+     ],
+     ":block/children": [
+      {
+       ":block/uid": "BMWP-26zM",
+       ":block/string": "Roam’s mobile app is available on iOS and Android and lets you access your graph on the go. These extensions focus on simple gestures, extra buttons, and small interaction improvements that can make everyday actions smoother.",
+       ":block/order": 1
+      },
+      {
+       ":block/children": [
+        {
+         ":block/uid": "oGPp125gE",
+         ":block/string": "![](https://embed.filekitcdn.com/e/vudzdYPdpXbwDanZpLkZZM/feyAnBQEcZKPz4WBHqUuQn/email)",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "7utY2Qb4J",
+       ":block/string": "Hello Roamans! In this issue, we’re looking at a small set of extensions that help you customize the mobile experience to better match how you use Roam.",
+       ":block/order": 0
+      },
+      {
+       ":block/children": [
+        {
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "2vYPfuBjR",
+             ":block/string": "​[Custom Mobile Buttons](https://github.com/8bitgentleman/roam-depot-mobile-bottombar) by [Matt Vogel](https://github.com/8bitgentleman)​",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "rvrDNg6Zq",
+             ":block/string": "​[Mobile Gesture Actions](https://github.com/mlava/mobile-gesture-actions) by [Mark Lavercombe](https://github.com/mlava)​",
+             ":block/order": 1
+            },
+            {
+             ":block/uid": "hiOxXFYWY",
+             ":block/string": "​[Date UX Improvements](https://github.com/Stvad/roam-date) by [Vlad Sitalo](https://github.com/Stvad)​",
+             ":block/order": 2
+            }
+           ],
+           ":block/uid": "GaD5Gbzse",
+           ":block/string": "Part one covers three extensions:",
+           ":block/order": 0
+          },
+          {
+           ":block/uid": "-aahXM2-f",
+           ":block/string": "You can find all of these in the Roam Depot section inside your Roam Graph. To install them, simply click __Install.__",
+           ":block/order": 1
+          }
+         ],
+         ":block/uid": "mV1GN9YLH",
+         ":block/string": "__Part I__",
+         ":block/heading": 3,
+         ":block/order": 0
+        },
+        {
+         ":block/children": [
+          {
+           ":block/uid": "PBA8cJ_7M",
+           ":block/string": "![](https://embed.filekitcdn.com/e/vudzdYPdpXbwDanZpLkZZM/rUDHTiCKBNRqroGSnMDy5p/email)",
+           ":block/order": 0
+          },
+          {
+           ":block/children": [
+            {
+             ":block/children": [
+              {
+               ":block/uid": "HoXbzio6z",
+               ":block/string": "__pick which buttons you want to add!__",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "obbfEOoIk",
+             ":block/string": "![](https://embed.filekitcdn.com/e/vudzdYPdpXbwDanZpLkZZM/i5kWmgtUvAx8d7vCBb9TY7/email)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "p56mdbhYW",
+           ":block/string": "Custom Mobile Buttons adds configurable buttons to the bottom bar on mobile, giving you quick access to common actions like opening and closing blocks, triggering SmartBlock workflows, and formatting text.",
+           ":block/order": 1
+          },
+          {
+           ":block/children": [
+            {
+             ":block/children": [
+              {
+               ":block/uid": "M7XlIAjJI",
+               ":block/string": "__buttons in action!__",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "qkqw0nUcO",
+             ":block/string": "![](https://embed.filekitcdn.com/e/vudzdYPdpXbwDanZpLkZZM/gtXNEDu8wFFz2yhopyREoZ/email)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "uKhDpf47V",
+           ":block/string": "",
+           ":block/order": 2
+          },
+          {
+           ":block/uid": "sZ1ZHhC8r",
+           ":block/string": "A simple way to reduce friction for actions that are easy on desktop but sometimes clunky on mobile.",
+           ":block/order": 3
+          }
+         ],
+         ":block/uid": "ZChOOj5cL",
+         ":block/string": "Custom mobile buttons",
+         ":block/heading": 2,
+         ":block/order": 1
+        },
+        {
+         ":block/children": [
+          {
+           ":block/uid": "4PHISEnC2",
+           ":block/string": "![](https://embed.filekitcdn.com/e/vudzdYPdpXbwDanZpLkZZM/2kJksadFb4RRLKjgiqpnNp/email)",
+           ":block/order": 0
+          },
+          {
+           ":block/children": [
+            {
+             ":block/children": [
+              {
+               ":block/uid": "45_Hynyzk",
+               ":block/string": "__we set the settings to opening the command palette when long pressing__",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "jUa5ys5VW",
+             ":block/string": "![](https://embed.filekitcdn.com/e/vudzdYPdpXbwDanZpLkZZM/924hjBo8KfuWogWLdriCuF/email)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "P1n70vQ-A",
+           ":block/string": "Mobile Gesture Actions lets you map gestures like swipes, double taps, long presses, pinch, and rotate to Roam actions or keyboard shortcuts, such as navigating daily notes, opening sidebars, undo/redo, or opening the command palette.",
+           ":block/order": 1
+          },
+          {
+           ":block/children": [
+            {
+             ":block/children": [
+              {
+               ":block/uid": "toXHQTiJS",
+               ":block/string": "____long press____",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "BnoiqTckt",
+             ":block/string": "![](https://embed.filekitcdn.com/e/vudzdYPdpXbwDanZpLkZZM/rAHGgTakvtNSpNLQTNPSDD/email)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "-VR7bhWnc",
+           ":block/string": "",
+           ":block/order": 2
+          },
+          {
+           ":block/uid": "EQrQYdptJ",
+           ":block/string": "Especially useful on mobile, where it lets you navigate without relying on menus or precise taps.",
+           ":block/order": 3
+          }
+         ],
+         ":block/uid": "SbufmCAIb",
+         ":block/string": "Mobile gesture actions",
+         ":block/heading": 2,
+         ":block/order": 2
+        },
+        {
+         ":block/children": [
+          {
+           ":block/uid": "KSbEF22_Q",
+           ":block/string": "![](https://embed.filekitcdn.com/e/vudzdYPdpXbwDanZpLkZZM/xaKKd6FQ8FPhqvxHb3qHZk/email)",
+           ":block/order": 0
+          },
+          {
+           ":block/children": [
+            {
+             ":block/children": [
+              {
+               ":block/uid": "D-zTYwW6C",
+               ":block/string": "__here's an example of how it works!__",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "1FyK35igE",
+             ":block/string": "![](https://embed.filekitcdn.com/e/vudzdYPdpXbwDanZpLkZZM/iopQHY7wyEip2vK3ZYpsoy/email)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "YTEMnhR0J",
+           ":block/string": "This extension enhances daily page workflows in Roam by adding a date widget next to date links. Use it to quickly adjust dates, navigate between daily notes, or create new daily pages using natural language.",
+           ":block/order": 1
+          },
+          {
+           ":block/uid": "WJfJbrxCL",
+           ":block/string": "---",
+           ":block/order": 2
+          }
+         ],
+         ":block/uid": "9f8dN9NrN",
+         ":block/string": "Date UX Improvements",
+         ":block/heading": 2,
+         ":block/order": 3
+        },
+        {
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "0AAR9irte",
+             ":block/string": "​[Better Command Palette](https://github.com/mlava/better-command-palette) by [Mark Lavercombe](https://github.com/mlava)​",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "L9UnJuteR",
+             ":block/string": "​[Better Bullets](https://github.com/mlava/better-bullets) by [Mark Lavercombe](https://github.com/mlava)​",
+             ":block/order": 1
+            }
+           ],
+           ":block/uid": "Ln-mvBzsa",
+           ":children/view-type": "bullet",
+           ":block/string": "A few new extensions were added to Roam Depot recently. We didn’t cover them in depth in this issue, but they’re on our radar and we're excited to explore them in upcoming newsletters:",
+           ":block/order": 0
+          },
+          {
+           ":block/uid": "dSb7NG1DS",
+           ":block/string": "In future issues, we’ll also take a look at the very exciting new features and updates added to [Roam Reader](https://chromewebstore.google.com/detail/kghmbkhikifcnkjoakokkhdkfdhieonb?utm_source=item-share-cb) (if you haven't already, check out our newsletter on it [here](https://roam-research.kit.com/posts/commentarii-roamani-roam-reader?_gl=1*2239cy*_gcl_aw*R0NMLjE3NjQyNTc1MDEuQ2owS0NRaUFpcURKQmhDWEFSSXNBQmsya1NsRmM3bVptV01GWEFRdE5QM2tJeGZzQXBHN0hlRHhoeE1EeXNHWDBndy1rb0xhd2QyLUxsVWFBdWotRUFMd193Y0I.*_gcl_au*MTYzMzUzNTg0LjE3NjcxMzA5NzUuNTk2ODYzNjA5LjE3NjgwODE0NTQuMTc2ODA4Mjk2MQ..)!)",
+           ":block/order": 1
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "Z4xY3bBDe",
+             ":block/string": "![Picture of the penguin who went neither side %28To the feeding ground or to  the edge of the ice%29 : r/interesting](https://i.redd.it/u6s6wqfr5geg1.png)",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "ycOiO9oyI",
+           ":block/string": "[Join](https://join.slack.com/t/roamresearch/shared_invite/zt-3n31y81xe-PVYEXT6rOmkT0f3oxWyTYA) our slack channel here, and don't forget to check out [the Roam help graph](https://roamresearch.com/#/app/help/page/Ec97klr7x) for updates!",
+           ":block/order": 3
+          },
+          {
+           ":block/uid": "a3fHX6ZQF",
+           ":block/string": "---",
+           ":block/order": 2
+          }
+         ],
+         ":block/uid": "49IAdL7fG",
+         ":block/string": "Change Log 🪵 🌱",
+         ":block/heading": 2,
+         ":block/order": 4
+        }
+       ],
+       ":block/uid": "pO7bgFQs1",
+       ":block/string": "Roam Depot Gems: Mobile Extensions",
+       ":block/heading": 1,
+       ":block/order": 3
+      },
+      {
+       ":block/uid": "gb-LjdhdW",
+       ":block/string": "---",
+       ":block/order": 2
+      }
+     ],
+     ":block/uid": "drItSIMBV",
+     ":block/string": "Commentarii Roamani: Roam Depot Gems: Mobile Extensions -- [[January 28th, 2026]]",
+     ":block/heading": 3,
+     ":block/order": 21
     }
    ],
    ":block/uid": "LKSQjgM-a",
@@ -71342,10 +71617,6 @@
    ":block/uid": "PqBZhePly"
   },
   {
-   ":node/title": "",
-   ":block/uid": "8TELovzTD"
-  },
-  {
    ":node/title": "June 28th, 2025",
    ":block/uid": "06-28-2025"
   },
@@ -77131,6 +77402,10 @@
   {
    ":node/title": "Graph",
    ":block/uid": "2IR8qYQci"
+  },
+  {
+   ":node/title": "January 28th, 2026",
+   ":block/uid": "01-28-2026"
   },
   {
    ":node/title": "January 28th, 2022",
