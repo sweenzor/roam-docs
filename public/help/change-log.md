@@ -4,6 +4,43 @@
 
 ### **New Changes**
 
+- [[September 28th, 2026]]
+  - [[Roam Depot Extensions]]
+    - **Date Randomizer**
+      - Push a date reference in your graph to a random day in the near future.
+      - Hover any date reference — `[[August 1st, 2026]]` or `#[[August 1st, 2026]]` — and a 🎲 appears next to it. Click it and pick:
+        - Today
+        - Tomorrow
+        - Random day next week — within 7 days
+        - Random day next month — within 30 days
+        - Random day next year — within 365 days
+      - The date in the block is replaced in place. Everything else in the block, including a leading `#` or an alias label, stays exactly as it was.
+      - Right-click a block's bullet and open Plugins to choose the same five date options under `Date Randomizer: Append …`. This adds a new date at the end of the block, preceded by 📅, for example:
+      - ```plain text
+        Review project 📅 [[September 17th, 2026]]```
+      - Existing dates and other text stay intact. Appended dates are measured from today; the random ranges also respect Skip weekends.
+      - **Why random?**
+        - Because "+7 days" piles every rescheduled item onto the same day. Drawing a random day spreads the things you defer across the calendar instead of rebuilding the same backlog one week later.
+      - **Where the new date comes from**
+        - The three ranges are measured from whichever is later: today or the date already in the block. So a date that has slipped into the past always lands in the future, and pushing a date that is already weeks out moves it further out rather than pulling it back.
+        - Today and Tomorrow are literal. They are always measured from today — pulling a date back in is exactly the point — and they ignore the weekend setting, because asking for "today" on a Saturday and landing on Monday would be surprising.
+      - **Keyboard**
+        - Five command palette commands act on the date in the block you are editing, without touching the mouse:
+          - `Date Randomizer: Set date to today`
+          - `Date Randomizer: Set date to tomorrow`
+          - `Date Randomizer: Push date to next week`
+          - `Date Randomizer: Push date to next month`
+          - `Date Randomizer: Push date to next year`
+        - If the block holds more than one date, the one at or before your cursor is used.
+        - The five `Date Randomizer: Append …` commands are in the command palette too, and append a date to the block you are editing. Bind any of these commands to a key under Settings → Hotkeys.
+      - **Settings**
+        - Skip weekends — never land on a Saturday or Sunday. Off by default.
+        - Show the hover handle — the command palette and bullet menu remain available when this is off. On by default.
+      - **Notes**
+        - `Cmd/Ctrl+Z` undoes a push like any other edit.
+        - Choosing a date the block already holds writes nothing, so it costs no undo step.
+        - If the target daily note does not exist yet, Roam creates it the moment the reference is written, same as typing the date by hand.
+        - If the block changed somewhere else between the moment it was drawn on screen and the moment you click, the push is abandoned and a message says so. Nothing is overwritten.
 - [[September 11th, 2026]]
   - [[Roam Depot Extensions]]
     - **RoamPrompt**
