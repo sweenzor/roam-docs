@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-09-29T11:32:02.101Z",
+ "exportedAt": "2026-09-30T11:19:57.616Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -14131,6 +14131,10 @@
   {
    ":node/title": "mermaid",
    ":block/uid": "YEDSWbbnb"
+  },
+  {
+   ":node/title": "September 29th, 2026",
+   ":block/uid": "09-29-2026"
   },
   {
    ":node/title": "October 28th, 2020",
@@ -35171,7 +35175,7 @@
        ":block/uid": "z7nDW4FYi",
        ":block/string": "[[2021]]",
        ":block/heading": 3,
-       ":block/order": 53
+       ":block/order": 54
       },
       {
        ":block/refs": [
@@ -38334,7 +38338,7 @@
        ":block/uid": "oEUzBpPVt",
        ":block/string": "[[2022]]",
        ":block/heading": 3,
-       ":block/order": 52
+       ":block/order": 53
       },
       {
        ":block/refs": [
@@ -42916,7 +42920,7 @@
        ":block/uid": "3DcyG9fYJ",
        ":block/string": "[[2023]]",
        ":block/heading": 3,
-       ":block/order": 51
+       ":block/order": 52
       },
       {
        ":block/refs": [
@@ -48754,7 +48758,7 @@
        ":block/uid": "N8o9mOFxV",
        ":block/string": "[[2024]]",
        ":block/heading": 3,
-       ":block/order": 50
+       ":block/order": 51
       },
       {
        ":block/refs": [
@@ -48842,7 +48846,7 @@
        ],
        ":block/uid": "mbBXOyRr4",
        ":block/string": "[[January 7th, 2026]]",
-       ":block/order": 48
+       ":block/order": 49
       },
       {
        ":block/refs": [
@@ -49689,7 +49693,7 @@
        ],
        ":block/uid": "D4sWwAFQH",
        ":block/string": "[[January 12th, 2026]]",
-       ":block/order": 47
+       ":block/order": 48
       },
       {
        ":block/refs": [
@@ -50107,7 +50111,7 @@
        ],
        ":block/uid": "fZnJ8SpjV",
        ":block/string": "[[January 16th, 2026]]",
-       ":block/order": 46
+       ":block/order": 47
       },
       {
        ":block/refs": [
@@ -59249,7 +59253,7 @@
        ":block/uid": "e3HyGxGmz",
        ":block/string": "[[2025]]",
        ":block/heading": 3,
-       ":block/order": 49
+       ":block/order": 50
       },
       {
        ":block/refs": [
@@ -59476,7 +59480,7 @@
        ],
        ":block/uid": "DQLXBkLqB",
        ":block/string": "[[January 30th, 2026]]",
-       ":block/order": 45
+       ":block/order": 46
       },
       {
        ":block/refs": [
@@ -59782,7 +59786,7 @@
        ],
        ":block/uid": "faBrrXpMf",
        ":block/string": "[[February 10th, 2026]]",
-       ":block/order": 44
+       ":block/order": 45
       },
       {
        ":block/refs": [
@@ -59839,7 +59843,7 @@
        ],
        ":block/uid": "HGdio9-X1",
        ":block/string": "[[February 11th, 2026]]",
-       ":block/order": 43
+       ":block/order": 44
       },
       {
        ":block/refs": [
@@ -59999,7 +60003,7 @@
        ],
        ":block/uid": "3YbHyvMVu",
        ":block/string": "[[February 18th, 2026]]",
-       ":block/order": 42
+       ":block/order": 43
       },
       {
        ":block/refs": [
@@ -60089,7 +60093,7 @@
        ],
        ":block/uid": "l1CEHstpS",
        ":block/string": "[[February 19th, 2026]]",
-       ":block/order": 41
+       ":block/order": 42
       },
       {
        ":block/refs": [
@@ -60147,7 +60151,7 @@
        ],
        ":block/uid": "w7XCOWrmV",
        ":block/string": "[[February 22nd, 2026]]",
-       ":block/order": 40
+       ":block/order": 41
       },
       {
        ":block/refs": [
@@ -60240,7 +60244,7 @@
        ],
        ":block/uid": "lq5IvpQ7J",
        ":block/string": "[[February 25th, 2026]]",
-       ":block/order": 39
+       ":block/order": 40
       },
       {
        ":block/refs": [
@@ -61038,7 +61042,7 @@
        ],
        ":block/uid": "ipU_NCoCx",
        ":block/string": "[[February 26th, 2026]]",
-       ":block/order": 38
+       ":block/order": 39
       },
       {
        ":block/refs": [
@@ -61086,7 +61090,7 @@
        ],
        ":block/uid": "WO-6A7VX9",
        ":block/string": "[[February 27th, 2026]]",
-       ":block/order": 37
+       ":block/order": 38
       },
       {
        ":block/refs": [
@@ -61221,7 +61225,7 @@
        ],
        ":block/uid": "AHy3mUokJ",
        ":block/string": "[[March 9th, 2026]]",
-       ":block/order": 36
+       ":block/order": 37
       },
       {
        ":block/refs": [
@@ -61391,7 +61395,7 @@
        ],
        ":block/uid": "-R8L5nZLD",
        ":block/string": "[[March 11th, 2026]]",
-       ":block/order": 35
+       ":block/order": 36
       },
       {
        ":block/refs": [
@@ -61515,7 +61519,7 @@
        ],
        ":block/uid": "e5HOoYOYK",
        ":block/string": "[[March 24th, 2026]]",
-       ":block/order": 34
+       ":block/order": 35
       },
       {
        ":block/refs": [
@@ -61554,7 +61558,7 @@
        ],
        ":block/uid": "hP0WzVCb3",
        ":block/string": "[[March 30th, 2026]]",
-       ":block/order": 33
+       ":block/order": 34
       },
       {
        ":block/refs": [
@@ -62053,7 +62057,7 @@
        ],
        ":block/uid": "kYfXB-KfD",
        ":block/string": "[[March 31st, 2026]]",
-       ":block/order": 32
+       ":block/order": 33
       },
       {
        ":block/refs": [
@@ -62117,7 +62121,7 @@
        ],
        ":block/uid": "hy237MoSG",
        ":block/string": "[[April 10th, 2026]]",
-       ":block/order": 31
+       ":block/order": 32
       },
       {
        ":block/refs": [
@@ -62339,7 +62343,7 @@
        ],
        ":block/uid": "Ld3WwhXAJ",
        ":block/string": "[[April 14th, 2026]]",
-       ":block/order": 30
+       ":block/order": 31
       },
       {
        ":block/refs": [
@@ -62390,7 +62394,7 @@
        ],
        ":block/uid": "FX03un0yx",
        ":block/string": "[[April 15th, 2026]]",
-       ":block/order": 29
+       ":block/order": 30
       },
       {
        ":block/refs": [
@@ -62439,7 +62443,7 @@
        ],
        ":block/uid": "Tdxn9p6T-",
        ":block/string": "[[April 17th, 2026]]",
-       ":block/order": 28
+       ":block/order": 29
       },
       {
        ":block/refs": [
@@ -64119,7 +64123,7 @@
        ],
        ":block/uid": "yYmOmnffK",
        ":block/string": "[[April 27th, 2026]]",
-       ":block/order": 27
+       ":block/order": 28
       },
       {
        ":block/refs": [
@@ -64199,7 +64203,7 @@
        ],
        ":block/uid": "E8B5FpUqb",
        ":block/string": "[[May 1st, 2026]]",
-       ":block/order": 26
+       ":block/order": 27
       },
       {
        ":block/refs": [
@@ -64383,7 +64387,7 @@
        ],
        ":block/uid": "_bXQOG7-W",
        ":block/string": "[[May 4th, 2026]]",
-       ":block/order": 25
+       ":block/order": 26
       },
       {
        ":block/refs": [
@@ -64482,7 +64486,7 @@
        ],
        ":block/uid": "77u8rD3tN",
        ":block/string": "[[May 5th, 2026]]",
-       ":block/order": 24
+       ":block/order": 25
       },
       {
        ":block/refs": [
@@ -64545,7 +64549,7 @@
        ],
        ":block/uid": "4jefQzlrL",
        ":block/string": "[[May 15th, 2026]]",
-       ":block/order": 23
+       ":block/order": 24
       },
       {
        ":block/refs": [
@@ -64601,7 +64605,7 @@
        ],
        ":block/uid": "yCa6IFyF-",
        ":block/string": "[[May 21st, 2026]]",
-       ":block/order": 22
+       ":block/order": 23
       },
       {
        ":block/refs": [
@@ -64642,7 +64646,7 @@
        ],
        ":block/uid": "s1JCTlMYp",
        ":block/string": "[[May 28th, 2026]]",
-       ":block/order": 21
+       ":block/order": 22
       },
       {
        ":block/refs": [
@@ -64684,7 +64688,7 @@
        ],
        ":block/uid": "GtQy1iARj",
        ":block/string": "[[June 1st, 2026]]",
-       ":block/order": 20
+       ":block/order": 21
       },
       {
        ":block/refs": [
@@ -64811,7 +64815,7 @@
        ],
        ":block/uid": "FfZFcIMVi",
        ":block/string": "[[June 2nd, 2026]]",
-       ":block/order": 19
+       ":block/order": 20
       },
       {
        ":block/refs": [
@@ -64847,7 +64851,7 @@
        ],
        ":block/uid": "o0biga_ls",
        ":block/string": "[[June 9th, 2026]]",
-       ":block/order": 18
+       ":block/order": 19
       },
       {
        ":block/refs": [
@@ -64876,7 +64880,7 @@
        ],
        ":block/uid": "1oHVhjf1j",
        ":block/string": "[[June 10th, 2026]]",
-       ":block/order": 17
+       ":block/order": 18
       },
       {
        ":block/refs": [
@@ -64915,7 +64919,7 @@
        ],
        ":block/uid": "jlW42mQ3s",
        ":block/string": "[[June 11th, 2026]]",
-       ":block/order": 16
+       ":block/order": 17
       },
       {
        ":block/refs": [
@@ -65462,7 +65466,7 @@
        ],
        ":block/uid": "Wp3IwehIi",
        ":block/string": "[[June 13th, 2026]]",
-       ":block/order": 15
+       ":block/order": 16
       },
       {
        ":block/refs": [
@@ -65603,7 +65607,7 @@
        ],
        ":block/uid": "T7MyhAu_Z",
        ":block/string": "[[June 30th, 2026]]",
-       ":block/order": 14
+       ":block/order": 15
       },
       {
        ":block/refs": [
@@ -65659,7 +65663,7 @@
        ],
        ":block/uid": "MdrAuMqaU",
        ":block/string": "[[July 2nd, 2026]]",
-       ":block/order": 13
+       ":block/order": 14
       },
       {
        ":block/refs": [
@@ -65688,7 +65692,7 @@
        ],
        ":block/uid": "MUux5EgdX",
        ":block/string": "[[July 6th, 2026]]",
-       ":block/order": 12
+       ":block/order": 13
       },
       {
        ":block/refs": [
@@ -65722,7 +65726,7 @@
        ],
        ":block/uid": "Omo5TNL1L",
        ":block/string": "[[July 7th, 2026]]",
-       ":block/order": 11
+       ":block/order": 12
       },
       {
        ":block/refs": [
@@ -65901,7 +65905,7 @@
        ],
        ":block/uid": "6kZb0aiyX",
        ":block/string": "[[July 10th, 2026]]",
-       ":block/order": 10
+       ":block/order": 11
       },
       {
        ":block/refs": [
@@ -66054,7 +66058,7 @@
        ],
        ":block/uid": "VoTSRMSbW",
        ":block/string": "[[July 13th, 2026]]",
-       ":block/order": 9
+       ":block/order": 10
       },
       {
        ":block/refs": [
@@ -66088,7 +66092,7 @@
        ],
        ":block/uid": "x3tGBCvQq",
        ":block/string": "[[July 15th, 2026]]",
-       ":block/order": 8
+       ":block/order": 9
       },
       {
        ":block/refs": [
@@ -66117,7 +66121,7 @@
        ],
        ":block/uid": "CNp2sgkob",
        ":block/string": "[[July 23rd, 2026]]",
-       ":block/order": 7
+       ":block/order": 8
       },
       {
        ":block/refs": [
@@ -66168,7 +66172,7 @@
        ],
        ":block/uid": "Oe6_LO9ka",
        ":block/string": "[[July 28th, 2026]]",
-       ":block/order": 6
+       ":block/order": 7
       },
       {
        ":block/refs": [
@@ -66228,7 +66232,7 @@
        ],
        ":block/uid": "jYcUoRTGl",
        ":block/string": "[[July 29th, 2026]]",
-       ":block/order": 5
+       ":block/order": 6
       },
       {
        ":block/refs": [
@@ -66868,7 +66872,7 @@
        ],
        ":block/uid": "iYlYbcCWh",
        ":block/string": "[[August 11th, 2026]]",
-       ":block/order": 4
+       ":block/order": 5
       },
       {
        ":block/refs": [
@@ -68459,7 +68463,7 @@
        ],
        ":block/uid": "YXoTyc5pB",
        ":block/string": "[[August 22nd, 2026]]",
-       ":block/order": 3
+       ":block/order": 4
       },
       {
        ":block/refs": [
@@ -68476,7 +68480,7 @@
        ],
        ":block/uid": "3uD6RaJ7K",
        ":block/string": "[[September 9th, 2026]]",
-       ":block/order": 2
+       ":block/order": 3
       },
       {
        ":block/refs": [
@@ -68968,7 +68972,7 @@
        ],
        ":block/uid": "ZCXwQjjYw",
        ":block/string": "[[September 11th, 2026]]",
-       ":block/order": 1
+       ":block/order": 2
       },
       {
        ":block/refs": [
@@ -69184,6 +69188,422 @@
        ],
        ":block/uid": "kBLGC17Sb",
        ":block/string": "[[September 28th, 2026]]",
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "09-29-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "TpA4naC1T"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "2jsac5EYm",
+             ":block/string": "Change the look of your Roam graph by simply describing what you want: \"wider pages\", \"a calm dark mode\", \"make tags look like colored pills\"… No CSS knowledge needed. Live Themes asks an AI model to do it, shows you the result immediately, and undoes it automatically unless you confirm it, so a bad result can never leave your graph unusable.",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "PoTC0Ob31",
+             ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FkafPeFpd5S.png?alt=media&token=bf36c7ad-eaf9-4938-9c12-2b260fa97ed3)",
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "LQIDp7m5e",
+                 ":block/string": "Install Live AI from Roam Depot and set up at least one AI provider (API key) in its settings, if you have not already.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "a5E2uA1lr",
+                 ":block/string": "In Live AI's settings, turn on \"Public API (window.LiveAI_API)\" (last option).",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "Y-DsP5BdN",
+                 ":block/string": "Install Live Themes from Roam Depot. A drop icon 💧 appears in the top bar, next to the search box.",
+                 ":block/order": 2
+                }
+               ],
+               ":block/uid": "9raSbuUl7",
+               ":children/view-type": "numbered",
+               ":block/string": "Live Themes uses the AI models of the [Live AI](https://github.com/fbgallet/roam-extension-live-ai-assistant) extension, so it needs no API key of its own.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "GrfwSCHmr",
+               ":block/string": "Example of dark Aurora:",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "cElxEh7aB",
+               ":block/string": "![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F7GYuqm_2eK.png?alt=media&token=23be1cc9-24d7-47ba-a19d-521ea0a26b4e)",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "j6fVaquVi",
+             ":block/string": "Setup (2 minutes)",
+             ":block/heading": 2,
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "y3ZqUZtZk",
+               ":block/string": "Click the drop icon in the top bar (or run `Live Themes: Open / close` from the command palette, `Cmd/Ctrl + P`).",
+               ":block/order": 0
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "xJKyPKEWk",
+                 ":block/string": "pick a ready-made proposal (wider content, serif font, Nord colors, complete dark mode, colored tags, strike-through DONE tasks…). Some of them ask you to fill in a detail first (a color, a font, a tag name…);",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "VMtd_aowz",
+                 ":block/string": "or write your request in your own words, in any language.",
+                 ":block/order": 1
+                }
+               ],
+               ":block/uid": "_pE5J_FkA",
+               ":block/string": "Either:",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "vMeeJiWwm",
+               ":block/string": "Click Generate & preview (or `Cmd/Ctrl + Enter`). The change appears on screen after a few seconds.",
+               ":block/order": 2
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "NobANcUMj",
+                 ":block/string": "Keep: you like it, the change is saved.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "zwVndQlzw",
+                 ":block/string": "Revert: go back to how it was.",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "6--wtmhv4",
+                 ":block/string": "Adjust…: refine it (\"a bit lighter\", \"same but with rounded corners\"…). The model remembers the conversation.",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "6qgKK4xph",
+                 ":block/string": "Do nothing: when the countdown ends, the change is undone automatically.",
+                 ":block/order": 3
+                }
+               ],
+               ":block/uid": "LMtGQgaIa",
+               ":block/string": "A banner at the top of the screen counts down (30 seconds by default):",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "eYi5V60sK",
+               ":block/string": "Changes build on each other: you can apply several proposals and requests one after another.",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "-zpjkSR58",
+               ":block/string": "If something goes wrong: just wait for the countdown to finish, or reload Roam. A change that was not kept is always undone. Later, you can still undo kept changes with `Live Themes: Undo last change` or from the dialog's history (last 10 changes).",
+               ":block/order": 5
+              }
+             ],
+             ":block/uid": "sdcozdSsW",
+             ":children/view-type": "numbered",
+             ":block/string": "Your first theme",
+             ":block/heading": 2,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "neUAlmPQR",
+                 ":block/string": "Pick on screen: click this button under the request field, then click the thing that bothers you in the page (a title, a tag, the sidebar…). Then just write \"make this smaller\" or \"less bright\".",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "jE2poVk6R",
+                 ":block/string": "Type `/` in the request field to browse all the parts of Roam by category (top bar, sidebars, titles, bullets, tags, references, tables…) and insert one in your sentence. Names are also understood in French, Spanish, German, Italian, Portuguese, Dutch, Russian, Chinese, Japanese and Korean (`/puce`, `/Seitentitel`…).",
+                 ":block/order": 1
+                }
+               ],
+               ":block/uid": "xRXDd6Vai",
+               ":block/string": "You do not need to know the technical names of Roam's parts:",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "vRjAkxQaQ",
+             ":block/string": "Pointing at what you want to change",
+             ":block/heading": 2,
+             ":block/order": 4
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "IEpGSvJUO",
+                 ":block/string": "Use the theme bar at the top of the dialog to create a New theme, Duplicate the current one to try a variant safely, Rename or Delete it.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "0x58f3IAt",
+                 ":block/string": "Switch themes from the same bar, or from the command palette: `Live Themes: Activate theme “<name>”` or `Live Themes: Next theme`.",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "sMwoId2G_",
+                 ":block/string": "Export a theme to a file to share it or keep a backup; Import a theme file (or any `.css` file) to create a new theme.",
+                 ":block/order": 2
+                }
+               ],
+               ":block/uid": "038NlAxGM",
+               ":block/string": "You can keep several themes (e.g. \"Work\", \"Reading\", \"Minimal\") and switch between them. One theme is active at a time.",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "eDiKXV8Pu",
+             ":block/string": "Themes",
+             ":block/heading": 2,
+             ":block/order": 5
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "5-uY4-dYl",
+                 ":block/string": "the 🌙/☀ button of the dialog,",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "dTP38FRlS",
+                 ":block/string": "the `Live Themes: Toggle dark mode` command (you can give it a keyboard shortcut in Roam's settings),",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "RV9UdoA6U",
+                 ":block/string": "an optional 🌙/☀ button in the top bar (enable it in the settings),",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "5k3x11KpD",
+                 ":block/string": "or automatically with your computer's setting (__Follow the system light/dark setting__).",
+                 ":block/order": 3
+                }
+               ],
+               ":block/uid": "2Wc28nOKL",
+               ":block/string": "Roam has no built-in dark mode, so your theme needs one first: use the Complete dark mode proposal (or click the 🌙 button in the dialog, which prepares it for you). Then switch between light and dark with:",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "j9KAiBH8v",
+               ":block/string": "After each change, Live Themes checks that text stays readable (enough contrast) in both light and dark mode. If some text became hard to read, the banner tells you and offers to ask the model to fix it.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "rW94Xbt_g",
+             ":block/string": "Dark mode",
+             ":block/heading": 2,
+             ":block/order": 6
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "Qe5US8_53",
+               ":block/string": "`Live Themes: Open / close`",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "GKiCJPgbe",
+               ":block/string": "`Live Themes: Toggle dark mode`",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "UPE8zmEzn",
+               ":block/string": "`Live Themes: Activate theme “<name>”` (one per theme), `Live Themes: Next theme`",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "dm6XY1-qo",
+               ":block/string": "`Live Themes: Undo last change`",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "DQwHy5OoQ",
+               ":block/string": "`Live Themes: Disable / re-enable Live Themes CSS (emergency)`: turns the whole theme off (and back on), without deleting anything.",
+               ":block/order": 4
+              }
+             ],
+             ":block/uid": "I3bFsCrkI",
+             ":block/string": "Commands (command palette, `Cmd/Ctrl + P`)",
+             ":block/heading": 2,
+             ":block/order": 7
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "gtWhmV-pp",
+               ":block/string": "Button in the top bar / Light/dark button in the top bar.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "2ObXkSJKd",
+               ":block/string": "Follow the system light/dark setting.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "fbePFflyg",
+               ":block/string": "Review delay: how long you have to confirm a change (15, 30, 60 or 120 seconds).",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "qXDpD0MVl",
+               ":block/string": "Check text contrast after applying a proposal (on by default).",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "_IL80qWM6",
+               ":block/string": "Thinking (reasoning) mode: better results on complex requests, but slower and more costly.",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "37OVPU2tg",
+               ":block/string": "Send a snapshot of the live page to the model: lets the model \"see\" the actual colors and fonts on screen (off by default, a bit more costly).",
+               ":block/order": 5
+              },
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "RA1UXmzp0"
+                }
+               ],
+               ":block/uid": "8WU_EPx8Q",
+               ":block/string": "Read the whole [[roam/css]] page: the model takes your other existing CSS into account.",
+               ":block/order": 6
+              },
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "RA1UXmzp0"
+                }
+               ],
+               ":block/uid": "3usZ8h0yt",
+               ":block/string": "Allow editing the whole [[roam/css]] page: lets the model also modify your other CSS, only when you explicitly ask for it (off by default).",
+               ":block/order": 7
+              },
+              {
+               ":block/uid": "cU373mzlZ",
+               ":block/string": "Disable Live Themes CSS (emergency): same as the command above.",
+               ":block/order": 8
+              }
+             ],
+             ":block/uid": "l9SWkPlod",
+             ":block/string": "Settings",
+             ":block/heading": 2,
+             ":block/order": 8
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "JCzyGCNdK",
+               ":block/string": "Roam applies the styles written on its `[[roam/css]]` page. Live Themes writes the active theme there, under a block named `Live Themes`, split into small collapsed blocks by topic (__Colors__, __Typography__, __Dark mode__…). Everything else on this page (CSS you or other tools added before) is left untouched, and stays applied under your theme. Other themes are stored in the extension's settings until you activate them.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "4lz9B0C_w",
+               ":block/string": "You never need to open this page, but you can: hand edits made there are kept in the theme.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "i_M4OCyC7",
+             ":block/string": "Where your theme is stored",
+             ":block/heading": 2,
+             ":block/order": 9
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "DQvwSfxz3",
+               ":block/string": "Nothing is permanent until you confirm it: an unconfirmed change is undone after the countdown, and also on the next reload of Roam.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "hMU6BuKWm",
+               ":block/string": "A proposal that would hide essential parts of Roam (the page, the top bar, blocks, menus…) or that contains broken CSS is not applied: you see a warning first.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "UhEP_dK4X",
+               ":block/string": "No hidden calls to other sites: a theme could load images or files from any website, which can be used to track you. Live Themes only loads fonts from Google Fonts automatically; any other external address in a proposal is shown to you as a warning before anything is applied, and importing a theme file that contains one asks for your confirmation.",
+               ":block/order": 2
+              },
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "RA1UXmzp0"
+                }
+               ],
+               ":block/uid": "S4x9Jo8-X",
+               ":block/string": "Only the `Live Themes` block of `[[roam/css]]` is ever modified, unless you turn on __Allow editing the whole [[roam/css]] page__.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "NMPYAFGVj",
+               ":block/string": "In an emergency, the `Disable / re-enable Live Themes CSS` command turns the theme off instantly.",
+               ":block/order": 4
+              }
+             ],
+             ":block/uid": "BklXz__89",
+             ":block/string": "Safety",
+             ":block/heading": 2,
+             ":block/order": 10
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "AhGXf2Ai3",
+               ":block/string": "The model receives a catalog of about 100 parts of Roam (name, CSS selector, description) checked against Roam's real stylesheet, facts about Roam's CSS (native variables, default colors, how dark mode and Blueprint controls work), and optionally a measurement of what is actually displayed. It answers with changes to specific sections of the theme only, so a targeted request cannot break the rest. Before any change is applied, the CSS is checked section by section for syntax errors, dangerous rules and invented selectors.",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "33-HFlpNB",
+             ":block/string": "For the curious: how the model knows Roam",
+             ":block/heading": 2,
+             ":block/order": 11
+            }
+           ],
+           ":block/uid": "fhGcgYKN8",
+           ":block/string": "Live Themes - AI-powered theming",
+           ":block/heading": 1,
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "qv9svflUE",
+         ":block/string": "[[Roam Depot Extensions]]",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "wSIxrE1g0",
+       ":block/string": "[[September 29th, 2026]]",
        ":block/order": 0
       }
      ],

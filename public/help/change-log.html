@@ -42,6 +42,180 @@
 <h3>[Updating Roam](<a href="/help/updating-roam">Updating Roam</a>)</h3>
 <h3><strong>New Changes</strong></h3>
 <ul>
+<li>September 29th, 2026
+<ul>
+<li>Roam Depot Extensions
+<ul>
+<li><strong>Live Themes - AI-powered theming</strong>
+<ul>
+<li>Change the look of your Roam graph by simply describing what you want: &quot;wider pages&quot;, &quot;a calm dark mode&quot;, &quot;make tags look like colored pills&quot;… No CSS knowledge needed. Live Themes asks an AI model to do it, shows you the result immediately, and undoes it automatically unless you confirm it, so a bad result can never leave your graph unusable.
+</li>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FkafPeFpd5S.png?alt=media&amp;token=bf36c7ad-eaf9-4938-9c12-2b260fa97ed3" alt="" loading="lazy">
+</li>
+<li><strong>Setup (2 minutes)</strong>
+<ul>
+<li>Live Themes uses the AI models of the <a href="https://github.com/fbgallet/roam-extension-live-ai-assistant">Live AI</a> extension, so it needs no API key of its own.
+<ul>
+<li>Install Live AI from Roam Depot and set up at least one AI provider (API key) in its settings, if you have not already.
+</li>
+<li>In Live AI's settings, turn on &quot;Public API (window.LiveAI_API)&quot; (last option).
+</li>
+<li>Install Live Themes from Roam Depot. A drop icon 💧 appears in the top bar, next to the search box.
+</li>
+</ul>
+</li>
+<li>Example of dark Aurora:
+</li>
+<li><img src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F7GYuqm_2eK.png?alt=media&amp;token=23be1cc9-24d7-47ba-a19d-521ea0a26b4e" alt="" loading="lazy">
+</li>
+</ul>
+</li>
+<li><strong>Your first theme</strong>
+<ul>
+<li>Click the drop icon in the top bar (or run <code>Live Themes: Open / close</code> from the command palette, <code>Cmd/Ctrl + P</code>).
+</li>
+<li>Either:
+<ul>
+<li>pick a ready-made proposal (wider content, serif font, Nord colors, complete dark mode, colored tags, strike-through DONE tasks…). Some of them ask you to fill in a detail first (a color, a font, a tag name…);
+</li>
+<li>or write your request in your own words, in any language.
+</li>
+</ul>
+</li>
+<li>Click Generate &amp; preview (or <code>Cmd/Ctrl + Enter</code>). The change appears on screen after a few seconds.
+</li>
+<li>A banner at the top of the screen counts down (30 seconds by default):
+<ul>
+<li>Keep: you like it, the change is saved.
+</li>
+<li>Revert: go back to how it was.
+</li>
+<li>Adjust…: refine it (&quot;a bit lighter&quot;, &quot;same but with rounded corners&quot;…). The model remembers the conversation.
+</li>
+<li>Do nothing: when the countdown ends, the change is undone automatically.
+</li>
+</ul>
+</li>
+<li>Changes build on each other: you can apply several proposals and requests one after another.
+</li>
+<li>If something goes wrong: just wait for the countdown to finish, or reload Roam. A change that was not kept is always undone. Later, you can still undo kept changes with <code>Live Themes: Undo last change</code> or from the dialog's history (last 10 changes).
+</li>
+</ul>
+</li>
+<li><strong>Pointing at what you want to change</strong>
+<ul>
+<li>You do not need to know the technical names of Roam's parts:
+<ul>
+<li>Pick on screen: click this button under the request field, then click the thing that bothers you in the page (a title, a tag, the sidebar…). Then just write &quot;make this smaller&quot; or &quot;less bright&quot;.
+</li>
+<li>Type <code>/</code> in the request field to browse all the parts of Roam by category (top bar, sidebars, titles, bullets, tags, references, tables…) and insert one in your sentence. Names are also understood in French, Spanish, German, Italian, Portuguese, Dutch, Russian, Chinese, Japanese and Korean (<code>/puce</code>, <code>/Seitentitel</code>…).
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Themes</strong>
+<ul>
+<li>You can keep several themes (e.g. &quot;Work&quot;, &quot;Reading&quot;, &quot;Minimal&quot;) and switch between them. One theme is active at a time.
+<ul>
+<li>Use the theme bar at the top of the dialog to create a New theme, Duplicate the current one to try a variant safely, Rename or Delete it.
+</li>
+<li>Switch themes from the same bar, or from the command palette: <code>Live Themes: Activate theme “&lt;name&gt;”</code> or <code>Live Themes: Next theme</code>.
+</li>
+<li>Export a theme to a file to share it or keep a backup; Import a theme file (or any <code>.css</code> file) to create a new theme.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Dark mode</strong>
+<ul>
+<li>Roam has no built-in dark mode, so your theme needs one first: use the Complete dark mode proposal (or click the 🌙 button in the dialog, which prepares it for you). Then switch between light and dark with:
+<ul>
+<li>the 🌙/☀ button of the dialog,
+</li>
+<li>the <code>Live Themes: Toggle dark mode</code> command (you can give it a keyboard shortcut in Roam's settings),
+</li>
+<li>an optional 🌙/☀ button in the top bar (enable it in the settings),
+</li>
+<li>or automatically with your computer's setting (<em>Follow the system light/dark setting</em>).
+</li>
+</ul>
+</li>
+<li>After each change, Live Themes checks that text stays readable (enough contrast) in both light and dark mode. If some text became hard to read, the banner tells you and offers to ask the model to fix it.
+</li>
+</ul>
+</li>
+<li><strong>Commands (command palette, <code>Cmd/Ctrl + P</code>)</strong>
+<ul>
+<li><code>Live Themes: Open / close</code>
+</li>
+<li><code>Live Themes: Toggle dark mode</code>
+</li>
+<li><code>Live Themes: Activate theme “&lt;name&gt;”</code> (one per theme), <code>Live Themes: Next theme</code>
+</li>
+<li><code>Live Themes: Undo last change</code>
+</li>
+<li><code>Live Themes: Disable / re-enable Live Themes CSS (emergency)</code>: turns the whole theme off (and back on), without deleting anything.
+</li>
+</ul>
+</li>
+<li><strong>Settings</strong>
+<ul>
+<li>Button in the top bar / Light/dark button in the top bar.
+</li>
+<li>Follow the system light/dark setting.
+</li>
+<li>Review delay: how long you have to confirm a change (15, 30, 60 or 120 seconds).
+</li>
+<li>Check text contrast after applying a proposal (on by default).
+</li>
+<li>Thinking (reasoning) mode: better results on complex requests, but slower and more costly.
+</li>
+<li>Send a snapshot of the live page to the model: lets the model &quot;see&quot; the actual colors and fonts on screen (off by default, a bit more costly).
+</li>
+<li>Read the whole <a href="/help/roam-css">roam/css</a> page: the model takes your other existing CSS into account.
+</li>
+<li>Allow editing the whole <a href="/help/roam-css">roam/css</a> page: lets the model also modify your other CSS, only when you explicitly ask for it (off by default).
+</li>
+<li>Disable Live Themes CSS (emergency): same as the command above.
+</li>
+</ul>
+</li>
+<li><strong>Where your theme is stored</strong>
+<ul>
+<li>Roam applies the styles written on its <code>[[roam/css]]</code> page. Live Themes writes the active theme there, under a block named <code>Live Themes</code>, split into small collapsed blocks by topic (<em>Colors</em>, <em>Typography</em>, <em>Dark mode</em>…). Everything else on this page (CSS you or other tools added before) is left untouched, and stays applied under your theme. Other themes are stored in the extension's settings until you activate them.
+</li>
+<li>You never need to open this page, but you can: hand edits made there are kept in the theme.
+</li>
+</ul>
+</li>
+<li><strong>Safety</strong>
+<ul>
+<li>Nothing is permanent until you confirm it: an unconfirmed change is undone after the countdown, and also on the next reload of Roam.
+</li>
+<li>A proposal that would hide essential parts of Roam (the page, the top bar, blocks, menus…) or that contains broken CSS is not applied: you see a warning first.
+</li>
+<li>No hidden calls to other sites: a theme could load images or files from any website, which can be used to track you. Live Themes only loads fonts from Google Fonts automatically; any other external address in a proposal is shown to you as a warning before anything is applied, and importing a theme file that contains one asks for your confirmation.
+</li>
+<li>Only the <code>Live Themes</code> block of <code>[[roam/css]]</code> is ever modified, unless you turn on <em>Allow editing the whole <a href="/help/roam-css">roam/css</a> page</em>.
+</li>
+<li>In an emergency, the <code>Disable / re-enable Live Themes CSS</code> command turns the theme off instantly.
+</li>
+</ul>
+</li>
+<li><strong>For the curious: how the model knows Roam</strong>
+<ul>
+<li>The model receives a catalog of about 100 parts of Roam (name, CSS selector, description) checked against Roam's real stylesheet, facts about Roam's CSS (native variables, default colors, how dark mode and Blueprint controls work), and optionally a measurement of what is actually displayed. It answers with changes to specific sections of the theme only, so a targeted request cannot break the rest. Before any change is applied, the CSS is checked section by section for syntax errors, dangerous rules and invented selectors.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>September 28th, 2026
 <ul>
 <li>Roam Depot Extensions
