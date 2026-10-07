@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-09-30T11:19:57.616Z",
+ "exportedAt": "2026-10-07T11:57:53.380Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -35175,7 +35175,7 @@
        ":block/uid": "z7nDW4FYi",
        ":block/string": "[[2021]]",
        ":block/heading": 3,
-       ":block/order": 54
+       ":block/order": 55
       },
       {
        ":block/refs": [
@@ -38338,7 +38338,7 @@
        ":block/uid": "oEUzBpPVt",
        ":block/string": "[[2022]]",
        ":block/heading": 3,
-       ":block/order": 53
+       ":block/order": 54
       },
       {
        ":block/refs": [
@@ -42920,7 +42920,7 @@
        ":block/uid": "3DcyG9fYJ",
        ":block/string": "[[2023]]",
        ":block/heading": 3,
-       ":block/order": 52
+       ":block/order": 53
       },
       {
        ":block/refs": [
@@ -48758,7 +48758,7 @@
        ":block/uid": "N8o9mOFxV",
        ":block/string": "[[2024]]",
        ":block/heading": 3,
-       ":block/order": 51
+       ":block/order": 52
       },
       {
        ":block/refs": [
@@ -48846,7 +48846,7 @@
        ],
        ":block/uid": "mbBXOyRr4",
        ":block/string": "[[January 7th, 2026]]",
-       ":block/order": 49
+       ":block/order": 50
       },
       {
        ":block/refs": [
@@ -49693,7 +49693,7 @@
        ],
        ":block/uid": "D4sWwAFQH",
        ":block/string": "[[January 12th, 2026]]",
-       ":block/order": 48
+       ":block/order": 49
       },
       {
        ":block/refs": [
@@ -50111,7 +50111,7 @@
        ],
        ":block/uid": "fZnJ8SpjV",
        ":block/string": "[[January 16th, 2026]]",
-       ":block/order": 47
+       ":block/order": 48
       },
       {
        ":block/refs": [
@@ -59253,7 +59253,7 @@
        ":block/uid": "e3HyGxGmz",
        ":block/string": "[[2025]]",
        ":block/heading": 3,
-       ":block/order": 50
+       ":block/order": 51
       },
       {
        ":block/refs": [
@@ -59480,7 +59480,7 @@
        ],
        ":block/uid": "DQLXBkLqB",
        ":block/string": "[[January 30th, 2026]]",
-       ":block/order": 46
+       ":block/order": 47
       },
       {
        ":block/refs": [
@@ -59786,7 +59786,7 @@
        ],
        ":block/uid": "faBrrXpMf",
        ":block/string": "[[February 10th, 2026]]",
-       ":block/order": 45
+       ":block/order": 46
       },
       {
        ":block/refs": [
@@ -59843,7 +59843,7 @@
        ],
        ":block/uid": "HGdio9-X1",
        ":block/string": "[[February 11th, 2026]]",
-       ":block/order": 44
+       ":block/order": 45
       },
       {
        ":block/refs": [
@@ -60003,7 +60003,7 @@
        ],
        ":block/uid": "3YbHyvMVu",
        ":block/string": "[[February 18th, 2026]]",
-       ":block/order": 43
+       ":block/order": 44
       },
       {
        ":block/refs": [
@@ -60093,7 +60093,7 @@
        ],
        ":block/uid": "l1CEHstpS",
        ":block/string": "[[February 19th, 2026]]",
-       ":block/order": 42
+       ":block/order": 43
       },
       {
        ":block/refs": [
@@ -60151,7 +60151,7 @@
        ],
        ":block/uid": "w7XCOWrmV",
        ":block/string": "[[February 22nd, 2026]]",
-       ":block/order": 41
+       ":block/order": 42
       },
       {
        ":block/refs": [
@@ -60244,7 +60244,7 @@
        ],
        ":block/uid": "lq5IvpQ7J",
        ":block/string": "[[February 25th, 2026]]",
-       ":block/order": 40
+       ":block/order": 41
       },
       {
        ":block/refs": [
@@ -61042,7 +61042,7 @@
        ],
        ":block/uid": "ipU_NCoCx",
        ":block/string": "[[February 26th, 2026]]",
-       ":block/order": 39
+       ":block/order": 40
       },
       {
        ":block/refs": [
@@ -61090,7 +61090,7 @@
        ],
        ":block/uid": "WO-6A7VX9",
        ":block/string": "[[February 27th, 2026]]",
-       ":block/order": 38
+       ":block/order": 39
       },
       {
        ":block/refs": [
@@ -61225,7 +61225,7 @@
        ],
        ":block/uid": "AHy3mUokJ",
        ":block/string": "[[March 9th, 2026]]",
-       ":block/order": 37
+       ":block/order": 38
       },
       {
        ":block/refs": [
@@ -61395,7 +61395,7 @@
        ],
        ":block/uid": "-R8L5nZLD",
        ":block/string": "[[March 11th, 2026]]",
-       ":block/order": 36
+       ":block/order": 37
       },
       {
        ":block/refs": [
@@ -61519,7 +61519,7 @@
        ],
        ":block/uid": "e5HOoYOYK",
        ":block/string": "[[March 24th, 2026]]",
-       ":block/order": 35
+       ":block/order": 36
       },
       {
        ":block/refs": [
@@ -61558,7 +61558,7 @@
        ],
        ":block/uid": "hP0WzVCb3",
        ":block/string": "[[March 30th, 2026]]",
-       ":block/order": 34
+       ":block/order": 35
       },
       {
        ":block/refs": [
@@ -62057,7 +62057,7 @@
        ],
        ":block/uid": "kYfXB-KfD",
        ":block/string": "[[March 31st, 2026]]",
-       ":block/order": 33
+       ":block/order": 34
       },
       {
        ":block/refs": [
@@ -62121,7 +62121,7 @@
        ],
        ":block/uid": "hy237MoSG",
        ":block/string": "[[April 10th, 2026]]",
-       ":block/order": 32
+       ":block/order": 33
       },
       {
        ":block/refs": [
@@ -62343,7 +62343,7 @@
        ],
        ":block/uid": "Ld3WwhXAJ",
        ":block/string": "[[April 14th, 2026]]",
-       ":block/order": 31
+       ":block/order": 32
       },
       {
        ":block/refs": [
@@ -62394,7 +62394,7 @@
        ],
        ":block/uid": "FX03un0yx",
        ":block/string": "[[April 15th, 2026]]",
-       ":block/order": 30
+       ":block/order": 31
       },
       {
        ":block/refs": [
@@ -62443,7 +62443,7 @@
        ],
        ":block/uid": "Tdxn9p6T-",
        ":block/string": "[[April 17th, 2026]]",
-       ":block/order": 29
+       ":block/order": 30
       },
       {
        ":block/refs": [
@@ -64123,7 +64123,7 @@
        ],
        ":block/uid": "yYmOmnffK",
        ":block/string": "[[April 27th, 2026]]",
-       ":block/order": 28
+       ":block/order": 29
       },
       {
        ":block/refs": [
@@ -64203,7 +64203,7 @@
        ],
        ":block/uid": "E8B5FpUqb",
        ":block/string": "[[May 1st, 2026]]",
-       ":block/order": 27
+       ":block/order": 28
       },
       {
        ":block/refs": [
@@ -64387,7 +64387,7 @@
        ],
        ":block/uid": "_bXQOG7-W",
        ":block/string": "[[May 4th, 2026]]",
-       ":block/order": 26
+       ":block/order": 27
       },
       {
        ":block/refs": [
@@ -64486,7 +64486,7 @@
        ],
        ":block/uid": "77u8rD3tN",
        ":block/string": "[[May 5th, 2026]]",
-       ":block/order": 25
+       ":block/order": 26
       },
       {
        ":block/refs": [
@@ -64549,7 +64549,7 @@
        ],
        ":block/uid": "4jefQzlrL",
        ":block/string": "[[May 15th, 2026]]",
-       ":block/order": 24
+       ":block/order": 25
       },
       {
        ":block/refs": [
@@ -64605,7 +64605,7 @@
        ],
        ":block/uid": "yCa6IFyF-",
        ":block/string": "[[May 21st, 2026]]",
-       ":block/order": 23
+       ":block/order": 24
       },
       {
        ":block/refs": [
@@ -64646,7 +64646,7 @@
        ],
        ":block/uid": "s1JCTlMYp",
        ":block/string": "[[May 28th, 2026]]",
-       ":block/order": 22
+       ":block/order": 23
       },
       {
        ":block/refs": [
@@ -64688,7 +64688,7 @@
        ],
        ":block/uid": "GtQy1iARj",
        ":block/string": "[[June 1st, 2026]]",
-       ":block/order": 21
+       ":block/order": 22
       },
       {
        ":block/refs": [
@@ -64815,7 +64815,7 @@
        ],
        ":block/uid": "FfZFcIMVi",
        ":block/string": "[[June 2nd, 2026]]",
-       ":block/order": 20
+       ":block/order": 21
       },
       {
        ":block/refs": [
@@ -64851,7 +64851,7 @@
        ],
        ":block/uid": "o0biga_ls",
        ":block/string": "[[June 9th, 2026]]",
-       ":block/order": 19
+       ":block/order": 20
       },
       {
        ":block/refs": [
@@ -64880,7 +64880,7 @@
        ],
        ":block/uid": "1oHVhjf1j",
        ":block/string": "[[June 10th, 2026]]",
-       ":block/order": 18
+       ":block/order": 19
       },
       {
        ":block/refs": [
@@ -64919,7 +64919,7 @@
        ],
        ":block/uid": "jlW42mQ3s",
        ":block/string": "[[June 11th, 2026]]",
-       ":block/order": 17
+       ":block/order": 18
       },
       {
        ":block/refs": [
@@ -65466,7 +65466,7 @@
        ],
        ":block/uid": "Wp3IwehIi",
        ":block/string": "[[June 13th, 2026]]",
-       ":block/order": 16
+       ":block/order": 17
       },
       {
        ":block/refs": [
@@ -65607,7 +65607,7 @@
        ],
        ":block/uid": "T7MyhAu_Z",
        ":block/string": "[[June 30th, 2026]]",
-       ":block/order": 15
+       ":block/order": 16
       },
       {
        ":block/refs": [
@@ -65663,7 +65663,7 @@
        ],
        ":block/uid": "MdrAuMqaU",
        ":block/string": "[[July 2nd, 2026]]",
-       ":block/order": 14
+       ":block/order": 15
       },
       {
        ":block/refs": [
@@ -65692,7 +65692,7 @@
        ],
        ":block/uid": "MUux5EgdX",
        ":block/string": "[[July 6th, 2026]]",
-       ":block/order": 13
+       ":block/order": 14
       },
       {
        ":block/refs": [
@@ -65726,7 +65726,7 @@
        ],
        ":block/uid": "Omo5TNL1L",
        ":block/string": "[[July 7th, 2026]]",
-       ":block/order": 12
+       ":block/order": 13
       },
       {
        ":block/refs": [
@@ -65905,7 +65905,7 @@
        ],
        ":block/uid": "6kZb0aiyX",
        ":block/string": "[[July 10th, 2026]]",
-       ":block/order": 11
+       ":block/order": 12
       },
       {
        ":block/refs": [
@@ -66058,7 +66058,7 @@
        ],
        ":block/uid": "VoTSRMSbW",
        ":block/string": "[[July 13th, 2026]]",
-       ":block/order": 10
+       ":block/order": 11
       },
       {
        ":block/refs": [
@@ -66092,7 +66092,7 @@
        ],
        ":block/uid": "x3tGBCvQq",
        ":block/string": "[[July 15th, 2026]]",
-       ":block/order": 9
+       ":block/order": 10
       },
       {
        ":block/refs": [
@@ -66121,7 +66121,7 @@
        ],
        ":block/uid": "CNp2sgkob",
        ":block/string": "[[July 23rd, 2026]]",
-       ":block/order": 8
+       ":block/order": 9
       },
       {
        ":block/refs": [
@@ -66172,7 +66172,7 @@
        ],
        ":block/uid": "Oe6_LO9ka",
        ":block/string": "[[July 28th, 2026]]",
-       ":block/order": 7
+       ":block/order": 8
       },
       {
        ":block/refs": [
@@ -66232,7 +66232,7 @@
        ],
        ":block/uid": "jYcUoRTGl",
        ":block/string": "[[July 29th, 2026]]",
-       ":block/order": 6
+       ":block/order": 7
       },
       {
        ":block/refs": [
@@ -66872,7 +66872,7 @@
        ],
        ":block/uid": "iYlYbcCWh",
        ":block/string": "[[August 11th, 2026]]",
-       ":block/order": 5
+       ":block/order": 6
       },
       {
        ":block/refs": [
@@ -68463,7 +68463,7 @@
        ],
        ":block/uid": "YXoTyc5pB",
        ":block/string": "[[August 22nd, 2026]]",
-       ":block/order": 4
+       ":block/order": 5
       },
       {
        ":block/refs": [
@@ -68480,7 +68480,7 @@
        ],
        ":block/uid": "3uD6RaJ7K",
        ":block/string": "[[September 9th, 2026]]",
-       ":block/order": 3
+       ":block/order": 4
       },
       {
        ":block/refs": [
@@ -68972,7 +68972,7 @@
        ],
        ":block/uid": "ZCXwQjjYw",
        ":block/string": "[[September 11th, 2026]]",
-       ":block/order": 2
+       ":block/order": 3
       },
       {
        ":block/refs": [
@@ -69188,7 +69188,7 @@
        ],
        ":block/uid": "kBLGC17Sb",
        ":block/string": "[[September 28th, 2026]]",
-       ":block/order": 1
+       ":block/order": 2
       },
       {
        ":block/refs": [
@@ -69604,6 +69604,627 @@
        ],
        ":block/uid": "wSIxrE1g0",
        ":block/string": "[[September 29th, 2026]]",
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "10-06-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "TpA4naC1T"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "j1Q28ATH_",
+             ":block/string": "Page and block suggestions pop up as you type, without typing `[[` first. Works with Chinese, Japanese, and Korean input methods.",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "JPtOVCSER",
+             ":block/string": "Made by [Maverick Li](https://maverickli.org/).",
+             ":block/order": 1
+            },
+            {
+             ":block/uid": "WSL2RBLV2",
+             ":block/string": "![Typing pinyin in Roam: nothing interrupts while the IME is composing, then page and block suggestions appear and insert a page link and a block reference](https://github.com/mmssddss/roam-inline-autocomplete/raw/main/resource/auto-completion.gif)[🔗](https://github.com/mmssddss/roam-inline-autocomplete/blob/main/resource/auto-completion.gif)",
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "q9AYU-pxB",
+                 ":block/string": "Clone or download this repository.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "1osXr1VyG",
+                 ":block/string": "In Roam, open Settings → Roam Depot and turn on Enable developer mode (the ⚙ in the top-right corner).",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "q3fRKD904",
+                 ":block/string": "Under Developer Extensions, click Load extension and choose the folder.",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "GNjJWyjUF",
+                 ":block/string": "After editing `extension.js`, click Reload in the same place.",
+                 ":block/order": 3
+                }
+               ],
+               ":block/uid": "xzPA9W91d",
+               ":children/view-type": "numbered",
+               ":block/string": "Single file, no build step and no dependencies — `extension.js` is the whole extension.",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "8H97wp00t",
+             ":block/string": "Install",
+             ":block/heading": 2,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "2-eIgz-4z"
+                }
+               ],
+               ":block/children": [
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "KZ1fA01sv",
+                   ":block/string": "What it does",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "8-F0pmdzM",
+                 ":block/string": "Key",
+                 ":block/order": 0
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "i8xs5x-zX",
+                   ":block/string": "Suggestions appear when the text before the cursor matches a page title, or the text of a block",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "pcYynEZg3",
+                 ":block/string": "Type as usual",
+                 ":block/order": 1
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "J2tZWgquO",
+                   ":block/string": "Move through the suggestions",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "aV4AwFRJu",
+                 ":block/string": "↑ / ↓",
+                 ":block/order": 2
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "V4laerr6R",
+                   ":block/string": "Page: replaces the matched text with `[[Title]]` (or `#tag`). Block: replaces it with `((uid))` (or `[text](((uid)))`). If the text before the cursor no longer matches the suggestion (say you moved the cursor), nothing is replaced and the key works as usual",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "1EWSd8MmW",
+                 ":block/string": "Enter / Tab",
+                 ":block/order": 3
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "BL87YIDD8",
+                   ":block/string": "Move the cursor as usual and close the suggestions",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "YsSRyFRBN",
+                 ":block/string": "← / → / Home / End",
+                 ":block/order": 4
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "9MLVLAH6r",
+                   ":block/string": "Inserts the suggestion you clicked, same as Enter",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "cmt-N1nKd",
+                 ":block/string": "Click",
+                 ":block/order": 5
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "iSgL0mTk-",
+                   ":block/string": "Close the suggestions. They stay closed while you keep typing that same word, and come back once you delete part of it, move on to another word, or switch blocks",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "CPGOnxBhT",
+                 ":block/string": "Esc",
+                 ":block/order": 6
+                }
+               ],
+               ":block/uid": "UpEe9NZ7W",
+               ":block/string": "{{[[table]]}}",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "u9HfvCLIL",
+               ":block/string": "To stay out of the way of Roam's own autocomplete, nothing pops up inside `[[ ]]`, `(( ))`, `{{ }}`, `#tag`, `/commands`, `attribute::`, or ``` code blocks.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "pF_Zy5P_z",
+             ":block/string": "Usage",
+             ":block/heading": 2,
+             ":block/order": 4
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "Ya1-tt1-a",
+                 ":block/string": "Pages are the plain title in your theme's page-link color — no `[[ ]]` around it (a `#` goes in front if you insert tags).",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "U9A3-CwmY",
+                 ":block/string": "Blocks are in the normal text color, with a bullet and the page they're on underneath. Picking one inserts a block reference; it never creates a new page.",
+                 ":block/order": 1
+                }
+               ],
+               ":block/uid": "xxACkPXhD",
+               ":block/string": "Color tells you what a suggestion is:",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "okbgp49Fl",
+               ":block/string": "The part that matched is bold with a light background in both, so the color stays free to mean page or block.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "XSC5fFLg5",
+               ":block/string": "Pages come first, then blocks, with a divider in between. Pages show up as you type. Blocks are searched once you pause for 250 ms, so a large graph isn't searched on every keystroke; they are added below the pages without moving the selection. As you keep typing the same word, the block results are narrowed down from that search right away instead of searching again. If only blocks matched, the popup opens when they arrive, and for its first 200 ms Enter and Tab still go to Roam, so a newline you were already typing isn't taken over. Block search is on by default, starts at 3 characters for Chinese, Japanese, or Korean text and 4 for other text, and shows up to 10 blocks. You can change these or turn it off in the settings. Blocks are searched by the whole word in front of the cursor; only if that finds nothing does it fall back to the shorter piece that matched a page title.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "xZaONMLa1",
+             ":block/string": "Suggestions",
+             ":block/heading": 2,
+             ":block/order": 5
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "P2wPi5yw5",
+               ":block/string": "The popup has two panes: suggestions on the left and a live preview of the selected one on the right (switch with ↑ / ↓ or by hovering). Key hints run along the bottom.",
+               ":block/order": 0
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "Qck4RrNQ6",
+                 ":block/string": "Page: the title, how many blocks it has and how many linked references point to it, and an outline of the page.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "7La686bTo",
+                 ":block/string": "Block: the page it's on, the block's text, and its children.",
+                 ":block/order": 1
+                }
+               ],
+               ":block/uid": "D5lL9n0zh",
+               ":block/string": "![The popup split in two: page and block suggestions on the left, and on the right the selected block with the page it lives on and its children](https://github.com/mmssddss/roam-inline-autocomplete/raw/main/resource/preview.png)[🔗](https://github.com/mmssddss/roam-inline-autocomplete/blob/main/resource/preview.png)",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "RVqy8OYES",
+               ":block/string": "The preview is read-only. It lightly styles `[[links]]`, `#tags`, `((references))` (shown as the referenced block's text), bold, italic, highlights, code, and `{{[[TODO]]}}` / `{{[[DONE]]}}` checkboxes, and shows up to 28 blocks, 4 levels deep. In windows narrower than 640px, only the list is shown.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "9PK88B7LK",
+             ":block/string": "Preview",
+             ":block/heading": 2,
+             ":block/order": 6
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "umfljBom6",
+                 ":block/string": "Roam's own light and dark mode. Instead of guessing at Roam's palette, the popup measures it: the background, text, page-link color, highlight, bullet, shadow, and corner radius Roam is actually using.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "tuR5g5kdq",
+                 ":block/string": "[Roam Studio](https://github.com/rcvd/RoamStudio). Whichever theme (Craft, Things, Quattro, and so on) and appearance (Light / Dark / Auto) is active, read from Roam Studio's own variables.",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "3BooAJx3m",
+                 ":block/string": "Custom `roam/css` themes. Same measuring, so most of them come through too.",
+                 ":block/order": 2
+                }
+               ],
+               ":block/uid": "4XGeArdqj",
+               ":block/string": "The popup takes its colors from whatever theme you are on, in light and dark alike. No setup needed.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "VrpiTrByD",
+               ":block/string": "Colors that would be hard to read are adjusted rather than dropped: a link color that falls just short of the 4.5:1 contrast ratio is lightened or darkened a little, keeping its hue. If a theme's colors can't be read at all, the popup falls back to its own light or dark palette.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "hBsH8G6TW",
+               ":block/string": "Themes are measured once and cached until Roam's theme changes. If you edit your own CSS while Roam is open, run Inline Autocomplete: Refresh theme colors from the command palette.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "lZ9Twk_qq",
+             ":block/string": "Appearance",
+             ":block/heading": 2,
+             ":block/order": 7
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "AeNIS9Q9G",
+               ":block/string": "Nothing pops up while your input method is composing (pinyin, kana, and so on). Matching starts once the text is committed (`compositionend`).",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "aio4ad9sv",
+               ":block/string": "These languages don't put spaces between words, so the extension looks back up to __Lookback length__ characters from the cursor and finds the longest ending that matches a page title. For example, with a page named 机器学习, typing 今天在看机器 matches 机器 and suggests 机器学习.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "GCPFe62Qw",
+             ":block/string": "Chinese, Japanese, and Korean",
+             ":block/heading": 2,
+             ":block/order": 8
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "Sx3vynOlT",
+               ":block/string": "Find them under Settings → Inline Autocomplete.",
+               ":block/order": 0
+              },
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "2-eIgz-4z"
+                }
+               ],
+               ":block/children": [
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "EOy4tVDw6",
+                     ":block/string": "What it does",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "Pg9AM--DQ",
+                   ":block/string": "Default",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "ihLNJpiWS",
+                 ":block/string": "Setting",
+                 ":block/order": 0
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "9Wde42Qtz",
+                     ":block/string": "Turns suggestions on or off",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "MthPnTshk",
+                   ":block/string": "On",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "faI0MTXrC",
+                 ":block/string": "Enable",
+                 ":block/order": 1
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "BbEnAgGyK",
+                     ":block/string": "Characters needed before the cursor before pages are matched (blocks have their own setting below)",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "hGYAC7QfX",
+                   ":block/string": "2",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "mCWmW7mkX",
+                 ":block/string": "Minimum characters",
+                 ":block/order": 2
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "Alsy1MoLp",
+                     ":block/string": "How far back to look for a match in languages without spaces",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "f58QvGqLF",
+                   ":block/string": "24",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "OxfyOhS2B",
+                 ":block/string": "Lookback length",
+                 ":block/order": 3
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "7goeQWfju",
+                     ":block/string": "How many pages to show (the list scrolls)",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "kuO5q1rTZ",
+                   ":block/string": "25",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "ETZLc-9Mn",
+                 ":block/string": "Max page suggestions",
+                 ":block/order": 4
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "iu5U8H9wV",
+                     ":block/string": "How long to wait after you stop typing before matching pages. Raise it if typing feels sluggish in a big graph",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "82gYpVwiR",
+                   ":block/string": "0",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "1vSxe5vaV",
+                 ":block/string": "Delay (ms)",
+                 ":block/order": 5
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "R8CP3OMWz",
+                     ":block/string": "Leaves date pages out of the suggestions",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "q4ZhKKgop",
+                   ":block/string": "On",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "9iDhBTarK",
+                 ":block/string": "Skip daily notes pages",
+                 ":block/order": 6
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "uXIH8ZXnP",
+                     ":block/string": "Insert `[[page]]` or `#tag`",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "IR83dZoZD",
+                   ":block/string": "`[[page]]`",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "vVMc3_hCB",
+                 ":block/string": "Page link format",
+                 ":block/order": 7
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "p8JSXrVEQ",
+                     ":block/string": "Also suggest matching blocks",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "-jse9PeIm",
+                   ":block/string": "On",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "VjFrcpUVc",
+                 ":block/string": "Suggest blocks",
+                 ":block/order": 8
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "VvYNz1VYo",
+                     ":block/string": "Characters needed before blocks are searched, for text with Chinese, Japanese, or Korean characters",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "WtbdKA94a",
+                   ":block/string": "3",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "0CqtX-4Bo",
+                 ":block/string": "Minimum characters for blocks",
+                 ":block/order": 9
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "sxYTKTTVG",
+                     ":block/string": "Same, for text without them, such as English",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "X8nMrp4_0",
+                   ":block/string": "4",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "_VpP1xKDO",
+                 ":block/string": "Minimum characters for blocks (other text)",
+                 ":block/order": 10
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "MZ3w-6An9",
+                     ":block/string": "How long to wait after you stop typing before searching blocks. Page suggestions don't wait. 0 searches on every keystroke",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "Y96f3hGB8",
+                   ":block/string": "250",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "_4rvxLXEb",
+                 ":block/string": "Block search delay (ms)",
+                 ":block/order": 11
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "FSVAuemb5",
+                     ":block/string": "How many blocks to show",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "vJfgg6QnD",
+                   ":block/string": "10",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "VEmTjAcKR",
+                 ":block/string": "Max block suggestions",
+                 ":block/order": 12
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "l8wYF8Fnm",
+                     ":block/string": "Insert `((uid))` or `[text](((uid)))`",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "qRAqEu_Hp",
+                   ":block/string": "`((uid))`",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "EcgwpcMuv",
+                 ":block/string": "Block reference format",
+                 ":block/order": 13
+                }
+               ],
+               ":block/uid": "pWGH0DcjT",
+               ":block/string": "{{[[table]]}}",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "MGoRjHnsS",
+               ":block/string": "The command palette has Inline Autocomplete: Toggle to turn suggestions on or off, Inline Autocomplete: Refresh page titles to pick up pages created in the last 30 seconds, and Inline Autocomplete: Refresh theme colors to re-read the theme after you change your CSS.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "jRQ5LpjfC",
+               ":block/string": "The Author row at the bottom of the settings opens [Maverick Li's blog](https://maverickli.org/).",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "Ft5kTbmOY",
+             ":block/string": "Settings",
+             ":block/heading": 2,
+             ":block/order": 9
+            }
+           ],
+           ":block/uid": "U83FHpdQx",
+           ":block/string": "Inline Autocomplete for Roam Research",
+           ":block/heading": 1,
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "haEbM4OtS",
+         ":block/string": "[[Roam Depot Extensions]]",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "hI0U1YW-Q",
+       ":block/string": "[[October 6th, 2026]]",
        ":block/order": 0
       }
      ],
@@ -82188,6 +82809,10 @@
   {
    ":node/title": "Export all",
    ":block/uid": "n9ItiV9WF"
+  },
+  {
+   ":node/title": "October 6th, 2026",
+   ":block/uid": "10-06-2026"
   },
   {
    ":node/title": "July 21st, 2021",

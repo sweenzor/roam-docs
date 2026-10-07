@@ -4,6 +4,104 @@
 
 ### **New Changes**
 
+- [[October 6th, 2026]]
+  - [[Roam Depot Extensions]]
+    - **Inline Autocomplete for Roam Research**
+      - Page and block suggestions pop up as you type, without typing `[[` first. Works with Chinese, Japanese, and Korean input methods.
+      - Made by [Maverick Li](https://maverickli.org/).
+      - ![Typing pinyin in Roam: nothing interrupts while the IME is composing, then page and block suggestions appear and insert a page link and a block reference](https://github.com/mmssddss/roam-inline-autocomplete/raw/main/resource/auto-completion.gif)[🔗](https://github.com/mmssddss/roam-inline-autocomplete/blob/main/resource/auto-completion.gif)
+      - **Install**
+        - Single file, no build step and no dependencies — `extension.js` is the whole extension.
+          - Clone or download this repository.
+          - In Roam, open Settings → Roam Depot and turn on Enable developer mode (the ⚙ in the top-right corner).
+          - Under Developer Extensions, click Load extension and choose the folder.
+          - After editing `extension.js`, click Reload in the same place.
+      - **Usage**
+        - {{[[table]]}}
+          - Key
+            - What it does
+          - Type as usual
+            - Suggestions appear when the text before the cursor matches a page title, or the text of a block
+          - ↑ / ↓
+            - Move through the suggestions
+          - Enter / Tab
+            - Page: replaces the matched text with `[[Title]]` (or `#tag`). Block: replaces it with `((uid))` (or `[text](((uid)))`). If the text before the cursor no longer matches the suggestion (say you moved the cursor), nothing is replaced and the key works as usual
+          - ← / → / Home / End
+            - Move the cursor as usual and close the suggestions
+          - Click
+            - Inserts the suggestion you clicked, same as Enter
+          - Esc
+            - Close the suggestions. They stay closed while you keep typing that same word, and come back once you delete part of it, move on to another word, or switch blocks
+        - To stay out of the way of Roam's own autocomplete, nothing pops up inside `[[ ]]`, `(( ))`, `{{ }}`, `#tag`, `/commands`, `attribute::`, or ``` code blocks.
+      - **Suggestions**
+        - Color tells you what a suggestion is:
+          - Pages are the plain title in your theme's page-link color — no `[[ ]]` around it (a `#` goes in front if you insert tags).
+          - Blocks are in the normal text color, with a bullet and the page they're on underneath. Picking one inserts a block reference; it never creates a new page.
+        - The part that matched is bold with a light background in both, so the color stays free to mean page or block.
+        - Pages come first, then blocks, with a divider in between. Pages show up as you type. Blocks are searched once you pause for 250 ms, so a large graph isn't searched on every keystroke; they are added below the pages without moving the selection. As you keep typing the same word, the block results are narrowed down from that search right away instead of searching again. If only blocks matched, the popup opens when they arrive, and for its first 200 ms Enter and Tab still go to Roam, so a newline you were already typing isn't taken over. Block search is on by default, starts at 3 characters for Chinese, Japanese, or Korean text and 4 for other text, and shows up to 10 blocks. You can change these or turn it off in the settings. Blocks are searched by the whole word in front of the cursor; only if that finds nothing does it fall back to the shorter piece that matched a page title.
+      - **Preview**
+        - The popup has two panes: suggestions on the left and a live preview of the selected one on the right (switch with ↑ / ↓ or by hovering). Key hints run along the bottom.
+        - ![The popup split in two: page and block suggestions on the left, and on the right the selected block with the page it lives on and its children](https://github.com/mmssddss/roam-inline-autocomplete/raw/main/resource/preview.png)[🔗](https://github.com/mmssddss/roam-inline-autocomplete/blob/main/resource/preview.png)
+          - Page: the title, how many blocks it has and how many linked references point to it, and an outline of the page.
+          - Block: the page it's on, the block's text, and its children.
+        - The preview is read-only. It lightly styles `[[links]]`, `#tags`, `((references))` (shown as the referenced block's text), bold, italic, highlights, code, and `{{[[TODO]]}}` / `{{[[DONE]]}}` checkboxes, and shows up to 28 blocks, 4 levels deep. In windows narrower than 640px, only the list is shown.
+      - **Appearance**
+        - The popup takes its colors from whatever theme you are on, in light and dark alike. No setup needed.
+          - Roam's own light and dark mode. Instead of guessing at Roam's palette, the popup measures it: the background, text, page-link color, highlight, bullet, shadow, and corner radius Roam is actually using.
+          - [Roam Studio](https://github.com/rcvd/RoamStudio). Whichever theme (Craft, Things, Quattro, and so on) and appearance (Light / Dark / Auto) is active, read from Roam Studio's own variables.
+          - Custom `roam/css` themes. Same measuring, so most of them come through too.
+        - Colors that would be hard to read are adjusted rather than dropped: a link color that falls just short of the 4.5:1 contrast ratio is lightened or darkened a little, keeping its hue. If a theme's colors can't be read at all, the popup falls back to its own light or dark palette.
+        - Themes are measured once and cached until Roam's theme changes. If you edit your own CSS while Roam is open, run Inline Autocomplete: Refresh theme colors from the command palette.
+      - **Chinese, Japanese, and Korean**
+        - Nothing pops up while your input method is composing (pinyin, kana, and so on). Matching starts once the text is committed (`compositionend`).
+        - These languages don't put spaces between words, so the extension looks back up to __Lookback length__ characters from the cursor and finds the longest ending that matches a page title. For example, with a page named 机器学习, typing 今天在看机器 matches 机器 and suggests 机器学习.
+      - **Settings**
+        - Find them under Settings → Inline Autocomplete.
+        - {{[[table]]}}
+          - Setting
+            - Default
+              - What it does
+          - Enable
+            - On
+              - Turns suggestions on or off
+          - Minimum characters
+            - 2
+              - Characters needed before the cursor before pages are matched (blocks have their own setting below)
+          - Lookback length
+            - 24
+              - How far back to look for a match in languages without spaces
+          - Max page suggestions
+            - 25
+              - How many pages to show (the list scrolls)
+          - Delay (ms)
+            - 0
+              - How long to wait after you stop typing before matching pages. Raise it if typing feels sluggish in a big graph
+          - Skip daily notes pages
+            - On
+              - Leaves date pages out of the suggestions
+          - Page link format
+            - `[[page]]`
+              - Insert `[[page]]` or `#tag`
+          - Suggest blocks
+            - On
+              - Also suggest matching blocks
+          - Minimum characters for blocks
+            - 3
+              - Characters needed before blocks are searched, for text with Chinese, Japanese, or Korean characters
+          - Minimum characters for blocks (other text)
+            - 4
+              - Same, for text without them, such as English
+          - Block search delay (ms)
+            - 250
+              - How long to wait after you stop typing before searching blocks. Page suggestions don't wait. 0 searches on every keystroke
+          - Max block suggestions
+            - 10
+              - How many blocks to show
+          - Block reference format
+            - `((uid))`
+              - Insert `((uid))` or `[text](((uid)))`
+        - The command palette has Inline Autocomplete: Toggle to turn suggestions on or off, Inline Autocomplete: Refresh page titles to pick up pages created in the last 30 seconds, and Inline Autocomplete: Refresh theme colors to re-read the theme after you change your CSS.
+        - The Author row at the bottom of the settings opens [Maverick Li's blog](https://maverickli.org/).
 - [[September 29th, 2026]]
   - [[Roam Depot Extensions]]
     - **Live Themes - AI-powered theming**
