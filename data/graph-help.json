@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-10-07T11:57:53.380Z",
+ "exportedAt": "2026-10-08T12:13:07.864Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -35175,7 +35175,7 @@
        ":block/uid": "z7nDW4FYi",
        ":block/string": "[[2021]]",
        ":block/heading": 3,
-       ":block/order": 55
+       ":block/order": 56
       },
       {
        ":block/refs": [
@@ -38338,7 +38338,7 @@
        ":block/uid": "oEUzBpPVt",
        ":block/string": "[[2022]]",
        ":block/heading": 3,
-       ":block/order": 54
+       ":block/order": 55
       },
       {
        ":block/refs": [
@@ -42920,7 +42920,7 @@
        ":block/uid": "3DcyG9fYJ",
        ":block/string": "[[2023]]",
        ":block/heading": 3,
-       ":block/order": 53
+       ":block/order": 54
       },
       {
        ":block/refs": [
@@ -48758,7 +48758,7 @@
        ":block/uid": "N8o9mOFxV",
        ":block/string": "[[2024]]",
        ":block/heading": 3,
-       ":block/order": 52
+       ":block/order": 53
       },
       {
        ":block/refs": [
@@ -48846,7 +48846,7 @@
        ],
        ":block/uid": "mbBXOyRr4",
        ":block/string": "[[January 7th, 2026]]",
-       ":block/order": 50
+       ":block/order": 51
       },
       {
        ":block/refs": [
@@ -49693,7 +49693,7 @@
        ],
        ":block/uid": "D4sWwAFQH",
        ":block/string": "[[January 12th, 2026]]",
-       ":block/order": 49
+       ":block/order": 50
       },
       {
        ":block/refs": [
@@ -50111,7 +50111,7 @@
        ],
        ":block/uid": "fZnJ8SpjV",
        ":block/string": "[[January 16th, 2026]]",
-       ":block/order": 48
+       ":block/order": 49
       },
       {
        ":block/refs": [
@@ -59253,7 +59253,7 @@
        ":block/uid": "e3HyGxGmz",
        ":block/string": "[[2025]]",
        ":block/heading": 3,
-       ":block/order": 51
+       ":block/order": 52
       },
       {
        ":block/refs": [
@@ -59480,7 +59480,7 @@
        ],
        ":block/uid": "DQLXBkLqB",
        ":block/string": "[[January 30th, 2026]]",
-       ":block/order": 47
+       ":block/order": 48
       },
       {
        ":block/refs": [
@@ -59786,7 +59786,7 @@
        ],
        ":block/uid": "faBrrXpMf",
        ":block/string": "[[February 10th, 2026]]",
-       ":block/order": 46
+       ":block/order": 47
       },
       {
        ":block/refs": [
@@ -59843,7 +59843,7 @@
        ],
        ":block/uid": "HGdio9-X1",
        ":block/string": "[[February 11th, 2026]]",
-       ":block/order": 45
+       ":block/order": 46
       },
       {
        ":block/refs": [
@@ -60003,7 +60003,7 @@
        ],
        ":block/uid": "3YbHyvMVu",
        ":block/string": "[[February 18th, 2026]]",
-       ":block/order": 44
+       ":block/order": 45
       },
       {
        ":block/refs": [
@@ -60093,7 +60093,7 @@
        ],
        ":block/uid": "l1CEHstpS",
        ":block/string": "[[February 19th, 2026]]",
-       ":block/order": 43
+       ":block/order": 44
       },
       {
        ":block/refs": [
@@ -60151,7 +60151,7 @@
        ],
        ":block/uid": "w7XCOWrmV",
        ":block/string": "[[February 22nd, 2026]]",
-       ":block/order": 42
+       ":block/order": 43
       },
       {
        ":block/refs": [
@@ -60244,7 +60244,7 @@
        ],
        ":block/uid": "lq5IvpQ7J",
        ":block/string": "[[February 25th, 2026]]",
-       ":block/order": 41
+       ":block/order": 42
       },
       {
        ":block/refs": [
@@ -61042,7 +61042,7 @@
        ],
        ":block/uid": "ipU_NCoCx",
        ":block/string": "[[February 26th, 2026]]",
-       ":block/order": 40
+       ":block/order": 41
       },
       {
        ":block/refs": [
@@ -61090,7 +61090,7 @@
        ],
        ":block/uid": "WO-6A7VX9",
        ":block/string": "[[February 27th, 2026]]",
-       ":block/order": 39
+       ":block/order": 40
       },
       {
        ":block/refs": [
@@ -61225,7 +61225,7 @@
        ],
        ":block/uid": "AHy3mUokJ",
        ":block/string": "[[March 9th, 2026]]",
-       ":block/order": 38
+       ":block/order": 39
       },
       {
        ":block/refs": [
@@ -61395,7 +61395,7 @@
        ],
        ":block/uid": "-R8L5nZLD",
        ":block/string": "[[March 11th, 2026]]",
-       ":block/order": 37
+       ":block/order": 38
       },
       {
        ":block/refs": [
@@ -61519,7 +61519,7 @@
        ],
        ":block/uid": "e5HOoYOYK",
        ":block/string": "[[March 24th, 2026]]",
-       ":block/order": 36
+       ":block/order": 37
       },
       {
        ":block/refs": [
@@ -61558,7 +61558,7 @@
        ],
        ":block/uid": "hP0WzVCb3",
        ":block/string": "[[March 30th, 2026]]",
-       ":block/order": 35
+       ":block/order": 36
       },
       {
        ":block/refs": [
@@ -62057,7 +62057,7 @@
        ],
        ":block/uid": "kYfXB-KfD",
        ":block/string": "[[March 31st, 2026]]",
-       ":block/order": 34
+       ":block/order": 35
       },
       {
        ":block/refs": [
@@ -62121,7 +62121,7 @@
        ],
        ":block/uid": "hy237MoSG",
        ":block/string": "[[April 10th, 2026]]",
-       ":block/order": 33
+       ":block/order": 34
       },
       {
        ":block/refs": [
@@ -62343,7 +62343,7 @@
        ],
        ":block/uid": "Ld3WwhXAJ",
        ":block/string": "[[April 14th, 2026]]",
-       ":block/order": 32
+       ":block/order": 33
       },
       {
        ":block/refs": [
@@ -62394,7 +62394,7 @@
        ],
        ":block/uid": "FX03un0yx",
        ":block/string": "[[April 15th, 2026]]",
-       ":block/order": 31
+       ":block/order": 32
       },
       {
        ":block/refs": [
@@ -62443,7 +62443,7 @@
        ],
        ":block/uid": "Tdxn9p6T-",
        ":block/string": "[[April 17th, 2026]]",
-       ":block/order": 30
+       ":block/order": 31
       },
       {
        ":block/refs": [
@@ -64123,7 +64123,7 @@
        ],
        ":block/uid": "yYmOmnffK",
        ":block/string": "[[April 27th, 2026]]",
-       ":block/order": 29
+       ":block/order": 30
       },
       {
        ":block/refs": [
@@ -64203,7 +64203,7 @@
        ],
        ":block/uid": "E8B5FpUqb",
        ":block/string": "[[May 1st, 2026]]",
-       ":block/order": 28
+       ":block/order": 29
       },
       {
        ":block/refs": [
@@ -64387,7 +64387,7 @@
        ],
        ":block/uid": "_bXQOG7-W",
        ":block/string": "[[May 4th, 2026]]",
-       ":block/order": 27
+       ":block/order": 28
       },
       {
        ":block/refs": [
@@ -64486,7 +64486,7 @@
        ],
        ":block/uid": "77u8rD3tN",
        ":block/string": "[[May 5th, 2026]]",
-       ":block/order": 26
+       ":block/order": 27
       },
       {
        ":block/refs": [
@@ -64549,7 +64549,7 @@
        ],
        ":block/uid": "4jefQzlrL",
        ":block/string": "[[May 15th, 2026]]",
-       ":block/order": 25
+       ":block/order": 26
       },
       {
        ":block/refs": [
@@ -64605,7 +64605,7 @@
        ],
        ":block/uid": "yCa6IFyF-",
        ":block/string": "[[May 21st, 2026]]",
-       ":block/order": 24
+       ":block/order": 25
       },
       {
        ":block/refs": [
@@ -64646,7 +64646,7 @@
        ],
        ":block/uid": "s1JCTlMYp",
        ":block/string": "[[May 28th, 2026]]",
-       ":block/order": 23
+       ":block/order": 24
       },
       {
        ":block/refs": [
@@ -64688,7 +64688,7 @@
        ],
        ":block/uid": "GtQy1iARj",
        ":block/string": "[[June 1st, 2026]]",
-       ":block/order": 22
+       ":block/order": 23
       },
       {
        ":block/refs": [
@@ -64815,7 +64815,7 @@
        ],
        ":block/uid": "FfZFcIMVi",
        ":block/string": "[[June 2nd, 2026]]",
-       ":block/order": 21
+       ":block/order": 22
       },
       {
        ":block/refs": [
@@ -64851,7 +64851,7 @@
        ],
        ":block/uid": "o0biga_ls",
        ":block/string": "[[June 9th, 2026]]",
-       ":block/order": 20
+       ":block/order": 21
       },
       {
        ":block/refs": [
@@ -64880,7 +64880,7 @@
        ],
        ":block/uid": "1oHVhjf1j",
        ":block/string": "[[June 10th, 2026]]",
-       ":block/order": 19
+       ":block/order": 20
       },
       {
        ":block/refs": [
@@ -64919,7 +64919,7 @@
        ],
        ":block/uid": "jlW42mQ3s",
        ":block/string": "[[June 11th, 2026]]",
-       ":block/order": 18
+       ":block/order": 19
       },
       {
        ":block/refs": [
@@ -65466,7 +65466,7 @@
        ],
        ":block/uid": "Wp3IwehIi",
        ":block/string": "[[June 13th, 2026]]",
-       ":block/order": 17
+       ":block/order": 18
       },
       {
        ":block/refs": [
@@ -65607,7 +65607,7 @@
        ],
        ":block/uid": "T7MyhAu_Z",
        ":block/string": "[[June 30th, 2026]]",
-       ":block/order": 16
+       ":block/order": 17
       },
       {
        ":block/refs": [
@@ -65663,7 +65663,7 @@
        ],
        ":block/uid": "MdrAuMqaU",
        ":block/string": "[[July 2nd, 2026]]",
-       ":block/order": 15
+       ":block/order": 16
       },
       {
        ":block/refs": [
@@ -65692,7 +65692,7 @@
        ],
        ":block/uid": "MUux5EgdX",
        ":block/string": "[[July 6th, 2026]]",
-       ":block/order": 14
+       ":block/order": 15
       },
       {
        ":block/refs": [
@@ -65726,7 +65726,7 @@
        ],
        ":block/uid": "Omo5TNL1L",
        ":block/string": "[[July 7th, 2026]]",
-       ":block/order": 13
+       ":block/order": 14
       },
       {
        ":block/refs": [
@@ -65905,7 +65905,7 @@
        ],
        ":block/uid": "6kZb0aiyX",
        ":block/string": "[[July 10th, 2026]]",
-       ":block/order": 12
+       ":block/order": 13
       },
       {
        ":block/refs": [
@@ -66058,7 +66058,7 @@
        ],
        ":block/uid": "VoTSRMSbW",
        ":block/string": "[[July 13th, 2026]]",
-       ":block/order": 11
+       ":block/order": 12
       },
       {
        ":block/refs": [
@@ -66092,7 +66092,7 @@
        ],
        ":block/uid": "x3tGBCvQq",
        ":block/string": "[[July 15th, 2026]]",
-       ":block/order": 10
+       ":block/order": 11
       },
       {
        ":block/refs": [
@@ -66121,7 +66121,7 @@
        ],
        ":block/uid": "CNp2sgkob",
        ":block/string": "[[July 23rd, 2026]]",
-       ":block/order": 9
+       ":block/order": 10
       },
       {
        ":block/refs": [
@@ -66172,7 +66172,7 @@
        ],
        ":block/uid": "Oe6_LO9ka",
        ":block/string": "[[July 28th, 2026]]",
-       ":block/order": 8
+       ":block/order": 9
       },
       {
        ":block/refs": [
@@ -66232,7 +66232,7 @@
        ],
        ":block/uid": "jYcUoRTGl",
        ":block/string": "[[July 29th, 2026]]",
-       ":block/order": 7
+       ":block/order": 8
       },
       {
        ":block/refs": [
@@ -66872,7 +66872,7 @@
        ],
        ":block/uid": "iYlYbcCWh",
        ":block/string": "[[August 11th, 2026]]",
-       ":block/order": 6
+       ":block/order": 7
       },
       {
        ":block/refs": [
@@ -68463,7 +68463,7 @@
        ],
        ":block/uid": "YXoTyc5pB",
        ":block/string": "[[August 22nd, 2026]]",
-       ":block/order": 5
+       ":block/order": 6
       },
       {
        ":block/refs": [
@@ -68480,7 +68480,7 @@
        ],
        ":block/uid": "3uD6RaJ7K",
        ":block/string": "[[September 9th, 2026]]",
-       ":block/order": 4
+       ":block/order": 5
       },
       {
        ":block/refs": [
@@ -68972,7 +68972,7 @@
        ],
        ":block/uid": "ZCXwQjjYw",
        ":block/string": "[[September 11th, 2026]]",
-       ":block/order": 3
+       ":block/order": 4
       },
       {
        ":block/refs": [
@@ -69188,7 +69188,7 @@
        ],
        ":block/uid": "kBLGC17Sb",
        ":block/string": "[[September 28th, 2026]]",
-       ":block/order": 2
+       ":block/order": 3
       },
       {
        ":block/refs": [
@@ -69604,7 +69604,7 @@
        ],
        ":block/uid": "wSIxrE1g0",
        ":block/string": "[[September 29th, 2026]]",
-       ":block/order": 1
+       ":block/order": 2
       },
       {
        ":block/refs": [
@@ -70225,6 +70225,598 @@
        ],
        ":block/uid": "hI0U1YW-Q",
        ":block/string": "[[October 6th, 2026]]",
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "10-07-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "TpA4naC1T"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "jgcLyBMuC",
+             ":block/string": "Publish Roam Research pages and blocks to the web as clean, shareable pages on [roam.pub](https://roam.pub/).",
+             ":block/order": 0
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "mLFtb4MWO",
+               ":block/string": "Share it your way. Keep a page Unlisted so only people with the link can read it, make it Listed on your graph's blog-style front page, or Discoverable on [Discover](https://roam.pub/discover) for everyone on roam.pub to find.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "iW5mEQa8a",
+               ":block/string": "Lock it down. Protect a page with a password, or limit it to members of your graph.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "5DXiCFc1l",
+               ":block/string": "Publish together. Collections gather pages from different graphs and people in one place.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "ygSK7Qntt",
+             ":block/string": "[See an example page →](https://roam.pub/ejqs/DyEQxo40V/roam-publish-kitchen-sink)",
+             ":block/order": 1
+            },
+            {
+             ":block/uid": "dgjjxXPwM",
+             ":block/string": "> Roam Publish is a third-party service made by [@ejqs](https://ejqs.net/). It is not affiliated with Roam Research.",
+             ":block/order": 2
+            },
+            {
+             ":block/uid": "gAIssl6AE",
+             ":block/string": "This repo is the Roam Depot extension. It adds the publish commands to Roam and sends the page you choose to the Roam Publish server. For how the extension and server fit together, see [roam-publish-docs](https://github.com/ejqs/roam-publish-docs).",
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "eAVM2sRBW",
+               ":block/string": "Install Roam Publish from Roam Depot.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "8dth9rUmD",
+               ":block/string": "Sign up at [roam.pub](https://roam.pub/) and connect your graph with an append-only API token (Roam: Settings → Graph → API tokens). Use a graph you own. roam.pub adds a block to today's daily note (`roam.pub connected this graph (safe to delete)`), which you can delete afterwards.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "QfwxEQ3g9",
+               ":block/string": "In Roam, open Settings → Roam Publish and click Open dashboard, which opens your API keys. Copy the key from the website and paste it into API key.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "WNjYJEpEh",
+               ":block/string": "Warning",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "GJc2X2lxu",
+               ":block/string": "Verifying a graph may leave behind an `[[API Token: …]]` page in your graph that can't be deleted. Roam creates it for the token. It isn't caused by roam.pub. If you know how to remove it reliably, email [support@roam.pub](mailto:support@roam.pub).",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "vQmYEEi-g",
+               ":block/string": "Shared graphs: whoever connects a graph first owns it on roam.pub and invites others by email from the dashboard. After you accept, you get your own key for that graph. Members can only change pages they published.",
+               ":block/order": 5
+              },
+              {
+               ":block/uid": "xuLv7ukTN",
+               ":block/string": "One key per graph. A key only works in the graph it was made for. Pasted into another graph, publishing says which graph it belongs to, and nothing is published.",
+               ":block/order": 6
+              },
+              {
+               ":block/uid": "bnro3uwLf",
+               ":block/string": "Lost your key? Regenerate it at [roam.pub/dashboard/keys](https://roam.pub/dashboard/keys) and paste the new one. The old key stops working.",
+               ":block/order": 7
+              }
+             ],
+             ":block/uid": "V0cX4qFT5",
+             ":children/view-type": "numbered",
+             ":block/string": "Setup",
+             ":block/heading": 2,
+             ":block/order": 4
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "84JHlfBl5",
+               ":block/string": "Right-click a page title or a bullet.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "R5bJ7PrMR",
+               ":block/string": "Choose Roam Publish: Page… or Roam Publish: Block….",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "5fB3cLqbp",
+               ":block/string": "Click Publish. The link is copied to your clipboard.",
+               ":block/order": 2
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "D780KaBzU",
+                 ":block/string": "Passwords and members-only pages for anything you don't want fully open.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "8xVEXC5eC",
+                 ":block/string": "Collections that gather pages from several graphs and people in one place, with their own members.",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "Z9ezVTagH",
+                 ":block/string": "Discover, where readers upvote pages and browse them by recent, trending (most viewed this week) or top.",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "MIpLVkOLC",
+                 ":block/string": "Tags and search on your graph's front page and in collections, plus site-wide search for verified accounts.",
+                 ":block/order": 3
+                },
+                {
+                 ":block/uid": "wpYwnyxK9",
+                 ":block/string": "RSS feeds for your graph, your collections and Discover.",
+                 ":block/order": 4
+                },
+                {
+                 ":block/uid": "8zqFxdrMs",
+                 ":block/string": "Page history: each page's permanent short link (`roam.pub/p/…`) shows your graph's members what happened to it and when. The same change log is also written back into your Roam page.",
+                 ":block/order": 5
+                },
+                {
+                 ":block/uid": "FPZvZhBCP",
+                 ":block/string": "A public profile at `roam.pub/u/{username}`.",
+                 ":block/order": 6
+                },
+                {
+                 ":block/uid": "lnfqSW4Bk",
+                 ":block/string": "Bulk changes: select many pages to change where they're listed, who can read them, or their tags.",
+                 ":block/order": 7
+                }
+               ],
+               ":block/uid": "hEjvP4Ryn",
+               ":block/string": "On the website you also get these. Manage them from the [dashboard](https://roam.pub/dashboard), or click Open dashboard in the extension settings.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "9Y92aBnNM",
+               ":block/string": "New pages and blocks are published Unlisted: only people with the link can see them. The toast offers Make listed and Make discoverable right away, and Add to collection… when you're in a collection.",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "LEdM-3sOC",
+               ":block/string": "Add to collection… lists your collections and how the page starts out in each one, using that collection's own defaults (listed, on Discover, password-protected or members only). When the collection is password-protected or members only and the page is more open in your graph, adding it takes it out of your graph, so the graph link can't get around the collection's lock. Encrypted pages are added on roam.pub, where you can enter their password.",
+               ":block/order": 5
+              },
+              {
+               ":block/uid": "sg90U87Dz",
+               ":block/string": "Open the same menu again to check whether it's published and where it's listed, or to Republish after edits, change where it's listed (Make listed, Make discoverable, Make unlisted), Add to collection…, or Unpublish. A page can only be Discoverable when it's open to everyone, shown in your graph, and your graph's front page and search engines are on; otherwise the toast says what's stopping it. Unpublishing asks first: it deletes the page on roam.pub along with its access settings, passwords, views, upvotes and places in collections. On a shared graph, pages another member published show their status only; only they or the graph's owner can change them.",
+               ":block/order": 6
+              },
+              {
+               ":block/uid": "uq0d6kYpU",
+               ":block/string": "You can also do all of this from the command palette: type \"Roam Publish\".",
+               ":block/order": 7
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "ZDc9sy0i9",
+                   ":block/string": "Text formatting: bold, italics, ^^highlights^^, ~~strikethrough~~, `inline code`, headings and text alignment.",
+                   ":block/order": 0
+                  },
+                  {
+                   ":block/uid": "Uk001uNTk",
+                   ":block/string": "Links: `[[page links]]`, `#tags` and aliases. They link to the other page when it's also published and listed, and show as plain text when it isn't (so an unlisted page's link is never handed out).",
+                   ":block/order": 1
+                  },
+                  {
+                   ":block/uid": "vBAYH4qf2",
+                   ":block/string": "Block references `((…))`: shown as the referenced text, up to 3 levels deep, including blocks outside the published page.",
+                   ":block/order": 2
+                  },
+                  {
+                   ":block/uid": "2LBIkUJ9a",
+                   ":block/string": "Embeds `{{embed: …}}`: the embedded block or page with its children, up to 2 levels deep, and every embed when a block has several.",
+                   ":block/order": 3
+                  },
+                  {
+                   ":block/uid": "YrETMxHZ7",
+                   ":block/string": "Views: bullets, numbered lists and document view.",
+                   ":block/order": 4
+                  },
+                  {
+                   ":block/uid": "1TTsYj4rx",
+                   ":block/string": "Tables `{{table}}` and kanban boards `{{kanban}}`.",
+                   ":block/order": 5
+                  },
+                  {
+                   ":block/uid": "frJiyhUtt",
+                   ":block/string": "Math `$$…$$`, rendered with KaTeX.",
+                   ":block/order": 6
+                  },
+                  {
+                   ":block/uid": "67sofvE0o",
+                   ":block/string": "Code blocks with syntax highlighting.",
+                   ":block/order": 7
+                  },
+                  {
+                   ":block/uid": "9N0Q4WA9D",
+                   ":block/string": "Quotes `>`, attributes `Key:: value`, TODO / DONE checkboxes (read-only) and horizontal rules `---`.",
+                   ":block/order": 8
+                  },
+                  {
+                   ":block/uid": "qQpjRI0CS",
+                   ":block/string": "Images, video (YouTube, Vimeo, Loom and video files), audio, PDFs and iframes.",
+                   ":block/order": 9
+                  },
+                  {
+                   ":block/uid": "x37XP-yFS",
+                   ":block/string": "Tweets show as a link to the post.",
+                   ":block/order": 10
+                  }
+                 ],
+                 ":block/uid": "gs4SOXN5f",
+                 ":block/string": "The page or block is published with all its children. Everything published can be read by anyone with the link, so check references, embeds and children first. Nothing else from your graph is sent.",
+                 ":block/order": 0
+                }
+               ],
+               ":block/uid": "Xztt9kJAs",
+               ":block/string": "Supported blocks",
+               ":block/heading": 3,
+               ":block/order": 8
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "mCwO1DkV3",
+                 ":block/string": "Diagrams and drawings (`{{mermaid}}`, `{{diagram}}`, `{{drawing}}`, Excalidraw) show a \"Diagram not shown\" placeholder.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "TaJQtmanL",
+                 ":block/string": "Queries and mentions (`{{query}}`, `{{mentions}}`) show a placeholder. Their results aren't published.",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "ugVDCBYx2",
+                 ":block/string": "Interactive components such as buttons, sliders, timers, counters and `roam/js` aren't shown.",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "5Yvg0Ay0a",
+                 ":block/string": "Block references more than 3 levels deep and embeds more than 2 levels deep are left out.",
+                 ":block/order": 3
+                },
+                {
+                 ":block/uid": "xkPMHEVOR",
+                 ":block/string": "Files hosted in Roam are linked, not copied. Files in encrypted graphs won't display.",
+                 ":block/order": 4
+                }
+               ],
+               ":block/uid": "PhLmNMjWC",
+               ":block/string": "Unsupported blocks",
+               ":block/heading": 3,
+               ":block/order": 9
+              }
+             ],
+             ":block/uid": "Rhk8mYrps",
+             ":children/view-type": "numbered",
+             ":block/string": "Using it",
+             ":block/heading": 2,
+             ":block/order": 5
+            },
+            {
+             ":block/children": [
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "2-eIgz-4z"
+                }
+               ],
+               ":block/children": [
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "Gw4wnsGR2",
+                   ":block/string": "What it does",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "LWBaZ8I28",
+                 ":block/string": "Setting",
+                 ":block/order": 0
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "SO-Iy3Wsl",
+                   ":block/string": "Opens the roam.pub dashboard, at your API keys until you've added one.",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "JsuxbY986",
+                 ":block/string": "Dashboard",
+                 ":block/order": 1
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "vB5rsgiZU",
+                   ":block/string": "Your key for this graph (see Setup).",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "76lvtnNm5",
+                 ":block/string": "API key",
+                 ":block/order": 2
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "hEXL0Tsiv",
+                   ":block/string": "Shown on your pages when authors are shown. Blank: your @username.",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "ibvh_5dJI",
+                 ":block/string": "Author name",
+                 ":block/order": 3
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "WW2dYPaX_",
+                   ":block/string": "On by default. Off: nothing is written into your pages. roam.pub still keeps each page's status link and history.",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "c48ROOYt7",
+                 ":block/string": "Add Roam Publish block when publishing pages",
+                 ":block/order": 4
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "OvomTWKaL",
+                   ":block/string": "Off by default. On: the same, under each block you publish. Separate from the pages setting.",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "yjdGNeyQs",
+                 ":block/string": "Add Roam Publish block when publishing blocks",
+                 ":block/order": 5
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "-dj4zwU5O",
+                   ":block/string": "The block's text. Default `[[Roam Publish]]` (graphs set up before this keep `#published`). Blank: no tag.",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "HViPUBFfV",
+                 ":block/string": "Block tag",
+                 ":block/order": 6
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "ZhHIYjif7",
+                   ":block/string": "Written as `[text](link)`. Default `Roam Publish Status`. Blank: bare link.",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "x9-fhVPpo",
+                 ":block/string": "Status link text",
+                 ":block/order": 7
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "ZTrkPY11p",
+                   ":block/string": "First or last on the page, or under the block.",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "F49h3x70M",
+                 ":block/string": "Block position",
+                 ":block/order": 8
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "Gi15I87qE",
+                   ":block/string": "On roam.pub: turn it on or off, check it works, and manage its token.",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "GfxFc9qfQ",
+                 ":block/string": "Change log",
+                 ":block/order": 9
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "2-WWFoPQf",
+                   ":block/string": "Updates the extension's list of what you've published from roam.pub. Use it if a status looks wrong, e.g. after unpublishing on the website. The Page… and Block… menus already do this.",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "zDBrhhd4K",
+                 ":block/string": "Sync published list",
+                 ":block/order": 10
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "75upny-j8",
+                   ":block/string": "Advanced. Defaults to `https://roam.pub`. Must use `https://` (or `http://localhost` for development), so your key is never sent unencrypted.",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "KuQhvjMbn",
+                 ":block/string": "Server URL",
+                 ":block/order": 11
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "4DYzfgc6c",
+                   ":block/string": "Restores the defaults of the Roam Publish block settings. Reinstalling doesn't, since Roam keeps settings.",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "4u-i5kMpI",
+                 ":block/string": "Reset Roam Publish block settings",
+                 ":block/order": 12
+                }
+               ],
+               ":block/uid": "wV6Tiiirn",
+               ":block/string": "{{[[table]]}}",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "WbvqlR214",
+               ":block/string": "Changing the tag or the link text edits existing blocks in place the next time you publish them.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "GOPn9DbZj",
+             ":block/string": "Settings",
+             ":block/heading": 2,
+             ":block/order": 6
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "tDONBG8ji",
+               ":block/string": "Only on your action: nothing leaves Roam until you publish a page or block. No analytics, and the only server contacted is roam.pub (or your configured Server URL).",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "u9r-Zt-2f",
+               ":block/string": "One background request: while Roam is open, about every 5 minutes, the extension tells roam.pub which status link blocks still exist (uids only, no text). Turning off Add Roam Publish block when publishing pages (and …blocks) stops it. See [Use of the Append API](https://github.com/ejqs/roam-publish/tree/main#use-of-the-append-api).",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "77xtzvPKX",
+               ":block/string": "Written to your graph: the Roam Publish block when you publish, and change log entries if you kept an append-only token. Nothing else.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "sBb0uu-en",
+               ":block/string": "Encrypted graphs are supported. The extension only sends the data you choose to publish.",
+               ":block/order": 3
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "bCQoggLlU",
+                   ":block/string": "Verifying your graph, once: roam.pub adds `roam.pub connected this graph (safe to delete)` to today's daily note. Only a graph's admins can create its tokens, so a successful write proves the graph is yours.",
+                   ":block/order": 0
+                  },
+                  {
+                   ":block/uid": "p_Gytmrx_",
+                   ":block/string": "The change log, if you keep the token: roam.pub adds a dated entry under a page's status link whenever something happens to it (published, listed, access changed, unpublished, and so on), including changes made on the website. Entries hold the date, time, what happened and links, never page content.",
+                   ":block/order": 1
+                  },
+                  {
+                   ":block/uid": "qjHmaJnH9",
+                   ":block/string": "Your token: entered on the website only, stored encrypted, never shown again. Pause the change log or remove the token in the graph's settings on roam.pub (Change log → Open settings in the extension), or revoke it in Roam.",
+                   ":block/order": 2
+                  }
+                 ],
+                 ":block/uid": "zruNtDBLP",
+                 ":block/string": "roam.pub writes to your graph with Roam's Append API and an append-only token you create in Roam. That kind of token can only add blocks to its own graph. It can't read, edit, move or delete anything.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "1qLrM0tEs",
+                 ":block/string": "The status link (`roam.pub/p/…`) shows you and your graph's members where a page is published. Don't share it: anyone else is asked to log in or gets a \"not found\" page. Share the page's graph or collection link instead.",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "7YUhaNBxB",
+                 ":block/string": "For exactly what the extension reads, what it sends and how roam.pub uses the Append API, see [Data flow and the Append API](https://github.com/ejqs/roam-publish-docs/blob/main/docs/data-and-append-api.md). roam.pub's [Privacy policy](https://roam.pub/privacy) and [Terms](https://roam.pub/terms) cover the website and the extension.",
+                 ":block/order": 2
+                }
+               ],
+               ":block/uid": "a9zeMH8S5",
+               ":block/string": "Use of the Append API",
+               ":block/heading": 3,
+               ":block/order": 4
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "6d4WSfpPK",
+                 ":block/string": "If you find a security issue in the extension or on roam.pub, please report it privately to [support@roam.pub](mailto:support@roam.pub) or ejqs [at] ejqs [dot] net rather than opening a public issue. I'll reply as soon as I can.",
+                 ":block/order": 0
+                }
+               ],
+               ":block/uid": "lx1G4ftKq",
+               ":block/string": "Reporting a vulnerability",
+               ":block/heading": 3,
+               ":block/order": 5
+              }
+             ],
+             ":block/uid": "9NZ0EgcG5",
+             ":block/string": "Privacy and safety",
+             ":block/heading": 2,
+             ":block/order": 7
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "vodJ3Dsqu",
+               ":block/string": "Images are published as links to Roam's hosting (typically Firebase Storage URLs). If Roam changes these or you delete the image, the published image breaks.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "1Ljh-IY26",
+               ":block/string": "Extension settings (including the API key) live in the graph. If collaborators on a shared graph see each other's settings, they'd share one key and author name. This hasn't been confirmed.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "ewgGTThm7",
+             ":block/string": "Known unknowns",
+             ":block/heading": 2,
+             ":block/order": 8
+            }
+           ],
+           ":block/uid": "g5PgywW1i",
+           ":block/string": "Roam Publish",
+           ":block/heading": 1,
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "VUrahwCy0",
+         ":block/string": "[[Roam Depot Extensions]]",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "qNY6cTAg7",
+       ":block/string": "[[October 7th, 2026]]",
        ":block/order": 0
       }
      ],
@@ -86411,6 +87003,10 @@
   {
    ":node/title": "October 7th, 2025",
    ":block/uid": "10-07-2025"
+  },
+  {
+   ":node/title": "October 7th, 2026",
+   ":block/uid": "10-07-2026"
   },
   {
    ":node/title": "Josh Ginter",
