@@ -42,6 +42,264 @@
 <h3>[Updating Roam](<a href="/help/updating-roam">Updating Roam</a>)</h3>
 <h3><strong>New Changes</strong></h3>
 <ul>
+<li>October 15th, 2026
+<ul>
+<li>Roam Depot Extensions
+<ul>
+<li><strong>Pinned Blocks</strong>
+<ul>
+<li>Keep selected child blocks pinned to the top of their current parent, even as blocks move and siblings are reorganized.
+</li>
+<li><strong>Features</strong>
+<ul>
+<li>Pin selected references in the linked reference section to the top of the results.
+</li>
+<li>Pin, unpin, or toggle the focused block from the command palette.
+</li>
+<li>Pin or unpin any block from the block context menu.
+</li>
+<li>Keep multiple pinned siblings at the top in their current pinned-group order.
+</li>
+<li>Drag pinned blocks to reorder them within the pinned group.
+</li>
+<li>Move pinned blocks to another parent and keep them pinned in the new pinned group.
+</li>
+<li>Reorder the real Roam outline with Roam's native block reorder API; no duplicate shelf or hidden source blocks.
+</li>
+<li>Watch pinned parents so regular blocks inserted above or between pinned blocks are moved below the pinned group.
+</li>
+<li>Mark pinned blocks with a small pin indicator and stable CSS hooks for custom styling.
+</li>
+<li>Share pin state between collaborators through graph-backed records on <code>roam/js/pinned-blocks</code>.
+</li>
+</ul>
+</li>
+<li><strong>Linked reference pins</strong>
+<ul>
+<li>Hover over a linked reference or focus it with the keyboard to reveal its pin button. Active pins stay visible. Use the pin button beside a linked reference to keep it at the top of that page's linked reference results. Click the active pin button to unpin it. Pinned results initially appear expanded at the top, without a section heading or count. Use the caret beside a pinned block’s source-page title to collapse or expand that reference. Collapsing keeps the title visible and the block pinned; the collapsed state lasts while the pinned result remains on screen.
+</li>
+<li>Pinned results show a clickable source page title (Shift-click opens the sidebar) and retain Roam's native block controls. References within page titles can also be pinned using the pin beside their source heading. A pinned title stays separate from pins on individual blocks from that page. Pinned results follow the order in which their pins are saved. The pin button shows a loading state while saving.
+</li>
+<li>Daily note pages and the Daily Notes view are supported, including collapsed reference groups. Use the Up and Down arrow keys on a pin button to move between the pin controls in their displayed order. Tab visits the pinned section first, then the remaining native reference controls.
+</li>
+<li>Reference pins are saved separately for each target page or block under <code>roam/js/pinned-blocks</code> and shared with collaborators running the extension. They change the displayed reference order without changing source block order. Saved reference pins render immediately at the top, including references Roam has not lazy-loaded yet. Once the pinned copy has rendered successfully, the extension hides its original row when Roam loads it. While rendering is pending or has failed, the original row remains available. A failed pinned copy offers a Retry button. Unpinning removes the top copy and restores the original row. Roam's include/remove filters still apply to pinned copies. Deleted blocks and blocks that no longer reference the target are not shown.
+</li>
+</ul>
+</li>
+<li><strong>Multiplayer graphs</strong>
+<ul>
+<li>Collaborators running Pinned Blocks in the same graph share the same pin records and pinned order. Pin membership is stored under <code>roam/js/pinned-blocks</code>, while order follows the real Roam outline.
+</li>
+<li>Pinned Blocks changes real sibling order with Roam's native reorder API, so its changes are also visible to collaborators who do not run the extension. Those collaborators will not see pin indicators and may not understand why a block moves back into the pinned group.
+</li>
+</ul>
+</li>
+<li><strong>Storage</strong>
+<ul>
+<li>Pinned Blocks creates <code>roam/js/pinned-blocks</code> with a notice explaining that the page is extension-managed. Each pin is stored as a separate child record using the <code>roamjs-pinned-blocks</code> block-props namespace. The page and notice remain when there are no pins; pin-data children are removed.
+</li>
+<li>Pinned Blocks does not use browser local storage.
+</li>
+</ul>
+</li>
+<li><strong>Commands</strong>
+<ul>
+<li><code>Pinned Blocks: Toggle Pin Focused Block</code>
+</li>
+<li><code>Pinned Blocks: Pin Focused Block</code>
+</li>
+<li><code>Pinned Blocks: Unpin Focused Block</code>
+</li>
+</ul>
+</li>
+<li><strong>Styling</strong>
+<ul>
+<li>Pinned Blocks adds these classes to the rendered outline:
+<ul>
+<li><code>.roamjs-pinned-blocks-block</code>
+</li>
+<li><code>.roamjs-pinned-blocks-block-pinned</code>
+</li>
+</ul>
+</li>
+<li>The default indicator is rendered on <code>.roamjs-pinned-blocks-block-pinned::before</code> and can be adjusted with CSS variables:
+<ul>
+<li><code>--roamjs-pinned-blocks-indicator-color</code>
+</li>
+<li><code>--roamjs-pinned-blocks-indicator-size</code>
+</li>
+<li><code>--roamjs-pinned-blocks-indicator-left</code>
+</li>
+<li><code>--roamjs-pinned-blocks-sidebar-indicator-left</code>
+</li>
+<li><code>--roamjs-pinned-blocks-indicator-top</code>
+</li>
+<li><code>--roamjs-pinned-blocks-indicator-opacity</code>
+</li>
+<li><code>--roamjs-pinned-blocks-indicator-z-index</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Asyntai AI Chatbot for Roam Research</strong>
+<ul>
+<li>Turn your Roam graph into an AI assistant you can ask questions, and read your website chats without leaving Roam.
+</li>
+<li><strong>What it does</strong>
+<ul>
+<li>Ask your own pages. Choose the pages you want, and the extension keeps them in your <a href="https://asyntai.com/">Asyntai</a> knowledge base. Open the panel, type a question, and the answer comes from what you wrote. Press Insert into page to drop the answer straight into your graph.
+</li>
+<li>Read your website chats. The Chats tab lists the conversations your Asyntai chatbot had with visitors on your website, with the full text of every message. Save as page turns any conversation into a Roam page under <code>Asyntai chats/</code>.
+</li>
+<li>See your leads. The Leads tab shows the email addresses and phone numbers visitors left in the chat, newest first.
+</li>
+<li>Stay in step. Edit a page and it goes up again a few seconds after you stop typing. Rename it out of your chosen pages, or delete it, and Asyntai follows. Block references are sent as the text they point to, so a fact kept in one place is sent with every page that references it. A reference into a page you leave out, or into a daily note while daily notes are off, sends nothing.
+</li>
+</ul>
+</li>
+<li><strong>Install</strong>
+<ul>
+<li>In Roam, open Settings, go to the Roam Depot tab, press Browse, and install Asyntai AI Chatbot.
+</li>
+<li>Sign in at <a href="https://asyntai.com/">asyntai.com</a>, open Settings → API, and copy your API key.
+</li>
+<li>In Roam, open Settings → Asyntai AI Chatbot and paste the key.
+</li>
+<li>Put the pages you want to send in Pages to send, comma separated. These are the pages your Asyntai chatbot answers from, on your website and in the panel. <code>Docs</code> sends <code>Docs</code> and every page under it, such as <code>Docs/Refund policy</code>. Type <code>/</code> to send every page. An empty box sends nothing.
+</li>
+<li>Run Asyntai: send all pages from the command palette (Ctrl+P, or Cmd+P on a Mac).
+</li>
+</ul>
+</li>
+<li><strong>Commands</strong>
+<ul>
+<li>{{table}}
+<ul>
+<li>Command
+<ul>
+<li>What it does
+</li>
+</ul>
+</li>
+<li>Asyntai: open panel
+<ul>
+<li>Opens Ask, Chats and Leads
+</li>
+</ul>
+</li>
+<li>Asyntai: send this page
+<ul>
+<li>Sends the page you are on
+</li>
+</ul>
+</li>
+<li>Asyntai: remove this page
+<ul>
+<li>Takes the page out of Asyntai
+</li>
+</ul>
+</li>
+<li>Asyntai: send all pages
+<ul>
+<li>Sends every page you chose
+</li>
+</ul>
+</li>
+<li>Asyntai: remove all pages
+<ul>
+<li>Takes every sent page out of Asyntai
+</li>
+</ul>
+</li>
+<li>Asyntai: check API key
+<ul>
+<li>Shows the account the key belongs to
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Type <code>/Asyntai ask</code> at the end of a block to open the panel with that block's text as the question. The button in the top bar opens the panel too.
+</li>
+</ul>
+</li>
+<li><strong>Settings</strong>
+<ul>
+<li>{{table}}
+<ul>
+<li>Setting
+<ul>
+<li>Meaning
+</li>
+</ul>
+</li>
+<li>Asyntai API key
+<ul>
+<li>From Settings → API in your Asyntai dashboard
+</li>
+</ul>
+</li>
+<li>Pages to send
+<ul>
+<li>The pages your chatbot answers from, on your website and in the panel. Title prefixes; <code>/</code> means every page
+</li>
+</ul>
+</li>
+<li>Pages to leave out
+<ul>
+<li>Prefixes that stay out even when a parent is sent, block references into them included
+</li>
+</ul>
+</li>
+<li>Send daily notes
+<ul>
+<li>Off by default, because daily notes are usually private
+</li>
+</ul>
+</li>
+<li>Send changes automatically
+<ul>
+<li>Sends a page a few seconds after you stop typing
+</li>
+</ul>
+</li>
+<li>Asyntai address
+<ul>
+<li>Leave as it is unless support asks you to change it. Must start with <code>https://</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Requirements</strong>
+<ul>
+<li>An Asyntai account on the Starter plan or higher, because the extension uses the Asyntai API.
+</li>
+</ul>
+</li>
+<li><strong>Building</strong>
+<ul>
+<li><code>build.sh</code> installs the dependencies and bundles <code>src/</code> into <code>extension.js</code>. <code>npm test</code> runs the unit tests and the graph tests on the datascript engine.
+</li>
+</ul>
+</li>
+<li><strong>Support</strong>
+<ul>
+<li>Write to [hello@asyntai.com](mailto:hello@asyntai.com), or read the <a href="https://asyntai.com/documentation/integrations/roam-research/">documentation</a>.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>October 7th, 2026
 <ul>
 <li>Roam Depot Extensions

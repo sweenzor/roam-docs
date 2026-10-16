@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-10-08T12:13:07.864Z",
+ "exportedAt": "2026-10-16T10:02:37.088Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -289,6 +289,10 @@
     }
    ],
    ":block/uid": "3tEUErz0E"
+  },
+  {
+   ":node/title": "October 15th, 2026",
+   ":block/uid": "10-15-2026"
   },
   {
    ":node/title": "Sharing",
@@ -35175,7 +35179,7 @@
        ":block/uid": "z7nDW4FYi",
        ":block/string": "[[2021]]",
        ":block/heading": 3,
-       ":block/order": 56
+       ":block/order": 57
       },
       {
        ":block/refs": [
@@ -38338,7 +38342,7 @@
        ":block/uid": "oEUzBpPVt",
        ":block/string": "[[2022]]",
        ":block/heading": 3,
-       ":block/order": 55
+       ":block/order": 56
       },
       {
        ":block/refs": [
@@ -42920,7 +42924,7 @@
        ":block/uid": "3DcyG9fYJ",
        ":block/string": "[[2023]]",
        ":block/heading": 3,
-       ":block/order": 54
+       ":block/order": 55
       },
       {
        ":block/refs": [
@@ -48758,7 +48762,7 @@
        ":block/uid": "N8o9mOFxV",
        ":block/string": "[[2024]]",
        ":block/heading": 3,
-       ":block/order": 53
+       ":block/order": 54
       },
       {
        ":block/refs": [
@@ -48846,7 +48850,7 @@
        ],
        ":block/uid": "mbBXOyRr4",
        ":block/string": "[[January 7th, 2026]]",
-       ":block/order": 51
+       ":block/order": 52
       },
       {
        ":block/refs": [
@@ -49693,7 +49697,7 @@
        ],
        ":block/uid": "D4sWwAFQH",
        ":block/string": "[[January 12th, 2026]]",
-       ":block/order": 50
+       ":block/order": 51
       },
       {
        ":block/refs": [
@@ -50111,7 +50115,7 @@
        ],
        ":block/uid": "fZnJ8SpjV",
        ":block/string": "[[January 16th, 2026]]",
-       ":block/order": 49
+       ":block/order": 50
       },
       {
        ":block/refs": [
@@ -59253,7 +59257,7 @@
        ":block/uid": "e3HyGxGmz",
        ":block/string": "[[2025]]",
        ":block/heading": 3,
-       ":block/order": 52
+       ":block/order": 53
       },
       {
        ":block/refs": [
@@ -59480,7 +59484,7 @@
        ],
        ":block/uid": "DQLXBkLqB",
        ":block/string": "[[January 30th, 2026]]",
-       ":block/order": 48
+       ":block/order": 49
       },
       {
        ":block/refs": [
@@ -59786,7 +59790,7 @@
        ],
        ":block/uid": "faBrrXpMf",
        ":block/string": "[[February 10th, 2026]]",
-       ":block/order": 47
+       ":block/order": 48
       },
       {
        ":block/refs": [
@@ -59843,7 +59847,7 @@
        ],
        ":block/uid": "HGdio9-X1",
        ":block/string": "[[February 11th, 2026]]",
-       ":block/order": 46
+       ":block/order": 47
       },
       {
        ":block/refs": [
@@ -60003,7 +60007,7 @@
        ],
        ":block/uid": "3YbHyvMVu",
        ":block/string": "[[February 18th, 2026]]",
-       ":block/order": 45
+       ":block/order": 46
       },
       {
        ":block/refs": [
@@ -60093,7 +60097,7 @@
        ],
        ":block/uid": "l1CEHstpS",
        ":block/string": "[[February 19th, 2026]]",
-       ":block/order": 44
+       ":block/order": 45
       },
       {
        ":block/refs": [
@@ -60151,7 +60155,7 @@
        ],
        ":block/uid": "w7XCOWrmV",
        ":block/string": "[[February 22nd, 2026]]",
-       ":block/order": 43
+       ":block/order": 44
       },
       {
        ":block/refs": [
@@ -60244,7 +60248,7 @@
        ],
        ":block/uid": "lq5IvpQ7J",
        ":block/string": "[[February 25th, 2026]]",
-       ":block/order": 42
+       ":block/order": 43
       },
       {
        ":block/refs": [
@@ -61042,7 +61046,7 @@
        ],
        ":block/uid": "ipU_NCoCx",
        ":block/string": "[[February 26th, 2026]]",
-       ":block/order": 41
+       ":block/order": 42
       },
       {
        ":block/refs": [
@@ -61090,7 +61094,7 @@
        ],
        ":block/uid": "WO-6A7VX9",
        ":block/string": "[[February 27th, 2026]]",
-       ":block/order": 40
+       ":block/order": 41
       },
       {
        ":block/refs": [
@@ -61225,7 +61229,7 @@
        ],
        ":block/uid": "AHy3mUokJ",
        ":block/string": "[[March 9th, 2026]]",
-       ":block/order": 39
+       ":block/order": 40
       },
       {
        ":block/refs": [
@@ -61395,7 +61399,7 @@
        ],
        ":block/uid": "-R8L5nZLD",
        ":block/string": "[[March 11th, 2026]]",
-       ":block/order": 38
+       ":block/order": 39
       },
       {
        ":block/refs": [
@@ -61519,7 +61523,7 @@
        ],
        ":block/uid": "e5HOoYOYK",
        ":block/string": "[[March 24th, 2026]]",
-       ":block/order": 37
+       ":block/order": 38
       },
       {
        ":block/refs": [
@@ -61558,7 +61562,7 @@
        ],
        ":block/uid": "hP0WzVCb3",
        ":block/string": "[[March 30th, 2026]]",
-       ":block/order": 36
+       ":block/order": 37
       },
       {
        ":block/refs": [
@@ -62057,7 +62061,7 @@
        ],
        ":block/uid": "kYfXB-KfD",
        ":block/string": "[[March 31st, 2026]]",
-       ":block/order": 35
+       ":block/order": 36
       },
       {
        ":block/refs": [
@@ -62121,7 +62125,7 @@
        ],
        ":block/uid": "hy237MoSG",
        ":block/string": "[[April 10th, 2026]]",
-       ":block/order": 34
+       ":block/order": 35
       },
       {
        ":block/refs": [
@@ -62343,7 +62347,7 @@
        ],
        ":block/uid": "Ld3WwhXAJ",
        ":block/string": "[[April 14th, 2026]]",
-       ":block/order": 33
+       ":block/order": 34
       },
       {
        ":block/refs": [
@@ -62394,7 +62398,7 @@
        ],
        ":block/uid": "FX03un0yx",
        ":block/string": "[[April 15th, 2026]]",
-       ":block/order": 32
+       ":block/order": 33
       },
       {
        ":block/refs": [
@@ -62443,7 +62447,7 @@
        ],
        ":block/uid": "Tdxn9p6T-",
        ":block/string": "[[April 17th, 2026]]",
-       ":block/order": 31
+       ":block/order": 32
       },
       {
        ":block/refs": [
@@ -64123,7 +64127,7 @@
        ],
        ":block/uid": "yYmOmnffK",
        ":block/string": "[[April 27th, 2026]]",
-       ":block/order": 30
+       ":block/order": 31
       },
       {
        ":block/refs": [
@@ -64203,7 +64207,7 @@
        ],
        ":block/uid": "E8B5FpUqb",
        ":block/string": "[[May 1st, 2026]]",
-       ":block/order": 29
+       ":block/order": 30
       },
       {
        ":block/refs": [
@@ -64387,7 +64391,7 @@
        ],
        ":block/uid": "_bXQOG7-W",
        ":block/string": "[[May 4th, 2026]]",
-       ":block/order": 28
+       ":block/order": 29
       },
       {
        ":block/refs": [
@@ -64486,7 +64490,7 @@
        ],
        ":block/uid": "77u8rD3tN",
        ":block/string": "[[May 5th, 2026]]",
-       ":block/order": 27
+       ":block/order": 28
       },
       {
        ":block/refs": [
@@ -64549,7 +64553,7 @@
        ],
        ":block/uid": "4jefQzlrL",
        ":block/string": "[[May 15th, 2026]]",
-       ":block/order": 26
+       ":block/order": 27
       },
       {
        ":block/refs": [
@@ -64605,7 +64609,7 @@
        ],
        ":block/uid": "yCa6IFyF-",
        ":block/string": "[[May 21st, 2026]]",
-       ":block/order": 25
+       ":block/order": 26
       },
       {
        ":block/refs": [
@@ -64646,7 +64650,7 @@
        ],
        ":block/uid": "s1JCTlMYp",
        ":block/string": "[[May 28th, 2026]]",
-       ":block/order": 24
+       ":block/order": 25
       },
       {
        ":block/refs": [
@@ -64688,7 +64692,7 @@
        ],
        ":block/uid": "GtQy1iARj",
        ":block/string": "[[June 1st, 2026]]",
-       ":block/order": 23
+       ":block/order": 24
       },
       {
        ":block/refs": [
@@ -64815,7 +64819,7 @@
        ],
        ":block/uid": "FfZFcIMVi",
        ":block/string": "[[June 2nd, 2026]]",
-       ":block/order": 22
+       ":block/order": 23
       },
       {
        ":block/refs": [
@@ -64851,7 +64855,7 @@
        ],
        ":block/uid": "o0biga_ls",
        ":block/string": "[[June 9th, 2026]]",
-       ":block/order": 21
+       ":block/order": 22
       },
       {
        ":block/refs": [
@@ -64880,7 +64884,7 @@
        ],
        ":block/uid": "1oHVhjf1j",
        ":block/string": "[[June 10th, 2026]]",
-       ":block/order": 20
+       ":block/order": 21
       },
       {
        ":block/refs": [
@@ -64919,7 +64923,7 @@
        ],
        ":block/uid": "jlW42mQ3s",
        ":block/string": "[[June 11th, 2026]]",
-       ":block/order": 19
+       ":block/order": 20
       },
       {
        ":block/refs": [
@@ -65466,7 +65470,7 @@
        ],
        ":block/uid": "Wp3IwehIi",
        ":block/string": "[[June 13th, 2026]]",
-       ":block/order": 18
+       ":block/order": 19
       },
       {
        ":block/refs": [
@@ -65607,7 +65611,7 @@
        ],
        ":block/uid": "T7MyhAu_Z",
        ":block/string": "[[June 30th, 2026]]",
-       ":block/order": 17
+       ":block/order": 18
       },
       {
        ":block/refs": [
@@ -65663,7 +65667,7 @@
        ],
        ":block/uid": "MdrAuMqaU",
        ":block/string": "[[July 2nd, 2026]]",
-       ":block/order": 16
+       ":block/order": 17
       },
       {
        ":block/refs": [
@@ -65692,7 +65696,7 @@
        ],
        ":block/uid": "MUux5EgdX",
        ":block/string": "[[July 6th, 2026]]",
-       ":block/order": 15
+       ":block/order": 16
       },
       {
        ":block/refs": [
@@ -65726,7 +65730,7 @@
        ],
        ":block/uid": "Omo5TNL1L",
        ":block/string": "[[July 7th, 2026]]",
-       ":block/order": 14
+       ":block/order": 15
       },
       {
        ":block/refs": [
@@ -65905,7 +65909,7 @@
        ],
        ":block/uid": "6kZb0aiyX",
        ":block/string": "[[July 10th, 2026]]",
-       ":block/order": 13
+       ":block/order": 14
       },
       {
        ":block/refs": [
@@ -66058,7 +66062,7 @@
        ],
        ":block/uid": "VoTSRMSbW",
        ":block/string": "[[July 13th, 2026]]",
-       ":block/order": 12
+       ":block/order": 13
       },
       {
        ":block/refs": [
@@ -66092,7 +66096,7 @@
        ],
        ":block/uid": "x3tGBCvQq",
        ":block/string": "[[July 15th, 2026]]",
-       ":block/order": 11
+       ":block/order": 12
       },
       {
        ":block/refs": [
@@ -66121,7 +66125,7 @@
        ],
        ":block/uid": "CNp2sgkob",
        ":block/string": "[[July 23rd, 2026]]",
-       ":block/order": 10
+       ":block/order": 11
       },
       {
        ":block/refs": [
@@ -66172,7 +66176,7 @@
        ],
        ":block/uid": "Oe6_LO9ka",
        ":block/string": "[[July 28th, 2026]]",
-       ":block/order": 9
+       ":block/order": 10
       },
       {
        ":block/refs": [
@@ -66232,7 +66236,7 @@
        ],
        ":block/uid": "jYcUoRTGl",
        ":block/string": "[[July 29th, 2026]]",
-       ":block/order": 8
+       ":block/order": 9
       },
       {
        ":block/refs": [
@@ -66872,7 +66876,7 @@
        ],
        ":block/uid": "iYlYbcCWh",
        ":block/string": "[[August 11th, 2026]]",
-       ":block/order": 7
+       ":block/order": 8
       },
       {
        ":block/refs": [
@@ -68463,7 +68467,7 @@
        ],
        ":block/uid": "YXoTyc5pB",
        ":block/string": "[[August 22nd, 2026]]",
-       ":block/order": 6
+       ":block/order": 7
       },
       {
        ":block/refs": [
@@ -68480,7 +68484,7 @@
        ],
        ":block/uid": "3uD6RaJ7K",
        ":block/string": "[[September 9th, 2026]]",
-       ":block/order": 5
+       ":block/order": 6
       },
       {
        ":block/refs": [
@@ -68972,7 +68976,7 @@
        ],
        ":block/uid": "ZCXwQjjYw",
        ":block/string": "[[September 11th, 2026]]",
-       ":block/order": 4
+       ":block/order": 5
       },
       {
        ":block/refs": [
@@ -69188,7 +69192,7 @@
        ],
        ":block/uid": "kBLGC17Sb",
        ":block/string": "[[September 28th, 2026]]",
-       ":block/order": 3
+       ":block/order": 4
       },
       {
        ":block/refs": [
@@ -69604,7 +69608,7 @@
        ],
        ":block/uid": "wSIxrE1g0",
        ":block/string": "[[September 29th, 2026]]",
-       ":block/order": 2
+       ":block/order": 3
       },
       {
        ":block/refs": [
@@ -70225,7 +70229,7 @@
        ],
        ":block/uid": "hI0U1YW-Q",
        ":block/string": "[[October 6th, 2026]]",
-       ":block/order": 1
+       ":block/order": 2
       },
       {
        ":block/refs": [
@@ -70817,6 +70821,582 @@
        ],
        ":block/uid": "qNY6cTAg7",
        ":block/string": "[[October 7th, 2026]]",
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "10-15-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "TpA4naC1T"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "cetAsgLXt",
+             ":block/string": "Turn your Roam graph into an AI assistant you can ask questions, and read your website chats without leaving Roam.",
+             ":block/order": 0
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "LwDzECG2Q",
+               ":block/string": "Ask your own pages. Choose the pages you want, and the extension keeps them in your [Asyntai](https://asyntai.com/) knowledge base. Open the panel, type a question, and the answer comes from what you wrote. Press Insert into page to drop the answer straight into your graph.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "qLfCzCV1z",
+               ":block/string": "Read your website chats. The Chats tab lists the conversations your Asyntai chatbot had with visitors on your website, with the full text of every message. Save as page turns any conversation into a Roam page under `Asyntai chats/`.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "q21fiMsQr",
+               ":block/string": "See your leads. The Leads tab shows the email addresses and phone numbers visitors left in the chat, newest first.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "C9Qf8XwkR",
+               ":block/string": "Stay in step. Edit a page and it goes up again a few seconds after you stop typing. Rename it out of your chosen pages, or delete it, and Asyntai follows. Block references are sent as the text they point to, so a fact kept in one place is sent with every page that references it. A reference into a page you leave out, or into a daily note while daily notes are off, sends nothing.",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "52fu5y1uL",
+             ":block/string": "What it does",
+             ":block/heading": 2,
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "ajktf1i7h",
+               ":block/string": "In Roam, open Settings, go to the Roam Depot tab, press Browse, and install Asyntai AI Chatbot.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "SrpMMPjHC",
+               ":block/string": "Sign in at [asyntai.com](https://asyntai.com/), open Settings → API, and copy your API key.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "rbirOQYNy",
+               ":block/string": "In Roam, open Settings → Asyntai AI Chatbot and paste the key.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "8gnPmCgxs",
+               ":block/string": "Put the pages you want to send in Pages to send, comma separated. These are the pages your Asyntai chatbot answers from, on your website and in the panel. `Docs` sends `Docs` and every page under it, such as `Docs/Refund policy`. Type `/` to send every page. An empty box sends nothing.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "Eeb4cRh0D",
+               ":block/string": "Run Asyntai: send all pages from the command palette (Ctrl+P, or Cmd+P on a Mac).",
+               ":block/order": 4
+              }
+             ],
+             ":block/uid": "QNOQr9V9w",
+             ":children/view-type": "numbered",
+             ":block/string": "Install",
+             ":block/heading": 2,
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "2-eIgz-4z"
+                }
+               ],
+               ":block/children": [
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "7xzRAIdWX",
+                   ":block/string": "What it does",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "JRnH73pS_",
+                 ":block/string": "Command",
+                 ":block/order": 0
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "_43hFqHb6",
+                   ":block/string": "Opens Ask, Chats and Leads",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "uVceHsghC",
+                 ":block/string": "Asyntai: open panel",
+                 ":block/order": 1
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "V7ZK_32Za",
+                   ":block/string": "Sends the page you are on",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "I6-vjJmsF",
+                 ":block/string": "Asyntai: send this page",
+                 ":block/order": 2
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "gQP0FvXLU",
+                   ":block/string": "Takes the page out of Asyntai",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "KO4C64E1S",
+                 ":block/string": "Asyntai: remove this page",
+                 ":block/order": 3
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "P7y0idn7O",
+                   ":block/string": "Sends every page you chose",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "LfuqWIvmE",
+                 ":block/string": "Asyntai: send all pages",
+                 ":block/order": 4
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "RGf_6yuVS",
+                   ":block/string": "Takes every sent page out of Asyntai",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "KuOexOqxF",
+                 ":block/string": "Asyntai: remove all pages",
+                 ":block/order": 5
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "g-MLuyCLt",
+                   ":block/string": "Shows the account the key belongs to",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "k4x8_1G4n",
+                 ":block/string": "Asyntai: check API key",
+                 ":block/order": 6
+                }
+               ],
+               ":block/uid": "ZtE-wGWMe",
+               ":block/string": "{{[[table]]}}",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "Hp9nW0hJK",
+               ":block/string": "Type `/Asyntai ask` at the end of a block to open the panel with that block's text as the question. The button in the top bar opens the panel too.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "HtIPzLAG-",
+             ":block/string": "Commands",
+             ":block/heading": 2,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "2-eIgz-4z"
+                }
+               ],
+               ":block/children": [
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "_m0ELh1V2",
+                   ":block/string": "Meaning",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "y-dFr5CkC",
+                 ":block/string": "Setting",
+                 ":block/order": 0
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "VruDvXvm3",
+                   ":block/string": "From Settings → API in your Asyntai dashboard",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "QCgDp-Ims",
+                 ":block/string": "Asyntai API key",
+                 ":block/order": 1
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "XOMTQkLg_",
+                   ":block/string": "The pages your chatbot answers from, on your website and in the panel. Title prefixes; `/` means every page",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "pz0ZhrVNG",
+                 ":block/string": "Pages to send",
+                 ":block/order": 2
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "Htf1LJc2G",
+                   ":block/string": "Prefixes that stay out even when a parent is sent, block references into them included",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "dHbVO_PID",
+                 ":block/string": "Pages to leave out",
+                 ":block/order": 3
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "VjUelPcLc",
+                   ":block/string": "Off by default, because daily notes are usually private",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "NX_HJmQ2y",
+                 ":block/string": "Send daily notes",
+                 ":block/order": 4
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "tzrqSVX9P",
+                   ":block/string": "Sends a page a few seconds after you stop typing",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "CcyYv9GIc",
+                 ":block/string": "Send changes automatically",
+                 ":block/order": 5
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "sGQIi1Wmr",
+                   ":block/string": "Leave as it is unless support asks you to change it. Must start with `https://`",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "8-N4OwzpQ",
+                 ":block/string": "Asyntai address",
+                 ":block/order": 6
+                }
+               ],
+               ":block/uid": "2ePfHuGhZ",
+               ":block/string": "{{[[table]]}}",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "_KCpkpzTL",
+             ":block/string": "Settings",
+             ":block/heading": 2,
+             ":block/order": 4
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "xJQ1zcCL3",
+               ":block/string": "An Asyntai account on the Starter plan or higher, because the extension uses the Asyntai API.",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "mUyFARawj",
+             ":block/string": "Requirements",
+             ":block/heading": 2,
+             ":block/order": 5
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "MaXqBQCcP",
+               ":block/string": "`build.sh` installs the dependencies and bundles `src/` into `extension.js`. `npm test` runs the unit tests and the graph tests on the datascript engine.",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "BRx46khlv",
+             ":block/string": "Building",
+             ":block/heading": 2,
+             ":block/order": 6
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "mImFEZlb9",
+               ":block/string": "Write to [hello@asyntai.com](mailto:hello@asyntai.com), or read the [documentation](https://asyntai.com/documentation/integrations/roam-research/).",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "WjnVz1qKD",
+             ":block/string": "Support",
+             ":block/heading": 2,
+             ":block/order": 7
+            }
+           ],
+           ":block/uid": "OcgmeVOoG",
+           ":block/string": "Asyntai AI Chatbot for Roam Research",
+           ":block/heading": 1,
+           ":block/order": 1
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "MqiRt2cbd",
+             ":block/string": "Keep selected child blocks pinned to the top of their current parent, even as blocks move and siblings are reorganized.",
+             ":block/order": 0
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "wDvC5AYRT",
+               ":block/string": "Pin selected references in the linked reference section to the top of the results.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "198VJvb7t",
+               ":block/string": "Pin, unpin, or toggle the focused block from the command palette.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "UTKdFFt0P",
+               ":block/string": "Pin or unpin any block from the block context menu.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "IpWZ_HGO0",
+               ":block/string": "Keep multiple pinned siblings at the top in their current pinned-group order.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "h4WLTP3RZ",
+               ":block/string": "Drag pinned blocks to reorder them within the pinned group.",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "9WcPKV4bA",
+               ":block/string": "Move pinned blocks to another parent and keep them pinned in the new pinned group.",
+               ":block/order": 5
+              },
+              {
+               ":block/uid": "3zn2EV981",
+               ":block/string": "Reorder the real Roam outline with Roam's native block reorder API; no duplicate shelf or hidden source blocks.",
+               ":block/order": 6
+              },
+              {
+               ":block/uid": "4ITZpPFSS",
+               ":block/string": "Watch pinned parents so regular blocks inserted above or between pinned blocks are moved below the pinned group.",
+               ":block/order": 7
+              },
+              {
+               ":block/uid": "lH3XMDyQq",
+               ":block/string": "Mark pinned blocks with a small pin indicator and stable CSS hooks for custom styling.",
+               ":block/order": 8
+              },
+              {
+               ":block/uid": "vLuCbX8cg",
+               ":block/string": "Share pin state between collaborators through graph-backed records on `roam/js/pinned-blocks`.",
+               ":block/order": 9
+              }
+             ],
+             ":block/uid": "aMSphtVFY",
+             ":block/string": "Features",
+             ":block/heading": 2,
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "vKARM7tfr",
+               ":block/string": "Hover over a linked reference or focus it with the keyboard to reveal its pin button. Active pins stay visible. Use the pin button beside a linked reference to keep it at the top of that page's linked reference results. Click the active pin button to unpin it. Pinned results initially appear expanded at the top, without a section heading or count. Use the caret beside a pinned block’s source-page title to collapse or expand that reference. Collapsing keeps the title visible and the block pinned; the collapsed state lasts while the pinned result remains on screen.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "-yu-Sww22",
+               ":block/string": "Pinned results show a clickable source page title (Shift-click opens the sidebar) and retain Roam's native block controls. References within page titles can also be pinned using the pin beside their source heading. A pinned title stays separate from pins on individual blocks from that page. Pinned results follow the order in which their pins are saved. The pin button shows a loading state while saving.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "u-Rvrc0Ly",
+               ":block/string": "Daily note pages and the Daily Notes view are supported, including collapsed reference groups. Use the Up and Down arrow keys on a pin button to move between the pin controls in their displayed order. Tab visits the pinned section first, then the remaining native reference controls.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "ZROZWV2BJ",
+               ":block/string": "Reference pins are saved separately for each target page or block under `roam/js/pinned-blocks` and shared with collaborators running the extension. They change the displayed reference order without changing source block order. Saved reference pins render immediately at the top, including references Roam has not lazy-loaded yet. Once the pinned copy has rendered successfully, the extension hides its original row when Roam loads it. While rendering is pending or has failed, the original row remains available. A failed pinned copy offers a Retry button. Unpinning removes the top copy and restores the original row. Roam's include/remove filters still apply to pinned copies. Deleted blocks and blocks that no longer reference the target are not shown.",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "qVLbA1NlQ",
+             ":block/string": "Linked reference pins",
+             ":block/heading": 2,
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "CdhSas57K",
+               ":block/string": "Collaborators running Pinned Blocks in the same graph share the same pin records and pinned order. Pin membership is stored under `roam/js/pinned-blocks`, while order follows the real Roam outline.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "9u9lQ_06l",
+               ":block/string": "Pinned Blocks changes real sibling order with Roam's native reorder API, so its changes are also visible to collaborators who do not run the extension. Those collaborators will not see pin indicators and may not understand why a block moves back into the pinned group.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "j3j4pLNEJ",
+             ":block/string": "Multiplayer graphs",
+             ":block/heading": 2,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "V05f2fNz0",
+               ":block/string": "Pinned Blocks creates `roam/js/pinned-blocks` with a notice explaining that the page is extension-managed. Each pin is stored as a separate child record using the `roamjs-pinned-blocks` block-props namespace. The page and notice remain when there are no pins; pin-data children are removed.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "UP5m8Kf8g",
+               ":block/string": "Pinned Blocks does not use browser local storage.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "ZsxKo3ZO6",
+             ":block/string": "Storage",
+             ":block/heading": 2,
+             ":block/order": 4
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "e5980WHiM",
+               ":block/string": "`Pinned Blocks: Toggle Pin Focused Block`",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "R76wmHh5S",
+               ":block/string": "`Pinned Blocks: Pin Focused Block`",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "CqI76fZfS",
+               ":block/string": "`Pinned Blocks: Unpin Focused Block`",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "20nmzkP29",
+             ":block/string": "Commands",
+             ":block/heading": 2,
+             ":block/order": 5
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "9a_LUJIFB",
+                 ":block/string": "`.roamjs-pinned-blocks-block`",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "R7J91oZIV",
+                 ":block/string": "`.roamjs-pinned-blocks-block-pinned`",
+                 ":block/order": 1
+                }
+               ],
+               ":block/uid": "UnH8-IYXJ",
+               ":block/string": "Pinned Blocks adds these classes to the rendered outline:",
+               ":block/order": 0
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "TniRm69aF",
+                 ":block/string": "`--roamjs-pinned-blocks-indicator-color`",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "LHb9VH_Je",
+                 ":block/string": "`--roamjs-pinned-blocks-indicator-size`",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "JkDTV5uk3",
+                 ":block/string": "`--roamjs-pinned-blocks-indicator-left`",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "B7gni8cDF",
+                 ":block/string": "`--roamjs-pinned-blocks-sidebar-indicator-left`",
+                 ":block/order": 3
+                },
+                {
+                 ":block/uid": "OuOYWptGF",
+                 ":block/string": "`--roamjs-pinned-blocks-indicator-top`",
+                 ":block/order": 4
+                },
+                {
+                 ":block/uid": "icTX2eSWT",
+                 ":block/string": "`--roamjs-pinned-blocks-indicator-opacity`",
+                 ":block/order": 5
+                },
+                {
+                 ":block/uid": "Q8q4mjltv",
+                 ":block/string": "`--roamjs-pinned-blocks-indicator-z-index`",
+                 ":block/order": 6
+                }
+               ],
+               ":block/uid": "Tre3ZItjQ",
+               ":block/string": "The default indicator is rendered on `.roamjs-pinned-blocks-block-pinned::before` and can be adjusted with CSS variables:",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "uNjPS-M60",
+             ":block/string": "Styling",
+             ":block/heading": 2,
+             ":block/order": 6
+            }
+           ],
+           ":block/uid": "KOdRzy4O1",
+           ":block/string": "Pinned Blocks",
+           ":block/heading": 1,
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "gCu1Pq3mv",
+         ":block/string": "[[Roam Depot Extensions]]",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "E3sxVLAyU",
+       ":block/string": "[[October 15th, 2026]]",
        ":block/order": 0
       }
      ],
