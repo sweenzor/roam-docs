@@ -4,6 +4,10 @@
 
 ### **New Changes**
 
+- [[October 16th, 2026]]
+  - [[New Features]]
+    - Generate `:q` queries with [[AI]]
+      - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F6POTLpMLdS.mp4?alt=media&token=63c6aa11-3cdd-4d67-8da7-5092835a631e}}
 - [[October 15th, 2026]]
   - [[Roam Depot Extensions]]
     - **Pinned Blocks**

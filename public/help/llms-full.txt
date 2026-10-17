@@ -2,7 +2,7 @@
 
 > Complete markdown export of the public Roam Research graph "help"
 > (https://roamresearch.com/#/app/help). Roam Research's official help graph: the product's user documentation.
-> Exported 2026-10-16T10:02:37.088Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
+> Exported 2026-10-17T09:35:58.585Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
 > Also on this site: Developer documentation — https://roamdocs.fyi/developer-documentation/llms-full.txt
 
 ## Table of contents
@@ -201,6 +201,10 @@
 
 ### **New Changes**
 
+- [[October 16th, 2026]]
+  - [[New Features]]
+    - Generate `:q` queries with [[AI]]
+      - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F6POTLpMLdS.mp4?alt=media&token=63c6aa11-3cdd-4d67-8da7-5092835a631e}}
 - [[October 15th, 2026]]
   - [[Roam Depot Extensions]]
     - **Pinned Blocks**
