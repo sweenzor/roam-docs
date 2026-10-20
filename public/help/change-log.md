@@ -4,6 +4,10 @@
 
 ### **New Changes**
 
+- [[October 19th, 2026]]
+  - [[Quality of Life Improvements]]
+    - New video player and [[Video Timestamps]] for videos uploaded to Roam
+      - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FoKH9ZrO4lD.mp4?alt=media&token=64999373-6b01-4489-b934-fdd1e30da58e}}
 - [[October 16th, 2026]]
   - [[New Features]]
     - Generate `:q` queries with [[AI]]
