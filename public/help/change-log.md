@@ -4,9 +4,15 @@
 
 ### **New Changes**
 
+- [[October 22nd, 2026]]
+  - [[Quality of Life Improvements]]
+    - [[video]] player theater mode and [[Video Timestamps]] view
+      - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F9TQ_Rve61u.png?alt=media&token=1ee381a7-e87f-4987-9be5-25d13af1d687)
+      - videos uploaded to roam will also display the timestamps on the player controls
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FfZ2T4HiAex.png?alt=media&token=4355a237-5edb-4640-8603-9fb1b552b0ea)
 - [[October 19th, 2026]]
   - [[Quality of Life Improvements]]
-    - New video player and [[Video Timestamps]] for videos uploaded to Roam
+    - New [[video]] player and [[Video Timestamps]] for videos uploaded to Roam
       - {{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FoKH9ZrO4lD.mp4?alt=media&token=64999373-6b01-4489-b934-fdd1e30da58e}}
 - [[October 16th, 2026]]
   - [[New Features]]
