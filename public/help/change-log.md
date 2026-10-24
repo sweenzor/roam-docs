@@ -4,6 +4,9 @@
 
 ### **New Changes**
 
+- [[October 23rd, 2026]]
+  - [[Bug Fixes]]
+    - Clicking a block in the sidebar no longer jumps to the same block in the main window when the same linked references, query, embed or {{mentions}} is open in both.
 - [[October 22nd, 2026]]
   - [[Quality of Life Improvements]]
     - [[video]] player theater mode and [[Video Timestamps]] view
