@@ -42,6 +42,178 @@
 <h3>[Updating Roam](<a href="/help/updating-roam">Updating Roam</a>)</h3>
 <h3><strong>New Changes</strong></h3>
 <ul>
+<li>October 27th, 2026
+<ul>
+<li>Bug Fixes
+<ul>
+<li>Fix <a href="/help/semantic-search">Semantic search</a> not returning results with a small date range
+</li>
+</ul>
+</li>
+<li>Roam Depot Extensions
+<ul>
+<li><strong>Roam Pele</strong>
+<ul>
+<li>Draws Mermaid diagrams in Roam Research with <a href="https://pele.run/">Pele</a>, a small Mermaid renderer. Diagrams take the full block width and grow to their natural height, and Pele lays them out again when the width changes.
+</li>
+<li>It handles three kinds of diagram:
+<ul>
+<li><code>{{[[mermaid]]}}</code> blocks, drawn by Pele instead of Roam's own renderer.
+</li>
+<li>A new <code>{{[[pele]]}}</code> component.
+</li>
+<li>Mermaid code blocks, previewed inside the code block.
+</li>
+</ul>
+</li>
+<li><strong><code>{{[[mermaid]]}}</code> blocks</strong>
+<ul>
+<li>Write them as you always have, with the Mermaid source in the child blocks. Pele draws the diagram and Roam's own frame is hidden while Pele's drawing is showing. An Edit button appears at the top right when you hover the diagram, to get back into edit mode.
+<ul>
+<li>Roam still loads and runs mermaid.js behind the hidden frame, so this is not faster than before.
+</li>
+<li>If Pele cannot draw a diagram (for example a syntax Pele does not support), Roam's own drawing is shown instead.
+</li>
+<li>Block references and autocomplete previews keep Roam's own drawing. The main view, the sidebar and embeds are drawn by Pele.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>{{[[pele]]}}</code> blocks</strong>
+<ul>
+<li>Write them like <code>{{[[mermaid]]}}</code>: put the Mermaid source in the child blocks, usually one line per block. Unlike <code>{{[[mermaid]]}}</code>, the depth of a nested child becomes Mermaid indentation (2 spaces per level), so a mindmap can be written as an outline:
+</li>
+<li><pre><code>{{[[pele]]}}
+  mindmap
+    root
+      topic A
+        detail
+      topic B</code></pre>
+</li>
+<li>Every line is a block, nested the way Roam nests it. Under <code>{{[[mermaid]]}}</code> that nesting is dropped, as in Roam itself.
+<ul>
+<li>With no children, the block shows &quot;Add Mermaid in child blocks&quot;.
+</li>
+<li>If Pele cannot draw the source, Pele's error message is shown in place.
+</li>
+<li>Roam does not load mermaid.js for <code>{{[[pele]]}}</code>.
+</li>
+<li>Like <code>{{[[mermaid]]}}</code>, it creates a <code>[[pele]]</code> page reference.
+</li>
+<li>Without the extension, Roam shows an inert &quot;pele&quot; button and the child blocks stay as they are.
+</li>
+<li>Inside a block reference or an autocomplete preview, <code>{{[[pele]]}}</code> stays Roam's inert &quot;pele&quot; button. Those two places are not decorated for any kind of diagram.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Mermaid code blocks</strong>
+<ul>
+<li>A code block whose first line is <code>mermaid</code> gets a Pele preview inside the block, above or below the editor (see Settings):
+</li>
+<li><pre><code></code></pre>mermaid<br>
+graph TD<br>
+A--&gt;B<br>
+<pre><code></code></pre>`
+</li>
+<li>The preview updates as you type. Code blocks that are the source of a <code>{{[[mermaid]]}}</code> or <code>{{[[pele]]}}</code> block are not previewed again.
+</li>
+<li>When you leave the editor, Roam rewrites a <pre><code>`mermaid` block to </code></pre><code>javascript</code> and moves <code>mermaid</code> to the first line of the body. This is harmless: the preview recognises both forms and keeps working. The extension does not try to prevent it.
+</li>
+</ul>
+</li>
+<li><strong>Settings</strong>
+<ul>
+<li>The &quot;Pele&quot; tab in the extension settings:
+</li>
+<li>{{table}}
+<ul>
+<li>Setting
+<ul>
+<li>Default
+<ul>
+<li>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Draw {{mermaid}} with Pele
+<ul>
+<li>on
+<ul>
+<li>Turn it off to get Roam's own drawing back for <code>{{[[mermaid]]}}</code>.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Preview Mermaid code blocks
+<ul>
+<li>on
+<ul>
+<li>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Code block preview position
+<ul>
+<li>Above
+<ul>
+<li>Above or Below the editor.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Changes apply without reloading. Disabling the extension also restores Roam's own drawing. <code>{{[[pele]]}}</code> has no switch.
+</li>
+</ul>
+</li>
+<li><strong>Commands</strong>
+<ul>
+<li>Slash command &quot;Pele diagram&quot; inserts <code>{{[[pele]]}}</code>.
+</li>
+<li>Command palette &quot;Pele: convert to {{pele}}&quot; and &quot;Pele: convert to {{mermaid}}&quot; replace the first <code>{{mermaid}}</code> or <code>{{pele}}</code> token in the block you are editing (cursor in the block) with the other component. They do nothing when no block is being edited. They change only that token and leave the rest of the block and its children alone. The drawing looks the same after converting, because Pele draws both kinds; the difference is that <code>{{[[pele]]}}</code> skips mermaid.js and keeps indentation, while converting to <code>{{[[mermaid]]}}</code> drops the meaning of nested indentation.
+</li>
+</ul>
+</li>
+<li><strong>Notes and limits</strong>
+<ul>
+<li>Pele lays diagrams out differently from mermaid.js, so a diagram will not look the same as Roam's own drawing.
+</li>
+<li>Pele ignores Mermaid themes (<code>%%{init: {theme}}%%</code>, <code>--mermaidjs-theme</code>). <code>style</code> and <code>classDef</code> colours still apply.
+</li>
+<li>Pele targets Mermaid 12.1.0 syntax, while Roam ships mermaid 11.4.1, so a diagram can work in one and not the other. For <code>{{[[mermaid]]}}</code>, Roam's own drawing is then shown.
+</li>
+<li>Colours follow Roam's light palette, and dark colours are set for the <code>bp3-dark</code>, <code>rs-dark</code>, <code>rm-dark-theme</code> and <code>roamjs-custom-dark-theme</code> classes. There is no other dark mode detection.
+</li>
+<li>The extension relies on Roam's undocumented page structure and may need updating when Roam changes it.
+</li>
+<li>Not supported: dragging to resize, Roam's fullscreen button, zoom and export.
+</li>
+<li>Phone app: not verified. The checks so far were done in the Roam web app in Chrome.
+</li>
+</ul>
+</li>
+<li><strong>Privacy</strong>
+<ul>
+<li>The extension makes no network requests of its own and loads no remote code. What you write in a diagram can still point outside the graph: an image URL in a Mermaid image shape (for example <code>A@{ img: &quot;https://…&quot; }</code>) is loaded by the browser when the diagram is drawn, for everyone who opens the page with the extension on, and <code>click</code> links in a diagram open when clicked (<code>javascript:</code> links are blocked). It never writes to your pages or blocks, except when you run one of the two convert commands. It stores its own three settings with the graph.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>October 26th, 2026
 <ul>
 <li>Roam Depot Extensions
