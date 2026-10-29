@@ -4,6 +4,34 @@
 
 ### **New Changes**
 
+- [[October 28th, 2026]]
+  - [[New Features]] 🚀
+    - **[[Roam Desk]] (+ [[Sidecar]])**
+      - A little Roam, one shortcut away: jot something down, or pick up what you're working on, without leaving what you're doing
+      - Watch the video below or just read along!
+        - {{[[video]]: https://www.loom.com/share/52a5405cfd084e9eb0ec139cb162e980}}
+      - **Roam Desk: the notes you're working with right now** (web and desktop)
+        - Write new notes, or add any block or page: "Add to Desk" in a bullet's or a page's menu
+        - Swipe between them with two fingers (or via keyboard hotkeys); or navigate via the overview
+        - Open it in any Roam window with `opt-shift-s` (`alt-shift-s` on Windows and Linux), or from "Desk" in the left sidebar
+        - It's all in your graph: your Desk is a page, and each note you write is listed on that day's daily note under "Desk captures", so you (and your AI agents) can find it
+        - Removing a note from your Desk doesn't delete it: it goes to the day you wrote it. Removing a block or page you added only takes it off your Desk
+      - **+ Sidecar: a little Roam floating window over any app** (desktop app)
+        - `opt-s` (`ctrl-alt-s` on Windows and Linux) shows a little Roam window over whatever you're doing, full-screen apps included; press it again to hide it
+        - In the Sidecar: `opt-,` and `opt-.` for the next and previous note, `opt-o` for the overview, `cmd-n` for a new note
+        - A second mode, from the menu in its title bar: **Follow** main window, which shows whatever your main window shows (great for logging while you work)
+        - **Setup**
+          - Update the desktop app: Check for Updates (macOS: the Roam Research menu; Windows and Linux: your avatar on the All Graphs page), then quit Roam and reopen it. It can take a reopen or two
+          - You're up to date when "Pair this graph with Roam Sidecar" shows up in the command palette (`cmd-p`). Run it in your main graph
+          - No luck? Download the latest version from [roamresearch.com](https://roamresearch.com/)
+      - [[FAQ]]s below:
+        - **Q: Do I need the desktop app?**: Roam Desk works everywhere, the web included. Desktop Sidecar (which is the preferred way to use Desk on your computer) does need the desktop app
+        - **Q: I have more than one graph.** Each graph has its own Desk. The Sidecar pairs with one graph at a time; in the others, `opt-shift-s` opens the Desk inside the window
+        - **Q: Encrypted graphs?** Yes, once the graph is unlocked in its window
+        - **Q: Can I change the shortcuts?** The Sidecar's own shortcut in the Sidecar menu (topbar of the desktop app, the OS one); the others in Hotkeys settings
+      - Bugs, questions, ideas? Contact us via our slack or email us at support@roamresearch.com or via chat
+    - [[Desktop App]] 0.0.42: Roam Sidecar
+      - Update with Check for Updates, or download it from roamresearch.com
 - [[October 27th, 2026]]
   - [[Bug Fixes]]
     - Fix [[Semantic search]] not returning results with a small date range

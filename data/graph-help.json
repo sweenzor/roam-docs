@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-10-28T11:32:30.100Z",
+ "exportedAt": "2026-10-29T11:42:51.432Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -14141,6 +14141,10 @@
    ":block/uid": "YEDSWbbnb"
   },
   {
+   ":node/title": "October 28th, 2026",
+   ":block/uid": "10-28-2026"
+  },
+  {
    ":node/title": "September 29th, 2026",
    ":block/uid": "09-29-2026"
   },
@@ -24830,6 +24834,10 @@
    ":block/uid": "d30qby1kL"
   },
   {
+   ":node/title": "Sidecar",
+   ":block/uid": "F9iR8iRh9"
+  },
+  {
    ":node/title": "October 17th, 2020",
    ":block/uid": "10-17-2020"
   },
@@ -35195,7 +35203,7 @@
        ":block/uid": "z7nDW4FYi",
        ":block/string": "[[2021]]",
        ":block/heading": 3,
-       ":block/order": 63
+       ":block/order": 64
       },
       {
        ":block/refs": [
@@ -38358,7 +38366,7 @@
        ":block/uid": "oEUzBpPVt",
        ":block/string": "[[2022]]",
        ":block/heading": 3,
-       ":block/order": 62
+       ":block/order": 63
       },
       {
        ":block/refs": [
@@ -42940,7 +42948,7 @@
        ":block/uid": "3DcyG9fYJ",
        ":block/string": "[[2023]]",
        ":block/heading": 3,
-       ":block/order": 61
+       ":block/order": 62
       },
       {
        ":block/refs": [
@@ -48778,7 +48786,7 @@
        ":block/uid": "N8o9mOFxV",
        ":block/string": "[[2024]]",
        ":block/heading": 3,
-       ":block/order": 60
+       ":block/order": 61
       },
       {
        ":block/refs": [
@@ -48866,7 +48874,7 @@
        ],
        ":block/uid": "mbBXOyRr4",
        ":block/string": "[[January 7th, 2026]]",
-       ":block/order": 58
+       ":block/order": 59
       },
       {
        ":block/refs": [
@@ -49713,7 +49721,7 @@
        ],
        ":block/uid": "D4sWwAFQH",
        ":block/string": "[[January 12th, 2026]]",
-       ":block/order": 57
+       ":block/order": 58
       },
       {
        ":block/refs": [
@@ -50131,7 +50139,7 @@
        ],
        ":block/uid": "fZnJ8SpjV",
        ":block/string": "[[January 16th, 2026]]",
-       ":block/order": 56
+       ":block/order": 57
       },
       {
        ":block/refs": [
@@ -59273,7 +59281,7 @@
        ":block/uid": "e3HyGxGmz",
        ":block/string": "[[2025]]",
        ":block/heading": 3,
-       ":block/order": 59
+       ":block/order": 60
       },
       {
        ":block/refs": [
@@ -59500,7 +59508,7 @@
        ],
        ":block/uid": "DQLXBkLqB",
        ":block/string": "[[January 30th, 2026]]",
-       ":block/order": 55
+       ":block/order": 56
       },
       {
        ":block/refs": [
@@ -59806,7 +59814,7 @@
        ],
        ":block/uid": "faBrrXpMf",
        ":block/string": "[[February 10th, 2026]]",
-       ":block/order": 54
+       ":block/order": 55
       },
       {
        ":block/refs": [
@@ -59863,7 +59871,7 @@
        ],
        ":block/uid": "HGdio9-X1",
        ":block/string": "[[February 11th, 2026]]",
-       ":block/order": 53
+       ":block/order": 54
       },
       {
        ":block/refs": [
@@ -60023,7 +60031,7 @@
        ],
        ":block/uid": "3YbHyvMVu",
        ":block/string": "[[February 18th, 2026]]",
-       ":block/order": 52
+       ":block/order": 53
       },
       {
        ":block/refs": [
@@ -60113,7 +60121,7 @@
        ],
        ":block/uid": "l1CEHstpS",
        ":block/string": "[[February 19th, 2026]]",
-       ":block/order": 51
+       ":block/order": 52
       },
       {
        ":block/refs": [
@@ -60171,7 +60179,7 @@
        ],
        ":block/uid": "w7XCOWrmV",
        ":block/string": "[[February 22nd, 2026]]",
-       ":block/order": 50
+       ":block/order": 51
       },
       {
        ":block/refs": [
@@ -60264,7 +60272,7 @@
        ],
        ":block/uid": "lq5IvpQ7J",
        ":block/string": "[[February 25th, 2026]]",
-       ":block/order": 49
+       ":block/order": 50
       },
       {
        ":block/refs": [
@@ -61062,7 +61070,7 @@
        ],
        ":block/uid": "ipU_NCoCx",
        ":block/string": "[[February 26th, 2026]]",
-       ":block/order": 48
+       ":block/order": 49
       },
       {
        ":block/refs": [
@@ -61110,7 +61118,7 @@
        ],
        ":block/uid": "WO-6A7VX9",
        ":block/string": "[[February 27th, 2026]]",
-       ":block/order": 47
+       ":block/order": 48
       },
       {
        ":block/refs": [
@@ -61245,7 +61253,7 @@
        ],
        ":block/uid": "AHy3mUokJ",
        ":block/string": "[[March 9th, 2026]]",
-       ":block/order": 46
+       ":block/order": 47
       },
       {
        ":block/refs": [
@@ -61415,7 +61423,7 @@
        ],
        ":block/uid": "-R8L5nZLD",
        ":block/string": "[[March 11th, 2026]]",
-       ":block/order": 45
+       ":block/order": 46
       },
       {
        ":block/refs": [
@@ -61539,7 +61547,7 @@
        ],
        ":block/uid": "e5HOoYOYK",
        ":block/string": "[[March 24th, 2026]]",
-       ":block/order": 44
+       ":block/order": 45
       },
       {
        ":block/refs": [
@@ -61578,7 +61586,7 @@
        ],
        ":block/uid": "hP0WzVCb3",
        ":block/string": "[[March 30th, 2026]]",
-       ":block/order": 43
+       ":block/order": 44
       },
       {
        ":block/refs": [
@@ -62077,7 +62085,7 @@
        ],
        ":block/uid": "kYfXB-KfD",
        ":block/string": "[[March 31st, 2026]]",
-       ":block/order": 42
+       ":block/order": 43
       },
       {
        ":block/refs": [
@@ -62141,7 +62149,7 @@
        ],
        ":block/uid": "hy237MoSG",
        ":block/string": "[[April 10th, 2026]]",
-       ":block/order": 41
+       ":block/order": 42
       },
       {
        ":block/refs": [
@@ -62363,7 +62371,7 @@
        ],
        ":block/uid": "Ld3WwhXAJ",
        ":block/string": "[[April 14th, 2026]]",
-       ":block/order": 40
+       ":block/order": 41
       },
       {
        ":block/refs": [
@@ -62414,7 +62422,7 @@
        ],
        ":block/uid": "FX03un0yx",
        ":block/string": "[[April 15th, 2026]]",
-       ":block/order": 39
+       ":block/order": 40
       },
       {
        ":block/refs": [
@@ -62463,7 +62471,7 @@
        ],
        ":block/uid": "Tdxn9p6T-",
        ":block/string": "[[April 17th, 2026]]",
-       ":block/order": 38
+       ":block/order": 39
       },
       {
        ":block/refs": [
@@ -64143,7 +64151,7 @@
        ],
        ":block/uid": "yYmOmnffK",
        ":block/string": "[[April 27th, 2026]]",
-       ":block/order": 37
+       ":block/order": 38
       },
       {
        ":block/refs": [
@@ -64223,7 +64231,7 @@
        ],
        ":block/uid": "E8B5FpUqb",
        ":block/string": "[[May 1st, 2026]]",
-       ":block/order": 36
+       ":block/order": 37
       },
       {
        ":block/refs": [
@@ -64407,7 +64415,7 @@
        ],
        ":block/uid": "_bXQOG7-W",
        ":block/string": "[[May 4th, 2026]]",
-       ":block/order": 35
+       ":block/order": 36
       },
       {
        ":block/refs": [
@@ -64506,7 +64514,7 @@
        ],
        ":block/uid": "77u8rD3tN",
        ":block/string": "[[May 5th, 2026]]",
-       ":block/order": 34
+       ":block/order": 35
       },
       {
        ":block/refs": [
@@ -64569,7 +64577,7 @@
        ],
        ":block/uid": "4jefQzlrL",
        ":block/string": "[[May 15th, 2026]]",
-       ":block/order": 33
+       ":block/order": 34
       },
       {
        ":block/refs": [
@@ -64625,7 +64633,7 @@
        ],
        ":block/uid": "yCa6IFyF-",
        ":block/string": "[[May 21st, 2026]]",
-       ":block/order": 32
+       ":block/order": 33
       },
       {
        ":block/refs": [
@@ -64666,7 +64674,7 @@
        ],
        ":block/uid": "s1JCTlMYp",
        ":block/string": "[[May 28th, 2026]]",
-       ":block/order": 31
+       ":block/order": 32
       },
       {
        ":block/refs": [
@@ -64708,7 +64716,7 @@
        ],
        ":block/uid": "GtQy1iARj",
        ":block/string": "[[June 1st, 2026]]",
-       ":block/order": 30
+       ":block/order": 31
       },
       {
        ":block/refs": [
@@ -64835,7 +64843,7 @@
        ],
        ":block/uid": "FfZFcIMVi",
        ":block/string": "[[June 2nd, 2026]]",
-       ":block/order": 29
+       ":block/order": 30
       },
       {
        ":block/refs": [
@@ -64871,7 +64879,7 @@
        ],
        ":block/uid": "o0biga_ls",
        ":block/string": "[[June 9th, 2026]]",
-       ":block/order": 28
+       ":block/order": 29
       },
       {
        ":block/refs": [
@@ -64900,7 +64908,7 @@
        ],
        ":block/uid": "1oHVhjf1j",
        ":block/string": "[[June 10th, 2026]]",
-       ":block/order": 27
+       ":block/order": 28
       },
       {
        ":block/refs": [
@@ -64939,7 +64947,7 @@
        ],
        ":block/uid": "jlW42mQ3s",
        ":block/string": "[[June 11th, 2026]]",
-       ":block/order": 26
+       ":block/order": 27
       },
       {
        ":block/refs": [
@@ -65486,7 +65494,7 @@
        ],
        ":block/uid": "Wp3IwehIi",
        ":block/string": "[[June 13th, 2026]]",
-       ":block/order": 25
+       ":block/order": 26
       },
       {
        ":block/refs": [
@@ -65627,7 +65635,7 @@
        ],
        ":block/uid": "T7MyhAu_Z",
        ":block/string": "[[June 30th, 2026]]",
-       ":block/order": 24
+       ":block/order": 25
       },
       {
        ":block/refs": [
@@ -65683,7 +65691,7 @@
        ],
        ":block/uid": "MdrAuMqaU",
        ":block/string": "[[July 2nd, 2026]]",
-       ":block/order": 23
+       ":block/order": 24
       },
       {
        ":block/refs": [
@@ -65712,7 +65720,7 @@
        ],
        ":block/uid": "MUux5EgdX",
        ":block/string": "[[July 6th, 2026]]",
-       ":block/order": 22
+       ":block/order": 23
       },
       {
        ":block/refs": [
@@ -65746,7 +65754,7 @@
        ],
        ":block/uid": "Omo5TNL1L",
        ":block/string": "[[July 7th, 2026]]",
-       ":block/order": 21
+       ":block/order": 22
       },
       {
        ":block/refs": [
@@ -65925,7 +65933,7 @@
        ],
        ":block/uid": "6kZb0aiyX",
        ":block/string": "[[July 10th, 2026]]",
-       ":block/order": 20
+       ":block/order": 21
       },
       {
        ":block/refs": [
@@ -66078,7 +66086,7 @@
        ],
        ":block/uid": "VoTSRMSbW",
        ":block/string": "[[July 13th, 2026]]",
-       ":block/order": 19
+       ":block/order": 20
       },
       {
        ":block/refs": [
@@ -66112,7 +66120,7 @@
        ],
        ":block/uid": "x3tGBCvQq",
        ":block/string": "[[July 15th, 2026]]",
-       ":block/order": 18
+       ":block/order": 19
       },
       {
        ":block/refs": [
@@ -66141,7 +66149,7 @@
        ],
        ":block/uid": "CNp2sgkob",
        ":block/string": "[[July 23rd, 2026]]",
-       ":block/order": 17
+       ":block/order": 18
       },
       {
        ":block/refs": [
@@ -66192,7 +66200,7 @@
        ],
        ":block/uid": "Oe6_LO9ka",
        ":block/string": "[[July 28th, 2026]]",
-       ":block/order": 16
+       ":block/order": 17
       },
       {
        ":block/refs": [
@@ -66252,7 +66260,7 @@
        ],
        ":block/uid": "jYcUoRTGl",
        ":block/string": "[[July 29th, 2026]]",
-       ":block/order": 15
+       ":block/order": 16
       },
       {
        ":block/refs": [
@@ -66892,7 +66900,7 @@
        ],
        ":block/uid": "iYlYbcCWh",
        ":block/string": "[[August 11th, 2026]]",
-       ":block/order": 14
+       ":block/order": 15
       },
       {
        ":block/refs": [
@@ -68483,7 +68491,7 @@
        ],
        ":block/uid": "YXoTyc5pB",
        ":block/string": "[[August 22nd, 2026]]",
-       ":block/order": 13
+       ":block/order": 14
       },
       {
        ":block/refs": [
@@ -68500,7 +68508,7 @@
        ],
        ":block/uid": "3uD6RaJ7K",
        ":block/string": "[[September 9th, 2026]]",
-       ":block/order": 12
+       ":block/order": 13
       },
       {
        ":block/refs": [
@@ -68992,7 +69000,7 @@
        ],
        ":block/uid": "ZCXwQjjYw",
        ":block/string": "[[September 11th, 2026]]",
-       ":block/order": 11
+       ":block/order": 12
       },
       {
        ":block/refs": [
@@ -69208,7 +69216,7 @@
        ],
        ":block/uid": "kBLGC17Sb",
        ":block/string": "[[September 28th, 2026]]",
-       ":block/order": 10
+       ":block/order": 11
       },
       {
        ":block/refs": [
@@ -69624,7 +69632,7 @@
        ],
        ":block/uid": "wSIxrE1g0",
        ":block/string": "[[September 29th, 2026]]",
-       ":block/order": 9
+       ":block/order": 10
       },
       {
        ":block/refs": [
@@ -70245,7 +70253,7 @@
        ],
        ":block/uid": "hI0U1YW-Q",
        ":block/string": "[[October 6th, 2026]]",
-       ":block/order": 8
+       ":block/order": 9
       },
       {
        ":block/refs": [
@@ -70837,7 +70845,7 @@
        ],
        ":block/uid": "qNY6cTAg7",
        ":block/string": "[[October 7th, 2026]]",
-       ":block/order": 7
+       ":block/order": 8
       },
       {
        ":block/refs": [
@@ -71413,7 +71421,7 @@
        ],
        ":block/uid": "E3sxVLAyU",
        ":block/string": "[[October 15th, 2026]]",
-       ":block/order": 6
+       ":block/order": 7
       },
       {
        ":block/refs": [
@@ -71459,7 +71467,7 @@
        ],
        ":block/uid": "NPRJNQ9Qt",
        ":block/string": "[[October 16th, 2026]]",
-       ":block/order": 5
+       ":block/order": 6
       },
       {
        ":block/refs": [
@@ -71508,7 +71516,7 @@
        ],
        ":block/uid": "c_5TqF_pf",
        ":block/string": "[[October 19th, 2026]]",
-       ":block/order": 4
+       ":block/order": 5
       },
       {
        ":block/refs": [
@@ -71564,7 +71572,7 @@
        ],
        ":block/uid": "yUIUTqPfV",
        ":block/string": "[[October 22nd, 2026]]",
-       ":block/order": 3
+       ":block/order": 4
       },
       {
        ":block/refs": [
@@ -71593,7 +71601,7 @@
        ],
        ":block/uid": "Md_GurA4p",
        ":block/string": "[[October 23rd, 2026]]",
-       ":block/order": 2
+       ":block/order": 3
       },
       {
        ":block/refs": [
@@ -71745,7 +71753,7 @@
        ],
        ":block/uid": "9Sl1WrMJg",
        ":block/string": "[[October 26th, 2026]]",
-       ":block/order": 1
+       ":block/order": 2
       },
       {
        ":block/refs": [
@@ -72132,6 +72140,198 @@
        ],
        ":block/uid": "iGAh8RzEq",
        ":block/string": "[[October 27th, 2026]]",
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "10-28-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "h_pvMVa7e"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "8aMX-2ysY"
+            },
+            {
+             ":block/uid": "F9iR8iRh9"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "z3RPTPHnM",
+             ":block/string": "A little Roam, one shortcut away: jot something down, or pick up what you're working on, without leaving what you're doing",
+             ":block/order": 0
+            },
+            {
+             ":block/children": [
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "2h9V-FtAO"
+                }
+               ],
+               ":block/uid": "I6NYXezVa",
+               ":block/string": "{{[[video]]: https://www.loom.com/share/52a5405cfd084e9eb0ec139cb162e980}}",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "jDMXaj6Mu",
+             ":block/string": "Watch the video below or just read along!",
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "AdX8zeTyl",
+               ":block/string": "Write new notes, or add any block or page: \"Add to Desk\" in a bullet's or a page's menu",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "Q37KFSI8z",
+               ":block/string": "Swipe between them with two fingers (or via keyboard hotkeys); or navigate via the overview",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "fsyD6WJnD",
+               ":block/string": "Open it in any Roam window with `opt-shift-s` (`alt-shift-s` on Windows and Linux), or from \"Desk\" in the left sidebar",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "bEkjjzm0Z",
+               ":block/string": "It's all in your graph: your Desk is a page, and each note you write is listed on that day's daily note under \"Desk captures\", so you (and your AI agents) can find it",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "c20RWGkmN",
+               ":block/string": "Removing a note from your Desk doesn't delete it: it goes to the day you wrote it. Removing a block or page you added only takes it off your Desk",
+               ":block/order": 4
+              }
+             ],
+             ":block/uid": "gyeZglp28",
+             ":block/string": "**Roam Desk: the notes you're working with right now** (web and desktop)",
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "DnoPxcTm6",
+               ":block/string": "`opt-s` (`ctrl-alt-s` on Windows and Linux) shows a little Roam window over whatever you're doing, full-screen apps included; press it again to hide it",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "AYnXs4qe6",
+               ":block/string": "In the Sidecar: `opt-,` and `opt-.` for the next and previous note, `opt-o` for the overview, `cmd-n` for a new note",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "2bbGWnUQi",
+               ":block/string": "A second mode, from the menu in its title bar: **Follow** main window, which shows whatever your main window shows (great for logging while you work)",
+               ":block/order": 2
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "B9fVWT2KP",
+                 ":block/string": "Update the desktop app: Check for Updates (macOS: the Roam Research menu; Windows and Linux: your avatar on the All Graphs page), then quit Roam and reopen it. It can take a reopen or two",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "zsB3s89ay",
+                 ":block/string": "You're up to date when \"Pair this graph with Roam Sidecar\" shows up in the command palette (`cmd-p`). Run it in your main graph",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "gUt3nCMgi",
+                 ":block/string": "No luck? Download the latest version from [roamresearch.com](https://roamresearch.com/)",
+                 ":block/order": 2
+                }
+               ],
+               ":block/uid": "XrVtzvWSB",
+               ":block/string": "**Setup**",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "z_IYxVOsZ",
+             ":block/string": "**+ Sidecar: a little Roam floating window over any app** (desktop app)",
+             ":block/order": 3
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "QWRPpk5H-"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "RDAobxdjg",
+               ":block/string": "**Q: Do I need the desktop app?**: Roam Desk works everywhere, the web included. Desktop Sidecar (which is the preferred way to use Desk on your computer) does need the desktop app",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "KvbADTIHv",
+               ":block/string": "**Q: I have more than one graph.** Each graph has its own Desk. The Sidecar pairs with one graph at a time; in the others, `opt-shift-s` opens the Desk inside the window",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "t9C9vhpXu",
+               ":block/string": "**Q: Encrypted graphs?** Yes, once the graph is unlocked in its window",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "QyCHBnGje",
+               ":block/string": "**Q: Can I change the shortcuts?** The Sidecar's own shortcut in the Sidecar menu (topbar of the desktop app, the OS one); the others in Hotkeys settings",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "LDTxEtP1W",
+             ":block/string": "[[FAQ]]s below:",
+             ":block/order": 4
+            },
+            {
+             ":block/uid": "Sl_tfNaen",
+             ":block/string": "Bugs, questions, ideas? Contact us via our slack or email us at support@roamresearch.com or via chat",
+             ":block/order": 5
+            }
+           ],
+           ":block/uid": "aSG1DyNme",
+           ":block/string": "[[Roam Desk]] (+ [[Sidecar]])",
+           ":block/heading": 2,
+           ":block/order": 0
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "hyL5OPFah"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "Jyzwmfv4W",
+             ":block/string": "Update with Check for Updates, or download it from roamresearch.com",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "SozLMGvIM",
+           ":block/string": "[[Desktop App]] 0.0.42: Roam Sidecar",
+           ":block/order": 1
+          }
+         ],
+         ":block/uid": "QEyQX7xDY",
+         ":block/string": "[[New Features]] 🚀",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "6s-CszDMY",
+       ":block/string": "[[October 28th, 2026]]",
        ":block/order": 0
       }
      ],
@@ -79598,6 +79798,10 @@
    ":block/uid": "05-19-2021"
   },
   {
+   ":node/title": "Roam Sidecar",
+   ":block/uid": "0wiy1YEqx"
+  },
+  {
    ":node/title": "July 2nd, 2020",
    ":block/uid": "07-02-2020"
   },
@@ -84664,6 +84868,10 @@
     }
    ],
    ":block/uid": "nbJ0jAsk_"
+  },
+  {
+   ":node/title": "Roam Desk",
+   ":block/uid": "8aMX-2ysY"
   },
   {
    ":node/title": "June 30th, 2023",
