@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-10-29T11:42:51.432Z",
+ "exportedAt": "2026-10-31T11:05:29.818Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -79796,10 +79796,6 @@
   {
    ":node/title": "May 19th, 2021",
    ":block/uid": "05-19-2021"
-  },
-  {
-   ":node/title": "Roam Sidecar",
-   ":block/uid": "0wiy1YEqx"
   },
   {
    ":node/title": "July 2nd, 2020",
