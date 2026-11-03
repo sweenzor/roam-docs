@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-10-31T11:05:29.818Z",
+ "exportedAt": "2026-11-03T12:59:23.225Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -35203,7 +35203,7 @@
        ":block/uid": "z7nDW4FYi",
        ":block/string": "[[2021]]",
        ":block/heading": 3,
-       ":block/order": 64
+       ":block/order": 65
       },
       {
        ":block/refs": [
@@ -38366,7 +38366,7 @@
        ":block/uid": "oEUzBpPVt",
        ":block/string": "[[2022]]",
        ":block/heading": 3,
-       ":block/order": 63
+       ":block/order": 64
       },
       {
        ":block/refs": [
@@ -42948,7 +42948,7 @@
        ":block/uid": "3DcyG9fYJ",
        ":block/string": "[[2023]]",
        ":block/heading": 3,
-       ":block/order": 62
+       ":block/order": 63
       },
       {
        ":block/refs": [
@@ -48786,7 +48786,7 @@
        ":block/uid": "N8o9mOFxV",
        ":block/string": "[[2024]]",
        ":block/heading": 3,
-       ":block/order": 61
+       ":block/order": 62
       },
       {
        ":block/refs": [
@@ -48874,7 +48874,7 @@
        ],
        ":block/uid": "mbBXOyRr4",
        ":block/string": "[[January 7th, 2026]]",
-       ":block/order": 59
+       ":block/order": 60
       },
       {
        ":block/refs": [
@@ -49721,7 +49721,7 @@
        ],
        ":block/uid": "D4sWwAFQH",
        ":block/string": "[[January 12th, 2026]]",
-       ":block/order": 58
+       ":block/order": 59
       },
       {
        ":block/refs": [
@@ -50139,7 +50139,7 @@
        ],
        ":block/uid": "fZnJ8SpjV",
        ":block/string": "[[January 16th, 2026]]",
-       ":block/order": 57
+       ":block/order": 58
       },
       {
        ":block/refs": [
@@ -59281,7 +59281,7 @@
        ":block/uid": "e3HyGxGmz",
        ":block/string": "[[2025]]",
        ":block/heading": 3,
-       ":block/order": 60
+       ":block/order": 61
       },
       {
        ":block/refs": [
@@ -59508,7 +59508,7 @@
        ],
        ":block/uid": "DQLXBkLqB",
        ":block/string": "[[January 30th, 2026]]",
-       ":block/order": 56
+       ":block/order": 57
       },
       {
        ":block/refs": [
@@ -59814,7 +59814,7 @@
        ],
        ":block/uid": "faBrrXpMf",
        ":block/string": "[[February 10th, 2026]]",
-       ":block/order": 55
+       ":block/order": 56
       },
       {
        ":block/refs": [
@@ -59871,7 +59871,7 @@
        ],
        ":block/uid": "HGdio9-X1",
        ":block/string": "[[February 11th, 2026]]",
-       ":block/order": 54
+       ":block/order": 55
       },
       {
        ":block/refs": [
@@ -60031,7 +60031,7 @@
        ],
        ":block/uid": "3YbHyvMVu",
        ":block/string": "[[February 18th, 2026]]",
-       ":block/order": 53
+       ":block/order": 54
       },
       {
        ":block/refs": [
@@ -60121,7 +60121,7 @@
        ],
        ":block/uid": "l1CEHstpS",
        ":block/string": "[[February 19th, 2026]]",
-       ":block/order": 52
+       ":block/order": 53
       },
       {
        ":block/refs": [
@@ -60179,7 +60179,7 @@
        ],
        ":block/uid": "w7XCOWrmV",
        ":block/string": "[[February 22nd, 2026]]",
-       ":block/order": 51
+       ":block/order": 52
       },
       {
        ":block/refs": [
@@ -60272,7 +60272,7 @@
        ],
        ":block/uid": "lq5IvpQ7J",
        ":block/string": "[[February 25th, 2026]]",
-       ":block/order": 50
+       ":block/order": 51
       },
       {
        ":block/refs": [
@@ -61070,7 +61070,7 @@
        ],
        ":block/uid": "ipU_NCoCx",
        ":block/string": "[[February 26th, 2026]]",
-       ":block/order": 49
+       ":block/order": 50
       },
       {
        ":block/refs": [
@@ -61118,7 +61118,7 @@
        ],
        ":block/uid": "WO-6A7VX9",
        ":block/string": "[[February 27th, 2026]]",
-       ":block/order": 48
+       ":block/order": 49
       },
       {
        ":block/refs": [
@@ -61253,7 +61253,7 @@
        ],
        ":block/uid": "AHy3mUokJ",
        ":block/string": "[[March 9th, 2026]]",
-       ":block/order": 47
+       ":block/order": 48
       },
       {
        ":block/refs": [
@@ -61423,7 +61423,7 @@
        ],
        ":block/uid": "-R8L5nZLD",
        ":block/string": "[[March 11th, 2026]]",
-       ":block/order": 46
+       ":block/order": 47
       },
       {
        ":block/refs": [
@@ -61547,7 +61547,7 @@
        ],
        ":block/uid": "e5HOoYOYK",
        ":block/string": "[[March 24th, 2026]]",
-       ":block/order": 45
+       ":block/order": 46
       },
       {
        ":block/refs": [
@@ -61586,7 +61586,7 @@
        ],
        ":block/uid": "hP0WzVCb3",
        ":block/string": "[[March 30th, 2026]]",
-       ":block/order": 44
+       ":block/order": 45
       },
       {
        ":block/refs": [
@@ -62085,7 +62085,7 @@
        ],
        ":block/uid": "kYfXB-KfD",
        ":block/string": "[[March 31st, 2026]]",
-       ":block/order": 43
+       ":block/order": 44
       },
       {
        ":block/refs": [
@@ -62149,7 +62149,7 @@
        ],
        ":block/uid": "hy237MoSG",
        ":block/string": "[[April 10th, 2026]]",
-       ":block/order": 42
+       ":block/order": 43
       },
       {
        ":block/refs": [
@@ -62371,7 +62371,7 @@
        ],
        ":block/uid": "Ld3WwhXAJ",
        ":block/string": "[[April 14th, 2026]]",
-       ":block/order": 41
+       ":block/order": 42
       },
       {
        ":block/refs": [
@@ -62422,7 +62422,7 @@
        ],
        ":block/uid": "FX03un0yx",
        ":block/string": "[[April 15th, 2026]]",
-       ":block/order": 40
+       ":block/order": 41
       },
       {
        ":block/refs": [
@@ -62471,7 +62471,7 @@
        ],
        ":block/uid": "Tdxn9p6T-",
        ":block/string": "[[April 17th, 2026]]",
-       ":block/order": 39
+       ":block/order": 40
       },
       {
        ":block/refs": [
@@ -64151,7 +64151,7 @@
        ],
        ":block/uid": "yYmOmnffK",
        ":block/string": "[[April 27th, 2026]]",
-       ":block/order": 38
+       ":block/order": 39
       },
       {
        ":block/refs": [
@@ -64231,7 +64231,7 @@
        ],
        ":block/uid": "E8B5FpUqb",
        ":block/string": "[[May 1st, 2026]]",
-       ":block/order": 37
+       ":block/order": 38
       },
       {
        ":block/refs": [
@@ -64415,7 +64415,7 @@
        ],
        ":block/uid": "_bXQOG7-W",
        ":block/string": "[[May 4th, 2026]]",
-       ":block/order": 36
+       ":block/order": 37
       },
       {
        ":block/refs": [
@@ -64514,7 +64514,7 @@
        ],
        ":block/uid": "77u8rD3tN",
        ":block/string": "[[May 5th, 2026]]",
-       ":block/order": 35
+       ":block/order": 36
       },
       {
        ":block/refs": [
@@ -64577,7 +64577,7 @@
        ],
        ":block/uid": "4jefQzlrL",
        ":block/string": "[[May 15th, 2026]]",
-       ":block/order": 34
+       ":block/order": 35
       },
       {
        ":block/refs": [
@@ -64633,7 +64633,7 @@
        ],
        ":block/uid": "yCa6IFyF-",
        ":block/string": "[[May 21st, 2026]]",
-       ":block/order": 33
+       ":block/order": 34
       },
       {
        ":block/refs": [
@@ -64674,7 +64674,7 @@
        ],
        ":block/uid": "s1JCTlMYp",
        ":block/string": "[[May 28th, 2026]]",
-       ":block/order": 32
+       ":block/order": 33
       },
       {
        ":block/refs": [
@@ -64716,7 +64716,7 @@
        ],
        ":block/uid": "GtQy1iARj",
        ":block/string": "[[June 1st, 2026]]",
-       ":block/order": 31
+       ":block/order": 32
       },
       {
        ":block/refs": [
@@ -64843,7 +64843,7 @@
        ],
        ":block/uid": "FfZFcIMVi",
        ":block/string": "[[June 2nd, 2026]]",
-       ":block/order": 30
+       ":block/order": 31
       },
       {
        ":block/refs": [
@@ -64879,7 +64879,7 @@
        ],
        ":block/uid": "o0biga_ls",
        ":block/string": "[[June 9th, 2026]]",
-       ":block/order": 29
+       ":block/order": 30
       },
       {
        ":block/refs": [
@@ -64908,7 +64908,7 @@
        ],
        ":block/uid": "1oHVhjf1j",
        ":block/string": "[[June 10th, 2026]]",
-       ":block/order": 28
+       ":block/order": 29
       },
       {
        ":block/refs": [
@@ -64947,7 +64947,7 @@
        ],
        ":block/uid": "jlW42mQ3s",
        ":block/string": "[[June 11th, 2026]]",
-       ":block/order": 27
+       ":block/order": 28
       },
       {
        ":block/refs": [
@@ -65494,7 +65494,7 @@
        ],
        ":block/uid": "Wp3IwehIi",
        ":block/string": "[[June 13th, 2026]]",
-       ":block/order": 26
+       ":block/order": 27
       },
       {
        ":block/refs": [
@@ -65635,7 +65635,7 @@
        ],
        ":block/uid": "T7MyhAu_Z",
        ":block/string": "[[June 30th, 2026]]",
-       ":block/order": 25
+       ":block/order": 26
       },
       {
        ":block/refs": [
@@ -65691,7 +65691,7 @@
        ],
        ":block/uid": "MdrAuMqaU",
        ":block/string": "[[July 2nd, 2026]]",
-       ":block/order": 24
+       ":block/order": 25
       },
       {
        ":block/refs": [
@@ -65720,7 +65720,7 @@
        ],
        ":block/uid": "MUux5EgdX",
        ":block/string": "[[July 6th, 2026]]",
-       ":block/order": 23
+       ":block/order": 24
       },
       {
        ":block/refs": [
@@ -65754,7 +65754,7 @@
        ],
        ":block/uid": "Omo5TNL1L",
        ":block/string": "[[July 7th, 2026]]",
-       ":block/order": 22
+       ":block/order": 23
       },
       {
        ":block/refs": [
@@ -65933,7 +65933,7 @@
        ],
        ":block/uid": "6kZb0aiyX",
        ":block/string": "[[July 10th, 2026]]",
-       ":block/order": 21
+       ":block/order": 22
       },
       {
        ":block/refs": [
@@ -66086,7 +66086,7 @@
        ],
        ":block/uid": "VoTSRMSbW",
        ":block/string": "[[July 13th, 2026]]",
-       ":block/order": 20
+       ":block/order": 21
       },
       {
        ":block/refs": [
@@ -66120,7 +66120,7 @@
        ],
        ":block/uid": "x3tGBCvQq",
        ":block/string": "[[July 15th, 2026]]",
-       ":block/order": 19
+       ":block/order": 20
       },
       {
        ":block/refs": [
@@ -66149,7 +66149,7 @@
        ],
        ":block/uid": "CNp2sgkob",
        ":block/string": "[[July 23rd, 2026]]",
-       ":block/order": 18
+       ":block/order": 19
       },
       {
        ":block/refs": [
@@ -66200,7 +66200,7 @@
        ],
        ":block/uid": "Oe6_LO9ka",
        ":block/string": "[[July 28th, 2026]]",
-       ":block/order": 17
+       ":block/order": 18
       },
       {
        ":block/refs": [
@@ -66260,7 +66260,7 @@
        ],
        ":block/uid": "jYcUoRTGl",
        ":block/string": "[[July 29th, 2026]]",
-       ":block/order": 16
+       ":block/order": 17
       },
       {
        ":block/refs": [
@@ -66900,7 +66900,7 @@
        ],
        ":block/uid": "iYlYbcCWh",
        ":block/string": "[[August 11th, 2026]]",
-       ":block/order": 15
+       ":block/order": 16
       },
       {
        ":block/refs": [
@@ -68491,7 +68491,7 @@
        ],
        ":block/uid": "YXoTyc5pB",
        ":block/string": "[[August 22nd, 2026]]",
-       ":block/order": 14
+       ":block/order": 15
       },
       {
        ":block/refs": [
@@ -68508,7 +68508,7 @@
        ],
        ":block/uid": "3uD6RaJ7K",
        ":block/string": "[[September 9th, 2026]]",
-       ":block/order": 13
+       ":block/order": 14
       },
       {
        ":block/refs": [
@@ -69000,7 +69000,7 @@
        ],
        ":block/uid": "ZCXwQjjYw",
        ":block/string": "[[September 11th, 2026]]",
-       ":block/order": 12
+       ":block/order": 13
       },
       {
        ":block/refs": [
@@ -69216,7 +69216,7 @@
        ],
        ":block/uid": "kBLGC17Sb",
        ":block/string": "[[September 28th, 2026]]",
-       ":block/order": 11
+       ":block/order": 12
       },
       {
        ":block/refs": [
@@ -69632,7 +69632,7 @@
        ],
        ":block/uid": "wSIxrE1g0",
        ":block/string": "[[September 29th, 2026]]",
-       ":block/order": 10
+       ":block/order": 11
       },
       {
        ":block/refs": [
@@ -70253,7 +70253,7 @@
        ],
        ":block/uid": "hI0U1YW-Q",
        ":block/string": "[[October 6th, 2026]]",
-       ":block/order": 9
+       ":block/order": 10
       },
       {
        ":block/refs": [
@@ -70845,7 +70845,7 @@
        ],
        ":block/uid": "qNY6cTAg7",
        ":block/string": "[[October 7th, 2026]]",
-       ":block/order": 8
+       ":block/order": 9
       },
       {
        ":block/refs": [
@@ -71421,7 +71421,7 @@
        ],
        ":block/uid": "E3sxVLAyU",
        ":block/string": "[[October 15th, 2026]]",
-       ":block/order": 7
+       ":block/order": 8
       },
       {
        ":block/refs": [
@@ -71467,7 +71467,7 @@
        ],
        ":block/uid": "NPRJNQ9Qt",
        ":block/string": "[[October 16th, 2026]]",
-       ":block/order": 6
+       ":block/order": 7
       },
       {
        ":block/refs": [
@@ -71516,7 +71516,7 @@
        ],
        ":block/uid": "c_5TqF_pf",
        ":block/string": "[[October 19th, 2026]]",
-       ":block/order": 5
+       ":block/order": 6
       },
       {
        ":block/refs": [
@@ -71572,7 +71572,7 @@
        ],
        ":block/uid": "yUIUTqPfV",
        ":block/string": "[[October 22nd, 2026]]",
-       ":block/order": 4
+       ":block/order": 5
       },
       {
        ":block/refs": [
@@ -71601,7 +71601,7 @@
        ],
        ":block/uid": "Md_GurA4p",
        ":block/string": "[[October 23rd, 2026]]",
-       ":block/order": 3
+       ":block/order": 4
       },
       {
        ":block/refs": [
@@ -71753,7 +71753,7 @@
        ],
        ":block/uid": "9Sl1WrMJg",
        ":block/string": "[[October 26th, 2026]]",
-       ":block/order": 2
+       ":block/order": 3
       },
       {
        ":block/refs": [
@@ -72140,7 +72140,7 @@
        ],
        ":block/uid": "iGAh8RzEq",
        ":block/string": "[[October 27th, 2026]]",
-       ":block/order": 1
+       ":block/order": 2
       },
       {
        ":block/refs": [
@@ -72297,8 +72297,13 @@
              ":block/order": 4
             },
             {
+             ":block/refs": [
+              {
+               ":block/uid": "2BYp4S7MN"
+              }
+             ],
              ":block/uid": "Sl_tfNaen",
-             ":block/string": "Bugs, questions, ideas? Contact us via our slack or email us at support@roamresearch.com or via chat",
+             ":block/string": "Bugs, questions, ideas? [Contact us]([[Roam Support]]) via our slack or email us at support@roamresearch.com or via chat",
              ":block/order": 5
             }
            ],
@@ -72332,6 +72337,338 @@
        ],
        ":block/uid": "6s-CszDMY",
        ":block/string": "[[October 28th, 2026]]",
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "11-02-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "TpA4naC1T"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "OjvL3XPoZ",
+             ":block/string": "Keeps the text of a block from jumping when you click into it.",
+             ":block/order": 0
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "JU3bmSrBK",
+               ":block/string": "When a block isn't focused, Roam hides its markup: `**bold**` shows as bold text without the asterisks, `[text](url)` as a link. Click into the block and all that markup appears again. Words jump to another line, the block grows taller, and the spot you meant to click is suddenly somewhere else.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "7mJspfZQ4",
+               ":block/string": "Roam Zen makes both views show the same characters in the same place. When a block isn't focused, the markup is still there, dimmed or even hidden, so it takes up the same space. When you edit it, the formatting stays visible too.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "9_4Yrmy_R",
+             ":block/string": "Why",
+             ":block/heading": 2,
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "2-eIgz-4z"
+                }
+               ],
+               ":block/children": [
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "AXvhCt0Zc",
+                   ":block/string": "Without focus you see",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "QjFWMkTEJ",
+                 ":block/string": "You type",
+                 ":block/order": 0
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "YcPFyYSuW",
+                   ":block/string": "the bold text with dimmed `**` around it",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "ySZBRdbVK",
+                 ":block/string": "`**bold**`",
+                 ":block/order": 1
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "ZPkY5v5hE",
+                   ":block/string": "the italic text with dimmed `__`",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "u6zZqivT5",
+                 ":block/string": "`__italic__`",
+                 ":block/order": 2
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "KE565dFgD",
+                   ":block/string": "the highlight with dimmed `^^`",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "l4Qp7rFwN",
+                 ":block/string": "`^^highlight^^`",
+                 ":block/order": 3
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "JPoA-aMOC",
+                   ":block/string": "the struck-through text with dimmed `~~`",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "0KeYc2CA1",
+                 ":block/string": "`~~strikethrough~~`",
+                 ":block/order": 4
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "K-_OHPvSn",
+                   ":block/string": "the code with dimmed backticks, in the block's own font",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "93MukEE8h",
+                 ":block/string": "``code``",
+                 ":block/order": 5
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "Zud-apMFv",
+                   ":block/string": "the link with dimmed brackets",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "BS8EuWsJh",
+                 ":block/string": "`[[page]]`",
+                 ":block/order": 6
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "nDsqIxgQp",
+                   ":block/string": "the link text, with `[` and `](url)` dimmed",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "i66BGGDGB",
+                 ":block/string": "`[text](url)`",
+                 ":block/order": 7
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "gnE_DaR4w",
+                   ":block/string": "the bold attribute name with a dimmed extra `:`",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "6aNQ4vhR_",
+                 ":block/string": "`Name::`",
+                 ":block/order": 8
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "M2LLp2oi6",
+                   ":block/string": "the checkbox, followed by a dimmed `[[TODO]]`",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "9QT4vxPph",
+                 ":block/string": "`{{[[TODO]]}}`",
+                 ":block/order": 9
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "ulRhfkK1r",
+                   ":block/string": "the quote with a dimmed `>`, its box drawn around the text",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "BcrevKRUt",
+                 ":block/string": "`> quote`",
+                 ":block/order": 10
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "KlkLoNtpJ",
+                   ":block/string": "the callout's icon, a dimmed `[[!TIP]]` and the title, its box drawn around the text",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "uhuZ5iyxw",
+                 ":block/string": "`[[>]] [[!TIP]] Title`",
+                 ":block/order": 11
+                }
+               ],
+               ":block/uid": "a9TaBBb0Q",
+               ":block/string": "{{[[table]]}}",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "LCUE2oHcP",
+               ":block/string": "Brackets and other markup are dimmed the most. TODO, DONE and a callout's type are dimmed less, so you read \"☐ TODO\" first. How strongly is up to you, see Marker opacity below.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "tCNcww5jS",
+               ":block/string": "While you edit a block, the raw text keeps its formatting: bold stays bold, highlights stay highlighted, links keep their colour, and the markup is fully visible. With Quotes and callouts on, quotes and callouts keep their box.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "U3EFNaK3R",
+             ":block/string": "What you'll see",
+             ":block/heading": 2,
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "4FA71W5tQ",
+                 ":block/string": "Formatting markers — show `**` `__` `^^` `~~` and backticks",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "bQW-S65Zk",
+                 ":block/string": "Links and attributes — always show `[[ ]]`, the `(url)` of an alias and the second colon of `Name::`",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "8RjVrgoHK",
+                 ":block/string": "TODO and DONE — show the rest of `{{[[TODO]]}}` next to the checkbox",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "GhsSC8XNx",
+                 ":block/string": "Quotes and callouts — show the `>` of a quote and the `[[!TIP]]` of a callout",
+                 ":block/order": 3
+                },
+                {
+                 ":block/uid": "0Niu38s59",
+                 ":block/string": "Width-neutral bold (off by default) — see below",
+                 ":block/order": 4
+                },
+                {
+                 ":block/uid": "eS_IkyFGT",
+                 ":block/string": "Marker opacity — how strongly the markup is dimmed in blocks you aren't editing. Hidden hides it but keeps its space, so text still doesn't move; TODO and DONE stay dimmed. While you edit, the markup is always fully visible.",
+                 ":block/order": 5
+                }
+               ],
+               ":block/uid": "vhWtpXBIG",
+               ":block/string": "Find them under Settings → Roam Zen. The first four are on by default; turn one off and Roam hides that markup again without focus, so it jumps when you click:",
+               ":block/order": 0
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "igJi_wNce",
+                 ":block/string": "Roam Zen works best with a monospace font. In other fonts, bold letters are wider than regular ones, so a bold word still shifts a few pixels when you click. Turn on Width-neutral bold to fix that. Bold then looks slightly different, but takes up the same space as regular text.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "NjaykZygh",
+                 ":block/string": "For the same reason, italic stays upright while you edit if your font isn't monospace.",
+                 ":block/order": 1
+                }
+               ],
+               ":block/uid": "Sw25LvCun",
+               ":block/string": "Monospace or not?",
+               ":block/heading": 3,
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "3N5K00TG_",
+             ":block/string": "Settings",
+             ":block/heading": 2,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "Oxbl5KBuU",
+                 ":block/string": "block references `((…))` and embeds",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "Ej5sYqRR9",
+                 ":block/string": "images and LaTeX",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "VlHAGMQeg",
+                 ":block/string": "the older `{{TODO}}` form",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "NG8vKYUw5",
+                 ":block/string": "hidden tags such as `#.class`",
+                 ":block/order": 3
+                },
+                {
+                 ":block/uid": "OJ1Y6Df0P",
+                 ":block/string": "the `>` at the start of the second and later lines of a quote",
+                 ":block/order": 4
+                }
+               ],
+               ":block/uid": "tLQErzclW",
+               ":block/string": "Some things look nothing like their markup, so they still shift when you click:",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "XLzZ-HNWx",
+             ":block/string": "What still jumps",
+             ":block/heading": 2,
+             ":block/order": 4
+            }
+           ],
+           ":block/uid": "jygxHG6-_",
+           ":block/string": "Roam Zen",
+           ":block/heading": 1,
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "CUDAX_SYr",
+         ":block/string": "[[Roam Depot Extensions]]",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "rwgrNch7h",
+       ":block/string": "[[November 2nd, 2026]]",
        ":block/order": 0
       }
      ],
@@ -83330,6 +83667,10 @@
   {
    ":node/title": "December 11th, 2021",
    ":block/uid": "12-11-2021"
+  },
+  {
+   ":node/title": "November 2nd, 2026",
+   ":block/uid": "11-02-2026"
   },
   {
    ":node/title": "November 2nd, 2020",

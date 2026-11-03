@@ -42,6 +42,158 @@
 <h3>[Updating Roam](<a href="/help/updating-roam">Updating Roam</a>)</h3>
 <h3><strong>New Changes</strong></h3>
 <ul>
+<li>November 2nd, 2026
+<ul>
+<li>Roam Depot Extensions
+<ul>
+<li><strong>Roam Zen</strong>
+<ul>
+<li>Keeps the text of a block from jumping when you click into it.
+</li>
+<li><strong>Why</strong>
+<ul>
+<li>When a block isn't focused, Roam hides its markup: <code>**bold**</code> shows as bold text without the asterisks, <code>[text](url)</code> as a link. Click into the block and all that markup appears again. Words jump to another line, the block grows taller, and the spot you meant to click is suddenly somewhere else.
+</li>
+<li>Roam Zen makes both views show the same characters in the same place. When a block isn't focused, the markup is still there, dimmed or even hidden, so it takes up the same space. When you edit it, the formatting stays visible too.
+</li>
+</ul>
+</li>
+<li><strong>What you'll see</strong>
+<ul>
+<li>{{table}}
+<ul>
+<li>You type
+<ul>
+<li>Without focus you see
+</li>
+</ul>
+</li>
+<li><code>**bold**</code>
+<ul>
+<li>the bold text with dimmed <code>**</code> around it
+</li>
+</ul>
+</li>
+<li><code>__italic__</code>
+<ul>
+<li>the italic text with dimmed <code>__</code>
+</li>
+</ul>
+</li>
+<li><code>^^highlight^^</code>
+<ul>
+<li>the highlight with dimmed <code>^^</code>
+</li>
+</ul>
+</li>
+<li><code>~~strikethrough~~</code>
+<ul>
+<li>the struck-through text with dimmed <code>~~</code>
+</li>
+</ul>
+</li>
+<li><code></code>code<code></code>
+<ul>
+<li>the code with dimmed backticks, in the block's own font
+</li>
+</ul>
+</li>
+<li><code>[[page]]</code>
+<ul>
+<li>the link with dimmed brackets
+</li>
+</ul>
+</li>
+<li><code>[text](url)</code>
+<ul>
+<li>the link text, with <code>[</code> and <code>](url)</code> dimmed
+</li>
+</ul>
+</li>
+<li><code>Name::</code>
+<ul>
+<li>the bold attribute name with a dimmed extra <code>:</code>
+</li>
+</ul>
+</li>
+<li><code>{{[[TODO]]}}</code>
+<ul>
+<li>the checkbox, followed by a dimmed <code>[[TODO]]</code>
+</li>
+</ul>
+</li>
+<li><code>&gt; quote</code>
+<ul>
+<li>the quote with a dimmed <code>&gt;</code>, its box drawn around the text
+</li>
+</ul>
+</li>
+<li><code>[[&gt;]] [[!TIP]] Title</code>
+<ul>
+<li>the callout's icon, a dimmed <code>[[!TIP]]</code> and the title, its box drawn around the text
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Brackets and other markup are dimmed the most. TODO, DONE and a callout's type are dimmed less, so you read &quot;☐ TODO&quot; first. How strongly is up to you, see Marker opacity below.
+</li>
+<li>While you edit a block, the raw text keeps its formatting: bold stays bold, highlights stay highlighted, links keep their colour, and the markup is fully visible. With Quotes and callouts on, quotes and callouts keep their box.
+</li>
+</ul>
+</li>
+<li><strong>Settings</strong>
+<ul>
+<li>Find them under Settings → Roam Zen. The first four are on by default; turn one off and Roam hides that markup again without focus, so it jumps when you click:
+<ul>
+<li>Formatting markers — show <code>**</code> <code>__</code> <code>^^</code> <code>~~</code> and backticks
+</li>
+<li>Links and attributes — always show <code>[[ ]]</code>, the <code>(url)</code> of an alias and the second colon of <code>Name::</code>
+</li>
+<li>TODO and DONE — show the rest of <code>{{[[TODO]]}}</code> next to the checkbox
+</li>
+<li>Quotes and callouts — show the <code>&gt;</code> of a quote and the <code>[[!TIP]]</code> of a callout
+</li>
+<li>Width-neutral bold (off by default) — see below
+</li>
+<li>Marker opacity — how strongly the markup is dimmed in blocks you aren't editing. Hidden hides it but keeps its space, so text still doesn't move; TODO and DONE stay dimmed. While you edit, the markup is always fully visible.
+</li>
+</ul>
+</li>
+<li><strong>Monospace or not?</strong>
+<ul>
+<li>Roam Zen works best with a monospace font. In other fonts, bold letters are wider than regular ones, so a bold word still shifts a few pixels when you click. Turn on Width-neutral bold to fix that. Bold then looks slightly different, but takes up the same space as regular text.
+</li>
+<li>For the same reason, italic stays upright while you edit if your font isn't monospace.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>What still jumps</strong>
+<ul>
+<li>Some things look nothing like their markup, so they still shift when you click:
+<ul>
+<li>block references <code>((…))</code> and embeds
+</li>
+<li>images and LaTeX
+</li>
+<li>the older <code>{{TODO}}</code> form
+</li>
+<li>hidden tags such as <code>#.class</code>
+</li>
+<li>the <code>&gt;</code> at the start of the second and later lines of a quote
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>October 28th, 2026
 <ul>
 <li>New Features 🚀
@@ -102,7 +254,7 @@
 </li>
 </ul>
 </li>
-<li>Bugs, questions, ideas? Contact us via our slack or email us at support@roamresearch.com or via chat
+<li>Bugs, questions, ideas? [Contact us](<a href="/help/roam-support">Roam Support</a>) via our slack or email us at support@roamresearch.com or via chat
 </li>
 </ul>
 </li>
