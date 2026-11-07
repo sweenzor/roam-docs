@@ -42,6 +42,230 @@
 <h3>[Updating Roam](<a href="/help/updating-roam">Updating Roam</a>)</h3>
 <h3><strong>New Changes</strong></h3>
 <ul>
+<li>November 6th, 2026
+<ul>
+<li>Quality of Life Improvements
+<ul>
+<li>Change the <a href="/help/commands">/ Commands</a> to prioritize start of word matches so searching <code>te</code> will match <code>template</code> over <code>date picker</code>
+</li>
+</ul>
+</li>
+<li><a href="/help/roam-mobile">Roam Mobile</a>
+<ul>
+<li>Linked references now show inline below the page, and under each day in Daily Notes.
+</li>
+<li>Video timestamps are tappable and seek the video, or jump to it if it is on another page.
+</li>
+<li>YouTube videos play inline, and /Video Timestamp inserts the current time.
+</li>
+<li>Tapping a block reference opens a redesigned action sheet with jump, copy, and edit.
+</li>
+<li>The page title appears in the app bar once you scroll past it.
+</li>
+<li>The autocomplete menu is restyled with icons and keeps its results while you type instead of flashing a spinner.
+</li>
+</ul>
+</li>
+<li>Roam Depot Extensions
+<ul>
+<li><strong>Find In Page</strong>
+<ul>
+<li>Find text across the current page, including folded blocks. Preview highlighted matches, jump into editing, and navigate with keyboard shortcuts.
+</li>
+<li>{{video: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2F-4FalWsI4m.mp4?alt=media&amp;token=07deecce-bff0-4974-9edc-2a7004f79477}}
+</li>
+<li><strong>Features</strong>
+<ul>
+<li>Search a page or zoomed-in block and its descendants, including folded blocks.
+</li>
+<li>Find words and phrases regardless of capitalization, with highlights that preserve the text layout.
+</li>
+<li>Visit every occurrence in page order, including repeated matches within the same block.
+</li>
+<li>Reveal folded ancestors as you navigate, then select the exact phrase when you want to edit.
+</li>
+<li>Reopen search after editing and keep your selected occurrence when it is still available.
+</li>
+<li>Assign global shortcuts to open search, move between matches, and focus the current match.
+</li>
+</ul>
+</li>
+<li><strong>Getting started</strong>
+<ul>
+<li>Open a page or zoom into a block in Roam’s main window.
+</li>
+<li>Press Cmd+F on macOS or Ctrl+F on Windows/Linux, or run Find In Page: Open from the command palette.
+</li>
+<li>Type a word or phrase. Matches are highlighted and counted as you type.
+</li>
+<li>Press Enter to preview a match. Use Enter or Down arrow to move forward, and Shift+Enter or Up arrow to move backward.
+</li>
+<li>Press Cmd/Ctrl+Enter to select the current occurrence in its block for editing. The search panel stays open. Run Find In Page: Open again to return to search and refresh the results.
+</li>
+<li>The panel also has buttons for previous, next, focus and close. Navigation wraps around at either end of the results.
+</li>
+</ul>
+</li>
+<li><strong>Keyboard shortcuts</strong>
+<ul>
+<li>These shortcuts apply while the search field has focus:
+</li>
+<li>{{table}}
+<ul>
+<li>Shortcut
+<ul>
+<li>Action
+</li>
+</ul>
+</li>
+<li>Enter or Down arrow
+<ul>
+<li>Preview the next occurrence
+</li>
+</ul>
+</li>
+<li>Shift+Enter or Up arrow
+<ul>
+<li>Preview the previous occurrence
+</li>
+</ul>
+</li>
+<li>Cmd/Ctrl+Enter
+<ul>
+<li>Select the current occurrence for editing
+</li>
+</ul>
+</li>
+<li>Escape
+<ul>
+<li>Close the panel and clear highlights
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Escape also closes the panel when one of its buttons has focus. Enter in the outliner keeps Roam’s usual editing behavior.
+</li>
+<li><strong>Global commands</strong>
+<ul>
+<li>Assign shortcuts in Settings → Hotkeys to use these commands while editing a block:
+</li>
+<li>{{table}}
+<ul>
+<li>Command
+<ul>
+<li>Action
+</li>
+</ul>
+</li>
+<li>Find In Page: Open
+<ul>
+<li>Open or refocus search and refresh its results; retain the selected occurrence on the same page when available
+</li>
+</ul>
+</li>
+<li>Find In Page: Next Match
+<ul>
+<li>Preview the next occurrence and focus the search field
+</li>
+</ul>
+</li>
+<li>Find In Page: Previous Match
+<ul>
+<li>Preview the previous occurrence and focus the search field
+</li>
+</ul>
+</li>
+<li>Find In Page: Focus Current Match
+<ul>
+<li>Select the current occurrence in its block, or the first result if none is selected
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The navigation commands use the current search while its panel is open. If Cmd/Ctrl+F is already assigned, choose another shortcut for Find In Page: Open in Settings → Hotkeys.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Search scope</strong>
+<ul>
+<li>Search covers the current main-window page or block tree. It does not search the whole graph, the right sidebar, linked references, or text resolved from block references and embeds.
+</li>
+<li>Queries match contiguous text, ignoring capitalization and surrounding spaces. Regular expressions and fuzzy matching are not supported.
+</li>
+<li>The counter and navigation track individual, non-overlapping occurrences. Before navigating, the counter shows the total; afterward, it shows a position such as 3 of 4.
+</li>
+<li>Search uses saved block text. Matches in hidden markup, such as link destinations, can be selected for editing even when they have no visible inline highlight.
+</li>
+<li>After changing block text or navigating to another page, run Find In Page: Open to refresh the search.
+</li>
+<li>Folded ancestors opened during navigation fold back when you leave that branch or close the panel. Shared ancestors stay open between matches in the same branch. Originally expanded blocks and manual fold changes are preserved. Selecting a match for editing keeps its ancestors open when you close search.
+</li>
+<li>On large result sets, inline highlighting covers the first 250 matching blocks plus the selected block. Every occurrence remains navigable.
+</li>
+<li>An empty query shows Type to search. A query with no results shows No matches. If search reports that no page is open, open an individual page or zoom into a block rather than using the Daily Notes feed.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Roam Drop</strong>
+<ul>
+<li>Drag a block to Daily Notes, Desk, or a starred page in the left sidebar to collect it as a live embed at the top of that page. The original block, its children, and its outline position stay unchanged.
+</li>
+<li>Use it to gather meeting actions, reading excerpts, or project notes without reorganizing the source pages.
+</li>
+<li><img src="https://raw.githubusercontent.com/404KSG/roam-desk-drop/8b1e35255424d09fe4c6e2265be45a9bc7acf6d2/assets/sidebar-drop-sandbox.png" alt="Sidebar sandbox: drag target and successful collection" loading="lazy"><a href="https://raw.githubusercontent.com/404KSG/roam-desk-drop/8b1e35255424d09fe4c6e2265be45a9bc7acf6d2/assets/sidebar-drop-sandbox.png">🔗</a>
+</li>
+<li><em>0.2.2 sandbox demo, not a production graph.</em>
+</li>
+<li><strong>How to use</strong>
+<ul>
+<li>Make the left sidebar visible. Grab one block's bullet in the main or right-sidebar outline, even while editing.
+</li>
+<li>Drag onto a supported sidebar row without modifier keys. Release when its plus appears.
+</li>
+<li>A green check means added; a neutral check means existing content; a warning explains a problem. Open the destination normally to view the embed.
+</li>
+<li>Native text selection, outline reordering, and sidebar navigation stay unchanged.
+</li>
+</ul>
+</li>
+<li><strong>Destinations</strong>
+<ul>
+<li>Daily Notes: today's page at drop time; created if missing.
+</li>
+<li>Desk: your native Desk page. Open it once first to initialize it.
+</li>
+<li>Starred page: an existing page in this graph, not a block shortcut.
+</li>
+</ul>
+</li>
+<li><strong>Keep in mind</strong>
+<ul>
+<li>Same-page sources and matching top-level embeds are skipped. This is not graph-wide deduplication.
+</li>
+<li>One block, one graph, one window. Whole pages, multi-block selections, external content, touch dragging, and reference/query/embed views are unsupported.
+</li>
+<li>No inline Undo. If a write cannot be confirmed, inspect the destination before retrying. Disabling the extension keeps existing entries.
+</li>
+<li>No analytics, external network requests, or clipboard access. Roam's normal access rules still apply.
+</li>
+<li><a href="https://github.com/404KSG/roam-desk-drop/blob/bc05b28998e421a4711952a79a0994a98807693b/docs/design.md">Technical details</a> · <a href="https://github.com/404KSG/roam-desk-drop/blob/bc05b28998e421a4711952a79a0994a98807693b/docs/quiet-interaction.md">Interaction guide</a> · <a href="https://github.com/404KSG/roam-desk-drop/blob/bc05b28998e421a4711952a79a0994a98807693b/docs/verification.md">Verification and limits</a> · <a href="https://github.com/404KSG/roam-desk-drop/blob/18bf1b4aff6af19c4a081655d94281c6d0da7a61/LICENSE">MIT</a>
+</li>
+<li>Third-party demo content retains its owners' rights.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>November 2nd, 2026
 <ul>
 <li>Roam Depot Extensions
@@ -5121,6 +5345,9 @@ set rows per column to a 1
 </li>
 </ul>
 </li>
+</ul>
+<h4>2026</h4>
+<ul>
 <li>March 9th, 2026
 <ul>
 <li>Quality of Life Improvements
