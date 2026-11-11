@@ -42,14 +42,158 @@
 <h3>[Updating Roam](<a href="/help/updating-roam">Updating Roam</a>)</h3>
 <h3><strong>New Changes</strong></h3>
 <ul>
-<li>November 6th, 2026
+<li>November 10th, 2026
 <ul>
-<li>Quality of Life Improvements
+<li>Quality of Life Improvements ✨
 <ul>
-<li>Change the <a href="/help/commands">/ Commands</a> to prioritize start of word matches so searching <code>te</code> will match <code>template</code> over <code>date picker</code>
+<li><strong>bunch of quality of life improvements to Roam Desk (&amp; Sidecar)</strong>
+<ul>
+<li>In case you do not know about Desk or Sidecar:
+<ul>
+<li>A little Roam, one shortcut away: jot something down, or pick up what you're working on, without leaving what you're doing
+</li>
+<li>Watch our desk intro video below:
+<ul>
+<li>{{video: https://www.loom.com/share/52a5405cfd084e9eb0ec139cb162e980}}
 </li>
 </ul>
 </li>
+</ul>
+</li>
+<li><strong>Out now</strong>
+<ul>
+<li>Your cursor comes back where you left it, in the Sidecar and the corner panel
+</li>
+<li>New notes can go on your daily note instead of your Desk page (Settings &gt; Preferences &gt; Desk)
+</li>
+<li>Getting around: &quot;Note below&quot; and &quot;Note above&quot; arrows, hold one for a list of every note that way, and a button to jump to the top note
+</li>
+<li>Smaller things
+<ul>
+<li>New note from anywhere: Option+Shift+N (Alt+Shift+N on Windows and Linux) makes a new Desk note with the cursor already in it
+</li>
+<li>Checked-off to-dos can leave the Desk on their own, with Undo (off by default)
+</li>
+<li>Overview: double-click a tile to open it in the main window, and Desks of any size show every note
+</li>
+<li>lots of polishing
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Sneak peek</strong>, <em>coming in the next few days</em>
+<ul>
+<li>Clicking in the Sidecar no longer brings Roam's windows to the front (macOS)
+</li>
+<li>Customize your Sidecar hotkeys from the Sidecar menu
+<ul>
+<li>A hotkey for a new note in the Sidecar, from any app
+</li>
+</ul>
+</li>
+<li>Animation: Jumping far through your notes now flies past the ones in between
+</li>
+<li>Linked Windows (macOS, experimental): link a note to a window of another app, like a Cursor project or a terminal. Summon the Sidecar from that window and its note opens; any other window takes you back to where you were
+<ul>
+<li>Optionally, the Sidecar switches notes as you move between windows
+</li>
+<li>Private: no permissions needed, no window titles or contents read, nothing leaves your Mac
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Roam Depot Extensions
+<ul>
+<li><strong>Vaults for Roam Research</strong>
+<ul>
+<li>See notes from your Obsidian-style vaults in your Roam graph.
+</li>
+<li>Vaults is a Roam Research extension. An Obsidian-style vault is a local folder of linked Markdown notes, such as an Obsidian vault or an Open Knowledge Format (OKF) bundle. On any Roam page, Vaults shows which vault notes match the page or link to it, as &quot;External Vault References&quot;, kept separate from Roam's own references. You can read any note in Roam.
+</li>
+</ul>
+</li>
+<li><strong>Plexus Diagram</strong>
+<ul>
+<li>A Heptabase-style whiteboard for Roam <code>{{[[diagram]]}}</code> blocks. Cards, colored sections, and connections on an infinite canvas, where every object is a real Roam block: sections are parent blocks of their cards, connections are blocks that link both ends, and relationships already in your graph show up as arrows.
+<ul>
+<li>Think on a canvas, keep it in your graph. Cards are blocks, pages, block refs, images, tables, PDFs and nested boards. Moving a card into a section moves its block; an arrow writes a block that links both ends, so it shows in backlinks.
+</li>
+<li>Boards that follow your graph. A board or a section can follow a block's children, a query, linked references, a page's headings, your recent journals, its Inbox, or another board. New items wait in a tray until you place them.
+</li>
+<li>Sections that write back. Bind a section to a tag or an attribute, or split it into lanes by an attribute's value, and dropping a card writes the change on its block. Apply a board's order back to the outline.
+</li>
+<li>Works with Roam AI. AI agents on Roam MCP can read boards, add cards and sections, connect and arrange them.
+</li>
+<li>Read and parse PDFs. Roam's own PDF reader beside the board, highlights as cards, and a parser that turns a PDF into headings, lists and tables you can insert.
+</li>
+<li>Big boards stay quick. Boards of more than a thousand cards open from a snapshot and pan and zoom smoothly.
+</li>
+</ul>
+</li>
+<li><img src="https://raw.githubusercontent.com/Svyk/plexus-diagram/v3.39.1/docs/img/board-light.png" alt="A reading-map board: sections, page cards and labeled connections" loading="lazy"><a href="https://raw.githubusercontent.com/Svyk/plexus-diagram/v3.39.1/docs/img/board-light.png">🔗</a>
+</li>
+<li><strong>Quick start</strong>
+<ul>
+<li>Run Plexus: New whiteboard here in a block. A new board opens under it.
+</li>
+<li>Double-click the empty board, or press N, and type to make a note card. Drag a page from the left sidebar, or any bullet from the outline, to add it as a card.
+</li>
+<li>Press G and drag to make a section, then drop cards into it. In the outline, those cards are now the section's child blocks.
+</li>
+<li>Drag from the dots on a card's edge to another card. The connection is a block that links both ends, so it shows in both pages' linked references.
+</li>
+<li>Press <code>?</code> on the board for every shortcut, and run Plexus: Commands… for every action.
+</li>
+<li>Cmd+Z (Ctrl+Z) undoes any of it. It is Roam's own undo.
+</li>
+</ul>
+</li>
+<li><strong>Start a board</strong>
+<ul>
+<li>A diagram stays Roam's own until you enhance it. Every diagram is a Plexus board is off by default, so a <code>{{[[diagram]]}}</code> block opens as a Roam diagram until you run Plexus: Enhance this diagram or Plexus: New whiteboard here. Turn the setting on (Settings, Every diagram is a Plexus board) and every <code>{{[[diagram]]}}</code> block shows the board at once. Nothing is saved to the graph until you change the board; your first edit writes the board marker in the same undo step. With it on, a diagram that already has native shapes stays Roam's own, with an Open as Plexus board button over it that imports the shapes and arrows. Plexus: Restore native diagram sticks, even with this on. A choice you saved earlier is kept; only a new install starts with it off.
+</li>
+<li>Plexus: New whiteboard here (palette or slash) creates <code>{{[[diagram]]:Untitled board}}</code> under the focused block and opens it.
+</li>
+<li>Plexus: Commands… (palette) lists every action and keeps the block that was focused: Enhance, Restore, Fullscreen, Export board as SVG, Export board as JSON Canvas, and Copy board as text. Slash still runs each action by its Plexus: name.
+</li>
+<li>Plexus: Enhance this diagram turns an existing native diagram into a board. Native node positions, groups (become sections), and edges (become connections) are imported. With Every diagram is a Plexus board off (the default), native diagrams you never enhance are never touched.
+</li>
+<li>Keep a static picture (board menu) is opt-in per board. It writes the PNG export as the first child of the board block, so readers without Plexus (public graphs, Roam Publish) see the board when they expand that block (Roam shows them an empty native diagram above it). It refreshes only by hand: Refresh static picture in the menu, the camera button in the toolbar, or Plexus: Refresh static picture. The picture is light, at most 4096 px on its longest side, and the old file stays in Roam's storage, as it does when you delete any image block, so undo still shows it. It is not Snapshots, which save layouts.
+</li>
+<li>Plexus: Restore native diagram gives the block back to Roam's React Flow view. Content is not deleted.
+</li>
+<li>Opening a board's block page (zoomed in) shows it full screen. Plexus: Fullscreen this diagram does the same from anywhere.
+</li>
+<li>Boards enhanced with 0.6 upgrade to the 1.0 format once, the first time they are opened.
+</li>
+</ul>
+</li>
+<li><strong>Feedback and issues</strong>
+<ul>
+<li>Report a bug or ask for a feature at <a href="https://github.com/Svyk/plexus-diagram/issues">github.com/Svyk/plexus-diagram/issues</a>. Include your Plexus version (the badge on the board opens its changelog), your browser, and the steps that show the problem.
+</li>
+</ul>
+</li>
+<li><strong>Full decription</strong>
+<ul>
+<li>https://github.com/Svyk/plexus-diagram
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>November 6th, 2026
+<ul>
 <li><a href="/help/roam-mobile">Roam Mobile</a>
 <ul>
 <li>Linked references now show inline below the page, and under each day in Daily Notes.

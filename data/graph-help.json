@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-11-07T11:54:52.682Z",
+ "exportedAt": "2026-11-11T12:55:37.953Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -19759,6 +19759,10 @@
    ":block/uid": "11-26-2024"
   },
   {
+   ":node/title": "footnotes",
+   ":block/uid": "XSyJ-VFAh"
+  },
+  {
    ":node/title": "Context",
    ":block/uid": "ENdZaF-mk"
   },
@@ -21088,6 +21092,10 @@
   {
    ":node/title": "February 16th, 2022",
    ":block/uid": "02-16-2022"
+  },
+  {
+   ":node/title": "November 11th, 2026",
+   ":block/uid": "11-11-2026"
   },
   {
    ":node/title": "February 16th, 2023",
@@ -31032,6 +31040,10 @@
    ":children/view-type": "bullet"
   },
   {
+   ":node/title": "November 10th, 2026",
+   ":block/uid": "11-10-2026"
+  },
+  {
    ":node/title": "November 6th, 2026",
    ":block/uid": "11-06-2026"
   },
@@ -35211,7 +35223,7 @@
        ":block/uid": "z7nDW4FYi",
        ":block/string": "[[2021]]",
        ":block/heading": 3,
-       ":block/order": 54
+       ":block/order": 55
       },
       {
        ":block/refs": [
@@ -38374,7 +38386,7 @@
        ":block/uid": "oEUzBpPVt",
        ":block/string": "[[2022]]",
        ":block/heading": 3,
-       ":block/order": 53
+       ":block/order": 54
       },
       {
        ":block/refs": [
@@ -42956,7 +42968,7 @@
        ":block/uid": "3DcyG9fYJ",
        ":block/string": "[[2023]]",
        ":block/heading": 3,
-       ":block/order": 52
+       ":block/order": 53
       },
       {
        ":block/refs": [
@@ -48794,7 +48806,7 @@
        ":block/uid": "N8o9mOFxV",
        ":block/string": "[[2024]]",
        ":block/heading": 3,
-       ":block/order": 51
+       ":block/order": 52
       },
       {
        ":block/refs": [
@@ -57936,7 +57948,7 @@
        ":block/uid": "e3HyGxGmz",
        ":block/string": "[[2025]]",
        ":block/heading": 3,
-       ":block/order": 50
+       ":block/order": 51
       },
       {
        ":block/refs": [
@@ -58106,7 +58118,7 @@
        ],
        ":block/uid": "-R8L5nZLD",
        ":block/string": "[[March 11th, 2026]]",
-       ":block/order": 48
+       ":block/order": 49
       },
       {
        ":block/refs": [
@@ -58230,7 +58242,7 @@
        ],
        ":block/uid": "e5HOoYOYK",
        ":block/string": "[[March 24th, 2026]]",
-       ":block/order": 47
+       ":block/order": 48
       },
       {
        ":block/refs": [
@@ -58269,7 +58281,7 @@
        ],
        ":block/uid": "hP0WzVCb3",
        ":block/string": "[[March 30th, 2026]]",
-       ":block/order": 46
+       ":block/order": 47
       },
       {
        ":block/refs": [
@@ -58768,7 +58780,7 @@
        ],
        ":block/uid": "kYfXB-KfD",
        ":block/string": "[[March 31st, 2026]]",
-       ":block/order": 45
+       ":block/order": 46
       },
       {
        ":block/refs": [
@@ -58832,7 +58844,7 @@
        ],
        ":block/uid": "hy237MoSG",
        ":block/string": "[[April 10th, 2026]]",
-       ":block/order": 44
+       ":block/order": 45
       },
       {
        ":block/refs": [
@@ -59054,7 +59066,7 @@
        ],
        ":block/uid": "Ld3WwhXAJ",
        ":block/string": "[[April 14th, 2026]]",
-       ":block/order": 43
+       ":block/order": 44
       },
       {
        ":block/refs": [
@@ -59105,7 +59117,7 @@
        ],
        ":block/uid": "FX03un0yx",
        ":block/string": "[[April 15th, 2026]]",
-       ":block/order": 42
+       ":block/order": 43
       },
       {
        ":block/refs": [
@@ -59154,7 +59166,7 @@
        ],
        ":block/uid": "Tdxn9p6T-",
        ":block/string": "[[April 17th, 2026]]",
-       ":block/order": 41
+       ":block/order": 42
       },
       {
        ":block/refs": [
@@ -60834,7 +60846,7 @@
        ],
        ":block/uid": "yYmOmnffK",
        ":block/string": "[[April 27th, 2026]]",
-       ":block/order": 40
+       ":block/order": 41
       },
       {
        ":block/refs": [
@@ -60914,7 +60926,7 @@
        ],
        ":block/uid": "E8B5FpUqb",
        ":block/string": "[[May 1st, 2026]]",
-       ":block/order": 39
+       ":block/order": 40
       },
       {
        ":block/refs": [
@@ -61098,7 +61110,7 @@
        ],
        ":block/uid": "_bXQOG7-W",
        ":block/string": "[[May 4th, 2026]]",
-       ":block/order": 38
+       ":block/order": 39
       },
       {
        ":block/refs": [
@@ -61197,7 +61209,7 @@
        ],
        ":block/uid": "77u8rD3tN",
        ":block/string": "[[May 5th, 2026]]",
-       ":block/order": 37
+       ":block/order": 38
       },
       {
        ":block/refs": [
@@ -61260,7 +61272,7 @@
        ],
        ":block/uid": "4jefQzlrL",
        ":block/string": "[[May 15th, 2026]]",
-       ":block/order": 36
+       ":block/order": 37
       },
       {
        ":block/refs": [
@@ -61316,7 +61328,7 @@
        ],
        ":block/uid": "yCa6IFyF-",
        ":block/string": "[[May 21st, 2026]]",
-       ":block/order": 35
+       ":block/order": 36
       },
       {
        ":block/refs": [
@@ -61357,7 +61369,7 @@
        ],
        ":block/uid": "s1JCTlMYp",
        ":block/string": "[[May 28th, 2026]]",
-       ":block/order": 34
+       ":block/order": 35
       },
       {
        ":block/refs": [
@@ -61399,7 +61411,7 @@
        ],
        ":block/uid": "GtQy1iARj",
        ":block/string": "[[June 1st, 2026]]",
-       ":block/order": 33
+       ":block/order": 34
       },
       {
        ":block/refs": [
@@ -61526,7 +61538,7 @@
        ],
        ":block/uid": "FfZFcIMVi",
        ":block/string": "[[June 2nd, 2026]]",
-       ":block/order": 32
+       ":block/order": 33
       },
       {
        ":block/refs": [
@@ -61562,7 +61574,7 @@
        ],
        ":block/uid": "o0biga_ls",
        ":block/string": "[[June 9th, 2026]]",
-       ":block/order": 31
+       ":block/order": 32
       },
       {
        ":block/refs": [
@@ -61591,7 +61603,7 @@
        ],
        ":block/uid": "1oHVhjf1j",
        ":block/string": "[[June 10th, 2026]]",
-       ":block/order": 30
+       ":block/order": 31
       },
       {
        ":block/refs": [
@@ -61630,7 +61642,7 @@
        ],
        ":block/uid": "jlW42mQ3s",
        ":block/string": "[[June 11th, 2026]]",
-       ":block/order": 29
+       ":block/order": 30
       },
       {
        ":block/refs": [
@@ -62177,7 +62189,7 @@
        ],
        ":block/uid": "Wp3IwehIi",
        ":block/string": "[[June 13th, 2026]]",
-       ":block/order": 28
+       ":block/order": 29
       },
       {
        ":block/refs": [
@@ -62318,7 +62330,7 @@
        ],
        ":block/uid": "T7MyhAu_Z",
        ":block/string": "[[June 30th, 2026]]",
-       ":block/order": 27
+       ":block/order": 28
       },
       {
        ":block/refs": [
@@ -62374,7 +62386,7 @@
        ],
        ":block/uid": "MdrAuMqaU",
        ":block/string": "[[July 2nd, 2026]]",
-       ":block/order": 26
+       ":block/order": 27
       },
       {
        ":block/refs": [
@@ -62403,7 +62415,7 @@
        ],
        ":block/uid": "MUux5EgdX",
        ":block/string": "[[July 6th, 2026]]",
-       ":block/order": 25
+       ":block/order": 26
       },
       {
        ":block/refs": [
@@ -62437,7 +62449,7 @@
        ],
        ":block/uid": "Omo5TNL1L",
        ":block/string": "[[July 7th, 2026]]",
-       ":block/order": 24
+       ":block/order": 25
       },
       {
        ":block/refs": [
@@ -62616,7 +62628,7 @@
        ],
        ":block/uid": "6kZb0aiyX",
        ":block/string": "[[July 10th, 2026]]",
-       ":block/order": 23
+       ":block/order": 24
       },
       {
        ":block/refs": [
@@ -62769,7 +62781,7 @@
        ],
        ":block/uid": "VoTSRMSbW",
        ":block/string": "[[July 13th, 2026]]",
-       ":block/order": 22
+       ":block/order": 23
       },
       {
        ":block/refs": [
@@ -62803,7 +62815,7 @@
        ],
        ":block/uid": "x3tGBCvQq",
        ":block/string": "[[July 15th, 2026]]",
-       ":block/order": 21
+       ":block/order": 22
       },
       {
        ":block/refs": [
@@ -62832,7 +62844,7 @@
        ],
        ":block/uid": "CNp2sgkob",
        ":block/string": "[[July 23rd, 2026]]",
-       ":block/order": 20
+       ":block/order": 21
       },
       {
        ":block/refs": [
@@ -62883,7 +62895,7 @@
        ],
        ":block/uid": "Oe6_LO9ka",
        ":block/string": "[[July 28th, 2026]]",
-       ":block/order": 19
+       ":block/order": 20
       },
       {
        ":block/refs": [
@@ -62943,7 +62955,7 @@
        ],
        ":block/uid": "jYcUoRTGl",
        ":block/string": "[[July 29th, 2026]]",
-       ":block/order": 18
+       ":block/order": 19
       },
       {
        ":block/refs": [
@@ -63583,7 +63595,7 @@
        ],
        ":block/uid": "iYlYbcCWh",
        ":block/string": "[[August 11th, 2026]]",
-       ":block/order": 17
+       ":block/order": 18
       },
       {
        ":block/refs": [
@@ -65174,7 +65186,7 @@
        ],
        ":block/uid": "YXoTyc5pB",
        ":block/string": "[[August 22nd, 2026]]",
-       ":block/order": 16
+       ":block/order": 17
       },
       {
        ":block/refs": [
@@ -65191,7 +65203,7 @@
        ],
        ":block/uid": "3uD6RaJ7K",
        ":block/string": "[[September 9th, 2026]]",
-       ":block/order": 15
+       ":block/order": 16
       },
       {
        ":block/refs": [
@@ -65683,7 +65695,7 @@
        ],
        ":block/uid": "ZCXwQjjYw",
        ":block/string": "[[September 11th, 2026]]",
-       ":block/order": 14
+       ":block/order": 15
       },
       {
        ":block/refs": [
@@ -65899,7 +65911,7 @@
        ],
        ":block/uid": "kBLGC17Sb",
        ":block/string": "[[September 28th, 2026]]",
-       ":block/order": 13
+       ":block/order": 14
       },
       {
        ":block/refs": [
@@ -66315,7 +66327,7 @@
        ],
        ":block/uid": "wSIxrE1g0",
        ":block/string": "[[September 29th, 2026]]",
-       ":block/order": 12
+       ":block/order": 13
       },
       {
        ":block/refs": [
@@ -66936,7 +66948,7 @@
        ],
        ":block/uid": "hI0U1YW-Q",
        ":block/string": "[[October 6th, 2026]]",
-       ":block/order": 11
+       ":block/order": 12
       },
       {
        ":block/refs": [
@@ -67528,7 +67540,7 @@
        ],
        ":block/uid": "qNY6cTAg7",
        ":block/string": "[[October 7th, 2026]]",
-       ":block/order": 10
+       ":block/order": 11
       },
       {
        ":block/refs": [
@@ -68104,7 +68116,7 @@
        ],
        ":block/uid": "E3sxVLAyU",
        ":block/string": "[[October 15th, 2026]]",
-       ":block/order": 9
+       ":block/order": 10
       },
       {
        ":block/refs": [
@@ -68150,7 +68162,7 @@
        ],
        ":block/uid": "NPRJNQ9Qt",
        ":block/string": "[[October 16th, 2026]]",
-       ":block/order": 8
+       ":block/order": 9
       },
       {
        ":block/refs": [
@@ -68199,7 +68211,7 @@
        ],
        ":block/uid": "c_5TqF_pf",
        ":block/string": "[[October 19th, 2026]]",
-       ":block/order": 7
+       ":block/order": 8
       },
       {
        ":block/refs": [
@@ -68255,7 +68267,7 @@
        ],
        ":block/uid": "yUIUTqPfV",
        ":block/string": "[[October 22nd, 2026]]",
-       ":block/order": 6
+       ":block/order": 7
       },
       {
        ":block/refs": [
@@ -68284,7 +68296,7 @@
        ],
        ":block/uid": "Md_GurA4p",
        ":block/string": "[[October 23rd, 2026]]",
-       ":block/order": 5
+       ":block/order": 6
       },
       {
        ":block/refs": [
@@ -68436,7 +68448,7 @@
        ],
        ":block/uid": "9Sl1WrMJg",
        ":block/string": "[[October 26th, 2026]]",
-       ":block/order": 4
+       ":block/order": 5
       },
       {
        ":block/refs": [
@@ -68823,7 +68835,7 @@
        ],
        ":block/uid": "iGAh8RzEq",
        ":block/string": "[[October 27th, 2026]]",
-       ":block/order": 3
+       ":block/order": 4
       },
       {
        ":block/refs": [
@@ -69020,7 +69032,7 @@
        ],
        ":block/uid": "6s-CszDMY",
        ":block/string": "[[October 28th, 2026]]",
-       ":block/order": 2
+       ":block/order": 3
       },
       {
        ":block/refs": [
@@ -69352,7 +69364,7 @@
        ],
        ":block/uid": "rwgrNch7h",
        ":block/string": "[[November 2nd, 2026]]",
-       ":block/order": 1
+       ":block/order": 2
       },
       {
        ":block/refs": [
@@ -69401,7 +69413,7 @@
          ],
          ":block/uid": "Hx7evaq2F",
          ":block/string": "[[Roam Mobile]]",
-         ":block/order": 1
+         ":block/order": 0
         },
         {
          ":block/refs": [
@@ -69859,34 +69871,12 @@
          ],
          ":block/uid": "Waiejkgjg",
          ":block/string": "[[Roam Depot Extensions]]",
-         ":block/order": 2
-        },
-        {
-         ":block/refs": [
-          {
-           ":block/uid": "_EqbjQSAF"
-          }
-         ],
-         ":block/children": [
-          {
-           ":block/refs": [
-            {
-             ":block/uid": "y7RCW_g_0"
-            }
-           ],
-           ":block/uid": "Fa67imy2r",
-           ":block/string": "Change the [[/ Commands]] to prioritize start of word matches so searching `te` will match `template` over `date picker`",
-           ":block/order": 0
-          }
-         ],
-         ":block/uid": "Jdef6xYyu",
-         ":block/string": "[[Quality of Life Improvements]]",
-         ":block/order": 0
+         ":block/order": 1
         }
        ],
        ":block/uid": "3WqwN9Fnj",
        ":block/string": "[[November 6th, 2026]]",
-       ":block/order": 0
+       ":block/order": 1
       },
       {
        ":block/refs": [
@@ -73224,7 +73214,369 @@
        ":block/uid": "Yb9Rk9-46",
        ":block/string": "[[2026]]",
        ":block/heading": 3,
-       ":block/order": 49
+       ":block/order": 50
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "11-10-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "TpA4naC1T"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/children": [
+              {
+               ":block/uid": "WlMBoVgnZ",
+               ":block/string": "Think on a canvas, keep it in your graph. Cards are blocks, pages, block refs, images, tables, PDFs and nested boards. Moving a card into a section moves its block; an arrow writes a block that links both ends, so it shows in backlinks.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "Zm7EFZdnk",
+               ":block/string": "Boards that follow your graph. A board or a section can follow a block's children, a query, linked references, a page's headings, your recent journals, its Inbox, or another board. New items wait in a tray until you place them.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "AQzaGop_h",
+               ":block/string": "Sections that write back. Bind a section to a tag or an attribute, or split it into lanes by an attribute's value, and dropping a card writes the change on its block. Apply a board's order back to the outline.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "y75noEZDN",
+               ":block/string": "Works with Roam AI. AI agents on Roam MCP can read boards, add cards and sections, connect and arrange them.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "v-M_esua4",
+               ":block/string": "Read and parse PDFs. Roam's own PDF reader beside the board, highlights as cards, and a parser that turns a PDF into headings, lists and tables you can insert.",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "VKDOyVsSL",
+               ":block/string": "Big boards stay quick. Boards of more than a thousand cards open from a snapshot and pan and zoom smoothly.",
+               ":block/order": 5
+              }
+             ],
+             ":block/uid": "fp8gKrPfC",
+             ":block/string": "A Heptabase-style whiteboard for Roam `{{[[diagram]]}}` blocks. Cards, colored sections, and connections on an infinite canvas, where every object is a real Roam block: sections are parent blocks of their cards, connections are blocks that link both ends, and relationships already in your graph show up as arrows.",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "gb1ciz09p",
+             ":block/string": "![A reading-map board: sections, page cards and labeled connections](https://raw.githubusercontent.com/Svyk/plexus-diagram/v3.39.1/docs/img/board-light.png)[🔗](https://raw.githubusercontent.com/Svyk/plexus-diagram/v3.39.1/docs/img/board-light.png)",
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "mOJ6i4yLA",
+               ":block/string": "Run Plexus: New whiteboard here in a block. A new board opens under it.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "W_2dpViMR",
+               ":block/string": "Double-click the empty board, or press N, and type to make a note card. Drag a page from the left sidebar, or any bullet from the outline, to add it as a card.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "ccJmE1bG3",
+               ":block/string": "Press G and drag to make a section, then drop cards into it. In the outline, those cards are now the section's child blocks.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "e3AxMlgYI",
+               ":block/string": "Drag from the dots on a card's edge to another card. The connection is a block that links both ends, so it shows in both pages' linked references.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "THR4CM1Df",
+               ":block/string": "Press `?` on the board for every shortcut, and run Plexus: Commands… for every action.",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "rPI7SeBCX",
+               ":block/string": "Cmd+Z (Ctrl+Z) undoes any of it. It is Roam's own undo.",
+               ":block/order": 5
+              }
+             ],
+             ":block/uid": "gPQ7E_L44",
+             ":children/view-type": "numbered",
+             ":block/string": "Quick start",
+             ":block/heading": 2,
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "cFvIn0KXy",
+               ":block/string": "A diagram stays Roam's own until you enhance it. Every diagram is a Plexus board is off by default, so a `{{[[diagram]]}}` block opens as a Roam diagram until you run Plexus: Enhance this diagram or Plexus: New whiteboard here. Turn the setting on (Settings, Every diagram is a Plexus board) and every `{{[[diagram]]}}` block shows the board at once. Nothing is saved to the graph until you change the board; your first edit writes the board marker in the same undo step. With it on, a diagram that already has native shapes stays Roam's own, with an Open as Plexus board button over it that imports the shapes and arrows. Plexus: Restore native diagram sticks, even with this on. A choice you saved earlier is kept; only a new install starts with it off.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "CJqN7CUYz",
+               ":block/string": "Plexus: New whiteboard here (palette or slash) creates `{{[[diagram]]:Untitled board}}` under the focused block and opens it.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "dUO79k04H",
+               ":block/string": "Plexus: Commands… (palette) lists every action and keeps the block that was focused: Enhance, Restore, Fullscreen, Export board as SVG, Export board as JSON Canvas, and Copy board as text. Slash still runs each action by its Plexus: name.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "61EAVdhO1",
+               ":block/string": "Plexus: Enhance this diagram turns an existing native diagram into a board. Native node positions, groups (become sections), and edges (become connections) are imported. With Every diagram is a Plexus board off (the default), native diagrams you never enhance are never touched.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "f5cJNmsrW",
+               ":block/string": "Keep a static picture (board menu) is opt-in per board. It writes the PNG export as the first child of the board block, so readers without Plexus (public graphs, Roam Publish) see the board when they expand that block (Roam shows them an empty native diagram above it). It refreshes only by hand: Refresh static picture in the menu, the camera button in the toolbar, or Plexus: Refresh static picture. The picture is light, at most 4096 px on its longest side, and the old file stays in Roam's storage, as it does when you delete any image block, so undo still shows it. It is not Snapshots, which save layouts.",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "8mO-jwfjB",
+               ":block/string": "Plexus: Restore native diagram gives the block back to Roam's React Flow view. Content is not deleted.",
+               ":block/order": 5
+              },
+              {
+               ":block/uid": "B4v28SvTl",
+               ":block/string": "Opening a board's block page (zoomed in) shows it full screen. Plexus: Fullscreen this diagram does the same from anywhere.",
+               ":block/order": 6
+              },
+              {
+               ":block/uid": "YAPC8cT36",
+               ":block/string": "Boards enhanced with 0.6 upgrade to the 1.0 format once, the first time they are opened.",
+               ":block/order": 7
+              }
+             ],
+             ":block/uid": "vLomMZ3vM",
+             ":block/string": "Start a board",
+             ":block/heading": 2,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "yOXgvIwCW",
+               ":block/string": "Report a bug or ask for a feature at [github.com/Svyk/plexus-diagram/issues](https://github.com/Svyk/plexus-diagram/issues). Include your Plexus version (the badge on the board opens its changelog), your browser, and the steps that show the problem.",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "ZRxkXJm_4",
+             ":block/string": "Feedback and issues",
+             ":block/heading": 2,
+             ":block/order": 4
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "-QecPsK8Z",
+               ":block/string": "https://github.com/Svyk/plexus-diagram",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "T94gxgvfu",
+             ":block/string": "Full decription",
+             ":block/heading": 2,
+             ":block/order": 5
+            }
+           ],
+           ":block/uid": "3v-G5I8dV",
+           ":block/string": "Plexus Diagram",
+           ":block/heading": 1,
+           ":block/order": 1
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "Vxkc7DTw3",
+             ":block/string": "See notes from your Obsidian-style vaults in your Roam graph.",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "5t26SPfSV",
+             ":block/string": "Vaults is a Roam Research extension. An Obsidian-style vault is a local folder of linked Markdown notes, such as an Obsidian vault or an Open Knowledge Format (OKF) bundle. On any Roam page, Vaults shows which vault notes match the page or link to it, as \"External Vault References\", kept separate from Roam's own references. You can read any note in Roam.",
+             ":block/order": 1
+            }
+           ],
+           ":block/uid": "IhWoCjhKs",
+           ":block/string": "Vaults for Roam Research",
+           ":block/heading": 1,
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "jZnsantg_",
+         ":block/string": "[[Roam Depot Extensions]]",
+         ":block/order": 1
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "_EqbjQSAF"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "8aMX-2ysY"
+            },
+            {
+             ":block/uid": "F9iR8iRh9"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/children": [
+              {
+               ":block/uid": "m3_plnSE5",
+               ":block/string": "Your cursor comes back where you left it, in the Sidecar and the corner panel",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "u9G1rtaPM",
+               ":block/string": "New notes can go on your daily note instead of your Desk page (Settings > Preferences > Desk)",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "OzDp2pCtQ",
+               ":block/string": "Getting around: \"Note below\" and \"Note above\" arrows, hold one for a list of every note that way, and a button to jump to the top note",
+               ":block/order": 2
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "Rsx5A9lpD",
+                 ":block/string": "New note from anywhere: Option+Shift+N (Alt+Shift+N on Windows and Linux) makes a new Desk note with the cursor already in it",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "cWvxLL97L",
+                 ":block/string": "Checked-off to-dos can leave the Desk on their own, with Undo (off by default)",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "39vpmenaO",
+                 ":block/string": "Overview: double-click a tile to open it in the main window, and Desks of any size show every note",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "tAehqrY3d",
+                 ":block/string": "lots of polishing",
+                 ":block/order": 3
+                }
+               ],
+               ":block/uid": "Ms_87Dp-8",
+               ":block/string": "Smaller things",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "g2MsVFdan",
+             ":block/string": "**Out now**",
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "hAkoLwnUP",
+                 ":block/string": "Optionally, the Sidecar switches notes as you move between windows",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "WDqIDR5xb",
+                 ":block/string": "Private: no permissions needed, no window titles or contents read, nothing leaves your Mac",
+                 ":block/order": 1
+                }
+               ],
+               ":block/uid": "6V1J1msTh",
+               ":block/string": "Linked Windows (macOS, experimental): link a note to a window of another app, like a Cursor project or a terminal. Summon the Sidecar from that window and its note opens; any other window takes you back to where you were",
+               ":block/order": 3
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "MwlEOSw71",
+                 ":block/string": "A hotkey for a new note in the Sidecar, from any app",
+                 ":block/order": 0
+                }
+               ],
+               ":block/uid": "gZ8U0speS",
+               ":block/string": "Customize your Sidecar hotkeys from the Sidecar menu",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "33psRWyOY",
+               ":block/string": "Clicking in the Sidecar no longer brings Roam's windows to the front (macOS)",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "4bhKQz8Ry",
+               ":block/string": "Animation: Jumping far through your notes now flies past the ones in between",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "t4Et9fnej",
+             ":block/string": "**Sneak peek**, __coming in the next few days__",
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "z3RPTPHnM"
+                }
+               ],
+               ":block/uid": "MrxaRSdmY",
+               ":block/string": "{{embed: ((z3RPTPHnM))}}",
+               ":block/order": 0
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/refs": [
+                  {
+                   ":block/uid": "I6NYXezVa"
+                  }
+                 ],
+                 ":block/uid": "eV1xoYViE",
+                 ":block/string": "{{embed: ((I6NYXezVa))}}",
+                 ":block/order": 0
+                }
+               ],
+               ":block/uid": "bcLnsi_Aj",
+               ":block/string": "Watch our desk intro video below:",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "OHWplQJdu",
+             ":block/string": "In case you do not know about Desk or Sidecar:",
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "x8twMsdKY",
+           ":block/string": "bunch of quality of life improvements to [[Roam Desk]] (& [[Sidecar]])",
+           ":block/heading": 3,
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "h-ckjouIm",
+         ":block/string": "[[Quality of Life Improvements]] ✨",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "LHjUcqkIi",
+       ":block/string": "[[November 10th, 2026]]",
+       ":block/order": 0
       }
      ],
      ":block/uid": "iC6e5W-IU",
@@ -89129,6 +89481,10 @@
    ":block/uid": "dwCjiez9U"
   },
   {
+   ":node/title": "pages",
+   ":block/uid": "1UqFQvbHe"
+  },
+  {
    ":node/title": "May 1st, 2026",
    ":block/uid": "05-01-2026"
   },
@@ -89355,6 +89711,10 @@
   {
    ":node/title": "Cato Minor",
    ":block/uid": "972cuvF-X"
+  },
+  {
+   ":node/title": "tags",
+   ":block/uid": "M-RDF_wI0"
   },
   {
    ":node/title": "Markdown",
