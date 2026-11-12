@@ -42,6 +42,100 @@
 <h3>[Updating Roam](<a href="/help/updating-roam">Updating Roam</a>)</h3>
 <h3><strong>New Changes</strong></h3>
 <ul>
+<li>November 11th, 2026
+<ul>
+<li>New Features 🚀
+<ul>
+<li>AI in Roam: Chat with your Graph, and Ask AI on any block
+<ul>
+<li>An AI assistant inside Roam. It reads your graph and, when you allow it, writes into it. It runs on your own API key
+</li>
+<li>Watch the video below or just read along!
+<ul>
+<li>{{video: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FjKyw4iDUeB.mp4?alt=media&amp;token=ed1f9141-9d1b-49ff-9f13-7083ba08efb6}}
+</li>
+</ul>
+</li>
+<li><strong>Chat</strong> (web and desktop)
+<ul>
+<li>Open it with <code>cmd-j</code> (<code>ctrl-j</code> on Windows and Linux), or from the AI section of the sidebar
+</li>
+<li>Ask about your notes, have it search the graph or the web, or give it a change to make
+</li>
+<li>The message box is a real Roam outline. Paste blocks or nest bullets and the AI sees the structure, not just the words
+</li>
+<li>Chats are saved with the graph and sync to your other devices
+</li>
+</ul>
+</li>
+<li><strong>Ask AI: run a block</strong> (web and desktop)
+<ul>
+<li>Type <code>/Ask AI</code> in a block, or choose &quot;Ask AI&quot; from the command palette. The AI treats that block as the request
+</li>
+<li>It knows where the block sits, the page and the parents above it, so an empty block under a question answers that question
+</li>
+<li>The result is added beneath the block, with a <code>Source::</code> block when it is based on something the AI read or found. Your own blocks are never rewritten
+</li>
+<li>A card in the top bar shows what it is doing. Stop ends the run
+</li>
+</ul>
+</li>
+<li><strong>You decide what it can change</strong>
+<ul>
+<li>Three access modes per chat: <strong>Read</strong> (view only, no writes), <strong>Manual</strong> (asks before each write), <strong>Auto</strong> (writes without asking)
+</li>
+<li>Every write the AI makes is attributed to its own user, &quot;Your Name (AI)&quot;, so it is always clear who wrote what
+</li>
+<li>Readers of a graph get read-only chat. Blocks tagged <code>#.rm-hide</code> or <code>#.rm-private</code> are never read
+</li>
+</ul>
+</li>
+<li><strong>Tell it how to behave</strong>
+<ul>
+<li><a href="/help/roam-agent-guidelines">roam/agent guidelines</a> is one page for the whole graph, read at the start of every chat and run: naming conventions, what to leave alone, how you file things
+</li>
+<li>Your AI's user page holds instructions only your AI follows, like its tone or what to ask before changing anything. Open it from Settings &gt; AI
+</li>
+</ul>
+</li>
+<li><strong>Setup</strong>
+<ul>
+<li>Go to Settings &gt; AI, turn it on, and add a key for OpenAI, Anthropic, Google, xAI or OpenRouter
+</li>
+<li>Running models locally? Add a custom OpenAI-compatible endpoint, such as Ollama, and everything stays on your machine
+</li>
+<li>Keys stay on your device unless you turn on &quot;Sync keys and settings&quot;. Synced keys are encrypted with your graph's key, or with a sync password on an unencrypted graph
+</li>
+</ul>
+</li>
+<li><a href="/help/faq">FAQ</a>s below:
+<ul>
+<li><strong>Q: What gets sent to the AI provider?</strong> Your prompts, images, the blocks the AI reads, tool results and web searches go to the provider you chose, under its terms. This is the same for every kind of graph
+</li>
+<li><strong>Q: Where is chat history kept?</strong> It depends on the graph
+<ul>
+<li>Regular hosted graph: saved with the graph on Roam's servers and synced to your other devices, like the rest of the graph
+</li>
+<li>Encrypted graph: saved with the graph and synced, encrypted with the graph's key, so Roam cannot read it
+</li>
+<li>Local graph: stays in that browser. To keep the graph's contents on your computer too, use a local endpoint such as Ollama
+</li>
+</ul>
+</li>
+<li><strong>Q: Encrypted graphs?</strong> Yes. Chats and synced keys are encrypted with the graph's key, but the AI still sends the unencrypted text it reads to your provider. Settings shows a warning about this
+</li>
+<li><strong>Q: Who can turn it on?</strong> Anyone with access to the graph, each for themselves. Admins and editors get full use, readers get read-only chat, and if an admin has blocked exporting for a role, the AI is blocked for that role too
+</li>
+<li><strong>Q: Does it cost anything?</strong> Roam charges nothing. Your provider bills you for what the AI uses
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>November 10th, 2026
 <ul>
 <li>Quality of Life Improvements ✨

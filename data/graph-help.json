@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-11-11T12:55:37.953Z",
+ "exportedAt": "2026-11-12T13:58:13.762Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -10757,6 +10757,10 @@
    ":block/uid": "07-11-2022"
   },
   {
+   ":node/title": "Chat with your Graph",
+   ":block/uid": "qxwyl_Obj"
+  },
+  {
    ":node/title": "drawing",
    ":block/children": [
     {
@@ -17025,6 +17029,10 @@
   {
    ":node/title": "inbox__",
    ":block/uid": "3Fa9mpuHH"
+  },
+  {
+   ":node/title": "November 12th, 2026",
+   ":block/uid": "11-12-2026"
   },
   {
    ":node/title": "mentions",
@@ -35223,7 +35231,7 @@
        ":block/uid": "z7nDW4FYi",
        ":block/string": "[[2021]]",
        ":block/heading": 3,
-       ":block/order": 55
+       ":block/order": 56
       },
       {
        ":block/refs": [
@@ -38386,7 +38394,7 @@
        ":block/uid": "oEUzBpPVt",
        ":block/string": "[[2022]]",
        ":block/heading": 3,
-       ":block/order": 54
+       ":block/order": 55
       },
       {
        ":block/refs": [
@@ -42968,7 +42976,7 @@
        ":block/uid": "3DcyG9fYJ",
        ":block/string": "[[2023]]",
        ":block/heading": 3,
-       ":block/order": 53
+       ":block/order": 54
       },
       {
        ":block/refs": [
@@ -48806,7 +48814,7 @@
        ":block/uid": "N8o9mOFxV",
        ":block/string": "[[2024]]",
        ":block/heading": 3,
-       ":block/order": 52
+       ":block/order": 53
       },
       {
        ":block/refs": [
@@ -57948,7 +57956,7 @@
        ":block/uid": "e3HyGxGmz",
        ":block/string": "[[2025]]",
        ":block/heading": 3,
-       ":block/order": 51
+       ":block/order": 52
       },
       {
        ":block/refs": [
@@ -58118,7 +58126,7 @@
        ],
        ":block/uid": "-R8L5nZLD",
        ":block/string": "[[March 11th, 2026]]",
-       ":block/order": 49
+       ":block/order": 50
       },
       {
        ":block/refs": [
@@ -58242,7 +58250,7 @@
        ],
        ":block/uid": "e5HOoYOYK",
        ":block/string": "[[March 24th, 2026]]",
-       ":block/order": 48
+       ":block/order": 49
       },
       {
        ":block/refs": [
@@ -58281,7 +58289,7 @@
        ],
        ":block/uid": "hP0WzVCb3",
        ":block/string": "[[March 30th, 2026]]",
-       ":block/order": 47
+       ":block/order": 48
       },
       {
        ":block/refs": [
@@ -58780,7 +58788,7 @@
        ],
        ":block/uid": "kYfXB-KfD",
        ":block/string": "[[March 31st, 2026]]",
-       ":block/order": 46
+       ":block/order": 47
       },
       {
        ":block/refs": [
@@ -58844,7 +58852,7 @@
        ],
        ":block/uid": "hy237MoSG",
        ":block/string": "[[April 10th, 2026]]",
-       ":block/order": 45
+       ":block/order": 46
       },
       {
        ":block/refs": [
@@ -59066,7 +59074,7 @@
        ],
        ":block/uid": "Ld3WwhXAJ",
        ":block/string": "[[April 14th, 2026]]",
-       ":block/order": 44
+       ":block/order": 45
       },
       {
        ":block/refs": [
@@ -59117,7 +59125,7 @@
        ],
        ":block/uid": "FX03un0yx",
        ":block/string": "[[April 15th, 2026]]",
-       ":block/order": 43
+       ":block/order": 44
       },
       {
        ":block/refs": [
@@ -59166,7 +59174,7 @@
        ],
        ":block/uid": "Tdxn9p6T-",
        ":block/string": "[[April 17th, 2026]]",
-       ":block/order": 42
+       ":block/order": 43
       },
       {
        ":block/refs": [
@@ -60846,7 +60854,7 @@
        ],
        ":block/uid": "yYmOmnffK",
        ":block/string": "[[April 27th, 2026]]",
-       ":block/order": 41
+       ":block/order": 42
       },
       {
        ":block/refs": [
@@ -60926,7 +60934,7 @@
        ],
        ":block/uid": "E8B5FpUqb",
        ":block/string": "[[May 1st, 2026]]",
-       ":block/order": 40
+       ":block/order": 41
       },
       {
        ":block/refs": [
@@ -61110,7 +61118,7 @@
        ],
        ":block/uid": "_bXQOG7-W",
        ":block/string": "[[May 4th, 2026]]",
-       ":block/order": 39
+       ":block/order": 40
       },
       {
        ":block/refs": [
@@ -61209,7 +61217,7 @@
        ],
        ":block/uid": "77u8rD3tN",
        ":block/string": "[[May 5th, 2026]]",
-       ":block/order": 38
+       ":block/order": 39
       },
       {
        ":block/refs": [
@@ -61272,7 +61280,7 @@
        ],
        ":block/uid": "4jefQzlrL",
        ":block/string": "[[May 15th, 2026]]",
-       ":block/order": 37
+       ":block/order": 38
       },
       {
        ":block/refs": [
@@ -61328,7 +61336,7 @@
        ],
        ":block/uid": "yCa6IFyF-",
        ":block/string": "[[May 21st, 2026]]",
-       ":block/order": 36
+       ":block/order": 37
       },
       {
        ":block/refs": [
@@ -61369,7 +61377,7 @@
        ],
        ":block/uid": "s1JCTlMYp",
        ":block/string": "[[May 28th, 2026]]",
-       ":block/order": 35
+       ":block/order": 36
       },
       {
        ":block/refs": [
@@ -61411,7 +61419,7 @@
        ],
        ":block/uid": "GtQy1iARj",
        ":block/string": "[[June 1st, 2026]]",
-       ":block/order": 34
+       ":block/order": 35
       },
       {
        ":block/refs": [
@@ -61538,7 +61546,7 @@
        ],
        ":block/uid": "FfZFcIMVi",
        ":block/string": "[[June 2nd, 2026]]",
-       ":block/order": 33
+       ":block/order": 34
       },
       {
        ":block/refs": [
@@ -61574,7 +61582,7 @@
        ],
        ":block/uid": "o0biga_ls",
        ":block/string": "[[June 9th, 2026]]",
-       ":block/order": 32
+       ":block/order": 33
       },
       {
        ":block/refs": [
@@ -61603,7 +61611,7 @@
        ],
        ":block/uid": "1oHVhjf1j",
        ":block/string": "[[June 10th, 2026]]",
-       ":block/order": 31
+       ":block/order": 32
       },
       {
        ":block/refs": [
@@ -61642,7 +61650,7 @@
        ],
        ":block/uid": "jlW42mQ3s",
        ":block/string": "[[June 11th, 2026]]",
-       ":block/order": 30
+       ":block/order": 31
       },
       {
        ":block/refs": [
@@ -62189,7 +62197,7 @@
        ],
        ":block/uid": "Wp3IwehIi",
        ":block/string": "[[June 13th, 2026]]",
-       ":block/order": 29
+       ":block/order": 30
       },
       {
        ":block/refs": [
@@ -62330,7 +62338,7 @@
        ],
        ":block/uid": "T7MyhAu_Z",
        ":block/string": "[[June 30th, 2026]]",
-       ":block/order": 28
+       ":block/order": 29
       },
       {
        ":block/refs": [
@@ -62386,7 +62394,7 @@
        ],
        ":block/uid": "MdrAuMqaU",
        ":block/string": "[[July 2nd, 2026]]",
-       ":block/order": 27
+       ":block/order": 28
       },
       {
        ":block/refs": [
@@ -62415,7 +62423,7 @@
        ],
        ":block/uid": "MUux5EgdX",
        ":block/string": "[[July 6th, 2026]]",
-       ":block/order": 26
+       ":block/order": 27
       },
       {
        ":block/refs": [
@@ -62449,7 +62457,7 @@
        ],
        ":block/uid": "Omo5TNL1L",
        ":block/string": "[[July 7th, 2026]]",
-       ":block/order": 25
+       ":block/order": 26
       },
       {
        ":block/refs": [
@@ -62628,7 +62636,7 @@
        ],
        ":block/uid": "6kZb0aiyX",
        ":block/string": "[[July 10th, 2026]]",
-       ":block/order": 24
+       ":block/order": 25
       },
       {
        ":block/refs": [
@@ -62781,7 +62789,7 @@
        ],
        ":block/uid": "VoTSRMSbW",
        ":block/string": "[[July 13th, 2026]]",
-       ":block/order": 23
+       ":block/order": 24
       },
       {
        ":block/refs": [
@@ -62815,7 +62823,7 @@
        ],
        ":block/uid": "x3tGBCvQq",
        ":block/string": "[[July 15th, 2026]]",
-       ":block/order": 22
+       ":block/order": 23
       },
       {
        ":block/refs": [
@@ -62844,7 +62852,7 @@
        ],
        ":block/uid": "CNp2sgkob",
        ":block/string": "[[July 23rd, 2026]]",
-       ":block/order": 21
+       ":block/order": 22
       },
       {
        ":block/refs": [
@@ -62895,7 +62903,7 @@
        ],
        ":block/uid": "Oe6_LO9ka",
        ":block/string": "[[July 28th, 2026]]",
-       ":block/order": 20
+       ":block/order": 21
       },
       {
        ":block/refs": [
@@ -62955,7 +62963,7 @@
        ],
        ":block/uid": "jYcUoRTGl",
        ":block/string": "[[July 29th, 2026]]",
-       ":block/order": 19
+       ":block/order": 20
       },
       {
        ":block/refs": [
@@ -63595,7 +63603,7 @@
        ],
        ":block/uid": "iYlYbcCWh",
        ":block/string": "[[August 11th, 2026]]",
-       ":block/order": 18
+       ":block/order": 19
       },
       {
        ":block/refs": [
@@ -65186,7 +65194,7 @@
        ],
        ":block/uid": "YXoTyc5pB",
        ":block/string": "[[August 22nd, 2026]]",
-       ":block/order": 17
+       ":block/order": 18
       },
       {
        ":block/refs": [
@@ -65203,7 +65211,7 @@
        ],
        ":block/uid": "3uD6RaJ7K",
        ":block/string": "[[September 9th, 2026]]",
-       ":block/order": 16
+       ":block/order": 17
       },
       {
        ":block/refs": [
@@ -65695,7 +65703,7 @@
        ],
        ":block/uid": "ZCXwQjjYw",
        ":block/string": "[[September 11th, 2026]]",
-       ":block/order": 15
+       ":block/order": 16
       },
       {
        ":block/refs": [
@@ -65911,7 +65919,7 @@
        ],
        ":block/uid": "kBLGC17Sb",
        ":block/string": "[[September 28th, 2026]]",
-       ":block/order": 14
+       ":block/order": 15
       },
       {
        ":block/refs": [
@@ -66327,7 +66335,7 @@
        ],
        ":block/uid": "wSIxrE1g0",
        ":block/string": "[[September 29th, 2026]]",
-       ":block/order": 13
+       ":block/order": 14
       },
       {
        ":block/refs": [
@@ -66948,7 +66956,7 @@
        ],
        ":block/uid": "hI0U1YW-Q",
        ":block/string": "[[October 6th, 2026]]",
-       ":block/order": 12
+       ":block/order": 13
       },
       {
        ":block/refs": [
@@ -67540,7 +67548,7 @@
        ],
        ":block/uid": "qNY6cTAg7",
        ":block/string": "[[October 7th, 2026]]",
-       ":block/order": 11
+       ":block/order": 12
       },
       {
        ":block/refs": [
@@ -68116,7 +68124,7 @@
        ],
        ":block/uid": "E3sxVLAyU",
        ":block/string": "[[October 15th, 2026]]",
-       ":block/order": 10
+       ":block/order": 11
       },
       {
        ":block/refs": [
@@ -68162,7 +68170,7 @@
        ],
        ":block/uid": "NPRJNQ9Qt",
        ":block/string": "[[October 16th, 2026]]",
-       ":block/order": 9
+       ":block/order": 10
       },
       {
        ":block/refs": [
@@ -68211,7 +68219,7 @@
        ],
        ":block/uid": "c_5TqF_pf",
        ":block/string": "[[October 19th, 2026]]",
-       ":block/order": 8
+       ":block/order": 9
       },
       {
        ":block/refs": [
@@ -68267,7 +68275,7 @@
        ],
        ":block/uid": "yUIUTqPfV",
        ":block/string": "[[October 22nd, 2026]]",
-       ":block/order": 7
+       ":block/order": 8
       },
       {
        ":block/refs": [
@@ -68296,7 +68304,7 @@
        ],
        ":block/uid": "Md_GurA4p",
        ":block/string": "[[October 23rd, 2026]]",
-       ":block/order": 6
+       ":block/order": 7
       },
       {
        ":block/refs": [
@@ -68448,7 +68456,7 @@
        ],
        ":block/uid": "9Sl1WrMJg",
        ":block/string": "[[October 26th, 2026]]",
-       ":block/order": 5
+       ":block/order": 6
       },
       {
        ":block/refs": [
@@ -68835,7 +68843,7 @@
        ],
        ":block/uid": "iGAh8RzEq",
        ":block/string": "[[October 27th, 2026]]",
-       ":block/order": 4
+       ":block/order": 5
       },
       {
        ":block/refs": [
@@ -69032,7 +69040,7 @@
        ],
        ":block/uid": "6s-CszDMY",
        ":block/string": "[[October 28th, 2026]]",
-       ":block/order": 3
+       ":block/order": 4
       },
       {
        ":block/refs": [
@@ -69364,7 +69372,7 @@
        ],
        ":block/uid": "rwgrNch7h",
        ":block/string": "[[November 2nd, 2026]]",
-       ":block/order": 2
+       ":block/order": 3
       },
       {
        ":block/refs": [
@@ -69876,7 +69884,7 @@
        ],
        ":block/uid": "3WqwN9Fnj",
        ":block/string": "[[November 6th, 2026]]",
-       ":block/order": 1
+       ":block/order": 2
       },
       {
        ":block/refs": [
@@ -73214,7 +73222,7 @@
        ":block/uid": "Yb9Rk9-46",
        ":block/string": "[[2026]]",
        ":block/heading": 3,
-       ":block/order": 50
+       ":block/order": 51
       },
       {
        ":block/refs": [
@@ -73576,6 +73584,244 @@
        ],
        ":block/uid": "LHjUcqkIi",
        ":block/string": "[[November 10th, 2026]]",
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "11-11-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "h_pvMVa7e"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "ZT4t6bkug"
+            },
+            {
+             ":block/uid": "qxwyl_Obj"
+            },
+            {
+             ":block/uid": "ikyQmqYx6"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "uS4ieymZX",
+             ":block/string": "An AI assistant inside Roam. It reads your graph and, when you allow it, writes into it. It runs on your own API key",
+             ":block/order": 0
+            },
+            {
+             ":block/children": [
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "2h9V-FtAO"
+                }
+               ],
+               ":block/uid": "Bjxfauhnq",
+               ":block/string": "{{[[video]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FjKyw4iDUeB.mp4?alt=media&token=ed1f9141-9d1b-49ff-9f13-7083ba08efb6}}",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "LptrsCJ0i",
+             ":block/string": "Watch the video below or just read along!",
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "DbtZFajmr",
+               ":block/string": "Open it with `cmd-j` (`ctrl-j` on Windows and Linux), or from the AI section of the sidebar",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "xEuCzln3B",
+               ":block/string": "Ask about your notes, have it search the graph or the web, or give it a change to make",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "Mmgv-2NTa",
+               ":block/string": "The message box is a real Roam outline. Paste blocks or nest bullets and the AI sees the structure, not just the words",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "utDXudarh",
+               ":block/string": "Chats are saved with the graph and sync to your other devices",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "ECqXu-lap",
+             ":block/string": "**Chat** (web and desktop)",
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "ld1vf5_pU",
+               ":block/string": "Type `/Ask AI` in a block, or choose \"Ask AI\" from the command palette. The AI treats that block as the request",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "5XaBCFfrY",
+               ":block/string": "It knows where the block sits, the page and the parents above it, so an empty block under a question answers that question",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "SmKShJVw3",
+               ":block/string": "The result is added beneath the block, with a `Source::` block when it is based on something the AI read or found. Your own blocks are never rewritten",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "2JeP8UK3k",
+               ":block/string": "A card in the top bar shows what it is doing. Stop ends the run",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "uB6mqqWfG",
+             ":block/string": "**Ask AI: run a block** (web and desktop)",
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "r2hvAe768",
+               ":block/string": "Three access modes per chat: **Read** (view only, no writes), **Manual** (asks before each write), **Auto** (writes without asking)",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "wm3wKt9wD",
+               ":block/string": "Every write the AI makes is attributed to its own user, \"Your Name (AI)\", so it is always clear who wrote what",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "X8TbP2It2",
+               ":block/string": "Readers of a graph get read-only chat. Blocks tagged `#.rm-hide` or `#.rm-private` are never read",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "AQ6hFx2BA",
+             ":block/string": "**You decide what it can change**",
+             ":block/order": 4
+            },
+            {
+             ":block/children": [
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "eDaFOvCTw"
+                }
+               ],
+               ":block/uid": "Vbm24wopg",
+               ":block/string": "[[roam/agent guidelines]] is one page for the whole graph, read at the start of every chat and run: naming conventions, what to leave alone, how you file things",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "6TlP5KobK",
+               ":block/string": "Your AI's user page holds instructions only your AI follows, like its tone or what to ask before changing anything. Open it from Settings > AI",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "MbWdm4vWr",
+             ":block/string": "**Tell it how to behave**",
+             ":block/order": 5
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "fbHpoXLqI",
+               ":block/string": "Go to Settings > AI, turn it on, and add a key for OpenAI, Anthropic, Google, xAI or OpenRouter",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "lIJ68sXkS",
+               ":block/string": "Running models locally? Add a custom OpenAI-compatible endpoint, such as Ollama, and everything stays on your machine",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "e9TBDY3RN",
+               ":block/string": "Keys stay on your device unless you turn on \"Sync keys and settings\". Synced keys are encrypted with your graph's key, or with a sync password on an unencrypted graph",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "HwU3lAIVH",
+             ":block/string": "**Setup**",
+             ":block/order": 6
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "QWRPpk5H-"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "qcMHFJqfW",
+               ":block/string": "**Q: What gets sent to the AI provider?** Your prompts, images, the blocks the AI reads, tool results and web searches go to the provider you chose, under its terms. This is the same for every kind of graph",
+               ":block/order": 0
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "RUx7mV0cV",
+                 ":block/string": "Regular hosted graph: saved with the graph on Roam's servers and synced to your other devices, like the rest of the graph",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "Y2ifYrsJH",
+                 ":block/string": "Encrypted graph: saved with the graph and synced, encrypted with the graph's key, so Roam cannot read it",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "0RecgRvLf",
+                 ":block/string": "Local graph: stays in that browser. To keep the graph's contents on your computer too, use a local endpoint such as Ollama",
+                 ":block/order": 2
+                }
+               ],
+               ":block/uid": "TXA_Hqvd-",
+               ":block/string": "**Q: Where is chat history kept?** It depends on the graph",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "7u5Ftzi_G",
+               ":block/string": "**Q: Encrypted graphs?** Yes. Chats and synced keys are encrypted with the graph's key, but the AI still sends the unencrypted text it reads to your provider. Settings shows a warning about this",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "ueITUS9n6",
+               ":block/string": "**Q: Who can turn it on?** Anyone with access to the graph, each for themselves. Admins and editors get full use, readers get read-only chat, and if an admin has blocked exporting for a role, the AI is blocked for that role too",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "ffnEEvPnK",
+               ":block/string": "**Q: Does it cost anything?** Roam charges nothing. Your provider bills you for what the AI uses",
+               ":block/order": 4
+              }
+             ],
+             ":block/uid": "NewC4P6xZ",
+             ":block/string": "[[FAQ]]s below:",
+             ":block/order": 7
+            }
+           ],
+           ":block/uid": "tklUEq9g5",
+           ":block/string": "[[AI]] in Roam: [[Chat with your Graph]], and [[Ask AI]] on any block",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "PocuMYU3d",
+         ":block/string": "[[New Features]] 🚀",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "47aSyFxyr",
+       ":block/string": "[[November 11th, 2026]]",
        ":block/order": 0
       }
      ],
@@ -81361,6 +81607,10 @@
     }
    ],
    ":block/uid": "fIAnHS1q4"
+  },
+  {
+   ":node/title": "Ask AI",
+   ":block/uid": "ikyQmqYx6"
   },
   {
    ":node/title": ".box",
