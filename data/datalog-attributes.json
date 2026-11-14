@@ -1,16 +1,16 @@
 {
  "graph": "developer-documentation",
- "exportedAt": "2026-11-13T13:21:19.567Z",
+ "exportedAt": "2026-11-14T12:25:22.782Z",
  "attributes": [
   {
    "attr": ":attrs/lookup",
-   "entities": 406,
+   "entities": 421,
    "type": "number",
    "example": "5803"
   },
   {
    "attr": ":block/children",
-   "entities": 2961,
+   "entities": 3034,
    "type": "number",
    "example": "8626"
   },
@@ -22,25 +22,25 @@
   },
   {
    "attr": ":block/open",
-   "entities": 6014,
+   "entities": 6178,
    "type": "boolean",
    "example": "true"
   },
   {
    "attr": ":block/order",
-   "entities": 5999,
+   "entities": 6163,
    "type": "number",
    "example": "12"
   },
   {
    "attr": ":block/page",
-   "entities": 5998,
+   "entities": 6162,
    "type": "number",
    "example": "3966"
   },
   {
    "attr": ":block/parents",
-   "entities": 5999,
+   "entities": 6163,
    "type": "number",
    "example": "5803"
   },
@@ -52,19 +52,19 @@
   },
   {
    "attr": ":block/refs",
-   "entities": 2139,
+   "entities": 2204,
    "type": "number",
    "example": "8333"
   },
   {
    "attr": ":block/string",
-   "entities": 6094,
+   "entities": 6258,
    "type": "string",
    "example": "\"If callback provided, only removes watch with that callback\""
   },
   {
    "attr": ":block/uid",
-   "entities": 6673,
+   "entities": 6838,
    "type": "string",
    "example": "\"YcFQmdqgm\""
   },
@@ -82,13 +82,13 @@
   },
   {
    "attr": ":create/time",
-   "entities": 6294,
+   "entities": 6459,
    "type": "number",
    "example": "1619841442834"
   },
   {
    "attr": ":create/user",
-   "entities": 6293,
+   "entities": 6458,
    "type": "number",
    "example": "828"
   },
@@ -100,19 +100,19 @@
   },
   {
    "attr": ":edit/time",
-   "entities": 6756,
+   "entities": 6921,
    "type": "number",
    "example": "1785346614452"
   },
   {
    "attr": ":edit/user",
-   "entities": 6523,
+   "entities": 6688,
    "type": "number",
    "example": "828"
   },
   {
    "attr": ":entity/attrs",
-   "entities": 437,
+   "entities": 452,
    "type": "object",
    "example": "[[{\"source\":[\"uid\",\"P_2znWfDD\"],\"value\":[\"uid\",\"P_2znWfDD\"]},{\"source\":[\"uid\"…"
   },
@@ -136,31 +136,31 @@
   },
   {
    "attr": ":log/id",
-   "entities": 239,
+   "entities": 240,
    "type": "number",
    "example": "1671552971449"
   },
   {
    "attr": ":node/title",
-   "entities": 430,
+   "entities": 431,
    "type": "string",
    "example": "\"February 26th, 2026\""
   },
   {
    "attr": ":page/edit-nonce",
-   "entities": 430,
+   "entities": 431,
    "type": "string",
    "example": "\"BdToZgaT-\""
   },
   {
    "attr": ":page/edit-time",
-   "entities": 430,
+   "entities": 431,
    "type": "number",
    "example": "1615210312839"
   },
   {
    "attr": ":page/edit-user",
-   "entities": 430,
+   "entities": 431,
    "type": "number",
    "example": "828"
   },
@@ -172,7 +172,7 @@
   },
   {
    "attr": ":page/word-count",
-   "entities": 430,
+   "entities": 431,
    "type": "number",
    "example": "24"
   },
@@ -244,13 +244,13 @@
   },
   {
    "attr": ":version/id",
-   "entities": 55,
+   "entities": 56,
    "type": "string",
    "example": "\"0.11.0\""
   },
   {
    "attr": ":version/nonce",
-   "entities": 55,
+   "entities": 56,
    "type": "string",
    "example": "\"uuidb362776d-a585-47a2-9f06-c620f56de0e8\""
   },

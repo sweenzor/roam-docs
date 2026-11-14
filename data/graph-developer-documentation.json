@@ -1,6 +1,6 @@
 {
  "graph": "developer-documentation",
- "exportedAt": "2026-11-13T13:16:32.958Z",
+ "exportedAt": "2026-11-14T12:20:35.341Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -1722,6 +1722,10 @@
   {
    ":node/title": "November 13th, 2025",
    ":block/uid": "11-13-2025"
+  },
+  {
+   ":node/title": "November 13th, 2026",
+   ":block/uid": "11-13-2026"
   },
   {
    ":node/title": "Permissions",
@@ -30627,7 +30631,7 @@
             }
            ],
            ":block/uid": "P_-HiJbTP",
-           ":block/order": 3,
+           ":block/order": 4,
            ":block/string": "`roamAlphaAPI.ui.components.renderSearch`"
           },
           {
@@ -30712,7 +30716,7 @@
             }
            ],
            ":block/uid": "WPI6r1fJF",
-           ":block/order": 4,
+           ":block/order": 5,
            ":block/string": "`roamAlphaAPI.ui.components.renderString`"
           },
           {
@@ -30787,7 +30791,7 @@
             }
            ],
            ":block/uid": "R6TJVwT6l",
-           ":block/order": 5,
+           ":block/order": 6,
            ":block/string": "`roamAlphaAPI.ui.components.unmountNode`"
           },
           {
@@ -30814,6 +30818,111 @@
            ":block/uid": "ySDWLYAX1",
            ":block/order": 0,
            ":block/string": "Description::"
+          },
+          {
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "dSAi8APjS"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "NXc5EtEL-",
+               ":block/order": 0,
+               ":block/string": "Render a page's title into a DOM node without the page body: the same editable title the page itself shows, so click-to-rename, the rename validation and toasts, the title context menu, and live updates when the page is renamed elsewhere all behave as in the app."
+              },
+              {
+               ":block/uid": "lCUh4VVOS",
+               ":block/order": 1,
+               ":block/string": "Renders an `h1.rm-title-display` inside a `div.rm-api-render--page-title`; restyle it under that wrapper if a page-sized heading doesn't fit your layout."
+              },
+              {
+               ":block/uid": "dehkgKFLj",
+               ":block/order": 2,
+               ":block/string": "A `title` is resolved to the page's uid once at mount, so the mounted title follows the page through renames. A page that doesn't exist renders a \"could not be found\" line instead."
+              },
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "R6TJVwT6l"
+                }
+               ],
+               ":block/uid": "V3J4CxTaS",
+               ":block/order": 3,
+               ":block/string": "Remove it with ((R6TJVwT6l))"
+              }
+             ],
+             ":block/uid": "OQdTyau-n",
+             ":block/order": 0,
+             ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "f4rqZkvUg"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "EkS5EZrba",
+               ":block/order": 0,
+               ":block/string": "`uid` (string): page to display; pass this or `title`"
+              },
+              {
+               ":block/uid": "jtiqPVXi6",
+               ":block/order": 1,
+               ":block/string": "`title` (string): page to display, by title"
+              },
+              {
+               ":block/uid": "xzZlAdAIq",
+               ":block/order": 2,
+               ":block/string": "`el` (DOM node, required)"
+              }
+             ],
+             ":block/uid": "QRNe5b2bk",
+             ":block/order": 1,
+             ":block/string": "Parameters::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "w2TkzJeTV"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "zRSQ0dxpu",
+               ":block/order": 0,
+               ":block/string": "Promise resolving to `null`"
+              }
+             ],
+             ":block/uid": "JQmA2mWMW",
+             ":block/order": 2,
+             ":block/string": "Return::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "WSDHGDKhs",
+               ":block/order": 0,
+               ":block/string": "```javascript\nconst newNode = document.createElement(\"div\");\ndocument.body.appendChild(newNode);\n\nwindow.roamAlphaAPI.ui.components.renderPageTitle(\n  {uid: \"mK9pQ2rTw\",\n   el: newNode})\n// resolves to null once mounted```"
+              }
+             ],
+             ":block/uid": "Tx_6iaUZd",
+             ":block/order": 3,
+             ":block/string": "Example::"
+            }
+           ],
+           ":block/uid": "erpxypFJg",
+           ":block/order": 3,
+           ":block/string": "`roamAlphaAPI.ui.components.renderPageTitle`"
           }
          ],
          ":block/uid": "VzBM1Gl5Z",
@@ -32160,9 +32269,46 @@
            ],
            ":block/children": [
             {
+             ":block/children": [
+              {
+               ":block/uid": "dqLmSEO9p",
+               ":block/order": 0,
+               ":block/string": "`id` (string): the extension id, which the other `roamAlphaAPI.depot` methods take"
+              },
+              {
+               ":block/uid": "1f-a1R57L",
+               ":block/order": 1,
+               ":block/string": "`name` (string)"
+              },
+              {
+               ":block/uid": "6Df1HJHnw",
+               ":block/order": 2,
+               ":block/string": "`type` (string): \"marketplace\" or \"developer\""
+              },
+              {
+               ":block/uid": "XtLiVl9pX",
+               ":block/order": 3,
+               ":block/string": "`enabled` (boolean): whether the extension is switched on; for a developer build, false only after `roamAlphaAPI.depot.developer.disable`"
+              },
+              {
+               ":block/uid": "0K1pwuLIa",
+               ":block/order": 4,
+               ":block/string": "`adminEnabled` (boolean): installed for everyone on the graph by an admin"
+              },
+              {
+               ":block/uid": "RZKJHo-qj",
+               ":block/order": 5,
+               ":block/string": "`running` (boolean): currently loaded in this tab"
+              },
+              {
+               ":block/uid": "RzXwoVX5v",
+               ":block/order": 6,
+               ":block/string": "`version` (string): \"DEV\" for developer builds"
+              }
+             ],
              ":block/uid": "37Bw6JY4x",
              ":block/order": 0,
-             ":block/string": "Object of `{ext-id: ext-map}`; `version` is \"DEV\" for developer-loaded extensions"
+             ":block/string": "Object of `{ext-id: entry}`, one entry per installed marketplace extension and registered developer build"
             }
            ],
            ":block/uid": "6O0PeTCFg",
@@ -32196,7 +32342,7 @@
             {
              ":block/uid": "rVG2KHba-",
              ":block/order": 0,
-             ":block/string": "```javascript\nroamAlphaAPI.depot.getInstalledExtensions()\n// =>\n{\"ccc+ccc-roam-pdf-2\":\n  {id: \"ccc+ccc-roam-pdf-2\",\n   name: \"Roam PDF Highlighter 2\",\n   enabled: false,\n   adminEnabled: true,\n   version: \"1\"},\n ...}```"
+             ":block/string": "```javascript\nroamAlphaAPI.depot.getInstalledExtensions()\n// =>\n{\"ccc+ccc-roam-pdf-2\":\n  {id: \"ccc+ccc-roam-pdf-2\",\n   name: \"Roam PDF Highlighter 2\",\n   type: \"marketplace\",\n   enabled: false,\n   adminEnabled: true,\n   running: false,\n   version: \"1\"},\n ...}```"
             }
            ],
            ":block/uid": "ZM-w8O1Nl",
@@ -32221,6 +32367,11 @@
              ":block/uid": "ZzUX6faBs",
              ":block/order": 0,
              ":block/string": "Reload all developer-mode extensions — the same operation as the \"Reload developer extensions\" command (`ctrl-d ctrl-r`)."
+            },
+            {
+             ":block/uid": "6QrMLZof3",
+             ":block/order": 1,
+             ":block/string": "Skips builds disabled with `roamAlphaAPI.depot.developer.disable`; use `roamAlphaAPI.depot.developer.reload` for a single build."
             }
            ],
            ":block/uid": "JZ5TvkNh5",
@@ -32282,6 +32433,1101 @@
          ":block/uid": "zr-fTt5GP",
          ":block/order": 1,
          ":block/string": "`roamAlphaAPI.depot.reloadDeveloperExtensions`"
+        },
+        {
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "dSAi8APjS"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "YRdEfxu88",
+             ":block/order": 0,
+             ":block/string": "Open Settings on an extension's own tab, the same as the Command Palette's \"Roam Depot Extension Settings\" commands."
+            },
+            {
+             ":block/uid": "RCjC1HcQA",
+             ":block/order": 1,
+             ":block/string": "The tab exists only while the extension is running and has a settings panel or Command Palette commands; otherwise the promise rejects. An unknown id rejects too."
+            }
+           ],
+           ":block/uid": "WnarK3KxI",
+           ":block/order": 0,
+           ":block/string": "Description::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "f4rqZkvUg"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "deTPbx3ba"
+              }
+             ],
+             ":block/uid": "Aw4SrjoUA",
+             ":block/order": 0,
+             ":block/string": "`id` (string, required): the extension id, as listed by ((deTPbx3ba))"
+            }
+           ],
+           ":block/uid": "TFfgYnQkI",
+           ":block/order": 1,
+           ":block/string": "Parameters::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "w2TkzJeTV"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "gbfHhP8Zp",
+             ":block/order": 0,
+             ":block/string": "Promise resolving to `undefined`"
+            }
+           ],
+           ":block/uid": "DO3gzyYKW",
+           ":block/order": 2,
+           ":block/string": "Return::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "YSuAc1n3V"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "WmRN4dvqs",
+             ":block/order": 0,
+             ":block/string": "```javascript\nawait roamAlphaAPI.depot.openSettings({id: \"8bitgentleman+clear-sidebar\"})\n// => undefined```"
+            }
+           ],
+           ":block/uid": "dCnktw95d",
+           ":block/order": 3,
+           ":block/string": "Example::"
+          }
+         ],
+         ":block/uid": "WrvHkCIlF",
+         ":block/order": 2,
+         ":block/string": "`roamAlphaAPI.depot.openSettings`"
+        },
+        {
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "dSAi8APjS"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "nztufPcQR",
+             ":block/order": 0,
+             ":block/string": "Install and switch Roam Depot marketplace extensions by id, the same operations as the Roam Depot settings panel."
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "deTPbx3ba"
+              }
+             ],
+             ":block/uid": "49nUwZwny",
+             ":block/order": 1,
+             ":block/string": "Each method takes `{id}` and resolves to that extension's entry from ((deTPbx3ba))."
+            },
+            {
+             ":block/uid": "hprWcW_Dk",
+             ":block/order": 2,
+             ":block/string": "Requires permission to install extensions on the graph (an admin or editor, or any signed-in user on an offline graph); otherwise the promise rejects."
+            },
+            {
+             ":block/uid": "L-UjW6bYB",
+             ":block/order": 3,
+             ":block/string": "An extension installed for everyone by an admin (`adminEnabled`) can only be changed by an admin."
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "8ikgtLSXz"
+              }
+             ],
+             ":block/uid": "lvum41vi6",
+             ":block/order": 4,
+             ":block/string": "Over the Desktop [[Local API]], `install` is refused with the error code ACTION_NOT_AVAILABLE whatever the token's scope; installing new code is a user action. The other methods work there."
+            }
+           ],
+           ":block/uid": "eLnBCNmAR",
+           ":block/order": 0,
+           ":block/string": "Description::"
+          },
+          {
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "dSAi8APjS"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "e7j6KXD0E",
+               ":block/order": 0,
+               ":block/string": "Install a marketplace extension by its Roam Depot id and enable it."
+              },
+              {
+               ":block/uid": "pIamVX7zY",
+               ":block/order": 1,
+               ":block/string": "The extension loads shortly after the promise resolves, so `running` is usually still false in the returned entry."
+              },
+              {
+               ":block/uid": "mz8CYQRd6",
+               ":block/order": 2,
+               ":block/string": "Rejects when the id is not in Roam Depot or the extension is already installed."
+              }
+             ],
+             ":block/uid": "HaJzH8xjp",
+             ":block/order": 0,
+             ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "f4rqZkvUg"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "dOq2GMS2s",
+               ":block/order": 0,
+               ":block/string": "`id` (string, required): the Roam Depot id, in the form \"author+repo\""
+              }
+             ],
+             ":block/uid": "MBjbNEfsr",
+             ":block/order": 1,
+             ":block/string": "Parameters::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "w2TkzJeTV"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "ZBi5te-sE",
+               ":block/order": 0,
+               ":block/string": "Promise resolving to the extension's entry"
+              }
+             ],
+             ":block/uid": "vzQrfSbNh",
+             ":block/order": 2,
+             ":block/string": "Return::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "WEEpp4zV4",
+               ":block/order": 0,
+               ":block/string": "```javascript\nawait roamAlphaAPI.depot.extension.install({id: \"8bitgentleman+clear-sidebar\"})\n// =>\n{id: \"8bitgentleman+clear-sidebar\",\n name: \"Clear Right Sidebar\",\n type: \"marketplace\",\n enabled: true,\n adminEnabled: false,\n running: false,\n version: \"6\"}```"
+              }
+             ],
+             ":block/uid": "OWE3l2b-1",
+             ":block/order": 3,
+             ":block/string": "Example::"
+            }
+           ],
+           ":block/uid": "UhRdPyg1H",
+           ":block/order": 1,
+           ":block/string": "`roamAlphaAPI.depot.extension.install`"
+          },
+          {
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "dSAi8APjS"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "FkZZh67uL",
+               ":block/order": 0,
+               ":block/string": "Uninstall an installed marketplace extension: unloads it and removes its custom hotkeys."
+              },
+              {
+               ":block/uid": "mM4xw45xI",
+               ":block/order": 1,
+               ":block/string": "Rejects when the extension is not installed."
+              }
+             ],
+             ":block/uid": "Cgh-PZ65y",
+             ":block/order": 0,
+             ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "f4rqZkvUg"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "ApptmX7Gs",
+               ":block/order": 0,
+               ":block/string": "`id` (string, required): the Roam Depot id"
+              }
+             ],
+             ":block/uid": "yXQ1uQeQE",
+             ":block/order": 1,
+             ":block/string": "Parameters::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "w2TkzJeTV"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "jjEAa9hpD",
+               ":block/order": 0,
+               ":block/string": "Promise resolving to `{id, installed: false}`"
+              }
+             ],
+             ":block/uid": "k_SFcBLOc",
+             ":block/order": 2,
+             ":block/string": "Return::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "cpO8MkvMv",
+               ":block/order": 0,
+               ":block/string": "```javascript\nawait roamAlphaAPI.depot.extension.uninstall({id: \"8bitgentleman+clear-sidebar\"})\n// => {id: \"8bitgentleman+clear-sidebar\", installed: false}```"
+              }
+             ],
+             ":block/uid": "mT8e1hqZZ",
+             ":block/order": 3,
+             ":block/string": "Example::"
+            }
+           ],
+           ":block/uid": "b2sMsQ0Y8",
+           ":block/order": 2,
+           ":block/string": "`roamAlphaAPI.depot.extension.uninstall`"
+          },
+          {
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "dSAi8APjS"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "l8Qt0zUGh",
+               ":block/order": 0,
+               ":block/string": "Switch an installed marketplace extension on and load it. The setting is saved with the installation, so it holds across reloads and devices."
+              },
+              {
+               ":block/uid": "AnpHTq7Pl",
+               ":block/order": 1,
+               ":block/string": "Rejects when the extension is not installed."
+              }
+             ],
+             ":block/uid": "9Z36yRfXO",
+             ":block/order": 0,
+             ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "f4rqZkvUg"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "vhfYMMR6X",
+               ":block/order": 0,
+               ":block/string": "`id` (string, required): the Roam Depot id"
+              }
+             ],
+             ":block/uid": "t44tADdmb",
+             ":block/order": 1,
+             ":block/string": "Parameters::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "w2TkzJeTV"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "4iO5KcTjS",
+               ":block/order": 0,
+               ":block/string": "Promise resolving to the extension's entry"
+              }
+             ],
+             ":block/uid": "c0cRykw_n",
+             ":block/order": 2,
+             ":block/string": "Return::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "VhCQwT5Dc",
+               ":block/order": 0,
+               ":block/string": "```javascript\nawait roamAlphaAPI.depot.extension.enable({id: \"8bitgentleman+clear-sidebar\"})\n// => {id: \"8bitgentleman+clear-sidebar\", name: \"Clear Right Sidebar\", type: \"marketplace\", enabled: true, adminEnabled: false, running: true, version: \"6\"}```"
+              }
+             ],
+             ":block/uid": "rma_0yE0D",
+             ":block/order": 3,
+             ":block/string": "Example::"
+            }
+           ],
+           ":block/uid": "wMgrmyW9B",
+           ":block/order": 3,
+           ":block/string": "`roamAlphaAPI.depot.extension.enable`"
+          },
+          {
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "dSAi8APjS"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "iATHTdWkc",
+               ":block/order": 0,
+               ":block/string": "Switch an installed marketplace extension off and unload it, keeping it installed. The setting is saved with the installation, so it holds across reloads and devices."
+              },
+              {
+               ":block/uid": "LJkEuv2Q2",
+               ":block/order": 1,
+               ":block/string": "Rejects when the extension is not installed."
+              }
+             ],
+             ":block/uid": "Z5T81GJks",
+             ":block/order": 0,
+             ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "f4rqZkvUg"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "LZhKOdLW_",
+               ":block/order": 0,
+               ":block/string": "`id` (string, required): the Roam Depot id"
+              }
+             ],
+             ":block/uid": "yuA22gccE",
+             ":block/order": 1,
+             ":block/string": "Parameters::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "w2TkzJeTV"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "CnjTJt4YD",
+               ":block/order": 0,
+               ":block/string": "Promise resolving to the extension's entry"
+              }
+             ],
+             ":block/uid": "mVVCUjKlz",
+             ":block/order": 2,
+             ":block/string": "Return::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "UC_Wj2dcm",
+               ":block/order": 0,
+               ":block/string": "```javascript\nawait roamAlphaAPI.depot.extension.disable({id: \"8bitgentleman+clear-sidebar\"})\n// => {id: \"8bitgentleman+clear-sidebar\", name: \"Clear Right Sidebar\", type: \"marketplace\", enabled: false, adminEnabled: false, running: false, version: \"6\"}```"
+              }
+             ],
+             ":block/uid": "1bmTq789k",
+             ":block/order": 3,
+             ":block/string": "Example::"
+            }
+           ],
+           ":block/uid": "uBP76FE1O",
+           ":block/order": 4,
+           ":block/string": "`roamAlphaAPI.depot.extension.disable`"
+          }
+         ],
+         ":block/uid": "eaOpElAJN",
+         ":block/order": 3,
+         ":block/string": "`roamAlphaAPI.depot.extension`"
+        },
+        {
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "dSAi8APjS"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "r_AAm5D8B",
+             ":block/order": 0,
+             ":block/string": "Register and control developer-mode extensions (dev builds) by id: remote builds from a URL or a roam-depot PR shorthand, and local builds from a folder."
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "deTPbx3ba"
+              }
+             ],
+             ":block/uid": "rtfx2-RcL",
+             ":block/order": 1,
+             ":block/string": "Every method except `install` takes `{id}`, the id listed by ((deTPbx3ba)): the base URL or PR shorthand of a remote build, or a generated string starting with \"uuid\" for a folder build."
+            },
+            {
+             ":block/uid": "uC___JLGt",
+             ":block/order": 2,
+             ":block/string": "Requires the same permission as installing extensions (an admin or editor, or any signed-in user on an offline graph); otherwise the promise rejects."
+            },
+            {
+             ":block/uid": "TMet0aZ2o",
+             ":block/order": 3,
+             ":block/string": "These work whether or not developer mode is switched on in Roam Depot settings; that toggle only shows the Developer Extensions section."
+            },
+            {
+             ":block/uid": "0npqgaPx_",
+             ":block/order": 4,
+             ":block/string": "Loading a folder build needs read permission on its folder. When the browser would prompt for it again, a load from a script fails with the usual toast and the entry stays `running: false`; grant it from the toast's Load button, or pick \"Allow on every visit\" in Chrome's prompt."
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "8ikgtLSXz"
+              }
+             ],
+             ":block/uid": "dS1h6xEd5",
+             ":block/order": 5,
+             ":block/string": "Over the Desktop [[Local API]], `install` is refused with the error code ACTION_NOT_AVAILABLE whatever the token's scope; registering new code is a user action. The other methods work there."
+            }
+           ],
+           ":block/uid": "VVE28dZrJ",
+           ":block/order": 0,
+           ":block/string": "Description::"
+          },
+          {
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "dSAi8APjS"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "qSYEnTlGs",
+                 ":block/order": 0,
+                 ":block/string": "`{url}` registers a remote build: a base URL whose `extension.js` and `README.md` are publicly reachable, or a roam-depot PR shorthand such as \"author+repo+142\". Rejects when the files can't be fetched or the build is already registered."
+                },
+                {
+                 ":block/uid": "sCQZagSKX",
+                 ":block/order": 1,
+                 ":block/string": "`{directoryHandle}` registers a folder build from a FileSystemDirectoryHandle you already hold, for example from `window.showDirectoryPicker()`."
+                },
+                {
+                 ":block/uid": "vpcRiOetX",
+                 ":block/order": 2,
+                 ":block/string": "No argument opens the browser's directory picker. The picker needs a user gesture, so call this from a click, a hotkey, or a Command Palette command; from the console or a background script the browser rejects it."
+                }
+               ],
+               ":block/uid": "dSPP1UupQ",
+               ":block/order": 0,
+               ":block/string": "Register a dev build and load it. Three forms:"
+              },
+              {
+               ":block/uid": "hqIknhvuj",
+               ":block/order": 1,
+               ":block/string": "Remote builds load on every graph open; folder builds load on graph open once the browser can read the folder without a prompt."
+              }
+             ],
+             ":block/uid": "xCEtex0Y2",
+             ":block/order": 0,
+             ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "f4rqZkvUg"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "gsEP5pcpZ",
+               ":block/order": 0,
+               ":block/string": "`url` (string, optional): base URL or PR shorthand"
+              },
+              {
+               ":block/uid": "PvSn4l4ta",
+               ":block/order": 1,
+               ":block/string": "`directoryHandle` (FileSystemDirectoryHandle, optional): a folder handle"
+              }
+             ],
+             ":block/uid": "whbykEzQf",
+             ":block/order": 1,
+             ":block/string": "Parameters::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "w2TkzJeTV"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "uqEw4Yr2E",
+               ":block/order": 0,
+               ":block/string": "Promise resolving to the new entry; its `id` is what the other methods take (the normalized base URL, the PR shorthand, or the generated uuid string of a folder build)"
+              }
+             ],
+             ":block/uid": "L1KYN21sa",
+             ":block/order": 2,
+             ":block/string": "Return::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "_BbxlE3oU",
+               ":block/order": 0,
+               ":block/string": "```javascript\nawait roamAlphaAPI.depot.developer.install({url: \"https://example.com/my-extension/\"})\n// =>\n{id: \"https://example.com/my-extension/\",\n name: \"https://example.com/my-extension/\",\n type: \"developer\",\n enabled: true,\n adminEnabled: false,\n running: true,\n version: \"DEV\"}```"
+              }
+             ],
+             ":block/uid": "RBP5ZXTqX",
+             ":block/order": 3,
+             ":block/string": "Example::"
+            }
+           ],
+           ":block/uid": "fKfX7WElU",
+           ":block/order": 1,
+           ":block/string": "`roamAlphaAPI.depot.developer.install`"
+          },
+          {
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "dSAi8APjS"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "A8LlNDMmc",
+               ":block/order": 0,
+               ":block/string": "Unload and forget a dev build, removing its custom hotkeys and, for a folder build, the stored folder handle."
+              },
+              {
+               ":block/uid": "xJOUqw-Ga",
+               ":block/order": 1,
+               ":block/string": "Rejects when the id is not a registered dev build."
+              }
+             ],
+             ":block/uid": "gcFLdM_CE",
+             ":block/order": 0,
+             ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "f4rqZkvUg"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "D6dYw5h0B",
+               ":block/order": 0,
+               ":block/string": "`id` (string, required): the dev build id"
+              }
+             ],
+             ":block/uid": "_EUog7iZL",
+             ":block/order": 1,
+             ":block/string": "Parameters::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "w2TkzJeTV"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "VhpukgEOl",
+               ":block/order": 0,
+               ":block/string": "Promise resolving to `{id, installed: false}`"
+              }
+             ],
+             ":block/uid": "10jahxkv6",
+             ":block/order": 2,
+             ":block/string": "Return::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "OL4jNmDcF",
+               ":block/order": 0,
+               ":block/string": "```javascript\nawait roamAlphaAPI.depot.developer.uninstall({id: \"https://example.com/my-extension/\"})\n// => {id: \"https://example.com/my-extension/\", installed: false}```"
+              }
+             ],
+             ":block/uid": "8BxGDyhY5",
+             ":block/order": 3,
+             ":block/string": "Example::"
+            }
+           ],
+           ":block/uid": "ErKvkBZV-",
+           ":block/order": 2,
+           ":block/string": "`roamAlphaAPI.depot.developer.uninstall`"
+          },
+          {
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "dSAi8APjS"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "upHaGzapi",
+               ":block/order": 0,
+               ":block/string": "Mark a dev build enabled and load it if it isn't running."
+              }
+             ],
+             ":block/uid": "gZedjXqHh",
+             ":block/order": 0,
+             ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "f4rqZkvUg"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "fRlvzXqj1",
+               ":block/order": 0,
+               ":block/string": "`id` (string, required): the dev build id"
+              }
+             ],
+             ":block/uid": "qX4plG50F",
+             ":block/order": 1,
+             ":block/string": "Parameters::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "w2TkzJeTV"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "MzxVg7UY4",
+               ":block/order": 0,
+               ":block/string": "Promise resolving to the build's entry"
+              }
+             ],
+             ":block/uid": "trsCef8zw",
+             ":block/order": 2,
+             ":block/string": "Return::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "o_QG_vkhD",
+               ":block/order": 0,
+               ":block/string": "```javascript\nawait roamAlphaAPI.depot.developer.enable({id: \"https://example.com/my-extension/\"})\n// => {id: \"https://example.com/my-extension/\", name: \"https://example.com/my-extension/\", type: \"developer\", enabled: true, adminEnabled: false, running: true, version: \"DEV\"}```"
+              }
+             ],
+             ":block/uid": "h37DgrWKP",
+             ":block/order": 3,
+             ":block/string": "Example::"
+            }
+           ],
+           ":block/uid": "aeupd3_Ng",
+           ":block/order": 3,
+           ":block/string": "`roamAlphaAPI.depot.developer.enable`"
+          },
+          {
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "dSAi8APjS"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "zr-fTt5GP"
+                }
+               ],
+               ":block/uid": "6z_dTQK3n",
+               ":block/order": 0,
+               ":block/string": "Mark a dev build disabled and unload it. It stays registered but is skipped when the graph opens and by ((zr-fTt5GP))."
+              },
+              {
+               ":block/uid": "wPXxF2Of_",
+               ":block/order": 1,
+               ":block/string": "The flag is kept on this device, in the graph's cached app state, so it holds across reloads here but not on other devices."
+              }
+             ],
+             ":block/uid": "fIUVLVJad",
+             ":block/order": 0,
+             ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "f4rqZkvUg"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "LVR3xYWQx",
+               ":block/order": 0,
+               ":block/string": "`id` (string, required): the dev build id"
+              }
+             ],
+             ":block/uid": "H7zppa5X2",
+             ":block/order": 1,
+             ":block/string": "Parameters::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "w2TkzJeTV"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "fEmw9-H5v",
+               ":block/order": 0,
+               ":block/string": "Promise resolving to the build's entry"
+              }
+             ],
+             ":block/uid": "3_kROcb5J",
+             ":block/order": 2,
+             ":block/string": "Return::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "MRSaJC3IF",
+               ":block/order": 0,
+               ":block/string": "```javascript\nawait roamAlphaAPI.depot.developer.disable({id: \"https://example.com/my-extension/\"})\n// => {id: \"https://example.com/my-extension/\", name: \"https://example.com/my-extension/\", type: \"developer\", enabled: false, adminEnabled: false, running: false, version: \"DEV\"}```"
+              }
+             ],
+             ":block/uid": "Z56lWCm4U",
+             ":block/order": 3,
+             ":block/string": "Example::"
+            }
+           ],
+           ":block/uid": "lJsSkH7Ef",
+           ":block/order": 4,
+           ":block/string": "`roamAlphaAPI.depot.developer.disable`"
+          },
+          {
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "dSAi8APjS"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "zEyxEL-x4",
+               ":block/order": 0,
+               ":block/string": "Load a dev build for this session without touching its enabled flag. No-op when it is already running."
+              }
+             ],
+             ":block/uid": "TiFwIy408",
+             ":block/order": 0,
+             ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "f4rqZkvUg"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "KcCouWBjl",
+               ":block/order": 0,
+               ":block/string": "`id` (string, required): the dev build id"
+              }
+             ],
+             ":block/uid": "8i72XzyC6",
+             ":block/order": 1,
+             ":block/string": "Parameters::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "w2TkzJeTV"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "C8wsG1dB4",
+               ":block/order": 0,
+               ":block/string": "Promise resolving to the build's entry"
+              }
+             ],
+             ":block/uid": "lCten1GDE",
+             ":block/order": 2,
+             ":block/string": "Return::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "xLPxXPIfv",
+               ":block/order": 0,
+               ":block/string": "```javascript\nawait roamAlphaAPI.depot.developer.load({id: \"https://example.com/my-extension/\"})\n// => {id: \"https://example.com/my-extension/\", name: \"https://example.com/my-extension/\", type: \"developer\", enabled: true, adminEnabled: false, running: true, version: \"DEV\"}```"
+              }
+             ],
+             ":block/uid": "UTwD90qSL",
+             ":block/order": 3,
+             ":block/string": "Example::"
+            }
+           ],
+           ":block/uid": "b-XccY__4",
+           ":block/order": 5,
+           ":block/string": "`roamAlphaAPI.depot.developer.load`"
+          },
+          {
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "dSAi8APjS"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "yzY0zHb4p",
+               ":block/order": 0,
+               ":block/string": "Unload a dev build for this session without touching its enabled flag. No-op when it is not running."
+              }
+             ],
+             ":block/uid": "G7Jgr0-to",
+             ":block/order": 0,
+             ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "f4rqZkvUg"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "ywtuc4rAf",
+               ":block/order": 0,
+               ":block/string": "`id` (string, required): the dev build id"
+              }
+             ],
+             ":block/uid": "14u58wcs_",
+             ":block/order": 1,
+             ":block/string": "Parameters::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "w2TkzJeTV"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "x2jl0P3jp",
+               ":block/order": 0,
+               ":block/string": "Promise resolving to the build's entry"
+              }
+             ],
+             ":block/uid": "poLJcc7Fb",
+             ":block/order": 2,
+             ":block/string": "Return::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "cJBdpc0ms",
+               ":block/order": 0,
+               ":block/string": "```javascript\nawait roamAlphaAPI.depot.developer.unload({id: \"https://example.com/my-extension/\"})\n// => {id: \"https://example.com/my-extension/\", name: \"https://example.com/my-extension/\", type: \"developer\", enabled: true, adminEnabled: false, running: false, version: \"DEV\"}```"
+              }
+             ],
+             ":block/uid": "Pj9I9lLFJ",
+             ":block/order": 3,
+             ":block/string": "Example::"
+            }
+           ],
+           ":block/uid": "0QynhlgcX",
+           ":block/order": 6,
+           ":block/string": "`roamAlphaAPI.depot.developer.unload`"
+          },
+          {
+           ":block/children": [
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "dSAi8APjS"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "zr-fTt5GP"
+                }
+               ],
+               ":block/uid": "EEAScj1tp",
+               ":block/order": 0,
+               ":block/string": "Unload then load one dev build, the per-build version of ((zr-fTt5GP))."
+              }
+             ],
+             ":block/uid": "jjzeUQAvU",
+             ":block/order": 0,
+             ":block/string": "Description::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "f4rqZkvUg"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "7o1cEF5m-",
+               ":block/order": 0,
+               ":block/string": "`id` (string, required): the dev build id"
+              }
+             ],
+             ":block/uid": "rrpl7gKTH",
+             ":block/order": 1,
+             ":block/string": "Parameters::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "w2TkzJeTV"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "34rsQ0xc2",
+               ":block/order": 0,
+               ":block/string": "Promise resolving to the build's entry"
+              }
+             ],
+             ":block/uid": "e3N2cyWEz",
+             ":block/order": 2,
+             ":block/string": "Return::"
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "YSuAc1n3V"
+              }
+             ],
+             ":block/children": [
+              {
+               ":block/uid": "iHjCNMGRc",
+               ":block/order": 0,
+               ":block/string": "```javascript\nawait roamAlphaAPI.depot.developer.reload({id: \"https://example.com/my-extension/\"})\n// => {id: \"https://example.com/my-extension/\", name: \"https://example.com/my-extension/\", type: \"developer\", enabled: true, adminEnabled: false, running: true, version: \"DEV\"}```"
+              }
+             ],
+             ":block/uid": "Hce-r75vN",
+             ":block/order": 3,
+             ":block/string": "Example::"
+            }
+           ],
+           ":block/uid": "CDbafwkCT",
+           ":block/order": 7,
+           ":block/string": "`roamAlphaAPI.depot.developer.reload`"
+          }
+         ],
+         ":block/uid": "xZwi_XGl2",
+         ":block/order": 4,
+         ":block/string": "`roamAlphaAPI.depot.developer`"
         }
        ],
        ":block/uid": "Rv9kIYaHH",
@@ -32933,7 +34179,7 @@
         }
        ],
        ":block/uid": "bvJUBvi3z",
-       ":block/order": 1,
+       ":block/order": 2,
        ":block/string": "See ((tvM-fr4XK)) for older changes"
       },
       {
@@ -33006,8 +34252,57 @@
         }
        ],
        ":block/uid": "ixMdBgMDJ",
-       ":block/order": 0,
+       ":block/order": 1,
        ":block/string": "[[August 25th, 2026]]"
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "11-13-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/children": [
+          {
+           ":block/uid": "gZXmgVhR9",
+           ":block/order": 0,
+           ":block/string": "New: `roamAlphaAPI.depot.openSettings`, `roamAlphaAPI.depot.extension` (install, uninstall, enable, disable) and `roamAlphaAPI.depot.developer` (install, uninstall, enable, disable, load, unload, reload)"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "deTPbx3ba"
+            }
+           ],
+           ":block/uid": "-3ugn-zzP",
+           ":block/order": 1,
+           ":block/string": "((deTPbx3ba)) entries gain `type` and `running`"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "zr-fTt5GP"
+            }
+           ],
+           ":block/uid": "2-W4oW9tO",
+           ":block/order": 2,
+           ":block/string": "((zr-fTt5GP)) skips builds disabled with `roamAlphaAPI.depot.developer.disable`"
+          }
+         ],
+         ":block/uid": "73dB0dt5P",
+         ":block/order": 0,
+         ":block/string": "Roam Depot controls on `roamAlphaAPI.depot`, shipping with the next web release"
+        },
+        {
+         ":block/uid": "hOjatN1GZ",
+         ":block/order": 1,
+         ":block/string": "New: `roamAlphaAPI.ui.components.renderPageTitle`, the page's editable title without its body, shipping with the next web release"
+        }
+       ],
+       ":block/uid": "oDZFOBxG5",
+       ":block/order": 0,
+       ":block/string": "[[November 13th, 2026]]"
       }
      ],
      ":block/uid": "UFglhAAcr",

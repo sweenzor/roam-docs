@@ -3858,6 +3858,50 @@ window.roamAlphaAPI.ui.components.renderPage(
 </li>
 </ul>
 </li>
+<li><code>roamAlphaAPI.ui.components.renderPageTitle</code>
+<ul>
+<li>Description::
+<ul>
+<li>Render a page's title into a DOM node without the page body: the same editable title the page itself shows, so click-to-rename, the rename validation and toasts, the title context menu, and live updates when the page is renamed elsewhere all behave as in the app.
+</li>
+<li>Renders an <code>h1.rm-title-display</code> inside a <code>div.rm-api-render--page-title</code>; restyle it under that wrapper if a page-sized heading doesn't fit your layout.
+</li>
+<li>A <code>title</code> is resolved to the page's uid once at mount, so the mounted title follows the page through renames. A page that doesn't exist renders a &quot;could not be found&quot; line instead.
+</li>
+<li>Remove it with <code>roamAlphaAPI.ui.components.unmountNode</code>
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>uid</code> (string): page to display; pass this or <code>title</code>
+</li>
+<li><code>title</code> (string): page to display, by title
+</li>
+<li><code>el</code> (DOM node, required)
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to <code>null</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>const newNode = document.createElement(&quot;div&quot;);
+document.body.appendChild(newNode);
+
+window.roamAlphaAPI.ui.components.renderPageTitle(
+  {uid: &quot;mK9pQ2rTw&quot;,
+   el: newNode})
+// resolves to null once mounted</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><code>roamAlphaAPI.ui.components.renderSearch</code>
 <ul>
 <li>Description::
@@ -4520,7 +4564,23 @@ roamAlphaAPI.data.pull(&quot;[*]&quot;, [&quot;:user/uid&quot;, window.roamAlpha
 </li>
 <li>Return::
 <ul>
-<li>Object of <code>{ext-id: ext-map}</code>; <code>version</code> is &quot;DEV&quot; for developer-loaded extensions
+<li>Object of <code>{ext-id: entry}</code>, one entry per installed marketplace extension and registered developer build
+<ul>
+<li><code>id</code> (string): the extension id, which the other <code>roamAlphaAPI.depot</code> methods take
+</li>
+<li><code>name</code> (string)
+</li>
+<li><code>type</code> (string): &quot;marketplace&quot; or &quot;developer&quot;
+</li>
+<li><code>enabled</code> (boolean): whether the extension is switched on; for a developer build, false only after <code>roamAlphaAPI.depot.developer.disable</code>
+</li>
+<li><code>adminEnabled</code> (boolean): installed for everyone on the graph by an admin
+</li>
+<li><code>running</code> (boolean): currently loaded in this tab
+</li>
+<li><code>version</code> (string): &quot;DEV&quot; for developer builds
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -4531,8 +4591,10 @@ roamAlphaAPI.data.pull(&quot;[*]&quot;, [&quot;:user/uid&quot;, window.roamAlpha
 {&quot;ccc+ccc-roam-pdf-2&quot;:
   {id: &quot;ccc+ccc-roam-pdf-2&quot;,
    name: &quot;Roam PDF Highlighter 2&quot;,
+   type: &quot;marketplace&quot;,
    enabled: false,
    adminEnabled: true,
+   running: false,
    version: &quot;1&quot;},
  ...}</code></pre>
 </li>
@@ -4545,6 +4607,8 @@ roamAlphaAPI.data.pull(&quot;[*]&quot;, [&quot;:user/uid&quot;, window.roamAlpha
 <li>Description::
 <ul>
 <li>Reload all developer-mode extensions — the same operation as the &quot;Reload developer extensions&quot; command (<code>ctrl-d ctrl-r</code>).
+</li>
+<li>Skips builds disabled with <code>roamAlphaAPI.depot.developer.disable</code>; use <code>roamAlphaAPI.depot.developer.reload</code> for a single build.
 </li>
 </ul>
 </li>
@@ -4564,6 +4628,434 @@ roamAlphaAPI.data.pull(&quot;[*]&quot;, [&quot;:user/uid&quot;, window.roamAlpha
 <ul>
 <li><pre><code>await roamAlphaAPI.depot.reloadDeveloperExtensions()
 // =&gt; {reloaded: [{id: &quot;dev-extension-id&quot;, name: &quot;My Dev Extension&quot;}]}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.depot.openSettings</code>
+<ul>
+<li>Description::
+<ul>
+<li>Open Settings on an extension's own tab, the same as the Command Palette's &quot;Roam Depot Extension Settings&quot; commands.
+</li>
+<li>The tab exists only while the extension is running and has a settings panel or Command Palette commands; otherwise the promise rejects. An unknown id rejects too.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>id</code> (string, required): the extension id, as listed by <code>roamAlphaAPI.depot.getInstalledExtensions</code>
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to <code>undefined</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.depot.openSettings({id: &quot;8bitgentleman+clear-sidebar&quot;})
+// =&gt; undefined</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.depot.extension</code>
+<ul>
+<li>Description::
+<ul>
+<li>Install and switch Roam Depot marketplace extensions by id, the same operations as the Roam Depot settings panel.
+</li>
+<li>Each method takes <code>{id}</code> and resolves to that extension's entry from <code>roamAlphaAPI.depot.getInstalledExtensions</code>.
+</li>
+<li>Requires permission to install extensions on the graph (an admin or editor, or any signed-in user on an offline graph); otherwise the promise rejects.
+</li>
+<li>An extension installed for everyone by an admin (<code>adminEnabled</code>) can only be changed by an admin.
+</li>
+<li>Over the Desktop <a href="/developer-documentation/local-api">Local API</a>, <code>install</code> is refused with the error code ACTION_NOT_AVAILABLE whatever the token's scope; installing new code is a user action. The other methods work there.
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.depot.extension.install</code>
+<ul>
+<li>Description::
+<ul>
+<li>Install a marketplace extension by its Roam Depot id and enable it.
+</li>
+<li>The extension loads shortly after the promise resolves, so <code>running</code> is usually still false in the returned entry.
+</li>
+<li>Rejects when the id is not in Roam Depot or the extension is already installed.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>id</code> (string, required): the Roam Depot id, in the form &quot;author+repo&quot;
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to the extension's entry
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.depot.extension.install({id: &quot;8bitgentleman+clear-sidebar&quot;})
+// =&gt;
+{id: &quot;8bitgentleman+clear-sidebar&quot;,
+ name: &quot;Clear Right Sidebar&quot;,
+ type: &quot;marketplace&quot;,
+ enabled: true,
+ adminEnabled: false,
+ running: false,
+ version: &quot;6&quot;}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.depot.extension.uninstall</code>
+<ul>
+<li>Description::
+<ul>
+<li>Uninstall an installed marketplace extension: unloads it and removes its custom hotkeys.
+</li>
+<li>Rejects when the extension is not installed.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>id</code> (string, required): the Roam Depot id
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to <code>{id, installed: false}</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.depot.extension.uninstall({id: &quot;8bitgentleman+clear-sidebar&quot;})
+// =&gt; {id: &quot;8bitgentleman+clear-sidebar&quot;, installed: false}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.depot.extension.enable</code>
+<ul>
+<li>Description::
+<ul>
+<li>Switch an installed marketplace extension on and load it. The setting is saved with the installation, so it holds across reloads and devices.
+</li>
+<li>Rejects when the extension is not installed.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>id</code> (string, required): the Roam Depot id
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to the extension's entry
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.depot.extension.enable({id: &quot;8bitgentleman+clear-sidebar&quot;})
+// =&gt; {id: &quot;8bitgentleman+clear-sidebar&quot;, name: &quot;Clear Right Sidebar&quot;, type: &quot;marketplace&quot;, enabled: true, adminEnabled: false, running: true, version: &quot;6&quot;}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.depot.extension.disable</code>
+<ul>
+<li>Description::
+<ul>
+<li>Switch an installed marketplace extension off and unload it, keeping it installed. The setting is saved with the installation, so it holds across reloads and devices.
+</li>
+<li>Rejects when the extension is not installed.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>id</code> (string, required): the Roam Depot id
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to the extension's entry
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.depot.extension.disable({id: &quot;8bitgentleman+clear-sidebar&quot;})
+// =&gt; {id: &quot;8bitgentleman+clear-sidebar&quot;, name: &quot;Clear Right Sidebar&quot;, type: &quot;marketplace&quot;, enabled: false, adminEnabled: false, running: false, version: &quot;6&quot;}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.depot.developer</code>
+<ul>
+<li>Description::
+<ul>
+<li>Register and control developer-mode extensions (dev builds) by id: remote builds from a URL or a roam-depot PR shorthand, and local builds from a folder.
+</li>
+<li>Every method except <code>install</code> takes <code>{id}</code>, the id listed by <code>roamAlphaAPI.depot.getInstalledExtensions</code>: the base URL or PR shorthand of a remote build, or a generated string starting with &quot;uuid&quot; for a folder build.
+</li>
+<li>Requires the same permission as installing extensions (an admin or editor, or any signed-in user on an offline graph); otherwise the promise rejects.
+</li>
+<li>These work whether or not developer mode is switched on in Roam Depot settings; that toggle only shows the Developer Extensions section.
+</li>
+<li>Loading a folder build needs read permission on its folder. When the browser would prompt for it again, a load from a script fails with the usual toast and the entry stays <code>running: false</code>; grant it from the toast's Load button, or pick &quot;Allow on every visit&quot; in Chrome's prompt.
+</li>
+<li>Over the Desktop <a href="/developer-documentation/local-api">Local API</a>, <code>install</code> is refused with the error code ACTION_NOT_AVAILABLE whatever the token's scope; registering new code is a user action. The other methods work there.
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.depot.developer.install</code>
+<ul>
+<li>Description::
+<ul>
+<li>Register a dev build and load it. Three forms:
+<ul>
+<li><code>{url}</code> registers a remote build: a base URL whose <code>extension.js</code> and <code>README.md</code> are publicly reachable, or a roam-depot PR shorthand such as &quot;author+repo+142&quot;. Rejects when the files can't be fetched or the build is already registered.
+</li>
+<li><code>{directoryHandle}</code> registers a folder build from a FileSystemDirectoryHandle you already hold, for example from <code>window.showDirectoryPicker()</code>.
+</li>
+<li>No argument opens the browser's directory picker. The picker needs a user gesture, so call this from a click, a hotkey, or a Command Palette command; from the console or a background script the browser rejects it.
+</li>
+</ul>
+</li>
+<li>Remote builds load on every graph open; folder builds load on graph open once the browser can read the folder without a prompt.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>url</code> (string, optional): base URL or PR shorthand
+</li>
+<li><code>directoryHandle</code> (FileSystemDirectoryHandle, optional): a folder handle
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to the new entry; its <code>id</code> is what the other methods take (the normalized base URL, the PR shorthand, or the generated uuid string of a folder build)
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.depot.developer.install({url: &quot;https://example.com/my-extension/&quot;})
+// =&gt;
+{id: &quot;https://example.com/my-extension/&quot;,
+ name: &quot;https://example.com/my-extension/&quot;,
+ type: &quot;developer&quot;,
+ enabled: true,
+ adminEnabled: false,
+ running: true,
+ version: &quot;DEV&quot;}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.depot.developer.uninstall</code>
+<ul>
+<li>Description::
+<ul>
+<li>Unload and forget a dev build, removing its custom hotkeys and, for a folder build, the stored folder handle.
+</li>
+<li>Rejects when the id is not a registered dev build.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>id</code> (string, required): the dev build id
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to <code>{id, installed: false}</code>
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.depot.developer.uninstall({id: &quot;https://example.com/my-extension/&quot;})
+// =&gt; {id: &quot;https://example.com/my-extension/&quot;, installed: false}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.depot.developer.enable</code>
+<ul>
+<li>Description::
+<ul>
+<li>Mark a dev build enabled and load it if it isn't running.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>id</code> (string, required): the dev build id
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to the build's entry
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.depot.developer.enable({id: &quot;https://example.com/my-extension/&quot;})
+// =&gt; {id: &quot;https://example.com/my-extension/&quot;, name: &quot;https://example.com/my-extension/&quot;, type: &quot;developer&quot;, enabled: true, adminEnabled: false, running: true, version: &quot;DEV&quot;}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.depot.developer.disable</code>
+<ul>
+<li>Description::
+<ul>
+<li>Mark a dev build disabled and unload it. It stays registered but is skipped when the graph opens and by <code>roamAlphaAPI.depot.reloadDeveloperExtensions</code>.
+</li>
+<li>The flag is kept on this device, in the graph's cached app state, so it holds across reloads here but not on other devices.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>id</code> (string, required): the dev build id
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to the build's entry
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.depot.developer.disable({id: &quot;https://example.com/my-extension/&quot;})
+// =&gt; {id: &quot;https://example.com/my-extension/&quot;, name: &quot;https://example.com/my-extension/&quot;, type: &quot;developer&quot;, enabled: false, adminEnabled: false, running: false, version: &quot;DEV&quot;}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.depot.developer.load</code>
+<ul>
+<li>Description::
+<ul>
+<li>Load a dev build for this session without touching its enabled flag. No-op when it is already running.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>id</code> (string, required): the dev build id
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to the build's entry
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.depot.developer.load({id: &quot;https://example.com/my-extension/&quot;})
+// =&gt; {id: &quot;https://example.com/my-extension/&quot;, name: &quot;https://example.com/my-extension/&quot;, type: &quot;developer&quot;, enabled: true, adminEnabled: false, running: true, version: &quot;DEV&quot;}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.depot.developer.unload</code>
+<ul>
+<li>Description::
+<ul>
+<li>Unload a dev build for this session without touching its enabled flag. No-op when it is not running.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>id</code> (string, required): the dev build id
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to the build's entry
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.depot.developer.unload({id: &quot;https://example.com/my-extension/&quot;})
+// =&gt; {id: &quot;https://example.com/my-extension/&quot;, name: &quot;https://example.com/my-extension/&quot;, type: &quot;developer&quot;, enabled: true, adminEnabled: false, running: false, version: &quot;DEV&quot;}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.depot.developer.reload</code>
+<ul>
+<li>Description::
+<ul>
+<li>Unload then load one dev build, the per-build version of <code>roamAlphaAPI.depot.reloadDeveloperExtensions</code>.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li><code>id</code> (string, required): the dev build id
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>Promise resolving to the build's entry
+</li>
+</ul>
+</li>
+<li>Example::
+<ul>
+<li><pre><code>await roamAlphaAPI.depot.developer.reload({id: &quot;https://example.com/my-extension/&quot;})
+// =&gt; {id: &quot;https://example.com/my-extension/&quot;, name: &quot;https://example.com/my-extension/&quot;, type: &quot;developer&quot;, enabled: true, adminEnabled: false, running: true, version: &quot;DEV&quot;}</code></pre>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -4800,6 +5292,22 @@ await fetch(`${roamAlphaAPI.constants.corsAnywhereProxyUrl}/${urlToFetch}`)
 </li>
 <li><strong>Change Log</strong>
 <ul>
+<li>November 13th, 2026
+<ul>
+<li>Roam Depot controls on <code>roamAlphaAPI.depot</code>, shipping with the next web release
+<ul>
+<li>New: <code>roamAlphaAPI.depot.openSettings</code>, <code>roamAlphaAPI.depot.extension</code> (install, uninstall, enable, disable) and <code>roamAlphaAPI.depot.developer</code> (install, uninstall, enable, disable, load, unload, reload)
+</li>
+<li><code>roamAlphaAPI.depot.getInstalledExtensions</code> entries gain <code>type</code> and <code>running</code>
+</li>
+<li><code>roamAlphaAPI.depot.reloadDeveloperExtensions</code> skips builds disabled with <code>roamAlphaAPI.depot.developer.disable</code>
+</li>
+</ul>
+</li>
+<li>New: <code>roamAlphaAPI.ui.components.renderPageTitle</code>, the page's editable title without its body, shipping with the next web release
+</li>
+</ul>
+</li>
 <li>August 25th, 2026
 <ul>
 <li>Some behavioral changes of our delete actions (in both our frontend and backend APIs)
