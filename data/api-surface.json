@@ -404,6 +404,12 @@
        "cljsArities": [],
        "variadic": false
       },
+      "renderPageTitle": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
       "renderString": {
        "kind": "function",
        "jsLength": 1,
@@ -637,11 +643,93 @@
      "cljsArities": [],
      "variadic": false
     },
+    "openSettings": {
+     "kind": "function",
+     "jsLength": 1,
+     "cljsArities": [],
+     "variadic": false
+    },
     "reloadDeveloperExtensions": {
      "kind": "function",
      "jsLength": 1,
      "cljsArities": [],
      "variadic": false
+    },
+    "extension": {
+     "kind": "namespace",
+     "children": {
+      "install": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "uninstall": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "enable": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "disable": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
+    },
+    "developer": {
+     "kind": "namespace",
+     "children": {
+      "install": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "uninstall": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "enable": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "disable": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "load": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "unload": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      },
+      "reload": {
+       "kind": "function",
+       "jsLength": 1,
+       "cljsArities": [],
+       "variadic": false
+      }
+     }
     }
    }
   },

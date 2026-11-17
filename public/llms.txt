@@ -6,7 +6,7 @@
 > public graphs and a running Roam Research session; regenerated on a schedule.
 > Source & contributions: https://github.com/sweenzor/roam-docs
 
-Last export: 2026-11-14T12:20:35.341Z
+Last export: 2026-11-17T14:42:48.536Z
 
 ## Developer documentation
 
@@ -29,7 +29,7 @@ Last export: 2026-11-14T12:20:35.341Z
 
 ## API reference
 
-- [roam-alpha-api.d.ts](https://roamdocs.fyi/types/roam-alpha-api.d.ts): TypeScript definitions for window.roamAlphaAPI — all 135 live-introspected functions (5 newly-discovered functions not yet typed — see the llms-full.txt function inventory appendix)
+- [roam-alpha-api.d.ts](https://roamdocs.fyi/types/roam-alpha-api.d.ts): TypeScript definitions for window.roamAlphaAPI — all 148 live-introspected functions (16 newly-discovered functions not yet typed — see the llms-full.txt function inventory appendix)
 
 ## Examples
 

@@ -50,7 +50,19 @@
   "data.user.upsert",
   "deleteBlock",
   "deletePage",
+  "depot.developer.disable",
+  "depot.developer.enable",
+  "depot.developer.install",
+  "depot.developer.load",
+  "depot.developer.reload",
+  "depot.developer.uninstall",
+  "depot.developer.unload",
+  "depot.extension.disable",
+  "depot.extension.enable",
+  "depot.extension.install",
+  "depot.extension.uninstall",
   "depot.getInstalledExtensions",
+  "depot.openSettings",
   "depot.reloadDeveloperExtensions",
   "file.delete",
   "file.get",
@@ -68,6 +80,7 @@
   "ui.commandPalette.removeCommand",
   "ui.components.renderBlock",
   "ui.components.renderPage",
+  "ui.components.renderPageTitle",
   "ui.components.renderSearch",
   "ui.components.renderString",
   "ui.components.unmountNode",
@@ -188,6 +201,27 @@
    ],
    "removed": [],
    "total": 135
+  },
+  {
+   "date": "2026-11-17",
+   "apiVersion": "1.1.5",
+   "added": [
+    "depot.developer.disable",
+    "depot.developer.enable",
+    "depot.developer.install",
+    "depot.developer.load",
+    "depot.developer.reload",
+    "depot.developer.uninstall",
+    "depot.developer.unload",
+    "depot.extension.disable",
+    "depot.extension.enable",
+    "depot.extension.install",
+    "depot.extension.uninstall",
+    "depot.openSettings",
+    "ui.components.renderPageTitle"
+   ],
+   "removed": [],
+   "total": 148
   }
  ]
 }
