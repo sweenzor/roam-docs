@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-11-17T14:47:29.808Z",
+ "exportedAt": "2026-11-18T14:24:20.362Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -26616,6 +26616,10 @@
    ":block/uid": "vmgzUP3fU"
   },
   {
+   ":node/title": "November 17th, 2026",
+   ":block/uid": "11-17-2026"
+  },
+  {
    ":node/title": "open in sidebar",
    ":block/uid": "UcH_18EQL"
   },
@@ -35227,7 +35231,7 @@
        ":block/uid": "z7nDW4FYi",
        ":block/string": "[[2021]]",
        ":block/heading": 3,
-       ":block/order": 56
+       ":block/order": 57
       },
       {
        ":block/refs": [
@@ -38390,7 +38394,7 @@
        ":block/uid": "oEUzBpPVt",
        ":block/string": "[[2022]]",
        ":block/heading": 3,
-       ":block/order": 55
+       ":block/order": 56
       },
       {
        ":block/refs": [
@@ -42972,7 +42976,7 @@
        ":block/uid": "3DcyG9fYJ",
        ":block/string": "[[2023]]",
        ":block/heading": 3,
-       ":block/order": 54
+       ":block/order": 55
       },
       {
        ":block/refs": [
@@ -48810,7 +48814,7 @@
        ":block/uid": "N8o9mOFxV",
        ":block/string": "[[2024]]",
        ":block/heading": 3,
-       ":block/order": 53
+       ":block/order": 54
       },
       {
        ":block/refs": [
@@ -57952,7 +57956,7 @@
        ":block/uid": "e3HyGxGmz",
        ":block/string": "[[2025]]",
        ":block/heading": 3,
-       ":block/order": 52
+       ":block/order": 53
       },
       {
        ":block/refs": [
@@ -58122,7 +58126,7 @@
        ],
        ":block/uid": "-R8L5nZLD",
        ":block/string": "[[March 11th, 2026]]",
-       ":block/order": 50
+       ":block/order": 51
       },
       {
        ":block/refs": [
@@ -58246,7 +58250,7 @@
        ],
        ":block/uid": "e5HOoYOYK",
        ":block/string": "[[March 24th, 2026]]",
-       ":block/order": 49
+       ":block/order": 50
       },
       {
        ":block/refs": [
@@ -58285,7 +58289,7 @@
        ],
        ":block/uid": "hP0WzVCb3",
        ":block/string": "[[March 30th, 2026]]",
-       ":block/order": 48
+       ":block/order": 49
       },
       {
        ":block/refs": [
@@ -58784,7 +58788,7 @@
        ],
        ":block/uid": "kYfXB-KfD",
        ":block/string": "[[March 31st, 2026]]",
-       ":block/order": 47
+       ":block/order": 48
       },
       {
        ":block/refs": [
@@ -58848,7 +58852,7 @@
        ],
        ":block/uid": "hy237MoSG",
        ":block/string": "[[April 10th, 2026]]",
-       ":block/order": 46
+       ":block/order": 47
       },
       {
        ":block/refs": [
@@ -59070,7 +59074,7 @@
        ],
        ":block/uid": "Ld3WwhXAJ",
        ":block/string": "[[April 14th, 2026]]",
-       ":block/order": 45
+       ":block/order": 46
       },
       {
        ":block/refs": [
@@ -59121,7 +59125,7 @@
        ],
        ":block/uid": "FX03un0yx",
        ":block/string": "[[April 15th, 2026]]",
-       ":block/order": 44
+       ":block/order": 45
       },
       {
        ":block/refs": [
@@ -59170,7 +59174,7 @@
        ],
        ":block/uid": "Tdxn9p6T-",
        ":block/string": "[[April 17th, 2026]]",
-       ":block/order": 43
+       ":block/order": 44
       },
       {
        ":block/refs": [
@@ -60850,7 +60854,7 @@
        ],
        ":block/uid": "yYmOmnffK",
        ":block/string": "[[April 27th, 2026]]",
-       ":block/order": 42
+       ":block/order": 43
       },
       {
        ":block/refs": [
@@ -60930,7 +60934,7 @@
        ],
        ":block/uid": "E8B5FpUqb",
        ":block/string": "[[May 1st, 2026]]",
-       ":block/order": 41
+       ":block/order": 42
       },
       {
        ":block/refs": [
@@ -61114,7 +61118,7 @@
        ],
        ":block/uid": "_bXQOG7-W",
        ":block/string": "[[May 4th, 2026]]",
-       ":block/order": 40
+       ":block/order": 41
       },
       {
        ":block/refs": [
@@ -61213,7 +61217,7 @@
        ],
        ":block/uid": "77u8rD3tN",
        ":block/string": "[[May 5th, 2026]]",
-       ":block/order": 39
+       ":block/order": 40
       },
       {
        ":block/refs": [
@@ -61276,7 +61280,7 @@
        ],
        ":block/uid": "4jefQzlrL",
        ":block/string": "[[May 15th, 2026]]",
-       ":block/order": 38
+       ":block/order": 39
       },
       {
        ":block/refs": [
@@ -61332,7 +61336,7 @@
        ],
        ":block/uid": "yCa6IFyF-",
        ":block/string": "[[May 21st, 2026]]",
-       ":block/order": 37
+       ":block/order": 38
       },
       {
        ":block/refs": [
@@ -61373,7 +61377,7 @@
        ],
        ":block/uid": "s1JCTlMYp",
        ":block/string": "[[May 28th, 2026]]",
-       ":block/order": 36
+       ":block/order": 37
       },
       {
        ":block/refs": [
@@ -61415,7 +61419,7 @@
        ],
        ":block/uid": "GtQy1iARj",
        ":block/string": "[[June 1st, 2026]]",
-       ":block/order": 35
+       ":block/order": 36
       },
       {
        ":block/refs": [
@@ -61542,7 +61546,7 @@
        ],
        ":block/uid": "FfZFcIMVi",
        ":block/string": "[[June 2nd, 2026]]",
-       ":block/order": 34
+       ":block/order": 35
       },
       {
        ":block/refs": [
@@ -61578,7 +61582,7 @@
        ],
        ":block/uid": "o0biga_ls",
        ":block/string": "[[June 9th, 2026]]",
-       ":block/order": 33
+       ":block/order": 34
       },
       {
        ":block/refs": [
@@ -61607,7 +61611,7 @@
        ],
        ":block/uid": "1oHVhjf1j",
        ":block/string": "[[June 10th, 2026]]",
-       ":block/order": 32
+       ":block/order": 33
       },
       {
        ":block/refs": [
@@ -61646,7 +61650,7 @@
        ],
        ":block/uid": "jlW42mQ3s",
        ":block/string": "[[June 11th, 2026]]",
-       ":block/order": 31
+       ":block/order": 32
       },
       {
        ":block/refs": [
@@ -62193,7 +62197,7 @@
        ],
        ":block/uid": "Wp3IwehIi",
        ":block/string": "[[June 13th, 2026]]",
-       ":block/order": 30
+       ":block/order": 31
       },
       {
        ":block/refs": [
@@ -62334,7 +62338,7 @@
        ],
        ":block/uid": "T7MyhAu_Z",
        ":block/string": "[[June 30th, 2026]]",
-       ":block/order": 29
+       ":block/order": 30
       },
       {
        ":block/refs": [
@@ -62390,7 +62394,7 @@
        ],
        ":block/uid": "MdrAuMqaU",
        ":block/string": "[[July 2nd, 2026]]",
-       ":block/order": 28
+       ":block/order": 29
       },
       {
        ":block/refs": [
@@ -62419,7 +62423,7 @@
        ],
        ":block/uid": "MUux5EgdX",
        ":block/string": "[[July 6th, 2026]]",
-       ":block/order": 27
+       ":block/order": 28
       },
       {
        ":block/refs": [
@@ -62453,7 +62457,7 @@
        ],
        ":block/uid": "Omo5TNL1L",
        ":block/string": "[[July 7th, 2026]]",
-       ":block/order": 26
+       ":block/order": 27
       },
       {
        ":block/refs": [
@@ -62632,7 +62636,7 @@
        ],
        ":block/uid": "6kZb0aiyX",
        ":block/string": "[[July 10th, 2026]]",
-       ":block/order": 25
+       ":block/order": 26
       },
       {
        ":block/refs": [
@@ -62785,7 +62789,7 @@
        ],
        ":block/uid": "VoTSRMSbW",
        ":block/string": "[[July 13th, 2026]]",
-       ":block/order": 24
+       ":block/order": 25
       },
       {
        ":block/refs": [
@@ -62819,7 +62823,7 @@
        ],
        ":block/uid": "x3tGBCvQq",
        ":block/string": "[[July 15th, 2026]]",
-       ":block/order": 23
+       ":block/order": 24
       },
       {
        ":block/refs": [
@@ -62848,7 +62852,7 @@
        ],
        ":block/uid": "CNp2sgkob",
        ":block/string": "[[July 23rd, 2026]]",
-       ":block/order": 22
+       ":block/order": 23
       },
       {
        ":block/refs": [
@@ -62899,7 +62903,7 @@
        ],
        ":block/uid": "Oe6_LO9ka",
        ":block/string": "[[July 28th, 2026]]",
-       ":block/order": 21
+       ":block/order": 22
       },
       {
        ":block/refs": [
@@ -62959,7 +62963,7 @@
        ],
        ":block/uid": "jYcUoRTGl",
        ":block/string": "[[July 29th, 2026]]",
-       ":block/order": 20
+       ":block/order": 21
       },
       {
        ":block/refs": [
@@ -63599,7 +63603,7 @@
        ],
        ":block/uid": "iYlYbcCWh",
        ":block/string": "[[August 11th, 2026]]",
-       ":block/order": 19
+       ":block/order": 20
       },
       {
        ":block/refs": [
@@ -65190,7 +65194,7 @@
        ],
        ":block/uid": "YXoTyc5pB",
        ":block/string": "[[August 22nd, 2026]]",
-       ":block/order": 18
+       ":block/order": 19
       },
       {
        ":block/refs": [
@@ -65207,7 +65211,7 @@
        ],
        ":block/uid": "3uD6RaJ7K",
        ":block/string": "[[September 9th, 2026]]",
-       ":block/order": 17
+       ":block/order": 18
       },
       {
        ":block/refs": [
@@ -65699,7 +65703,7 @@
        ],
        ":block/uid": "ZCXwQjjYw",
        ":block/string": "[[September 11th, 2026]]",
-       ":block/order": 16
+       ":block/order": 17
       },
       {
        ":block/refs": [
@@ -65915,7 +65919,7 @@
        ],
        ":block/uid": "kBLGC17Sb",
        ":block/string": "[[September 28th, 2026]]",
-       ":block/order": 15
+       ":block/order": 16
       },
       {
        ":block/refs": [
@@ -66331,7 +66335,7 @@
        ],
        ":block/uid": "wSIxrE1g0",
        ":block/string": "[[September 29th, 2026]]",
-       ":block/order": 14
+       ":block/order": 15
       },
       {
        ":block/refs": [
@@ -66952,7 +66956,7 @@
        ],
        ":block/uid": "hI0U1YW-Q",
        ":block/string": "[[October 6th, 2026]]",
-       ":block/order": 13
+       ":block/order": 14
       },
       {
        ":block/refs": [
@@ -67544,7 +67548,7 @@
        ],
        ":block/uid": "qNY6cTAg7",
        ":block/string": "[[October 7th, 2026]]",
-       ":block/order": 12
+       ":block/order": 13
       },
       {
        ":block/refs": [
@@ -68120,7 +68124,7 @@
        ],
        ":block/uid": "E3sxVLAyU",
        ":block/string": "[[October 15th, 2026]]",
-       ":block/order": 11
+       ":block/order": 12
       },
       {
        ":block/refs": [
@@ -68166,7 +68170,7 @@
        ],
        ":block/uid": "NPRJNQ9Qt",
        ":block/string": "[[October 16th, 2026]]",
-       ":block/order": 10
+       ":block/order": 11
       },
       {
        ":block/refs": [
@@ -68215,7 +68219,7 @@
        ],
        ":block/uid": "c_5TqF_pf",
        ":block/string": "[[October 19th, 2026]]",
-       ":block/order": 9
+       ":block/order": 10
       },
       {
        ":block/refs": [
@@ -68271,7 +68275,7 @@
        ],
        ":block/uid": "yUIUTqPfV",
        ":block/string": "[[October 22nd, 2026]]",
-       ":block/order": 8
+       ":block/order": 9
       },
       {
        ":block/refs": [
@@ -68300,7 +68304,7 @@
        ],
        ":block/uid": "Md_GurA4p",
        ":block/string": "[[October 23rd, 2026]]",
-       ":block/order": 7
+       ":block/order": 8
       },
       {
        ":block/refs": [
@@ -68452,7 +68456,7 @@
        ],
        ":block/uid": "9Sl1WrMJg",
        ":block/string": "[[October 26th, 2026]]",
-       ":block/order": 6
+       ":block/order": 7
       },
       {
        ":block/refs": [
@@ -68839,7 +68843,7 @@
        ],
        ":block/uid": "iGAh8RzEq",
        ":block/string": "[[October 27th, 2026]]",
-       ":block/order": 5
+       ":block/order": 6
       },
       {
        ":block/refs": [
@@ -69036,7 +69040,7 @@
        ],
        ":block/uid": "6s-CszDMY",
        ":block/string": "[[October 28th, 2026]]",
-       ":block/order": 4
+       ":block/order": 5
       },
       {
        ":block/refs": [
@@ -69368,7 +69372,7 @@
        ],
        ":block/uid": "rwgrNch7h",
        ":block/string": "[[November 2nd, 2026]]",
-       ":block/order": 3
+       ":block/order": 4
       },
       {
        ":block/refs": [
@@ -69880,7 +69884,7 @@
        ],
        ":block/uid": "3WqwN9Fnj",
        ":block/string": "[[November 6th, 2026]]",
-       ":block/order": 2
+       ":block/order": 3
       },
       {
        ":block/refs": [
@@ -73218,7 +73222,7 @@
        ":block/uid": "Yb9Rk9-46",
        ":block/string": "[[2026]]",
        ":block/heading": 3,
-       ":block/order": 51
+       ":block/order": 52
       },
       {
        ":block/refs": [
@@ -73580,7 +73584,7 @@
        ],
        ":block/uid": "LHjUcqkIi",
        ":block/string": "[[November 10th, 2026]]",
-       ":block/order": 1
+       ":block/order": 2
       },
       {
        ":block/refs": [
@@ -73818,6 +73822,616 @@
        ],
        ":block/uid": "47aSyFxyr",
        ":block/string": "[[November 11th, 2026]]",
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "11-17-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "TpA4naC1T"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "CgA4D0OU7",
+             ":block/string": "Send the Roam page you're looking at to [Trickster](https://tricksterapp.com/), the Mac app that keeps the files and links you just touched one click away in your menu bar. The page shows up in Trickster with its title and a link back to it in Roam.",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "EEkfvkmcT",
+             ":block/string": "Requires Trickster 4 or later running on your Mac. New to Trickster? See [Trickster and Roam Research](https://tricksterapp.com/manual/roam-research-integration/) to download it and get set up.",
+             ":block/order": 1
+            },
+            {
+             ":block/uid": "9fpW7ebLs",
+             ":block/string": "![The Save to Trickster button at the right end of Roam's topbar](https://camo.githubusercontent.com/ae298fd3b98d7d366454909164bcafb674dd9198e79d6928e52f441dab4caaec/68747470733a2f2f747269636b737465726170702e636f6d2f696d616765732f76342f726f616d2d746f706261722d373862393330633032362e706e67)[🔗](https://camo.githubusercontent.com/ae298fd3b98d7d366454909164bcafb674dd9198e79d6928e52f441dab4caaec/68747470733a2f2f747269636b737465726170702e636f6d2f696d616765732f76342f726f616d2d746f706261722d373862393330633032362e706e67)",
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "PWKB1WF_e",
+               ":block/string": "Click the Trickster icon in Roam's topbar, or",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "H5Trp6x1X",
+               ":block/string": "Open the command palette (Cmd+P) and run Send page to Trickster. You can give this command a keyboard shortcut in Settings → Hotkeys.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "AuIrFeUQ3",
+               ":block/string": "The icon pulses while it's sending and turns green when the page is saved.",
+               ":block/order": 2
+              },
+              {
+               ":block/children": [
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "pXhdHQbxT",
+                   ":block/string": "Always Allow remembers the connection, so you won't be asked again.",
+                   ":block/order": 0
+                  },
+                  {
+                   ":block/uid": "qgue__qYi",
+                   ":block/string": "Allow Once lets Roam add links for the next 10 minutes.",
+                   ":block/order": 1
+                  }
+                 ],
+                 ":block/uid": "uZ6l6vtgQ",
+                 ":block/string": "The first time you send a page, Trickster asks whether to let Roam add links:",
+                 ":block/order": 0
+                }
+               ],
+               ":block/uid": "PRCnAslF-",
+               ":block/string": "The first time",
+               ":block/heading": 3,
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "x0JYo_7Oo",
+             ":block/string": "How to use it",
+             ":block/heading": 2,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "EmNnbXJLr",
+                 ":block/string": "automatic (default): a desktop link when you send from the Roam desktop app, and a web link when you send from a browser.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "r_RwXGdh-",
+                 ":block/string": "web: `https://roamresearch.com/#/app/...`, which opens in your browser.",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "E5fovPIl6",
+                 ":block/string": "desktop: `roam://#/app/...`, which opens in the Roam desktop app.",
+                 ":block/order": 2
+                }
+               ],
+               ":block/uid": "mEBEAmECR",
+               ":block/string": "URL format decides which link Trickster saves:",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "quacx-0ys",
+             ":block/string": "Settings",
+             ":block/heading": 2,
+             ":block/order": 4
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "xZ9-Lv1th",
+               ":block/string": "The extension only talks to Trickster on your own Mac (`127.0.0.1`, ports 61000–61009). It doesn't send anything to any other server.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "4Xw2wBKaV",
+               ":block/string": "It only sends the current page's title and link, and only when you click the button or run the command.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "sU9RQWcwr",
+               ":block/string": "It doesn't change anything in your graph.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "2zBj5ku_Q",
+               ":block/string": "It keeps the connection token Trickster gives it in this browser's local storage.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "yojnuItvh",
+               ":block/string": "If Trickster's local connection isn't available, the extension opens a `trickster-add://` link instead, and macOS passes the page to Trickster that way.",
+               ":block/order": 4
+              }
+             ],
+             ":block/uid": "4G6Qr-ThM",
+             ":block/string": "Privacy",
+             ":block/heading": 2,
+             ":block/order": 5
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "Ecp-XpQCC",
+               ":block/string": "The page doesn't show up in Trickster: make sure Trickster is running.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "4ylKpPkKt",
+               ":block/string": "Your browser asks to allow access to devices on your local network: allow it. That's how Roam reaches Trickster on your Mac.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "V7RnrtN8E",
+             ":block/string": "Troubleshooting",
+             ":block/heading": 2,
+             ":block/order": 6
+            }
+           ],
+           ":block/uid": "k_qN8VMdf",
+           ":block/string": "Save to Trickster",
+           ":block/heading": 1,
+           ":block/order": 1
+          },
+          {
+           ":block/children": [
+            {
+             ":block/children": [
+              {
+               ":block/uid": "YxjMslvJm",
+               ":block/string": "Open Settings → Roam Depot, find Version Studio and install it.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "KFgpw69s0",
+               ":block/string": "Right-click a block bullet and choose Version Studio….",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "QIsGJ7Tpe",
+               ":block/string": "Compare its versions, or use New version… to start another draft.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "X1DeAccSF",
+             ":children/view-type": "numbered",
+             ":block/string": "Getting started",
+             ":block/heading": 3,
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "7gHO-5dEN",
+               ":block/string": "All versions of the block appear as cards V1, V2, V3… in creation order. Choose Oldest first or Newest first; numbering always stays chronological.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "hogmvhvlC",
+               ":block/string": "The current version (the one shown in your page) is highlighted with a coloured bar and a Current badge. Click Current: Vn in the header to jump to it.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "8YFUPsHs2",
+               ":block/string": "Timeline (default) compares each version with the one before it. Fixed baseline compares every version with one version you choose. Set comparison baseline on a card does this in one click.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "TXCWLiAxy",
+               ":block/string": "Deleted text is struck through; added text is underlined. Show changes hides or shows comparisons. Compare children includes child blocks in the comparison (revision notes are left out).",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "xoeT_kRZ3",
+               ":block/string": "After editing, click Refresh changes. Reload versions also picks up new versions.",
+               ":block/order": 4
+              }
+             ],
+             ":block/uid": "NVhpS8qUI",
+             ":block/string": "Read and compare versions",
+             ":block/heading": 3,
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "V-5Nvt9qa",
+               ":block/string": "Click a version's text to edit it with Roam's own editor. `[[` page search, `((` block search, children and indentation all work as usual, and changes save immediately. Versions are editable drafts, not frozen snapshots.",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "RZOdnC94B",
+             ":block/string": "Edit",
+             ":block/heading": 3,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "zD7UI72Ja",
+               ":block/string": "Use New version… in the header or New version from this… on a card. The text is always copied. Include children in new version (on by default) also copies child blocks, without revision notes. Version Studio uses Roam's own Add version action, then places the cursor at the end of the new version so you can start typing.",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "hSRPPnKMK",
+             ":block/string": "Create a new version",
+             ":block/heading": 3,
+             ":block/order": 4
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "QbhCXbYlf",
+               ":block/string": "Use in original block switches your page to this version and keeps the panel open.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "jWd1aIqnQ",
+               ":block/string": "Go to version switches, scrolls to the block and closes the panel.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "htVB3uhcE",
+               ":block/string": "Both use Roam's own version controls and never overwrite text.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "dN0Lu9a5S",
+             ":block/string": "Change the version shown in your page",
+             ":block/heading": 3,
+             ":block/order": 5
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "fEhdVe12w",
+                   ":block/string": "Reason: …",
+                   ":block/order": 0
+                  },
+                  {
+                   ":block/children": [
+                    {
+                     ":block/uid": "uN3lEEshH",
+                     ":block/string": "Source: …",
+                     ":block/order": 0
+                    },
+                    {
+                     ":block/uid": "sP6jMsHLD",
+                     ":block/string": "Reference: …",
+                     ":block/order": 1
+                    },
+                    {
+                     ":block/uid": "Q2mBdo5Fe",
+                     ":block/string": "Impact: …",
+                     ":block/order": 2
+                    }
+                   ],
+                   ":block/uid": "bTFdAlACd",
+                   ":block/string": "Evidence",
+                   ":block/order": 1
+                  }
+                 ],
+                 ":block/uid": "XAHNZbQLD",
+                 ":block/string": "Revision note",
+                 ":block/order": 0
+                }
+               ],
+               ":block/uid": "Ikxsr_EyP",
+               ":block/string": "Add revision note creates a note under the version:",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "24oIAXoje",
+               ":block/string": "Show revision note opens an existing note. Edit the note's wording in Note templates in the panel or in Settings. Templates apply to new notes only. Optional placeholders: `{versionUid}` (this version) and `{sourceUid}` (the block that opened the panel).",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "tNLvflD9p",
+             ":block/string": "Revision notes",
+             ":block/heading": 3,
+             ":block/order": 6
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "MLuA8s3Xw",
+               ":block/string": "Right-click a block bullet (or a numbered version bullet) and choose Version Studio…. It appears right below Roam's own Add version, which keeps working as before.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "lgqW87NDN",
+               ":block/string": "Or put the cursor in a block and run Version Studio: Manage versions from the command palette.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "GNlmJJeg3",
+               ":block/string": "Or press Ctrl+Shift+Comma. You can change or turn off the shortcut in Settings.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "ui0fRzSTs",
+               ":block/string": "To close, click Close or click outside the panel.",
+               ":block/order": 3
+              },
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "2-eIgz-4z"
+                }
+               ],
+               ":block/children": [
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "yQPqxGOut",
+                   ":block/string": "Action",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "bvB69axNc",
+                 ":block/string": "Shortcut",
+                 ":block/order": 0
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/uid": "XSICdARC4",
+                   ":block/string": "Open Version Studio for the focused block; configurable in Settings.",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "BIgwk_wBQ",
+                 ":block/string": "Ctrl+Shift+Comma",
+                 ":block/order": 1
+                }
+               ],
+               ":block/uid": "nTkdmOIf4",
+               ":block/string": "{{[[table]]}}",
+               ":block/order": 4
+              }
+             ],
+             ":block/uid": "Q9NkYctoM",
+             ":block/string": "Commands & shortcuts",
+             ":block/heading": 3,
+             ":block/order": 7
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "scn92f_eJ",
+               ":block/string": "In Settings → Version Studio: Language (Auto follows your browser), Open shortcut, and the revision-note templates. A new language applies the next time you open the panel; reload the extension to update the Settings tab and the command name too.",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "Sy_nQZf-d",
+             ":block/string": "Settings",
+             ":block/heading": 3,
+             ":block/order": 8
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "53_uGt-qN",
+               ":block/string": "Edits made in Roam’s native editor save immediately to your graph. Creating versions and revision notes also writes to the graph; saving templates stores the corresponding configuration.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "fXvxS1-PT",
+               ":block/string": "It makes no external network requests and does not scan the whole graph. Editors are loaded near the visible area to reduce rendering work.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "JGvNJ5gU8",
+               ":block/string": "Copying and child comparison are limited to 600 blocks per version. Text comparison covers the first 80,000 characters.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "4BvHgJeH_",
+             ":block/string": "Data & usage",
+             ":block/heading": 3,
+             ":block/order": 9
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "Y9uKGJcCG",
+               ":block/string": "Why has a comparison not changed after editing? Click Refresh changes. Use Reload versions if versions were added while the panel was open.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "1V2m2XcRO",
+               ":block/string": "Are versions frozen snapshots? No. Each version can be edited with Roam’s native editor, and edits save immediately.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "ivOu_z3WO",
+             ":block/string": "Frequently asked questions",
+             ":block/heading": 3,
+             ":block/order": 10
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "G6NQSjOqO",
+               ":block/string": "Folio — Warm, magazine-inspired typography and modular tools for your Roam workspace.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "XJ3IwZ6yg",
+               ":block/string": "Reading Desk — Bring reading, annotations and ideas together across your Roam pages.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "lfVV0VFNB",
+               ":block/string": "Install each plugin separately from Roam Depot.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "DqbBTwx6D",
+             ":block/string": "More plugins",
+             ":block/heading": 3,
+             ":block/order": 11
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "KY4Jl0hhl",
+               ":block/string": "Version Studio makes every version of a note traceable and comparable, so you can rewrite any idea with confidence.",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "hn0xpdW0A",
+             ":block/string": "Overview",
+             ":block/heading": 3,
+             ":block/order": 0
+            }
+           ],
+           ":block/uid": "Un_Rbrz9-",
+           ":block/string": "Version Studio",
+           ":block/heading": 1,
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "ZJKGHCucS",
+         ":block/string": "[[Roam Depot Extensions]]",
+         ":block/order": 1
+        },
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "_EqbjQSAF"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "ZT4t6bkug"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "cptcB_1YE",
+             ":block/string": "New provider: DeepSeek",
+             ":block/order": 0
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "YGSWXrxJc",
+               ":block/string": "Choose a search service under Settings → AI → \"Search with\": Brave Search, Tavily, Exa or Serper. Any model can then search the web, custom endpoints included.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "c0ulmYwYr",
+               ":block/string": "Brave and Tavily are reached through Roam's proxy, which passes searches on and keeps neither the query nor your key. Exa and Serper are called directly. The settings row says which, and names each service with a link to its site.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "7duRkUYaI",
+               ":block/string": "Without a service, the model's own search is used where the provider offers one: OpenAI, Anthropic, Google, xAI, DeepSeek and OpenRouter.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "xbeuYgEZh",
+             ":block/string": "Web search for any model",
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "k9ka49llN",
+               ":block/string": "Every answer has a fork button beside its copy button. It opens a new chat holding the conversation through that answer, named after the original with \"(fork)\".",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "FitOwUDET",
+               ":block/string": "The fork is saved like any chat and follows you to your other devices.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "is6iUYe7-",
+             ":block/string": "Fork a chat from any answer",
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "dYP-F6Www",
+               ":block/string": "The pencil now shows on every message of yours, not only the last.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "rXBGxXN2M",
+               ":block/string": "Editing the last message replaces it, as before.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "-i8exlCdL",
+               ":block/string": "Editing an earlier message opens a fork holding what came before it and sends your edit there, so the original chat stays whole. Editing the first message starts a new chat.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "Z047Ih1_m",
+             ":block/string": "Edit any message you sent",
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "6TUwVBmdN",
+               ":block/string": "A switch under Settings → AI makes Enter send. Your send key from Hotkeys (Option+Enter by default) then makes a new block instead, so the two keys trade places. Shift+Enter still breaks a line.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "ZeKVqFRTS",
+               ":block/string": "The Send button's hint shows whatever key sends, following your Hotkeys settings.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "UKqSLcBft",
+               ":block/string": "The Hotkeys page names the key for what it does, and each setting links to the other.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "zKGnyGI03",
+             ":block/string": "Send with Enter",
+             ":block/order": 4
+            }
+           ],
+           ":block/uid": "G5KCU6K4G",
+           ":block/string": "[[AI]] chat updates",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "IUzYn_2oR",
+         ":block/string": "[[Quality of Life Improvements]]",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "FAN8OiEGf",
+       ":block/string": "[[November 17th, 2026]]",
        ":block/order": 0
       }
      ],

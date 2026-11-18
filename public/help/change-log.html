@@ -42,6 +42,274 @@
 <h3>[Updating Roam](<a href="/help/updating-roam">Updating Roam</a>)</h3>
 <h3><strong>New Changes</strong></h3>
 <ul>
+<li>November 17th, 2026
+<ul>
+<li>Quality of Life Improvements
+<ul>
+<li>AI chat updates
+<ul>
+<li>New provider: DeepSeek
+</li>
+<li>Web search for any model
+<ul>
+<li>Choose a search service under Settings → AI → &quot;Search with&quot;: Brave Search, Tavily, Exa or Serper. Any model can then search the web, custom endpoints included.
+</li>
+<li>Brave and Tavily are reached through Roam's proxy, which passes searches on and keeps neither the query nor your key. Exa and Serper are called directly. The settings row says which, and names each service with a link to its site.
+</li>
+<li>Without a service, the model's own search is used where the provider offers one: OpenAI, Anthropic, Google, xAI, DeepSeek and OpenRouter.
+</li>
+</ul>
+</li>
+<li>Fork a chat from any answer
+<ul>
+<li>Every answer has a fork button beside its copy button. It opens a new chat holding the conversation through that answer, named after the original with &quot;(fork)&quot;.
+</li>
+<li>The fork is saved like any chat and follows you to your other devices.
+</li>
+</ul>
+</li>
+<li>Edit any message you sent
+<ul>
+<li>The pencil now shows on every message of yours, not only the last.
+</li>
+<li>Editing the last message replaces it, as before.
+</li>
+<li>Editing an earlier message opens a fork holding what came before it and sends your edit there, so the original chat stays whole. Editing the first message starts a new chat.
+</li>
+</ul>
+</li>
+<li>Send with Enter
+<ul>
+<li>A switch under Settings → AI makes Enter send. Your send key from Hotkeys (Option+Enter by default) then makes a new block instead, so the two keys trade places. Shift+Enter still breaks a line.
+</li>
+<li>The Send button's hint shows whatever key sends, following your Hotkeys settings.
+</li>
+<li>The Hotkeys page names the key for what it does, and each setting links to the other.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Roam Depot Extensions
+<ul>
+<li><strong>Version Studio</strong>
+<ul>
+<li><strong>Overview</strong>
+<ul>
+<li>Version Studio makes every version of a note traceable and comparable, so you can rewrite any idea with confidence.
+</li>
+</ul>
+</li>
+<li><strong>Getting started</strong>
+<ul>
+<li>Open Settings → Roam Depot, find Version Studio and install it.
+</li>
+<li>Right-click a block bullet and choose Version Studio….
+</li>
+<li>Compare its versions, or use New version… to start another draft.
+</li>
+</ul>
+</li>
+<li><strong>Read and compare versions</strong>
+<ul>
+<li>All versions of the block appear as cards V1, V2, V3… in creation order. Choose Oldest first or Newest first; numbering always stays chronological.
+</li>
+<li>The current version (the one shown in your page) is highlighted with a coloured bar and a Current badge. Click Current: Vn in the header to jump to it.
+</li>
+<li>Timeline (default) compares each version with the one before it. Fixed baseline compares every version with one version you choose. Set comparison baseline on a card does this in one click.
+</li>
+<li>Deleted text is struck through; added text is underlined. Show changes hides or shows comparisons. Compare children includes child blocks in the comparison (revision notes are left out).
+</li>
+<li>After editing, click Refresh changes. Reload versions also picks up new versions.
+</li>
+</ul>
+</li>
+<li><strong>Edit</strong>
+<ul>
+<li>Click a version's text to edit it with Roam's own editor. <code>[[</code> page search, <code>((</code> block search, children and indentation all work as usual, and changes save immediately. Versions are editable drafts, not frozen snapshots.
+</li>
+</ul>
+</li>
+<li><strong>Create a new version</strong>
+<ul>
+<li>Use New version… in the header or New version from this… on a card. The text is always copied. Include children in new version (on by default) also copies child blocks, without revision notes. Version Studio uses Roam's own Add version action, then places the cursor at the end of the new version so you can start typing.
+</li>
+</ul>
+</li>
+<li><strong>Change the version shown in your page</strong>
+<ul>
+<li>Use in original block switches your page to this version and keeps the panel open.
+</li>
+<li>Go to version switches, scrolls to the block and closes the panel.
+</li>
+<li>Both use Roam's own version controls and never overwrite text.
+</li>
+</ul>
+</li>
+<li><strong>Revision notes</strong>
+<ul>
+<li>Add revision note creates a note under the version:
+<ul>
+<li>Revision note
+<ul>
+<li>Reason: …
+</li>
+<li>Evidence
+<ul>
+<li>Source: …
+</li>
+<li>Reference: …
+</li>
+<li>Impact: …
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Show revision note opens an existing note. Edit the note's wording in Note templates in the panel or in Settings. Templates apply to new notes only. Optional placeholders: <code>{versionUid}</code> (this version) and <code>{sourceUid}</code> (the block that opened the panel).
+</li>
+</ul>
+</li>
+<li><strong>Commands &amp; shortcuts</strong>
+<ul>
+<li>Right-click a block bullet (or a numbered version bullet) and choose Version Studio…. It appears right below Roam's own Add version, which keeps working as before.
+</li>
+<li>Or put the cursor in a block and run Version Studio: Manage versions from the command palette.
+</li>
+<li>Or press Ctrl+Shift+Comma. You can change or turn off the shortcut in Settings.
+</li>
+<li>To close, click Close or click outside the panel.
+</li>
+<li>{{table}}
+<ul>
+<li>Shortcut
+<ul>
+<li>Action
+</li>
+</ul>
+</li>
+<li>Ctrl+Shift+Comma
+<ul>
+<li>Open Version Studio for the focused block; configurable in Settings.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Settings</strong>
+<ul>
+<li>In Settings → Version Studio: Language (Auto follows your browser), Open shortcut, and the revision-note templates. A new language applies the next time you open the panel; reload the extension to update the Settings tab and the command name too.
+</li>
+</ul>
+</li>
+<li><strong>Data &amp; usage</strong>
+<ul>
+<li>Edits made in Roam’s native editor save immediately to your graph. Creating versions and revision notes also writes to the graph; saving templates stores the corresponding configuration.
+</li>
+<li>It makes no external network requests and does not scan the whole graph. Editors are loaded near the visible area to reduce rendering work.
+</li>
+<li>Copying and child comparison are limited to 600 blocks per version. Text comparison covers the first 80,000 characters.
+</li>
+</ul>
+</li>
+<li><strong>Frequently asked questions</strong>
+<ul>
+<li>Why has a comparison not changed after editing? Click Refresh changes. Use Reload versions if versions were added while the panel was open.
+</li>
+<li>Are versions frozen snapshots? No. Each version can be edited with Roam’s native editor, and edits save immediately.
+</li>
+</ul>
+</li>
+<li><strong>More plugins</strong>
+<ul>
+<li>Folio — Warm, magazine-inspired typography and modular tools for your Roam workspace.
+</li>
+<li>Reading Desk — Bring reading, annotations and ideas together across your Roam pages.
+</li>
+<li>Install each plugin separately from Roam Depot.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Save to Trickster</strong>
+<ul>
+<li>Send the Roam page you're looking at to <a href="https://tricksterapp.com/">Trickster</a>, the Mac app that keeps the files and links you just touched one click away in your menu bar. The page shows up in Trickster with its title and a link back to it in Roam.
+</li>
+<li>Requires Trickster 4 or later running on your Mac. New to Trickster? See <a href="https://tricksterapp.com/manual/roam-research-integration/">Trickster and Roam Research</a> to download it and get set up.
+</li>
+<li><img src="https://camo.githubusercontent.com/ae298fd3b98d7d366454909164bcafb674dd9198e79d6928e52f441dab4caaec/68747470733a2f2f747269636b737465726170702e636f6d2f696d616765732f76342f726f616d2d746f706261722d373862393330633032362e706e67" alt="The Save to Trickster button at the right end of Roam's topbar" loading="lazy"><a href="https://camo.githubusercontent.com/ae298fd3b98d7d366454909164bcafb674dd9198e79d6928e52f441dab4caaec/68747470733a2f2f747269636b737465726170702e636f6d2f696d616765732f76342f726f616d2d746f706261722d373862393330633032362e706e67">🔗</a>
+</li>
+<li><strong>How to use it</strong>
+<ul>
+<li>Click the Trickster icon in Roam's topbar, or
+</li>
+<li>Open the command palette (Cmd+P) and run Send page to Trickster. You can give this command a keyboard shortcut in Settings → Hotkeys.
+</li>
+<li>The icon pulses while it's sending and turns green when the page is saved.
+</li>
+<li><strong>The first time</strong>
+<ul>
+<li>The first time you send a page, Trickster asks whether to let Roam add links:
+<ul>
+<li>Always Allow remembers the connection, so you won't be asked again.
+</li>
+<li>Allow Once lets Roam add links for the next 10 minutes.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Settings</strong>
+<ul>
+<li>URL format decides which link Trickster saves:
+<ul>
+<li>automatic (default): a desktop link when you send from the Roam desktop app, and a web link when you send from a browser.
+</li>
+<li>web: <code>https://roamresearch.com/#/app/...</code>, which opens in your browser.
+</li>
+<li>desktop: <code>roam://#/app/...</code>, which opens in the Roam desktop app.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Privacy</strong>
+<ul>
+<li>The extension only talks to Trickster on your own Mac (<code>127.0.0.1</code>, ports 61000–61009). It doesn't send anything to any other server.
+</li>
+<li>It only sends the current page's title and link, and only when you click the button or run the command.
+</li>
+<li>It doesn't change anything in your graph.
+</li>
+<li>It keeps the connection token Trickster gives it in this browser's local storage.
+</li>
+<li>If Trickster's local connection isn't available, the extension opens a <code>trickster-add://</code> link instead, and macOS passes the page to Trickster that way.
+</li>
+</ul>
+</li>
+<li><strong>Troubleshooting</strong>
+<ul>
+<li>The page doesn't show up in Trickster: make sure Trickster is running.
+</li>
+<li>Your browser asks to allow access to devices on your local network: allow it. That's how Roam reaches Trickster on your Mac.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>November 11th, 2026
 <ul>
 <li>New Features 🚀
