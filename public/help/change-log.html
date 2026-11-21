@@ -42,6 +42,42 @@
 <h3>[Updating Roam](<a href="/help/updating-roam">Updating Roam</a>)</h3>
 <h3><strong>New Changes</strong></h3>
 <ul>
+<li>November 20th, 2026
+<ul>
+<li>Bug Fixes
+<ul>
+<li>Video timestamps
+<ul>
+<li>Timestamps with four parts (like <code>00:01:00:10.56</code>) now sort and play from the right time. They were read as about a minute in, so they sorted ahead of earlier timestamps.
+</li>
+<li>A short timestamp like <code>1:02</code> now means 1 minute 2 seconds. It used to jump to 1 hour 2 minutes.
+</li>
+</ul>
+</li>
+<li>Pressing Enter at the start of a block
+<ul>
+<li>In linked references, query results, inline references and the video Timestamps panel, Enter at the start of a block now keeps the block's text and adds an empty block under it. It used to move the text into a new child and leave an empty block behind.
+</li>
+</ul>
+</li>
+<li>Roam Desk
+<ul>
+<li>A query on a Desk tile now shows its title, or the query itself if it has no title. It used to show only <code>{{query}}</code>.
+</li>
+<li>An embed inside a note on a Desk tile now shows the embedded block's text. It used to show only <code>{{embed}}</code>.
+</li>
+</ul>
+</li>
+<li>Queries
+<ul>
+<li>A query containing quoted text no longer has that text taken as its title, which also broke the query.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>November 19th, 2026
 <ul>
 <li>Roam Depot Extensions
