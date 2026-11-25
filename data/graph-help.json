@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-11-21T13:41:05.044Z",
+ "exportedAt": "2026-11-25T15:53:58.237Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -24810,6 +24810,10 @@
    ":block/uid": "07-18-2022"
   },
   {
+   ":node/title": "November 25th, 2026",
+   ":block/uid": "11-25-2026"
+  },
+  {
    ":node/title": "November 25th, 2024",
    ":block/uid": "11-25-2024"
   },
@@ -35235,7 +35239,7 @@
        ":block/uid": "z7nDW4FYi",
        ":block/string": "[[2021]]",
        ":block/heading": 3,
-       ":block/order": 59
+       ":block/order": 60
       },
       {
        ":block/refs": [
@@ -38398,7 +38402,7 @@
        ":block/uid": "oEUzBpPVt",
        ":block/string": "[[2022]]",
        ":block/heading": 3,
-       ":block/order": 58
+       ":block/order": 59
       },
       {
        ":block/refs": [
@@ -42980,7 +42984,7 @@
        ":block/uid": "3DcyG9fYJ",
        ":block/string": "[[2023]]",
        ":block/heading": 3,
-       ":block/order": 57
+       ":block/order": 58
       },
       {
        ":block/refs": [
@@ -48818,7 +48822,7 @@
        ":block/uid": "N8o9mOFxV",
        ":block/string": "[[2024]]",
        ":block/heading": 3,
-       ":block/order": 56
+       ":block/order": 57
       },
       {
        ":block/refs": [
@@ -57960,7 +57964,7 @@
        ":block/uid": "e3HyGxGmz",
        ":block/string": "[[2025]]",
        ":block/heading": 3,
-       ":block/order": 55
+       ":block/order": 56
       },
       {
        ":block/refs": [
@@ -58130,7 +58134,7 @@
        ],
        ":block/uid": "-R8L5nZLD",
        ":block/string": "[[March 11th, 2026]]",
-       ":block/order": 53
+       ":block/order": 54
       },
       {
        ":block/refs": [
@@ -58254,7 +58258,7 @@
        ],
        ":block/uid": "e5HOoYOYK",
        ":block/string": "[[March 24th, 2026]]",
-       ":block/order": 52
+       ":block/order": 53
       },
       {
        ":block/refs": [
@@ -58293,7 +58297,7 @@
        ],
        ":block/uid": "hP0WzVCb3",
        ":block/string": "[[March 30th, 2026]]",
-       ":block/order": 51
+       ":block/order": 52
       },
       {
        ":block/refs": [
@@ -58792,7 +58796,7 @@
        ],
        ":block/uid": "kYfXB-KfD",
        ":block/string": "[[March 31st, 2026]]",
-       ":block/order": 50
+       ":block/order": 51
       },
       {
        ":block/refs": [
@@ -58856,7 +58860,7 @@
        ],
        ":block/uid": "hy237MoSG",
        ":block/string": "[[April 10th, 2026]]",
-       ":block/order": 49
+       ":block/order": 50
       },
       {
        ":block/refs": [
@@ -59078,7 +59082,7 @@
        ],
        ":block/uid": "Ld3WwhXAJ",
        ":block/string": "[[April 14th, 2026]]",
-       ":block/order": 48
+       ":block/order": 49
       },
       {
        ":block/refs": [
@@ -59129,7 +59133,7 @@
        ],
        ":block/uid": "FX03un0yx",
        ":block/string": "[[April 15th, 2026]]",
-       ":block/order": 47
+       ":block/order": 48
       },
       {
        ":block/refs": [
@@ -59178,7 +59182,7 @@
        ],
        ":block/uid": "Tdxn9p6T-",
        ":block/string": "[[April 17th, 2026]]",
-       ":block/order": 46
+       ":block/order": 47
       },
       {
        ":block/refs": [
@@ -60858,7 +60862,7 @@
        ],
        ":block/uid": "yYmOmnffK",
        ":block/string": "[[April 27th, 2026]]",
-       ":block/order": 45
+       ":block/order": 46
       },
       {
        ":block/refs": [
@@ -60938,7 +60942,7 @@
        ],
        ":block/uid": "E8B5FpUqb",
        ":block/string": "[[May 1st, 2026]]",
-       ":block/order": 44
+       ":block/order": 45
       },
       {
        ":block/refs": [
@@ -61122,7 +61126,7 @@
        ],
        ":block/uid": "_bXQOG7-W",
        ":block/string": "[[May 4th, 2026]]",
-       ":block/order": 43
+       ":block/order": 44
       },
       {
        ":block/refs": [
@@ -61221,7 +61225,7 @@
        ],
        ":block/uid": "77u8rD3tN",
        ":block/string": "[[May 5th, 2026]]",
-       ":block/order": 42
+       ":block/order": 43
       },
       {
        ":block/refs": [
@@ -61284,7 +61288,7 @@
        ],
        ":block/uid": "4jefQzlrL",
        ":block/string": "[[May 15th, 2026]]",
-       ":block/order": 41
+       ":block/order": 42
       },
       {
        ":block/refs": [
@@ -61340,7 +61344,7 @@
        ],
        ":block/uid": "yCa6IFyF-",
        ":block/string": "[[May 21st, 2026]]",
-       ":block/order": 40
+       ":block/order": 41
       },
       {
        ":block/refs": [
@@ -61381,7 +61385,7 @@
        ],
        ":block/uid": "s1JCTlMYp",
        ":block/string": "[[May 28th, 2026]]",
-       ":block/order": 39
+       ":block/order": 40
       },
       {
        ":block/refs": [
@@ -61423,7 +61427,7 @@
        ],
        ":block/uid": "GtQy1iARj",
        ":block/string": "[[June 1st, 2026]]",
-       ":block/order": 38
+       ":block/order": 39
       },
       {
        ":block/refs": [
@@ -61550,7 +61554,7 @@
        ],
        ":block/uid": "FfZFcIMVi",
        ":block/string": "[[June 2nd, 2026]]",
-       ":block/order": 37
+       ":block/order": 38
       },
       {
        ":block/refs": [
@@ -61586,7 +61590,7 @@
        ],
        ":block/uid": "o0biga_ls",
        ":block/string": "[[June 9th, 2026]]",
-       ":block/order": 36
+       ":block/order": 37
       },
       {
        ":block/refs": [
@@ -61615,7 +61619,7 @@
        ],
        ":block/uid": "1oHVhjf1j",
        ":block/string": "[[June 10th, 2026]]",
-       ":block/order": 35
+       ":block/order": 36
       },
       {
        ":block/refs": [
@@ -61654,7 +61658,7 @@
        ],
        ":block/uid": "jlW42mQ3s",
        ":block/string": "[[June 11th, 2026]]",
-       ":block/order": 34
+       ":block/order": 35
       },
       {
        ":block/refs": [
@@ -62201,7 +62205,7 @@
        ],
        ":block/uid": "Wp3IwehIi",
        ":block/string": "[[June 13th, 2026]]",
-       ":block/order": 33
+       ":block/order": 34
       },
       {
        ":block/refs": [
@@ -62342,7 +62346,7 @@
        ],
        ":block/uid": "T7MyhAu_Z",
        ":block/string": "[[June 30th, 2026]]",
-       ":block/order": 32
+       ":block/order": 33
       },
       {
        ":block/refs": [
@@ -62398,7 +62402,7 @@
        ],
        ":block/uid": "MdrAuMqaU",
        ":block/string": "[[July 2nd, 2026]]",
-       ":block/order": 31
+       ":block/order": 32
       },
       {
        ":block/refs": [
@@ -62427,7 +62431,7 @@
        ],
        ":block/uid": "MUux5EgdX",
        ":block/string": "[[July 6th, 2026]]",
-       ":block/order": 30
+       ":block/order": 31
       },
       {
        ":block/refs": [
@@ -62461,7 +62465,7 @@
        ],
        ":block/uid": "Omo5TNL1L",
        ":block/string": "[[July 7th, 2026]]",
-       ":block/order": 29
+       ":block/order": 30
       },
       {
        ":block/refs": [
@@ -62640,7 +62644,7 @@
        ],
        ":block/uid": "6kZb0aiyX",
        ":block/string": "[[July 10th, 2026]]",
-       ":block/order": 28
+       ":block/order": 29
       },
       {
        ":block/refs": [
@@ -62793,7 +62797,7 @@
        ],
        ":block/uid": "VoTSRMSbW",
        ":block/string": "[[July 13th, 2026]]",
-       ":block/order": 27
+       ":block/order": 28
       },
       {
        ":block/refs": [
@@ -62827,7 +62831,7 @@
        ],
        ":block/uid": "x3tGBCvQq",
        ":block/string": "[[July 15th, 2026]]",
-       ":block/order": 26
+       ":block/order": 27
       },
       {
        ":block/refs": [
@@ -62856,7 +62860,7 @@
        ],
        ":block/uid": "CNp2sgkob",
        ":block/string": "[[July 23rd, 2026]]",
-       ":block/order": 25
+       ":block/order": 26
       },
       {
        ":block/refs": [
@@ -62907,7 +62911,7 @@
        ],
        ":block/uid": "Oe6_LO9ka",
        ":block/string": "[[July 28th, 2026]]",
-       ":block/order": 24
+       ":block/order": 25
       },
       {
        ":block/refs": [
@@ -62967,7 +62971,7 @@
        ],
        ":block/uid": "jYcUoRTGl",
        ":block/string": "[[July 29th, 2026]]",
-       ":block/order": 23
+       ":block/order": 24
       },
       {
        ":block/refs": [
@@ -63607,7 +63611,7 @@
        ],
        ":block/uid": "iYlYbcCWh",
        ":block/string": "[[August 11th, 2026]]",
-       ":block/order": 22
+       ":block/order": 23
       },
       {
        ":block/refs": [
@@ -65198,7 +65202,7 @@
        ],
        ":block/uid": "YXoTyc5pB",
        ":block/string": "[[August 22nd, 2026]]",
-       ":block/order": 21
+       ":block/order": 22
       },
       {
        ":block/refs": [
@@ -65215,7 +65219,7 @@
        ],
        ":block/uid": "3uD6RaJ7K",
        ":block/string": "[[September 9th, 2026]]",
-       ":block/order": 20
+       ":block/order": 21
       },
       {
        ":block/refs": [
@@ -65707,7 +65711,7 @@
        ],
        ":block/uid": "ZCXwQjjYw",
        ":block/string": "[[September 11th, 2026]]",
-       ":block/order": 19
+       ":block/order": 20
       },
       {
        ":block/refs": [
@@ -65923,7 +65927,7 @@
        ],
        ":block/uid": "kBLGC17Sb",
        ":block/string": "[[September 28th, 2026]]",
-       ":block/order": 18
+       ":block/order": 19
       },
       {
        ":block/refs": [
@@ -66339,7 +66343,7 @@
        ],
        ":block/uid": "wSIxrE1g0",
        ":block/string": "[[September 29th, 2026]]",
-       ":block/order": 17
+       ":block/order": 18
       },
       {
        ":block/refs": [
@@ -66960,7 +66964,7 @@
        ],
        ":block/uid": "hI0U1YW-Q",
        ":block/string": "[[October 6th, 2026]]",
-       ":block/order": 16
+       ":block/order": 17
       },
       {
        ":block/refs": [
@@ -67552,7 +67556,7 @@
        ],
        ":block/uid": "qNY6cTAg7",
        ":block/string": "[[October 7th, 2026]]",
-       ":block/order": 15
+       ":block/order": 16
       },
       {
        ":block/refs": [
@@ -68128,7 +68132,7 @@
        ],
        ":block/uid": "E3sxVLAyU",
        ":block/string": "[[October 15th, 2026]]",
-       ":block/order": 14
+       ":block/order": 15
       },
       {
        ":block/refs": [
@@ -68174,7 +68178,7 @@
        ],
        ":block/uid": "NPRJNQ9Qt",
        ":block/string": "[[October 16th, 2026]]",
-       ":block/order": 13
+       ":block/order": 14
       },
       {
        ":block/refs": [
@@ -68223,7 +68227,7 @@
        ],
        ":block/uid": "c_5TqF_pf",
        ":block/string": "[[October 19th, 2026]]",
-       ":block/order": 12
+       ":block/order": 13
       },
       {
        ":block/refs": [
@@ -68279,7 +68283,7 @@
        ],
        ":block/uid": "yUIUTqPfV",
        ":block/string": "[[October 22nd, 2026]]",
-       ":block/order": 11
+       ":block/order": 12
       },
       {
        ":block/refs": [
@@ -68308,7 +68312,7 @@
        ],
        ":block/uid": "Md_GurA4p",
        ":block/string": "[[October 23rd, 2026]]",
-       ":block/order": 10
+       ":block/order": 11
       },
       {
        ":block/refs": [
@@ -68460,7 +68464,7 @@
        ],
        ":block/uid": "9Sl1WrMJg",
        ":block/string": "[[October 26th, 2026]]",
-       ":block/order": 9
+       ":block/order": 10
       },
       {
        ":block/refs": [
@@ -68847,7 +68851,7 @@
        ],
        ":block/uid": "iGAh8RzEq",
        ":block/string": "[[October 27th, 2026]]",
-       ":block/order": 8
+       ":block/order": 9
       },
       {
        ":block/refs": [
@@ -69044,7 +69048,7 @@
        ],
        ":block/uid": "6s-CszDMY",
        ":block/string": "[[October 28th, 2026]]",
-       ":block/order": 7
+       ":block/order": 8
       },
       {
        ":block/refs": [
@@ -69376,7 +69380,7 @@
        ],
        ":block/uid": "rwgrNch7h",
        ":block/string": "[[November 2nd, 2026]]",
-       ":block/order": 6
+       ":block/order": 7
       },
       {
        ":block/refs": [
@@ -69888,7 +69892,7 @@
        ],
        ":block/uid": "3WqwN9Fnj",
        ":block/string": "[[November 6th, 2026]]",
-       ":block/order": 5
+       ":block/order": 6
       },
       {
        ":block/refs": [
@@ -73226,7 +73230,7 @@
        ":block/uid": "Yb9Rk9-46",
        ":block/string": "[[2026]]",
        ":block/heading": 3,
-       ":block/order": 54
+       ":block/order": 55
       },
       {
        ":block/refs": [
@@ -73588,7 +73592,7 @@
        ],
        ":block/uid": "LHjUcqkIi",
        ":block/string": "[[November 10th, 2026]]",
-       ":block/order": 4
+       ":block/order": 5
       },
       {
        ":block/refs": [
@@ -73826,7 +73830,7 @@
        ],
        ":block/uid": "47aSyFxyr",
        ":block/string": "[[November 11th, 2026]]",
-       ":block/order": 3
+       ":block/order": 4
       },
       {
        ":block/refs": [
@@ -74436,7 +74440,7 @@
        ],
        ":block/uid": "FAN8OiEGf",
        ":block/string": "[[November 17th, 2026]]",
-       ":block/order": 2
+       ":block/order": 3
       },
       {
        ":block/refs": [
@@ -75302,7 +75306,7 @@
        ],
        ":block/uid": "IFIuG9gdd",
        ":block/string": "[[November 19th, 2026]]",
-       ":block/order": 1
+       ":block/order": 2
       },
       {
        ":block/refs": [
@@ -75389,6 +75393,603 @@
        ],
        ":block/uid": "v13-4KSxG",
        ":block/string": "[[November 20th, 2026]]",
+       ":block/order": 1
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "11-24-2026"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/refs": [
+          {
+           ":block/uid": "TpA4naC1T"
+          }
+         ],
+         ":block/children": [
+          {
+           ":block/children": [
+            {
+             ":block/uid": "CTUGM1h6N",
+             ":block/string": "Point at anything in your Roam tab with a tiny hand on a stick, and draw over the page while you present.",
+             ":block/order": 0
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "EI1otUzP2",
+                 ":block/string": "Point and tap. Start with the white glove and yellow ink, or choose another hand or the laser dot. Move your pointer to aim and click to highlight a spot.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "HNV-Rwepf",
+                 ":block/string": "Draw and add arrows. Drag to draw. Hold Cmd on macOS or Ctrl on Windows and Linux while dragging to add an arrowhead. Open Gesture guide for a shortcut popover. Press Escape to dismiss the guide and keep pointing.",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "6B7grX8Yk",
+                 ":block/string": "Choose a tap sound. Taps play Thock by default. Use the speaker control to choose from 15 sounds or turn sound Off. TinyHand remembers your pointer and sound choices in this browser.",
+                 ":block/order": 2
+                },
+                {
+                 ":block/uid": "YLPIJB_5m",
+                 ":block/string": "Correct a mark. Use Undo or Cmd/Ctrl+Z to remove the last mark. Choose Clear to erase all the ink and keep pointing.",
+                 ":block/order": 3
+                },
+                {
+                 ":block/uid": "p-KmWtY66",
+                 ":block/string": "Return to Roam. Press Escape or choose Exit to clear the overlay and resume opening links, scrolling, and editing.",
+                 ":block/order": 4
+                }
+               ],
+               ":block/uid": "6rV1yClp0",
+               ":block/string": "Open Roam’s command palette and select TinyHand: Toggle pointing. Run it again to stop. TinyHand: Toggle toolbar hides or shows the controls without clearing ink. You can assign either command a shortcut in Roam’s Hotkeys settings.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "Who-5p2Fy",
+               ":block/string": "Right-click or right-drag to erase ink. Hold Alt (Option on Mac) to click through to Roam.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "gIJ17cLew",
+               ":block/string": "While pointing, you can tap a link or underline a block without opening it. Each presentation starts with a blank overlay.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "dOsEl7DnY",
+             ":block/string": "Features",
+             ":block/heading": 2,
+             ":block/order": 1
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "DFJ3Hl6oe",
+               ":block/string": "TinyHand for Roam is based on [TinyHand for macOS](https://github.com/nilbuild/tinyhand) by Kamran Ahmed (nilbuild). The five illustrated pointers and all 15 tap sounds are adapted from the [MIT-licensed original assets](https://github.com/nilbuild/tinyhand/tree/da98f98d529971297487b0ec6ef07dc549555686/assets).",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "ZFAzRgpu3",
+             ":block/string": "Credit",
+             ":block/heading": 2,
+             ":block/order": 2
+            }
+           ],
+           ":block/uid": "rPOY7GV-L",
+           ":block/string": "Tiny Hand",
+           ":block/heading": 1,
+           ":block/order": 2
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "TFN_r0Z30",
+             ":block/string": "Find media across your graph in one gallery. Search by name or visual meaning, preview files, and jump straight to their source blocks.",
+             ":block/order": 0
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "0kBRzuzpa",
+               ":block/string": "Browse images, GIFs, videos, audio, PDFs, and other files.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "APrbrvy4h",
+               ":block/string": "Search filenames, URLs, labels, and block authors, or find images by visual meaning.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "4lryPR6lc",
+               ":block/string": "Filter by author, type, orientation, and reference date.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "eADZq3Bb4",
+               ":block/string": "Open larger previews and jump to any referring block.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "jNRdHUiRg",
+               ":block/string": "Copy URLs, images, or embeds, and download original files.",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "0SVnAQlCv",
+               ":block/string": "Upload files with the picker or drag and drop.",
+               ":block/order": 5
+              }
+             ],
+             ":block/uid": "e1TPXk7VF",
+             ":block/string": "Features",
+             ":block/heading": 2,
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "mQXLIF4DI",
+               ":block/string": "Open the command palette and choose Open Media Gallery. Search, choose Filters to narrow results, or select a thumbnail for a larger preview. Source opens the referring block.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "1Q4-OYAox",
+               ":block/string": "For visual search, choose Semantic, then Build image index. The first build downloads a model (about 90 MB); image analysis and searches run locally. Choose Update index after adding images. Visual search covers images and GIFs, not exact text inside them.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "4VX1z88DI",
+               ":block/string": "Uploads go beneath the block focused when you opened the gallery, to the open page, or to Media Gallery Uploads if neither is available.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "ju5KtoCFH",
+               ":block/string": "Dates and authors describe referencing blocks, not file uploads or photographers. File deletion is unavailable; use Source to manage references.",
+               ":block/order": 3
+              }
+             ],
+             ":block/uid": "In_Mfy0lY",
+             ":block/string": "How to use it",
+             ":block/heading": 2,
+             ":block/order": 3
+            },
+            {
+             ":block/refs": [
+              {
+               ":block/uid": "2h9V-FtAO"
+              }
+             ],
+             ":block/uid": "h6dQ3lQdx",
+             ":block/string": "{{[[video]]: https://private-user-images.githubusercontent.com/3792666/715334169-231fe2f3-0dd3-490e-82d4-39cbf358c68d.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3OTU1NDU0ODUsIm5iZiI6MTc5NTU0NTE4NSwicGF0aCI6Ii8zNzkyNjY2LzcxNTMzNDE2OS0yMzFmZTJmMy0wZGQzLTQ5MGUtODJkNC0zOWNiZjM1OGM2OGQubXA0P1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI2MTEyNCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjExMjRUMTgzMzA1WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9ZGNkNjNkNjkzNTgyYjM3ZDZiOTBhYWUxZjk0Y2ZlMWYyNjcxZGJmODA0ODNiMjQxMDkwMGM3OGZkOGNmZmIyMCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmcmVzcG9uc2UtY29udGVudC10eXBlPXZpZGVvJTJGbXA0In0.HJtmO-_0qFgn3bB-4il-ZJvwyqN1SvHHTF7nLYfZntI}}",
+             ":block/order": 1
+            }
+           ],
+           ":block/uid": "lbLhvnDVX",
+           ":block/string": "Media Gallery",
+           ":block/heading": 1,
+           ":block/order": 1
+          },
+          {
+           ":block/children": [
+            {
+             ":block/uid": "ECXHnEXzs",
+             ":block/string": "> Write in Roam like it's the only thing on screen.",
+             ":block/order": 0
+            },
+            {
+             ":block/uid": "PD-I1ty7Q",
+             ":block/string": "Immersive writing modes for [Roam Research](https://roamresearch.com/). Writer removes the empty strip Roam reserves on the right of every block, centers your text, and gives you five writing styles inspired by iA Writer and Typora, plus paragraph focus and typewriter scrolling. Pick a mode from the ✎ button in the top bar.",
+             ":block/order": 1
+            },
+            {
+             ":block/uid": "vP3oP1DBb",
+             ":block/string": "![Writer demo: five writing modes, the mode menu and the dead-zone fix](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/demo.gif)[🔗](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/demo.gif)",
+             ":block/order": 2
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "wlAhIange",
+               ":block/string": "Roam leaves a ~140px dead zone on the right of every block. Each block row has a spacer with `min-width: 116px` plus a 24px trailing slot, so your text never reaches the edge of its own column, and the article is capped at 800px. The page feels lopsided, and long paragraphs wrap earlier than they need to.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "S9f-MyR_s",
+               ":block/string": "![Stock Roam: a hatched 140px dead zone on the right of every block](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/00-before.png)[🔗](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/00-before.png)",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "2_Nle3SSs",
+               ":block/string": "Writer gives that space back and lets you choose how your page looks while you write.",
+               ":block/order": 2
+              }
+             ],
+             ":block/uid": "LZjW1goAn",
+             ":block/string": "Why",
+             ":block/heading": 2,
+             ":block/order": 3
+            },
+            {
+             ":block/children": [
+              {
+               ":block/refs": [
+                {
+                 ":block/uid": "2-eIgz-4z"
+                }
+               ],
+               ":block/children": [
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/children": [
+                      {
+                       ":block/children": [
+                        {
+                         ":block/uid": "tkKlUbmv2",
+                         ":block/string": "Immersive",
+                         ":block/order": 0
+                        }
+                       ],
+                       ":block/uid": "6jUvBJP74",
+                       ":block/string": "Typewriter",
+                       ":block/order": 0
+                      }
+                     ],
+                     ":block/uid": "uWdFSj8w2",
+                     ":block/string": "Focus",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "hQtuPe_l2",
+                   ":block/string": "Look",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "Mw9jkLv9S",
+                 ":block/string": "Mode",
+                 ":block/order": 0
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/children": [
+                      {
+                       ":block/children": [
+                        {
+                         ":block/uid": "QzuAnr47K",
+                         ":block/string": "",
+                         ":block/order": 0
+                        }
+                       ],
+                       ":block/uid": "pZwOmL-ES",
+                       ":block/string": "",
+                       ":block/order": 0
+                      }
+                     ],
+                     ":block/uid": "GK_Nlpbf_",
+                     ":block/string": "",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "jaAF1w5bz",
+                   ":block/string": "Roam as-is, minus the dead zone; centered column",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "oonX0YJsx",
+                 ":block/string": "Clean",
+                 ":block/order": 1
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/children": [
+                      {
+                       ":block/children": [
+                        {
+                         ":block/uid": "aCwe7EwJL",
+                         ":block/string": "✓",
+                         ":block/order": 0
+                        }
+                       ],
+                       ":block/uid": "4EoLh6DgA",
+                       ":block/string": "✓",
+                       ":block/order": 0
+                      }
+                     ],
+                     ":block/uid": "EfTVlB3U5",
+                     ":block/string": "✓",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "V5fLCkUYC",
+                   ":block/string": "Monospace, ~66 characters per line, blue caret",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "ErbnngCX7",
+                 ":block/string": "iA Writer",
+                 ":block/order": 2
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/children": [
+                      {
+                       ":block/children": [
+                        {
+                         ":block/uid": "mCb1muTRb",
+                         ":block/string": "✓",
+                         ":block/order": 0
+                        }
+                       ],
+                       ":block/uid": "ycPNL9QU_",
+                       ":block/string": "",
+                       ":block/order": 0
+                      }
+                     ],
+                     ":block/uid": "mfWKpY2UX",
+                     ":block/string": "",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "tHwKqF1CU",
+                   ":block/string": "Sans-serif, GitHub-style headings with underlines",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "cFPIzg0M-",
+                 ":block/string": "Typora",
+                 ":block/order": 3
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/children": [
+                      {
+                       ":block/children": [
+                        {
+                         ":block/uid": "RKW5Kut6A",
+                         ":block/string": "✓",
+                         ":block/order": 0
+                        }
+                       ],
+                       ":block/uid": "krEuZy62-",
+                       ":block/string": "",
+                       ":block/order": 0
+                      }
+                     ],
+                     ":block/uid": "tsFHVkpn3",
+                     ":block/string": "✓",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "Fyqwfjjzz",
+                   ":block/string": "Serif type on warm paper, larger text for long-form writing",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "UBqMQQIr_",
+                 ":block/string": "Paper",
+                 ":block/order": 4
+                },
+                {
+                 ":block/children": [
+                  {
+                   ":block/children": [
+                    {
+                     ":block/children": [
+                      {
+                       ":block/children": [
+                        {
+                         ":block/uid": "9aO8iq4xQ",
+                         ":block/string": "✓",
+                         ":block/order": 0
+                        }
+                       ],
+                       ":block/uid": "Qpc1_Fh_W",
+                       ":block/string": "✓",
+                       ":block/order": 0
+                      }
+                     ],
+                     ":block/uid": "gRdhoaK72",
+                     ":block/string": "✓",
+                     ":block/order": 0
+                    }
+                   ],
+                   ":block/uid": "BK1w76EWa",
+                   ":block/string": "Dark iA-style theme for writing at night",
+                   ":block/order": 0
+                  }
+                 ],
+                 ":block/uid": "DiI_-gEKm",
+                 ":block/string": "Night",
+                 ":block/order": 5
+                }
+               ],
+               ":block/uid": "h092PpNnK",
+               ":block/string": "{{[[table]]}}",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "bQr5QhBuK",
+               ":block/string": "Clean: same Roam, full-width text",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "FSayZ_u6r",
+               ":block/string": "![Clean mode](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/01-clean.png)[🔗](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/01-clean.png)",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "4e3icovJA",
+               ":block/string": "iA Writer: while you edit, everything except the current paragraph fades, and the line you're typing stays near the middle of the screen",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "1jEGTo7Ek",
+               ":block/string": "![iA Writer mode with paragraph focus](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/02-ia-focus.png)[🔗](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/02-ia-focus.png)",
+               ":block/order": 4
+              },
+              {
+               ":block/uid": "NgMQl8981",
+               ":block/string": "Typora",
+               ":block/order": 5
+              },
+              {
+               ":block/uid": "FRLj6vVJ-",
+               ":block/string": "![Typora mode](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/03-typora.png)[🔗](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/03-typora.png)",
+               ":block/order": 6
+              },
+              {
+               ":block/uid": "xsQ5kyb2T",
+               ":block/string": "Paper",
+               ":block/order": 7
+              },
+              {
+               ":block/uid": "pTDu0BfnA",
+               ":block/string": "![Paper mode](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/04-paper.png)[🔗](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/04-paper.png)",
+               ":block/order": 8
+              },
+              {
+               ":block/uid": "olmmHQKfE",
+               ":block/string": "Night",
+               ":block/order": 9
+              },
+              {
+               ":block/uid": "_YjgC7m3I",
+               ":block/string": "![Night mode](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/05-night.png)[🔗](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/05-night.png)",
+               ":block/order": 10
+              }
+             ],
+             ":block/uid": "nhdURExOB",
+             ":block/string": "Modes",
+             ":block/heading": 2,
+             ":block/order": 4
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "3B0zXkuk9",
+               ":block/string": "Focus: while you edit, every block except the current one is dimmed. This works per block (paragraph). Roam's editor is a plain textarea, so highlighting a single sentence isn't possible.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "FmP-x8cI7",
+               ":block/string": "Typewriter scrolling: the line with the caret (not the whole block) stays at ~45% of the screen height.",
+               ":block/order": 1
+              },
+              {
+               ":block/uid": "zEM7evNwn",
+               ":block/string": "Immersive: closes any open left/right sidebar when you enter (and reopens them when you leave), hides linked references, and fades the top bar until you hover it. A sidebar you open on purpose while writing (Shift+click) stays open.",
+               ":block/order": 2
+              },
+              {
+               ":block/uid": "EHq6J-pb0",
+               ":block/string": "Hidden bullets: bullets and indent guides appear on hover only, so collapse, drag and zoom still work.",
+               ":block/order": 3
+              },
+              {
+               ":block/uid": "m11p-hYjc",
+               ":block/string": "You can override each feature per mode, plus font size and line width, in Settings → Writer.",
+               ":block/order": 4
+              }
+             ],
+             ":block/uid": "C5A-CkZE9",
+             ":block/string": "Features",
+             ":block/heading": 2,
+             ":block/order": 5
+            },
+            {
+             ":block/children": [
+              {
+               ":block/children": [
+                {
+                 ":block/uid": "nEkZ4NhyC",
+                 ":block/string": "Top bar ✎ button: opens the mode menu (Off / Clean / iA Writer / Typora / Paper / Night). Press Esc or click outside to close it.",
+                 ":block/order": 0
+                },
+                {
+                 ":block/uid": "BUqT5buEP",
+                 ":block/string": "Command Palette: `Writer: Toggle writing mode`, `Writer: Next mode`, `Writer: <Mode> mode`",
+                 ":block/order": 1
+                },
+                {
+                 ":block/uid": "afYXkT4CC",
+                 ":block/string": "Hotkeys: none by default. Bind any of the commands above in Settings → Hotkeys.",
+                 ":block/order": 2
+                }
+               ],
+               ":block/uid": "03dR5revj",
+               ":block/string": "![The ✎ mode menu in the top bar](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/06-menu.png)[🔗](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/06-menu.png)",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "uPLGXcGD2",
+             ":block/string": "Usage",
+             ":block/heading": 2,
+             ":block/order": 6
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "3zsY_uPWT",
+               ":block/string": "Writer relies on Roam's DOM class names, which aren't a public API and may change with Roam updates.",
+               ":block/order": 0
+              },
+              {
+               ":block/uid": "rUyf1sP1b",
+               ":block/string": "Night mode only recolors the background, text and title. Content-level styles (highlights, blockquotes, code blocks, custom `roam/css` themes) keep their own colors.",
+               ":block/order": 1
+              }
+             ],
+             ":block/uid": "B9WNJZUY1",
+             ":block/string": "Known limitations",
+             ":block/heading": 2,
+             ":block/order": 7
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "5Ns-FP_3_",
+               ":block/string": "Writer only restyles the page. It never reads or writes your notes, makes no network requests, and collects no telemetry. Its only state is your Writer settings, stored by Roam in the extension's settings.",
+               ":block/order": 0
+              }
+             ],
+             ":block/uid": "_npUU9YX3",
+             ":block/string": "Privacy",
+             ":block/heading": 2,
+             ":block/order": 8
+            }
+           ],
+           ":block/uid": "FVdROWyTq",
+           ":block/string": "Writer",
+           ":block/heading": 1,
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "2QHcGPlae",
+         ":block/string": "[[Roam Depot Extensions]]",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "hKmfrFKLs",
+       ":block/string": "[[November 24th, 2026]]",
        ":block/order": 0
       }
      ],
@@ -83823,6 +84424,10 @@
   {
    ":node/title": "November 24th, 2024",
    ":block/uid": "11-24-2024"
+  },
+  {
+   ":node/title": "November 24th, 2026",
+   ":block/uid": "11-24-2026"
   },
   {
    ":node/title": "November 24th, 2025",

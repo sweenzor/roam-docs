@@ -4424,24 +4424,46 @@ await roamAlphaAPI.file.upload({file: new File([&quot;&quot;], &quot;notes.txt&q
 <ul>
 <li>Delete a file hosted on Roam.
 </li>
+<li>Works on local graphs in the desktop app, where the file is removed from disk.
+<ul>
+<li>Shipping with the next web release. Before it, the promise rejects on every local graph.
+</li>
+<li>On a local graph in the web app the promise rejects.
+</li>
+<li>On a local graph the promise rejects when <code>url</code> is not a <code>local-asset://</code> url of the open graph.
+</li>
+</ul>
+</li>
+<li>A file that is already deleted is not an error: the promise still resolves.
+</li>
 </ul>
 </li>
 <li>Parameters::
 <ul>
-<li><code>url</code> (string, required) — a firebase storage url, obtained from <code>roamAlphaAPI.file.upload</code> or from a block
+<li><code>url</code> (string, required): the file's url, obtained from <code>roamAlphaAPI.file.upload</code> or from a block
+<ul>
+<li>Hosted graph: a firebase storage url
+</li>
+<li>Local graph in the desktop app: a <code>local-asset://</code> url of the open graph
+</li>
+</ul>
 </li>
 </ul>
 </li>
 <li>Return::
 <ul>
-<li>Promise resolving to <code>undefined</code>
+<li>Promise resolving to <code>undefined</code> on a hosted graph, <code>null</code> on a local graph
 </li>
 </ul>
 </li>
 <li>Example::
 <ul>
 <li><pre><code>await roamAlphaAPI.file.delete({url: &quot;https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/...&quot;})
-// =&gt; undefined</code></pre>
+// =&gt; undefined
+
+// local graph, desktop app
+await roamAlphaAPI.file.delete({url: &quot;local-asset://my-graph/aB3xK9mP2x.png&quot;})
+// =&gt; null</code></pre>
 </li>
 </ul>
 </li>
@@ -4479,6 +4501,28 @@ await roamAlphaAPI.file.upload({file: new File([&quot;&quot;], &quot;notes.txt&q
 // pull all info about the current user
 roamAlphaAPI.data.pull(&quot;[*]&quot;, [&quot;:user/uid&quot;, window.roamAlphaAPI.user.uid()]);
 // =&gt; {&quot;:user/uid&quot;: &quot;BBG4fFwolaVlT5FZQdzAI7P40aB3&quot;, &quot;:user/display-name&quot;: &quot;Josh&quot;, ...}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>roamAlphaAPI.user.email</code>
+<ul>
+<li>Description::
+<ul>
+<li>The current user's email address, the one they are signed in to Roam with.
+</li>
+</ul>
+</li>
+<li>Parameters::
+<ul>
+<li>None
+</li>
+</ul>
+</li>
+<li>Return::
+<ul>
+<li>string, or <code>null</code> when not signed in
 </li>
 </ul>
 </li>

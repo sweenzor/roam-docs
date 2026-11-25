@@ -620,6 +620,12 @@
      "cljsArities": [],
      "variadic": false
     },
+    "email": {
+     "kind": "function",
+     "jsLength": 0,
+     "cljsArities": [],
+     "variadic": false
+    },
     "isAdmin": {
      "kind": "function",
      "jsLength": 0,

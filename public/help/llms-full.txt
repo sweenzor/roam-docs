@@ -2,7 +2,7 @@
 
 > Complete markdown export of the public Roam Research graph "help"
 > (https://roamresearch.com/#/app/help). Roam Research's official help graph: the product's user documentation.
-> Exported 2026-11-21T13:41:05.044Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
+> Exported 2026-11-25T15:53:58.237Z. Notation: [[Page]] = Roam Research page link, ((uid)) refs are resolved inline.
 > Also on this site: Developer documentation — https://roamdocs.fyi/developer-documentation/llms-full.txt
 
 ## Table of contents
@@ -201,6 +201,102 @@
 
 ### **New Changes**
 
+- [[November 24th, 2026]]
+  - [[Roam Depot Extensions]]
+    - **Writer**
+      - > Write in Roam like it's the only thing on screen.
+      - Immersive writing modes for [Roam Research](https://roamresearch.com/). Writer removes the empty strip Roam reserves on the right of every block, centers your text, and gives you five writing styles inspired by iA Writer and Typora, plus paragraph focus and typewriter scrolling. Pick a mode from the ✎ button in the top bar.
+      - ![Writer demo: five writing modes, the mode menu and the dead-zone fix](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/demo.gif)[🔗](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/demo.gif)
+      - **Why**
+        - Roam leaves a ~140px dead zone on the right of every block. Each block row has a spacer with `min-width: 116px` plus a 24px trailing slot, so your text never reaches the edge of its own column, and the article is capped at 800px. The page feels lopsided, and long paragraphs wrap earlier than they need to.
+        - ![Stock Roam: a hatched 140px dead zone on the right of every block](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/00-before.png)[🔗](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/00-before.png)
+        - Writer gives that space back and lets you choose how your page looks while you write.
+      - **Modes**
+        - {{[[table]]}}
+          - Mode
+            - Look
+              - Focus
+                - Typewriter
+                  - Immersive
+          - Clean
+            - Roam as-is, minus the dead zone; centered column
+              - 
+                - 
+                  - 
+          - iA Writer
+            - Monospace, ~66 characters per line, blue caret
+              - ✓
+                - ✓
+                  - ✓
+          - Typora
+            - Sans-serif, GitHub-style headings with underlines
+              - 
+                - 
+                  - ✓
+          - Paper
+            - Serif type on warm paper, larger text for long-form writing
+              - ✓
+                - 
+                  - ✓
+          - Night
+            - Dark iA-style theme for writing at night
+              - ✓
+                - ✓
+                  - ✓
+        - Clean: same Roam, full-width text
+        - ![Clean mode](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/01-clean.png)[🔗](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/01-clean.png)
+        - iA Writer: while you edit, everything except the current paragraph fades, and the line you're typing stays near the middle of the screen
+        - ![iA Writer mode with paragraph focus](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/02-ia-focus.png)[🔗](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/02-ia-focus.png)
+        - Typora
+        - ![Typora mode](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/03-typora.png)[🔗](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/03-typora.png)
+        - Paper
+        - ![Paper mode](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/04-paper.png)[🔗](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/04-paper.png)
+        - Night
+        - ![Night mode](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/05-night.png)[🔗](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/05-night.png)
+      - **Features**
+        - Focus: while you edit, every block except the current one is dimmed. This works per block (paragraph). Roam's editor is a plain textarea, so highlighting a single sentence isn't possible.
+        - Typewriter scrolling: the line with the caret (not the whole block) stays at ~45% of the screen height.
+        - Immersive: closes any open left/right sidebar when you enter (and reopens them when you leave), hides linked references, and fades the top bar until you hover it. A sidebar you open on purpose while writing (Shift+click) stays open.
+        - Hidden bullets: bullets and indent guides appear on hover only, so collapse, drag and zoom still work.
+        - You can override each feature per mode, plus font size and line width, in Settings → Writer.
+      - **Usage**
+        - ![The ✎ mode menu in the top bar](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/06-menu.png)[🔗](https://raw.githubusercontent.com/qcrao/roam-writer/main/assets/06-menu.png)
+          - Top bar ✎ button: opens the mode menu (Off / Clean / iA Writer / Typora / Paper / Night). Press Esc or click outside to close it.
+          - Command Palette: `Writer: Toggle writing mode`, `Writer: Next mode`, `Writer: <Mode> mode`
+          - Hotkeys: none by default. Bind any of the commands above in Settings → Hotkeys.
+      - **Known limitations**
+        - Writer relies on Roam's DOM class names, which aren't a public API and may change with Roam updates.
+        - Night mode only recolors the background, text and title. Content-level styles (highlights, blockquotes, code blocks, custom `roam/css` themes) keep their own colors.
+      - **Privacy**
+        - Writer only restyles the page. It never reads or writes your notes, makes no network requests, and collects no telemetry. Its only state is your Writer settings, stored by Roam in the extension's settings.
+    - **Media Gallery**
+      - Find media across your graph in one gallery. Search by name or visual meaning, preview files, and jump straight to their source blocks.
+      - {{[[video]]: https://private-user-images.githubusercontent.com/3792666/715334169-231fe2f3-0dd3-490e-82d4-39cbf358c68d.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3OTU1NDU0ODUsIm5iZiI6MTc5NTU0NTE4NSwicGF0aCI6Ii8zNzkyNjY2LzcxNTMzNDE2OS0yMzFmZTJmMy0wZGQzLTQ5MGUtODJkNC0zOWNiZjM1OGM2OGQubXA0P1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI2MTEyNCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjExMjRUMTgzMzA1WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9ZGNkNjNkNjkzNTgyYjM3ZDZiOTBhYWUxZjk0Y2ZlMWYyNjcxZGJmODA0ODNiMjQxMDkwMGM3OGZkOGNmZmIyMCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmcmVzcG9uc2UtY29udGVudC10eXBlPXZpZGVvJTJGbXA0In0.HJtmO-_0qFgn3bB-4il-ZJvwyqN1SvHHTF7nLYfZntI}}
+      - **Features**
+        - Browse images, GIFs, videos, audio, PDFs, and other files.
+        - Search filenames, URLs, labels, and block authors, or find images by visual meaning.
+        - Filter by author, type, orientation, and reference date.
+        - Open larger previews and jump to any referring block.
+        - Copy URLs, images, or embeds, and download original files.
+        - Upload files with the picker or drag and drop.
+      - **How to use it**
+        - Open the command palette and choose Open Media Gallery. Search, choose Filters to narrow results, or select a thumbnail for a larger preview. Source opens the referring block.
+        - For visual search, choose Semantic, then Build image index. The first build downloads a model (about 90 MB); image analysis and searches run locally. Choose Update index after adding images. Visual search covers images and GIFs, not exact text inside them.
+        - Uploads go beneath the block focused when you opened the gallery, to the open page, or to Media Gallery Uploads if neither is available.
+        - Dates and authors describe referencing blocks, not file uploads or photographers. File deletion is unavailable; use Source to manage references.
+    - **Tiny Hand**
+      - Point at anything in your Roam tab with a tiny hand on a stick, and draw over the page while you present.
+      - **Features**
+        - Open Roam’s command palette and select TinyHand: Toggle pointing. Run it again to stop. TinyHand: Toggle toolbar hides or shows the controls without clearing ink. You can assign either command a shortcut in Roam’s Hotkeys settings.
+          - Point and tap. Start with the white glove and yellow ink, or choose another hand or the laser dot. Move your pointer to aim and click to highlight a spot.
+          - Draw and add arrows. Drag to draw. Hold Cmd on macOS or Ctrl on Windows and Linux while dragging to add an arrowhead. Open Gesture guide for a shortcut popover. Press Escape to dismiss the guide and keep pointing.
+          - Choose a tap sound. Taps play Thock by default. Use the speaker control to choose from 15 sounds or turn sound Off. TinyHand remembers your pointer and sound choices in this browser.
+          - Correct a mark. Use Undo or Cmd/Ctrl+Z to remove the last mark. Choose Clear to erase all the ink and keep pointing.
+          - Return to Roam. Press Escape or choose Exit to clear the overlay and resume opening links, scrolling, and editing.
+        - Right-click or right-drag to erase ink. Hold Alt (Option on Mac) to click through to Roam.
+        - While pointing, you can tap a link or underline a block without opening it. Each presentation starts with a blank overlay.
+      - **Credit**
+        - TinyHand for Roam is based on [TinyHand for macOS](https://github.com/nilbuild/tinyhand) by Kamran Ahmed (nilbuild). The five illustrated pointers and all 15 tap sounds are adapted from the [MIT-licensed original assets](https://github.com/nilbuild/tinyhand/tree/da98f98d529971297487b0ec6ef07dc549555686/assets).
 - [[November 20th, 2026]]
   - [[Bug Fixes]]
     - Video timestamps

@@ -1848,14 +1848,25 @@
     - `roamAlphaAPI.file.delete`
       - Description::
         - Delete a file hosted on Roam.
+        - Works on local graphs in the desktop app, where the file is removed from disk.
+          - Shipping with the next web release. Before it, the promise rejects on every local graph.
+          - On a local graph in the web app the promise rejects.
+          - On a local graph the promise rejects when `url` is not a `local-asset://` url of the open graph.
+        - A file that is already deleted is not an error: the promise still resolves.
       - Parameters::
-        - `url` (string, required) — a firebase storage url, obtained from `roamAlphaAPI.file.upload` or from a block
+        - `url` (string, required): the file's url, obtained from `roamAlphaAPI.file.upload` or from a block
+          - Hosted graph: a firebase storage url
+          - Local graph in the desktop app: a `local-asset://` url of the open graph
       - Return::
-        - Promise resolving to `undefined`
+        - Promise resolving to `undefined` on a hosted graph, `null` on a local graph
       - Example::
         - ```javascript
           await roamAlphaAPI.file.delete({url: "https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/..."})
-          // => undefined```
+          // => undefined
+
+          // local graph, desktop app
+          await roamAlphaAPI.file.delete({url: "local-asset://my-graph/aB3xK9mP2x.png"})
+          // => null```
   - `roamAlphaAPI.user`
     - `roamAlphaAPI.user.uid`
       - Description::
@@ -1872,6 +1883,13 @@
           // pull all info about the current user
           roamAlphaAPI.data.pull("[*]", [":user/uid", window.roamAlphaAPI.user.uid()]);
           // => {":user/uid": "BBG4fFwolaVlT5FZQdzAI7P40aB3", ":user/display-name": "Josh", ...}```
+    - `roamAlphaAPI.user.email`
+      - Description::
+        - The current user's email address, the one they are signed in to Roam with.
+      - Parameters::
+        - None
+      - Return::
+        - string, or `null` when not signed in
     - `roamAlphaAPI.user.isAdmin`
       - Description::
         - Whether the current user is an admin of this graph (the graph owner). Synchronous.

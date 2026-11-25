@@ -142,6 +142,7 @@
   "ui.slashCommand.removeCommand",
   "updateBlock",
   "updatePage",
+  "user.email",
   "user.isAdmin",
   "user.uid",
   "util.dateToPageTitle",
@@ -222,6 +223,15 @@
    ],
    "removed": [],
    "total": 148
+  },
+  {
+   "date": "2026-11-25",
+   "apiVersion": "1.1.5",
+   "added": [
+    "user.email"
+   ],
+   "removed": [],
+   "total": 149
   }
  ]
 }

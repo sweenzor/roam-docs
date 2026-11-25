@@ -1,6 +1,6 @@
 {
  "graph": "developer-documentation",
- "exportedAt": "2026-11-21T13:36:23.567Z",
+ "exportedAt": "2026-11-25T15:49:16.499Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -31932,9 +31932,21 @@
                ":block/uid": "Kqrkl0slY"
               }
              ],
+             ":block/children": [
+              {
+               ":block/uid": "S-eIZSB7X",
+               ":block/order": 0,
+               ":block/string": "Hosted graph: a firebase storage url"
+              },
+              {
+               ":block/uid": "LUK5EOp_0",
+               ":block/order": 1,
+               ":block/string": "Local graph in the desktop app: a `local-asset://` url of the open graph"
+              }
+             ],
              ":block/uid": "gJ7IPXCbZ",
              ":block/order": 0,
-             ":block/string": "`url` (string, required) — a firebase storage url, obtained from ((Kqrkl0slY)) or from a block"
+             ":block/string": "`url` (string, required): the file's url, obtained from ((Kqrkl0slY)) or from a block"
             }
            ],
            ":block/uid": "49QISY8fK",
@@ -31951,7 +31963,7 @@
             {
              ":block/uid": "0TXHTqQHW",
              ":block/order": 0,
-             ":block/string": "Promise resolving to `undefined`"
+             ":block/string": "Promise resolving to `undefined` on a hosted graph, `null` on a local graph"
             }
            ],
            ":block/uid": "bAwZaTqlu",
@@ -31969,6 +31981,33 @@
              ":block/uid": "BYgeQ8mzZ",
              ":block/order": 0,
              ":block/string": "Delete a file hosted on Roam."
+            },
+            {
+             ":block/children": [
+              {
+               ":block/uid": "HxggaCxVV",
+               ":block/order": 0,
+               ":block/string": "Shipping with the next web release. Before it, the promise rejects on every local graph."
+              },
+              {
+               ":block/uid": "VaiInAVjO",
+               ":block/order": 1,
+               ":block/string": "On a local graph in the web app the promise rejects."
+              },
+              {
+               ":block/uid": "P0QDpfOrt",
+               ":block/order": 2,
+               ":block/string": "On a local graph the promise rejects when `url` is not a `local-asset://` url of the open graph."
+              }
+             ],
+             ":block/uid": "0ZsW4Gmow",
+             ":block/order": 1,
+             ":block/string": "Works on local graphs in the desktop app, where the file is removed from disk."
+            },
+            {
+             ":block/uid": "XEZzhnN5z",
+             ":block/order": 2,
+             ":block/string": "A file that is already deleted is not an error: the promise still resolves."
             }
            ],
            ":block/uid": "loWE-VjG9",
@@ -31985,7 +32024,7 @@
             {
              ":block/uid": "ZEbAGF_qy",
              ":block/order": 0,
-             ":block/string": "```javascript\nawait roamAlphaAPI.file.delete({url: \"https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/...\"})\n// => undefined```"
+             ":block/string": "```javascript\nawait roamAlphaAPI.file.delete({url: \"https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/...\"})\n// => undefined\n\n// local graph, desktop app\nawait roamAlphaAPI.file.delete({url: \"local-asset://my-graph/aB3xK9mP2x.png\"})\n// => null```"
             }
            ],
            ":block/uid": "EzSTluD0B",
@@ -32139,8 +32178,66 @@
           }
          ],
          ":block/uid": "U5DkRU6hr",
-         ":block/order": 1,
+         ":block/order": 2,
          ":block/string": "`roamAlphaAPI.user.isAdmin`"
+        },
+        {
+         ":block/children": [
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "dSAi8APjS"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "xofFuB5VP",
+             ":block/order": 0,
+             ":block/string": "The current user's email address, the one they are signed in to Roam with."
+            }
+           ],
+           ":block/uid": "VnakD1LQL",
+           ":block/order": 0,
+           ":block/string": "Description::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "f4rqZkvUg"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "CyoC7bbta",
+             ":block/order": 0,
+             ":block/string": "None"
+            }
+           ],
+           ":block/uid": "bKfXNSTX5",
+           ":block/order": 1,
+           ":block/string": "Parameters::"
+          },
+          {
+           ":block/refs": [
+            {
+             ":block/uid": "w2TkzJeTV"
+            }
+           ],
+           ":block/children": [
+            {
+             ":block/uid": "pOc3-P8zW",
+             ":block/order": 0,
+             ":block/string": "string, or `null` when not signed in"
+            }
+           ],
+           ":block/uid": "hvXdyqc4Q",
+           ":block/order": 2,
+           ":block/string": "Return::"
+          }
+         ],
+         ":block/uid": "50ggCWcGK",
+         ":block/order": 1,
+         ":block/string": "`roamAlphaAPI.user.email`"
         }
        ],
        ":block/uid": "Unbz7IlBj",
@@ -38143,6 +38240,10 @@
   {
    ":node/title": "February 13th, 2024",
    ":block/uid": "02-13-2024"
+  },
+  {
+   ":node/title": "November 24th, 2026",
+   ":block/uid": "11-24-2026"
   },
   {
    ":node/title": "May 1st, 2021",
