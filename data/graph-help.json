@@ -1,6 +1,6 @@
 {
  "graph": "help",
- "exportedAt": "2026-11-25T15:53:58.237Z",
+ "exportedAt": "2026-11-26T15:34:38.609Z",
  "transport": "backend-api",
  "shortcuts": [
   [
@@ -82432,6 +82432,36 @@
        ":block/string": "**Can I pull [[Weather Report]] or a daily [[Weather Summary]] into my Roam Daily Notes?**",
        ":block/heading": 3,
        ":block/order": 36
+      },
+      {
+       ":block/refs": [
+        {
+         ":block/uid": "l8uKkdhbc"
+        }
+       ],
+       ":block/children": [
+        {
+         ":block/children": [
+          {
+           ":block/uid": "vJYypJhAo",
+           ":block/string": "If you do want the children too, hold **Option/Ctrl**, start dragging, and press **Shift** right before you drop. The parent comes along with all its children.",
+           ":block/order": 1
+          },
+          {
+           ":block/uid": "Kim8alF-3",
+           ":block/string": "Hold **Option** (Mac) / **Ctrl** (Windows) and drag the parent block to where you want it. This creates a block reference to the parent only.",
+           ":block/order": 0
+          }
+         ],
+         ":block/uid": "j6ffmiYih",
+         ":block/string": "Use drag and drop with a modifier key.",
+         ":block/order": 0
+        }
+       ],
+       ":block/uid": "-nJymECCg",
+       ":block/string": "**How do I create [block references]([[Block References]]) to only the parent blocks, without their children?**",
+       ":block/heading": 3,
+       ":block/order": 37
       }
      ],
      ":block/uid": "8PnUxBsZt",

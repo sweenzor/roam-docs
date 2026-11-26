@@ -440,6 +440,12 @@
 - You can try the[ Weathercards](https://github.com/mlava/weathercards) extension by Mark Lavercombe, available on Roam Depot, which imports weather conditions and forecasts from Open Weather Map. You can update the location and number of days from the settings.
   - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fhelp%2FKcOChggtjb.gif?alt=media&token=26c1e0fe-8292-4764-bc8f-9ed26d529cc8)
 
+#### **How do I create [block references]([[Block References]]) to only the parent blocks, without their children?**
+
+- Use drag and drop with a modifier key.
+  - Hold **Option** (Mac) / **Ctrl** (Windows) and drag the parent block to where you want it. This creates a block reference to the parent only.
+  - If you do want the children too, hold **Option/Ctrl**, start dragging, and press **Shift** right before you drop. The parent comes along with all its children.
+
 ## [Multiplayer]([[Multiplayer]])
 
 #### **How do I** [share]([[Sharing]]) **my graph?** 
